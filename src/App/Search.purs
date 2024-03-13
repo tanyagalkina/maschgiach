@@ -7,42 +7,38 @@ module App.Search
 
 import Prelude
 
+import CSS (Color, backgroundColor, color, fontFamily, fontSize, px, rgba)
+import CSS.Color (Color, rgba)
 import Data.Array (head)
-import Data.Array.NonEmpty (NonEmptyArray, filter)
+import Data.Array.NonEmpty (NonEmptyArray, concat, filter)
 import Data.Array.NonEmpty as NEA
+import Data.ListEnglish (reallyMyProfiles)
 import Data.Maybe (Maybe(..))
 import Data.String (contains, Pattern(..))
-
+import Data.Foldable (foldl)
 import Halogen as H
 import Halogen.HTML as HH
+import Halogen.HTML.CSS as CSS
 import Halogen.HTML.Events as HE
 import Halogen.HTML.Properties as HP
-import Halogen.HTML.CSS as CSS
-
-import CSS (backgroundColor, fontSize, px)
-import CSS.Color (Color,  rgba )
 
 
-type EState = { description:: String }
+type EState = { description:: String, results:: Array String }
 
 
 orange :: Color
 orange = rgba 255 165 0 1.0
 
+green :: Color
+green = rgba 0 128 0 1.0
+
 css :: forall r i. String -> HH.IProp (class :: String | r) i
 css = HP.class_ <<< HH.ClassName
-
-myProfiles:: Maybe (NonEmptyArray String)
-myProfiles = NEA.fromArray ["Perfect", "Good", "Brilliant", "Excellent", "Superb", "Great", "Wonderful", "Fantastic", "Amazing", "Awesome", "Incredible", "Unbelievable", "Magnificent", "Fabulous", "Terrific", "Splendid", "Marvelous", "Phenomenal", "Extraordinary", "Outstanding", "Impressive", "Sensational", "Remarkable", "Exceptional", "Stunning", "Astounding", "Stupendous", "Mind-blowing", "Breathtaking", "Astonishing", "Glorious", "Majestic", "Grand", "Magnificent", "Sublime", "Noble", "Elegant", "Exquisite", "Graceful", "Beautiful", "Lovely", "Charming", "Delightful", "Pleasant", "Enjoyable", "Good", "Nice", "Fine", "Decent", "Fair", "Satisfactory", "Adequate", "Acceptable", "Tolerable", "Passable", "OK", "All right", "Not bad", "So-so", "Mediocre", "Middling", "Ordinary", "Average", "Fair", "Common", "Usual", "Typical", "Conventional", "Standard", "Regular", "Normal", "Traditional", "Customary", "Routine", "Accustomed", "Familiar", "Wonted", "Habitual", "Everyday", "Commonplace", "Workaday", "Prosaic", "Unremarkable", "Unexceptional", "Undistinguished", "Uninspired", "Unexciting", "Uninteresting", "Boring", "Dull", "Tedious", "Tiresome", "Monotonous", "Unvaried", "Unvarying", "Unchanging"]
-
-reallyMyProfiles :: Maybe (NonEmptyArray String) -> NonEmptyArray String
-reallyMyProfiles (Just items) = items
-reallyMyProfiles Nothing = NEA.cons "Nothing" (NEA.singleton "Nothing")
 
 data EAction = Search String
 
 initialState:: String -> EState
-initialState descr = { description: descr }
+initialState descr = { description: descr, results: [] }
 
 component :: forall query output m . H.Component query String output m 
 component =
@@ -63,33 +59,40 @@ render state =
     -- 3 children:
     [ HH.h1  [
       -- HP.class_ <<< HH.ClassName "article-preview__title"
-      css "ion-compose"
-    --  , CSS.style do
-    --         fontSize $ px 20.0
-    --         (backgroundColor $ orange)
-    ][ HH.text "Profiling" ]   -- 1. Child
+      css "ion-compose" -- where those css classes are defined ? bootstrap ??
+     , CSS.style do
+            fontSize $ px 40.0
+            (backgroundColor $ orange)
+            (color $ green)
+    ][ HH.text "Let me see ..." ]   -- 1. Child
     , HH.label_                            -- 2. Child no properties
-        [ HH.div_ [ HH.text "Search by part of the word:" ] -- children of 2. Child (div_, input)
+        [ HH.div_ [ HH.text "Search by name or e-number" ] -- children of 2. Child (div_, input)
         , HH.input
-            [ HP.value "search"
+            [ HP.value "hmm..."
             , HE.onValueInput \str -> Search str
             -- , HE.onValueChange \str -> Search str
             ]
         ]
-    , HH.p_ [ HH.text state.description ]  -- 3. Child  
+    , HH.p_ [ HH.text state.description ] 
+    -- TODO: make this dynamic HTML tags
+    , HH.p_ [ HH.text (concatResults state.results) ] -- 3. Child  
     ]
-  
+
+
+concatResults :: Array String -> String
+concatResults arr = foldl (\acc x -> acc <> " " <> x) " " arr
+
 
 -- newHanderAction :: forall output m. MonadAff m => Action -> H.HalogenM State Action () output m Unit
 -- cs IS component slots
 -- MODIFY THIS TO RETURN AN ARRAY OF STRINGS ( STATE BE AN ARRAY OF STRINGS )
 eHandleAction :: forall output m. EAction -> H.HalogenM EState EAction () output m Unit
 eHandleAction = case _ of
-  Search str -> H.modify_ \st -> st { description = fromMString (head $ search str) }
+  Search str -> H.modify_ \st -> st { description = fromMString (head $ search str), results = search str }
     
 
 search :: String  -> Array String
-search str = filter (\x -> contains (Pattern str) x) (reallyMyProfiles myProfiles)
+search str = filter (\x -> contains (Pattern str) x) (reallyMyProfiles)
 
 
 fromMString :: Maybe String -> String

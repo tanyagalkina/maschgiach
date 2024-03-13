@@ -27,7 +27,7 @@ main = HA.runHalogenAff do
   -- runUI Simple.component unit body
 
   -- search by part of the word
-  runUI Search.component "Hello, Halogen!" body
+  runUI Search.component "Maschgiach" body
 
   -- example using the Effect ( generate random number and display it )
   -- runUI Rand.component unit body

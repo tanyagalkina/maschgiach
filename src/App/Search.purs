@@ -59,13 +59,14 @@ render state =
     -- 3 children:
     [ HH.h1  [
       -- HP.class_ <<< HH.ClassName "article-preview__title"
-      css "ion-compose" -- where those css classes are defined ? bootstrap ??
+      css "article-preview" -- bootstrap ??
      , CSS.style do
-            fontSize $ px 40.0
+            fontSize $ px 30.0
             (backgroundColor $ orange)
             (color $ green)
-    ][ HH.text "Let me see ..." ]   -- 1. Child
-    , HH.label_                            -- 2. Child no properties
+    ][ HH.text "Maschgiach will help you in everyday shopping to make the right decision and have to make this text a little bit logner to see how it would then look like\n Oh, and I also want to see how it would look like with a new line, but the new line does not work and I probably need to use something like <br></br>" ]   -- 1. Child
+    , HH.label [ css "my-blue-class"
+                 ]                            -- 2. Child no properties
         [ HH.div_ [ HH.text "Search by name or e-number" ] -- children of 2. Child (div_, input)
         , HH.input
             [ HP.value "hmm..."
@@ -73,6 +74,7 @@ render state =
             -- , HE.onValueChange \str -> Search str
             ]
         ]
+
     , HH.p_ [ HH.text state.description ] 
     -- TODO: make this dynamic HTML tags
     , HH.p_ [ HH.text (concatResults state.results) ] -- 3. Child  

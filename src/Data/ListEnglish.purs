@@ -1,28 +1,19 @@
-module Data.ListEnglish (reallyMyProfiles) where
+module Data.ListEnglish (findENumbersInList, AdditiveGroup, Source(
+  Chametz,Kitniyot,Dairy,Animal,Wine,Eggs,Vegan,Synthetic
+
+), 
+Kashrut(NotKosher, KosherIncludingPassover, KosherNeedPassoverHashgoho, UsuallyKosherRarelyNeedHashgoho, OftenKosherNeedHashgoho, NotKosherWithoutEksher, KosherForbidden), ENumber, ENumberList, insertEntry, removeDiplicates, findENumbers, findEntry, findEntryBySubstance, findEntryByENumber, showK) where
 
 import Prelude
-import Data.Maybe (Maybe(..))
-import Data.Array.NonEmpty (NonEmptyArray)
-import Data.Array.NonEmpty as NEA
 
 import Control.Plus (empty)
-import Data.List (List(..), filter, head, null, nubByEq)
-import Data.Maybe (Maybe)
+import Data.Array.NonEmpty (NonEmptyArray)
+import Data.Array.NonEmpty as NEA
+import Data.List (List(..), filter, head, nubByEq, null)
+import Data.Maybe (Maybe(..))
 import Data.String.CodeUnits (contains)
 import Data.String.Pattern (Pattern(..))
 
-
-myProfiles:: Maybe (NonEmptyArray String)
-myProfiles = NEA.fromArray ["Perfect", "Good", "Brilliant", "Excellent", "Superb", "Great", "Wonderful", "Fantastic", "Amazing", "Awesome", "Incredible", "Unbelievable", "Magnificent", "Fabulous", "Terrific", "Splendid", "Marvelous", "Phenomenal", "Extraordinary", "Outstanding", "Impressive", "Sensational", "Remarkable", "Exceptional", "Stunning", "Astounding", "Stupendous", "Mind-blowing", "Breathtaking", "Astonishing", "Glorious", "Majestic", "Grand", "Magnificent", "Sublime", "Noble", "Elegant", "Exquisite", "Graceful", "Beautiful", "Lovely", "Charming", "Delightful", "Pleasant", "Enjoyable", "Good", "Nice", "Fine", "Decent", "Fair", "Satisfactory", "Adequate", "Acceptable", "Tolerable", "Passable", "OK", "All right", "Not bad", "So-so", "Mediocre", "Middling", "Ordinary", "Average", "Fair", "Common", "Usual", "Typical", "Conventional", "Standard", "Regular", "Normal", "Traditional", "Customary", "Routine", "Accustomed", "Familiar", "Wonted", "Habitual", "Everyday", "Commonplace", "Workaday", "Prosaic", "Unremarkable", "Unexceptional", "Undistinguished", "Uninspired", "Unexciting", "Uninteresting", "Boring", "Dull", "Tedious", "Tiresome", "Monotonous", "Unvaried", "Unvarying", "Unchanging"]
-
-reallyProfiles :: Maybe (NonEmptyArray String) -> NonEmptyArray String
-reallyProfiles (Just items) = items
-reallyProfiles Nothing = NEA.cons "Nothing" (NEA.singleton "Nothing")
-
-reallyMyProfiles :: NonEmptyArray String
-reallyMyProfiles = reallyProfiles myProfiles
-
--- ==========================================================================================
 
 infixr 5 insertEntry as ++
 
@@ -34,70 +25,37 @@ data Kashrut = NotKosher    -- 0 – некашерна
              | UsuallyKosherRarelyNeedHashgoho   -- 2 – обычно кашерна; в немногих случаях требуется проверка
              | OftenKosherNeedHashgoho  -- 3 – часто бывает кашерной, но требуется проверка
              | NotKosherWithoutEksher -- 4 – нельзя употреблять без эхшерa
-             | KosherChalavAcum  -- 1
+             | KosherForbidden  -- 1
 
 showK :: Kashrut -> String
 showK kashrut = case kashrut of
   NotKosher -> "Not Kosher!"
   KosherIncludingPassover -> "Kosher including Passover"
   KosherNeedPassoverHashgoho -> "Kosher, needs Hashgoho for Passover"
-  KosherChalavAcum -> "Kosher Chalav Acum"
   UsuallyKosherRarelyNeedHashgoho -> "Usually Kosher, rarely needs Hashgoho"
   OftenKosherNeedHashgoho -> "Often Kosher, needs Hashgoho"
   NotKosherWithoutEksher -> "Not Kosher without Eksher"
+  KosherForbidden -> "Kosher, FORBIDDEN"
 
-data Source = Chametz | Kitniyot | Dairy | Animal | Wine | Eggs
+data Source = Chametz | Kitniyot | Dairy | Animal | Wine | Eggs | Vegan | Synthetic
+
+derive instance eqSource :: Eq Source
 
 
 type ENumber = {
   name :: String
   , e_number :: String
   , group :: AdditiveGroup
-  , source :: Source  
+  , source :: Array Source  
   , description :: String
   , kosher :: Kashrut
 }
 
+
 type ENumberList = List ENumber
-
-insertEntry :: ENumber -> ENumberList -> ENumberList
-insertEntry = Cons
-
--- russian book: Kosher: 1, Passover: 1
---  ,(75300 .I.C (Curcumin 100 E
--- Куркумины Curcumin Curcumine
--- כשר, כולל פסח 
--- Kosher including Passover
--- Koscher auch für Pessach 
-
-curcuminWithKashrut ∷ ENumber
-curcuminWithKashrut = {
-  group: "Colour"
-  ,substance: "Curcumin"
-  ,e_number: "E100"
-  ,description: "Yellow colouring"
-  ,kosher: KosherIncludingPassover
-}
-
-
--- exampleListWithKashrut:: ENumberWithKashrutList
--- exampleListWithKashrut = insertEntryWithKashrut curcuminWithKashrut emptyENumberListWithKashrut
-
-
--- TODO: how to implement Display for Kashrut 
-showItemWithKashrut :: ENumberWithKashrut -> String
-showItemWithKashrut e = e.substance <> " (" <> e.group <> "): " <> e.e_number <> " - " <> e.description <> " - Kosher: " <> showKashrut e.kosher <> " - Passover: " <> showKashrut e.passover
-
 
 emptyENumberList:: ENumberList
 emptyENumberList = empty
-
-
-seedENumberList:: ENumberList
-seedENumberList = curcumin ++ riboflavin ++ tartrazine ++ quinoline_yellow ++ sunset_yellow_FCF ++ emptyENumberList
-
-seedENumberListWithDuplicates:: ENumberList
-seedENumberListWithDuplicates = curcumin ++ riboflavin ++ tartrazine ++ quinoline_yellow ++ sunset_yellow_FCF ++ curcumin ++ riboflavin ++ tartrazine ++ quinoline_yellow ++ sunset_yellow_FCF ++ emptyENumberList
 
 
 equivalent:: ENumber -> ENumber -> Boolean
@@ -112,16 +70,28 @@ insertEntry :: ENumber -> ENumberList -> ENumberList
 insertEntry = Cons
 
 
+findENumbers :: String -> ENumberList -> ENumberList
+-- findEntryByENumberOrSubstance query = head <<< filter filterEntry
+findENumbers query = filter filterEntry
+  where filterEntry::ENumber -> Boolean
+        filterEntry entry = contains (Pattern query) entry.e_number || contains (Pattern query) entry.name
+
+findENumbersInList :: String -> ENumberList
+findENumbersInList query = filter filterEntry seedENumberList
+  where filterEntry::ENumber -> Boolean
+        filterEntry entry = contains (Pattern query) entry.e_number || contains (Pattern query) entry.name
+
 -- TODO: change this to search by part or one of the fields
 findEntry :: String -> String -> ENumberList -> Maybe ENumber
-findEntry e_number substance = head <<< filter filterEntry
+findEntry e_number name = head <<< filter filterEntry
   where filterEntry::ENumber -> Boolean
-        filterEntry entry = entry.e_number == e_number && entry.substance == substance
+        filterEntry entry = entry.e_number == e_number && entry.name == name
+
 
 findEntryBySubstance :: String -> ENumberList -> Maybe ENumber
 findEntryBySubstance substance = head <<< filter filterEntry
   where filterEntry::ENumber -> Boolean
-        filterEntry entry = contains (Pattern substance)  (_.substance entry)
+        filterEntry entry = contains (Pattern substance)  (_.name entry)
 
 findEntryByENumber :: String -> ENumberList -> Maybe ENumber
 findEntryByENumber e_number = head <<< filter filterEntry
@@ -129,76 +99,80 @@ findEntryByENumber e_number = head <<< filter filterEntry
         filterEntry entry = contains (Pattern e_number) entry.e_number
 
 
-findEntryByENumberOrSubstance :: String -> ENumberList -> Maybe ENumber
-findEntryByENumberOrSubstance query = head <<< filter filterEntry
-  where filterEntry::ENumber -> Boolean
-        filterEntry entry = contains (Pattern query) entry.e_number || contains (Pattern query) entry.substance
-
-showENumber :: ENumber -> String
-showENumber e = e.substance <> " (" <> e.group <> "): " <> e.e_number <> " - " <> e.description
-
-
-curcumin ∷ { description ∷ String , e_number ∷ String , group ∷ String , kosher ∷ Int , passover ∷ Int , substance ∷ String }
-curcumin = {
-  group: "Colour"
-  ,substance: "Curcumin"
-  ,e_number: "E100"
-  ,description: "Yellow colouring"
-  -- ,kosher: UsuallyKosher ("Usually Kosher")
-  -- ,passover: UsuallyKosher ("Usually Kosher")
-  ,kosher: 1
-  ,passover: 1
-}
-
-
+seedENumberList:: ENumberList
+seedENumberList = curcumin ++ riboflavin ++ tartrazine ++ quinoline_yellow ++ sunset_yellow_FCF ++ cochineal
+  ++ citrusred  
+  ++ emptyENumberList
 
 -- seed data ---
-riboflavin ∷ { description ∷ String , e_number ∷ String , group ∷ String , kosher ∷ Int , passover ∷ Int , substance ∷ String }
+curcumin ∷ ENumber
+curcumin = {
+  name: "Curcumin"
+  , e_number: "E100"
+  , group: Colour
+  , source: [Vegan]
+  , description: "Yellow colouring"
+  , kosher: KosherIncludingPassover
+}
+
+riboflavin ∷ ENumber
 riboflavin = {
-  group: "Colour"
-  ,substance: "Riboflavin"
-  ,e_number: "E101"
-  ,description: "Yellow colouring"
-  ,kosher: 2
-  ,passover: 4
-  -- ,kosher: UsuallyKosher ("Usually Kosher")
-  -- ,passover: NeverKosherWithoutEksher ("Never Kosher without Eksher")
+  name: "Riboflavin"
+  , e_number: "E101"
+  , group: Colour
+  , source: [Dairy, Animal, Chametz]
+  , description: "Yellow colouring"
+  , kosher: KosherNeedPassoverHashgoho
 }
 
-tartrazine ∷ { description ∷ String , e_number ∷ String , group ∷ String , kosher ∷ Int , passover ∷ Int , substance ∷ String }
+tartrazine ∷ ENumber
 tartrazine = {
-  group: "Colour"
-  ,substance: "Tertrazine"
-  ,e_number: "E102"
-  ,description: "Yellow colouring"
-  -- ,kosher: UsuallyKosher "Usually Kosher"
-  -- ,passover: UsuallyKosher "Usually Kosher"
-  ,kosher: 1
-  ,passover: 1
+  name: "Tartrazine"
+  , e_number: "E102"
+  , group: Colour
+  , source: [] 
+  , description: "Yellow colouring"
+  , kosher: KosherIncludingPassover
 }
 
-quinoline_yellow ∷ { description ∷ String , e_number ∷ String , group ∷ String , kosher ∷ Int , passover ∷ Int , substance ∷ String }
+quinoline_yellow ∷ ENumber
 quinoline_yellow = {
-  group: "Colour"
-  ,substance: "Quinoline Yellow"
-  ,e_number: "E104"
-  ,description: "Yellow colouring"
-  -- ,kosher: UsuallyKosher ("Usually Kosher")
-  -- ,passover: UsuallyKosher ("Usually Kosher")
-  ,kosher: 1
-  ,passover: 1
+  name: "Quinoline Yellow"
+  , e_number: "E104"
+  , group: Colour
+  , source: []
+  , description: "Yellow colouring"
+  , kosher: KosherIncludingPassover
 }
 
-sunset_yellow_FCF ∷ { description ∷ String , e_number ∷ String , group ∷ String , kosher ∷ Int, passover ∷ Int , substance ∷ String }
+sunset_yellow_FCF ∷ ENumber
 sunset_yellow_FCF = {
-  group: "Colour"
-  ,substance: "Sunset Yellow FCF, Orange Yellow S"
-  ,e_number: "E110"
-  ,description: "Yellow colouring"
-  -- ,kosher: UsuallyKosher "Usually Kosher"
-  -- ,passover: UsuallyKosher "Usually Kosher"
-  ,kosher: 1
-  ,passover: 1
+  name: "Sunset Yellow FCF, Orange Yellow S"
+  , e_number: "E110"
+  , group: Colour
+  , source: [Synthetic] 
+  , description: "Orange colouring"
+  , kosher: KosherIncludingPassover
+}
+
+cochineal :: ENumber
+cochineal = {
+  name: "Cochineal"
+  , e_number: "E120"
+  , group: Colour
+  , source: [Animal]
+  , description: "Red colouring, Carmine of cochineal, Carminic Acid"
+  , kosher: NotKosher
+}
+
+citrusred :: ENumber
+citrusred = {
+  name: "Citrus Red Nr.2"
+  , e_number: "E121"
+  , group: Colour
+  , source: [Synthetic]
+  , description: "Red colouring"
+  , kosher: KosherForbidden 
 }
 
 

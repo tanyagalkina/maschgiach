@@ -28,7 +28,7 @@
   /* box-sizing: border-box; */
   border: 2px solid transparent;
   background-color: wheat;
-  color: brown;
+  color: rgb(118, 18, 18);
   font-size: 25px;
   font-family: 'Open Sans', serif;
 }

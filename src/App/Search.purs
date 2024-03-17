@@ -8,17 +8,18 @@ module App.Search
 import Prelude
 
 import Affjax.Web (get)
-import CSS (Color, Display(..), a, alignItems, backgroundColor, backgroundImage, color, display, fontFamily, fontSize, height, justifyContent, margin, pct, px, rgba)
+import App.Colours (beige, brightred, brown, dark_yellow, green, lightgreen, orange, peach, salad, skyblue, softred, yellow, mintcream, blue)
+import CSS (Color, Display(..), a, alignContent, alignItems, backgroundColor, backgroundImage, color, display, fontFamily, fontSize, height, justifyContent, margin, pct, px, rgba)
 import CSS.Color (Color, rgba)
 import CSS.Flexbox (FlexDirection(..), flexDirection, flexWrap, justifyContent, alignItems, flex)
 import Control.Plus (empty)
 import Data.Array (fromFoldable, elem)
 import Data.Array.NonEmpty (NonEmptyArray, concat, filter)
 import Data.Array.NonEmpty as NEA
-import Data.Foldable (foldl)
 import Data.Eq (eq)
+import Data.Foldable (foldl)
 import Data.List (List(..), head)
-import Data.ListEnglish (AdditiveGroup, ENumber, ENumberList, Kashrut(..), Source(..), findENumbersInList, showK)
+import Data.ListEnglish (AdditiveGroup, ENumber, ENumberList, Kashrut(..), Source(..), findENumbersInList, showK, showSources)
 import Data.Maybe (Maybe(..))
 import Data.String (Pattern(..), contains)
 import Halogen as H
@@ -26,36 +27,9 @@ import Halogen.HTML as HH
 import Halogen.HTML.CSS as CSS
 import Halogen.HTML.Events as HE
 import Halogen.HTML.Properties as HP
+import Web.DOM.DOMTokenList (item)
 
 type EState = { description:: String, results:: ENumberList, card:: Maybe ENumber }
-
-orange :: Color
-orange = rgba 255 165 0 1.0
-
-green :: Color
-green = rgba 0 128 0 0.8
-
-softred :: Color
-softred = rgba 205 92 92 1.0 
-
-beige :: Color
-beige = rgba 210 180 140 0.8
-
-lightgreen :: Color
--- lightgreen = rgba 144 238 144 1.0
--- lightgreen = rgba 124 252 124 1.0
-lightgreen = rgba 50 205 50 1.0
--- Light Green: rgba(144, 238, 144, 1.0)
-
-skyblue :: Color
-skyblue = rgba 135 206 235 1.0
--- Lavender: rgba(230, 230, 250, 1.0)
--- Peach: rgba(255, 218, 185, 1.0)
--- Beige: rgba(245, 245, 220, 1.0)
--- Mint Cream: rgba(245, 255, 250, 1.0)
-
-brightred :: Color
-brightred = rgba 255 69 0 1.0
 
 css :: forall r i. String -> HH.IProp (class :: String | r) i
 css = HP.class_ <<< HH.ClassName
@@ -79,7 +53,6 @@ component =
 render :: forall m . EState -> H.ComponentHTML  EAction () m  
 render state = 
   HH.form
-    -- 1 property ( onSubmit ) 
     [ 
       -- css "attribution"
       CSS.style do
@@ -88,39 +61,31 @@ render state =
     -- 3 children:
     [ HH.h1  [
       -- HP.class_ <<< HH.ClassName "article-preview__title"
-      -- css "article-preview" -- bootstrap ??
-      css "container" -- why the links are dissaprearing when I go ??
+      -- css "my-flex-container"
+      css "container" -- bootstrap??
       -- , CSS.css { fontFamily: "Arial, sans-serif"}
       , CSS.style do
            fontSize $ px 30.0
           --  (backgroundColor $ softred)
            (color $ green)
       ]
-      [ HH.text "Maschgiach will help you in everyday shopping to make the right decision and have more Mitzves! Why is this text rendered this way?" ]   -- 1. Child
+      [ HH.text "mashgiach" ]
     , HH.div [ css "my-flex-container"
-                 ]                            -- 2. Child no properties
-        -- [ HH.div[
-        --   css "my-flex-container"
-
-        -- ] [ HH.text "Search by name or e-number" ] -- children of 2. Child (div_, input)
+                 ]                    
         [HH.input
             [ 
               css "my-input"
-            , HP.value "hmm..."
+            , HP.value "search by name or E-number"
+            --- TODO: build in sound when typing ...
             , HE.onValueInput \str -> Search str
             -- , HE.onValueChange \str -> Search str
             ]
         ]
 
-    -- , HH.p_ [ HH.text state.description ]
-    , HH.p [ css "container"]
-      --  [HH.text "Reset"
-
-    -- [ HH.text (showResults state.results) ] -- 3. Child  
+    , HH.p [ css "my-flex-container"]
        [showResults state.results]
     , HH.p_ [ HH.text ""] 
     , showCard state.card 
-    -- TODO: make this dynamic HTML tags
     ]
 
 
@@ -129,10 +94,10 @@ showCard (Just eNumber) = showENumberHTML eNumber
 showCard Nothing = HH.text ""
 
 showResults :: forall w . ENumberList -> HH.HTML w EAction
--- showResults arr = map (\x -> HH.text (x.name <> " " <> showK x.kashrut)) arr
 showResults arr = 
   HH.div_
     [ HH.h1_ [ HH.text ""]
+    -- TODO: should  I have an Array ENumber  | NonEmptyArray ENumber | ListENumber ( like we have now ) ??
     , HH.ul_ $ map renderENumber (fromFoldable arr)
     ]
 
@@ -143,28 +108,38 @@ showENumberHTML e =
     css "my-card"
     , CSS.style do
   --          fontSize $ px 20.0
-       (backgroundColor $ getColorForKashrut e)
-  --          (color $ green)
+       (backgroundColor $ getBackgroundForKashrut e)
+       (color $ getColorForKashrut e)
 
   ]
     [ HH.div_ [HH.text e.name]
     , HH.div_ [HH.text e.e_number]
     , HH.div_ [HH.text e.description]
+    , HH.div_ [HH.text (showSources e.source)]
     , HH.div_ [HH.text (showK e.kosher)]
     ]
 
--- TODO: decide where to put this function
--- why I have to import all the variants ? 
-getColorForKashrut :: ENumber -> Color
-getColorForKashrut k = if (containsDairy k.source) then skyblue else  
+getBackgroundForKashrut :: ENumber -> Color
+getBackgroundForKashrut k = if (containsDairy k.source) then skyblue else  
     case k.kosher of
         NotKosher -> softred   
-        KosherIncludingPassover -> green
-        KosherNeedPassoverHashgoho -> lightgreen
-        UsuallyKosherRarelyNeedHashgoho -> green
-        OftenKosherNeedHashgoho -> green
-        NotKosherWithoutEksher -> softred
+        KosherIncludingPassover -> lightgreen
+        KosherNeedPassoverHashgoho -> green
+        UsuallyKosherRarelyNeedHashgoho -> yellow
+        OftenKosherNeedHashgoho -> orange
+        NeedHashgohoWholeYear -> softred
         KosherForbidden -> brightred
+
+getColorForKashrut :: ENumber -> Color
+getColorForKashrut k = if (containsDairy k.source) then brown else  
+    case k.kosher of
+        NotKosher -> peach   
+        KosherIncludingPassover -> blue
+        KosherNeedPassoverHashgoho -> green
+        UsuallyKosherRarelyNeedHashgoho -> brown
+        OftenKosherNeedHashgoho -> green
+        NeedHashgohoWholeYear -> brown
+        KosherForbidden -> peach        
 
 containsDairy:: Array Source -> Boolean
 containsDairy arr = elem Dairy arr  
@@ -175,9 +150,10 @@ renderENumber eNumber =
     [ HH.button 
         [ css "button"
           , CSS.style do
-            (backgroundColor $ (getColorForKashrut eNumber))
+            (backgroundColor $ (getBackgroundForKashrut eNumber))
+            (color $ getColorForKashrut eNumber)
           , HE.onClick $ \_ -> OpenCard eNumber ]
-        [ HH.text (eNumber.name <> " " <> showK eNumber.kosher) ]
+        [ HH.text (eNumber.name <> " " <> eNumber.e_number) ]
     ]
 
 
@@ -195,13 +171,6 @@ getDescription Nothing = "Nothing"
 search :: String -> ENumberList
 search str = findENumbersInList str
 
--- search :: String  -> Array String
--- search str = filter (\x -> contains (Pattern str) x) (reallyMyProfiles)
-
-
--- fromMString :: Maybe String -> String
--- fromMString (Just string) = string
--- fromMString Nothing = "Nothing"
 
  
  

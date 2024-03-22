@@ -79,9 +79,106 @@
   border-radius: 8px;
   font-size: 30px;
 }
-/* CSS.style do
-height $ pct 100.0
-margin $ px 0.0
-(display $ Fl) 
-justifyContent "center"
-alignItems "center" */
+
+/*  from figma */
+
+/* #content-container { display: block; position: relative; width: 1920px; height: 1067px; overflow: hidden; display: block; 
+   /* margin-left: auto; margin-right: auto; */
+    /* background-color: rgb(208, 170, 100)} */ 
+
+    /* #FFAA64 - A vibrant, deep orange.
+    #FFC882 - A medium, warm orange.
+    #FFE6A0 */
+
+#content-container {
+  display: block;
+  /* display: flex; */
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  justify-content: center;
+  background-color: rgb(234, 202, 143);
+  width: 100%;
+  /* TODO: how to make it go to the bottom ?   */
+  height: 1920px;
+  /* height: 100%; */
+}
+
+#footer_variant2 {
+  position: absolute;
+	bottom: 0px;
+	width: 100%; 
+	height: 109px;
+  background: linear-gradient(to right, #FFAA64, #FFC882, #FFE6A0);
+  /* background-color: rgb(247, 198, 108); */
+}
+
+.my-simple-input {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  padding: 12px 20px;
+  /* border-radius: 18px; */
+  margin: 8px 0;
+  /* box-sizing: border-box; */
+  border: 1px solid white;
+  background: linear-gradient(to left, #FFAA64, #FFC882, #FFE6A0);
+  color: rgb(118, 18, 18);
+  font-size: 20px;
+  font-family: Arial, sans-serif;
+  /* font-family: 'Open Sans', serif; */
+}
+
+.my-simple-input:focus,
+.my-simple-input:active,
+.my-simple-input:hover,
+.my-simple-input:visited
+ {
+  border: 1px solid white !important; /* Keeps the border white on focus */
+  outline: none !important; /* Removes the focus outline */
+}
+
+.input-icon {
+  position: absolute; /* Position the icon absolutely within the container */
+  top: 25%; /* Center vertically */
+  right: 60px; /* Distance from the right edge of the input field */
+  transform: translateY(-40%); /* Ensure it's centered no matter the height of the icon */
+  height: 40px; /* Or the size you need */
+  width: 40px; /* Maintain aspect ratio */
+  pointer-events: none; /* Ensures the icon doesn't interfere with the input */
+}
+
+/* border: 2px solid white !important; /* Force the border to remain white */
+/* outline: none !important;  */
+
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Align items to the start of the container */
+  height: 100vh; /* Take up the full height of the viewport */
+  padding-top: 5vh; /* Adjust this value to control how far down from the top the input appears */
+}
+
+.curtain {
+  position: absolute;
+  top: 2vh;
+  bottom: 30vh;
+  border-radius: 20px;
+  padding-top: 20px;
+  padding-left: 30px;
+  /* right: 3%; */
+  left: 46%;
+  width: 53%;
+  height: 80%;
+  backdrop-filter: blur(10px);
+  /* background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), linear-gradient(to left, #FFAA64, #FFC882, #FFE6A0); */
+  /* background-color: rgba(255, 255, 255, 0.5); */ 
+  /* background: linear-gradient(to left, #FFAA64, #FFC882, #FFE6A0); */
+  /* background: rgba(0, 0, 0, 0.5); */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  color: brown;
+}
+

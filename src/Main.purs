@@ -24,10 +24,10 @@ main = HA.runHalogenAff do
   -- runUI Button.component "Hello, Halogen!" body
 
   -- example from the book and two small add HTML examples
-  -- runUI Simple.component unit body
+  runUI Simple.component unit body
 
   -- search by part of the word
-  runUI Search.component "Maschgiach" body
+  -- runUI Search.component "Maschgiach" body
 
   -- example using the Effect ( generate random number and display it )
   -- runUI Rand.component unit body

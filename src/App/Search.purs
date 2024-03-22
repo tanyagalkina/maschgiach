@@ -8,6 +8,7 @@ module App.Search
 import Prelude
 
 import Affjax.Web (get)
+import Ansi.Output (background)
 import App.Colours (beige, brightred, brown, dark_yellow, green, lightgreen, orange, peach, salad, skyblue, softred, yellow, mintcream, blue)
 import CSS (Color, Display(..), a, alignContent, alignItems, backgroundColor, backgroundImage, color, display, fontFamily, fontSize, height, justifyContent, margin, pct, px, rgba)
 import CSS.Color (Color, rgba)
@@ -28,6 +29,7 @@ import Halogen.HTML.CSS as CSS
 import Halogen.HTML.Events as HE
 import Halogen.HTML.Properties as HP
 import Web.DOM.DOMTokenList (item)
+import Web.HTML.History (back)
 
 type EState = { description:: String, results:: ENumberList, card:: Maybe ENumber }
 
@@ -66,6 +68,7 @@ render state =
       -- , CSS.css { fontFamily: "Arial, sans-serif"}
       , CSS.style do
            fontSize $ px 30.0
+          -- TODO:  fontFamily $ ["Arial", "sans-serif"]
           --  (backgroundColor $ softred)
            (color $ green)
       ]
@@ -135,7 +138,7 @@ getColorForKashrut k = if (containsDairy k.source) then brown else
     case k.kosher of
         NotKosher -> peach   
         KosherIncludingPassover -> blue
-        KosherNeedPassoverHashgoho -> green
+        KosherNeedPassoverHashgoho -> peach
         UsuallyKosherRarelyNeedHashgoho -> brown
         OftenKosherNeedHashgoho -> green
         NeedHashgohoWholeYear -> brown
@@ -152,9 +155,14 @@ renderENumber eNumber =
           , CSS.style do
             (backgroundColor $ (getBackgroundForKashrut eNumber))
             (color $ getColorForKashrut eNumber)
+            -- my_style make reusable
           , HE.onClick $ \_ -> OpenCard eNumber ]
         [ HH.text (eNumber.name <> " " <> eNumber.e_number) ]
     ]
+
+-- my_stlye :: CSS.CSS
+-- my_stlye = do
+--   backgroundColor $ beige  
 
 
 eHandleAction :: forall output m. EAction -> H.HalogenM EState EAction () output m Unit

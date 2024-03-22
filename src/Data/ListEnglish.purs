@@ -117,7 +117,7 @@ findEntryByENumber e_number = head <<< filter filterEntry
 
 seedENumberList:: ENumberList
 seedENumberList = e100 ++ e101 ++ e102 ++ e104 ++ e110 ++ e120
-  ++ e121 ++ e123 ++ e124 ++ e129 ++ e140 ++ e141
+  ++ e121 ++ e123 ++ e124 ++ e129 ++ e131 ++ e140 ++ e141 ++ e150a
   ++ emptyENumberList
 
 -- seed data ---
@@ -222,6 +222,16 @@ e129 = {
   , kosher: NeedHashgohoWholeYear
 } 
 
+e131 :: ENumber
+e131 = {
+  name: "Patent Blue V"
+  , e_number: "E131"
+  , group: Colour
+  , source: [Synthetic, Dangerous]
+  , description: "Blue colouring; C.I: 42051"
+  , kosher: KosherIncludingPassover
+}
+
 e140 :: ENumber
 e140 = {
   name: "Chlorophyll"
@@ -241,4 +251,14 @@ e141 = {
   , description: "Green colouring; C.I: 75810"
   , kosher: NeedHashgohoWholeYear
   
+}
+
+e150a :: ENumber
+e150a =  {
+  name: "Plain Caramel"
+  , e_number: "E150a"
+  , group: Colour
+  , source: []
+  , description: "Brown colouring"
+  , kosher: KosherNeedPassoverHashgoho
 }

@@ -4,12 +4,20 @@
 module App.Simple (component) where
 
 import Prelude
-import Halogen as H
-import Halogen.HTML as HH
-import Halogen.HTML.Properties as HP
-import Halogen.HTML.Events as HE
-import Halogen.HTML (fromPlainHTML)
 
+import CSS (Color, Display(..), a, alignContent, alignItems, backgroundColor, backgroundImage, color, display, fontFamily, fontSize, height, justifyContent, margin, marginLeft, marginTop, pct, px, rgba)
+import Halogen as H
+import Halogen.HTML (fromPlainHTML)
+import Halogen.HTML as HH
+import Halogen.HTML.CSS as CSS
+import Halogen.HTML.Events as HE
+import Halogen.HTML.Properties (InputType(..))
+import Halogen.HTML.Properties as HP
+
+
+
+css :: forall r i. String -> HH.IProp (class :: String | r) i
+css = HP.class_ <<< HH.ClassName
 
 type State
   = { count :: Int }
@@ -25,31 +33,46 @@ component =
     , eval: H.mkEval H.defaultEval { handleAction = handleAction }
     }
 
--- TODO: see which type of Signal function
 render :: forall cs m. State  -> H.ComponentHTML Action cs m
-render state = 
-  HH.div 
-    -- below is the array of properties of div
-    [ HP.id "root" ]
-    -- below is the array of children if div
-    [ HH.input -- 1. child
-        -- this is the property of the input; input has no children
-      [ HP.placeholder (show state.count)]
-    , HH.button -- 2. child
-        -- list of properties of the button 
-        [ HP.classes [ HH.ClassName "btn-primary" ]
-        , HP.type_ HP.ButtonSubmit
-        , HE.onClick \_ -> Increment
+render _state = 
+  HH.div [HP.id "content-container"]
+     [
+      halogenLink  -- 3. Child 
+    -- fromPlainHTML myPlainHTML
+     , HH.div [  css "center-container"] 
+      -- center container start 
+      --  TODO: Wrap this for Icon (img ) to have position : absolute
+        [  
+          HH.input
+            [
+              HP.type_ HP.InputText
+            , css "my-simple-input"
+            , HP.placeholder "tezku le mitzvot!"
+          ]
+          ---------------------
+          , HH.img [
+            HP.src "../assets/lupe_2.png"
+            , HP.alt "lupe"
+            , css "input-icon"
+          ]
+          -----------------------
+          , HH.div [ css "curtain"]
+           [HH.text "CURTAIN"]
+          --   [
+          --     HH.button [ HE.onClick Decrement ] [ HH.text "-" ]
+          --   , HH.div [ css "count"] [ HH.text $ show _state.count ]
+          --   , HH.button [ HE.onClick Increment ] [ HH.text "+" ]
+
+          --------------------------
         ]
-        -- list of children of the button
-        [ HH.text " I know this is hard .. (())" ]
-    , halogenLink  -- 3. Child 
-    , fromPlainHTML myPlainHTML
-    , HH.input -- 4. child
-       [HP.placeholder "search by name"
-      ]
+      -- center container end
+      , HH.div [HP.id "footer_variant2"]
+        [
+        HH.text "Footer Variant 2"
+        ]
      ]
-  
+      
+
 -- dont use component slots
 -- HalogenM is often called the "eval" Monad
 -- HalogenM works only with Halogen-specific features
@@ -62,9 +85,18 @@ handleAction = case _ of
 
 halogenLink :: forall w i. HH.HTML w i
 halogenLink = HH.div_ 
-  [ HH.h1_ [ HH.text "Hello, Halogen!"]
-  , HH.p_ [ HH.text "Please, dont panic, go more!"]
-  , HH.a [ HP.href "https://pursuit.purescript.org/packages/purescript-halogen/5.0.0/docs/Halogen.HTML" ] [ HH.text "Halogen HTML"]
+  [ HH.h3 [
+    CSS.style do
+      color $ rgba 245 255 250 1.0
+      marginTop $ px 40.0
+      marginLeft $ pct 20.0
+  ] [ HH.text "maschgiach"]
+  -- , HH.p [
+  --   CSS.style do
+  --     backgroundColor $ rgba 0 0 0 0.1
+    
+  -- ][  HH.text "Please, dont panic, go more!"]
+  -- , HH.a [ HP.href "https://pursuit.purescript.org/packages/purescript-halogen/5.0.0/docs/Halogen.HTML" ] [ HH.text "Halogen HTML"]
   ]
 
 myPlainHTML :: HH.PlainHTML

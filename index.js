@@ -7350,7 +7350,7 @@
     return discard2(marginTop(px(40)))(function() {
       return marginLeft(pct(20));
     });
-  }))])([/* @__PURE__ */ text("maschgiach")])]);
+  }))])([/* @__PURE__ */ text("schalom")])]);
   var getLength = function(str) {
     var v = length3(str);
     if (v === 0) {

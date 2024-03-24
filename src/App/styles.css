@@ -95,7 +95,7 @@
   /* display: flex; */
   position: relative;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   overflow: hidden;
   justify-content: center;
   background-color: rgb(234, 202, 143);
@@ -117,10 +117,12 @@
 }
 
 .my-simple-input {
-  position: relative;
+  position: absolute;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  align-items: flex-start;
+  top: 20vh;
+  left: 10%;
+  /* justify-content: space-between; */
   width: 50%;
   padding: 12px 20px;
   border-radius: 5px;
@@ -190,8 +192,8 @@
   padding-top: 20px;
   padding-left: 30px;
   /* right: 3%; */
-  left: 46%;
-  width: 53%;
+  left: 30%;
+  width: 65%;
   height: 80%;
   backdrop-filter: blur(5px);
   /* font-family: inherit; */

@@ -52594,7 +52594,7 @@ var halogenLink = /* #__PURE__ */ _indexJs13.div_([
             });
         }))
     ])([
-        /* #__PURE__ */ _indexJs12.text("maschgiach")
+        /* #__PURE__ */ _indexJs12.text("schalom")
     ])
 ]);
 var getLength = function(str) {

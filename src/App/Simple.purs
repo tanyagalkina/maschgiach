@@ -55,7 +55,7 @@ render _state =
           , HP.alt "language"
           ]
          ]
-      , HH.div [  css "center-container"] 
+      , HH.div [ css "center-container"] 
       -- center container start 
       --  TODO: Wrap this for Icon (img ) to have position : absolute
         [  
@@ -162,7 +162,7 @@ halogenLink = HH.div_
       color $ rgba 245 255 250 1.0
       marginTop $ px 40.0
       marginLeft $ pct 20.0
-  ] [ HH.text "maschgiach"]
+  ] [ HH.text "schalom"]
   -- , HH.p [
   --   CSS.style do
   --     backgroundColor $ rgba 0 0 0 0.1

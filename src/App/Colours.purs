@@ -42,6 +42,9 @@ blue  = rgba 0 0 188 0.5
 dark_yellow :: Color
 dark_yellow = rgba 205 141 0 0.583
 
+grey :: Color
+grey = rgba 185 185 187 0.5
+
 yellow :: Color
 -- yellow = rgba 235 185 0 0.610
 yellow = rgba 250 180 0 0.307

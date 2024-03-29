@@ -52567,10 +52567,10 @@ var discard = /* #__PURE__ */ _indexJs7.discard(_indexJs7.discardUnit)(_indexJs5
 var modify_ = /* #__PURE__ */ _indexJs8.modify_(_indexJs24.monadStateHalogenM);
 var empty = /* #__PURE__ */ _indexJs9.empty(_indexJs13.plusList);
 var append = /* #__PURE__ */ _indexJs16.append(_indexJs16.semigroupArray);
-var type_ = /* #__PURE__ */ _indexJs23.type_(_indexJs20.isPropInputType);
-var elem = /* #__PURE__ */ _indexJs11.elem(_indexJs14.eqSource);
 var map = /* #__PURE__ */ _indexJs12.map(_indexJs12.functorArray);
 var fromFoldable = /* #__PURE__ */ _indexJs11.fromFoldable(_indexJs13.foldableList);
+var type_ = /* #__PURE__ */ _indexJs23.type_(_indexJs20.isPropInputType);
+var elem = /* #__PURE__ */ _indexJs11.elem(_indexJs14.eqSource);
 var OpenCurtainToTheRight = /* #__PURE__ */ function() {
     function OpenCurtainToTheRight(value0) {
         this.value0 = value0;
@@ -52653,7 +52653,7 @@ var handleAction = function(v) {
         $30.card = new _indexJs15.Just(v.value0);
         return $30;
     });
-    throw new Error("Failed pattern match at App.Simple (line 272, column 16 - line 277, column 82): " + [
+    throw new Error("Failed pattern match at App.Simple (line 279, column 16 - line 284, column 82): " + [
         v.constructor.name
     ]);
 };
@@ -52677,6 +52677,32 @@ var getCurtainClassList = function(moveCurtain) {
 };
 var css = function($39) {
     return _indexJs23.class_(_indexJs25.ClassName($39));
+};
+// [ HH.h1_ [ HH.text ""]
+// TODO: should  I have an Array ENumber  | NonEmptyArray ENumber | ListENumber ( like we have now ) ??
+// [HH.ul[
+//   CSS.style do
+//   width $ pct 100.0
+//   -- margin (px 0.0) (px 0.0) (px 0.0) (px 0.0)
+// ] $ map renderENumber (fromFoldable arr)]
+// ]
+var renderENumber = function(eNumber) {
+    return _indexJs21.div([
+        css("e-number-card"),
+        _indexJs19.style(discard(_indexJs1.backgroundColor(_indexJs.grey))(function() {
+            return _indexJs2.color(_indexJs.brown);
+        })),
+        _indexJs22.onClick(function(v) {
+            return new OpenCard(eNumber);
+        })
+    ])([
+        _indexJs20.text(eNumber.name + (" " + eNumber.e_number))
+    ]);
+};
+var showResults = function(arr) {
+    return _indexJs21.div([
+        css("results-bar")
+    ])(map(renderENumber)(fromFoldable(arr)));
 };
 var render = function(_state) {
     return _indexJs21.div([
@@ -52717,6 +52743,9 @@ var render = function(_state) {
                         return new Search("");
                     })
                 ])
+            ]),
+            _indexJs21.div_([
+                showResults(_state.results)
             ])
         ]),
         _indexJs21.div([
@@ -52776,7 +52805,7 @@ var getBackgroundForKashrut = function(k) {
     if (k.kosher instanceof _indexJs14.OftenKosherNeedHashgoho) return _indexJs.orange;
     if (k.kosher instanceof _indexJs14.NeedHashgohoWholeYear) return _indexJs.softred;
     if (k.kosher instanceof _indexJs14.KosherForbidden) return _indexJs.brightred;
-    throw new Error("Failed pattern match at App.Simple (line 216, column 5 - line 223, column 37): " + [
+    throw new Error("Failed pattern match at App.Simple (line 223, column 5 - line 230, column 37): " + [
         k.kosher.constructor.name
     ]);
 };
@@ -52790,33 +52819,8 @@ var getColorForKashrut = function(k) {
     if (k.kosher instanceof _indexJs14.OftenKosherNeedHashgoho) return _indexJs.green;
     if (k.kosher instanceof _indexJs14.NeedHashgohoWholeYear) return _indexJs.brown;
     if (k.kosher instanceof _indexJs14.KosherForbidden) return _indexJs.peach;
-    throw new Error("Failed pattern match at App.Simple (line 227, column 5 - line 234, column 33): " + [
+    throw new Error("Failed pattern match at App.Simple (line 234, column 5 - line 241, column 33): " + [
         k.kosher.constructor.name
-    ]);
-};
-var renderENumber = function(eNumber) {
-    return _indexJs21.li([
-        css("my-list")
-    ])([
-        _indexJs21.button([
-            css("button"),
-            _indexJs19.style(discard(_indexJs1.backgroundColor(getBackgroundForKashrut(eNumber)))(function() {
-                return _indexJs2.color(getColorForKashrut(eNumber));
-            })),
-            _indexJs22.onClick(function(v) {
-                return new OpenCard(eNumber);
-            })
-        ])([
-            _indexJs20.text(eNumber.name + (" " + eNumber.e_number))
-        ])
-    ]);
-};
-var showResults = function(arr) {
-    return _indexJs21.div_([
-        _indexJs21.h1_([
-            _indexJs20.text("")
-        ]),
-        _indexJs21.ul_(map(renderENumber)(fromFoldable(arr)))
     ]);
 };
 var component = /* #__PURE__ */ function() {
@@ -61116,24 +61120,30 @@ parcelHelpers.export(exports, "peach", ()=>peach);
 parcelHelpers.export(exports, "mintcream", ()=>mintcream);
 parcelHelpers.export(exports, "blue", ()=>blue);
 parcelHelpers.export(exports, "dark_yellow", ()=>dark_yellow);
+parcelHelpers.export(exports, "grey", ()=>grey);
 parcelHelpers.export(exports, "yellow", ()=>yellow);
 parcelHelpers.export(exports, "salad", ()=>salad);
 parcelHelpers.export(exports, "brown", ()=>brown);
 parcelHelpers.export(exports, "brightred", ()=>brightred);
-// Generated by purs version 0.15.15
 var _indexJs = require("../Color/index.js");
 var yellow = /* #__PURE__ */ _indexJs.rgba(250)(180)(0)(0.307);
 var softred = /* #__PURE__ */ _indexJs.rgba(205)(92)(92)(1.0);
+// Light Green: rgba(144, 238, 144, 1.0)
 var skyblue = /* #__PURE__ */ _indexJs.rgba(135)(206)(235)(1.0);
 var salad = /* #__PURE__ */ _indexJs.rgba(173)(255)(0)(0.735);
+// Lavender: rgba(230, 230, 250, 1.0)
 var peach = /* #__PURE__ */ _indexJs.rgba(255)(218)(185)(1.0);
 var orange = /* #__PURE__ */ _indexJs.rgba(255)(165)(0)(1.0);
+// Peach: rgba(255, 218, 185, 1.0)
+// Beige: rgba(245, 245, 220, 1.0)
 var mintcream = /* #__PURE__ */ _indexJs.rgba(245)(255)(250)(1.0);
 var lightgreen = /* #__PURE__ */ _indexJs.rgba(50)(205)(50)(1.0);
+var grey = /* #__PURE__ */ _indexJs.rgba(185)(185)(187)(0.5);
 var green = /* #__PURE__ */ _indexJs.rgba(0)(128)(0)(0.8);
 var dark_yellow = /* #__PURE__ */ _indexJs.rgba(205)(141)(0)(0.583);
 var brown = /* #__PURE__ */ _indexJs.rgba(118)(18)(18)(1.0);
 var brightred = /* #__PURE__ */ _indexJs.rgba(255)(69)(0)(1.0);
+// Mint Cream: rgba(245, 255, 250, 1.0)
 var blue = /* #__PURE__ */ _indexJs.rgba(0)(0)(188)(0.5);
 var beige = /* #__PURE__ */ _indexJs.rgba(210)(180)(140)(0.8);
 

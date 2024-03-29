@@ -2,7 +2,7 @@ module App.Simple (component) where
 
 import Prelude
 
-import App.Colours (beige, brightred, brown, dark_yellow, green, lightgreen, orange, peach, salad, skyblue, softred, yellow, mintcream, blue)
+import App.Colours (beige, blue, brightred, brown, dark_yellow, green, lightgreen, mintcream, orange, peach, salad, skyblue, softred, yellow, grey)
 import CSS (Color, Display, a, alignContent, alignItems, backgroundColor, backgroundImage, block, border, borderRadius, bottom, boxShadow, color, display, displayNone, flex, flexBasis, flexDirection, flexStart, flexWrap, fontFamily, fontSize, height, inline, inlineBlock, justifyContent, left, lineHeight, margin, marginLeft, marginRight, marginTop, padding, paddingLeft, paddingRight, paddingTop, pct, position, px, rgba, right, solid, top, width, zIndex)
 import CSS.Common (none)
 import CSS.Cursor (move)
@@ -119,6 +119,8 @@ render _state =
               ]
           ---------------------
           ]
+
+          --, HH.div [ css "results-bar"] 
             --  ,HH.ul[
             --   css "result_list"
             --   , CSS.style do
@@ -128,7 +130,9 @@ render _state =
           -- TODO: make nice show results
         -- , HH.p [
         --  ]
-        --  [showResults _state.results]  
+          , HH.div_
+          [showResults _state.results]  
+           -- [map renderENumber (fromFoldable _state.results)]
         ]
           -----------------------
         -- , HH.div[ css "results-bar"] [
@@ -138,7 +142,6 @@ render _state =
         -- ]
         , HH.div [ 
                    HP.classes $ getCurtainClassList _state.moveCurtain
-                   --  css "curtain"
                     --   TODO: clean the styles
                     ,CSS.style do
                        paddingTop $ pct 7.0
@@ -174,41 +177,45 @@ render _state =
             HH.div [css "footer-text"] [ HH.text "© 2024. We love Israel" ]
             , HH.div [css "footer-line"] []
             , HH.div [css "resources"] [HH.text "Here we want to write more in detail about the resources we used to build this app"]
-
-            
-            -- , HH.div []
-            --   [HH.img [
-            --   HP.src "../assets/union.png"
-            --   , HP.alt "copyright"
-            --   ]]
-            -- , HH.text " "
-            -- , HH.text "© 2024. We love Israel"
-
           ]
      ]
 
 
 showResults :: forall w . ENumberList -> HH.HTML w Action
 showResults arr = 
-  HH.div_
-    [ HH.h1_ [ HH.text ""]
+  HH.div [
+    css "results-bar"
+
+    -- ,CSS.style do
+    --   width $ pct 100.0
+  ] $ map renderENumber (fromFoldable arr)
+    -- [ HH.h1_ [ HH.text ""]
     -- TODO: should  I have an Array ENumber  | NonEmptyArray ENumber | ListENumber ( like we have now ) ??
-    , HH.ul_ $ map renderENumber (fromFoldable arr)
-    ]
+    -- [HH.ul[
+    --   CSS.style do
+    --   width $ pct 100.0
+    --   -- margin (px 0.0) (px 0.0) (px 0.0) (px 0.0)
+    -- ] $ map renderENumber (fromFoldable arr)]
+    -- ]
 
 
 renderENumber :: forall w . ENumber -> HH.HTML w Action
 renderENumber eNumber =
-  HH.li [ css "my-list"]
-    [ HH.button 
-        [ css "button"
+  -- HH.li [ css "my-list"]
+    -- HH.button
+    HH.div
+        [ 
+          css "e-number-card"
+          -- css "button"
           , CSS.style do
-            (backgroundColor $ (getBackgroundForKashrut eNumber))
-            (color $ getColorForKashrut eNumber)
+          backgroundColor grey
+          color brown
+            -- (backgroundColor $ (getBackgroundForKashrut eNumber))
+            -- (color $ getColorForKashrut eNumber)
             -- my_style make reusable
           , HE.onClick $ \_ -> OpenCard eNumber ]
         [ HH.text (eNumber.name <> " " <> eNumber.e_number) ]
-    ]
+    
 
 
 getBackgroundForKashrut :: ENumber -> Color

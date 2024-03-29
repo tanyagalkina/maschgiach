@@ -1,25 +1,3 @@
-/* styles.css */
-.my-blue-class {
-  color: blue;
-}
-
-.my-another-class {
-  font-size: 20px;
-}
-
-.my-flex-container {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  height: 30vh;
-  margin: 0;
-}
-
-.my-list {
-  list-style-type: none;
-}
-
 .my-input {
   width: 30%;
   padding: 12px 20px;
@@ -81,149 +59,133 @@
   font-size: 30px;
 }
 
-/*  from figma */
+    #content-container {
+      min-height: 3000px;
+      display: block;
+      overflow: hidden;
+      width: 100%;
+      font-family: monospace;
+    }
+    
+    .footer {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 5px;
+      bottom: 0;
+      width: 100%; 
+      height: 7%;
+      border: solid 1px grey;
+      background: radial-gradient(circle,  #B9B9BB, #CBCBCD, #DDDDDF, #FFFFFF);
+      padding: 20px;
+    } 
+    
+    .footer-text {
+      font-size: 1em;
+      margin: 0;
+      color: brown;
+    }
+    
+    .footer-line {
+      width: 100%;
+      height: 1px;
+      background-color: brown;
+      margin-top: 20px
+    }
+    
+    .resources {
+      padding: 0.8em;
+      font-size: 0.8em;
+    }
+    
+    
+    .my-simple-input {
+      position: absolute;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      top: 15vh;
+      left: 15%;
+      justify-content: space-between;
+      width: 70%;
+      padding: 12px 20px;
+      border-radius: 5px;
+      margin: 8px 0;
+      border: 1px solid grey;
+      background: linear-gradient(to left, #CBCBCD, #DDDDDF, #FFFFFF); 
+      color: rgb(118, 18, 18);
+      font-size: 20px;
+      font-family: monospace;
+    }
 
-/* #content-container { display: block; position: relative; width: 1920px; height: 1067px; overflow: hidden; display: block; 
-   /* margin-left: auto; margin-right: auto; */
-    /* background-color: rgb(208, 170, 100)} */ 
+    
+    .my-simple-input:focus,
+    .my-simple-input:active,
+    .my-simple-input:hover,
+    .my-simple-input:visited
+    {
+      border: 1px solid grey !important; /* Keeps the border white on focus */
+      outline: none !important; /* Removes the focus outline */
+    }
+    
+    .my-simple-input input {
+      border: none;
+      background: transparent;
+      outline: none; 
+      color: inherit;
+      font-size: inherit;
+      font-family: inherit; 
+      width: 96%; 
+    } 
+    
+    
+    .results-bar {
+      margin-top: 1%;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid grey;
+      border-radius: 5px;
+      top: 25vh;
+      left: 15%;
+      width: 70%;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      background: linear-gradient(to right, #CBCBCD, #DDDDDF, #FFFFFF); 
+    }
 
-    /* #FFAA64 - A vibrant, deep orange.
-    #FFC882 - A medium, warm orange.
-    #FFE6A0 */
-
-#content-container {
-  min-height: 3000px;
+.e-number-card {
+  width: 99%;
   display: block;
-  /* display: flex; */
-  /* position: relative; */
-  /* flex-direction: column; */
-  /* align-items: flex-start; */
-  overflow: hidden;
-  /* justify-content: center; */
-  /* background-color: #60A4B4; */
-  /* background-color: rgb(96, 164, 180, 0.3); */
-  /* background:
-  radial-gradient(circle, transparent 90%, rgba(96, 164, 180, 0.6) 95%) 10% 20% / 10% 10%,
-  radial-gradient(circle, transparent 90%, rgba(196, 114, 100, 0.6) 95%) 30% 40% / 15% 15%,
-  radial-gradient(circle, transparent 90%, rgba(146, 134, 180, 0.6) 95%) 50% 60% / 20% 20%,
-  radial-gradient(circle, transparent 90%, rgba(96, 164, 80, 0.6) 95%) 70% 80% / 25% 25%, */
-  /* Base Layer: Smooth Gradient */
-  /* linear-gradient(to right, #60A4B4, #FFFFFF); */
-/* background-repeat: no-repeat;
-  background: radial-gradient(ellipse at center,rgb(96, 164, 180, 0.6), #FFFFFF); */
-  
-  width: 100%;
-  /* TODO: how to make it go to the bottom ?   */
-  /* height: 1920px; */
-  font-family: monospace;
-  /* height: 100%; */
-}
-
-.footer {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: 5px;
-	bottom: 0;
-	width: 100%; 
-	height: 7%;
-  border: solid 1px grey;
-  background: radial-gradient(circle,  #B9B9BB, #CBCBCD, #DDDDDF, #FFFFFF);
-  padding: 20px;
-} 
-
-.footer-text {
-  font-size: 1em;
-  margin: 0;
-  color: brown;
-}
-
-.footer-line {
-  width: 100%;
-  height: 1px;
-  background-color: brown;
-  margin-top: 20px
-}
-
-.resources {
-  padding: 0.8em;
-  font-size: 0.8em;
-}
-
-.results-bar {
-  display: flex;
-  flex-direction: column;
-
-  top: 15%;
-  left: 10%;
-  width: 50%;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  background-color: rgb(151, 230, 151);
-}
-
-.my-simple-input {
-  position: absolute;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  top: 20vh;
-  left: 15%;
-  justify-content: space-between;
-  width: 70%;
-  padding: 12px 20px;
-  border-radius: 5px;
-  margin: 8px 0;
   border: 1px solid grey;
-  background: linear-gradient(to left, #CBCBCD, #DDDDDF, #FFFFFF); 
-  color: rgb(118, 18, 18);
-  font-size: 20px;
-  font-family: monospace;
+  border-radius: 3px;
+  /* margin-top: 5px; */
+  margin-left: 10px;
+  /* margin-right: 10px; */
+  margin-top: 3px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  padding-left: 10px;
+  transition: transform 0.3s ease;
 }
 
-.my-simple-input:focus,
-.my-simple-input:active,
-.my-simple-input:hover,
-.my-simple-input:visited
- {
-  border: 1px solid grey !important; /* Keeps the border white on focus */
-  outline: none !important; /* Removes the focus outline */
+.e-number-card:hover {
+  opacity: 0.7;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  /* height: 20%; */
+  transform: scale(1.2, 1.2); 
+  /* background-color: #f1f1f1; */
+  /* height: 20%; */
 }
-
-.my-simple-input input {
-  border: none;
-  background: transparent;
-  outline: none; 
-  color: inherit;
-  font-size: inherit;
-  font-family: inherit; 
-  width: 96%; 
-} 
- 
-
-
-.input-icon {
-  /* TODO: UNDERSTAND position relative and absolute */
-  /* position: relative; Position the icon absolutely within the container*/
-  /* margin-left: 30px; */
-  /* top: 25%; /* Center vertically */
-  /* right: 60px; /* Distance from the right edge of the input field */
-  /* transform: translateY(-40%); Ensure it's centered no matter the height of the icon */
-  /* height: 40px; Or the size you need */
-  /* width: 40px; Maintain aspect ratio */
-  /* pointer-events: none; Ensures the icon doesn't interfere with the input */
-}
-
-/* border: 2px solid white !important; /* Force the border to remain white */
-/* outline: none !important;  */
 
 .center-container {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center; /* Align items to the start of the container */
   height: 100vh; /* Take up the full height of the viewport */
   padding-top: 5vh; /* Adjust this value to control how far down from the top the input appears */
@@ -237,34 +199,14 @@
   align-items: flex-start;
   justify-content: baseline;
   top: 1vh;
-  /* bottom: 20vh; */
-  /* margin-bottom: 20vh; */
   border-radius: 15px;
   border: 1px solid grey;
-  /* text-shadow: 4px 4px 5px rgba(0,0,0,0.5); */
-  /* text-shadow: 1px 3px 3px rgba(0, 0, 0, 0.4); */
-  /* padding-top: 100px;
-  padding-left: 40px; */
-  /* right: 3%; */
   left: 30%;
   width: 70%;
   height: 90%;
   backdrop-filter: blur(5px);
   font-family: inherit;
-  /* background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), linear-gradient(to left, #FFAA64, #FFC882, #FFE6A0); */
-
-  /* 
-  #B9B9BB: (185, 185, 187)
-  #CBCBCD: (203, 203, 205)
-  #DDDDDF: (221, 221, 223) */
   background: linear-gradient(to left, rgba(185, 185, 187, 0.5), rgba(203, 203, 205, 0.5), rgba(221, 221, 223, 0.5));
-  /* background: linear-gradient(to left, rgba(255, 170, 100, 0.5), rgba(255, 200, 130, 0.5), rgba(255, 230, 160, 0.5)); */
-
-  /* background: linear-gradient(to left,#FFFFFF 100%, #FFFFFF 0%); */
-
-  /* background-color: rgba(255, 255, 255, 0.5); */
-  /* background: linear-gradient(to left, #FFAA64, #FFC882, #FFE6A0); */
-  /* background: rgba(0, 0, 0, 0.5); */
   color: brown;
   transition: transform 0.8s ease-out; /* Animate the movement */
 }

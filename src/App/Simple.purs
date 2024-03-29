@@ -167,16 +167,22 @@ render _state =
 
         , HH.div
           [
-            HP.id "footer_variant2"
+            css "footer"
           ]
           [
-            HH.div []
-              [HH.img [
-              HP.src "../assets/union.png"
-              , HP.alt "copyright"
-              ]]
-            , HH.text " "
-            , HH.text "© 2024. We love Israel"
+            -- HH.div [ css "resources"] [HH.text "Resources"]
+            HH.div [css "footer-text"] [ HH.text "© 2024. We love Israel" ]
+            , HH.div [css "footer-line"] []
+            , HH.div [css "resources"] [HH.text "Here we want to write more in detail about the resources we used to build this app"]
+
+            
+            -- , HH.div []
+            --   [HH.img [
+            --   HP.src "../assets/union.png"
+            --   , HP.alt "copyright"
+            --   ]]
+            -- , HH.text " "
+            -- , HH.text "© 2024. We love Israel"
 
           ]
      ]

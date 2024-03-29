@@ -52653,7 +52653,7 @@ var handleAction = function(v) {
         $30.card = new _indexJs15.Just(v.value0);
         return $30;
     });
-    throw new Error("Failed pattern match at App.Simple (line 266, column 16 - line 271, column 82): " + [
+    throw new Error("Failed pattern match at App.Simple (line 272, column 16 - line 277, column 82): " + [
         v.constructor.name
     ]);
 };
@@ -52745,16 +52745,21 @@ var render = function(_state) {
             ])
         ]),
         _indexJs21.div([
-            _indexJs23.id("footer_variant2")
+            css("footer")
         ])([
-            _indexJs21.div([])([
-                _indexJs21.img([
-                    _indexJs23.src("../assets/union.png"),
-                    _indexJs23.alt("copyright")
-                ])
+            _indexJs21.div([
+                css("footer-text")
+            ])([
+                _indexJs20.text("\xa9 2024. We love Israel")
             ]),
-            _indexJs20.text(" "),
-            _indexJs20.text("\xa9 2024. We love Israel")
+            _indexJs21.div([
+                css("footer-line")
+            ])([]),
+            _indexJs21.div([
+                css("resources")
+            ])([
+                _indexJs20.text("Here we want to write more in detail about the resources we used to build this app")
+            ])
         ])
     ]);
 };
@@ -52771,7 +52776,7 @@ var getBackgroundForKashrut = function(k) {
     if (k.kosher instanceof _indexJs14.OftenKosherNeedHashgoho) return _indexJs.orange;
     if (k.kosher instanceof _indexJs14.NeedHashgohoWholeYear) return _indexJs.softred;
     if (k.kosher instanceof _indexJs14.KosherForbidden) return _indexJs.brightred;
-    throw new Error("Failed pattern match at App.Simple (line 210, column 5 - line 217, column 37): " + [
+    throw new Error("Failed pattern match at App.Simple (line 216, column 5 - line 223, column 37): " + [
         k.kosher.constructor.name
     ]);
 };
@@ -52785,7 +52790,7 @@ var getColorForKashrut = function(k) {
     if (k.kosher instanceof _indexJs14.OftenKosherNeedHashgoho) return _indexJs.green;
     if (k.kosher instanceof _indexJs14.NeedHashgohoWholeYear) return _indexJs.brown;
     if (k.kosher instanceof _indexJs14.KosherForbidden) return _indexJs.peach;
-    throw new Error("Failed pattern match at App.Simple (line 221, column 5 - line 228, column 33): " + [
+    throw new Error("Failed pattern match at App.Simple (line 227, column 5 - line 234, column 33): " + [
         k.kosher.constructor.name
     ]);
 };

@@ -43,6 +43,7 @@
 }
 
 .button {
+  left: 10%;
   padding: 10px 20px;
   border: none;
   border-radius: 18px; /* Rounded corners */
@@ -98,7 +99,18 @@
   align-items: flex-start;
   overflow: hidden;
   justify-content: center;
-  background-color: rgb(234, 202, 143);
+  /* background-color: #60A4B4; */
+  /* background-color: rgb(96, 164, 180, 0.3); */
+  /* background:
+  radial-gradient(circle, transparent 90%, rgba(96, 164, 180, 0.6) 95%) 10% 20% / 10% 10%,
+  radial-gradient(circle, transparent 90%, rgba(196, 114, 100, 0.6) 95%) 30% 40% / 15% 15%,
+  radial-gradient(circle, transparent 90%, rgba(146, 134, 180, 0.6) 95%) 50% 60% / 20% 20%,
+  radial-gradient(circle, transparent 90%, rgba(96, 164, 80, 0.6) 95%) 70% 80% / 25% 25%, */
+  /* Base Layer: Smooth Gradient */
+  /* linear-gradient(to right, #60A4B4, #FFFFFF); */
+/* background-repeat: no-repeat;
+  background: radial-gradient(ellipse at center,rgb(96, 164, 180, 0.6), #FFFFFF); */
+  
   width: 100%;
   /* TODO: how to make it go to the bottom ?   */
   height: 1920px;
@@ -112,31 +124,46 @@
 	bottom: 0px;
 	width: 100%; 
 	height: 109px;
-  background: linear-gradient(to right, #FFAA64, #FFC882, #FFE6A0);
+   
+  border: solid 1px grey;
+  background: radial-gradient(circle,  #B9B9BB, #CBCBCD, #DDDDDF, #FFFFFF);
+  /* background: linear-gradient(to right, #FFAA64, #FFC882, #FFE6A0); */
   /* background-color: rgb(247, 198, 108); */
+  /* background-color:  #B9B9BB; */
+  /* background-color: rgba(185, 185, 187, 1.0) */
+} 
+
+
+.results-bar {
+  display: flex;
+  flex-direction: column;
+
+  top: 15%;
+  left: 10%;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  background-color: rgb(151, 230, 151);
 }
 
 .my-simple-input {
   position: absolute;
   display: flex;
+  flex-direction: row;
   align-items: flex-start;
   top: 20vh;
-  left: 10%;
-  /* justify-content: space-between; */
-  width: 50%;
+  left: 15%;
+  justify-content: space-between;
+  width: 70%;
   padding: 12px 20px;
   border-radius: 5px;
   margin: 8px 0;
-  /* box-sizing: border-box; */
-  border: 1px solid white;
-  /* background: linear-gradient(to left, #FFAA64, #FFC882, #FFE6A0) no-repeat scroll 7px 7px, url('../../dist/assets/lupe.png') no-repeat scroll right 20px center; */
-  background: linear-gradient(to left, #FFAA64, #FFC882, #FFE6A0); 
+  border: 1px solid grey;
+  background: linear-gradient(to left, #CBCBCD, #DDDDDF, #FFFFFF); 
   color: rgb(118, 18, 18);
   font-size: 20px;
-  /* font-family: 'Courier New', Courier, monospace; */
   font-family: monospace;
-  /* font-family: Arial, sans-serif; */
-  /* font-family: 'Open Sans', serif; */
 }
 
 .my-simple-input:focus,
@@ -144,26 +171,26 @@
 .my-simple-input:hover,
 .my-simple-input:visited
  {
-  border: 1px solid white !important; /* Keeps the border white on focus */
+  border: 1px solid grey !important; /* Keeps the border white on focus */
   outline: none !important; /* Removes the focus outline */
 }
 
 .my-simple-input input {
-  border: none; /* Ensures no border appears on focus */
-  background: transparent; /* Ensures the input is transparent */
+  border: none;
+  background: transparent;
   outline: none; 
-  color: inherit; /* Inherit the color of the parent */
-  font-size: inherit; /* Inherit the font size of the parent */
-  font-family: inherit; /* Inherit the font family of the parent */
-  width: 100%; /* Take up the full width of the container */
-
-}
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit; 
+  width: 96%; 
+} 
+ 
 
 
 .input-icon {
   /* TODO: UNDERSTAND position relative and absolute */
   /* position: relative; Position the icon absolutely within the container*/
-  margin-left: 30px;
+  /* margin-left: 30px; */
   /* top: 25%; /* Center vertically */
   /* right: 60px; /* Distance from the right edge of the input field */
   /* transform: translateY(-40%); Ensure it's centered no matter the height of the icon */
@@ -177,7 +204,8 @@
 
 .center-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center; /* Align items to the start of the container */
   height: 100vh; /* Take up the full height of the viewport */
   padding-top: 5vh; /* Adjust this value to control how far down from the top the input appears */
@@ -185,26 +213,38 @@
 
 .curtain {
   position: absolute;
-  top: 2vh;
-  bottom: 30vh;
-  border-radius: 20px;
-  border: 1px solid white;
-  padding-top: 20px;
-  padding-left: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: baseline;
+  top: 1vh;
+  bottom: 10vh;
+  margin-bottom: 10vh;
+  border-radius: 15px;
+  border: 1px solid grey;
+  /* text-shadow: 4px 4px 5px rgba(0,0,0,0.5); */
+  /* text-shadow: 1px 3px 3px rgba(0, 0, 0, 0.4); */
+  /* padding-top: 100px;
+  padding-left: 40px; */
   /* right: 3%; */
   left: 30%;
-  width: 65%;
-  height: 80%;
+  width: 69%;
+  height: 100%;
   backdrop-filter: blur(5px);
-  /* font-family: inherit; */
+  font-family: inherit;
   /* background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), linear-gradient(to left, #FFAA64, #FFC882, #FFE6A0); */
-  background: linear-gradient(to left, rgba(255, 170, 100, 0.5), rgba(255, 200, 130, 0.5), rgba(255, 230, 160, 0.5));
+
+  /* #B9B9BB: (185, 185, 187)
+  #CBCBCD: (203, 203, 205)
+  #DDDDDF: (221, 221, 223) */
+  background: linear-gradient(to left, rgba(185, 185, 187, 0.5), rgba(203, 203, 205, 0.5), rgba(221, 221, 223, 0.5));
+  /* background: linear-gradient(to left, rgba(255, 170, 100, 0.5), rgba(255, 200, 130, 0.5), rgba(255, 230, 160, 0.5)); */
+
+  /* background: linear-gradient(to left,#FFFFFF 100%, #FFFFFF 0%); */
+
   /* background-color: rgba(255, 255, 255, 0.5); */
   /* background: linear-gradient(to left, #FFAA64, #FFC882, #FFE6A0); */
   /* background: rgba(0, 0, 0, 0.5); */
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
   color: brown;
   transition: transform 0.8s ease-out; /* Animate the movement */
 }
@@ -212,9 +252,3 @@
 .curtain-move-right {
   transform: translateX(100%);
 }
-
-.curtain:hover {
-  background: linear-gradient(to left, #FFAA64, #FFC882, #FFE6A0);
-
-}
-

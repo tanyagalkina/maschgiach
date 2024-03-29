@@ -1,40 +1,42 @@
--- This module defines a simple single compoment with no effects
--- In addition to example functionality it has two small examples of iserting HTML pieces
-
 module App.Simple (component) where
 
 import Prelude
 
-import CSS (Color, Display(..), a, alignContent, alignItems, backgroundColor, backgroundImage, color, display, fontFamily, fontSize, height, justifyContent, margin, marginLeft, marginRight, marginTop, paddingLeft, paddingRight, paddingTop, pct, position, px, rgba, right, top, width, zIndex)
+import App.Colours (beige, brightred, brown, dark_yellow, green, lightgreen, orange, peach, salad, skyblue, softred, yellow, mintcream, blue)
+import CSS (Color, Display, a, alignContent, alignItems, backgroundColor, backgroundImage, block, border, borderRadius, bottom, boxShadow, color, display, displayNone, flex, flexBasis, flexDirection, flexStart, flexWrap, fontFamily, fontSize, height, inline, inlineBlock, justifyContent, left, lineHeight, margin, marginLeft, marginRight, marginTop, padding, paddingLeft, paddingRight, paddingTop, pct, position, px, rgba, right, solid, top, width, zIndex)
+import CSS.Common (none)
 import CSS.Cursor (move)
 import Control.Monad.State (state)
+import Control.Plus (empty)
+import Data.Array (fromFoldable, elem)
+import Data.ListEnglish (AdditiveGroup, ENumber, ENumberList, Kashrut(..), Source(..), findENumbersInList, showK, showSources)
+import Data.Maybe (Maybe(..))
 import Data.String.CodePoints (length)
--- import Effect.AVar (status)
+import Halogen (Namespace(..))
 import Halogen as H
 import Halogen.HTML (fromPlainHTML)
 import Halogen.HTML as HH
 import Halogen.HTML.CSS as CSS
-import Halogen.HTML.Events (onInput)
+import Halogen.HTML.Events (onClick, onInput)
 import Halogen.HTML.Events as HE
 import Halogen.HTML.Properties (InputType(..))
 import Halogen.HTML.Properties as HP
-
--- import Web.DOM.Element (classList)
-
+import Web.DOM.Document (doctype)
+import Web.DOM.ShadowRoot (ShadowRootMode(..))
 
 css :: forall r i. String -> HH.IProp (class :: String | r) i
 css = HP.class_ <<< HH.ClassName
 
 type State
-  = { count :: Int, moveCurtain :: Boolean}
+  = { moveCurtain :: Boolean, results:: ENumberList, card:: Maybe ENumber}
 
 data Action
-  = Increment | Decrement | OpenCurtainToTheRight String | CloseCurtainToTheLeft
+  = OpenCurtainToTheRight String | Search String | OpenCard ENumber
 component :: forall query input output m . H.Component query input output m 
 component =
   H.mkComponent
     { 
-     initialState: \_ -> { count: 0, moveCurtain: false}
+     initialState: \_ -> { moveCurtain: false, results: empty, card: Nothing}
     , render
     , eval: H.mkEval H.defaultEval { handleAction = handleAction }
     }
@@ -43,11 +45,13 @@ render :: forall cs m. State  -> H.ComponentHTML Action cs m
 render _state = 
   HH.div [HP.id "content-container"]
      [
-      halogenLink  -- 3. Child 
+    --  halogenLink  -- 3. Child 
     -- fromPlainHTML myPlainHTML
-     , HH.div [
-           CSS.style do
+      HH.div [
+            CSS.style do
              marginLeft $ pct 90.0
+             -- why this does not work ?
+             marginTop $ pct 10.0
          ]
          [HH.img 
           [ 
@@ -55,33 +59,81 @@ render _state =
           , HP.alt "language"
           ]
          ]
-      , HH.div [ css "center-container"] 
+        --  HP.class_ <<< HH.ClassName
+        -- ,HH.div [HP.class_ $  HH.ClassName "my-box"
+        --       , CSS.style do
+        --       -- height $ px 100.0
+        --       -- width $ px 800.0
+        --       border solid (px 2.0) blue
+        --       borderRadius (px 10.0) (px 10.0) (px 10.0) (px 10.0)
+        --       margin (px 20.0 )   (px 20.0 )   (px 20.0 )  (px 20.0 )  
+        --       padding (px 20.0 )   (px 20.0 )   (px 20.0 )  (px 20.0 )
+        --       display displayNone
+        --         ]
+        --   [HH.text "Best ENumber Dictionary Ever"]
+
+        --  ,HH.div [HP.class_ $  HH.ClassName "my-box"
+        --       , CSS.style do
+        --       -- height $ px 100.0
+        --       -- width $ px 500.0
+        --       border solid (px 2.0) blue
+        --       borderRadius (px 20.0) (px 20.0) (px 20.0) (px 20.0)
+        --       padding (px 20.0 )   (px 20.0 )   (px 20.0 )  (px 20.0 )
+        --       margin (px 20.0 )   (px 20.0 )   (px 20.0 )  (px 20.0 )
+        --       display block
+        --       lineHeight $ px 60.0  
+        --         ]
+        --   [HH.text "We must meet again We must meet again We mus meet again We must meet again WE must meet aga"]
+          
+        
       -- center container start 
-      --  TODO: Wrap this for Icon (img ) to have position : absolute
-        [  
-          HH.div 
-          [
-            css "my-simple-input"
-          ]
-          [
-            HH.input
-            [
-              HP.type_ HP.InputText
-              , HE.onValueInput \str -> OpenCurtainToTheRight str
-              , HP.placeholder "tezku le mitzvot!"
-            ]
-          ---------------------
-             , HH.img [
-              css "input-icon"
+      , HH.div [ css "center-container"] 
+          [HH.div 
+              [
+              css "my-simple-input"
+              ]
+              [
+              HH.img [
+              CSS.style do
+              -- -- width: 10vw; /* 10% of the viewport's width */
+              -- height: auto; /* The height will scale proportionally */
+                width $ px 35.0
+                height $ px 35.0
+                -- margin (px 20.0 )   (px 20.0 )   (px 20.0 )  (px 20.0 )
+                -- ]
             -- HP.src "../assets/lupe_2.png"
-             , HP.src "../assets/lupe.png"
-             , HP.alt "lupe"
+                ,HP.src "../assets/little_search.svg"
+               , HP.alt "lupe"
             --  , onInput \input -> OpenCurtainToTheRight input
              ]
+              , HH.input
+              [
+              HP.type_ HP.InputText
+              , HE.onValueInput \str -> OpenCurtainToTheRight str
+              , HE.onClick \_ -> Search ""
+              -- , HE.onValueInput\str -> Search str  
+              -- , HP.placeholder "tezku le mitzvot!"
+              ]
+          ---------------------
           ]
-          ]
+            --  ,HH.ul[
+            --   css "result_list"
+            --   , CSS.style do
+            --   margin (px 20.0 )   (px 20.0 )   (px 20.0 )  (px 20.0 )
+                
+            --  ] $ map renderENumber (fromFoldable _state.results)
+          -- TODO: make nice show results
+        -- , HH.p [
+        --  ]
+        --  [showResults _state.results]  
+        ]
           -----------------------
-          , HH.div [ 
+        -- , HH.div[ css "results-bar"] [
+        --    HH.ul_ $ map renderENumber (fromFoldable _state.results)
+        --   HH.text "I want to know where I am"
+        --  ,HH.text "I also want to know where I am"
+        -- ]
+        , HH.div [ 
                    HP.classes $ getCurtainClassList _state.moveCurtain
                    --  css "curtain"
                     --   TODO: clean the styles
@@ -89,9 +141,22 @@ render _state =
                        paddingTop $ pct 7.0
                        paddingRight $ px 40.0
                        paddingLeft $ px 70.0
+                      --  alignItems flexStart
                    ]
-                   [HH.text " This ENumber Dictionary is based on Sefer Mahor LeKaschrut and on Sefer of Rabbi Pantelyat; it is not exhaustive and is meant to be used as a reference only. For more information, please consult a competent Halachic authority."]
-          -- --------------------------
+                   [
+                    HH.div[
+                     HP.id "curtain-content-one"
+                     , CSS.style do
+                       margin (px 0.0 )   (px 10.0 )   (px 60.0 )  (px 10.0 ) 
+                    ] [HH.text " This ENumber Dictionary is based on Sefer Mahor LeKaschrut and on Sefer of Rabbi Pantelyat; it is not exhaustive and is meant to be used as a reference only. For more information, please consult a competent Halachic authority."]
+
+                    ,HH.div[
+                      HP.id "curtain-content-two"
+                      , CSS.style do
+                        margin (px 60.0) (px 20.0) (px 40.0) (px 10.0)
+                    ] [HH.text "One more text piece which we want to render into our Disclaimer Screen"]
+                  ]
+      --     -- --------------------------
       -- center container end
       -----------------------------------
 
@@ -110,6 +175,55 @@ render _state =
 
           ]
      ]
+
+
+showResults :: forall w . ENumberList -> HH.HTML w Action
+showResults arr = 
+  HH.div_
+    [ HH.h1_ [ HH.text ""]
+    -- TODO: should  I have an Array ENumber  | NonEmptyArray ENumber | ListENumber ( like we have now ) ??
+    , HH.ul_ $ map renderENumber (fromFoldable arr)
+    ]
+
+
+renderENumber :: forall w . ENumber -> HH.HTML w Action
+renderENumber eNumber =
+  HH.li [ css "my-list"]
+    [ HH.button 
+        [ css "button"
+          , CSS.style do
+            (backgroundColor $ (getBackgroundForKashrut eNumber))
+            (color $ getColorForKashrut eNumber)
+            -- my_style make reusable
+          , HE.onClick $ \_ -> OpenCard eNumber ]
+        [ HH.text (eNumber.name <> " " <> eNumber.e_number) ]
+    ]
+
+
+getBackgroundForKashrut :: ENumber -> Color
+getBackgroundForKashrut k = if (containsDairy k.source) then skyblue else  
+    case k.kosher of
+        NotKosher -> softred   
+        KosherIncludingPassover -> lightgreen
+        KosherNeedPassoverHashgoho -> green
+        UsuallyKosherRarelyNeedHashgoho -> yellow
+        OftenKosherNeedHashgoho -> orange
+        NeedHashgohoWholeYear -> softred
+        KosherForbidden -> brightred
+
+getColorForKashrut :: ENumber -> Color
+getColorForKashrut k = if (containsDairy k.source) then brown else  
+    case k.kosher of
+        NotKosher -> peach   
+        KosherIncludingPassover -> blue
+        KosherNeedPassoverHashgoho -> peach
+        UsuallyKosherRarelyNeedHashgoho -> brown
+        OftenKosherNeedHashgoho -> green
+        NeedHashgohoWholeYear -> brown
+        KosherForbidden -> peach        
+
+containsDairy:: Array Source -> Boolean
+containsDairy arr = elem Dairy arr  
 
 
 
@@ -145,10 +259,21 @@ getCurtainClassList moveCurtain =
 handleAction :: forall o m. Action → H.HalogenM State Action () o m Unit
 
 handleAction = case _ of
-  Increment -> H.modify_ \st -> st { count = st.count + 1 }
-  Decrement -> H.modify_ \st -> st { count = st.count - 1 }
-  OpenCurtainToTheRight str -> H.modify_ \st  -> st { count = st.count + 1, moveCurtain =  getLength str}
-  CloseCurtainToTheLeft -> H.modify_ \st -> st { count = st.count - 1, moveCurtain = false }
+  -- Increment -> H.modify_ \st -> st { count = st.count + 1 }
+  -- Decrement -> H.modify_ \st -> st { count = st.count - 1 }
+  OpenCurtainToTheRight str -> H.modify_ \st  -> st { moveCurtain =  getLength str, results = search str}
+  Search str -> H.modify_ \st -> st { results = search str}
+  OpenCard eNumber -> H.modify_ \st -> st { results = empty, card = Just eNumber}
+  -- OpenCard eNumber -> H.modify_ \st -> st { count = st.count + 1, moveCurtain = true, card}
+  -- CloseCurtainToTheLeft -> H.modify_ \st -> st { count = st.count - 1, moveCurtain = false }
+
+-- eHandleAction :: forall output m. EAction -> H.HalogenM EState EAction () output m Unit
+-- eHandleAction = case _ of
+--   Search str -> H.modify_ \st -> st { description = getDescription (head $ search str), results = search str }
+
+search :: String -> ENumberList
+search str = findENumbersInList str
+
 
 getLength :: String -> Boolean
 getLength str = case length str of
@@ -161,14 +286,8 @@ halogenLink = HH.div_
     CSS.style do
       color $ rgba 245 255 250 1.0
       marginTop $ px 40.0
-      marginLeft $ pct 20.0
+      marginLeft $ pct 15.0
   ] [ HH.text "schalom"]
-  -- , HH.p [
-  --   CSS.style do
-  --     backgroundColor $ rgba 0 0 0 0.1
-    
-  -- ][  HH.text "Please, dont panic, go more!"]
-  -- , HH.a [ HP.href "https://pursuit.purescript.org/packages/purescript-halogen/5.0.0/docs/Halogen.HTML" ] [ HH.text "Halogen HTML"]
   ]
 
 myPlainHTML :: HH.PlainHTML

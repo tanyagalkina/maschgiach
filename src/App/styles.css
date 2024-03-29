@@ -182,8 +182,8 @@
   /* height: 20%; */
 }
 
-@media (hover: hover) {
-  .e-number-card:hover {
+@media (hover: none) {
+  .e-number-card:active {
     opacity: 0.7;
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
     transform: scale(1.2, 1.2); /* Enlarge the div on hover */

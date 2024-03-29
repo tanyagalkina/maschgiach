@@ -161,8 +161,8 @@
   box-shadow: 0 6px 8px #00000026;
 }
 
-@media (hover: hover) {
-  .e-number-card:hover {
+@media (hover: none) {
+  .e-number-card:active {
     opacity: .7;
     transform: scale(1.2);
     box-shadow: 0 6px 8px #00000026;

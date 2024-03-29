@@ -161,6 +161,14 @@
   box-shadow: 0 6px 8px #00000026;
 }
 
+@media (hover: hover) {
+  .e-number-card:hover {
+    opacity: .7;
+    transform: scale(1.2);
+    box-shadow: 0 6px 8px #00000026;
+  }
+}
+
 .center-container {
   flex-direction: column;
   justify-content: space-between;

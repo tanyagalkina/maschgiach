@@ -213,7 +213,8 @@ renderENumber eNumber =
             -- (backgroundColor $ (getBackgroundForKashrut eNumber))
             -- (color $ getColorForKashrut eNumber)
             -- my_style make reusable
-          , HE.onClick $ \_ -> OpenCard eNumber ]
+          -- , HE.onClick $ \_ -> OpenCard eNumber 
+          ]
         [ HH.text (eNumber.name <> " " <> eNumber.e_number) ]
     
 

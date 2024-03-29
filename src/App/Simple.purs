@@ -97,9 +97,9 @@ render _state =
               CSS.style do
               -- -- width: 10vw; /* 10% of the viewport's width */
               -- height: auto; /* The height will scale proportionally */
-                width $ px 35.0
-                height $ px 35.0
-                -- margin (px 20.0 )   (px 20.0 )   (px 20.0 )  (px 20.0 )
+                width $ px 50.0
+                height $ px 50.0
+                margin (px 10.0 )   (px 10.0 )   (px 10.0 )  (px 10.0 )
                 -- ]
             -- HP.src "../assets/lupe_2.png"
                 ,HP.src "../assets/little_search.svg"
@@ -107,8 +107,11 @@ render _state =
             --  , onInput \input -> OpenCurtainToTheRight input
              ]
               , HH.input
+              
               [
               HP.type_ HP.InputText
+              , CSS.style do
+                fontSize $ px 40.0 
               , HE.onValueInput \str -> OpenCurtainToTheRight str
               , HE.onClick \_ -> Search ""
               -- , HE.onValueInput\str -> Search str  
@@ -148,12 +151,14 @@ render _state =
                      HP.id "curtain-content-one"
                      , CSS.style do
                        margin (px 0.0 )   (px 10.0 )   (px 60.0 )  (px 10.0 ) 
+                       fontSize $ px 20.0
                     ] [HH.text " This ENumber Dictionary is based on Sefer Mahor LeKaschrut and on Sefer of Rabbi Pantelyat; it is not exhaustive and is meant to be used as a reference only. For more information, please consult a competent Halachic authority."]
 
                     ,HH.div[
                       HP.id "curtain-content-two"
                       , CSS.style do
                         margin (px 60.0) (px 20.0) (px 40.0) (px 10.0)
+                        fontSize $ px 20.0
                     ] [HH.text "One more text piece which we want to render into our Disclaimer Screen"]
                   ]
       --     -- --------------------------

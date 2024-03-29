@@ -52653,7 +52653,7 @@ var handleAction = function(v) {
         $30.card = new _indexJs15.Just(v.value0);
         return $30;
     });
-    throw new Error("Failed pattern match at App.Simple (line 261, column 16 - line 266, column 82): " + [
+    throw new Error("Failed pattern match at App.Simple (line 266, column 16 - line 271, column 82): " + [
         v.constructor.name
     ]);
 };
@@ -52699,14 +52699,17 @@ var render = function(_state) {
                 css("my-simple-input")
             ])([
                 _indexJs21.img([
-                    _indexJs19.style(discard(_indexJs3.width(_indexJs4.px(35.0)))(function() {
-                        return _indexJs3.height(_indexJs4.px(35.0));
+                    _indexJs19.style(discard(_indexJs3.width(_indexJs4.px(50.0)))(function() {
+                        return discard(_indexJs3.height(_indexJs4.px(50.0)))(function() {
+                            return _indexJs3.margin(_indexJs4.px(10.0))(_indexJs4.px(10.0))(_indexJs4.px(10.0))(_indexJs4.px(10.0));
+                        });
                     })),
                     _indexJs23.src("../assets/little_search.svg"),
                     _indexJs23.alt("lupe")
                 ]),
                 _indexJs21.input([
                     type_(_indexJs10.InputText.value),
+                    _indexJs19.style(_indexJs2.fontSize(_indexJs4.px(40.0))),
                     _indexJs22.onValueInput(function(str) {
                         return new OpenCurtainToTheRight(str);
                     }),
@@ -52726,13 +52729,17 @@ var render = function(_state) {
         ])([
             _indexJs21.div([
                 _indexJs23.id("curtain-content-one"),
-                _indexJs19.style(_indexJs3.margin(_indexJs4.px(0.0))(_indexJs4.px(10.0))(_indexJs4.px(60.0))(_indexJs4.px(10.0)))
+                _indexJs19.style(discard(_indexJs3.margin(_indexJs4.px(0.0))(_indexJs4.px(10.0))(_indexJs4.px(60.0))(_indexJs4.px(10.0)))(function() {
+                    return _indexJs2.fontSize(_indexJs4.px(20.0));
+                }))
             ])([
                 _indexJs20.text(" This ENumber Dictionary is based on Sefer Mahor LeKaschrut and on Sefer of Rabbi Pantelyat; it is not exhaustive and is meant to be used as a reference only. For more information, please consult a competent Halachic authority.")
             ]),
             _indexJs21.div([
                 _indexJs23.id("curtain-content-two"),
-                _indexJs19.style(_indexJs3.margin(_indexJs4.px(60.0))(_indexJs4.px(20.0))(_indexJs4.px(40.0))(_indexJs4.px(10.0)))
+                _indexJs19.style(discard(_indexJs3.margin(_indexJs4.px(60.0))(_indexJs4.px(20.0))(_indexJs4.px(40.0))(_indexJs4.px(10.0)))(function() {
+                    return _indexJs2.fontSize(_indexJs4.px(20.0));
+                }))
             ])([
                 _indexJs20.text("One more text piece which we want to render into our Disclaimer Screen")
             ])
@@ -52764,7 +52771,7 @@ var getBackgroundForKashrut = function(k) {
     if (k.kosher instanceof _indexJs14.OftenKosherNeedHashgoho) return _indexJs.orange;
     if (k.kosher instanceof _indexJs14.NeedHashgohoWholeYear) return _indexJs.softred;
     if (k.kosher instanceof _indexJs14.KosherForbidden) return _indexJs.brightred;
-    throw new Error("Failed pattern match at App.Simple (line 205, column 5 - line 212, column 37): " + [
+    throw new Error("Failed pattern match at App.Simple (line 210, column 5 - line 217, column 37): " + [
         k.kosher.constructor.name
     ]);
 };
@@ -52778,7 +52785,7 @@ var getColorForKashrut = function(k) {
     if (k.kosher instanceof _indexJs14.OftenKosherNeedHashgoho) return _indexJs.green;
     if (k.kosher instanceof _indexJs14.NeedHashgohoWholeYear) return _indexJs.brown;
     if (k.kosher instanceof _indexJs14.KosherForbidden) return _indexJs.peach;
-    throw new Error("Failed pattern match at App.Simple (line 216, column 5 - line 223, column 33): " + [
+    throw new Error("Failed pattern match at App.Simple (line 221, column 5 - line 228, column 33): " + [
         k.kosher.constructor.name
     ]);
 };

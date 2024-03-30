@@ -52640,7 +52640,7 @@ var handleAction = function(v) {
         $30.card = new _indexJs17.Just(v.value0);
         return $30;
     });
-    throw new Error("Failed pattern match at App.Simple (line 296, column 16 - line 302, column 82): " + [
+    throw new Error("Failed pattern match at App.Simple (line 304, column 16 - line 310, column 82): " + [
         v.constructor.name
     ]);
 };
@@ -52696,7 +52696,14 @@ var renderENumber = function(eNumber) {
             return _indexJs2.color(_indexJs.brown);
         }))
     ])([
-        _indexJs22.text(eNumber.name + (" " + eNumber.e_number))
+        _indexJs22.text(eNumber.name + (" " + eNumber.e_number)),
+        _indexJs23.div([
+            css("sources")
+        ])([
+            _indexJs22.text(_indexJs16.showSources(eNumber.source)),
+            _indexJs23.br_,
+            _indexJs22.text(_indexJs16.showK(eNumber.kosher))
+        ])
     ]);
 };
 var containsDairy = function(arr) {
@@ -52712,7 +52719,7 @@ var getBackgroundForKashrut = function(k) {
     if (k.kosher instanceof _indexJs16.OftenKosherNeedHashgoho) return _indexJs.orange;
     if (k.kosher instanceof _indexJs16.NeedHashgohoWholeYear) return _indexJs.softred;
     if (k.kosher instanceof _indexJs16.KosherForbidden) return _indexJs.brightred;
-    throw new Error("Failed pattern match at App.Simple (line 240, column 5 - line 247, column 37): " + [
+    throw new Error("Failed pattern match at App.Simple (line 248, column 5 - line 255, column 37): " + [
         k.kosher.constructor.name
     ]);
 };
@@ -52726,7 +52733,7 @@ var getColorForKashrut = function(k) {
     if (k.kosher instanceof _indexJs16.OftenKosherNeedHashgoho) return _indexJs.green;
     if (k.kosher instanceof _indexJs16.NeedHashgohoWholeYear) return _indexJs.brown;
     if (k.kosher instanceof _indexJs16.KosherForbidden) return _indexJs.peach;
-    throw new Error("Failed pattern match at App.Simple (line 251, column 5 - line 258, column 33): " + [
+    throw new Error("Failed pattern match at App.Simple (line 259, column 5 - line 266, column 33): " + [
         k.kosher.constructor.name
     ]);
 };

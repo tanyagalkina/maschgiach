@@ -231,7 +231,15 @@ renderENumber eNumber =
           -- ,HE.onClick $ \_ -> CSS.style do
           --   backgroundColor brown
           ]
-        [ HH.text (eNumber.name <> " " <> eNumber.e_number) ]
+        [ HH.text (eNumber.name <> " " <> eNumber.e_number)
+         , HH.div [
+           css "sources"
+          --  , CSS.style do
+          --  fontSize $ px 20.0
+           ] [
+               HH.text (showSources eNumber.source)
+               ,HH.br_ 
+              ,HH.text (showK eNumber.kosher)]]
     
 
 

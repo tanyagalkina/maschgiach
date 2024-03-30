@@ -2,7 +2,7 @@ module App.Colours where
 
 import Prelude
 
-import CSS.Color (Color, rgba)
+import CSS.Color (Color, black, rgba)
 
 orange :: Color
 orange = rgba 255 165 0 1.0
@@ -43,7 +43,16 @@ dark_yellow :: Color
 dark_yellow = rgba 205 141 0 0.583
 
 grey :: Color
-grey = rgba 185 185 187 0.5
+grey = rgba 185 185 187 0.8
+
+nogrey :: Color
+nogrey = rgba 185 185 187 0.3
+
+israelblue :: Color
+israelblue = rgba 21 72 189 0.8
+
+black :: Color
+black = rgba 0 0 0 1.0
 
 yellow :: Color
 -- yellow = rgba 235 185 0 0.610

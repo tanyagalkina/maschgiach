@@ -64,7 +64,8 @@
 
 #content-container {
   min-height: 3000px;
-  display: block;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   width: 100%;
   font-family: monospace;
@@ -114,7 +115,7 @@
   justify-content: space-between;
   width: 70%;
   padding: 12px 20px;
-  border-radius: 5px;
+  border-radius: 4px;
   margin: 8px 0;
   border: 1px solid grey;
   background: linear-gradient(to left, #CBCBCD, #DDDDDF, #FFFFFF);
@@ -175,7 +176,7 @@
   display: inline-block;
   opacity: 0.8;
   border: 1px solid grey;
-  border-radius: 3px;
+  border-radius: 4px;
   /* margin-top: 5px; */
   margin-left: 10px;
   /* margin-right: 10px; */

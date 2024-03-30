@@ -52641,7 +52641,7 @@ var handleAction = function(v) {
         $30.card = new _indexJs18.Just(v.value0);
         return $30;
     });
-    throw new Error("Failed pattern match at App.Simple (line 305, column 16 - line 311, column 82): " + [
+    throw new Error("Failed pattern match at App.Simple (line 281, column 16 - line 287, column 82): " + [
         v.constructor.name
     ]);
 };
@@ -52695,7 +52695,7 @@ var getBackgroundForKashrut = function(k) {
     if (k.kosher instanceof _indexJs17.OftenKosherNeedHashgoho) return _indexJs.orange;
     if (k.kosher instanceof _indexJs17.NeedHashgohoWholeYear) return _indexJs.softred;
     if (k.kosher instanceof _indexJs17.KosherForbidden) return _indexJs.brightred;
-    throw new Error("Failed pattern match at App.Simple (line 249, column 5 - line 256, column 37): " + [
+    throw new Error("Failed pattern match at App.Simple (line 225, column 5 - line 232, column 37): " + [
         k.kosher.constructor.name
     ]);
 };
@@ -52710,7 +52710,7 @@ var getBackgroundForKashrut = function(k) {
 var renderENumber = function(eNumber) {
     return _indexJs24.div([
         css("e-number-card"),
-        _indexJs22.style(discard(_indexJs1.backgroundColor(_indexJs.grey))(function() {
+        _indexJs22.style(discard(_indexJs1.backgroundColor(_indexJs.nogrey))(function() {
             return discard(_indexJs3.color(_indexJs.brown))(function() {
                 return _indexJs2.borderLeft(_indexJs2.solid)(_indexJs5.em(0.7))(getBackgroundForKashrut(eNumber));
             });
@@ -52736,7 +52736,7 @@ var getColorForKashrut = function(k) {
     if (k.kosher instanceof _indexJs17.OftenKosherNeedHashgoho) return _indexJs.green;
     if (k.kosher instanceof _indexJs17.NeedHashgohoWholeYear) return _indexJs.brown;
     if (k.kosher instanceof _indexJs17.KosherForbidden) return _indexJs.peach;
-    throw new Error("Failed pattern match at App.Simple (line 260, column 5 - line 267, column 33): " + [
+    throw new Error("Failed pattern match at App.Simple (line 236, column 5 - line 243, column 33): " + [
         k.kosher.constructor.name
     ]);
 };
@@ -52758,11 +52758,14 @@ var render = function(_state) {
     ])([
         _indexJs24.div([
             _indexJs22.style(discard(_indexJs4.marginLeft(_indexJs5.pct(90.0)))(function() {
-                return _indexJs4.marginTop(_indexJs5.pct(10.0));
+                return _indexJs4.marginTop(_indexJs5.em(2.0));
             }))
         ])([
             _indexJs24.img([
-                _indexJs26.src("../assets/ellipse_ek4.png"),
+                _indexJs22.style(discard(_indexJs4.width(_indexJs5.px(40.0)))(function() {
+                    return _indexJs4.height(_indexJs5.px(40.0));
+                })),
+                _indexJs26.src("../assets/ivrit3.png"),
                 _indexJs26.alt("language")
             ])
         ]),
@@ -61135,6 +61138,9 @@ parcelHelpers.export(exports, "mintcream", ()=>mintcream);
 parcelHelpers.export(exports, "blue", ()=>blue);
 parcelHelpers.export(exports, "dark_yellow", ()=>dark_yellow);
 parcelHelpers.export(exports, "grey", ()=>grey);
+parcelHelpers.export(exports, "nogrey", ()=>nogrey);
+parcelHelpers.export(exports, "israelblue", ()=>israelblue);
+parcelHelpers.export(exports, "black", ()=>black);
 parcelHelpers.export(exports, "yellow", ()=>yellow);
 parcelHelpers.export(exports, "salad", ()=>salad);
 parcelHelpers.export(exports, "brown", ()=>brown);
@@ -61148,17 +61154,20 @@ var salad = /* #__PURE__ */ _indexJs.rgba(173)(255)(0)(0.735);
 // Lavender: rgba(230, 230, 250, 1.0)
 var peach = /* #__PURE__ */ _indexJs.rgba(255)(218)(185)(1.0);
 var orange = /* #__PURE__ */ _indexJs.rgba(255)(165)(0)(1.0);
+var nogrey = /* #__PURE__ */ _indexJs.rgba(185)(185)(187)(0.3);
 // Peach: rgba(255, 218, 185, 1.0)
 // Beige: rgba(245, 245, 220, 1.0)
 var mintcream = /* #__PURE__ */ _indexJs.rgba(245)(255)(250)(1.0);
 var lightgreen = /* #__PURE__ */ _indexJs.rgba(50)(205)(50)(1.0);
-var grey = /* #__PURE__ */ _indexJs.rgba(185)(185)(187)(0.5);
+var israelblue = /* #__PURE__ */ _indexJs.rgba(21)(72)(189)(0.8);
+var grey = /* #__PURE__ */ _indexJs.rgba(185)(185)(187)(0.8);
 var green = /* #__PURE__ */ _indexJs.rgba(0)(128)(0)(0.8);
 var dark_yellow = /* #__PURE__ */ _indexJs.rgba(205)(141)(0)(0.583);
 var brown = /* #__PURE__ */ _indexJs.rgba(118)(18)(18)(1.0);
 var brightred = /* #__PURE__ */ _indexJs.rgba(255)(69)(0)(1.0);
 // Mint Cream: rgba(245, 255, 250, 1.0)
 var blue = /* #__PURE__ */ _indexJs.rgba(0)(0)(188)(0.5);
+var black = /* #__PURE__ */ _indexJs.rgba(0)(0)(0)(1.0);
 var beige = /* #__PURE__ */ _indexJs.rgba(210)(180)(140)(0.8);
 
 },{"../Color/index.js":"8f2Dw","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3imO7":[function(require,module,exports) {

@@ -3,8 +3,8 @@ module App.Simple (component) where
 import Data.Int
 import Prelude
 
-import App.Colours (beige, blue, brightred, brown, dark_yellow, green, lightgreen, mintcream, orange, peach, salad, skyblue, softred, yellow, grey)
-import CSS (Color, Display, a, alignContent, alignItems, backgroundColor, backgroundImage, block, border, borderRadius, bottom, boxShadow, color, display, displayNone, flex, flexBasis, flexDirection, flexStart, flexWrap, fontFamily, fontSize, height, inline, inlineBlock, justifyContent, left, lineHeight, margin, marginLeft, marginRight, marginTop, maxHeight, minHeight, padding, paddingLeft, paddingRight, paddingTop, pct, position, px, rgba, right, solid, top, em, width, zIndex, borderLeft)
+import App.Colours (beige, blue, brightred, brown, dark_yellow, green, grey, israelblue, lightgreen, mintcream, orange, peach, salad, skyblue, softred, yellow, israelblue, nogrey, black)
+import CSS (Color, Display, a, alignContent, alignItems, backgroundColor, backgroundImage, block, border, borderLeft, borderRadius, bottom, boxShadow, color, display, displayNone, em, flex, flexBasis, flexDirection, flexStart, flexWrap, fontFamily, fontSize, height, inline, inlineBlock, justifyContent, left, lineHeight, margin, marginLeft, marginRight, marginTop, maxHeight, minHeight, padding, paddingLeft, paddingRight, paddingTop, pct, position, px, rgba, right, solid, top, width, zIndex)
 import CSS.Common (none)
 import CSS.Cursor (move)
 import CSS.Geometry (minHeight, maxHeight)
@@ -54,42 +54,17 @@ render _state =
       HH.div [
             CSS.style do
              marginLeft $ pct 90.0
-             -- why this does not work ?
-             marginTop $ pct 10.0
+             marginTop $ em 2.0
          ]
          [HH.img 
-          [ 
-            HP.src "../assets/ellipse_ek4.png"
+          [
+            CSS.style do 
+             width $ px 40.0
+             height $ px 40.0
+           , HP.src "../assets/ivrit3.png"
           , HP.alt "language"
           ]
          ]
-        --  HP.class_ <<< HH.ClassName
-        -- ,HH.div [HP.class_ $  HH.ClassName "my-box"
-        --       , CSS.style do
-        --       -- height $ px 100.0
-        --       -- width $ px 800.0
-        --       border solid (px 2.0) blue
-        --       borderRadius (px 10.0) (px 10.0) (px 10.0) (px 10.0)
-        --       margin (px 20.0 )   (px 20.0 )   (px 20.0 )  (px 20.0 )  
-        --       padding (px 20.0 )   (px 20.0 )   (px 20.0 )  (px 20.0 )
-        --       display displayNone
-        --         ]
-        --   [HH.text "Best ENumber Dictionary Ever"]
-
-        --  ,HH.div [HP.class_ $  HH.ClassName "my-box"
-        --       , CSS.style do
-        --       -- height $ px 100.0
-        --       -- width $ px 500.0
-        --       border solid (px 2.0) blue
-        --       borderRadius (px 20.0) (px 20.0) (px 20.0) (px 20.0)
-        --       padding (px 20.0 )   (px 20.0 )   (px 20.0 )  (px 20.0 )
-        --       margin (px 20.0 )   (px 20.0 )   (px 20.0 )  (px 20.0 )
-        --       display block
-        --       lineHeight $ px 60.0  
-        --         ]
-        --   [HH.text "We must meet again We must meet again We mus meet again We must meet again WE must meet aga"]
-          
-        
       -- center container start 
       , HH.div [ css "center-container"] 
           [HH.div 
@@ -222,7 +197,7 @@ renderENumber eNumber =
           css "e-number-card"
           -- css "button"
           , CSS.style do
-          backgroundColor grey
+          backgroundColor nogrey
           color brown
           borderLeft solid (em 0.7) $ getBackgroundForKashrut eNumber 
             -- (backgroundColor $ (getBackgroundForKashrut eNumber))

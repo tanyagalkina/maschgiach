@@ -4,9 +4,10 @@ import Data.Int
 import Prelude
 
 import App.Colours (beige, blue, brightred, brown, dark_yellow, green, lightgreen, mintcream, orange, peach, salad, skyblue, softred, yellow, grey)
-import CSS (Color, Display, a, alignContent, alignItems, backgroundColor, backgroundImage, block, border, borderRadius, bottom, boxShadow, color, display, displayNone, flex, flexBasis, flexDirection, flexStart, flexWrap, fontFamily, fontSize, height, inline, inlineBlock, justifyContent, left, lineHeight, margin, marginLeft, marginRight, marginTop, minHeight, padding, paddingLeft, paddingRight, paddingTop, pct, position, px, rgba, right, solid, top, width, zIndex)
+import CSS (Color, Display, a, alignContent, alignItems, backgroundColor, backgroundImage, block, border, borderRadius, bottom, boxShadow, color, display, displayNone, flex, flexBasis, flexDirection, flexStart, flexWrap, fontFamily, fontSize, height, inline, inlineBlock, justifyContent, left, lineHeight, margin, marginLeft, marginRight, marginTop, maxHeight, minHeight, padding, paddingLeft, paddingRight, paddingTop, pct, position, px, rgba, right, solid, top, width, zIndex)
 import CSS.Common (none)
 import CSS.Cursor (move)
+import CSS.Geometry (minHeight, maxHeight)
 import CSS.Size (vh)
 import Control.Monad.State (state)
 import Control.Plus (empty)
@@ -184,6 +185,11 @@ render _state =
      ]
 
 
+calculateMinHeight:: Int -> Number
+calculateMinHeight 1 = 50.0
+calculateMinHeight len = 15.0 * (toNumber len)
+
+
 showResults :: forall w . ENumberList -> HH.HTML w Action
 showResults arr = 
   HH.div [
@@ -192,7 +198,10 @@ showResults arr =
     ,CSS.style do
     -- minHeight $ px (toNumber (List.length arr) * 40.0)
     --   width $ pct 100.0
-    minHeight $ vh (toNumber (List.length arr) * 15.0)
+    minHeight $ vh (calculateMinHeight $ List.length arr)
+    -- minHeight $ vh 60.0
+    maxHeight $ vh 80.0
+    -- minHeight $ vh 50.0
   ] $ map renderENumber (fromFoldable arr)
     -- [ HH.h1_ [ HH.text ""]
     -- TODO: should  I have an Array ENumber  | NonEmptyArray ENumber | ListENumber ( like we have now ) ??

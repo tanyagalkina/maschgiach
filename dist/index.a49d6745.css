@@ -131,14 +131,12 @@
 }
 
 .results-bar {
-  background: linear-gradient(to right, #cbcbcd, #dddddf, #fff);
-  border: 1px solid gray;
-  border-radius: 5px;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   width: 70%;
   margin-top: 1%;
+  font-size: 20px;
   display: flex;
   position: absolute;
   top: 25vh;
@@ -148,17 +146,17 @@
 .e-number-card {
   border: 1px solid gray;
   border-radius: 3px;
-  flex-basis: 0%;
   width: 99%;
+  height: 3em;
   margin: 3px 10px 10px;
   padding: 10px;
-  transition: all .3s;
+  transition: height .5s;
   display: block;
 }
 
 .e-number-card:hover {
   opacity: .7;
-  flex-grow: 2;
+  height: 30em;
   box-shadow: 0 6px 8px #00000026;
 }
 

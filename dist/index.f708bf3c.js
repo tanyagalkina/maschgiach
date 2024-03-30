@@ -52569,10 +52569,10 @@ var empty = /* #__PURE__ */ _indexJs9.empty(_indexJs15.plusList);
 var modify_ = /* #__PURE__ */ _indexJs8.modify_(_indexJs26.monadStateHalogenM);
 var discard = /* #__PURE__ */ _indexJs7.discard(_indexJs7.discardUnit)(_indexJs5.bindStyleM);
 var append = /* #__PURE__ */ _indexJs18.append(_indexJs18.semigroupArray);
+var elem = /* #__PURE__ */ _indexJs11.elem(_indexJs16.eqSource);
 var map = /* #__PURE__ */ _indexJs12.map(_indexJs12.functorArray);
 var fromFoldable = /* #__PURE__ */ _indexJs11.fromFoldable(_indexJs15.foldableList);
 var type_ = /* #__PURE__ */ _indexJs25.type_(_indexJs22.isPropInputType);
-var elem = /* #__PURE__ */ _indexJs11.elem(_indexJs16.eqSource);
 var OpenCurtainToTheRight = /* #__PURE__ */ function() {
     function OpenCurtainToTheRight(value0) {
         this.value0 = value0;
@@ -52621,26 +52621,26 @@ var myPlainHTML = /* #__PURE__ */ _indexJs22.text("Hello, Plain HTML Type!");
 //   OpenCard eNumber -> H.modify_ \st -> st { description = eNumber.name, results = empty, card = Just eNumber}
 var handleAction = function(v) {
     if (v instanceof OpenCurtainToTheRight) return modify_(function(st) {
-        var $21 = {};
-        for(var $22 in st)if (({}).hasOwnProperty.call(st, $22)) $21[$22] = st[$22];
-        $21.moveCurtain = true;
-        $21.results = search(v.value0);
-        return $21;
+        var $22 = {};
+        for(var $23 in st)if (({}).hasOwnProperty.call(st, $23)) $22[$23] = st[$23];
+        $22.moveCurtain = true;
+        $22.results = search(v.value0);
+        return $22;
     });
     if (v instanceof Search) return modify_(function(st) {
-        var $25 = {};
-        for(var $26 in st)if (({}).hasOwnProperty.call(st, $26)) $25[$26] = st[$26];
-        $25.results = search(v.value0);
-        return $25;
+        var $26 = {};
+        for(var $27 in st)if (({}).hasOwnProperty.call(st, $27)) $26[$27] = st[$27];
+        $26.results = search(v.value0);
+        return $26;
     });
     if (v instanceof OpenCard) return modify_(function(st) {
-        var $29 = {};
-        for(var $30 in st)if (({}).hasOwnProperty.call(st, $30)) $29[$30] = st[$30];
-        $29.results = empty;
-        $29.card = new _indexJs17.Just(v.value0);
-        return $29;
+        var $30 = {};
+        for(var $31 in st)if (({}).hasOwnProperty.call(st, $31)) $30[$31] = st[$31];
+        $30.results = empty;
+        $30.card = new _indexJs17.Just(v.value0);
+        return $30;
     });
-    throw new Error("Failed pattern match at App.Simple (line 287, column 16 - line 293, column 82): " + [
+    throw new Error("Failed pattern match at App.Simple (line 296, column 16 - line 302, column 82): " + [
         v.constructor.name
     ]);
 };
@@ -52678,8 +52678,8 @@ var getCurtainClassList = function(moveCurtain) {
         return [];
     }());
 };
-var css = function($39) {
-    return _indexJs25.class_(_indexJs27.ClassName($39));
+var css = function($41) {
+    return _indexJs25.class_(_indexJs27.ClassName($41));
 };
 // [ HH.h1_ [ HH.text ""]
 // TODO: should  I have an Array ENumber  | NonEmptyArray ENumber | ListENumber ( like we have now ) ??
@@ -52699,10 +52699,47 @@ var renderENumber = function(eNumber) {
         _indexJs22.text(eNumber.name + (" " + eNumber.e_number))
     ]);
 };
+var containsDairy = function(arr) {
+    return elem(_indexJs16.Dairy.value)(arr);
+};
+var getBackgroundForKashrut = function(k) {
+    var $36 = containsDairy(k.source);
+    if ($36) return _indexJs.skyblue;
+    if (k.kosher instanceof _indexJs16.NotKosher) return _indexJs.softred;
+    if (k.kosher instanceof _indexJs16.KosherIncludingPassover) return _indexJs.lightgreen;
+    if (k.kosher instanceof _indexJs16.KosherNeedPassoverHashgoho) return _indexJs.green;
+    if (k.kosher instanceof _indexJs16.UsuallyKosherRarelyNeedHashgoho) return _indexJs.yellow;
+    if (k.kosher instanceof _indexJs16.OftenKosherNeedHashgoho) return _indexJs.orange;
+    if (k.kosher instanceof _indexJs16.NeedHashgohoWholeYear) return _indexJs.softred;
+    if (k.kosher instanceof _indexJs16.KosherForbidden) return _indexJs.brightred;
+    throw new Error("Failed pattern match at App.Simple (line 240, column 5 - line 247, column 37): " + [
+        k.kosher.constructor.name
+    ]);
+};
+var getColorForKashrut = function(k) {
+    var $38 = containsDairy(k.source);
+    if ($38) return _indexJs.brown;
+    if (k.kosher instanceof _indexJs16.NotKosher) return _indexJs.peach;
+    if (k.kosher instanceof _indexJs16.KosherIncludingPassover) return _indexJs.blue;
+    if (k.kosher instanceof _indexJs16.KosherNeedPassoverHashgoho) return _indexJs.peach;
+    if (k.kosher instanceof _indexJs16.UsuallyKosherRarelyNeedHashgoho) return _indexJs.brown;
+    if (k.kosher instanceof _indexJs16.OftenKosherNeedHashgoho) return _indexJs.green;
+    if (k.kosher instanceof _indexJs16.NeedHashgohoWholeYear) return _indexJs.brown;
+    if (k.kosher instanceof _indexJs16.KosherForbidden) return _indexJs.peach;
+    throw new Error("Failed pattern match at App.Simple (line 251, column 5 - line 258, column 33): " + [
+        k.kosher.constructor.name
+    ]);
+};
+var calculateMinHeight = function(v) {
+    if (v === 1) return 50.0;
+    return 15.0 * _indexJs13.toNumber(v);
+};
 var showResults = function(arr) {
     return _indexJs23.div([
         css("results-bar"),
-        _indexJs21.style(_indexJs3.minHeight(_indexJs4.vh(_indexJs13.toNumber(_indexJs14.length(arr)) * 15.0)))
+        _indexJs21.style(discard(_indexJs3.minHeight(_indexJs4.vh(calculateMinHeight(_indexJs14.length(arr)))))(function() {
+            return _indexJs3.maxHeight(_indexJs4.vh(80.0));
+        }))
     ])(map(renderENumber)(fromFoldable(arr)));
 };
 var render = function(_state) {
@@ -52790,37 +52827,6 @@ var render = function(_state) {
         ])
     ]);
 };
-var containsDairy = function(arr) {
-    return elem(_indexJs16.Dairy.value)(arr);
-};
-var getBackgroundForKashrut = function(k) {
-    var $35 = containsDairy(k.source);
-    if ($35) return _indexJs.skyblue;
-    if (k.kosher instanceof _indexJs16.NotKosher) return _indexJs.softred;
-    if (k.kosher instanceof _indexJs16.KosherIncludingPassover) return _indexJs.lightgreen;
-    if (k.kosher instanceof _indexJs16.KosherNeedPassoverHashgoho) return _indexJs.green;
-    if (k.kosher instanceof _indexJs16.UsuallyKosherRarelyNeedHashgoho) return _indexJs.yellow;
-    if (k.kosher instanceof _indexJs16.OftenKosherNeedHashgoho) return _indexJs.orange;
-    if (k.kosher instanceof _indexJs16.NeedHashgohoWholeYear) return _indexJs.softred;
-    if (k.kosher instanceof _indexJs16.KosherForbidden) return _indexJs.brightred;
-    throw new Error("Failed pattern match at App.Simple (line 231, column 5 - line 238, column 37): " + [
-        k.kosher.constructor.name
-    ]);
-};
-var getColorForKashrut = function(k) {
-    var $37 = containsDairy(k.source);
-    if ($37) return _indexJs.brown;
-    if (k.kosher instanceof _indexJs16.NotKosher) return _indexJs.peach;
-    if (k.kosher instanceof _indexJs16.KosherIncludingPassover) return _indexJs.blue;
-    if (k.kosher instanceof _indexJs16.KosherNeedPassoverHashgoho) return _indexJs.peach;
-    if (k.kosher instanceof _indexJs16.UsuallyKosherRarelyNeedHashgoho) return _indexJs.brown;
-    if (k.kosher instanceof _indexJs16.OftenKosherNeedHashgoho) return _indexJs.green;
-    if (k.kosher instanceof _indexJs16.NeedHashgohoWholeYear) return _indexJs.brown;
-    if (k.kosher instanceof _indexJs16.KosherForbidden) return _indexJs.peach;
-    throw new Error("Failed pattern match at App.Simple (line 242, column 5 - line 249, column 33): " + [
-        k.kosher.constructor.name
-    ]);
-};
 var component = /* #__PURE__ */ function() {
     return _indexJs20.mkComponent({
         initialState: function(v) {
@@ -52841,7 +52847,7 @@ var component = /* #__PURE__ */ function() {
     });
 }();
 
-},{"../CSS.Font/index.js":"9Iwns","../CSS.Geometry/index.js":"54WNO","../CSS.Size/index.js":"cd0fS","../CSS.Stylesheet/index.js":"k97a8","../Color/index.js":"8f2Dw","../Control.Bind/index.js":"5hjxD","../Control.Monad.State.Class/index.js":"ls1CC","../Data.Semigroup/index.js":"3JeZO","../Data.String.CodePoints/index.js":"1lgpW","../Halogen.Component/index.js":"8dM7y","../Halogen.HTML.CSS/index.js":"zRRWZ","../Halogen.HTML.Core/index.js":"9NBcR","../Halogen.HTML.Elements/index.js":"7rm1k","../Halogen.HTML.Events/index.js":"aoDbU","../Halogen.HTML.Properties/index.js":"6klmN","../Halogen.Query.HalogenM/index.js":"kbUmW","../Web.HTML.Common/index.js":"hCMtm","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../Control.Plus/index.js":"jm5q9","../Data.List.Types/index.js":"5Eszv","../Data.ListEnglish/index.js":"c1K1e","../Data.Maybe/index.js":"7bX1p","../Data.Array/index.js":"fFSAq","../Data.Functor/index.js":"l8Eoe","../App.Colours/index.js":"c6QRT","../CSS.Background/index.js":"3imO7","../DOM.HTML.Indexed.InputType/index.js":"8lpXU","../Data.Int/index.js":"ezDMN","../Data.List/index.js":"7Vb9H"}],"9Iwns":[function(require,module,exports) {
+},{"../CSS.Font/index.js":"9Iwns","../CSS.Geometry/index.js":"54WNO","../CSS.Size/index.js":"cd0fS","../CSS.Stylesheet/index.js":"k97a8","../Color/index.js":"8f2Dw","../Control.Bind/index.js":"5hjxD","../Control.Monad.State.Class/index.js":"ls1CC","../Data.Semigroup/index.js":"3JeZO","../Data.String.CodePoints/index.js":"1lgpW","../Halogen.Component/index.js":"8dM7y","../Halogen.HTML.CSS/index.js":"zRRWZ","../Halogen.HTML.Core/index.js":"9NBcR","../Halogen.HTML.Elements/index.js":"7rm1k","../Halogen.HTML.Events/index.js":"aoDbU","../Halogen.HTML.Properties/index.js":"6klmN","../Halogen.Query.HalogenM/index.js":"kbUmW","../Web.HTML.Common/index.js":"hCMtm","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../Control.Plus/index.js":"jm5q9","../Data.List.Types/index.js":"5Eszv","../Data.ListEnglish/index.js":"c1K1e","../Data.Maybe/index.js":"7bX1p","../Data.Array/index.js":"fFSAq","../Data.Functor/index.js":"l8Eoe","../App.Colours/index.js":"c6QRT","../CSS.Background/index.js":"3imO7","../DOM.HTML.Indexed.InputType/index.js":"8lpXU","../Data.List/index.js":"7Vb9H","../Data.Int/index.js":"ezDMN"}],"9Iwns":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "color", ()=>color);

@@ -16,15 +16,18 @@
 }
 
 .my-input:focus {
-  outline: none; /* Removes the focus outline */
-  border: none; /* Ensures no border appears on focus */
+  outline: none;
+  /* Removes the focus outline */
+  border: none;
+  /* Ensures no border appears on focus */
 }
 
 .button {
   left: 10%;
   padding: 10px 20px;
   border: none;
-  border-radius: 18px; /* Rounded corners */
+  border-radius: 18px;
+  /* Rounded corners */
   /* background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%); */
   color: white;
   font-size: 16px;
@@ -59,109 +62,110 @@
   font-size: 30px;
 }
 
-    #content-container {
-      min-height: 3000px;
-      display: block;
-      overflow: hidden;
-      width: 100%;
-      font-family: monospace;
-    }
-    
-    .footer {
-      position: absolute;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      border-radius: 5px;
-      bottom: 0;
-      width: 100%; 
-      height: 7%;
-      border: solid 1px grey;
-      background: radial-gradient(circle,  #B9B9BB, #CBCBCD, #DDDDDF, #FFFFFF);
-      padding: 20px;
-    } 
-    
-    .footer-text {
-      font-size: 1em;
-      margin: 0;
-      color: brown;
-    }
-    
-    .footer-line {
-      width: 100%;
-      height: 1px;
-      background-color: brown;
-      margin-top: 20px
-    }
-    
-    .resources {
-      padding: 0.8em;
-      font-size: 0.8em;
-    }
-    
-    
-    .my-simple-input {
-      position: absolute;
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-      top: 15vh;
-      left: 15%;
-      justify-content: space-between;
-      width: 70%;
-      padding: 12px 20px;
-      border-radius: 5px;
-      margin: 8px 0;
-      border: 1px solid grey;
-      background: linear-gradient(to left, #CBCBCD, #DDDDDF, #FFFFFF); 
-      color: rgb(118, 18, 18);
-      font-size: 20px;
-      font-family: monospace;
-    }
+#content-container {
+  min-height: 3000px;
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  font-family: monospace;
+}
 
-    
-    .my-simple-input:focus,
-    .my-simple-input:active,
-    .my-simple-input:hover,
-    .my-simple-input:visited
-    {
-      border: 1px solid grey !important; /* Keeps the border white on focus */
-      outline: none !important; /* Removes the focus outline */
-    }
-    
-    .my-simple-input input {
-      border: none;
-      background: transparent;
-      outline: none; 
-      color: inherit;
-      font-size: inherit;
-      font-family: inherit; 
-      width: 96%; 
-    } 
-    
-    
-    .results-bar {
-      margin-top: 1%;
-      position: absolute;
-      display: flex;
-      flex-direction: column;
-      border: 1px solid grey;
-      border-radius: 5px;
-      top: 25vh;
-      left: 15%;
-      width: 70%;
-      /* min-height: 100vh; */
-      align-items: center;
-      justify-content: center;
-      position: absolute;
-      background: linear-gradient(to right, #CBCBCD, #DDDDDF, #FFFFFF); 
-    }
+.footer {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  bottom: 0;
+  width: 100%;
+  height: 7%;
+  border: solid 1px grey;
+  background: radial-gradient(circle, #B9B9BB, #CBCBCD, #DDDDDF, #FFFFFF);
+  padding: 20px;
+}
+
+.footer-text {
+  font-size: 1em;
+  margin: 0;
+  color: brown;
+}
+
+.footer-line {
+  width: 100%;
+  height: 1px;
+  background-color: brown;
+  margin-top: 20px
+}
+
+.resources {
+  padding: 0.8em;
+  font-size: 0.8em;
+}
+
+
+.my-simple-input {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  top: 15vh;
+  left: 15%;
+  justify-content: space-between;
+  width: 70%;
+  padding: 12px 20px;
+  border-radius: 5px;
+  margin: 8px 0;
+  border: 1px solid grey;
+  background: linear-gradient(to left, #CBCBCD, #DDDDDF, #FFFFFF);
+  color: rgb(118, 18, 18);
+  font-size: 20px;
+  font-family: monospace;
+}
+
+
+.my-simple-input:focus,
+.my-simple-input:active,
+.my-simple-input:hover,
+.my-simple-input:visited {
+  border: 1px solid grey !important;
+  /* Keeps the border white on focus */
+  outline: none !important;
+  /* Removes the focus outline */
+}
+
+.my-simple-input input {
+  border: none;
+  background: transparent;
+  outline: none;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  width: 96%;
+}
+
+
+.results-bar {
+  margin-top: 1%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid grey;
+  border-radius: 5px; */
+  top: 25vh;
+  left: 15%;
+  width: 70%;
+  font-size: 20px;
+  /* min-height: 100vh; */
+  align-items: center;
+  justify-content: flex-start;
+  position: absolute;
+  /* background: linear-gradient(to right, #CBCBCD, #DDDDDF, #FFFFFF); */
+}
 
 .e-number-card {
   width: 99%;
-  flex-basis: 0%;
-  /* height: 2em; */
+  height: 3em;
   display: block;
   border: 1px solid grey;
   border-radius: 3px;
@@ -175,13 +179,14 @@
   padding-left: 10px;
   /* transition: transform 0.3s ease; */
   transition: all 0.3s ease;
+  transition: height 0.5s ease;
 }
 
 .e-number-card:hover {
   opacity: 0.7;
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
   /* height: 20%; */
-  flex-grow: 2;
+  height: 30em;
   /* transform: scale(1, 2);  */
   /* background-color: #f1f1f1; */
   /* height: 20%; */
@@ -199,9 +204,12 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center; /* Align items to the start of the container */
-  height: 100vh; /* Take up the full height of the viewport */
-  padding-top: 5vh; /* Adjust this value to control how far down from the top the input appears */
+  align-items: center;
+  /* Align items to the start of the container */
+  height: 100vh;
+  /* Take up the full height of the viewport */
+  padding-top: 5vh;
+  /* Adjust this value to control how far down from the top the input appears */
 }
 
 .curtain {
@@ -221,9 +229,11 @@
   font-family: inherit;
   background: linear-gradient(to left, rgba(185, 185, 187, 0.5), rgba(203, 203, 205, 0.5), rgba(221, 221, 223, 0.5));
   color: brown;
-  transition: transform 0.8s ease-out; /* Animate the movement */
+  transition: transform 0.8s ease-out;
+  /* Animate the movement */
 }
 
 .curtain-move-right {
   transform: translateX(100%);
 }
+

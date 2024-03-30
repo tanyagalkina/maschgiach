@@ -154,11 +154,12 @@
   border-radius: 3px;
   width: 100%;
   height: 3em;
-  margin: 3px 10px 10px;
+  margin: 10px 10px 5px;
   padding: 10px;
   font-size: 30px;
-  transition: height .5s;
-  display: block;
+  line-height: 1.2em;
+  transition: height .7s;
+  display: inline-block;
 }
 
 .e-number-card:hover .sources {

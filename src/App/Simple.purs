@@ -4,7 +4,7 @@ import Data.Int
 import Prelude
 
 import App.Colours (beige, blue, brightred, brown, dark_yellow, green, lightgreen, mintcream, orange, peach, salad, skyblue, softred, yellow, grey)
-import CSS (Color, Display, a, alignContent, alignItems, backgroundColor, backgroundImage, block, border, borderRadius, bottom, boxShadow, color, display, displayNone, flex, flexBasis, flexDirection, flexStart, flexWrap, fontFamily, fontSize, height, inline, inlineBlock, justifyContent, left, lineHeight, margin, marginLeft, marginRight, marginTop, maxHeight, minHeight, padding, paddingLeft, paddingRight, paddingTop, pct, position, px, rgba, right, solid, top, width, zIndex)
+import CSS (Color, Display, a, alignContent, alignItems, backgroundColor, backgroundImage, block, border, borderRadius, bottom, boxShadow, color, display, displayNone, flex, flexBasis, flexDirection, flexStart, flexWrap, fontFamily, fontSize, height, inline, inlineBlock, justifyContent, left, lineHeight, margin, marginLeft, marginRight, marginTop, maxHeight, minHeight, padding, paddingLeft, paddingRight, paddingTop, pct, position, px, rgba, right, solid, top, em, width, zIndex, borderLeft)
 import CSS.Common (none)
 import CSS.Cursor (move)
 import CSS.Geometry (minHeight, maxHeight)
@@ -224,6 +224,7 @@ renderENumber eNumber =
           , CSS.style do
           backgroundColor grey
           color brown
+          borderLeft solid (em 0.7) $ getBackgroundForKashrut eNumber 
             -- (backgroundColor $ (getBackgroundForKashrut eNumber))
             -- (color $ getColorForKashrut eNumber)
             -- my_style make reusable

@@ -52539,40 +52539,41 @@ parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "component", ()=>component);
 var _indexJs = require("../App.Colours/index.js");
 var _indexJs1 = require("../CSS.Background/index.js");
-var _indexJs2 = require("../CSS.Font/index.js");
-var _indexJs3 = require("../CSS.Geometry/index.js");
-var _indexJs4 = require("../CSS.Size/index.js");
-var _indexJs5 = require("../CSS.Stylesheet/index.js");
-var _indexJs6 = require("../Color/index.js");
-var _indexJs7 = require("../Control.Bind/index.js");
-var _indexJs8 = require("../Control.Monad.State.Class/index.js");
-var _indexJs9 = require("../Control.Plus/index.js");
-var _indexJs10 = require("../DOM.HTML.Indexed.InputType/index.js");
-var _indexJs11 = require("../Data.Array/index.js");
-var _indexJs12 = require("../Data.Functor/index.js");
-var _indexJs13 = require("../Data.Int/index.js");
-var _indexJs14 = require("../Data.List/index.js");
-var _indexJs15 = require("../Data.List.Types/index.js");
-var _indexJs16 = require("../Data.ListEnglish/index.js");
-var _indexJs17 = require("../Data.Maybe/index.js");
-var _indexJs18 = require("../Data.Semigroup/index.js");
-var _indexJs19 = require("../Data.String.CodePoints/index.js");
-var _indexJs20 = require("../Halogen.Component/index.js");
-var _indexJs21 = require("../Halogen.HTML.CSS/index.js");
-var _indexJs22 = require("../Halogen.HTML.Core/index.js");
-var _indexJs23 = require("../Halogen.HTML.Elements/index.js");
-var _indexJs24 = require("../Halogen.HTML.Events/index.js");
-var _indexJs25 = require("../Halogen.HTML.Properties/index.js");
-var _indexJs26 = require("../Halogen.Query.HalogenM/index.js");
-var _indexJs27 = require("../Web.HTML.Common/index.js");
-var empty = /* #__PURE__ */ _indexJs9.empty(_indexJs15.plusList);
-var modify_ = /* #__PURE__ */ _indexJs8.modify_(_indexJs26.monadStateHalogenM);
-var discard = /* #__PURE__ */ _indexJs7.discard(_indexJs7.discardUnit)(_indexJs5.bindStyleM);
-var append = /* #__PURE__ */ _indexJs18.append(_indexJs18.semigroupArray);
-var elem = /* #__PURE__ */ _indexJs11.elem(_indexJs16.eqSource);
-var map = /* #__PURE__ */ _indexJs12.map(_indexJs12.functorArray);
-var fromFoldable = /* #__PURE__ */ _indexJs11.fromFoldable(_indexJs15.foldableList);
-var type_ = /* #__PURE__ */ _indexJs25.type_(_indexJs22.isPropInputType);
+var _indexJs2 = require("../CSS.Border/index.js");
+var _indexJs3 = require("../CSS.Font/index.js");
+var _indexJs4 = require("../CSS.Geometry/index.js");
+var _indexJs5 = require("../CSS.Size/index.js");
+var _indexJs6 = require("../CSS.Stylesheet/index.js");
+var _indexJs7 = require("../Color/index.js");
+var _indexJs8 = require("../Control.Bind/index.js");
+var _indexJs9 = require("../Control.Monad.State.Class/index.js");
+var _indexJs10 = require("../Control.Plus/index.js");
+var _indexJs11 = require("../DOM.HTML.Indexed.InputType/index.js");
+var _indexJs12 = require("../Data.Array/index.js");
+var _indexJs13 = require("../Data.Functor/index.js");
+var _indexJs14 = require("../Data.Int/index.js");
+var _indexJs15 = require("../Data.List/index.js");
+var _indexJs16 = require("../Data.List.Types/index.js");
+var _indexJs17 = require("../Data.ListEnglish/index.js");
+var _indexJs18 = require("../Data.Maybe/index.js");
+var _indexJs19 = require("../Data.Semigroup/index.js");
+var _indexJs20 = require("../Data.String.CodePoints/index.js");
+var _indexJs21 = require("../Halogen.Component/index.js");
+var _indexJs22 = require("../Halogen.HTML.CSS/index.js");
+var _indexJs23 = require("../Halogen.HTML.Core/index.js");
+var _indexJs24 = require("../Halogen.HTML.Elements/index.js");
+var _indexJs25 = require("../Halogen.HTML.Events/index.js");
+var _indexJs26 = require("../Halogen.HTML.Properties/index.js");
+var _indexJs27 = require("../Halogen.Query.HalogenM/index.js");
+var _indexJs28 = require("../Web.HTML.Common/index.js");
+var empty = /* #__PURE__ */ _indexJs10.empty(_indexJs16.plusList);
+var modify_ = /* #__PURE__ */ _indexJs9.modify_(_indexJs27.monadStateHalogenM);
+var discard = /* #__PURE__ */ _indexJs8.discard(_indexJs8.discardUnit)(_indexJs6.bindStyleM);
+var append = /* #__PURE__ */ _indexJs19.append(_indexJs19.semigroupArray);
+var elem = /* #__PURE__ */ _indexJs12.elem(_indexJs17.eqSource);
+var map = /* #__PURE__ */ _indexJs13.map(_indexJs13.functorArray);
+var fromFoldable = /* #__PURE__ */ _indexJs12.fromFoldable(_indexJs16.foldableList);
+var type_ = /* #__PURE__ */ _indexJs26.type_(_indexJs23.isPropInputType);
 var OpenCurtainToTheRight = /* #__PURE__ */ function() {
     function OpenCurtainToTheRight(value0) {
         this.value0 = value0;
@@ -52607,9 +52608,9 @@ var OpenCard = /* #__PURE__ */ function() {
 //   Search str -> H.modify_ \st -> st { description = getDescription (head $ search str), results = search str }
 var search = function(str) {
     if (str === "") return empty;
-    return _indexJs16.findENumbersInList(str);
+    return _indexJs17.findENumbersInList(str);
 };
-var myPlainHTML = /* #__PURE__ */ _indexJs22.text("Hello, Plain HTML Type!");
+var myPlainHTML = /* #__PURE__ */ _indexJs23.text("Hello, Plain HTML Type!");
 //   [ (HH.ClassName "curtain-move-right", moveCurtain) ]
 // dont use component slots
 // HalogenM is often called the "eval" Monad
@@ -52637,26 +52638,26 @@ var handleAction = function(v) {
         var $30 = {};
         for(var $31 in st)if (({}).hasOwnProperty.call(st, $31)) $30[$31] = st[$31];
         $30.results = empty;
-        $30.card = new _indexJs17.Just(v.value0);
+        $30.card = new _indexJs18.Just(v.value0);
         return $30;
     });
-    throw new Error("Failed pattern match at App.Simple (line 304, column 16 - line 310, column 82): " + [
+    throw new Error("Failed pattern match at App.Simple (line 305, column 16 - line 311, column 82): " + [
         v.constructor.name
     ]);
 };
-var halogenLink = /* #__PURE__ */ _indexJs23.div_([
-    /* #__PURE__ */ _indexJs23.h3([
-        /* #__PURE__ */ _indexJs21.style(/* #__PURE__ */ discard(/* #__PURE__ */ _indexJs2.color(/* #__PURE__ */ _indexJs6.rgba(245)(255)(250)(1.0)))(function() {
-            return discard(_indexJs3.marginTop(_indexJs4.px(40.0)))(function() {
-                return _indexJs3.marginLeft(_indexJs4.pct(15.0));
+var halogenLink = /* #__PURE__ */ _indexJs24.div_([
+    /* #__PURE__ */ _indexJs24.h3([
+        /* #__PURE__ */ _indexJs22.style(/* #__PURE__ */ discard(/* #__PURE__ */ _indexJs3.color(/* #__PURE__ */ _indexJs7.rgba(245)(255)(250)(1.0)))(function() {
+            return discard(_indexJs4.marginTop(_indexJs5.px(40.0)))(function() {
+                return _indexJs4.marginLeft(_indexJs5.pct(15.0));
             });
         }))
     ])([
-        /* #__PURE__ */ _indexJs22.text("schalom")
+        /* #__PURE__ */ _indexJs23.text("schalom")
     ])
 ]);
 var getLength = function(str) {
-    var v = _indexJs19.length(str);
+    var v = _indexJs20.length(str);
     if (v === 0) return false;
     return true;
 };
@@ -52679,7 +52680,24 @@ var getCurtainClassList = function(moveCurtain) {
     }());
 };
 var css = function($41) {
-    return _indexJs25.class_(_indexJs27.ClassName($41));
+    return _indexJs26.class_(_indexJs28.ClassName($41));
+};
+var containsDairy = function(arr) {
+    return elem(_indexJs17.Dairy.value)(arr);
+};
+var getBackgroundForKashrut = function(k) {
+    var $36 = containsDairy(k.source);
+    if ($36) return _indexJs.skyblue;
+    if (k.kosher instanceof _indexJs17.NotKosher) return _indexJs.softred;
+    if (k.kosher instanceof _indexJs17.KosherIncludingPassover) return _indexJs.lightgreen;
+    if (k.kosher instanceof _indexJs17.KosherNeedPassoverHashgoho) return _indexJs.green;
+    if (k.kosher instanceof _indexJs17.UsuallyKosherRarelyNeedHashgoho) return _indexJs.yellow;
+    if (k.kosher instanceof _indexJs17.OftenKosherNeedHashgoho) return _indexJs.orange;
+    if (k.kosher instanceof _indexJs17.NeedHashgohoWholeYear) return _indexJs.softred;
+    if (k.kosher instanceof _indexJs17.KosherForbidden) return _indexJs.brightred;
+    throw new Error("Failed pattern match at App.Simple (line 249, column 5 - line 256, column 37): " + [
+        k.kosher.constructor.name
+    ]);
 };
 // [ HH.h1_ [ HH.text ""]
 // TODO: should  I have an Array ENumber  | NonEmptyArray ENumber | ListENumber ( like we have now ) ??
@@ -52690,171 +52708,156 @@ var css = function($41) {
 // ] $ map renderENumber (fromFoldable arr)]
 // ]
 var renderENumber = function(eNumber) {
-    return _indexJs23.div([
+    return _indexJs24.div([
         css("e-number-card"),
-        _indexJs21.style(discard(_indexJs1.backgroundColor(_indexJs.grey))(function() {
-            return _indexJs2.color(_indexJs.brown);
+        _indexJs22.style(discard(_indexJs1.backgroundColor(_indexJs.grey))(function() {
+            return discard(_indexJs3.color(_indexJs.brown))(function() {
+                return _indexJs2.borderLeft(_indexJs2.solid)(_indexJs5.em(0.7))(getBackgroundForKashrut(eNumber));
+            });
         }))
     ])([
-        _indexJs22.text(eNumber.name + (" " + eNumber.e_number)),
-        _indexJs23.div([
+        _indexJs23.text(eNumber.name + (" " + eNumber.e_number)),
+        _indexJs24.div([
             css("sources")
         ])([
-            _indexJs22.text(_indexJs16.showSources(eNumber.source)),
-            _indexJs23.br_,
-            _indexJs22.text(_indexJs16.showK(eNumber.kosher))
+            _indexJs23.text(_indexJs17.showSources(eNumber.source)),
+            _indexJs24.br_,
+            _indexJs23.text(_indexJs17.showK(eNumber.kosher))
         ])
-    ]);
-};
-var containsDairy = function(arr) {
-    return elem(_indexJs16.Dairy.value)(arr);
-};
-var getBackgroundForKashrut = function(k) {
-    var $36 = containsDairy(k.source);
-    if ($36) return _indexJs.skyblue;
-    if (k.kosher instanceof _indexJs16.NotKosher) return _indexJs.softred;
-    if (k.kosher instanceof _indexJs16.KosherIncludingPassover) return _indexJs.lightgreen;
-    if (k.kosher instanceof _indexJs16.KosherNeedPassoverHashgoho) return _indexJs.green;
-    if (k.kosher instanceof _indexJs16.UsuallyKosherRarelyNeedHashgoho) return _indexJs.yellow;
-    if (k.kosher instanceof _indexJs16.OftenKosherNeedHashgoho) return _indexJs.orange;
-    if (k.kosher instanceof _indexJs16.NeedHashgohoWholeYear) return _indexJs.softred;
-    if (k.kosher instanceof _indexJs16.KosherForbidden) return _indexJs.brightred;
-    throw new Error("Failed pattern match at App.Simple (line 248, column 5 - line 255, column 37): " + [
-        k.kosher.constructor.name
     ]);
 };
 var getColorForKashrut = function(k) {
     var $38 = containsDairy(k.source);
     if ($38) return _indexJs.brown;
-    if (k.kosher instanceof _indexJs16.NotKosher) return _indexJs.peach;
-    if (k.kosher instanceof _indexJs16.KosherIncludingPassover) return _indexJs.blue;
-    if (k.kosher instanceof _indexJs16.KosherNeedPassoverHashgoho) return _indexJs.peach;
-    if (k.kosher instanceof _indexJs16.UsuallyKosherRarelyNeedHashgoho) return _indexJs.brown;
-    if (k.kosher instanceof _indexJs16.OftenKosherNeedHashgoho) return _indexJs.green;
-    if (k.kosher instanceof _indexJs16.NeedHashgohoWholeYear) return _indexJs.brown;
-    if (k.kosher instanceof _indexJs16.KosherForbidden) return _indexJs.peach;
-    throw new Error("Failed pattern match at App.Simple (line 259, column 5 - line 266, column 33): " + [
+    if (k.kosher instanceof _indexJs17.NotKosher) return _indexJs.peach;
+    if (k.kosher instanceof _indexJs17.KosherIncludingPassover) return _indexJs.blue;
+    if (k.kosher instanceof _indexJs17.KosherNeedPassoverHashgoho) return _indexJs.peach;
+    if (k.kosher instanceof _indexJs17.UsuallyKosherRarelyNeedHashgoho) return _indexJs.brown;
+    if (k.kosher instanceof _indexJs17.OftenKosherNeedHashgoho) return _indexJs.green;
+    if (k.kosher instanceof _indexJs17.NeedHashgohoWholeYear) return _indexJs.brown;
+    if (k.kosher instanceof _indexJs17.KosherForbidden) return _indexJs.peach;
+    throw new Error("Failed pattern match at App.Simple (line 260, column 5 - line 267, column 33): " + [
         k.kosher.constructor.name
     ]);
 };
 var calculateMinHeight = function(v) {
     if (v === 1) return 50.0;
-    return 15.0 * _indexJs13.toNumber(v);
+    return 15.0 * _indexJs14.toNumber(v);
 };
 var showResults = function(arr) {
-    return _indexJs23.div([
+    return _indexJs24.div([
         css("results-bar"),
-        _indexJs21.style(discard(_indexJs3.minHeight(_indexJs4.vh(calculateMinHeight(_indexJs14.length(arr)))))(function() {
-            return _indexJs3.maxHeight(_indexJs4.vh(80.0));
+        _indexJs22.style(discard(_indexJs4.minHeight(_indexJs5.vh(calculateMinHeight(_indexJs15.length(arr)))))(function() {
+            return _indexJs4.maxHeight(_indexJs5.vh(80.0));
         }))
     ])(map(renderENumber)(fromFoldable(arr)));
 };
 var render = function(_state) {
-    return _indexJs23.div([
-        _indexJs25.id("content-container")
+    return _indexJs24.div([
+        _indexJs26.id("content-container")
     ])([
-        _indexJs23.div([
-            _indexJs21.style(discard(_indexJs3.marginLeft(_indexJs4.pct(90.0)))(function() {
-                return _indexJs3.marginTop(_indexJs4.pct(10.0));
+        _indexJs24.div([
+            _indexJs22.style(discard(_indexJs4.marginLeft(_indexJs5.pct(90.0)))(function() {
+                return _indexJs4.marginTop(_indexJs5.pct(10.0));
             }))
         ])([
-            _indexJs23.img([
-                _indexJs25.src("../assets/ellipse_ek4.png"),
-                _indexJs25.alt("language")
+            _indexJs24.img([
+                _indexJs26.src("../assets/ellipse_ek4.png"),
+                _indexJs26.alt("language")
             ])
         ]),
-        _indexJs23.div([
+        _indexJs24.div([
             css("center-container")
         ])([
-            _indexJs23.div([
+            _indexJs24.div([
                 css("my-simple-input")
             ])([
-                _indexJs23.img([
-                    _indexJs21.style(discard(_indexJs3.width(_indexJs4.px(50.0)))(function() {
-                        return discard(_indexJs3.height(_indexJs4.px(50.0)))(function() {
-                            return _indexJs3.margin(_indexJs4.px(10.0))(_indexJs4.px(10.0))(_indexJs4.px(10.0))(_indexJs4.px(10.0));
+                _indexJs24.img([
+                    _indexJs22.style(discard(_indexJs4.width(_indexJs5.px(50.0)))(function() {
+                        return discard(_indexJs4.height(_indexJs5.px(50.0)))(function() {
+                            return _indexJs4.margin(_indexJs5.px(10.0))(_indexJs5.px(10.0))(_indexJs5.px(10.0))(_indexJs5.px(10.0));
                         });
                     })),
-                    _indexJs25.src("../assets/little_search.svg"),
-                    _indexJs25.alt("lupe")
+                    _indexJs26.src("../assets/little_search.svg"),
+                    _indexJs26.alt("lupe")
                 ]),
-                _indexJs23.input([
-                    type_(_indexJs10.InputText.value),
-                    _indexJs21.style(_indexJs2.fontSize(_indexJs4.px(40.0))),
-                    _indexJs24.onValueInput(function(str) {
+                _indexJs24.input([
+                    type_(_indexJs11.InputText.value),
+                    _indexJs22.style(_indexJs3.fontSize(_indexJs5.px(40.0))),
+                    _indexJs25.onValueInput(function(str) {
                         return new OpenCurtainToTheRight(str);
                     })
                 ])
             ]),
-            _indexJs23.div_([
+            _indexJs24.div_([
                 showResults(_state.results)
             ])
         ]),
-        _indexJs23.div([
-            _indexJs25.classes(getCurtainClassList(_state.moveCurtain)),
-            _indexJs21.style(discard(_indexJs3.paddingTop(_indexJs4.pct(7.0)))(function() {
-                return discard(_indexJs3.paddingRight(_indexJs4.px(40.0)))(function() {
-                    return _indexJs3.paddingLeft(_indexJs4.px(70.0));
+        _indexJs24.div([
+            _indexJs26.classes(getCurtainClassList(_state.moveCurtain)),
+            _indexJs22.style(discard(_indexJs4.paddingTop(_indexJs5.pct(7.0)))(function() {
+                return discard(_indexJs4.paddingRight(_indexJs5.px(40.0)))(function() {
+                    return _indexJs4.paddingLeft(_indexJs5.px(70.0));
                 });
             }))
         ])([
-            _indexJs23.div([
-                _indexJs25.id("curtain-content-one"),
-                _indexJs21.style(discard(_indexJs3.margin(_indexJs4.px(0.0))(_indexJs4.px(10.0))(_indexJs4.px(60.0))(_indexJs4.px(10.0)))(function() {
-                    return _indexJs2.fontSize(_indexJs4.px(20.0));
+            _indexJs24.div([
+                _indexJs26.id("curtain-content-one"),
+                _indexJs22.style(discard(_indexJs4.margin(_indexJs5.px(0.0))(_indexJs5.px(10.0))(_indexJs5.px(60.0))(_indexJs5.px(10.0)))(function() {
+                    return _indexJs3.fontSize(_indexJs5.px(20.0));
                 }))
             ])([
-                _indexJs22.text(" This ENumber Dictionary is based on Sefer Mahor LeKaschrut and on Sefer of Rabbi Pantelyat; it is not exhaustive and is meant to be used as a reference only. For more information, please consult a competent Halachic authority.")
+                _indexJs23.text(" This ENumber Dictionary is based on Sefer Mahor LeKaschrut and on Sefer of Rabbi Pantelyat; it is not exhaustive and is meant to be used as a reference only. For more information, please consult a competent Halachic authority.")
             ]),
-            _indexJs23.div([
-                _indexJs25.id("curtain-content-two"),
-                _indexJs21.style(discard(_indexJs3.margin(_indexJs4.px(60.0))(_indexJs4.px(20.0))(_indexJs4.px(40.0))(_indexJs4.px(10.0)))(function() {
-                    return _indexJs2.fontSize(_indexJs4.px(20.0));
+            _indexJs24.div([
+                _indexJs26.id("curtain-content-two"),
+                _indexJs22.style(discard(_indexJs4.margin(_indexJs5.px(60.0))(_indexJs5.px(20.0))(_indexJs5.px(40.0))(_indexJs5.px(10.0)))(function() {
+                    return _indexJs3.fontSize(_indexJs5.px(20.0));
                 }))
             ])([
-                _indexJs22.text("One more text piece which we want to render into our Disclaimer Screen")
+                _indexJs23.text("One more text piece which we want to render into our Disclaimer Screen")
             ])
         ]),
-        _indexJs23.div([
+        _indexJs24.div([
             css("footer")
         ])([
-            _indexJs23.div([
+            _indexJs24.div([
                 css("footer-text")
             ])([
-                _indexJs22.text("\xa9 2024. We love Israel")
+                _indexJs23.text("\xa9 2024. We love Israel")
             ]),
-            _indexJs23.div([
+            _indexJs24.div([
                 css("footer-line")
             ])([]),
-            _indexJs23.div([
+            _indexJs24.div([
                 css("resources")
             ])([
-                _indexJs22.text("Here we want to write more in detail about the resources we used to build this app")
+                _indexJs23.text("Here we want to write more in detail about the resources we used to build this app")
             ])
         ])
     ]);
 };
 var component = /* #__PURE__ */ function() {
-    return _indexJs20.mkComponent({
+    return _indexJs21.mkComponent({
         initialState: function(v) {
             return {
                 moveCurtain: false,
                 results: empty,
-                card: _indexJs17.Nothing.value
+                card: _indexJs18.Nothing.value
             };
         },
         render: render,
-        "eval": _indexJs20.mkEval({
-            handleQuery: _indexJs20.defaultEval.handleQuery,
-            receive: _indexJs20.defaultEval.receive,
-            initialize: _indexJs20.defaultEval.initialize,
-            finalize: _indexJs20.defaultEval.finalize,
+        "eval": _indexJs21.mkEval({
+            handleQuery: _indexJs21.defaultEval.handleQuery,
+            receive: _indexJs21.defaultEval.receive,
+            initialize: _indexJs21.defaultEval.initialize,
+            finalize: _indexJs21.defaultEval.finalize,
             handleAction: handleAction
         })
     });
 }();
 
-},{"../CSS.Font/index.js":"9Iwns","../CSS.Geometry/index.js":"54WNO","../CSS.Size/index.js":"cd0fS","../CSS.Stylesheet/index.js":"k97a8","../Color/index.js":"8f2Dw","../Control.Bind/index.js":"5hjxD","../Control.Monad.State.Class/index.js":"ls1CC","../Data.Semigroup/index.js":"3JeZO","../Data.String.CodePoints/index.js":"1lgpW","../Halogen.Component/index.js":"8dM7y","../Halogen.HTML.CSS/index.js":"zRRWZ","../Halogen.HTML.Core/index.js":"9NBcR","../Halogen.HTML.Elements/index.js":"7rm1k","../Halogen.HTML.Events/index.js":"aoDbU","../Halogen.HTML.Properties/index.js":"6klmN","../Halogen.Query.HalogenM/index.js":"kbUmW","../Web.HTML.Common/index.js":"hCMtm","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../Control.Plus/index.js":"jm5q9","../Data.List.Types/index.js":"5Eszv","../Data.ListEnglish/index.js":"c1K1e","../Data.Maybe/index.js":"7bX1p","../Data.Array/index.js":"fFSAq","../Data.Functor/index.js":"l8Eoe","../App.Colours/index.js":"c6QRT","../CSS.Background/index.js":"3imO7","../DOM.HTML.Indexed.InputType/index.js":"8lpXU","../Data.List/index.js":"7Vb9H","../Data.Int/index.js":"ezDMN"}],"9Iwns":[function(require,module,exports) {
+},{"../CSS.Font/index.js":"9Iwns","../CSS.Geometry/index.js":"54WNO","../CSS.Size/index.js":"cd0fS","../CSS.Stylesheet/index.js":"k97a8","../Color/index.js":"8f2Dw","../Control.Bind/index.js":"5hjxD","../Control.Monad.State.Class/index.js":"ls1CC","../Data.Semigroup/index.js":"3JeZO","../Data.String.CodePoints/index.js":"1lgpW","../Halogen.Component/index.js":"8dM7y","../Halogen.HTML.CSS/index.js":"zRRWZ","../Halogen.HTML.Core/index.js":"9NBcR","../Halogen.HTML.Elements/index.js":"7rm1k","../Halogen.HTML.Events/index.js":"aoDbU","../Halogen.HTML.Properties/index.js":"6klmN","../Halogen.Query.HalogenM/index.js":"kbUmW","../Web.HTML.Common/index.js":"hCMtm","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../Control.Plus/index.js":"jm5q9","../Data.List.Types/index.js":"5Eszv","../Data.ListEnglish/index.js":"c1K1e","../Data.Maybe/index.js":"7bX1p","../Data.Array/index.js":"fFSAq","../Data.Functor/index.js":"l8Eoe","../App.Colours/index.js":"c6QRT","../CSS.Background/index.js":"3imO7","../DOM.HTML.Indexed.InputType/index.js":"8lpXU","../Data.List/index.js":"7Vb9H","../Data.Int/index.js":"ezDMN","../CSS.Border/index.js":"1es03"}],"9Iwns":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "color", ()=>color);
@@ -62002,6 +62005,164 @@ var boxShadow = /* #__PURE__ */ function() {
 }();
 var borderBox = /* #__PURE__ */ fromString("border-box");
 
-},{"../CSS.Common/index.js":"aIpXQ","../CSS.Property/index.js":"5ytk4","../CSS.Size/index.js":"cd0fS","../CSS.String/index.js":"9bTqK","../CSS.Stylesheet/index.js":"k97a8","../Data.Eq/index.js":"8OmSH","../Data.Ord/index.js":"7HnPT","../Data.Semigroup/index.js":"3JeZO","../Data.Tuple/index.js":"ib0Ds","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["7lR9l","d9Zcj"], "d9Zcj", "parcelRequire94c2")
+},{"../CSS.Common/index.js":"aIpXQ","../CSS.Property/index.js":"5ytk4","../CSS.Size/index.js":"cd0fS","../CSS.String/index.js":"9bTqK","../CSS.Stylesheet/index.js":"k97a8","../Data.Eq/index.js":"8OmSH","../Data.Ord/index.js":"7HnPT","../Data.Semigroup/index.js":"3JeZO","../Data.Tuple/index.js":"ib0Ds","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1es03":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Stroke", ()=>Stroke);
+parcelHelpers.export(exports, "solid", ()=>solid);
+parcelHelpers.export(exports, "dotted", ()=>dotted);
+parcelHelpers.export(exports, "dashed", ()=>dashed);
+parcelHelpers.export(exports, "double", ()=>$$double);
+parcelHelpers.export(exports, "wavy", ()=>wavy);
+parcelHelpers.export(exports, "groove", ()=>groove);
+parcelHelpers.export(exports, "ridge", ()=>ridge);
+parcelHelpers.export(exports, "inset", ()=>inset);
+parcelHelpers.export(exports, "outset", ()=>outset);
+parcelHelpers.export(exports, "border", ()=>border);
+parcelHelpers.export(exports, "borderTop", ()=>borderTop);
+parcelHelpers.export(exports, "borderLeft", ()=>borderLeft);
+parcelHelpers.export(exports, "borderBottom", ()=>borderBottom);
+parcelHelpers.export(exports, "borderRight", ()=>borderRight);
+parcelHelpers.export(exports, "borderColor", ()=>borderColor);
+parcelHelpers.export(exports, "outline", ()=>outline);
+parcelHelpers.export(exports, "outlineColor", ()=>outlineColor);
+parcelHelpers.export(exports, "outlineStyle", ()=>outlineStyle);
+parcelHelpers.export(exports, "outlineWidth", ()=>outlineWidth);
+parcelHelpers.export(exports, "outlineOffset", ()=>outlineOffset);
+parcelHelpers.export(exports, "borderRadius", ()=>borderRadius);
+parcelHelpers.export(exports, "borderSpacing", ()=>borderSpacing);
+parcelHelpers.export(exports, "eqStroke", ()=>eqStroke);
+parcelHelpers.export(exports, "ordStroke", ()=>ordStroke);
+parcelHelpers.export(exports, "isStringStroke", ()=>isStringStroke);
+parcelHelpers.export(exports, "valStroke", ()=>valStroke);
+parcelHelpers.export(exports, "inheritStroke", ()=>inheritStroke);
+parcelHelpers.export(exports, "initialStroke", ()=>initialStroke);
+parcelHelpers.export(exports, "unsetStroke", ()=>unsetStroke);
+// Generated by purs version 0.15.15
+var _indexJs = require("../CSS.Property/index.js");
+var _indexJs1 = require("../CSS.Size/index.js");
+var _indexJs2 = require("../CSS.String/index.js");
+var _indexJs3 = require("../CSS.Stylesheet/index.js");
+var _indexJs4 = require("../Data.Eq/index.js");
+var _indexJs5 = require("../Data.Ord/index.js");
+var _indexJs6 = require("../Data.Tuple/index.js");
+var fromString = /* #__PURE__ */ _indexJs2.fromString(_indexJs.isStringValue);
+var key = /* #__PURE__ */ _indexJs3.key(_indexJs1.valSize);
+var fromString1 = /* #__PURE__ */ _indexJs2.fromString(_indexJs.isStringKey);
+var key1 = /* #__PURE__ */ _indexJs3.key(_indexJs.valColor);
+var valTuple = /* #__PURE__ */ _indexJs.valTuple(_indexJs1.valSize);
+var eq = /* #__PURE__ */ _indexJs4.eq(_indexJs.eqValue);
+var compare = /* #__PURE__ */ _indexJs5.compare(_indexJs.ordValue);
+var valTuple1 = /* #__PURE__ */ valTuple(_indexJs1.valSize);
+var key2 = /* #__PURE__ */ _indexJs3.key(/* #__PURE__ */ _indexJs.valTuple(valTuple1)(valTuple1));
+var Stroke = function(x) {
+    return x;
+};
+var wavy = /* #__PURE__ */ fromString("wavy");
+var valStroke = {
+    value: function(v) {
+        return v;
+    }
+};
+var key3 = /* #__PURE__ */ _indexJs3.key(/* #__PURE__ */ _indexJs.valTuple(valStroke)(/* #__PURE__ */ valTuple(_indexJs.valColor)));
+var solid = /* #__PURE__ */ fromString("solid");
+var ridge = /* #__PURE__ */ fromString("ridge");
+var outset = /* #__PURE__ */ fromString("outset");
+var outlineWidth = /* #__PURE__ */ key(/* #__PURE__ */ fromString1("outline-width"));
+var outlineStyle = /* #__PURE__ */ _indexJs3.key(valStroke)(/* #__PURE__ */ fromString1("outline-style"));
+var outlineOffset = /* #__PURE__ */ key(/* #__PURE__ */ fromString1("outline-offset"));
+var outlineColor = /* #__PURE__ */ key1(/* #__PURE__ */ fromString1("outline-color"));
+var outline = function(a) {
+    return function(b) {
+        return function(c) {
+            return key3(fromString1("outline"))(new _indexJs6.Tuple(a, new _indexJs6.Tuple(b, c)));
+        };
+    };
+};
+var isStringStroke = {
+    fromString: function($32) {
+        return Stroke(fromString($32));
+    }
+};
+var fromString2 = /* #__PURE__ */ _indexJs2.fromString(isStringStroke);
+var unsetStroke = {
+    unset: /* #__PURE__ */ fromString2("unset")
+};
+var inset = /* #__PURE__ */ fromString("inset");
+var initialStroke = {
+    initial: /* #__PURE__ */ fromString2("initial")
+};
+var inheritStroke = {
+    inherit: /* #__PURE__ */ fromString2("inherit")
+};
+var groove = /* #__PURE__ */ fromString("groove");
+var eqStroke = {
+    eq: function(x) {
+        return function(y) {
+            return eq(x)(y);
+        };
+    }
+};
+var ordStroke = {
+    compare: function(x) {
+        return function(y) {
+            return compare(x)(y);
+        };
+    },
+    Eq0: function() {
+        return eqStroke;
+    }
+};
+var $$double = /* #__PURE__ */ fromString("double");
+var dotted = /* #__PURE__ */ fromString("dotted");
+var dashed = /* #__PURE__ */ fromString("dashed");
+var borderTop = function(a) {
+    return function(b) {
+        return function(c) {
+            return key3(fromString1("border-top"))(new _indexJs6.Tuple(a, new _indexJs6.Tuple(b, c)));
+        };
+    };
+};
+var borderSpacing = /* #__PURE__ */ key(/* #__PURE__ */ fromString1("border-spacing"));
+var borderRight = function(a) {
+    return function(b) {
+        return function(c) {
+            return key3(fromString1("border-right"))(new _indexJs6.Tuple(a, new _indexJs6.Tuple(b, c)));
+        };
+    };
+};
+var borderRadius = function(a) {
+    return function(b) {
+        return function(c) {
+            return function(d) {
+                return key2(fromString1("border-radius"))(new _indexJs6.Tuple(new _indexJs6.Tuple(a, b), new _indexJs6.Tuple(c, d)));
+            };
+        };
+    };
+};
+var borderLeft = function(a) {
+    return function(b) {
+        return function(c) {
+            return key3(fromString1("border-left"))(new _indexJs6.Tuple(a, new _indexJs6.Tuple(b, c)));
+        };
+    };
+};
+var borderColor = /* #__PURE__ */ key1(/* #__PURE__ */ fromString1("border-color"));
+var borderBottom = function(a) {
+    return function(b) {
+        return function(c) {
+            return key3(fromString1("border-bottom"))(new _indexJs6.Tuple(a, new _indexJs6.Tuple(b, c)));
+        };
+    };
+};
+var border = function(a) {
+    return function(b) {
+        return function(c) {
+            return key3(fromString1("border"))(new _indexJs6.Tuple(a, new _indexJs6.Tuple(b, c)));
+        };
+    };
+};
+
+},{"../CSS.Property/index.js":"5ytk4","../CSS.Size/index.js":"cd0fS","../CSS.String/index.js":"9bTqK","../CSS.Stylesheet/index.js":"k97a8","../Data.Eq/index.js":"8OmSH","../Data.Ord/index.js":"7HnPT","../Data.Tuple/index.js":"ib0Ds","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["7lR9l","d9Zcj"], "d9Zcj", "parcelRequire94c2")
 
 //# sourceMappingURL=index.f708bf3c.js.map

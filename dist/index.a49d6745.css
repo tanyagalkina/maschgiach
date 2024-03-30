@@ -148,23 +148,23 @@
 .e-number-card {
   border: 1px solid gray;
   border-radius: 3px;
+  flex-basis: 0%;
   width: 99%;
   margin: 3px 10px 10px;
   padding: 10px;
-  transition: transform .3s;
+  transition: all .3s;
   display: block;
 }
 
 .e-number-card:hover {
   opacity: .7;
-  transform: scale(1.2);
+  flex-grow: 2;
   box-shadow: 0 6px 8px #00000026;
 }
 
 @media (hover: none) {
   .e-number-card:active {
     opacity: .7;
-    transform: scale(1.2);
     box-shadow: 0 6px 8px #00000026;
   }
 }

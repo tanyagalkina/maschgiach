@@ -1,14 +1,17 @@
 module App.Simple (component) where
 
+import Data.Int
 import Prelude
 
 import App.Colours (beige, blue, brightred, brown, dark_yellow, green, lightgreen, mintcream, orange, peach, salad, skyblue, softred, yellow, grey)
-import CSS (Color, Display, a, alignContent, alignItems, backgroundColor, backgroundImage, block, border, borderRadius, bottom, boxShadow, color, display, displayNone, flex, flexBasis, flexDirection, flexStart, flexWrap, fontFamily, fontSize, height, inline, inlineBlock, justifyContent, left, lineHeight, margin, marginLeft, marginRight, marginTop, padding, paddingLeft, paddingRight, paddingTop, pct, position, px, rgba, right, solid, top, width, zIndex)
+import CSS (Color, Display, a, alignContent, alignItems, backgroundColor, backgroundImage, block, border, borderRadius, bottom, boxShadow, color, display, displayNone, flex, flexBasis, flexDirection, flexStart, flexWrap, fontFamily, fontSize, height, inline, inlineBlock, justifyContent, left, lineHeight, margin, marginLeft, marginRight, marginTop, minHeight, padding, paddingLeft, paddingRight, paddingTop, pct, position, px, rgba, right, solid, top, width, zIndex)
 import CSS.Common (none)
 import CSS.Cursor (move)
+import CSS.Size (vh)
 import Control.Monad.State (state)
 import Control.Plus (empty)
 import Data.Array (fromFoldable, elem)
+import Data.List as List
 import Data.ListEnglish (AdditiveGroup, ENumber, ENumberList, Kashrut(..), Source(..), findENumbersInList, showK, showSources)
 import Data.Maybe (Maybe(..))
 import Data.String.CodePoints (length)
@@ -113,7 +116,7 @@ render _state =
               , CSS.style do
                 fontSize $ px 40.0 
               , HE.onValueInput \str -> OpenCurtainToTheRight str
-              , HE.onClick \_ -> Search ""
+              -- , HE.onClick \_ -> Search ""
               -- , HE.onValueInput\str -> Search str  
               -- , HP.placeholder "tezku le mitzvot!"
               ]
@@ -186,8 +189,10 @@ showResults arr =
   HH.div [
     css "results-bar"
 
-    -- ,CSS.style do
+    ,CSS.style do
+    -- minHeight $ px (toNumber (List.length arr) * 40.0)
     --   width $ pct 100.0
+    minHeight $ vh (toNumber (List.length arr) * 15.0)
   ] $ map renderENumber (fromFoldable arr)
     -- [ HH.h1_ [ HH.text ""]
     -- TODO: should  I have an Array ENumber  | NonEmptyArray ENumber | ListENumber ( like we have now ) ??
@@ -213,7 +218,9 @@ renderENumber eNumber =
             -- (backgroundColor $ (getBackgroundForKashrut eNumber))
             -- (color $ getColorForKashrut eNumber)
             -- my_style make reusable
-          -- , HE.onClick $ \_ -> OpenCard eNumber 
+          --, HE.onClick $ \_ -> OpenCard eNumber 
+          -- ,HE.onClick $ \_ -> CSS.style do
+          --   backgroundColor brown
           ]
         [ HH.text (eNumber.name <> " " <> eNumber.e_number) ]
     
@@ -280,7 +287,8 @@ handleAction :: forall o m. Action → H.HalogenM State Action () o m Unit
 handleAction = case _ of
   -- Increment -> H.modify_ \st -> st { count = st.count + 1 }
   -- Decrement -> H.modify_ \st -> st { count = st.count - 1 }
-  OpenCurtainToTheRight str -> H.modify_ \st  -> st { moveCurtain =  getLength str, results = search str}
+  -- OpenCurtainToTheRight str -> H.modify_ \st  -> st { moveCurtain =  getLength str, results = search str}
+  OpenCurtainToTheRight str -> H.modify_ \st -> st { moveCurtain = true, results = search str}
   Search str -> H.modify_ \st -> st { results = search str}
   OpenCard eNumber -> H.modify_ \st -> st { results = empty, card = Just eNumber}
   -- OpenCard eNumber -> H.modify_ \st -> st { count = st.count + 1, moveCurtain = true, card}
@@ -291,7 +299,9 @@ handleAction = case _ of
 --   Search str -> H.modify_ \st -> st { description = getDescription (head $ search str), results = search str }
 
 search :: String -> ENumberList
-search str = findENumbersInList str
+search str = case str of
+  "" -> empty
+  _ -> findENumbersInList str
 
 
 getLength :: String -> Boolean

@@ -52550,27 +52550,29 @@ var _indexJs9 = require("../Control.Plus/index.js");
 var _indexJs10 = require("../DOM.HTML.Indexed.InputType/index.js");
 var _indexJs11 = require("../Data.Array/index.js");
 var _indexJs12 = require("../Data.Functor/index.js");
-var _indexJs13 = require("../Data.List.Types/index.js");
-var _indexJs14 = require("../Data.ListEnglish/index.js");
-var _indexJs15 = require("../Data.Maybe/index.js");
-var _indexJs16 = require("../Data.Semigroup/index.js");
-var _indexJs17 = require("../Data.String.CodePoints/index.js");
-var _indexJs18 = require("../Halogen.Component/index.js");
-var _indexJs19 = require("../Halogen.HTML.CSS/index.js");
-var _indexJs20 = require("../Halogen.HTML.Core/index.js");
-var _indexJs21 = require("../Halogen.HTML.Elements/index.js");
-var _indexJs22 = require("../Halogen.HTML.Events/index.js");
-var _indexJs23 = require("../Halogen.HTML.Properties/index.js");
-var _indexJs24 = require("../Halogen.Query.HalogenM/index.js");
-var _indexJs25 = require("../Web.HTML.Common/index.js");
+var _indexJs13 = require("../Data.Int/index.js");
+var _indexJs14 = require("../Data.List/index.js");
+var _indexJs15 = require("../Data.List.Types/index.js");
+var _indexJs16 = require("../Data.ListEnglish/index.js");
+var _indexJs17 = require("../Data.Maybe/index.js");
+var _indexJs18 = require("../Data.Semigroup/index.js");
+var _indexJs19 = require("../Data.String.CodePoints/index.js");
+var _indexJs20 = require("../Halogen.Component/index.js");
+var _indexJs21 = require("../Halogen.HTML.CSS/index.js");
+var _indexJs22 = require("../Halogen.HTML.Core/index.js");
+var _indexJs23 = require("../Halogen.HTML.Elements/index.js");
+var _indexJs24 = require("../Halogen.HTML.Events/index.js");
+var _indexJs25 = require("../Halogen.HTML.Properties/index.js");
+var _indexJs26 = require("../Halogen.Query.HalogenM/index.js");
+var _indexJs27 = require("../Web.HTML.Common/index.js");
+var empty = /* #__PURE__ */ _indexJs9.empty(_indexJs15.plusList);
+var modify_ = /* #__PURE__ */ _indexJs8.modify_(_indexJs26.monadStateHalogenM);
 var discard = /* #__PURE__ */ _indexJs7.discard(_indexJs7.discardUnit)(_indexJs5.bindStyleM);
-var modify_ = /* #__PURE__ */ _indexJs8.modify_(_indexJs24.monadStateHalogenM);
-var empty = /* #__PURE__ */ _indexJs9.empty(_indexJs13.plusList);
-var append = /* #__PURE__ */ _indexJs16.append(_indexJs16.semigroupArray);
+var append = /* #__PURE__ */ _indexJs18.append(_indexJs18.semigroupArray);
 var map = /* #__PURE__ */ _indexJs12.map(_indexJs12.functorArray);
-var fromFoldable = /* #__PURE__ */ _indexJs11.fromFoldable(_indexJs13.foldableList);
-var type_ = /* #__PURE__ */ _indexJs23.type_(_indexJs20.isPropInputType);
-var elem = /* #__PURE__ */ _indexJs11.elem(_indexJs14.eqSource);
+var fromFoldable = /* #__PURE__ */ _indexJs11.fromFoldable(_indexJs15.foldableList);
+var type_ = /* #__PURE__ */ _indexJs25.type_(_indexJs22.isPropInputType);
+var elem = /* #__PURE__ */ _indexJs11.elem(_indexJs16.eqSource);
 var OpenCurtainToTheRight = /* #__PURE__ */ function() {
     function OpenCurtainToTheRight(value0) {
         this.value0 = value0;
@@ -52604,25 +52606,10 @@ var OpenCard = /* #__PURE__ */ function() {
 // eHandleAction = case _ of
 //   Search str -> H.modify_ \st -> st { description = getDescription (head $ search str), results = search str }
 var search = function(str) {
-    return _indexJs14.findENumbersInList(str);
+    if (str === "") return empty;
+    return _indexJs16.findENumbersInList(str);
 };
-var myPlainHTML = /* #__PURE__ */ _indexJs20.text("Hello, Plain HTML Type!");
-var halogenLink = /* #__PURE__ */ _indexJs21.div_([
-    /* #__PURE__ */ _indexJs21.h3([
-        /* #__PURE__ */ _indexJs19.style(/* #__PURE__ */ discard(/* #__PURE__ */ _indexJs2.color(/* #__PURE__ */ _indexJs6.rgba(245)(255)(250)(1.0)))(function() {
-            return discard(_indexJs3.marginTop(_indexJs4.px(40.0)))(function() {
-                return _indexJs3.marginLeft(_indexJs4.pct(15.0));
-            });
-        }))
-    ])([
-        /* #__PURE__ */ _indexJs20.text("schalom")
-    ])
-]);
-var getLength = function(str) {
-    var v = _indexJs17.length(str);
-    if (v === 0) return false;
-    return true;
-};
+var myPlainHTML = /* #__PURE__ */ _indexJs22.text("Hello, Plain HTML Type!");
 //   [ (HH.ClassName "curtain-move-right", moveCurtain) ]
 // dont use component slots
 // HalogenM is often called the "eval" Monad
@@ -52634,28 +52621,44 @@ var getLength = function(str) {
 //   OpenCard eNumber -> H.modify_ \st -> st { description = eNumber.name, results = empty, card = Just eNumber}
 var handleAction = function(v) {
     if (v instanceof OpenCurtainToTheRight) return modify_(function(st) {
-        var $22 = {};
-        for(var $23 in st)if (({}).hasOwnProperty.call(st, $23)) $22[$23] = st[$23];
-        $22.moveCurtain = getLength(v.value0);
-        $22.results = search(v.value0);
-        return $22;
+        var $21 = {};
+        for(var $22 in st)if (({}).hasOwnProperty.call(st, $22)) $21[$22] = st[$22];
+        $21.moveCurtain = true;
+        $21.results = search(v.value0);
+        return $21;
     });
     if (v instanceof Search) return modify_(function(st) {
-        var $26 = {};
-        for(var $27 in st)if (({}).hasOwnProperty.call(st, $27)) $26[$27] = st[$27];
-        $26.results = search(v.value0);
-        return $26;
+        var $25 = {};
+        for(var $26 in st)if (({}).hasOwnProperty.call(st, $26)) $25[$26] = st[$26];
+        $25.results = search(v.value0);
+        return $25;
     });
     if (v instanceof OpenCard) return modify_(function(st) {
-        var $30 = {};
-        for(var $31 in st)if (({}).hasOwnProperty.call(st, $31)) $30[$31] = st[$31];
-        $30.results = empty;
-        $30.card = new _indexJs15.Just(v.value0);
-        return $30;
+        var $29 = {};
+        for(var $30 in st)if (({}).hasOwnProperty.call(st, $30)) $29[$30] = st[$30];
+        $29.results = empty;
+        $29.card = new _indexJs17.Just(v.value0);
+        return $29;
     });
-    throw new Error("Failed pattern match at App.Simple (line 279, column 16 - line 284, column 82): " + [
+    throw new Error("Failed pattern match at App.Simple (line 287, column 16 - line 293, column 82): " + [
         v.constructor.name
     ]);
+};
+var halogenLink = /* #__PURE__ */ _indexJs23.div_([
+    /* #__PURE__ */ _indexJs23.h3([
+        /* #__PURE__ */ _indexJs21.style(/* #__PURE__ */ discard(/* #__PURE__ */ _indexJs2.color(/* #__PURE__ */ _indexJs6.rgba(245)(255)(250)(1.0)))(function() {
+            return discard(_indexJs3.marginTop(_indexJs4.px(40.0)))(function() {
+                return _indexJs3.marginLeft(_indexJs4.pct(15.0));
+            });
+        }))
+    ])([
+        /* #__PURE__ */ _indexJs22.text("schalom")
+    ])
+]);
+var getLength = function(str) {
+    var v = _indexJs19.length(str);
+    if (v === 0) return false;
+    return true;
 };
 // #footer_variant2 {
 //   position: absolute;
@@ -52676,7 +52679,7 @@ var getCurtainClassList = function(moveCurtain) {
     }());
 };
 var css = function($39) {
-    return _indexJs23.class_(_indexJs25.ClassName($39));
+    return _indexJs25.class_(_indexJs27.ClassName($39));
 };
 // [ HH.h1_ [ HH.text ""]
 // TODO: should  I have an Array ENumber  | NonEmptyArray ENumber | ListENumber ( like we have now ) ??
@@ -52687,163 +52690,158 @@ var css = function($39) {
 // ] $ map renderENumber (fromFoldable arr)]
 // ]
 var renderENumber = function(eNumber) {
-    return _indexJs21.div([
+    return _indexJs23.div([
         css("e-number-card"),
-        _indexJs19.style(discard(_indexJs1.backgroundColor(_indexJs.grey))(function() {
+        _indexJs21.style(discard(_indexJs1.backgroundColor(_indexJs.grey))(function() {
             return _indexJs2.color(_indexJs.brown);
-        })),
-        _indexJs22.onClick(function(v) {
-            return new OpenCard(eNumber);
-        })
+        }))
     ])([
-        _indexJs20.text(eNumber.name + (" " + eNumber.e_number))
+        _indexJs22.text(eNumber.name + (" " + eNumber.e_number))
     ]);
 };
 var showResults = function(arr) {
-    return _indexJs21.div([
-        css("results-bar")
+    return _indexJs23.div([
+        css("results-bar"),
+        _indexJs21.style(_indexJs3.minHeight(_indexJs4.vh(_indexJs13.toNumber(_indexJs14.length(arr)) * 15.0)))
     ])(map(renderENumber)(fromFoldable(arr)));
 };
 var render = function(_state) {
-    return _indexJs21.div([
-        _indexJs23.id("content-container")
+    return _indexJs23.div([
+        _indexJs25.id("content-container")
     ])([
-        _indexJs21.div([
-            _indexJs19.style(discard(_indexJs3.marginLeft(_indexJs4.pct(90.0)))(function() {
+        _indexJs23.div([
+            _indexJs21.style(discard(_indexJs3.marginLeft(_indexJs4.pct(90.0)))(function() {
                 return _indexJs3.marginTop(_indexJs4.pct(10.0));
             }))
         ])([
-            _indexJs21.img([
-                _indexJs23.src("../assets/ellipse_ek4.png"),
-                _indexJs23.alt("language")
+            _indexJs23.img([
+                _indexJs25.src("../assets/ellipse_ek4.png"),
+                _indexJs25.alt("language")
             ])
         ]),
-        _indexJs21.div([
+        _indexJs23.div([
             css("center-container")
         ])([
-            _indexJs21.div([
+            _indexJs23.div([
                 css("my-simple-input")
             ])([
-                _indexJs21.img([
-                    _indexJs19.style(discard(_indexJs3.width(_indexJs4.px(50.0)))(function() {
+                _indexJs23.img([
+                    _indexJs21.style(discard(_indexJs3.width(_indexJs4.px(50.0)))(function() {
                         return discard(_indexJs3.height(_indexJs4.px(50.0)))(function() {
                             return _indexJs3.margin(_indexJs4.px(10.0))(_indexJs4.px(10.0))(_indexJs4.px(10.0))(_indexJs4.px(10.0));
                         });
                     })),
-                    _indexJs23.src("../assets/little_search.svg"),
-                    _indexJs23.alt("lupe")
+                    _indexJs25.src("../assets/little_search.svg"),
+                    _indexJs25.alt("lupe")
                 ]),
-                _indexJs21.input([
+                _indexJs23.input([
                     type_(_indexJs10.InputText.value),
-                    _indexJs19.style(_indexJs2.fontSize(_indexJs4.px(40.0))),
-                    _indexJs22.onValueInput(function(str) {
+                    _indexJs21.style(_indexJs2.fontSize(_indexJs4.px(40.0))),
+                    _indexJs24.onValueInput(function(str) {
                         return new OpenCurtainToTheRight(str);
-                    }),
-                    _indexJs22.onClick(function(v) {
-                        return new Search("");
                     })
                 ])
             ]),
-            _indexJs21.div_([
+            _indexJs23.div_([
                 showResults(_state.results)
             ])
         ]),
-        _indexJs21.div([
-            _indexJs23.classes(getCurtainClassList(_state.moveCurtain)),
-            _indexJs19.style(discard(_indexJs3.paddingTop(_indexJs4.pct(7.0)))(function() {
+        _indexJs23.div([
+            _indexJs25.classes(getCurtainClassList(_state.moveCurtain)),
+            _indexJs21.style(discard(_indexJs3.paddingTop(_indexJs4.pct(7.0)))(function() {
                 return discard(_indexJs3.paddingRight(_indexJs4.px(40.0)))(function() {
                     return _indexJs3.paddingLeft(_indexJs4.px(70.0));
                 });
             }))
         ])([
-            _indexJs21.div([
-                _indexJs23.id("curtain-content-one"),
-                _indexJs19.style(discard(_indexJs3.margin(_indexJs4.px(0.0))(_indexJs4.px(10.0))(_indexJs4.px(60.0))(_indexJs4.px(10.0)))(function() {
+            _indexJs23.div([
+                _indexJs25.id("curtain-content-one"),
+                _indexJs21.style(discard(_indexJs3.margin(_indexJs4.px(0.0))(_indexJs4.px(10.0))(_indexJs4.px(60.0))(_indexJs4.px(10.0)))(function() {
                     return _indexJs2.fontSize(_indexJs4.px(20.0));
                 }))
             ])([
-                _indexJs20.text(" This ENumber Dictionary is based on Sefer Mahor LeKaschrut and on Sefer of Rabbi Pantelyat; it is not exhaustive and is meant to be used as a reference only. For more information, please consult a competent Halachic authority.")
+                _indexJs22.text(" This ENumber Dictionary is based on Sefer Mahor LeKaschrut and on Sefer of Rabbi Pantelyat; it is not exhaustive and is meant to be used as a reference only. For more information, please consult a competent Halachic authority.")
             ]),
-            _indexJs21.div([
-                _indexJs23.id("curtain-content-two"),
-                _indexJs19.style(discard(_indexJs3.margin(_indexJs4.px(60.0))(_indexJs4.px(20.0))(_indexJs4.px(40.0))(_indexJs4.px(10.0)))(function() {
+            _indexJs23.div([
+                _indexJs25.id("curtain-content-two"),
+                _indexJs21.style(discard(_indexJs3.margin(_indexJs4.px(60.0))(_indexJs4.px(20.0))(_indexJs4.px(40.0))(_indexJs4.px(10.0)))(function() {
                     return _indexJs2.fontSize(_indexJs4.px(20.0));
                 }))
             ])([
-                _indexJs20.text("One more text piece which we want to render into our Disclaimer Screen")
+                _indexJs22.text("One more text piece which we want to render into our Disclaimer Screen")
             ])
         ]),
-        _indexJs21.div([
+        _indexJs23.div([
             css("footer")
         ])([
-            _indexJs21.div([
+            _indexJs23.div([
                 css("footer-text")
             ])([
-                _indexJs20.text("\xa9 2024. We love Israel")
+                _indexJs22.text("\xa9 2024. We love Israel")
             ]),
-            _indexJs21.div([
+            _indexJs23.div([
                 css("footer-line")
             ])([]),
-            _indexJs21.div([
+            _indexJs23.div([
                 css("resources")
             ])([
-                _indexJs20.text("Here we want to write more in detail about the resources we used to build this app")
+                _indexJs22.text("Here we want to write more in detail about the resources we used to build this app")
             ])
         ])
     ]);
 };
 var containsDairy = function(arr) {
-    return elem(_indexJs14.Dairy.value)(arr);
+    return elem(_indexJs16.Dairy.value)(arr);
 };
 var getBackgroundForKashrut = function(k) {
     var $35 = containsDairy(k.source);
     if ($35) return _indexJs.skyblue;
-    if (k.kosher instanceof _indexJs14.NotKosher) return _indexJs.softred;
-    if (k.kosher instanceof _indexJs14.KosherIncludingPassover) return _indexJs.lightgreen;
-    if (k.kosher instanceof _indexJs14.KosherNeedPassoverHashgoho) return _indexJs.green;
-    if (k.kosher instanceof _indexJs14.UsuallyKosherRarelyNeedHashgoho) return _indexJs.yellow;
-    if (k.kosher instanceof _indexJs14.OftenKosherNeedHashgoho) return _indexJs.orange;
-    if (k.kosher instanceof _indexJs14.NeedHashgohoWholeYear) return _indexJs.softred;
-    if (k.kosher instanceof _indexJs14.KosherForbidden) return _indexJs.brightred;
-    throw new Error("Failed pattern match at App.Simple (line 223, column 5 - line 230, column 37): " + [
+    if (k.kosher instanceof _indexJs16.NotKosher) return _indexJs.softred;
+    if (k.kosher instanceof _indexJs16.KosherIncludingPassover) return _indexJs.lightgreen;
+    if (k.kosher instanceof _indexJs16.KosherNeedPassoverHashgoho) return _indexJs.green;
+    if (k.kosher instanceof _indexJs16.UsuallyKosherRarelyNeedHashgoho) return _indexJs.yellow;
+    if (k.kosher instanceof _indexJs16.OftenKosherNeedHashgoho) return _indexJs.orange;
+    if (k.kosher instanceof _indexJs16.NeedHashgohoWholeYear) return _indexJs.softred;
+    if (k.kosher instanceof _indexJs16.KosherForbidden) return _indexJs.brightred;
+    throw new Error("Failed pattern match at App.Simple (line 231, column 5 - line 238, column 37): " + [
         k.kosher.constructor.name
     ]);
 };
 var getColorForKashrut = function(k) {
     var $37 = containsDairy(k.source);
     if ($37) return _indexJs.brown;
-    if (k.kosher instanceof _indexJs14.NotKosher) return _indexJs.peach;
-    if (k.kosher instanceof _indexJs14.KosherIncludingPassover) return _indexJs.blue;
-    if (k.kosher instanceof _indexJs14.KosherNeedPassoverHashgoho) return _indexJs.peach;
-    if (k.kosher instanceof _indexJs14.UsuallyKosherRarelyNeedHashgoho) return _indexJs.brown;
-    if (k.kosher instanceof _indexJs14.OftenKosherNeedHashgoho) return _indexJs.green;
-    if (k.kosher instanceof _indexJs14.NeedHashgohoWholeYear) return _indexJs.brown;
-    if (k.kosher instanceof _indexJs14.KosherForbidden) return _indexJs.peach;
-    throw new Error("Failed pattern match at App.Simple (line 234, column 5 - line 241, column 33): " + [
+    if (k.kosher instanceof _indexJs16.NotKosher) return _indexJs.peach;
+    if (k.kosher instanceof _indexJs16.KosherIncludingPassover) return _indexJs.blue;
+    if (k.kosher instanceof _indexJs16.KosherNeedPassoverHashgoho) return _indexJs.peach;
+    if (k.kosher instanceof _indexJs16.UsuallyKosherRarelyNeedHashgoho) return _indexJs.brown;
+    if (k.kosher instanceof _indexJs16.OftenKosherNeedHashgoho) return _indexJs.green;
+    if (k.kosher instanceof _indexJs16.NeedHashgohoWholeYear) return _indexJs.brown;
+    if (k.kosher instanceof _indexJs16.KosherForbidden) return _indexJs.peach;
+    throw new Error("Failed pattern match at App.Simple (line 242, column 5 - line 249, column 33): " + [
         k.kosher.constructor.name
     ]);
 };
 var component = /* #__PURE__ */ function() {
-    return _indexJs18.mkComponent({
+    return _indexJs20.mkComponent({
         initialState: function(v) {
             return {
                 moveCurtain: false,
                 results: empty,
-                card: _indexJs15.Nothing.value
+                card: _indexJs17.Nothing.value
             };
         },
         render: render,
-        "eval": _indexJs18.mkEval({
-            handleQuery: _indexJs18.defaultEval.handleQuery,
-            receive: _indexJs18.defaultEval.receive,
-            initialize: _indexJs18.defaultEval.initialize,
-            finalize: _indexJs18.defaultEval.finalize,
+        "eval": _indexJs20.mkEval({
+            handleQuery: _indexJs20.defaultEval.handleQuery,
+            receive: _indexJs20.defaultEval.receive,
+            initialize: _indexJs20.defaultEval.initialize,
+            finalize: _indexJs20.defaultEval.finalize,
             handleAction: handleAction
         })
     });
 }();
 
-},{"../CSS.Font/index.js":"9Iwns","../CSS.Geometry/index.js":"54WNO","../CSS.Size/index.js":"cd0fS","../CSS.Stylesheet/index.js":"k97a8","../Color/index.js":"8f2Dw","../Control.Bind/index.js":"5hjxD","../Control.Monad.State.Class/index.js":"ls1CC","../Data.Semigroup/index.js":"3JeZO","../Data.String.CodePoints/index.js":"1lgpW","../Halogen.Component/index.js":"8dM7y","../Halogen.HTML.CSS/index.js":"zRRWZ","../Halogen.HTML.Core/index.js":"9NBcR","../Halogen.HTML.Elements/index.js":"7rm1k","../Halogen.HTML.Events/index.js":"aoDbU","../Halogen.HTML.Properties/index.js":"6klmN","../Halogen.Query.HalogenM/index.js":"kbUmW","../Web.HTML.Common/index.js":"hCMtm","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../Control.Plus/index.js":"jm5q9","../Data.List.Types/index.js":"5Eszv","../Data.ListEnglish/index.js":"c1K1e","../Data.Maybe/index.js":"7bX1p","../Data.Array/index.js":"fFSAq","../Data.Functor/index.js":"l8Eoe","../App.Colours/index.js":"c6QRT","../CSS.Background/index.js":"3imO7","../DOM.HTML.Indexed.InputType/index.js":"8lpXU"}],"9Iwns":[function(require,module,exports) {
+},{"../CSS.Font/index.js":"9Iwns","../CSS.Geometry/index.js":"54WNO","../CSS.Size/index.js":"cd0fS","../CSS.Stylesheet/index.js":"k97a8","../Color/index.js":"8f2Dw","../Control.Bind/index.js":"5hjxD","../Control.Monad.State.Class/index.js":"ls1CC","../Data.Semigroup/index.js":"3JeZO","../Data.String.CodePoints/index.js":"1lgpW","../Halogen.Component/index.js":"8dM7y","../Halogen.HTML.CSS/index.js":"zRRWZ","../Halogen.HTML.Core/index.js":"9NBcR","../Halogen.HTML.Elements/index.js":"7rm1k","../Halogen.HTML.Events/index.js":"aoDbU","../Halogen.HTML.Properties/index.js":"6klmN","../Halogen.Query.HalogenM/index.js":"kbUmW","../Web.HTML.Common/index.js":"hCMtm","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../Control.Plus/index.js":"jm5q9","../Data.List.Types/index.js":"5Eszv","../Data.ListEnglish/index.js":"c1K1e","../Data.Maybe/index.js":"7bX1p","../Data.Array/index.js":"fFSAq","../Data.Functor/index.js":"l8Eoe","../App.Colours/index.js":"c6QRT","../CSS.Background/index.js":"3imO7","../DOM.HTML.Indexed.InputType/index.js":"8lpXU","../Data.Int/index.js":"ezDMN","../Data.List/index.js":"7Vb9H"}],"9Iwns":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "color", ()=>color);

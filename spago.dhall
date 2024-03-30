@@ -27,6 +27,7 @@
   , "halogen-css"
   , "halogen-subscriptions"
   , "halogen-vdom"
+  , "integers"
   , "lazy"
   , "lists"
   , "maybe"

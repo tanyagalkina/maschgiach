@@ -11,7 +11,7 @@ import Halogen.HTML.Properties as HP
 
 inputBar :: forall w . HH.HTML w Action
 inputBar = HH.div 
-              [ css "my-simple-input" ]
+              [ css "input-bar" ]
               [
               HH.img [
                 CSS.style do

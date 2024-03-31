@@ -2,26 +2,28 @@ module App.Body (component) where
 
 import Prelude
 import Control.Plus (empty)
-import Data.String.CodePoints (length)
+import Data.ListEnglish (ENumberList, findENumbersInList)
+import Data.Maybe (Maybe(..))
+import Data.NonEmpty ((:|))
 
 import Halogen as H
 import Halogen.HTML as HH
+import Halogen.HTML.CSS as CSS
 import Halogen.HTML.Properties as HP
 
-import CSS.Geometry (minHeight, maxHeight)
+import CSS (alignItems, column, display, flex, flexDirection, flexStart, height, justifyContent,
+paddingTop, pct, px, width)
+import CSS.Flexbox (spaceBetween)
+import CSS.Font (fontFamily, monospace)
+import CSS.Geometry (minHeight)
 import CSS.Size (vh)
-import CSS (Color, alignItems, backgroundColor, backgroundImage, block, border, borderLeft, borderRadius, bottom, boxShadow, color, display, displayNone, em, flex, flexBasis, flexDirection, flexStart, flexWrap, fontFamily, fontSize, height, inline, inlineBlock, justifyContent, left, lineHeight, margin, marginLeft, marginRight, marginTop, maxHeight, minHeight, padding, paddingLeft, paddingRight, paddingTop, pct, position, px, rgba, right, solid, top, width, zIndex)
 
-import App.Common (Action(..), State, css)
-import App.Colours (blue, brightred, brown, dark_yellow, green, grey, israelblue, lightgreen, mintcream, orange, peach, salad, skyblue, softred, yellow, israelblue, nogrey, black)
-import App.LanguageIcon (languageIcon)
-import App.InputBar (inputBar)
-import App.ShowResults (showResults)
+import App.Common (Action(..), State)
 import App.Curtain (curtain)
 import App.Footer (footer)
-
-import Data.ListEnglish (ENumberList, findENumbersInList)
-import Data.Maybe (Maybe(..))
+import App.InputBar (inputBar)
+import App.LanguageIcon (languageIcon)
+import App.ShowResults (showResults)
 
 component :: forall query input output m . H.Component query input output m 
 component =
@@ -34,16 +36,34 @@ component =
 
 render :: forall cs m. State  -> H.ComponentHTML Action cs m
 render state = 
-  HH.div [HP.id "content-container"]
-     [
-      languageIcon
-      , HH.div [ css "center-container"] 
+  HH.div [
+           HP.id "main-container"
+          ,CSS.style do 
+              minHeight $ (px 3000.0)
+              display flex 
+              flexDirection column
+              width $ pct 100.0
+              -- TODO: understand the font-family css rule
+              fontFamily ["monospace"] (monospace :|[] )
+         ]
+         [
+          languageIcon
+          , HH.div [
+            HP.id "center-container"
+            ,CSS.style do
+              display flex
+              flexDirection column
+              justifyContent spaceBetween
+              alignItems flexStart
+              height $ vh 100.0
+              paddingTop $ vh 5.0 
+            ] 
           [
             inputBar
           , showResults state.results
           ]
           , curtain state.moveCurtain
-      -- center container end --
+      -- center-container end --
       , footer
 ]
 

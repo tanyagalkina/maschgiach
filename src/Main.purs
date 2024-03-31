@@ -2,12 +2,7 @@ module Main where
 
 import Prelude
 
-import App.Weather as Weather
-import App.Button as Button
-import App.HTTP as HTTP
-import App.Random as Rand
-import App.Search as Search
-import App.Simple as Simple
+import App.Body as Body
 import Data.Maybe (Maybe(..))
 import Effect (Effect)
 import Halogen.Aff as HA
@@ -19,50 +14,14 @@ main :: Effect Unit
 main = HA.runHalogenAff do
   body <- HA.awaitBody
   -- runUI :: forall r f i o. RenderSpec r -> Component f i o Aff -> i -> Aff (HalogenIO f o Aff)
-
-  -- same as example from the book, can use as playground
-  -- runUI Button.component "Hello, Halogen!" body
-
-  -- example from the book and two small add HTML examples
-  runUI Simple.component unit body
-
-  -- search by part of the word
-  -- runUI Search.component "Maschgiach" body
-
-  -- example using the Effect ( generate random number and display it )
-  -- runUI Rand.component unit body
-  -- example using Aff monad
-  -- runUI HTTP.component unit body
-  -- modified example using Aff monad
-  -- runUI Weather.component "berlin" body
+  runUI Body.component unit body
 
 
--- elements in halogen accept two arguments: array of properties, and array of children
-element = HH.h1 [] [ HH.text "Hello, World!" ]
 
--- <div id="root">
---   <input placeholder="Name" />
---   <button class="btn-primary" type="submit">
---     Submit
---   </button>
--- </div>
-
-html =
-  HH.div
-    [ HP.id "root" ]
-    [ HH.input
-      [ HP.placeholder "Name" ]
-  , HH.button
-     [ HP.classes [HH.ClassName "btn-primary" ]
-     , HP.type_ HP.ButtonSubmit
-     ]
-     [ HH.text "Submit" ]
-  ]
-
+----- ===== EXAMPLES ===== -----
 
 -- w stands for widget, i stands for input
 -- input represents the type used to handle DOM events
-
 
 functionThatReturnsElement :: forall w i. String  -> HH.HTML w i 
 functionThatReturnsElement name =
@@ -116,6 +75,7 @@ myHTML = HH.div_
   , HH.p_ [ HH.text "This is a paragraph"]
   , HH.a [ HP.href "https://pursuit.purescript.org/packages/purescript-halogen/5.0.0/docs/Halogen.HTML" ] [ HH.text "Halogen HTML"]
   ]
+
 -- Two HTML Types
 -- ComponentHTML: meant to work with particular type of component
 

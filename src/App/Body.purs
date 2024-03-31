@@ -1,23 +1,6 @@
 module App.Body (component) where
 
 import Prelude
-import Control.Plus (empty)
-import Data.ListEnglish (ENumberList, findENumbersInList)
-import Data.Maybe (Maybe(..))
-import Data.NonEmpty ((:|))
-
-import Halogen as H
-import Halogen.HTML as HH
-import Halogen.HTML.CSS as CSS
-import Halogen.HTML.Properties as HP
-
-import CSS (alignItems, column, display, flex, flexDirection, flexStart, height, justifyContent,
-paddingTop, pct, px, width)
-import CSS.Flexbox (spaceBetween)
-import CSS.Font (fontFamily, monospace)
-import CSS.Geometry (minHeight, maxWidth)
-import CSS.Size (vh)
-import CSS.Overflow (overflow, hidden)
 
 import App.Common (Action(..), State)
 import App.Curtain (curtain)
@@ -25,6 +8,21 @@ import App.Footer (footer)
 import App.InputBar (inputBar)
 import App.LanguageIcon (languageIcon)
 import App.ShowResults (showResults)
+import CSS (alignItems, column, display, flex, flexDirection, flexStart, height, justifyContent, maxHeight, paddingTop, pct, px, width)
+import CSS.Flexbox (spaceBetween, spaceAround)
+import CSS.Font (fontFamily, monospace)
+import CSS.Geometry (minHeight, maxWidth)
+import CSS.Overflow (overflow, hidden)
+import CSS.Size (vh)
+import Control.Plus (empty)
+import Data.ENumberTypes (ENumberList)
+import Data.Head (findENumbersInList)
+import Data.Maybe (Maybe(..))
+import Data.NonEmpty ((:|))
+import Halogen as H
+import Halogen.HTML as HH
+import Halogen.HTML.CSS as CSS
+import Halogen.HTML.Properties as HP
 
 component :: forall query input output m . H.Component query input output m 
 component =
@@ -55,16 +53,17 @@ render state =
             ,CSS.style do
               display flex
               flexDirection column
-              justifyContent spaceBetween
+              justifyContent spaceAround
               alignItems flexStart
               height $ vh 100.0
-              paddingTop $ vh 5.0 
+              paddingTop $ vh 5.0
+              -- maxHeight $ vh 95.0 
             ] 
           [
             inputBar
           , showResults state.results
           ]
-          , curtain state.moveCurtain
+          -- , curtain state.moveCurtain
       -- center-container end --
       , footer
 ]

@@ -1,7 +1,7 @@
 module App.Common(Action (OpenCurtainToTheRight, Search, OpenCard) , State, css ) where
 
 import Prelude
-import Data.ListEnglish (ENumber, ENumberList)
+import Data.ENumberTypes (ENumberList, ENumber)
 import Data.Maybe (Maybe)
 import Halogen.HTML as HH
 import Halogen.HTML.Properties as HP

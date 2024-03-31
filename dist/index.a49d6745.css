@@ -81,7 +81,7 @@
 
 @media (hover: none) {
   .e-number-card:active {
-    opacity: .7;
+    opacity: 1;
     box-shadow: 0 6px 8px #00000026;
   }
 }

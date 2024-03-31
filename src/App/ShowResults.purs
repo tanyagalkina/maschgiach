@@ -4,11 +4,12 @@ import Prelude
 
 import App.Colours (brown, green, lightgreen, nogrey, skyblue, softred, brightred, yellow, orange, black)
 import App.Common (Action, css)
-import CSS (Color, minHeight, maxHeight, backgroundColor, color, borderLeft, solid, em, vh, px)
+import CSS (Color, backgroundColor, borderLeft, color, em, maxHeight, minHeight, paddingTop, px, solid, vh)
 import Data.Array (fromFoldable, elem)
+import Data.ENumberTypes (ENumber, ENumberList, Kashrut(..), Source(..))
+import Data.Head (showSources, showK)
 import Data.Int (toNumber)
 import Data.List as List
-import Data.ListEnglish (ENumber, ENumberList, showSources, showK, Kashrut(..), Source(..))
 import Halogen.HTML as HH
 import Halogen.HTML.CSS as CSS
 
@@ -18,11 +19,12 @@ showResults arr =
     css "results-bar"
 
     ,CSS.style do
+     paddingTop $ em 1.0
     -- minHeight $ px (toNumber (List.length arr) * 40.0)
     --   width $ pct 100.0
-    minHeight $ vh (calculateMinHeight $ List.length arr)
+    -- minHeight $ vh (calculateMinHeight $ List.length arr)
     -- minHeight $ vh 60.0
-    maxHeight $ vh 80.0
+    -- maxHeight $ vh 80.0
     -- minHeight $ vh 50.0
   ] $ map renderENumber (fromFoldable arr)
 

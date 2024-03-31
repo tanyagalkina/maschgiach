@@ -52525,53 +52525,56 @@ var _indexJs6 = require("../CSS.Display/index.js");
 var _indexJs7 = require("../CSS.Flexbox/index.js");
 var _indexJs8 = require("../CSS.Font/index.js");
 var _indexJs9 = require("../CSS.Geometry/index.js");
-var _indexJs10 = require("../CSS.Size/index.js");
-var _indexJs11 = require("../CSS.Stylesheet/index.js");
-var _indexJs12 = require("../Control.Bind/index.js");
-var _indexJs13 = require("../Control.Monad.State.Class/index.js");
-var _indexJs14 = require("../Control.Plus/index.js");
-var _indexJs15 = require("../Data.List.Types/index.js");
-var _indexJs16 = require("../Data.ListEnglish/index.js");
-var _indexJs17 = require("../Data.Maybe/index.js");
-var _indexJs18 = require("../Data.NonEmpty/index.js");
-var _indexJs19 = require("../Halogen.Component/index.js");
-var _indexJs20 = require("../Halogen.HTML.CSS/index.js");
-var _indexJs21 = require("../Halogen.HTML.Elements/index.js");
-var _indexJs22 = require("../Halogen.HTML.Properties/index.js");
-var _indexJs23 = require("../Halogen.Query.HalogenM/index.js");
-var empty = /* #__PURE__ */ _indexJs14.empty(_indexJs15.plusList);
-var discard = /* #__PURE__ */ _indexJs12.discard(_indexJs12.discardUnit)(_indexJs11.bindStyleM);
+var _indexJs10 = require("../CSS.Overflow/index.js");
+var _indexJs11 = require("../CSS.Size/index.js");
+var _indexJs12 = require("../CSS.Stylesheet/index.js");
+var _indexJs13 = require("../Control.Bind/index.js");
+var _indexJs14 = require("../Control.Monad.State.Class/index.js");
+var _indexJs15 = require("../Control.Plus/index.js");
+var _indexJs16 = require("../Data.List.Types/index.js");
+var _indexJs17 = require("../Data.ListEnglish/index.js");
+var _indexJs18 = require("../Data.Maybe/index.js");
+var _indexJs19 = require("../Data.NonEmpty/index.js");
+var _indexJs20 = require("../Halogen.Component/index.js");
+var _indexJs21 = require("../Halogen.HTML.CSS/index.js");
+var _indexJs22 = require("../Halogen.HTML.Elements/index.js");
+var _indexJs23 = require("../Halogen.HTML.Properties/index.js");
+var _indexJs24 = require("../Halogen.Query.HalogenM/index.js");
+var empty = /* #__PURE__ */ _indexJs15.empty(_indexJs16.plusList);
+var discard = /* #__PURE__ */ _indexJs13.discard(_indexJs13.discardUnit)(_indexJs12.bindStyleM);
 var spaceBetween = /* #__PURE__ */ _indexJs7.spaceBetween(_indexJs7.spaceBetweenJustifyContentValue);
 var flexStart = /* #__PURE__ */ _indexJs7.flexStart(_indexJs7.flexStartAlignItemsValue);
-var modify_ = /* #__PURE__ */ _indexJs13.modify_(_indexJs23.monadStateHalogenM);
+var modify_ = /* #__PURE__ */ _indexJs14.modify_(_indexJs24.monadStateHalogenM);
 var search = function(str) {
     if (str === "") return empty;
-    return _indexJs16.findENumbersInList(str);
+    return _indexJs17.findENumbersInList(str);
 };
 var render = function(state) {
-    return _indexJs21.div([
-        _indexJs22.id("main-container"),
-        _indexJs20.style(discard(_indexJs9.minHeight(_indexJs10.px(3000.0)))(function() {
+    return _indexJs22.div([
+        _indexJs23.id("main-container"),
+        _indexJs21.style(discard(_indexJs9.minHeight(_indexJs11.px(3000.0)))(function() {
             return discard(_indexJs6.display(_indexJs6.flex))(function() {
                 return discard(_indexJs7.flexDirection(_indexJs7.column))(function() {
-                    return discard(_indexJs9.width(_indexJs10.pct(100.0)))(function() {
-                        return _indexJs8.fontFamily([
-                            "monospace"
-                        ])(new _indexJs18.NonEmpty(_indexJs8.monospace, []));
+                    return discard(_indexJs10.overflow(_indexJs10.hidden))(function() {
+                        return discard(_indexJs9.maxWidth(_indexJs11.pct(100.0)))(function() {
+                            return _indexJs8.fontFamily([
+                                "monospace"
+                            ])(new _indexJs19.NonEmpty(_indexJs8.monospace, []));
+                        });
                     });
                 });
             });
         }))
     ])([
         _indexJs4.languageIcon,
-        _indexJs21.div([
-            _indexJs22.id("center-container"),
-            _indexJs20.style(discard(_indexJs6.display(_indexJs6.flex))(function() {
+        _indexJs22.div([
+            _indexJs23.id("center-container"),
+            _indexJs21.style(discard(_indexJs6.display(_indexJs6.flex))(function() {
                 return discard(_indexJs7.flexDirection(_indexJs7.column))(function() {
                     return discard(_indexJs7.justifyContent(spaceBetween))(function() {
                         return discard(_indexJs7.alignItems(flexStart))(function() {
-                            return discard(_indexJs9.height(_indexJs10.vh(100.0)))(function() {
-                                return _indexJs9.paddingTop(_indexJs10.vh(5.0));
+                            return discard(_indexJs9.height(_indexJs11.vh(100.0)))(function() {
+                                return _indexJs9.paddingTop(_indexJs11.vh(5.0));
                             });
                         });
                     });
@@ -52603,34 +52606,34 @@ var handleAction = function(v) {
         var $22 = {};
         for(var $23 in st)if (({}).hasOwnProperty.call(st, $23)) $22[$23] = st[$23];
         $22.results = empty;
-        $22.card = new _indexJs17.Just(v.value0);
+        $22.card = new _indexJs18.Just(v.value0);
         return $22;
     });
-    throw new Error("Failed pattern match at App.Body (line 71, column 16 - line 74, column 82): " + [
+    throw new Error("Failed pattern match at App.Body (line 73, column 16 - line 76, column 82): " + [
         v.constructor.name
     ]);
 };
 var component = /* #__PURE__ */ function() {
-    return _indexJs19.mkComponent({
+    return _indexJs20.mkComponent({
         initialState: function(v) {
             return {
                 moveCurtain: false,
                 results: empty,
-                card: _indexJs17.Nothing.value
+                card: _indexJs18.Nothing.value
             };
         },
         render: render,
-        "eval": _indexJs19.mkEval({
-            handleQuery: _indexJs19.defaultEval.handleQuery,
-            receive: _indexJs19.defaultEval.receive,
-            initialize: _indexJs19.defaultEval.initialize,
-            finalize: _indexJs19.defaultEval.finalize,
+        "eval": _indexJs20.mkEval({
+            handleQuery: _indexJs20.defaultEval.handleQuery,
+            receive: _indexJs20.defaultEval.receive,
+            initialize: _indexJs20.defaultEval.initialize,
+            finalize: _indexJs20.defaultEval.finalize,
             handleAction: handleAction
         })
     });
 }();
 
-},{"../App.Common/index.js":"dWLHm","../App.Footer/index.js":"4g0ou","../App.LanguageIcon/index.js":"ckqDh","../Control.Monad.State.Class/index.js":"ls1CC","../Control.Plus/index.js":"jm5q9","../Data.List.Types/index.js":"5Eszv","../Data.ListEnglish/index.js":"c1K1e","../Data.Maybe/index.js":"7bX1p","../Halogen.Component/index.js":"8dM7y","../Halogen.HTML.Elements/index.js":"7rm1k","../Halogen.Query.HalogenM/index.js":"kbUmW","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../App.Curtain/index.js":"8Sbo3","../App.InputBar/index.js":"hX7mO","../App.ShowResults/index.js":"40T8D","../CSS.Display/index.js":"aKTjD","../CSS.Flexbox/index.js":"3ZWsc","../CSS.Geometry/index.js":"54WNO","../CSS.Size/index.js":"cd0fS","../CSS.Stylesheet/index.js":"k97a8","../Control.Bind/index.js":"5hjxD","../Halogen.HTML.CSS/index.js":"zRRWZ","../CSS.Font/index.js":"9Iwns","../Data.NonEmpty/index.js":"8yVpU","../Halogen.HTML.Properties/index.js":"6klmN"}],"dWLHm":[function(require,module,exports) {
+},{"../App.Common/index.js":"dWLHm","../App.Footer/index.js":"4g0ou","../App.LanguageIcon/index.js":"ckqDh","../Control.Monad.State.Class/index.js":"ls1CC","../Control.Plus/index.js":"jm5q9","../Data.List.Types/index.js":"5Eszv","../Data.ListEnglish/index.js":"c1K1e","../Data.Maybe/index.js":"7bX1p","../Halogen.Component/index.js":"8dM7y","../Halogen.HTML.Elements/index.js":"7rm1k","../Halogen.Query.HalogenM/index.js":"kbUmW","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../App.Curtain/index.js":"8Sbo3","../App.InputBar/index.js":"hX7mO","../App.ShowResults/index.js":"40T8D","../CSS.Display/index.js":"aKTjD","../CSS.Flexbox/index.js":"3ZWsc","../CSS.Geometry/index.js":"54WNO","../CSS.Size/index.js":"cd0fS","../CSS.Stylesheet/index.js":"k97a8","../Control.Bind/index.js":"5hjxD","../Halogen.HTML.CSS/index.js":"zRRWZ","../CSS.Font/index.js":"9Iwns","../Data.NonEmpty/index.js":"8yVpU","../Halogen.HTML.Properties/index.js":"6klmN","../CSS.Overflow/index.js":"6Xulf"}],"dWLHm":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "OpenCurtainToTheRight", ()=>OpenCurtainToTheRight);
@@ -62156,6 +62159,66 @@ var alignSelf = /* #__PURE__ */ _indexJs3.key(valAlignSelfValue)(/* #__PURE__ */
 var alignItems = /* #__PURE__ */ _indexJs3.key(valAlignItemsValue)(/* #__PURE__ */ fromString1("align-items"));
 var alignContent = /* #__PURE__ */ _indexJs3.key(valAlignContentValue)(/* #__PURE__ */ fromString1("align-content"));
 
-},{"../CSS.Property/index.js":"5ytk4","../CSS.Size/index.js":"cd0fS","../CSS.String/index.js":"9bTqK","../CSS.Stylesheet/index.js":"k97a8","../Data.Eq/index.js":"8OmSH","../Data.Ord/index.js":"7HnPT","../Data.Show/index.js":"aWqNo","../Data.Tuple/index.js":"ib0Ds","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["7lR9l","d9Zcj"], "d9Zcj", "parcelRequire94c2")
+},{"../CSS.Property/index.js":"5ytk4","../CSS.Size/index.js":"cd0fS","../CSS.String/index.js":"9bTqK","../CSS.Stylesheet/index.js":"k97a8","../Data.Eq/index.js":"8OmSH","../Data.Ord/index.js":"7HnPT","../Data.Show/index.js":"aWqNo","../Data.Tuple/index.js":"ib0Ds","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"6Xulf":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Overflow", ()=>Overflow);
+parcelHelpers.export(exports, "overflow", ()=>overflow);
+parcelHelpers.export(exports, "overflowX", ()=>overflowX);
+parcelHelpers.export(exports, "overflowY", ()=>overflowY);
+parcelHelpers.export(exports, "overflowAuto", ()=>overflowAuto);
+parcelHelpers.export(exports, "hidden", ()=>hidden);
+parcelHelpers.export(exports, "scroll", ()=>scroll);
+parcelHelpers.export(exports, "visible", ()=>visible);
+parcelHelpers.export(exports, "overflowInherit", ()=>overflowInherit);
+parcelHelpers.export(exports, "eqOverflow", ()=>eqOverflow);
+parcelHelpers.export(exports, "ordOverflow", ()=>ordOverflow);
+parcelHelpers.export(exports, "valOverflow", ()=>valOverflow);
+// Generated by purs version 0.15.15
+var _indexJs = require("../CSS.Property/index.js");
+var _indexJs1 = require("../CSS.String/index.js");
+var _indexJs2 = require("../CSS.Stylesheet/index.js");
+var _indexJs3 = require("../Data.Eq/index.js");
+var _indexJs4 = require("../Data.Ord/index.js");
+var fromString = /* #__PURE__ */ _indexJs1.fromString(_indexJs.isStringValue);
+var fromString1 = /* #__PURE__ */ _indexJs1.fromString(_indexJs.isStringKey);
+var eq = /* #__PURE__ */ _indexJs3.eq(_indexJs.eqValue);
+var compare = /* #__PURE__ */ _indexJs4.compare(_indexJs.ordValue);
+var Overflow = function(x) {
+    return x;
+};
+var visible = /* #__PURE__ */ fromString("visible");
+var valOverflow = {
+    value: function(v) {
+        return v;
+    }
+};
+var key = /* #__PURE__ */ _indexJs2.key(valOverflow);
+var scroll = /* #__PURE__ */ fromString("scroll");
+var overflowY = /* #__PURE__ */ key(/* #__PURE__ */ fromString1("overflow-y"));
+var overflowX = /* #__PURE__ */ key(/* #__PURE__ */ fromString1("overflow-x"));
+var overflowInherit = /* #__PURE__ */ fromString("inherit");
+var overflowAuto = /* #__PURE__ */ fromString("auto");
+var overflow = /* #__PURE__ */ key(/* #__PURE__ */ fromString1("overflow"));
+var hidden = /* #__PURE__ */ fromString("hidden");
+var eqOverflow = {
+    eq: function(x) {
+        return function(y) {
+            return eq(x)(y);
+        };
+    }
+};
+var ordOverflow = {
+    compare: function(x) {
+        return function(y) {
+            return compare(x)(y);
+        };
+    },
+    Eq0: function() {
+        return eqOverflow;
+    }
+};
+
+},{"../CSS.Property/index.js":"5ytk4","../CSS.String/index.js":"9bTqK","../CSS.Stylesheet/index.js":"k97a8","../Data.Eq/index.js":"8OmSH","../Data.Ord/index.js":"7HnPT","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["7lR9l","d9Zcj"], "d9Zcj", "parcelRequire94c2")
 
 //# sourceMappingURL=index.f708bf3c.js.map

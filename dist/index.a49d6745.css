@@ -28,8 +28,9 @@
   background: none;
   border: none;
   outline: none;
-  width: 96%;
+  width: 100%;
   font-family: inherit;
+  font-weight: 700;
 }
 
 .results-bar {
@@ -38,7 +39,7 @@
   align-items: center;
   width: 60%;
   margin-top: 1%;
-  font-size: 40px;
+  font-size: 60px;
   display: flex;
   position: absolute;
   top: 25vh;
@@ -58,7 +59,7 @@
   margin-bottom: 10px;
   margin-left: 10px;
   padding-left: 10px;
-  font-family: Arial, sans-serif;
+  font-family: monospace;
   font-size: 40px;
   font-weight: 700;
   line-height: 1.2em;

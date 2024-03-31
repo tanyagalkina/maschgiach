@@ -15,8 +15,9 @@ import CSS (alignItems, column, display, flex, flexDirection, flexStart, height,
 paddingTop, pct, px, width)
 import CSS.Flexbox (spaceBetween)
 import CSS.Font (fontFamily, monospace)
-import CSS.Geometry (minHeight)
+import CSS.Geometry (minHeight, maxWidth)
 import CSS.Size (vh)
+import CSS.Overflow (overflow, hidden)
 
 import App.Common (Action(..), State)
 import App.Curtain (curtain)
@@ -42,7 +43,8 @@ render state =
               minHeight $ (px 3000.0)
               display flex 
               flexDirection column
-              width $ pct 100.0
+              overflow hidden
+              maxWidth $ pct 100.0
               -- TODO: understand the font-family css rule
               fontFamily ["monospace"] (monospace :|[] )
          ]

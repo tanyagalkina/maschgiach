@@ -15,7 +15,7 @@
   border: 1px solid grey;
   background: linear-gradient(to left, #CBCBCD, #DDDDDF, #FFFFFF);
   color: rgb(118, 18, 18);
-  font-size: 20px;
+  font-size: 40px;
   font-family: monospace;
 }
 
@@ -46,9 +46,10 @@
   display: flex;
   flex-direction: column;
   top: 25vh;
-  left: 15%;
-  width: 70%;
-  font-size: 20px;
+  left: 20%;
+  width: 60%;
+  /* font-size: 20px; */
+  font-size: 40px;
   align-items: center;
   justify-content: flex-start;
   position: absolute;
@@ -65,35 +66,39 @@
 
 .e-number-card {
   width: 100%;
-  height: 3em;
-  display: inline-block;
+  height: 1.2em;
+  display: block;
+  overflow: hidden;
   opacity: 0.8;
-  border: 1px solid grey;
-  border-radius: 4px;
+  /* border: 1px solid grey; */
+  /* border-radius: 4px; */
   /* margin-top: 5px; */
   margin-left: 10px;
   /* margin-right: 10px; */
   margin-top: 10px;
-  margin-right: 10px;
-  margin-bottom: 5px;
-  padding: 10px;
+  /*margin-right: 10px; */
+  margin-bottom: 10px;
+  /* padding: 10px; */
   padding-left: 10px;
   line-height: 1.2em;
   /* transition: transform 0.3s ease; */
   transition: all 0.7s ease; 
   transition: height 0.7s ease;
-  font-size: 30px;
+  font-size: 40px;
+  font-family: Arial, sans-serif;
+  font-weight: 700;
 }
 
 .e-number-card:hover .sources {
   visibility: visible;
+  font-size: 0.8em;
   /* text-align: center; */
   /* opacity: 1; */
 }
 .e-number-card:hover {
   opacity: 1;
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-  height: 30em;
+  height: 10em;
 }
 
 @media (hover: none) {

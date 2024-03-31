@@ -2,9 +2,9 @@ module App.ShowResults (showResults) where
 
 import Prelude
 
-import App.Colours (brown, green, lightgreen, nogrey, skyblue, softred, brightred, yellow, orange)
+import App.Colours (brown, green, lightgreen, nogrey, skyblue, softred, brightred, yellow, orange, black)
 import App.Common (Action, css)
-import CSS (Color, minHeight, maxHeight, backgroundColor, color, borderLeft, solid, em, vh)
+import CSS (Color, minHeight, maxHeight, backgroundColor, color, borderLeft, solid, em, vh, px)
 import Data.Array (fromFoldable, elem)
 import Data.Int (toNumber)
 import Data.List as List
@@ -35,9 +35,9 @@ renderENumber eNumber =
           css "e-number-card"
           -- css "button"
           , CSS.style do
-          backgroundColor nogrey
-          color brown
-          borderLeft solid (em 0.7) $ getBackgroundForKashrut eNumber 
+          -- backgroundColor nogrey
+          color black
+          borderLeft solid (em $ 1.2) $ getBackgroundForKashrut eNumber 
             -- (backgroundColor $ (getBackgroundForKashrut eNumber))
             -- (color $ getColorForKashrut eNumber)
             -- my_style make reusable
@@ -45,7 +45,7 @@ renderENumber eNumber =
           -- ,HE.onClick $ \_ -> CSS.style do
           --   backgroundColor brown
           ]
-        [ HH.text (eNumber.name <> " " <> eNumber.e_number)
+        [ HH.text (eNumber.e_number <> " " <> eNumber.name)
          , HH.div [
            css "sources"
           --  , CSS.style do

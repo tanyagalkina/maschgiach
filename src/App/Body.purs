@@ -63,7 +63,7 @@ render state =
             inputBar
           , showResults state.results
           ]
-          -- , curtain state.moveCurtain
+          , curtain state.moveCurtain
       -- center-container end --
       , footer
 ]

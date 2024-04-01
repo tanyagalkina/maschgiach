@@ -52632,7 +52632,7 @@ var component = /* #__PURE__ */ function() {
     });
 }();
 
-},{"../App.Common/index.js":"dWLHm","../App.Footer/index.js":"4g0ou","../App.LanguageIcon/index.js":"ckqDh","../Control.Monad.State.Class/index.js":"ls1CC","../Control.Plus/index.js":"jm5q9","../Data.List.Types/index.js":"5Eszv","../Data.Maybe/index.js":"7bX1p","../Halogen.Component/index.js":"8dM7y","../Halogen.HTML.Elements/index.js":"7rm1k","../Halogen.Query.HalogenM/index.js":"kbUmW","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../App.InputBar/index.js":"hX7mO","../App.ShowResults/index.js":"40T8D","../CSS.Display/index.js":"aKTjD","../CSS.Flexbox/index.js":"3ZWsc","../CSS.Geometry/index.js":"54WNO","../CSS.Size/index.js":"cd0fS","../CSS.Stylesheet/index.js":"k97a8","../Control.Bind/index.js":"5hjxD","../Halogen.HTML.CSS/index.js":"zRRWZ","../CSS.Font/index.js":"9Iwns","../Data.NonEmpty/index.js":"8yVpU","../Halogen.HTML.Properties/index.js":"6klmN","../CSS.Overflow/index.js":"6Xulf","../Data.Head/index.js":"786Xv","../App.Curtain/index.js":"8Sbo3"}],"dWLHm":[function(require,module,exports) {
+},{"../App.Common/index.js":"dWLHm","../App.Footer/index.js":"4g0ou","../App.LanguageIcon/index.js":"ckqDh","../Control.Monad.State.Class/index.js":"ls1CC","../Control.Plus/index.js":"jm5q9","../Data.List.Types/index.js":"5Eszv","../Data.Maybe/index.js":"7bX1p","../Halogen.Component/index.js":"8dM7y","../Halogen.HTML.Elements/index.js":"7rm1k","../Halogen.Query.HalogenM/index.js":"kbUmW","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../App.InputBar/index.js":"hX7mO","../App.ShowResults/index.js":"40T8D","../CSS.Display/index.js":"aKTjD","../CSS.Flexbox/index.js":"3ZWsc","../CSS.Geometry/index.js":"54WNO","../CSS.Size/index.js":"cd0fS","../CSS.Stylesheet/index.js":"k97a8","../Control.Bind/index.js":"5hjxD","../Halogen.HTML.CSS/index.js":"zRRWZ","../Halogen.HTML.Properties/index.js":"6klmN","../CSS.Overflow/index.js":"6Xulf","../Data.Head/index.js":"786Xv","../App.Curtain/index.js":"8Sbo3","../CSS.Font/index.js":"9Iwns","../Data.NonEmpty/index.js":"8yVpU"}],"dWLHm":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "OpenCurtainToTheRight", ()=>OpenCurtainToTheRight);
@@ -60635,14 +60635,14 @@ var containsDairy = function(arr) {
 var getBackgroundForKashrut = function(k) {
     var $8 = containsDairy(k.source);
     if ($8) return _indexJs.skyblue;
-    if (k.kosher instanceof _indexJs9.NotKosher) return _indexJs.softred;
-    if (k.kosher instanceof _indexJs9.KosherIncludingPassover) return _indexJs.lightgreen;
-    if (k.kosher instanceof _indexJs9.KosherNeedPassoverHashgoho) return _indexJs.green;
+    if (k.kosher instanceof _indexJs9.NotKosher) return _indexJs.black;
+    if (k.kosher instanceof _indexJs9.KosherIncludingPassover) return _indexJs.green;
+    if (k.kosher instanceof _indexJs9.KosherNeedPassoverHashgoho) return _indexJs.marine;
     if (k.kosher instanceof _indexJs9.UsuallyKosherRarelyNeedHashgoho) return _indexJs.yellow;
     if (k.kosher instanceof _indexJs9.OftenKosherNeedHashgoho) return _indexJs.orange;
-    if (k.kosher instanceof _indexJs9.NeedHashgohoWholeYear) return _indexJs.softred;
+    if (k.kosher instanceof _indexJs9.NeedHashgohoWholeYear) return _indexJs.lightred;
     if (k.kosher instanceof _indexJs9.KosherForbidden) return _indexJs.brightred;
-    throw new Error("Failed pattern match at App.ShowResults (line 63, column 5 - line 70, column 37): " + [
+    throw new Error("Failed pattern match at App.ShowResults (line 55, column 5 - line 62, column 37): " + [
         k.kosher.constructor.name
     ]);
 };
@@ -60677,28 +60677,23 @@ var calculateMinHeight = function(v) {
 },{"../App.Colours/index.js":"c6QRT","../App.Common/index.js":"dWLHm","../CSS.Border/index.js":"1es03","../CSS.Font/index.js":"9Iwns","../CSS.Geometry/index.js":"54WNO","../CSS.Size/index.js":"cd0fS","../CSS.Stylesheet/index.js":"k97a8","../Control.Bind/index.js":"5hjxD","../Data.Array/index.js":"fFSAq","../Data.Functor/index.js":"l8Eoe","../Data.Int/index.js":"ezDMN","../Data.List.Types/index.js":"5Eszv","../Halogen.HTML.CSS/index.js":"zRRWZ","../Halogen.HTML.Core/index.js":"9NBcR","../Halogen.HTML.Elements/index.js":"7rm1k","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../Data.Head/index.js":"786Xv","../Data.ENumberTypes/index.js":"7FE0O"}],"c6QRT":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "orange", ()=>orange);
-parcelHelpers.export(exports, "green", ()=>green);
-parcelHelpers.export(exports, "softred", ()=>softred);
-parcelHelpers.export(exports, "beige", ()=>beige);
-parcelHelpers.export(exports, "lightgreen", ()=>lightgreen);
-parcelHelpers.export(exports, "skyblue", ()=>skyblue);
-parcelHelpers.export(exports, "peach", ()=>peach);
-parcelHelpers.export(exports, "mintcream", ()=>mintcream);
-parcelHelpers.export(exports, "blue", ()=>blue);
-parcelHelpers.export(exports, "dark_yellow", ()=>dark_yellow);
-parcelHelpers.export(exports, "grey", ()=>grey);
-parcelHelpers.export(exports, "nogrey", ()=>nogrey);
-parcelHelpers.export(exports, "israelblue", ()=>israelblue);
-parcelHelpers.export(exports, "black", ()=>black);
-parcelHelpers.export(exports, "yellow", ()=>yellow);
-parcelHelpers.export(exports, "salad", ()=>salad);
+parcelHelpers.export(exports, "crimsonred", ()=>crimsonred);
 parcelHelpers.export(exports, "brown", ()=>brown);
+parcelHelpers.export(exports, "green", ()=>green);
+parcelHelpers.export(exports, "marine", ()=>marine);
+parcelHelpers.export(exports, "nogrey", ()=>nogrey);
+parcelHelpers.export(exports, "skyblue", ()=>skyblue);
+parcelHelpers.export(exports, "softred", ()=>softred);
 parcelHelpers.export(exports, "brightred", ()=>brightred);
+parcelHelpers.export(exports, "yellow", ()=>yellow);
+parcelHelpers.export(exports, "orange", ()=>orange);
+parcelHelpers.export(exports, "black", ()=>black);
+parcelHelpers.export(exports, "lightred", ()=>lightred);
 var _indexJs = require("../Color/index.js");
 var yellow = /* #__PURE__ */ _indexJs.rgba(250)(180)(0)(0.307);
+// green :: Color
+// green = rgba 47 158 21 0.9
 var softred = /* #__PURE__ */ _indexJs.rgba(205)(92)(92)(1.0);
-// Light Green: rgba(144, 238, 144, 1.0)
 var skyblue = /* #__PURE__ */ _indexJs.rgba(135)(206)(235)(1.0);
 var salad = /* #__PURE__ */ _indexJs.rgba(173)(255)(0)(0.735);
 // Lavender: rgba(230, 230, 250, 1.0)
@@ -60708,11 +60703,13 @@ var nogrey = /* #__PURE__ */ _indexJs.rgba(185)(185)(187)(0.3);
 // Peach: rgba(255, 218, 185, 1.0)
 // Beige: rgba(245, 245, 220, 1.0)
 var mintcream = /* #__PURE__ */ _indexJs.rgba(245)(255)(250)(1.0);
-var lightgreen = /* #__PURE__ */ _indexJs.rgba(50)(205)(50)(1.0);
+var marine = /* #__PURE__ */ _indexJs.rgba(39)(156)(136)(0.9);
+var lightred = /* #__PURE__ */ _indexJs.rgba(255)(0)(0)(0.8);
 var israelblue = /* #__PURE__ */ _indexJs.rgba(21)(72)(189)(0.8);
 var grey = /* #__PURE__ */ _indexJs.rgba(185)(185)(187)(0.8);
-var green = /* #__PURE__ */ _indexJs.rgba(0)(128)(0)(0.8);
+var green = /* #__PURE__ */ _indexJs.rgba(0)(255)(0)(0.8);
 var dark_yellow = /* #__PURE__ */ _indexJs.rgba(205)(141)(0)(0.583);
+var crimsonred = /* #__PURE__ */ _indexJs.rgba(220)(20)(60)(1.0);
 var brown = /* #__PURE__ */ _indexJs.rgba(118)(18)(18)(1.0);
 var brightred = /* #__PURE__ */ _indexJs.rgba(255)(69)(0)(1.0);
 // Mint Cream: rgba(245, 255, 250, 1.0)
@@ -62324,7 +62321,6 @@ var ordOverflow = {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "curtain", ()=>curtain);
-// Generated by purs version 0.15.15
 var _indexJs = require("../CSS.Font/index.js");
 var _indexJs1 = require("../CSS.Geometry/index.js");
 var _indexJs2 = require("../CSS.Size/index.js");
@@ -62359,7 +62355,7 @@ var curtain = function(open) {
         _indexJs8.div([
             _indexJs9.id("curtain-content-one"),
             _indexJs6.style(discard(_indexJs1.margin(_indexJs2.px(0.0))(_indexJs2.px(10.0))(_indexJs2.px(60.0))(_indexJs2.px(10.0)))(function() {
-                return _indexJs.fontSize(_indexJs2.px(20.0));
+                return _indexJs.fontSize(_indexJs2.px(30.0));
             }))
         ])([
             _indexJs7.text(" This ENumber Dictionary is based on Sefer Mahor LeKaschrut and on Sefer of Rabbi Pantelyat; it is not exhaustive and is meant to be used as a reference only. For more information, please consult a competent Halachic authority.")

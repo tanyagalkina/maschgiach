@@ -2,9 +2,9 @@ module App.ShowResults (showResults) where
 
 import Prelude
 
-import App.Colours (brown, green, lightgreen, nogrey, skyblue, softred, brightred, yellow, orange, black)
+import App.Colours (brown, green, marine, nogrey, skyblue, softred, brightred, yellow, orange, black, crimsonred, lightred)
 import App.Common (Action, css)
-import CSS (Color, backgroundColor, borderLeft, color, em, maxHeight, minHeight, paddingTop, px, solid, vh)
+import CSS (Color, backgroundColor, borderLeft, borderRadius, color, em, maxHeight, minHeight, paddingTop, px, solid, vh)
 import Data.Array (fromFoldable, elem)
 import Data.ENumberTypes (ENumber, ENumberList, Kashrut(..), Source(..))
 import Data.Head (showSources, showK)
@@ -17,21 +17,13 @@ showResults :: forall w . ENumberList -> HH.HTML w Action
 showResults arr = 
   HH.div [
     css "results-bar"
-
     ,CSS.style do
      paddingTop $ em 1.0
-    -- minHeight $ px (toNumber (List.length arr) * 40.0)
-    --   width $ pct 100.0
     -- minHeight $ vh (calculateMinHeight $ List.length arr)
-    -- minHeight $ vh 60.0
-    -- maxHeight $ vh 80.0
-    -- minHeight $ vh 50.0
   ] $ map renderENumber (fromFoldable arr)
 
 renderENumber :: forall w . ENumber -> HH.HTML w Action
 renderENumber eNumber =
-  -- HH.li [ css "my-list"]
-    -- HH.button
     HH.div
         [ 
           css "e-number-card"
@@ -61,12 +53,12 @@ renderENumber eNumber =
 getBackgroundForKashrut :: ENumber -> Color
 getBackgroundForKashrut k = if (containsDairy k.source) then skyblue else  
     case k.kosher of
-        NotKosher -> softred   
-        KosherIncludingPassover -> lightgreen
-        KosherNeedPassoverHashgoho -> green
+        NotKosher -> black   
+        KosherIncludingPassover -> green
+        KosherNeedPassoverHashgoho -> marine
         UsuallyKosherRarelyNeedHashgoho -> yellow
         OftenKosherNeedHashgoho -> orange
-        NeedHashgohoWholeYear -> softred
+        NeedHashgohoWholeYear -> lightred
         KosherForbidden -> brightred
 
 

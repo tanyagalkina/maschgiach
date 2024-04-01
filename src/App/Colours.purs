@@ -1,4 +1,4 @@
-module App.Colours where
+module App.Colours (crimsonred, brown, green, marine, nogrey, skyblue, softred, brightred, yellow, orange, black, lightred) where
 
 import Prelude
 
@@ -8,19 +8,27 @@ orange :: Color
 orange = rgba 255 165 0 1.0
 
 green :: Color
-green = rgba 0 128 0 0.8
+green = rgba 0 255 0 0.8
+
+-- green :: Color
+-- green = rgba 47 158 21 0.9
+
+
 
 softred :: Color
 softred = rgba 205 92 92 1.0 
 
+crimsonred :: Color
+crimsonred = rgba 220 20 60 1.0
+
+lightred :: Color
+lightred = rgba 255 0 0 0.8
+
 beige :: Color
 beige = rgba 210 180 140 0.8
 
-lightgreen :: Color
--- lightgreen = rgba 144 238 144 1.0
--- lightgreen = rgba 124 252 124 1.0
-lightgreen = rgba 50 205 50 1.0
--- Light Green: rgba(144, 238, 144, 1.0)
+marine :: Color
+marine = rgba 39 156 136 0.9
 
 skyblue :: Color
 skyblue = rgba 135 206 235 1.0

@@ -10,7 +10,7 @@ import App.LanguageIcon (languageIcon)
 import App.ShowResults (showResults)
 import CSS (alignItems, column, display, flex, flexDirection, flexStart, height, justifyContent, maxHeight, paddingTop, pct, px, width)
 import CSS.Flexbox (spaceBetween, spaceAround)
-import CSS.Font (fontFamily, monospace)
+import CSS.Font (fontFamily, monospace, systemUi)
 import CSS.Geometry (minHeight, maxWidth)
 import CSS.Overflow (overflow, hidden)
 import CSS.Size (vh)
@@ -44,6 +44,7 @@ render state =
               overflow hidden
               maxWidth $ pct 100.0
               -- TODO: understand the font-family css rule
+              -- fontFamily ["monospace"] (systemUi :|[] )
               fontFamily ["monospace"] (monospace :|[] )
          ]
          [
@@ -57,7 +58,6 @@ render state =
               alignItems flexStart
               height $ vh 100.0
               paddingTop $ vh 5.0
-              -- maxHeight $ vh 95.0 
             ] 
           [
             inputBar

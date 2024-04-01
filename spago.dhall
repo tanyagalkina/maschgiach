@@ -34,6 +34,7 @@
   , "media-types"
   , "newtype"
   , "nonempty"
+  , "numbers"
   , "ordered-collections"
   , "parallel"
   , "prelude"

@@ -2,7 +2,7 @@ module App.ShowResults (showResults) where
 
 import Prelude
 
-import App.Colours (brown, green, marine, nogrey, skyblue, softred, brightred, yellow, orange, black, crimsonred, lightred)
+import App.Colours (green, marine, skyblue, brightred, yellow, orange, black, lightred)
 import App.Common (Action, css)
 import CSS (Color, backgroundColor, borderLeft, borderRadius, color, em, maxHeight, minHeight, paddingTop, px, solid, vh)
 import Data.Array (fromFoldable, elem)

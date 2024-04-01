@@ -52573,7 +52573,11 @@ var render = function(state) {
                     return discard(_indexJs7.justifyContent(spaceAround))(function() {
                         return discard(_indexJs7.alignItems(flexStart))(function() {
                             return discard(_indexJs9.height(_indexJs11.vh(100.0)))(function() {
-                                return _indexJs9.paddingTop(_indexJs11.vh(5.0));
+                                return discard(_indexJs9.paddingTop(_indexJs11.vh(5.0)))(function() {
+                                    return _indexJs8.fontFamily([
+                                        "monospace"
+                                    ])(new _indexJs19.NonEmpty(_indexJs8.monospace, []));
+                                });
                             });
                         });
                     });
@@ -52587,6 +52591,10 @@ var render = function(state) {
         _indexJs2.footer
     ]);
 };
+// TODO: add transitionEndListener to curtain
+// getCurtain :: forall w. Boolean -> HH.HTML w Action
+// getCurtain moveCurtain | moveCurtain == false = curtain moveCurtain
+//                        | otherwise = HH.div [] [] 
 var handleAction = function(v) {
     if (v instanceof _indexJs.OpenCurtainToTheRight) return modify_(function(st) {
         var $14 = {};
@@ -52608,7 +52616,7 @@ var handleAction = function(v) {
         $22.card = new _indexJs18.Just(v.value0);
         return $22;
     });
-    throw new Error("Failed pattern match at App.Body (line 72, column 16 - line 75, column 82): " + [
+    throw new Error("Failed pattern match at App.Body (line 78, column 16 - line 81, column 82): " + [
         v.constructor.name
     ]);
 };
@@ -52632,7 +52640,7 @@ var component = /* #__PURE__ */ function() {
     });
 }();
 
-},{"../App.Common/index.js":"dWLHm","../App.Footer/index.js":"4g0ou","../App.LanguageIcon/index.js":"ckqDh","../Control.Monad.State.Class/index.js":"ls1CC","../Control.Plus/index.js":"jm5q9","../Data.List.Types/index.js":"5Eszv","../Data.Maybe/index.js":"7bX1p","../Halogen.Component/index.js":"8dM7y","../Halogen.HTML.Elements/index.js":"7rm1k","../Halogen.Query.HalogenM/index.js":"kbUmW","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../App.InputBar/index.js":"hX7mO","../App.ShowResults/index.js":"40T8D","../CSS.Display/index.js":"aKTjD","../CSS.Flexbox/index.js":"3ZWsc","../CSS.Geometry/index.js":"54WNO","../CSS.Size/index.js":"cd0fS","../CSS.Stylesheet/index.js":"k97a8","../Control.Bind/index.js":"5hjxD","../Halogen.HTML.CSS/index.js":"zRRWZ","../Halogen.HTML.Properties/index.js":"6klmN","../CSS.Overflow/index.js":"6Xulf","../Data.Head/index.js":"786Xv","../App.Curtain/index.js":"8Sbo3","../CSS.Font/index.js":"9Iwns","../Data.NonEmpty/index.js":"8yVpU"}],"dWLHm":[function(require,module,exports) {
+},{"../App.Common/index.js":"dWLHm","../App.Footer/index.js":"4g0ou","../App.LanguageIcon/index.js":"ckqDh","../Control.Monad.State.Class/index.js":"ls1CC","../Control.Plus/index.js":"jm5q9","../Data.List.Types/index.js":"5Eszv","../Data.Maybe/index.js":"7bX1p","../Halogen.Component/index.js":"8dM7y","../Halogen.HTML.Elements/index.js":"7rm1k","../Halogen.Query.HalogenM/index.js":"kbUmW","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../App.InputBar/index.js":"hX7mO","../App.ShowResults/index.js":"40T8D","../CSS.Display/index.js":"aKTjD","../CSS.Flexbox/index.js":"3ZWsc","../CSS.Geometry/index.js":"54WNO","../CSS.Size/index.js":"cd0fS","../CSS.Stylesheet/index.js":"k97a8","../Control.Bind/index.js":"5hjxD","../Halogen.HTML.CSS/index.js":"zRRWZ","../Halogen.HTML.Properties/index.js":"6klmN","../CSS.Overflow/index.js":"6Xulf","../Data.Head/index.js":"786Xv","../CSS.Font/index.js":"9Iwns","../Data.NonEmpty/index.js":"8yVpU","../App.Curtain/index.js":"8Sbo3"}],"dWLHm":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "OpenCurtainToTheRight", ()=>OpenCurtainToTheRight);
@@ -60982,6 +60990,7 @@ parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "preservatENumberList", ()=>preservatENumberList);
 parcelHelpers.export(exports, "e200", ()=>e200);
 parcelHelpers.export(exports, "e201", ()=>e201);
+// Preservatives (200-299)
 var _indexJs = require("../Data.ENumberTypes/index.js");
 var e201 = /* #__PURE__ */ function() {
     return {
@@ -60996,9 +61005,6 @@ var e201 = /* #__PURE__ */ function() {
         kosher: _indexJs.KosherNeedPassoverHashgoho.value
     };
 }();
-//  e100 ++ e101 ++ e102 ++ e104 ++ e110 ++ e120
-//   ++ e121 ++ e123 ++ e124 ++ e129 ++ e131 ++ e140 ++ e141 ++ e150a
-//   ++ emptyENumberList
 // seed data ---
 var e200 = /* #__PURE__ */ function() {
     return {
@@ -61024,6 +61030,7 @@ parcelHelpers.export(exports, "Antioxidant", ()=>Antioxidant);
 parcelHelpers.export(exports, "FlavourEnchancer", ()=>FlavourEnchancer);
 parcelHelpers.export(exports, "Sweetener", ()=>Sweetener);
 parcelHelpers.export(exports, "Emulsifier", ()=>Emulsifier);
+parcelHelpers.export(exports, "Stabilizer", ()=>Stabilizer);
 parcelHelpers.export(exports, "Chametz", ()=>Chametz);
 parcelHelpers.export(exports, "Kitniyot", ()=>Kitniyot);
 parcelHelpers.export(exports, "Dairy", ()=>Dairy);
@@ -61046,127 +61053,55 @@ parcelHelpers.export(exports, "insertEntry", ()=>insertEntry);
 parcelHelpers.export(exports, "eqSource", ()=>eqSource);
 var _indexJs = require("../Control.Plus/index.js");
 var _indexJs1 = require("../Data.List.Types/index.js");
-// showK :: Kashrut -> String
-// showK kashrut = case kashrut of
-//   NotKosher -> "Not Kosher!"
-//   KosherIncludingPassover -> "Kosher including Passover"
-//   KosherNeedPassoverHashgoho -> "Kosher, needs Hashgoho for Passover"
-//   UsuallyKosherRarelyNeedHashgoho -> "Usually Kosher, rarely needs Hashgoho"
-//   OftenKosherNeedHashgoho -> "Often Kosher, needs Hashgoho"
-//   NeedHashgohoWholeYear -> "Needs Hashgoho whole year"
-//   KosherForbidden -> "Kosher, FORBIDDEN"
+//  | SafekKarshuth
 var Chametz = /* #__PURE__ */ function() {
     function Chametz() {}
     Chametz.value = new Chametz();
     return Chametz;
 }();
-// showK :: Kashrut -> String
-// showK kashrut = case kashrut of
-//   NotKosher -> "Not Kosher!"
-//   KosherIncludingPassover -> "Kosher including Passover"
-//   KosherNeedPassoverHashgoho -> "Kosher, needs Hashgoho for Passover"
-//   UsuallyKosherRarelyNeedHashgoho -> "Usually Kosher, rarely needs Hashgoho"
-//   OftenKosherNeedHashgoho -> "Often Kosher, needs Hashgoho"
-//   NeedHashgohoWholeYear -> "Needs Hashgoho whole year"
-//   KosherForbidden -> "Kosher, FORBIDDEN"
+//  | SafekKarshuth
 var Kitniyot = /* #__PURE__ */ function() {
     function Kitniyot() {}
     Kitniyot.value = new Kitniyot();
     return Kitniyot;
 }();
-// showK :: Kashrut -> String
-// showK kashrut = case kashrut of
-//   NotKosher -> "Not Kosher!"
-//   KosherIncludingPassover -> "Kosher including Passover"
-//   KosherNeedPassoverHashgoho -> "Kosher, needs Hashgoho for Passover"
-//   UsuallyKosherRarelyNeedHashgoho -> "Usually Kosher, rarely needs Hashgoho"
-//   OftenKosherNeedHashgoho -> "Often Kosher, needs Hashgoho"
-//   NeedHashgohoWholeYear -> "Needs Hashgoho whole year"
-//   KosherForbidden -> "Kosher, FORBIDDEN"
+//  | SafekKarshuth
 var Dairy = /* #__PURE__ */ function() {
     function Dairy() {}
     Dairy.value = new Dairy();
     return Dairy;
 }();
-// showK :: Kashrut -> String
-// showK kashrut = case kashrut of
-//   NotKosher -> "Not Kosher!"
-//   KosherIncludingPassover -> "Kosher including Passover"
-//   KosherNeedPassoverHashgoho -> "Kosher, needs Hashgoho for Passover"
-//   UsuallyKosherRarelyNeedHashgoho -> "Usually Kosher, rarely needs Hashgoho"
-//   OftenKosherNeedHashgoho -> "Often Kosher, needs Hashgoho"
-//   NeedHashgohoWholeYear -> "Needs Hashgoho whole year"
-//   KosherForbidden -> "Kosher, FORBIDDEN"
+//  | SafekKarshuth
 var Animal = /* #__PURE__ */ function() {
     function Animal() {}
     Animal.value = new Animal();
     return Animal;
 }();
-// showK :: Kashrut -> String
-// showK kashrut = case kashrut of
-//   NotKosher -> "Not Kosher!"
-//   KosherIncludingPassover -> "Kosher including Passover"
-//   KosherNeedPassoverHashgoho -> "Kosher, needs Hashgoho for Passover"
-//   UsuallyKosherRarelyNeedHashgoho -> "Usually Kosher, rarely needs Hashgoho"
-//   OftenKosherNeedHashgoho -> "Often Kosher, needs Hashgoho"
-//   NeedHashgohoWholeYear -> "Needs Hashgoho whole year"
-//   KosherForbidden -> "Kosher, FORBIDDEN"
+//  | SafekKarshuth
 var Wine = /* #__PURE__ */ function() {
     function Wine() {}
     Wine.value = new Wine();
     return Wine;
 }();
-// showK :: Kashrut -> String
-// showK kashrut = case kashrut of
-//   NotKosher -> "Not Kosher!"
-//   KosherIncludingPassover -> "Kosher including Passover"
-//   KosherNeedPassoverHashgoho -> "Kosher, needs Hashgoho for Passover"
-//   UsuallyKosherRarelyNeedHashgoho -> "Usually Kosher, rarely needs Hashgoho"
-//   OftenKosherNeedHashgoho -> "Often Kosher, needs Hashgoho"
-//   NeedHashgohoWholeYear -> "Needs Hashgoho whole year"
-//   KosherForbidden -> "Kosher, FORBIDDEN"
+//  | SafekKarshuth
 var Eggs = /* #__PURE__ */ function() {
     function Eggs() {}
     Eggs.value = new Eggs();
     return Eggs;
 }();
-// showK :: Kashrut -> String
-// showK kashrut = case kashrut of
-//   NotKosher -> "Not Kosher!"
-//   KosherIncludingPassover -> "Kosher including Passover"
-//   KosherNeedPassoverHashgoho -> "Kosher, needs Hashgoho for Passover"
-//   UsuallyKosherRarelyNeedHashgoho -> "Usually Kosher, rarely needs Hashgoho"
-//   OftenKosherNeedHashgoho -> "Often Kosher, needs Hashgoho"
-//   NeedHashgohoWholeYear -> "Needs Hashgoho whole year"
-//   KosherForbidden -> "Kosher, FORBIDDEN"
+//  | SafekKarshuth
 var Vegan = /* #__PURE__ */ function() {
     function Vegan() {}
     Vegan.value = new Vegan();
     return Vegan;
 }();
-// showK :: Kashrut -> String
-// showK kashrut = case kashrut of
-//   NotKosher -> "Not Kosher!"
-//   KosherIncludingPassover -> "Kosher including Passover"
-//   KosherNeedPassoverHashgoho -> "Kosher, needs Hashgoho for Passover"
-//   UsuallyKosherRarelyNeedHashgoho -> "Usually Kosher, rarely needs Hashgoho"
-//   OftenKosherNeedHashgoho -> "Often Kosher, needs Hashgoho"
-//   NeedHashgohoWholeYear -> "Needs Hashgoho whole year"
-//   KosherForbidden -> "Kosher, FORBIDDEN"
+//  | SafekKarshuth
 var Synthetic = /* #__PURE__ */ function() {
     function Synthetic() {}
     Synthetic.value = new Synthetic();
     return Synthetic;
 }();
-// showK :: Kashrut -> String
-// showK kashrut = case kashrut of
-//   NotKosher -> "Not Kosher!"
-//   KosherIncludingPassover -> "Kosher including Passover"
-//   KosherNeedPassoverHashgoho -> "Kosher, needs Hashgoho for Passover"
-//   UsuallyKosherRarelyNeedHashgoho -> "Usually Kosher, rarely needs Hashgoho"
-//   OftenKosherNeedHashgoho -> "Often Kosher, needs Hashgoho"
-//   NeedHashgohoWholeYear -> "Needs Hashgoho whole year"
-//   KosherForbidden -> "Kosher, FORBIDDEN"
+//  | SafekKarshuth
 var Dangerous = /* #__PURE__ */ function() {
     function Dangerous() {}
     Dangerous.value = new Dangerous();
@@ -61236,6 +61171,11 @@ var Emulsifier = /* #__PURE__ */ function() {
     function Emulsifier() {}
     Emulsifier.value = new Emulsifier();
     return Emulsifier;
+}();
+var Stabilizer = /* #__PURE__ */ function() {
+    function Stabilizer() {}
+    Stabilizer.value = new Stabilizer();
+    return Stabilizer;
 }();
 // equivalent:: ENumber -> ENumber -> Boolean
 // equivalent a b = a.e_number == b.e_number

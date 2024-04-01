@@ -1,17 +1,14 @@
+-- Preservatives (200-299)
+
 module Data.Nb200to299 where
 
-import Prelude
 
-import CSS (em)
 import Data.ENumberTypes (AdditiveGroup(..), ENumber, ENumberList, Kashrut(..), Source(..), emptyENumberList, insertEntry)
 
 infixr 5 insertEntry as ++
 
 preservatENumberList :: ENumberList
 preservatENumberList = e200 ++ e201 ++ emptyENumberList
---  e100 ++ e101 ++ e102 ++ e104 ++ e110 ++ e120
---   ++ e121 ++ e123 ++ e124 ++ e129 ++ e131 ++ e140 ++ e141 ++ e150a
---   ++ emptyENumberList
 
 -- seed data ---
 e200 ∷ ENumber

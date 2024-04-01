@@ -8,9 +8,9 @@ import App.Footer (footer)
 import App.InputBar (inputBar)
 import App.LanguageIcon (languageIcon)
 import App.ShowResults (showResults)
-import CSS (alignItems, column, display, flex, flexDirection, flexStart, height, justifyContent, maxHeight, paddingTop, pct, px, width)
-import CSS.Flexbox (spaceBetween, spaceAround)
-import CSS.Font (fontFamily, monospace, systemUi)
+import CSS (alignItems, column, display, flex, flexDirection, flexStart, height, justifyContent, paddingTop, pct, px)
+import CSS.Flexbox (spaceAround)
+import CSS.Font (fontFamily, monospace)
 import CSS.Geometry (minHeight, maxWidth)
 import CSS.Overflow (overflow, hidden)
 import CSS.Size (vh)
@@ -58,6 +58,7 @@ render state =
               alignItems flexStart
               height $ vh 100.0
               paddingTop $ vh 5.0
+              fontFamily ["monospace"] (monospace :|[] )
             ] 
           [
             inputBar
@@ -67,6 +68,11 @@ render state =
       -- center-container end --
       , footer
 ]
+
+-- TODO: add transitionEndListener to curtain
+-- getCurtain :: forall w. Boolean -> HH.HTML w Action
+-- getCurtain moveCurtain | moveCurtain == false = curtain moveCurtain
+--                        | otherwise = HH.div [] [] 
 
 handleAction :: forall o m. Action → H.HalogenM State Action () o m Unit
 handleAction = case _ of

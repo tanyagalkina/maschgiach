@@ -35,7 +35,7 @@
   color: inherit;
   font-size: inherit;
   font-family: inherit;
-  font-weight: 700;
+  font-weight: 300;
   width: 100%;
 }
 
@@ -84,7 +84,7 @@
   transition: height 0.7s ease;
   font-size: 40px;
   font-family: monospace;
-  font-weight: 700;
+  font-weight: 300;
 }
 
 .e-number-card:hover .sources {

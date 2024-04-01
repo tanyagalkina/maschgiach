@@ -52515,74 +52515,76 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "component", ()=>component);
 var _indexJs = require("../App.Common/index.js");
-var _indexJs1 = require("../App.Footer/index.js");
-var _indexJs2 = require("../App.InputBar/index.js");
-var _indexJs3 = require("../App.LanguageIcon/index.js");
-var _indexJs4 = require("../App.ShowResults/index.js");
-var _indexJs5 = require("../CSS.Display/index.js");
-var _indexJs6 = require("../CSS.Flexbox/index.js");
-var _indexJs7 = require("../CSS.Font/index.js");
-var _indexJs8 = require("../CSS.Geometry/index.js");
-var _indexJs9 = require("../CSS.Overflow/index.js");
-var _indexJs10 = require("../CSS.Size/index.js");
-var _indexJs11 = require("../CSS.Stylesheet/index.js");
-var _indexJs12 = require("../Control.Bind/index.js");
-var _indexJs13 = require("../Control.Monad.State.Class/index.js");
-var _indexJs14 = require("../Control.Plus/index.js");
-var _indexJs15 = require("../Data.Head/index.js");
-var _indexJs16 = require("../Data.List.Types/index.js");
-var _indexJs17 = require("../Data.Maybe/index.js");
-var _indexJs18 = require("../Data.NonEmpty/index.js");
-var _indexJs19 = require("../Halogen.Component/index.js");
-var _indexJs20 = require("../Halogen.HTML.CSS/index.js");
-var _indexJs21 = require("../Halogen.HTML.Elements/index.js");
-var _indexJs22 = require("../Halogen.HTML.Properties/index.js");
-var _indexJs23 = require("../Halogen.Query.HalogenM/index.js");
-var empty = /* #__PURE__ */ _indexJs14.empty(_indexJs16.plusList);
-var discard = /* #__PURE__ */ _indexJs12.discard(_indexJs12.discardUnit)(_indexJs11.bindStyleM);
-var spaceAround = /* #__PURE__ */ _indexJs6.spaceAround(_indexJs6.spaceAroundJustifyContentValue);
-var flexStart = /* #__PURE__ */ _indexJs6.flexStart(_indexJs6.flexStartAlignItemsValue);
-var modify_ = /* #__PURE__ */ _indexJs13.modify_(_indexJs23.monadStateHalogenM);
+var _indexJs1 = require("../App.Curtain/index.js");
+var _indexJs2 = require("../App.Footer/index.js");
+var _indexJs3 = require("../App.InputBar/index.js");
+var _indexJs4 = require("../App.LanguageIcon/index.js");
+var _indexJs5 = require("../App.ShowResults/index.js");
+var _indexJs6 = require("../CSS.Display/index.js");
+var _indexJs7 = require("../CSS.Flexbox/index.js");
+var _indexJs8 = require("../CSS.Font/index.js");
+var _indexJs9 = require("../CSS.Geometry/index.js");
+var _indexJs10 = require("../CSS.Overflow/index.js");
+var _indexJs11 = require("../CSS.Size/index.js");
+var _indexJs12 = require("../CSS.Stylesheet/index.js");
+var _indexJs13 = require("../Control.Bind/index.js");
+var _indexJs14 = require("../Control.Monad.State.Class/index.js");
+var _indexJs15 = require("../Control.Plus/index.js");
+var _indexJs16 = require("../Data.Head/index.js");
+var _indexJs17 = require("../Data.List.Types/index.js");
+var _indexJs18 = require("../Data.Maybe/index.js");
+var _indexJs19 = require("../Data.NonEmpty/index.js");
+var _indexJs20 = require("../Halogen.Component/index.js");
+var _indexJs21 = require("../Halogen.HTML.CSS/index.js");
+var _indexJs22 = require("../Halogen.HTML.Elements/index.js");
+var _indexJs23 = require("../Halogen.HTML.Properties/index.js");
+var _indexJs24 = require("../Halogen.Query.HalogenM/index.js");
+var empty = /* #__PURE__ */ _indexJs15.empty(_indexJs17.plusList);
+var discard = /* #__PURE__ */ _indexJs13.discard(_indexJs13.discardUnit)(_indexJs12.bindStyleM);
+var spaceAround = /* #__PURE__ */ _indexJs7.spaceAround(_indexJs7.spaceAroundJustifyContentValue);
+var flexStart = /* #__PURE__ */ _indexJs7.flexStart(_indexJs7.flexStartAlignItemsValue);
+var modify_ = /* #__PURE__ */ _indexJs14.modify_(_indexJs24.monadStateHalogenM);
 var search = function(str) {
     if (str === "") return empty;
-    return _indexJs15.findENumbersInList(str);
+    return _indexJs16.findENumbersInList(str);
 };
 var render = function(state) {
-    return _indexJs21.div([
-        _indexJs22.id("main-container"),
-        _indexJs20.style(discard(_indexJs8.minHeight(_indexJs10.px(3000.0)))(function() {
-            return discard(_indexJs5.display(_indexJs5.flex))(function() {
-                return discard(_indexJs6.flexDirection(_indexJs6.column))(function() {
-                    return discard(_indexJs9.overflow(_indexJs9.hidden))(function() {
-                        return discard(_indexJs8.maxWidth(_indexJs10.pct(100.0)))(function() {
-                            return _indexJs7.fontFamily([
+    return _indexJs22.div([
+        _indexJs23.id("main-container"),
+        _indexJs21.style(discard(_indexJs9.minHeight(_indexJs11.px(3000.0)))(function() {
+            return discard(_indexJs6.display(_indexJs6.flex))(function() {
+                return discard(_indexJs7.flexDirection(_indexJs7.column))(function() {
+                    return discard(_indexJs10.overflow(_indexJs10.hidden))(function() {
+                        return discard(_indexJs9.maxWidth(_indexJs11.pct(100.0)))(function() {
+                            return _indexJs8.fontFamily([
                                 "monospace"
-                            ])(new _indexJs18.NonEmpty(_indexJs7.monospace, []));
+                            ])(new _indexJs19.NonEmpty(_indexJs8.monospace, []));
                         });
                     });
                 });
             });
         }))
     ])([
-        _indexJs3.languageIcon,
-        _indexJs21.div([
-            _indexJs22.id("center-container"),
-            _indexJs20.style(discard(_indexJs5.display(_indexJs5.flex))(function() {
-                return discard(_indexJs6.flexDirection(_indexJs6.column))(function() {
-                    return discard(_indexJs6.justifyContent(spaceAround))(function() {
-                        return discard(_indexJs6.alignItems(flexStart))(function() {
-                            return discard(_indexJs8.height(_indexJs10.vh(100.0)))(function() {
-                                return _indexJs8.paddingTop(_indexJs10.vh(5.0));
+        _indexJs4.languageIcon,
+        _indexJs22.div([
+            _indexJs23.id("center-container"),
+            _indexJs21.style(discard(_indexJs6.display(_indexJs6.flex))(function() {
+                return discard(_indexJs7.flexDirection(_indexJs7.column))(function() {
+                    return discard(_indexJs7.justifyContent(spaceAround))(function() {
+                        return discard(_indexJs7.alignItems(flexStart))(function() {
+                            return discard(_indexJs9.height(_indexJs11.vh(100.0)))(function() {
+                                return _indexJs9.paddingTop(_indexJs11.vh(5.0));
                             });
                         });
                     });
                 });
             }))
         ])([
-            _indexJs2.inputBar,
-            _indexJs4.showResults(state.results)
+            _indexJs3.inputBar,
+            _indexJs5.showResults(state.results)
         ]),
-        _indexJs1.footer
+        _indexJs1.curtain(state.moveCurtain),
+        _indexJs2.footer
     ]);
 };
 var handleAction = function(v) {
@@ -52603,7 +52605,7 @@ var handleAction = function(v) {
         var $22 = {};
         for(var $23 in st)if (({}).hasOwnProperty.call(st, $23)) $22[$23] = st[$23];
         $22.results = empty;
-        $22.card = new _indexJs17.Just(v.value0);
+        $22.card = new _indexJs18.Just(v.value0);
         return $22;
     });
     throw new Error("Failed pattern match at App.Body (line 72, column 16 - line 75, column 82): " + [
@@ -52611,26 +52613,26 @@ var handleAction = function(v) {
     ]);
 };
 var component = /* #__PURE__ */ function() {
-    return _indexJs19.mkComponent({
+    return _indexJs20.mkComponent({
         initialState: function(v) {
             return {
                 moveCurtain: false,
                 results: empty,
-                card: _indexJs17.Nothing.value
+                card: _indexJs18.Nothing.value
             };
         },
         render: render,
-        "eval": _indexJs19.mkEval({
-            handleQuery: _indexJs19.defaultEval.handleQuery,
-            receive: _indexJs19.defaultEval.receive,
-            initialize: _indexJs19.defaultEval.initialize,
-            finalize: _indexJs19.defaultEval.finalize,
+        "eval": _indexJs20.mkEval({
+            handleQuery: _indexJs20.defaultEval.handleQuery,
+            receive: _indexJs20.defaultEval.receive,
+            initialize: _indexJs20.defaultEval.initialize,
+            finalize: _indexJs20.defaultEval.finalize,
             handleAction: handleAction
         })
     });
 }();
 
-},{"../App.Common/index.js":"dWLHm","../App.Footer/index.js":"4g0ou","../App.LanguageIcon/index.js":"ckqDh","../Control.Monad.State.Class/index.js":"ls1CC","../Control.Plus/index.js":"jm5q9","../Data.List.Types/index.js":"5Eszv","../Data.Maybe/index.js":"7bX1p","../Halogen.Component/index.js":"8dM7y","../Halogen.HTML.Elements/index.js":"7rm1k","../Halogen.Query.HalogenM/index.js":"kbUmW","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../App.InputBar/index.js":"hX7mO","../App.ShowResults/index.js":"40T8D","../CSS.Display/index.js":"aKTjD","../CSS.Flexbox/index.js":"3ZWsc","../CSS.Geometry/index.js":"54WNO","../CSS.Size/index.js":"cd0fS","../CSS.Stylesheet/index.js":"k97a8","../Control.Bind/index.js":"5hjxD","../Halogen.HTML.CSS/index.js":"zRRWZ","../CSS.Font/index.js":"9Iwns","../Data.NonEmpty/index.js":"8yVpU","../Halogen.HTML.Properties/index.js":"6klmN","../CSS.Overflow/index.js":"6Xulf","../Data.Head/index.js":"786Xv"}],"dWLHm":[function(require,module,exports) {
+},{"../App.Common/index.js":"dWLHm","../App.Footer/index.js":"4g0ou","../App.LanguageIcon/index.js":"ckqDh","../Control.Monad.State.Class/index.js":"ls1CC","../Control.Plus/index.js":"jm5q9","../Data.List.Types/index.js":"5Eszv","../Data.Maybe/index.js":"7bX1p","../Halogen.Component/index.js":"8dM7y","../Halogen.HTML.Elements/index.js":"7rm1k","../Halogen.Query.HalogenM/index.js":"kbUmW","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../App.InputBar/index.js":"hX7mO","../App.ShowResults/index.js":"40T8D","../CSS.Display/index.js":"aKTjD","../CSS.Flexbox/index.js":"3ZWsc","../CSS.Geometry/index.js":"54WNO","../CSS.Size/index.js":"cd0fS","../CSS.Stylesheet/index.js":"k97a8","../Control.Bind/index.js":"5hjxD","../Halogen.HTML.CSS/index.js":"zRRWZ","../CSS.Font/index.js":"9Iwns","../Data.NonEmpty/index.js":"8yVpU","../Halogen.HTML.Properties/index.js":"6klmN","../CSS.Overflow/index.js":"6Xulf","../Data.Head/index.js":"786Xv","../App.Curtain/index.js":"8Sbo3"}],"dWLHm":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "OpenCurtainToTheRight", ()=>OpenCurtainToTheRight);
@@ -62318,6 +62320,61 @@ var ordOverflow = {
     }
 };
 
-},{"../CSS.Property/index.js":"5ytk4","../CSS.String/index.js":"9bTqK","../CSS.Stylesheet/index.js":"k97a8","../Data.Eq/index.js":"8OmSH","../Data.Ord/index.js":"7HnPT","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["7lR9l","d9Zcj"], "d9Zcj", "parcelRequire94c2")
+},{"../CSS.Property/index.js":"5ytk4","../CSS.String/index.js":"9bTqK","../CSS.Stylesheet/index.js":"k97a8","../Data.Eq/index.js":"8OmSH","../Data.Ord/index.js":"7HnPT","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"8Sbo3":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "curtain", ()=>curtain);
+// Generated by purs version 0.15.15
+var _indexJs = require("../CSS.Font/index.js");
+var _indexJs1 = require("../CSS.Geometry/index.js");
+var _indexJs2 = require("../CSS.Size/index.js");
+var _indexJs3 = require("../CSS.Stylesheet/index.js");
+var _indexJs4 = require("../Control.Bind/index.js");
+var _indexJs5 = require("../Data.Semigroup/index.js");
+var _indexJs6 = require("../Halogen.HTML.CSS/index.js");
+var _indexJs7 = require("../Halogen.HTML.Core/index.js");
+var _indexJs8 = require("../Halogen.HTML.Elements/index.js");
+var _indexJs9 = require("../Halogen.HTML.Properties/index.js");
+var append = /* #__PURE__ */ _indexJs5.append(_indexJs5.semigroupArray);
+var discard = /* #__PURE__ */ _indexJs4.discard(_indexJs4.discardUnit)(_indexJs3.bindStyleM);
+var getCurtainClassList = function(moveCurtain) {
+    return append([
+        "curtain"
+    ])(function() {
+        if (moveCurtain) return [
+            "curtain-move-right"
+        ];
+        return [];
+    }());
+};
+var curtain = function(open) {
+    return _indexJs8.div([
+        _indexJs9.classes(getCurtainClassList(open)),
+        _indexJs6.style(discard(_indexJs1.paddingTop(_indexJs2.pct(7.0)))(function() {
+            return discard(_indexJs1.paddingRight(_indexJs2.px(40.0)))(function() {
+                return _indexJs1.paddingLeft(_indexJs2.px(70.0));
+            });
+        }))
+    ])([
+        _indexJs8.div([
+            _indexJs9.id("curtain-content-one"),
+            _indexJs6.style(discard(_indexJs1.margin(_indexJs2.px(0.0))(_indexJs2.px(10.0))(_indexJs2.px(60.0))(_indexJs2.px(10.0)))(function() {
+                return _indexJs.fontSize(_indexJs2.px(20.0));
+            }))
+        ])([
+            _indexJs7.text(" This ENumber Dictionary is based on Sefer Mahor LeKaschrut and on Sefer of Rabbi Pantelyat; it is not exhaustive and is meant to be used as a reference only. For more information, please consult a competent Halachic authority.")
+        ]),
+        _indexJs8.div([
+            _indexJs9.id("curtain-content-two"),
+            _indexJs6.style(discard(_indexJs1.margin(_indexJs2.px(60.0))(_indexJs2.px(20.0))(_indexJs2.px(40.0))(_indexJs2.px(10.0)))(function() {
+                return _indexJs.fontSize(_indexJs2.px(20.0));
+            }))
+        ])([
+            _indexJs7.text("One more text piece which we want to render into our Disclaimer Screen")
+        ])
+    ]);
+};
+
+},{"../CSS.Font/index.js":"9Iwns","../CSS.Geometry/index.js":"54WNO","../CSS.Size/index.js":"cd0fS","../CSS.Stylesheet/index.js":"k97a8","../Control.Bind/index.js":"5hjxD","../Data.Semigroup/index.js":"3JeZO","../Halogen.HTML.CSS/index.js":"zRRWZ","../Halogen.HTML.Core/index.js":"9NBcR","../Halogen.HTML.Elements/index.js":"7rm1k","../Halogen.HTML.Properties/index.js":"6klmN","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["7lR9l","d9Zcj"], "d9Zcj", "parcelRequire94c2")
 
 //# sourceMappingURL=index.f708bf3c.js.map

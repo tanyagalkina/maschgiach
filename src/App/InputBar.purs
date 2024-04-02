@@ -3,7 +3,7 @@ module App.InputBar (inputBar) where
 import Prelude
 
 import App.Common (Action(..), css)
-import CSS (width, height, margin, px, fontSize, marginTop)
+import CSS (fontSize, height, margin, marginLeft, marginTop, px, width)
 import Halogen.HTML as HH
 import Halogen.HTML.CSS as CSS
 import Halogen.HTML.Events as HE
@@ -26,7 +26,8 @@ inputBar = HH.div
                 HP.type_ HP.InputText
               , CSS.style do
                 fontSize $ px 40.0
-                marginTop $ px 10.0
+                marginTop $ px 12.0
+                marginLeft $ px 10.0
               , HE.onValueInput \str -> OpenCurtainToTheRight str
               ]
           ]

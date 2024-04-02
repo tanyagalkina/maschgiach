@@ -60914,7 +60914,8 @@ var _indexJs3 = require("../Data.Nb100to199/index.js");
 var _indexJs4 = require("../Data.Nb200to299/index.js");
 var _indexJs5 = require("../Data.Nb300to399/index.js");
 var _indexJs6 = require("../Data.Nb400to499/index.js");
-var _indexJs7 = require("../Data.String.CodeUnits/index.js");
+var _indexJs7 = require("../Data.Nb500to599/index.js");
+var _indexJs8 = require("../Data.String.CodeUnits/index.js");
 var foldl = /* #__PURE__ */ _indexJs1.foldl(_indexJs1.foldableArray);
 var showSource = function(source) {
     if (source instanceof _indexJs.Chametz) return "Chametz";
@@ -60926,7 +60927,7 @@ var showSource = function(source) {
     if (source instanceof _indexJs.Vegan) return "Vegan";
     if (source instanceof _indexJs.Synthetic) return "Synthetic";
     if (source instanceof _indexJs.Dangerous) return "Dangerous";
-    throw new Error("Failed pattern match at Data.Head (line 34, column 21 - line 43, column 27): " + [
+    throw new Error("Failed pattern match at Data.Head (line 33, column 21 - line 42, column 27): " + [
         source.constructor.name
     ]);
 };
@@ -60945,7 +60946,7 @@ var showK = function(kashrut) {
     if (kashrut instanceof _indexJs.OftenKosherNeedHashgoho) return "Often Kosher, needs Hashgoho";
     if (kashrut instanceof _indexJs.NeedHashgohoWholeYear) return "Needs Hashgoho whole year";
     if (kashrut instanceof _indexJs.KosherForbidden) return "Kosher, FORBIDDEN";
-    throw new Error("Failed pattern match at Data.Head (line 24, column 17 - line 31, column 41): " + [
+    throw new Error("Failed pattern match at Data.Head (line 23, column 17 - line 30, column 41): " + [
         kashrut.constructor.name
     ]);
 };
@@ -60953,16 +60954,17 @@ var seedENumberList = /* #__PURE__ */ _indexJs2.concat(/* #__PURE__ */ _indexJs2
     _indexJs3.colorENumberList,
     _indexJs4.preservatENumberList,
     _indexJs5.antioxidantENumberList,
-    _indexJs6.stabilizerENumberList
+    _indexJs6.stabilizerENumberList,
+    _indexJs7.regulatorENumberList
 ]));
 var findENumbersInList = function(query) {
     var filterEntry = function(entry) {
-        return _indexJs7.contains(query)(entry.e_number) || _indexJs7.contains(query)(entry.name);
+        return _indexJs8.contains(query)(entry.e_number) || _indexJs8.contains(query)(entry.name);
     };
     return _indexJs2.filter(filterEntry)(seedENumberList);
 };
 
-},{"../Data.Foldable/index.js":"6KsE0","../Data.List/index.js":"7Vb9H","../Data.Nb200to299/index.js":"9MpVt","../Data.String.CodeUnits/index.js":"5hEXg","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../Data.ENumberTypes/index.js":"7FE0O","../Data.Nb100to199/index.js":"iNx5Y","../Data.Nb300to399/index.js":"hlbWj","../Data.Nb400to499/index.js":"aJEWw"}],"9MpVt":[function(require,module,exports) {
+},{"../Data.Foldable/index.js":"6KsE0","../Data.List/index.js":"7Vb9H","../Data.Nb200to299/index.js":"9MpVt","../Data.String.CodeUnits/index.js":"5hEXg","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../Data.ENumberTypes/index.js":"7FE0O","../Data.Nb100to199/index.js":"iNx5Y","../Data.Nb300to399/index.js":"hlbWj","../Data.Nb400to499/index.js":"aJEWw","../Data.Nb500to599/index.js":"ez82O"}],"9MpVt":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "preservatENumberList", ()=>preservatENumberList);
@@ -61008,6 +61010,8 @@ parcelHelpers.export(exports, "FlavourEnchancer", ()=>FlavourEnchancer);
 parcelHelpers.export(exports, "Sweetener", ()=>Sweetener);
 parcelHelpers.export(exports, "Emulsifier", ()=>Emulsifier);
 parcelHelpers.export(exports, "Stabilizer", ()=>Stabilizer);
+parcelHelpers.export(exports, "AcidityRegulator", ()=>AcidityRegulator);
+parcelHelpers.export(exports, "AntiCakingAgent", ()=>AntiCakingAgent);
 parcelHelpers.export(exports, "Chametz", ()=>Chametz);
 parcelHelpers.export(exports, "Kitniyot", ()=>Kitniyot);
 parcelHelpers.export(exports, "Dairy", ()=>Dairy);
@@ -61118,40 +61122,59 @@ var KosherForbidden = /* #__PURE__ */ function() {
     KosherForbidden.value = new KosherForbidden();
     return KosherForbidden;
 }();
+// TODO: implement Show for AdditiveGroup LATER, because there are new variants coming
 var Colour = /* #__PURE__ */ function() {
     function Colour() {}
     Colour.value = new Colour();
     return Colour;
 }();
+// TODO: implement Show for AdditiveGroup LATER, because there are new variants coming
 var Preservative = /* #__PURE__ */ function() {
     function Preservative() {}
     Preservative.value = new Preservative();
     return Preservative;
 }();
+// TODO: implement Show for AdditiveGroup LATER, because there are new variants coming
 var Antioxidant = /* #__PURE__ */ function() {
     function Antioxidant() {}
     Antioxidant.value = new Antioxidant();
     return Antioxidant;
 }();
+// TODO: implement Show for AdditiveGroup LATER, because there are new variants coming
 var FlavourEnchancer = /* #__PURE__ */ function() {
     function FlavourEnchancer() {}
     FlavourEnchancer.value = new FlavourEnchancer();
     return FlavourEnchancer;
 }();
+// TODO: implement Show for AdditiveGroup LATER, because there are new variants coming
 var Sweetener = /* #__PURE__ */ function() {
     function Sweetener() {}
     Sweetener.value = new Sweetener();
     return Sweetener;
 }();
+// TODO: implement Show for AdditiveGroup LATER, because there are new variants coming
 var Emulsifier = /* #__PURE__ */ function() {
     function Emulsifier() {}
     Emulsifier.value = new Emulsifier();
     return Emulsifier;
 }();
+// TODO: implement Show for AdditiveGroup LATER, because there are new variants coming
 var Stabilizer = /* #__PURE__ */ function() {
     function Stabilizer() {}
     Stabilizer.value = new Stabilizer();
     return Stabilizer;
+}();
+// TODO: implement Show for AdditiveGroup LATER, because there are new variants coming
+var AcidityRegulator = /* #__PURE__ */ function() {
+    function AcidityRegulator() {}
+    AcidityRegulator.value = new AcidityRegulator();
+    return AcidityRegulator;
+}();
+// TODO: implement Show for AdditiveGroup LATER, because there are new variants coming
+var AntiCakingAgent = /* #__PURE__ */ function() {
+    function AntiCakingAgent() {}
+    AntiCakingAgent.value = new AntiCakingAgent();
+    return AntiCakingAgent;
 }();
 var insertEntry = /* #__PURE__ */ function() {
     return _indexJs1.Cons.create;
@@ -61409,6 +61432,24 @@ var e400 = /* #__PURE__ */ function() {
     };
 }();
 var stabilizerENumberList = /* #__PURE__ */ _indexJs.insertEntry(e400)(/* #__PURE__ */ _indexJs.insertEntry(e401)(_indexJs.emptyENumberList));
+
+},{"../Data.ENumberTypes/index.js":"7FE0O","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"ez82O":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "regulatorENumberList", ()=>regulatorENumberList);
+// pH Regulators & antiCaking Agents (500-599)
+var _indexJs = require("../Data.ENumberTypes/index.js");
+var e500 = /* #__PURE__ */ function() {
+    return {
+        name: "Sodium Carbonate Sodium hydrogen carbonate (Sodium bicarbonate; Baking soda; Bicabonate of soda) Sodium sesquicarbonate (Trona), Natriumcarbonat (Soda)",
+        e_number: "E500",
+        group: _indexJs.AcidityRegulator.value,
+        source: [],
+        description: "",
+        kosher: _indexJs.KosherIncludingPassover.value
+    };
+}();
+var regulatorENumberList = /* #__PURE__ */ _indexJs.insertEntry(e500)(_indexJs.emptyENumberList);
 
 },{"../Data.ENumberTypes/index.js":"7FE0O","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"aKTjD":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");

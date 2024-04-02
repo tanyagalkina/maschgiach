@@ -6,18 +6,17 @@ module Data.Head
 where
 
 import Prelude
-import Data.Foldable (foldl)
-import Data.List (fromFoldable, filter, concat)
-import Data.String.CodeUnits (contains)
-import Data.String.Pattern (Pattern(..))
-
-
 
 import Data.ENumberTypes (Kashrut(..), Source(..), ENumber, ENumberList)
+import Data.Foldable (foldl)
+import Data.List (fromFoldable, filter, concat)
 import Data.Nb100to199 (colorENumberList)
 import Data.Nb200to299 (preservatENumberList)
 import Data.Nb300to399 (antioxidantENumberList)
 import Data.Nb400to499 (stabilizerENumberList)
+import Data.Nb500to599 (regulatorENumberList)
+import Data.String.CodeUnits (contains)
+import Data.String.Pattern (Pattern(..))
 
 
 showK :: Kashrut -> String
@@ -51,4 +50,9 @@ findENumbersInList query = filter filterEntry seedENumberList
         filterEntry entry = contains (Pattern query) entry.e_number || contains (Pattern query) entry.name
 
 seedENumberList:: ENumberList
-seedENumberList = concat $ fromFoldable [colorENumberList, preservatENumberList, antioxidantENumberList, stabilizerENumberList]
+seedENumberList = concat $ fromFoldable 
+  [colorENumberList
+  , preservatENumberList
+  , antioxidantENumberList
+  , stabilizerENumberList
+  , regulatorENumberList]

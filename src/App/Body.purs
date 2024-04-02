@@ -38,7 +38,7 @@ render state =
   HH.div [
            HP.id "main-container"
           ,CSS.style do 
-              minHeight $ (px 3000.0)
+              -- minHeight $ (px 3000.0)
               display flex 
               flexDirection column
               overflow hidden

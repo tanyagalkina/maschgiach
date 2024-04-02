@@ -52534,41 +52534,57 @@ var _indexJs16 = require("../Data.Head/index.js");
 var _indexJs17 = require("../Data.List.Types/index.js");
 var _indexJs18 = require("../Data.Maybe/index.js");
 var _indexJs19 = require("../Data.NonEmpty/index.js");
-var _indexJs20 = require("../Halogen.Component/index.js");
-var _indexJs21 = require("../Halogen.HTML.CSS/index.js");
-var _indexJs22 = require("../Halogen.HTML.Elements/index.js");
-var _indexJs23 = require("../Halogen.HTML.Properties/index.js");
-var _indexJs24 = require("../Halogen.Query.HalogenM/index.js");
+var _indexJs20 = require("../Data.Show/index.js");
+var _indexJs21 = require("../Halogen.Component/index.js");
+var _indexJs22 = require("../Halogen.HTML.CSS/index.js");
+var _indexJs23 = require("../Halogen.HTML.Elements/index.js");
+var _indexJs24 = require("../Halogen.HTML.Properties/index.js");
+var _indexJs25 = require("../Halogen.Query.HalogenM/index.js");
 var empty = /* #__PURE__ */ _indexJs15.empty(_indexJs17.plusList);
 var discard = /* #__PURE__ */ _indexJs13.discard(_indexJs13.discardUnit)(_indexJs12.bindStyleM);
 var spaceAround = /* #__PURE__ */ _indexJs7.spaceAround(_indexJs7.spaceAroundJustifyContentValue);
 var flexStart = /* #__PURE__ */ _indexJs7.flexStart(_indexJs7.flexStartAlignItemsValue);
-var modify_ = /* #__PURE__ */ _indexJs14.modify_(_indexJs24.monadStateHalogenM);
+var modify_ = /* #__PURE__ */ _indexJs14.modify_(_indexJs25.monadStateHalogenM);
 var search = function(str) {
     if (str === "") return empty;
     return _indexJs16.findENumbersInList(str);
 };
-var render = function(state) {
-    return _indexJs22.div([
-        _indexJs23.id("main-container"),
-        _indexJs21.style(discard(_indexJs9.minHeight(_indexJs11.px(3000.0)))(function() {
-            return discard(_indexJs6.display(_indexJs6.flex))(function() {
-                return discard(_indexJs7.flexDirection(_indexJs7.column))(function() {
-                    return discard(_indexJs10.overflow(_indexJs10.hidden))(function() {
-                        return discard(_indexJs9.maxWidth(_indexJs11.pct(100.0)))(function() {
-                            return _indexJs8.fontFamily([
-                                "monospace"
-                            ])(new _indexJs19.NonEmpty(_indexJs8.monospace, []));
-                        });
-                    });
+var mainContainerGridProperties = /* #__PURE__ */ function() {
+    return [
+        _indexJs22.style(discard(_indexJs6.display(_indexJs6.grid))(function() {
+            return discard(_indexJs9.minHeight(_indexJs11.vh(300.0)))(function() {
+                return discard(_indexJs9.width(_indexJs11.pct(100.0)))(function() {
+                    return _indexJs8.fontFamily([
+                        "monospace"
+                    ])(new _indexJs19.NonEmpty(_indexJs8.monospace, []));
                 });
             });
-        }))
+        })),
+        _indexJs24.attr("style")("grid-template-rows: repeat(" + (_indexJs20.show(_indexJs20.showInt)(3) + ", 1fr);"))
+    ];
+}();
+var mainContainerFlexVariantStyle = /* #__PURE__ */ _indexJs22.style(/* #__PURE__ */ discard(/* #__PURE__ */ _indexJs6.display(_indexJs6.flex))(function() {
+    return discard(_indexJs7.flexDirection(_indexJs7.column))(function() {
+        return discard(_indexJs10.overflow(_indexJs10.hidden))(function() {
+            return discard(_indexJs9.minHeight(_indexJs11.vh(300.0)))(function() {
+                return discard(_indexJs9.maxWidth(_indexJs11.pct(100.0)))(function() {
+                    return _indexJs8.fontFamily([
+                        "some string"
+                    ])(new _indexJs19.NonEmpty(_indexJs8.monospace, []));
+                });
+            });
+        });
+    });
+}));
+var render = function(state) {
+    return _indexJs23.div([
+        _indexJs24.id("main-container"),
+        mainContainerFlexVariantStyle
     ])([
         _indexJs4.languageIcon,
-        _indexJs22.div([
-            _indexJs23.id("center-container"),
-            _indexJs21.style(discard(_indexJs6.display(_indexJs6.flex))(function() {
+        _indexJs23.div([
+            _indexJs24.id("center-container"),
+            _indexJs22.style(discard(_indexJs6.display(_indexJs6.flex))(function() {
                 return discard(_indexJs7.flexDirection(_indexJs7.column))(function() {
                     return discard(_indexJs7.justifyContent(spaceAround))(function() {
                         return discard(_indexJs7.alignItems(flexStart))(function() {
@@ -52597,31 +52613,31 @@ var render = function(state) {
 //                        | otherwise = HH.div [] [] 
 var handleAction = function(v) {
     if (v instanceof _indexJs.OpenCurtainToTheRight) return modify_(function(st) {
-        var $14 = {};
-        for(var $15 in st)if (({}).hasOwnProperty.call(st, $15)) $14[$15] = st[$15];
-        $14.moveCurtain = true;
-        $14.results = search(v.value0);
-        return $14;
+        var $16 = {};
+        for(var $17 in st)if (({}).hasOwnProperty.call(st, $17)) $16[$17] = st[$17];
+        $16.moveCurtain = true;
+        $16.results = search(v.value0);
+        return $16;
     });
     if (v instanceof _indexJs.Search) return modify_(function(st) {
-        var $18 = {};
-        for(var $19 in st)if (({}).hasOwnProperty.call(st, $19)) $18[$19] = st[$19];
-        $18.results = search(v.value0);
-        return $18;
+        var $20 = {};
+        for(var $21 in st)if (({}).hasOwnProperty.call(st, $21)) $20[$21] = st[$21];
+        $20.results = search(v.value0);
+        return $20;
     });
     if (v instanceof _indexJs.OpenCard) return modify_(function(st) {
-        var $22 = {};
-        for(var $23 in st)if (({}).hasOwnProperty.call(st, $23)) $22[$23] = st[$23];
-        $22.results = empty;
-        $22.card = new _indexJs18.Just(v.value0);
-        return $22;
+        var $24 = {};
+        for(var $25 in st)if (({}).hasOwnProperty.call(st, $25)) $24[$25] = st[$25];
+        $24.results = empty;
+        $24.card = new _indexJs18.Just(v.value0);
+        return $24;
     });
-    throw new Error("Failed pattern match at App.Body (line 78, column 16 - line 81, column 82): " + [
+    throw new Error("Failed pattern match at App.Body (line 106, column 16 - line 109, column 82): " + [
         v.constructor.name
     ]);
 };
 var component = /* #__PURE__ */ function() {
-    return _indexJs20.mkComponent({
+    return _indexJs21.mkComponent({
         initialState: function(v) {
             return {
                 moveCurtain: false,
@@ -52630,23 +52646,24 @@ var component = /* #__PURE__ */ function() {
             };
         },
         render: render,
-        "eval": _indexJs20.mkEval({
-            handleQuery: _indexJs20.defaultEval.handleQuery,
-            receive: _indexJs20.defaultEval.receive,
-            initialize: _indexJs20.defaultEval.initialize,
-            finalize: _indexJs20.defaultEval.finalize,
+        "eval": _indexJs21.mkEval({
+            handleQuery: _indexJs21.defaultEval.handleQuery,
+            receive: _indexJs21.defaultEval.receive,
+            initialize: _indexJs21.defaultEval.initialize,
+            finalize: _indexJs21.defaultEval.finalize,
             handleAction: handleAction
         })
     });
 }();
 
-},{"../App.Common/index.js":"dWLHm","../App.Footer/index.js":"4g0ou","../App.LanguageIcon/index.js":"ckqDh","../Control.Monad.State.Class/index.js":"ls1CC","../Control.Plus/index.js":"jm5q9","../Data.List.Types/index.js":"5Eszv","../Data.Maybe/index.js":"7bX1p","../Halogen.Component/index.js":"8dM7y","../Halogen.HTML.Elements/index.js":"7rm1k","../Halogen.Query.HalogenM/index.js":"kbUmW","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../App.InputBar/index.js":"hX7mO","../App.ShowResults/index.js":"40T8D","../CSS.Display/index.js":"aKTjD","../CSS.Flexbox/index.js":"3ZWsc","../CSS.Geometry/index.js":"54WNO","../CSS.Size/index.js":"cd0fS","../CSS.Stylesheet/index.js":"k97a8","../Control.Bind/index.js":"5hjxD","../Halogen.HTML.CSS/index.js":"zRRWZ","../Halogen.HTML.Properties/index.js":"6klmN","../CSS.Overflow/index.js":"6Xulf","../Data.Head/index.js":"786Xv","../CSS.Font/index.js":"9Iwns","../Data.NonEmpty/index.js":"8yVpU","../App.Curtain/index.js":"8Sbo3"}],"dWLHm":[function(require,module,exports) {
+},{"../App.Common/index.js":"dWLHm","../App.Footer/index.js":"4g0ou","../App.LanguageIcon/index.js":"ckqDh","../Control.Monad.State.Class/index.js":"ls1CC","../Control.Plus/index.js":"jm5q9","../Data.List.Types/index.js":"5Eszv","../Data.Maybe/index.js":"7bX1p","../Halogen.Component/index.js":"8dM7y","../Halogen.HTML.Elements/index.js":"7rm1k","../Halogen.Query.HalogenM/index.js":"kbUmW","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../App.InputBar/index.js":"hX7mO","../App.ShowResults/index.js":"40T8D","../CSS.Display/index.js":"aKTjD","../CSS.Flexbox/index.js":"3ZWsc","../CSS.Geometry/index.js":"54WNO","../CSS.Size/index.js":"cd0fS","../CSS.Stylesheet/index.js":"k97a8","../Control.Bind/index.js":"5hjxD","../Halogen.HTML.CSS/index.js":"zRRWZ","../Halogen.HTML.Properties/index.js":"6klmN","../CSS.Overflow/index.js":"6Xulf","../Data.Head/index.js":"786Xv","../CSS.Font/index.js":"9Iwns","../Data.NonEmpty/index.js":"8yVpU","../App.Curtain/index.js":"8Sbo3","../Data.Show/index.js":"aWqNo"}],"dWLHm":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "OpenCurtainToTheRight", ()=>OpenCurtainToTheRight);
 parcelHelpers.export(exports, "Search", ()=>Search);
 parcelHelpers.export(exports, "OpenCard", ()=>OpenCard);
 parcelHelpers.export(exports, "css", ()=>css);
+// Generated by purs version 0.15.15
 var _indexJs = require("../Halogen.HTML.Properties/index.js");
 var _indexJs1 = require("../Web.HTML.Common/index.js");
 var OpenCurtainToTheRight = /* #__PURE__ */ function() {
@@ -59557,7 +59574,6 @@ var biapplicativeProduct2 = function(dictBiapplicative) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "inputBar", ()=>inputBar);
-// Generated by purs version 0.15.15
 var _indexJs = require("../App.Common/index.js");
 var _indexJs1 = require("../CSS.Font/index.js");
 var _indexJs2 = require("../CSS.Geometry/index.js");
@@ -59576,17 +59592,19 @@ var inputBar = /* #__PURE__ */ function() {
         _indexJs.css("input-bar")
     ])([
         _indexJs9.img([
-            _indexJs7.style(discard(_indexJs2.width(_indexJs3.px(50.0)))(function() {
-                return discard(_indexJs2.height(_indexJs3.px(50.0)))(function() {
-                    return _indexJs2.margin(_indexJs3.px(10.0))(_indexJs3.px(10.0))(_indexJs3.px(10.0))(_indexJs3.px(10.0));
+            _indexJs7.style(discard(_indexJs2.width(_indexJs3.px(80.0)))(function() {
+                return discard(_indexJs2.height(_indexJs3.px(80.0)))(function() {
+                    return _indexJs2.margin(_indexJs3.px(5.0))(_indexJs3.px(5.0))(_indexJs3.px(5.0))(_indexJs3.px(5.0));
                 });
             })),
-            _indexJs11.src("../assets/little_search.svg"),
+            _indexJs11.src("../assets/AmpelmannLupe.svg"),
             _indexJs11.alt("lupe")
         ]),
         _indexJs9.input([
             _indexJs11.type_(_indexJs8.isPropInputType)(_indexJs6.InputText.value),
-            _indexJs7.style(_indexJs1.fontSize(_indexJs3.px(40.0))),
+            _indexJs7.style(discard(_indexJs1.fontSize(_indexJs3.px(40.0)))(function() {
+                return _indexJs2.marginTop(_indexJs3.px(10.0));
+            })),
             _indexJs10.onValueInput(function(str) {
                 return new _indexJs.OpenCurtainToTheRight(str);
             })
@@ -60616,6 +60634,7 @@ var wheel = "wheel";
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "showResults", ()=>showResults);
+// Generated by purs version 0.15.15
 var _indexJs = require("../App.Colours/index.js");
 var _indexJs1 = require("../App.Common/index.js");
 var _indexJs2 = require("../CSS.Border/index.js");
@@ -60892,11 +60911,12 @@ parcelHelpers.export(exports, "showSources", ()=>showSources);
 var _indexJs = require("../Data.ENumberTypes/index.js");
 var _indexJs1 = require("../Data.Foldable/index.js");
 var _indexJs2 = require("../Data.List/index.js");
-var _indexJs3 = require("../Data.Nb200to299/index.js");
-var _indexJs4 = require("../Data.String.CodeUnits/index.js");
+var _indexJs3 = require("../Data.Nb100to199/index.js");
+var _indexJs4 = require("../Data.Nb200to299/index.js");
+var _indexJs5 = require("../Data.Nb300to399/index.js");
+var _indexJs6 = require("../Data.Nb400to499/index.js");
+var _indexJs7 = require("../Data.String.CodeUnits/index.js");
 var foldl = /* #__PURE__ */ _indexJs1.foldl(_indexJs1.foldableArray);
-// data Source = Chametz | Kitniyot | Dairy | Animal | Wine | Eggs | Vegan | Synthetic | Dangerous
-// derive instance eqSource :: Eq Source
 var showSource = function(source) {
     if (source instanceof _indexJs.Chametz) return "Chametz";
     if (source instanceof _indexJs.Kitniyot) return "Kitniyot";
@@ -60907,7 +60927,7 @@ var showSource = function(source) {
     if (source instanceof _indexJs.Vegan) return "Vegan";
     if (source instanceof _indexJs.Synthetic) return "Synthetic";
     if (source instanceof _indexJs.Dangerous) return "Dangerous";
-    throw new Error("Failed pattern match at Data.Head (line 55, column 21 - line 64, column 27): " + [
+    throw new Error("Failed pattern match at Data.Head (line 34, column 21 - line 43, column 27): " + [
         source.constructor.name
     ]);
 };
@@ -60918,15 +60938,6 @@ var showSources = function(arr) {
         };
     })("src: ")(arr);
 };
-// infixr 5 insertEntry as ++
-// data AdditiveGroup =  Colour | Preservative | Antioxidant | FlavourEnchancer | Sweetener | Emulsifier
-// data Kashrut = NotKosher    -- 0 – некашерна
-//              | KosherIncludingPassover   --1 – обычно кашерна
-//              | KosherNeedPassoverHashgoho -- 1 – обычно кашерна; требуется проверка na Pessach
-//              | UsuallyKosherRarelyNeedHashgoho   -- 2 – обычно кашерна; в немногих случаях требуется проверка
-//              | OftenKosherNeedHashgoho  -- 3 – часто бывает кашерной, но требуется проверка
-//              | NeedHashgohoWholeYear -- 5 – требуется проверка в течение всего года
-//              | KosherForbidden  -- 1
 var showK = function(kashrut) {
     if (kashrut instanceof _indexJs.NotKosher) return "Not Kosher!";
     if (kashrut instanceof _indexJs.KosherIncludingPassover) return "Kosher including Passover";
@@ -60935,62 +60946,30 @@ var showK = function(kashrut) {
     if (kashrut instanceof _indexJs.OftenKosherNeedHashgoho) return "Often Kosher, needs Hashgoho";
     if (kashrut instanceof _indexJs.NeedHashgohoWholeYear) return "Needs Hashgoho whole year";
     if (kashrut instanceof _indexJs.KosherForbidden) return "Kosher, FORBIDDEN";
-    throw new Error("Failed pattern match at Data.Head (line 41, column 17 - line 48, column 41): " + [
+    throw new Error("Failed pattern match at Data.Head (line 24, column 17 - line 31, column 41): " + [
         kashrut.constructor.name
     ]);
 };
-// TODO: change this to search by part or one of the fields
-// findEntry :: String -> String -> ENumberList -> Maybe ENumber
-// findEntry e_number name = head <<< filter filterEntry
-//   where filterEntry::ENumber -> Boolean
-//         filterEntry entry = entry.e_number == e_number && entry.name == name
-// findEntryBySubstance :: String -> ENumberList -> Maybe ENumber
-// findEntryBySubstance substance = head <<< filter filterEntry
-//   where filterEntry::ENumber -> Boolean
-//         filterEntry entry = contains (Pattern substance)  (_.name entry)
-// findEntryByENumber :: String -> ENumberList -> Maybe ENumber
-// findEntryByENumber e_number = head <<< filter filterEntry
-//   where filterEntry::ENumber -> Boolean
-//         filterEntry entry = contains (Pattern e_number) entry.e_number
 var seedENumberList = /* #__PURE__ */ _indexJs2.concat(/* #__PURE__ */ _indexJs2.fromFoldable(_indexJs1.foldableArray)([
-    _indexJs.colorENumberList,
-    _indexJs3.preservatENumberList
+    _indexJs3.colorENumberList,
+    _indexJs4.preservatENumberList,
+    _indexJs5.antioxidantENumberList,
+    _indexJs6.stabilizerENumberList
 ]));
-// type ENumber = {
-//   name :: String
-//   , e_number :: String
-//   , group :: AdditiveGroup
-//   , source :: Array Source  
-//   , description :: String
-//   , kosher :: Kashrut
-// }
-// type ENumberList = List ENumber
-// emptyENumberList:: ENumberList
-// emptyENumberList = empty
-// equivalent:: ENumber -> ENumber -> Boolean
-// equivalent a b = a.e_number == b.e_number
-// insertEntry :: ENumber -> ENumberList -> ENumberList
-// -- insertEntry entry list  = Cons entry list
-// insertEntry = Cons
-// findENumbers :: String -> ENumberList -> ENumberList
-// -- findEntryByENumberOrSubstance query = head <<< filter filterEntry
-// findENumbers query = filter filterEntry
-//   where filterEntry::ENumber -> Boolean
-//         filterEntry entry = contains (Pattern query) entry.e_number || contains (Pattern query) entry.name
 var findENumbersInList = function(query) {
     var filterEntry = function(entry) {
-        return _indexJs4.contains(query)(entry.e_number) || _indexJs4.contains(query)(entry.name);
+        return _indexJs7.contains(query)(entry.e_number) || _indexJs7.contains(query)(entry.name);
     };
     return _indexJs2.filter(filterEntry)(seedENumberList);
 };
 
-},{"../Data.Foldable/index.js":"6KsE0","../Data.List/index.js":"7Vb9H","../Data.Nb200to299/index.js":"9MpVt","../Data.String.CodeUnits/index.js":"5hEXg","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../Data.ENumberTypes/index.js":"7FE0O"}],"9MpVt":[function(require,module,exports) {
+},{"../Data.Foldable/index.js":"6KsE0","../Data.List/index.js":"7Vb9H","../Data.Nb200to299/index.js":"9MpVt","../Data.String.CodeUnits/index.js":"5hEXg","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../Data.ENumberTypes/index.js":"7FE0O","../Data.Nb100to199/index.js":"iNx5Y","../Data.Nb300to399/index.js":"hlbWj","../Data.Nb400to499/index.js":"aJEWw"}],"9MpVt":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "preservatENumberList", ()=>preservatENumberList);
 parcelHelpers.export(exports, "e200", ()=>e200);
 parcelHelpers.export(exports, "e201", ()=>e201);
-// Preservatives (200-299)
+// Generated by purs version 0.15.15
 var _indexJs = require("../Data.ENumberTypes/index.js");
 var e201 = /* #__PURE__ */ function() {
     return {
@@ -61005,7 +60984,6 @@ var e201 = /* #__PURE__ */ function() {
         kosher: _indexJs.KosherNeedPassoverHashgoho.value
     };
 }();
-// seed data ---
 var e200 = /* #__PURE__ */ function() {
     return {
         name: "Sorbic acid",
@@ -61047,7 +61025,6 @@ parcelHelpers.export(exports, "UsuallyKosherRarelyNeedHashgoho", ()=>UsuallyKosh
 parcelHelpers.export(exports, "OftenKosherNeedHashgoho", ()=>OftenKosherNeedHashgoho);
 parcelHelpers.export(exports, "NeedHashgohoWholeYear", ()=>NeedHashgohoWholeYear);
 parcelHelpers.export(exports, "KosherForbidden", ()=>KosherForbidden);
-parcelHelpers.export(exports, "colorENumberList", ()=>colorENumberList);
 parcelHelpers.export(exports, "emptyENumberList", ()=>emptyENumberList);
 parcelHelpers.export(exports, "insertEntry", ()=>insertEntry);
 parcelHelpers.export(exports, "eqSource", ()=>eqSource);
@@ -61177,11 +61154,6 @@ var Stabilizer = /* #__PURE__ */ function() {
     Stabilizer.value = new Stabilizer();
     return Stabilizer;
 }();
-// equivalent:: ENumber -> ENumber -> Boolean
-// equivalent a b = a.e_number == b.e_number
-// removeDiplicates:: ENumberList -> ENumberList
-// removeDiplicates list | null list  = empty
-//                       | otherwise = nubByEq equivalent list
 var insertEntry = /* #__PURE__ */ function() {
     return _indexJs1.Cons.create;
 }();
@@ -61202,204 +61174,244 @@ var eqSource = {
     }
 };
 var emptyENumberList = /* #__PURE__ */ _indexJs.empty(_indexJs1.plusList);
+
+},{"../Control.Plus/index.js":"jm5q9","../Data.List.Types/index.js":"5Eszv","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"iNx5Y":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "colorENumberList", ()=>colorENumberList);
+// Generated by purs version 0.15.15
+var _indexJs = require("../Data.ENumberTypes/index.js");
 var e150a = /* #__PURE__ */ function() {
     return {
         name: "Plain Caramel",
         e_number: "E150a",
-        group: Colour.value,
+        group: _indexJs.Colour.value,
         source: [],
         description: "Brown colouring",
-        kosher: KosherNeedPassoverHashgoho.value
+        kosher: _indexJs.KosherNeedPassoverHashgoho.value
     };
 }();
 var e141 = /* #__PURE__ */ function() {
     return {
         name: "Copper complexes of chlorophyll and chlorophyllins",
         e_number: "E141",
-        group: Colour.value,
+        group: _indexJs.Colour.value,
         source: [
-            Wine.value
+            _indexJs.Wine.value
         ],
         description: "Green colouring; C.I: 75810",
-        kosher: NeedHashgohoWholeYear.value
+        kosher: _indexJs.NeedHashgohoWholeYear.value
     };
 }();
 var e140 = /* #__PURE__ */ function() {
     return {
         name: "Chlorophyll",
         e_number: "E140",
-        group: Colour.value,
+        group: _indexJs.Colour.value,
         source: [
-            Wine.value
+            _indexJs.Wine.value
         ],
         description: "Green colouring; C.I: 75810",
-        kosher: NeedHashgohoWholeYear.value
+        kosher: _indexJs.NeedHashgohoWholeYear.value
     };
 }();
 var e131 = /* #__PURE__ */ function() {
     return {
         name: "Patent Blue V",
         e_number: "E131",
-        group: Colour.value,
+        group: _indexJs.Colour.value,
         source: [
-            Synthetic.value,
-            Dangerous.value
+            _indexJs.Synthetic.value,
+            _indexJs.Dangerous.value
         ],
         description: "Blue colouring; C.I: 42051",
-        kosher: KosherIncludingPassover.value
+        kosher: _indexJs.KosherIncludingPassover.value
     };
 }();
 var e129 = /* #__PURE__ */ function() {
     return {
         name: "Allura Red AC",
         e_number: "E129",
-        group: Colour.value,
+        group: _indexJs.Colour.value,
         source: [
-            Synthetic.value,
-            Dangerous.value
+            _indexJs.Synthetic.value,
+            _indexJs.Dangerous.value
         ],
         description: "Red colouring; C.I: 16035 FD and C Red 40: יש חוששים, מקובל ככשר",
-        kosher: NeedHashgohoWholeYear.value
+        kosher: _indexJs.NeedHashgohoWholeYear.value
     };
 }();
 var e124 = /* #__PURE__ */ function() {
     return {
         name: "Ponceau 4R, Cochineal Red A",
         e_number: "E124",
-        group: Colour.value,
+        group: _indexJs.Colour.value,
         source: [
-            Synthetic.value,
-            Dangerous.value
+            _indexJs.Synthetic.value,
+            _indexJs.Dangerous.value
         ],
         description: "Red colouring; C.I: 16255",
-        kosher: KosherIncludingPassover.value
+        kosher: _indexJs.KosherIncludingPassover.value
     };
 }();
 var e123 = /* #__PURE__ */ function() {
     return {
         name: "Amaranth",
         e_number: "E123",
-        group: Colour.value,
+        group: _indexJs.Colour.value,
         source: [
-            Synthetic.value,
-            Dangerous.value
+            _indexJs.Synthetic.value,
+            _indexJs.Dangerous.value
         ],
         description: "Red colouring; C.I: 16185 FD and C Red 2",
-        kosher: KosherForbidden.value
+        kosher: _indexJs.KosherForbidden.value
     };
 }();
 var e121 = /* #__PURE__ */ function() {
     return {
         name: "Citrus Red Nr.2",
         e_number: "E121",
-        group: Colour.value,
+        group: _indexJs.Colour.value,
         source: [
-            Synthetic.value
+            _indexJs.Synthetic.value
         ],
         description: "Red colouring",
-        kosher: KosherForbidden.value
+        kosher: _indexJs.KosherForbidden.value
     };
 }();
 var e120 = /* #__PURE__ */ function() {
     return {
         name: "Cochineal",
         e_number: "E120",
-        group: Colour.value,
+        group: _indexJs.Colour.value,
         source: [
-            Animal.value
+            _indexJs.Animal.value
         ],
         description: "Red colouring, Carmine of cochineal, Carminic Acid",
-        kosher: NotKosher.value
+        kosher: _indexJs.NotKosher.value
     };
 }();
 var e110 = /* #__PURE__ */ function() {
     return {
         name: "Sunset Yellow FCF, Orange Yellow S",
         e_number: "E110",
-        group: Colour.value,
+        group: _indexJs.Colour.value,
         source: [
-            Synthetic.value
+            _indexJs.Synthetic.value
         ],
         description: "Orange colouring",
-        kosher: KosherIncludingPassover.value
+        kosher: _indexJs.KosherIncludingPassover.value
     };
 }();
 var e104 = /* #__PURE__ */ function() {
     return {
         name: "Quinoline Yellow",
         e_number: "E104",
-        group: Colour.value,
+        group: _indexJs.Colour.value,
         source: [],
         description: "Yellow colouring",
-        kosher: KosherIncludingPassover.value
+        kosher: _indexJs.KosherIncludingPassover.value
     };
 }();
 var e102 = /* #__PURE__ */ function() {
     return {
         name: "Tartrazine",
         e_number: "E102",
-        group: Colour.value,
+        group: _indexJs.Colour.value,
         source: [],
         description: "Yellow colouring",
-        kosher: KosherIncludingPassover.value
+        kosher: _indexJs.KosherIncludingPassover.value
     };
 }();
 var e101 = /* #__PURE__ */ function() {
     return {
         name: "Riboflavin",
         e_number: "E101",
-        group: Colour.value,
+        group: _indexJs.Colour.value,
         source: [
-            Dairy.value,
-            Animal.value,
-            Chametz.value
+            _indexJs.Dairy.value,
+            _indexJs.Animal.value,
+            _indexJs.Chametz.value
         ],
         description: "Yellow colouring",
-        kosher: KosherNeedPassoverHashgoho.value
+        kosher: _indexJs.KosherNeedPassoverHashgoho.value
     };
 }();
-// seed data ---
 var e100 = /* #__PURE__ */ function() {
     return {
         name: "Curcumin",
         e_number: "E100",
-        group: Colour.value,
+        group: _indexJs.Colour.value,
         source: [
-            Vegan.value
+            _indexJs.Vegan.value
         ],
         description: "Yellow colouring",
-        kosher: KosherIncludingPassover.value
+        kosher: _indexJs.KosherIncludingPassover.value
     };
 }();
-// findENumbers :: String -> ENumberList -> ENumberList
-// -- findEntryByENumberOrSubstance query = head <<< filter filterEntry
-// findENumbers query = filter filterEntry
-//   where filterEntry::ENumber -> Boolean
-//         filterEntry entry = contains (Pattern query) entry.e_number || contains (Pattern query) entry.name
-// findENumbersInList :: String -> ENumberList
-// findENumbersInList query = filter filterEntry seedENumberList
-//   where filterEntry::ENumber -> Boolean
-//         filterEntry entry = contains (Pattern query) entry.e_number || contains (Pattern query) entry.name
-// -- TODO: change this to search by part or one of the fields
-// findEntry :: String -> String -> ENumberList -> Maybe ENumber
-// findEntry e_number name = head <<< filter filterEntry
-//   where filterEntry::ENumber -> Boolean
-//         filterEntry entry = entry.e_number == e_number && entry.name == name
-// findEntryBySubstance :: String -> ENumberList -> Maybe ENumber
-// findEntryBySubstance substance = head <<< filter filterEntry
-//   where filterEntry::ENumber -> Boolean
-//         filterEntry entry = contains (Pattern substance)  (_.name entry)
-// findEntryByENumber :: String -> ENumberList -> Maybe ENumber
-// findEntryByENumber e_number = head <<< filter filterEntry
-//   where filterEntry::ENumber -> Boolean
-//         filterEntry entry = contains (Pattern e_number) entry.e_number
-// seedENumberList:: ENumberList
-// seedENumberList = e100 ++ e101 ++ e102 ++ e104 ++ e110 ++ e120
-//   ++ e121 ++ e123 ++ e124 ++ e129 ++ e131 ++ e140 ++ e141 ++ e150a
-//   ++ emptyENumberList
-var colorENumberList = /* #__PURE__ */ insertEntry(e100)(/* #__PURE__ */ insertEntry(e101)(/* #__PURE__ */ insertEntry(e102)(/* #__PURE__ */ insertEntry(e104)(/* #__PURE__ */ insertEntry(e110)(/* #__PURE__ */ insertEntry(e120)(/* #__PURE__ */ insertEntry(e121)(/* #__PURE__ */ insertEntry(e123)(/* #__PURE__ */ insertEntry(e124)(/* #__PURE__ */ insertEntry(e129)(/* #__PURE__ */ insertEntry(e131)(/* #__PURE__ */ insertEntry(e140)(/* #__PURE__ */ insertEntry(e141)(/* #__PURE__ */ insertEntry(e150a)(emptyENumberList))))))))))))));
+var colorENumberList = /* #__PURE__ */ _indexJs.insertEntry(e100)(/* #__PURE__ */ _indexJs.insertEntry(e101)(/* #__PURE__ */ _indexJs.insertEntry(e102)(/* #__PURE__ */ _indexJs.insertEntry(e104)(/* #__PURE__ */ _indexJs.insertEntry(e110)(/* #__PURE__ */ _indexJs.insertEntry(e120)(/* #__PURE__ */ _indexJs.insertEntry(e121)(/* #__PURE__ */ _indexJs.insertEntry(e123)(/* #__PURE__ */ _indexJs.insertEntry(e124)(/* #__PURE__ */ _indexJs.insertEntry(e129)(/* #__PURE__ */ _indexJs.insertEntry(e131)(/* #__PURE__ */ _indexJs.insertEntry(e140)(/* #__PURE__ */ _indexJs.insertEntry(e141)(/* #__PURE__ */ _indexJs.insertEntry(e150a)(_indexJs.emptyENumberList))))))))))))));
 
-},{"../Control.Plus/index.js":"jm5q9","../Data.List.Types/index.js":"5Eszv","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"aKTjD":[function(require,module,exports) {
+},{"../Data.ENumberTypes/index.js":"7FE0O","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"hlbWj":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "antioxidantENumberList", ()=>antioxidantENumberList);
+// Generated by purs version 0.15.15
+var _indexJs = require("../Data.ENumberTypes/index.js");
+var e301 = /* #__PURE__ */ function() {
+    return {
+        name: "Sodium L-ascorbate",
+        e_number: "E301",
+        group: _indexJs.Antioxidant.value,
+        source: [],
+        description: "Vitamin C",
+        kosher: _indexJs.KosherNeedPassoverHashgoho.value
+    };
+}();
+var e300 = /* #__PURE__ */ function() {
+    return {
+        name: "Ascorbic acid",
+        e_number: "E300",
+        group: _indexJs.Antioxidant.value,
+        source: [],
+        description: "Vitamin C",
+        kosher: _indexJs.KosherNeedPassoverHashgoho.value
+    };
+}();
+var antioxidantENumberList = /* #__PURE__ */ _indexJs.insertEntry(e300)(/* #__PURE__ */ _indexJs.insertEntry(e301)(_indexJs.emptyENumberList));
+
+},{"../Data.ENumberTypes/index.js":"7FE0O","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"aJEWw":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "stabilizerENumberList", ()=>stabilizerENumberList);
+// Thickeners, Stabilizers & Emulsifiers (400 - 499)
+var _indexJs = require("../Data.ENumberTypes/index.js");
+var e401 = /* #__PURE__ */ function() {
+    return {
+        name: "Sodium alginate",
+        e_number: "E401",
+        group: _indexJs.Stabilizer.value,
+        source: [
+            _indexJs.Synthetic.value
+        ],
+        description: "",
+        kosher: _indexJs.NeedHashgohoWholeYear.value
+    };
+}();
+var e400 = /* #__PURE__ */ function() {
+    return {
+        name: "Alginic acid",
+        e_number: "E400",
+        group: _indexJs.Stabilizer.value,
+        source: [
+            _indexJs.Synthetic.value
+        ],
+        description: "",
+        kosher: _indexJs.NeedHashgohoWholeYear.value
+    };
+}();
+var stabilizerENumberList = /* #__PURE__ */ _indexJs.insertEntry(e400)(/* #__PURE__ */ _indexJs.insertEntry(e401)(_indexJs.emptyENumberList));
+
+},{"../Data.ENumberTypes/index.js":"7FE0O","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"aKTjD":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Position", ()=>Position);
@@ -62261,6 +62273,7 @@ var ordOverflow = {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "curtain", ()=>curtain);
+// Generated by purs version 0.15.15
 var _indexJs = require("../CSS.Font/index.js");
 var _indexJs1 = require("../CSS.Geometry/index.js");
 var _indexJs2 = require("../CSS.Size/index.js");

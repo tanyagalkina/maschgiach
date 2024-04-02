@@ -3,7 +3,7 @@ module App.InputBar (inputBar) where
 import Prelude
 
 import App.Common (Action(..), css)
-import CSS (width, height, margin, px, fontSize)
+import CSS (width, height, margin, px, fontSize, marginTop)
 import Halogen.HTML as HH
 import Halogen.HTML.CSS as CSS
 import Halogen.HTML.Events as HE
@@ -15,17 +15,18 @@ inputBar = HH.div
               [
               HH.img [
                 CSS.style do
-                  width $ px 50.0
-                  height $ px 50.0
-                  margin (px 10.0 )   (px 10.0 )   (px 10.0 )  (px 10.0 )
-                ,HP.src "../assets/little_search.svg"
+                  width $ px 80.0
+                  height $ px 80.0
+                  margin (px 5.0 )   (px 5.0 )   (px 5.0 )  (px 5.0 )
+                ,HP.src "../assets/AmpelmannLupe.svg"
                , HP.alt "lupe"
               ]
               , HH.input
               [
                 HP.type_ HP.InputText
               , CSS.style do
-                fontSize $ px 40.0 
+                fontSize $ px 40.0
+                marginTop $ px 10.0
               , HE.onValueInput \str -> OpenCurtainToTheRight str
               ]
           ]

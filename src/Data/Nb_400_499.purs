@@ -1,16 +1,16 @@
 
 -- Thickeners, Stabilizers & Emulsifiers (400 - 499)
 
-module Data.Nb400to499 where
+module Data.Nb400to499 (stabilizerENumberList) where
 
 
 import Data.ENumberTypes (AdditiveGroup(..), ENumber, ENumberList, Kashrut(..), Source(..), emptyENumberList, insertEntry)
-import Data.Number (e)
+-- import Data.Number (e)
 
 infixr 5 insertEntry as ++
 
-antioxidantENumberList :: ENumberList
-antioxidantENumberList =  e400 ++ e401 ++ emptyENumberList
+stabilizerENumberList :: ENumberList
+stabilizerENumberList =  e400 ++ e401 ++ emptyENumberList
 
 e400 :: ENumber
 e400 = {

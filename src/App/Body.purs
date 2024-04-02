@@ -8,7 +8,7 @@ import App.Footer (footer)
 import App.InputBar (inputBar)
 import App.LanguageIcon (languageIcon)
 import App.ShowResults (showResults)
-import CSS (alignItems, column, display, flex, flexDirection, flexStart, height, justifyContent, paddingTop, pct, px)
+import CSS (alignItems, column, display, flex, flexDirection, flexStart, grid, height, justifyContent, main, paddingTop, pct, px, width)
 import CSS.Flexbox (spaceAround)
 import CSS.Font (fontFamily, monospace)
 import CSS.Geometry (minHeight, maxWidth)
@@ -19,6 +19,8 @@ import Data.ENumberTypes (ENumberList)
 import Data.Head (findENumbersInList)
 import Data.Maybe (Maybe(..))
 import Data.NonEmpty ((:|))
+import Data.Array ( concat )
+import Halogen (AttrName(..))
 import Halogen as H
 import Halogen.HTML as HH
 import Halogen.HTML.CSS as CSS
@@ -33,40 +35,66 @@ component =
     , eval: H.mkEval H.defaultEval { handleAction = handleAction }
     }
 
+
+mainContainerFlexVariantStyle :: forall i r. HP.IProp ( style ∷ String | r ) i
+mainContainerFlexVariantStyle = CSS.style do
+            display flex 
+            flexDirection column
+            overflow hidden
+            -- TODO: how to make the main container resizable ( now it is hardcoded to 300vh )
+            minHeight $ vh 300.0
+            maxWidth $ pct 100.0
+              -- TODO: understand the font-family css rule
+              -- fontFamily ["some string"] (systemUi :|[] )
+            fontFamily ["some string"] (monospace :|[] )
+  
+
+mainContainerGridProperties:: forall r i. Array ( HP.IProp ( style :: String | r ) i )
+mainContainerGridProperties =  [
+  CSS.style do
+    display grid
+    minHeight $ vh 300.0
+    width $ pct 100.0
+    fontFamily ["monospace"] (monospace :|[] )
+    -- gridTemplateRows [?, ?, ?, ?]
+    , HP.attr 
+        (AttrName "style") 
+        (
+        -- "grid-template-columns: repeat(" <> ?? <> ", 1fr); " <> 
+        "grid-template-rows: repeat(" <> show 3 <> ", 1fr);")
+  ]
+
+
 render :: forall cs m. State  -> H.ComponentHTML Action cs m
 render state = 
-  HH.div [
-           HP.id "main-container"
-          ,CSS.style do 
-              -- minHeight $ (px 3000.0)
-              display flex 
-              flexDirection column
-              overflow hidden
-              maxWidth $ pct 100.0
-              -- TODO: understand the font-family css rule
-              -- fontFamily ["monospace"] (systemUi :|[] )
-              fontFamily ["monospace"] (monospace :|[] )
-         ]
-         [
-          languageIcon
-          , HH.div [
-            HP.id "center-container"
-            ,CSS.style do
-              display flex
-              flexDirection column
-              justifyContent spaceAround
-              alignItems flexStart
-              height $ vh 100.0
-              paddingTop $ vh 5.0
-              fontFamily ["monospace"] (monospace :|[] )
-            ] 
+  HH.div 
+          -- (concat [
           [
-            inputBar
-          , showResults state.results
-          ]
+           HP.id "main-container"
+           ,mainContainerFlexVariantStyle
+          -- TODO: is there a way to make grid using purescript ONLY
+          ] 
+          -- , mainContainerGridProperties])
+              [
+                 languageIcon
+                  , HH.div [
+                    HP.id "center-container"
+                  , CSS.style do
+                      display flex
+                      flexDirection column
+                      justifyContent spaceAround
+                      alignItems flexStart
+                      height $ vh 100.0
+                      paddingTop $ vh 5.0
+                      fontFamily ["monospace"] (monospace :|[] )
+                 ] 
+                 [
+                   inputBar
+                   , showResults state.results
+                 ]
+                 -- center-container end --
           , curtain state.moveCurtain
-      -- center-container end --
-      , footer
+          , footer
 ]
 
 -- TODO: add transitionEndListener to curtain

@@ -1,9 +1,9 @@
-module App.ShowResults (showResults) where
+module App.ShowResults (showResults, simpleShowResults) where
 
 import Prelude
 
 import App.Colours (green, marine, skyblue, brightred, yellow, orange, black, lightred)
-import App.Common (Action, css)
+import App.Common (Action(..), css)
 import CSS (Color, backgroundColor, borderLeft, borderRadius, color, em, maxHeight, minHeight, paddingTop, px, solid, vh)
 import Data.Array (fromFoldable, elem)
 import Data.ENumberTypes (ENumber, ENumberList, Kashrut(..), Source(..))
@@ -12,15 +12,50 @@ import Data.Int (toNumber)
 import Data.List as List
 import Halogen.HTML as HH
 import Halogen.HTML.CSS as CSS
+import Halogen.HTML.Events as HE
 
 showResults :: forall w . ENumberList -> HH.HTML w Action
 showResults arr = 
   HH.div [
     css "results-bar"
-    ,CSS.style do
-     paddingTop $ em 1.0
+    -- ,CSS.style do
+    --  paddingTop $ em 1.0
     -- minHeight $ vh (calculateMinHeight $ List.length arr)
   ] $ map renderENumber (fromFoldable arr)
+
+
+simpleShowResults :: forall w . ENumberList -> HH.HTML w Action
+simpleShowResults arr = 
+  HH.div [
+    css "simple-results-bar"
+  ] $ map simpleRenderENumber (fromFoldable arr)
+
+
+simpleRenderENumber :: forall w . ENumber -> HH.HTML w Action
+simpleRenderENumber eNumber =
+    HH.div
+        [ 
+          HE.onClick $ \_ -> OpenCard eNumber 
+          ,CSS.style do
+          -- backgroundColor nogrey
+          color black
+          borderLeft solid (em $ 0.8) $ getBackgroundForKashrut eNumber 
+            -- (backgroundColor $ (getBackgroundForKashrut eNumber))
+            -- (color $ getColorForKashrut eNumber)
+            -- my_style make reusable
+          -- ,HE.onClick $ \_ -> CSS.style do
+          --   backgroundColor brown
+          ]
+        [ HH.text (eNumber.e_number <> " " <> eNumber.name)
+        --  , HH.div [
+        --   -- css "sources"
+        --   --  , CSS.style do
+        --   --  fontSize $ px 20.0
+        --    ] [
+        --        HH.text (showSources eNumber.source)
+        --        ,HH.br_ 
+        --       ,HH.text (showK eNumber.kosher)]]
+        ]
 
 renderENumber :: forall w . ENumber -> HH.HTML w Action
 renderENumber eNumber =

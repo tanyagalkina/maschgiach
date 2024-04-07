@@ -1,4 +1,36 @@
-.input-bar {
+.my-grid-container {
+  grid-template: "serRes serRes serRes" 90vh
+  / 900px 10px;
+  display: grid;
+}
+
+@media (width >= 1200px) {
+  .my-grid-container {
+    grid-template: "serRes serRes2 serRes3" 90vh
+    / 1fr 3fr;
+    display: grid;
+  }
+}
+
+.simple-input-bar {
+  border: 3px solid orange;
+  border-radius: 4px;
+  width: 90%;
+  height: 100%;
+  font-size: 30px;
+  position: relative;
+  left: 5%;
+}
+
+.simple-results-bar {
+  border: 3px solid green;
+}
+
+.my-search-and-results {
+  grid-area: serRes;
+}
+
+.curtain-move-right .input-bar {
   color: #761212;
   background-color: #fcf7f7;
   border: 1px solid gray;
@@ -13,7 +45,6 @@
   font-size: 40px;
   display: flex;
   position: absolute;
-  top: 15vh;
   left: 15%;
 }
 
@@ -34,16 +65,18 @@
 }
 
 .results-bar {
+  direction: ltr;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   width: 60%;
   margin-top: 1%;
-  font-size: 60px;
+  font-size: 20px;
   display: flex;
   position: absolute;
   top: 25vh;
   left: 20%;
+  overflow: hidden auto;
 }
 
 .e-number-card .sources {
@@ -54,7 +87,7 @@
 .e-number-card {
   opacity: .8;
   width: 100%;
-  height: 1.2em;
+  min-height: 1.2em;
   margin-top: 10px;
   margin-bottom: 10px;
   margin-left: 10px;
@@ -62,7 +95,7 @@
   font-family: inherit;
   font-size: 40px;
   font-weight: 500;
-  line-height: 1.2em;
+  line-height: 1.2;
   transition: height .7s;
   display: block;
   overflow: hidden;
@@ -111,15 +144,40 @@
   transform: translateX(200%);
 }
 
+.card-visible {
+  z-index: 2;
+  align-items: flex-start;
+  justify-content: baseline;
+  color: brown;
+  opacity: 1;
+  background-color: beige;
+  border: 1px solid gray;
+  border-radius: 15px;
+  flex-direction: column;
+  width: 70%;
+  height: 100%;
+  font-family: inherit;
+  transition: opacity .8s linear;
+  display: flex;
+  position: absolute;
+  top: 1vh;
+  left: 30%;
+}
+
+.card-invisible {
+  opacity: 0;
+  transition: opacity .8s linear;
+}
+
 .footer {
   background: radial-gradient(circle, #b9b9bb, #cbcbcd, #dddddf, #fff);
-  border: 1px solid gray;
+  border: 3px solid brown;
   border-radius: 5px;
   flex-direction: column;
+  grid-area: footer;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 7%;
   padding: 20px;
   display: flex;
   position: absolute;

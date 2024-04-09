@@ -15,6 +15,7 @@ import Data.Nb200to299 (preservatENumberList)
 import Data.Nb300to399 (antioxidantENumberList)
 import Data.Nb400to499 (stabilizerENumberList)
 import Data.Nb500to599 (regulatorENumberList)
+import Data.Nb600to699 (flavourENumberList)
 import Data.String.CodeUnits (contains)
 import Data.String.Pattern (Pattern(..))
 
@@ -55,4 +56,5 @@ seedENumberList = concat $ fromFoldable
   , preservatENumberList
   , antioxidantENumberList
   , stabilizerENumberList
-  , regulatorENumberList]
+  , regulatorENumberList
+  , flavourENumberList]

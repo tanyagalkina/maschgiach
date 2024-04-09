@@ -1,3 +1,9 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
 .my-grid-container {
   grid-template: "serRes serRes serRes" 90vh
   / 900px 10px;

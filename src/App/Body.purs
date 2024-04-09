@@ -127,7 +127,7 @@ render state =
                       [
                          simpleInputBar
                           , simpleShowResults state.results
-                          , card state.moveCurtain state.card
+                         -- , card state.moveCurtain state.card
                           -- , card2 state.moveCurtain state.card
                       ]
                    ,HH.div_[HH.text "the rest of the screen"]]
@@ -144,7 +144,7 @@ render state =
                 --   ] [HH.text "second text box"]
                 -- ]
                  -- center-container end --
-          -- , curtain state.moveCurtain
+          , curtain state.moveCurtain
           ,footer --3.
 ]
 

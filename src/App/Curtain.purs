@@ -57,10 +57,10 @@ curtain :: forall w . Boolean -> HH.HTML w Action
 curtain open =  HH.div [ 
                    HP.classes $ getCurtainClassList open
                     --   TODO: clean the styles
-                    ,CSS.style do
-                       paddingTop $ pct 7.0
-                       paddingRight $ px 40.0
-                       paddingLeft $ px 70.0
+                    -- ,CSS.style do
+                    --    paddingTop $ pct 7.0
+                    --    paddingRight $ px 40.0
+                    --    paddingLeft $ px 70.0
                       --  alignItems flexStart
                    ]
                    [
@@ -83,7 +83,7 @@ curtain open =  HH.div [
 
 getCardClassList :: Boolean -> Array HH.ClassName
 getCardClassList moveCurtain = 
- [HH.ClassName "card-visible"] <> if moveCurtain then [HH.ClassName "card-invisible"] else []
+ [HH.ClassName "card-visible"] <> if moveCurtain then [] else [HH.ClassName "card-invisible"]
 getCurtainClassList :: Boolean -> Array HH.ClassName
 getCurtainClassList moveCurtain = 
  [HH.ClassName "curtain"] <> if moveCurtain then [HH.ClassName "curtain-move-right"] else []

@@ -7,7 +7,7 @@ import Halogen.HTML as HH
 import Halogen.HTML.Properties as HP
 
 type State
-  = { moveCurtain :: Boolean, results:: ENumberList, card:: Maybe ENumber}
+  = { moveCurtain :: Boolean, results:: ENumberList, card:: Maybe ENumber, cardAppear ::Boolean}
 
 data Action
   = OpenCurtainToTheRight String | Search String | OpenCard ENumber | ClearCard

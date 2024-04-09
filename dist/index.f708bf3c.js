@@ -52538,13 +52538,12 @@ var _indexJs20 = require("../Data.Maybe/index.js");
 var _indexJs21 = require("../Data.NonEmpty/index.js");
 var _indexJs22 = require("../Halogen.Component/index.js");
 var _indexJs23 = require("../Halogen.HTML.CSS/index.js");
-var _indexJs24 = require("../Halogen.HTML.Core/index.js");
-var _indexJs25 = require("../Halogen.HTML.Elements/index.js");
-var _indexJs26 = require("../Halogen.HTML.Properties/index.js");
-var _indexJs27 = require("../Halogen.Query.HalogenM/index.js");
+var _indexJs24 = require("../Halogen.HTML.Elements/index.js");
+var _indexJs25 = require("../Halogen.HTML.Properties/index.js");
+var _indexJs26 = require("../Halogen.Query.HalogenM/index.js");
 var discard = /* #__PURE__ */ _indexJs15.discard(_indexJs15.discardUnit)(_indexJs14.bindStyleM);
 var flexStart = /* #__PURE__ */ _indexJs9.flexStart(_indexJs9.flexStartAlignItemsValue);
-var modify_ = /* #__PURE__ */ _indexJs16.modify_(_indexJs27.monadStateHalogenM);
+var modify_ = /* #__PURE__ */ _indexJs16.modify_(_indexJs26.monadStateHalogenM);
 var empty = /* #__PURE__ */ _indexJs17.empty(_indexJs19.plusList);
 var searchNumber = function(str) {
     return _indexJs18.findENumbersInList(str);
@@ -52552,11 +52551,9 @@ var searchNumber = function(str) {
 var mainContainerFlexVariantStyle = /* #__PURE__ */ _indexJs23.style(/* #__PURE__ */ discard(/* #__PURE__ */ _indexJs8.display(_indexJs8.flex))(function() {
     return discard(_indexJs9.flexDirection(_indexJs9.column))(function() {
         return discard(_indexJs12.overflow(_indexJs12.hidden))(function() {
-            return discard(_indexJs11.maxWidth(_indexJs13.pct(100.0)))(function() {
-                return _indexJs10.fontFamily([
-                    "some string"
-                ])(new _indexJs21.NonEmpty(_indexJs10.monospace, []));
-            });
+            return _indexJs10.fontFamily([
+                "some string"
+            ])(new _indexJs21.NonEmpty(_indexJs10.monospace, []));
         });
     });
 }));
@@ -52580,41 +52577,41 @@ var mainContainerFlexVariantStyle = /* #__PURE__ */ _indexJs23.style(/* #__PURE_
 // d :: StyleM Unit
 // d = display grid
 var render = function(state) {
-    return _indexJs25.div([
-        _indexJs26.id("main-container"),
-        mainContainerFlexVariantStyle
-    ])([
-        _indexJs5.languageIcon,
-        _indexJs25.div([
-            _indexJs1.css("my-grid-container")
+    return _indexJs24.div_([
+        _indexJs24.div([
+            _indexJs25.id("main-container"),
+            mainContainerFlexVariantStyle
         ])([
-            _indexJs25.div([
-                _indexJs1.css("my-search-and-results"),
-                _indexJs23.style(discard(_indexJs8.display(_indexJs8.flex))(function() {
-                    return discard(_indexJs9.flexDirection(_indexJs9.column))(function() {
-                        return discard(_indexJs9.alignItems(flexStart))(function() {
-                            return discard(_indexJs11.height(_indexJs13.vh(100.0)))(function() {
-                                return discard(_indexJs11.paddingTop(_indexJs13.vh(5.0)))(function() {
-                                    return discard(_indexJs7.border(_indexJs7.solid)(_indexJs13.px(3.0))(_indexJs.brightred))(function() {
-                                        return _indexJs10.fontFamily([
-                                            "monospace"
-                                        ])(new _indexJs21.NonEmpty(_indexJs10.monospace, []));
+            _indexJs5.languageIcon,
+            _indexJs24.div([
+                _indexJs1.css("my-grid-container")
+            ])([
+                _indexJs24.div([
+                    _indexJs1.css("my-search-and-results"),
+                    _indexJs23.style(discard(_indexJs8.display(_indexJs8.flex))(function() {
+                        return discard(_indexJs9.flexDirection(_indexJs9.column))(function() {
+                            return discard(_indexJs9.alignItems(flexStart))(function() {
+                                return discard(_indexJs11.height(_indexJs13.vh(100.0)))(function() {
+                                    return discard(_indexJs11.paddingTop(_indexJs13.vh(5.0)))(function() {
+                                        return discard(_indexJs7.border(_indexJs7.solid)(_indexJs13.px(3.0))(_indexJs.brightred))(function() {
+                                            return _indexJs10.fontFamily([
+                                                "monospace"
+                                            ])(new _indexJs21.NonEmpty(_indexJs10.monospace, []));
+                                        });
                                     });
                                 });
                             });
                         });
-                    });
-                }))
-            ])([
-                _indexJs4.simpleInputBar,
-                _indexJs6.simpleShowResults(state.results)
+                    }))
+                ])([
+                    _indexJs4.simpleInputBar,
+                    _indexJs6.simpleShowResults(state.results),
+                    _indexJs2.card(state.cardAppear)(state.card)
+                ]),
+                _indexJs2.curtain(state.moveCurtain)
             ]),
-            _indexJs25.div_([
-                _indexJs24.text("the rest of the screen")
-            ])
-        ]),
-        _indexJs2.curtain(state.moveCurtain),
-        _indexJs3.footer
+            _indexJs3.footer
+        ])
     ]);
 };
 // TODO: add transitionEndListener to curtain
@@ -52638,8 +52635,8 @@ var handleAction = function(v) {
     if (v instanceof _indexJs1.OpenCard) return modify_(function(st) {
         var $21 = {};
         for(var $22 in st)if (({}).hasOwnProperty.call(st, $22)) $21[$22] = st[$22];
-        $21.moveCurtain = false;
         $21.card = new _indexJs20.Just(v.value0);
+        $21.cardAppear = true;
         return $21;
     });
     if (v instanceof _indexJs1.ClearCard) return modify_(function(st) {
@@ -52647,9 +52644,10 @@ var handleAction = function(v) {
         for(var $26 in st)if (({}).hasOwnProperty.call(st, $26)) $25[$26] = st[$26];
         $25.card = _indexJs20.Nothing.value;
         $25.moveCurtain = true;
+        $25.cardAppear = false;
         return $25;
     });
-    throw new Error("Failed pattern match at App.Body (line 157, column 16 - line 162, column 73): " + [
+    throw new Error("Failed pattern match at App.Body (line 161, column 16 - line 166, column 93): " + [
         v.constructor.name
     ]);
 };
@@ -52659,7 +52657,8 @@ var component = /* #__PURE__ */ function() {
             return {
                 moveCurtain: false,
                 results: empty,
-                card: _indexJs20.Nothing.value
+                card: _indexJs20.Nothing.value,
+                cardAppear: false
             };
         },
         render: render,
@@ -52673,7 +52672,7 @@ var component = /* #__PURE__ */ function() {
     });
 }();
 
-},{"../App.Common/index.js":"dWLHm","../App.Footer/index.js":"4g0ou","../App.LanguageIcon/index.js":"ckqDh","../Control.Monad.State.Class/index.js":"ls1CC","../Control.Plus/index.js":"jm5q9","../Data.List.Types/index.js":"5Eszv","../Data.Maybe/index.js":"7bX1p","../Halogen.Component/index.js":"8dM7y","../Halogen.HTML.Elements/index.js":"7rm1k","../Halogen.Query.HalogenM/index.js":"kbUmW","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../CSS.Display/index.js":"aKTjD","../CSS.Flexbox/index.js":"3ZWsc","../CSS.Geometry/index.js":"54WNO","../CSS.Size/index.js":"cd0fS","../CSS.Stylesheet/index.js":"k97a8","../Control.Bind/index.js":"5hjxD","../Halogen.HTML.CSS/index.js":"zRRWZ","../Halogen.HTML.Properties/index.js":"6klmN","../CSS.Overflow/index.js":"6Xulf","../Data.Head/index.js":"786Xv","../CSS.Font/index.js":"9Iwns","../Data.NonEmpty/index.js":"8yVpU","../Halogen.HTML.Core/index.js":"9NBcR","../App.InputBar/index.js":"hX7mO","../App.ShowResults/index.js":"40T8D","../App.Colours/index.js":"c6QRT","../CSS.Border/index.js":"1es03","../App.Curtain/index.js":"8Sbo3"}],"dWLHm":[function(require,module,exports) {
+},{"../App.Common/index.js":"dWLHm","../App.Footer/index.js":"4g0ou","../App.LanguageIcon/index.js":"ckqDh","../Control.Monad.State.Class/index.js":"ls1CC","../Control.Plus/index.js":"jm5q9","../Data.List.Types/index.js":"5Eszv","../Data.Maybe/index.js":"7bX1p","../Halogen.Component/index.js":"8dM7y","../Halogen.HTML.Elements/index.js":"7rm1k","../Halogen.Query.HalogenM/index.js":"kbUmW","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../CSS.Display/index.js":"aKTjD","../CSS.Flexbox/index.js":"3ZWsc","../CSS.Geometry/index.js":"54WNO","../CSS.Size/index.js":"cd0fS","../CSS.Stylesheet/index.js":"k97a8","../Control.Bind/index.js":"5hjxD","../Halogen.HTML.CSS/index.js":"zRRWZ","../Halogen.HTML.Properties/index.js":"6klmN","../CSS.Overflow/index.js":"6Xulf","../Data.Head/index.js":"786Xv","../CSS.Font/index.js":"9Iwns","../Data.NonEmpty/index.js":"8yVpU","../App.InputBar/index.js":"hX7mO","../App.ShowResults/index.js":"40T8D","../App.Colours/index.js":"c6QRT","../CSS.Border/index.js":"1es03","../App.Curtain/index.js":"8Sbo3"}],"dWLHm":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "OpenCurtainToTheRight", ()=>OpenCurtainToTheRight);
@@ -62405,20 +62404,15 @@ var getCardClassList = function(moveCurtain) {
     return append1([
         "card-visible"
     ])(function() {
-        if (moveCurtain) return [
+        if (moveCurtain) return [];
+        return [
             "card-invisible"
         ];
-        return [];
     }());
 };
 var curtain = function(open) {
     return _indexJs10.div([
-        _indexJs12.classes(getCurtainClassList(open)),
-        _indexJs8.style(discard(_indexJs2.paddingTop(_indexJs3.pct(7.0)))(function() {
-            return discard(_indexJs2.paddingRight(_indexJs3.px(40.0)))(function() {
-                return _indexJs2.paddingLeft(_indexJs3.px(70.0));
-            });
-        }))
+        _indexJs12.classes(getCurtainClassList(open))
     ])([
         _indexJs10.div([
             _indexJs12.id("curtain-content-one"),

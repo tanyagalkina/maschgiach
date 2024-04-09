@@ -32,7 +32,7 @@ component :: forall query input output m . H.Component query input output m
 component =
   H.mkComponent
     { 
-     initialState: \_ -> { moveCurtain: false, results: empty, card: Nothing}
+     initialState: \_ -> { moveCurtain: false, results: empty, card: Nothing, cardAppear: false}
     , render
     , eval: H.mkEval H.defaultEval { handleAction = handleAction }
     }
@@ -45,7 +45,7 @@ mainContainerFlexVariantStyle = CSS.style do
             overflow hidden
             -- TODO: how to make the main container resizable ( now it is hardcoded to 300vh )
             -- minHeight $ vh 300.0
-            maxWidth $ pct 100.0
+            -- maxWidth $ pct 100.0
               -- TODO: understand the font-family css rule
               -- fontFamily ["some string"] (systemUi :|[] )
             fontFamily ["some string"] (monospace :|[] )
@@ -75,6 +75,9 @@ mainContainerFlexVariantStyle = CSS.style do
 
 render :: forall cs m. State  -> H.ComponentHTML Action cs m
 render state = 
+ HH.div_ [
+   -- curtain state.moveCurtain
+          
   HH.div [ 
           -- css "main-container"]
           -- (concat [
@@ -127,12 +130,13 @@ render state =
                       [
                          simpleInputBar
                           , simpleShowResults state.results
-                         -- , card state.moveCurtain state.card
+                          , card state.cardAppear state.card
                           -- , card2 state.moveCurtain state.card
                       ]
-                   ,HH.div_[HH.text "the rest of the screen"]]
+                  , curtain state.moveCurtain
+                  --  ,HH.div_[HH.text "the rest of the screen"]]
 
-                --   ]
+                ]
                 -- [
                 --   HH.div[
                 --     CSS.style do 
@@ -144,9 +148,9 @@ render state =
                 --   ] [HH.text "second text box"]
                 -- ]
                  -- center-container end --
-          , curtain state.moveCurtain
+          -- , curtain state.moveCurtain
           ,footer --3.
-]
+]]
 
 -- TODO: add transitionEndListener to curtain
 -- getCurtain :: forall w. Boolean -> HH.HTML w Action
@@ -158,8 +162,8 @@ handleAction = case _ of
   OpenCurtainToTheRight str -> H.modify_ \st -> st { moveCurtain = true, results = searchNumber str}
   Search str -> H.modify_ \st -> st { results = searchNumber str}
   -- TODO: See why results gets cleared when card is opened
-  OpenCard eNumber -> H.modify_ \st -> st { moveCurtain = false, card = Just eNumber}
-  ClearCard -> H.modify_ \st -> st { card = Nothing, moveCurtain = true} 
+  OpenCard eNumber -> H.modify_ \st -> st {card = Just eNumber, cardAppear = true}
+  ClearCard -> H.modify_ \st -> st { card = Nothing, moveCurtain = true, cardAppear = false} 
 
 searchNumber :: String -> ENumberList
 searchNumber str = findENumbersInList str

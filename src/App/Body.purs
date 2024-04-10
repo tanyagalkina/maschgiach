@@ -3,12 +3,12 @@ module App.Body (component) where
 import Prelude
 
 import App.Colours (brightred)
-import App.Common (Action(..), State, css)
+import App.Common (Action(..), State, css, CardDisplayLanguage(English, Russian))
 import App.Curtain (curtain, card)
 import App.Footer (footer)
 import App.InputBar (simpleInputBar)
 import App.LanguageIcon (languageIcon)
-import App.ShowResults (showResults, simpleShowResults)
+import App.ShowResults (simpleShowResults)
 import CSS (StyleM, alignItems, area, backgroundColor, border, column, display, flex, flexDirection, flexStart, grid, height, justifyContent, main, paddingTop, pct, px, solid, spaceBetween, width)
 import CSS.Flexbox (spaceAround)
 import CSS.Font (fontFamily, monospace)
@@ -32,7 +32,7 @@ component :: forall query input output m . H.Component query input output m
 component =
   H.mkComponent
     { 
-     initialState: \_ -> { moveCurtain: false, results: empty, card: Nothing, cardAppear: false}
+     initialState: \_ -> { moveCurtain: false, results: empty, currentCard: Nothing, cardAppear: false, cardDisplayLanguage : Russian}
     , render
     , eval: H.mkEval H.defaultEval { handleAction = handleAction }
     }
@@ -89,7 +89,7 @@ render state =
 
           -- , mainContainerGridProperties])
               [
-                 languageIcon -- 1.
+                --  languageIcon -- 1.
                                 -- fontFamily ["monospace"] (monospace :|[] )
                               -- gridTemplateRows [?, ?, ?, ?]
                               -- , HP.attr 
@@ -100,7 +100,7 @@ render state =
                               --       -- "grid-template-rows: 30px 500px 60px;"
                               --     )
                           -- ]
-                  , HH.div [
+                  HH.div [
                     -- HP.id "center-container" -- 2.
                          css "my-grid-container"  -- grid on desktop || ?? on mobile
                   -- , CSS.style do
@@ -129,8 +129,8 @@ render state =
                       ]
                       [
                          simpleInputBar
-                          , simpleShowResults state.results
-                          , card state.cardAppear state.card
+                          , simpleShowResults state.results state.cardDisplayLanguage
+                          , card state.cardAppear state.currentCard state.cardDisplayLanguage
                           -- , card2 state.moveCurtain state.card
                       ]
                   , curtain state.moveCurtain
@@ -162,8 +162,8 @@ handleAction = case _ of
   OpenCurtainToTheRight str -> H.modify_ \st -> st { moveCurtain = true, results = searchNumber str}
   Search str -> H.modify_ \st -> st { results = searchNumber str}
   -- TODO: See why results gets cleared when card is opened
-  OpenCard eNumber -> H.modify_ \st -> st {card = Just eNumber, cardAppear = true}
-  ClearCard -> H.modify_ \st -> st { card = Nothing, moveCurtain = true, cardAppear = false} 
+  OpenCard eNumber -> H.modify_ \st -> st {currentCard = Just eNumber, cardAppear = true}
+  ClearCard -> H.modify_ \st -> st { currentCard = Nothing, moveCurtain = true, cardAppear = false} 
 
 searchNumber :: String -> ENumberList
 searchNumber str = findENumbersInList str

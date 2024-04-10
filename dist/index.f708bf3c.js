@@ -52519,41 +52519,40 @@ var _indexJs1 = require("../App.Common/index.js");
 var _indexJs2 = require("../App.Curtain/index.js");
 var _indexJs3 = require("../App.Footer/index.js");
 var _indexJs4 = require("../App.InputBar/index.js");
-var _indexJs5 = require("../App.LanguageIcon/index.js");
-var _indexJs6 = require("../App.ShowResults/index.js");
-var _indexJs7 = require("../CSS.Border/index.js");
-var _indexJs8 = require("../CSS.Display/index.js");
-var _indexJs9 = require("../CSS.Flexbox/index.js");
-var _indexJs10 = require("../CSS.Font/index.js");
-var _indexJs11 = require("../CSS.Geometry/index.js");
-var _indexJs12 = require("../CSS.Overflow/index.js");
-var _indexJs13 = require("../CSS.Size/index.js");
-var _indexJs14 = require("../CSS.Stylesheet/index.js");
-var _indexJs15 = require("../Control.Bind/index.js");
-var _indexJs16 = require("../Control.Monad.State.Class/index.js");
-var _indexJs17 = require("../Control.Plus/index.js");
-var _indexJs18 = require("../Data.Head/index.js");
-var _indexJs19 = require("../Data.List.Types/index.js");
-var _indexJs20 = require("../Data.Maybe/index.js");
-var _indexJs21 = require("../Data.NonEmpty/index.js");
-var _indexJs22 = require("../Halogen.Component/index.js");
-var _indexJs23 = require("../Halogen.HTML.CSS/index.js");
-var _indexJs24 = require("../Halogen.HTML.Elements/index.js");
-var _indexJs25 = require("../Halogen.HTML.Properties/index.js");
-var _indexJs26 = require("../Halogen.Query.HalogenM/index.js");
-var discard = /* #__PURE__ */ _indexJs15.discard(_indexJs15.discardUnit)(_indexJs14.bindStyleM);
-var flexStart = /* #__PURE__ */ _indexJs9.flexStart(_indexJs9.flexStartAlignItemsValue);
-var modify_ = /* #__PURE__ */ _indexJs16.modify_(_indexJs26.monadStateHalogenM);
-var empty = /* #__PURE__ */ _indexJs17.empty(_indexJs19.plusList);
+var _indexJs5 = require("../App.ShowResults/index.js");
+var _indexJs6 = require("../CSS.Border/index.js");
+var _indexJs7 = require("../CSS.Display/index.js");
+var _indexJs8 = require("../CSS.Flexbox/index.js");
+var _indexJs9 = require("../CSS.Font/index.js");
+var _indexJs10 = require("../CSS.Geometry/index.js");
+var _indexJs11 = require("../CSS.Overflow/index.js");
+var _indexJs12 = require("../CSS.Size/index.js");
+var _indexJs13 = require("../CSS.Stylesheet/index.js");
+var _indexJs14 = require("../Control.Bind/index.js");
+var _indexJs15 = require("../Control.Monad.State.Class/index.js");
+var _indexJs16 = require("../Control.Plus/index.js");
+var _indexJs17 = require("../Data.Head/index.js");
+var _indexJs18 = require("../Data.List.Types/index.js");
+var _indexJs19 = require("../Data.Maybe/index.js");
+var _indexJs20 = require("../Data.NonEmpty/index.js");
+var _indexJs21 = require("../Halogen.Component/index.js");
+var _indexJs22 = require("../Halogen.HTML.CSS/index.js");
+var _indexJs23 = require("../Halogen.HTML.Elements/index.js");
+var _indexJs24 = require("../Halogen.HTML.Properties/index.js");
+var _indexJs25 = require("../Halogen.Query.HalogenM/index.js");
+var discard = /* #__PURE__ */ _indexJs14.discard(_indexJs14.discardUnit)(_indexJs13.bindStyleM);
+var flexStart = /* #__PURE__ */ _indexJs8.flexStart(_indexJs8.flexStartAlignItemsValue);
+var modify_ = /* #__PURE__ */ _indexJs15.modify_(_indexJs25.monadStateHalogenM);
+var empty = /* #__PURE__ */ _indexJs16.empty(_indexJs18.plusList);
 var searchNumber = function(str) {
-    return _indexJs18.findENumbersInList(str);
+    return _indexJs17.findENumbersInList(str);
 };
-var mainContainerFlexVariantStyle = /* #__PURE__ */ _indexJs23.style(/* #__PURE__ */ discard(/* #__PURE__ */ _indexJs8.display(_indexJs8.flex))(function() {
-    return discard(_indexJs9.flexDirection(_indexJs9.column))(function() {
-        return discard(_indexJs12.overflow(_indexJs12.hidden))(function() {
-            return _indexJs10.fontFamily([
+var mainContainerFlexVariantStyle = /* #__PURE__ */ _indexJs22.style(/* #__PURE__ */ discard(/* #__PURE__ */ _indexJs7.display(_indexJs7.flex))(function() {
+    return discard(_indexJs8.flexDirection(_indexJs8.column))(function() {
+        return discard(_indexJs11.overflow(_indexJs11.hidden))(function() {
+            return _indexJs9.fontFamily([
                 "some string"
-            ])(new _indexJs21.NonEmpty(_indexJs10.monospace, []));
+            ])(new _indexJs20.NonEmpty(_indexJs9.monospace, []));
         });
     });
 }));
@@ -52577,26 +52576,25 @@ var mainContainerFlexVariantStyle = /* #__PURE__ */ _indexJs23.style(/* #__PURE_
 // d :: StyleM Unit
 // d = display grid
 var render = function(state) {
-    return _indexJs24.div_([
-        _indexJs24.div([
-            _indexJs25.id("main-container"),
+    return _indexJs23.div_([
+        _indexJs23.div([
+            _indexJs24.id("main-container"),
             mainContainerFlexVariantStyle
         ])([
-            _indexJs5.languageIcon,
-            _indexJs24.div([
+            _indexJs23.div([
                 _indexJs1.css("my-grid-container")
             ])([
-                _indexJs24.div([
+                _indexJs23.div([
                     _indexJs1.css("my-search-and-results"),
-                    _indexJs23.style(discard(_indexJs8.display(_indexJs8.flex))(function() {
-                        return discard(_indexJs9.flexDirection(_indexJs9.column))(function() {
-                            return discard(_indexJs9.alignItems(flexStart))(function() {
-                                return discard(_indexJs11.height(_indexJs13.vh(100.0)))(function() {
-                                    return discard(_indexJs11.paddingTop(_indexJs13.vh(5.0)))(function() {
-                                        return discard(_indexJs7.border(_indexJs7.solid)(_indexJs13.px(3.0))(_indexJs.brightred))(function() {
-                                            return _indexJs10.fontFamily([
+                    _indexJs22.style(discard(_indexJs7.display(_indexJs7.flex))(function() {
+                        return discard(_indexJs8.flexDirection(_indexJs8.column))(function() {
+                            return discard(_indexJs8.alignItems(flexStart))(function() {
+                                return discard(_indexJs10.height(_indexJs12.vh(100.0)))(function() {
+                                    return discard(_indexJs10.paddingTop(_indexJs12.vh(5.0)))(function() {
+                                        return discard(_indexJs6.border(_indexJs6.solid)(_indexJs12.px(3.0))(_indexJs.brightred))(function() {
+                                            return _indexJs9.fontFamily([
                                                 "monospace"
-                                            ])(new _indexJs21.NonEmpty(_indexJs10.monospace, []));
+                                            ])(new _indexJs20.NonEmpty(_indexJs9.monospace, []));
                                         });
                                     });
                                 });
@@ -52605,8 +52603,8 @@ var render = function(state) {
                     }))
                 ])([
                     _indexJs4.simpleInputBar,
-                    _indexJs6.simpleShowResults(state.results),
-                    _indexJs2.card(state.cardAppear)(state.card)
+                    _indexJs5.simpleShowResults(state.results)(state.cardDisplayLanguage),
+                    _indexJs2.card(state.cardAppear)(state.currentCard)(state.cardDisplayLanguage)
                 ]),
                 _indexJs2.curtain(state.moveCurtain)
             ]),
@@ -52635,44 +52633,45 @@ var handleAction = function(v) {
     if (v instanceof _indexJs1.OpenCard) return modify_(function(st) {
         var $21 = {};
         for(var $22 in st)if (({}).hasOwnProperty.call(st, $22)) $21[$22] = st[$22];
-        $21.card = new _indexJs20.Just(v.value0);
+        $21.currentCard = new _indexJs19.Just(v.value0);
         $21.cardAppear = true;
         return $21;
     });
     if (v instanceof _indexJs1.ClearCard) return modify_(function(st) {
         var $25 = {};
         for(var $26 in st)if (({}).hasOwnProperty.call(st, $26)) $25[$26] = st[$26];
-        $25.card = _indexJs20.Nothing.value;
+        $25.currentCard = _indexJs19.Nothing.value;
         $25.moveCurtain = true;
         $25.cardAppear = false;
         return $25;
     });
-    throw new Error("Failed pattern match at App.Body (line 161, column 16 - line 166, column 93): " + [
+    throw new Error("Failed pattern match at App.Body (line 161, column 16 - line 166, column 100): " + [
         v.constructor.name
     ]);
 };
 var component = /* #__PURE__ */ function() {
-    return _indexJs22.mkComponent({
+    return _indexJs21.mkComponent({
         initialState: function(v) {
             return {
                 moveCurtain: false,
                 results: empty,
-                card: _indexJs20.Nothing.value,
-                cardAppear: false
+                currentCard: _indexJs19.Nothing.value,
+                cardAppear: false,
+                cardDisplayLanguage: _indexJs1.Russian.value
             };
         },
         render: render,
-        "eval": _indexJs22.mkEval({
-            handleQuery: _indexJs22.defaultEval.handleQuery,
-            receive: _indexJs22.defaultEval.receive,
-            initialize: _indexJs22.defaultEval.initialize,
-            finalize: _indexJs22.defaultEval.finalize,
+        "eval": _indexJs21.mkEval({
+            handleQuery: _indexJs21.defaultEval.handleQuery,
+            receive: _indexJs21.defaultEval.receive,
+            initialize: _indexJs21.defaultEval.initialize,
+            finalize: _indexJs21.defaultEval.finalize,
             handleAction: handleAction
         })
     });
 }();
 
-},{"../App.Common/index.js":"dWLHm","../App.Footer/index.js":"4g0ou","../App.LanguageIcon/index.js":"ckqDh","../Control.Monad.State.Class/index.js":"ls1CC","../Control.Plus/index.js":"jm5q9","../Data.List.Types/index.js":"5Eszv","../Data.Maybe/index.js":"7bX1p","../Halogen.Component/index.js":"8dM7y","../Halogen.HTML.Elements/index.js":"7rm1k","../Halogen.Query.HalogenM/index.js":"kbUmW","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../CSS.Display/index.js":"aKTjD","../CSS.Flexbox/index.js":"3ZWsc","../CSS.Geometry/index.js":"54WNO","../CSS.Size/index.js":"cd0fS","../CSS.Stylesheet/index.js":"k97a8","../Control.Bind/index.js":"5hjxD","../Halogen.HTML.CSS/index.js":"zRRWZ","../Halogen.HTML.Properties/index.js":"6klmN","../CSS.Overflow/index.js":"6Xulf","../Data.Head/index.js":"786Xv","../CSS.Font/index.js":"9Iwns","../Data.NonEmpty/index.js":"8yVpU","../App.InputBar/index.js":"hX7mO","../App.ShowResults/index.js":"40T8D","../App.Colours/index.js":"c6QRT","../CSS.Border/index.js":"1es03","../App.Curtain/index.js":"8Sbo3"}],"dWLHm":[function(require,module,exports) {
+},{"../App.Common/index.js":"dWLHm","../App.Footer/index.js":"4g0ou","../Control.Monad.State.Class/index.js":"ls1CC","../Control.Plus/index.js":"jm5q9","../Data.List.Types/index.js":"5Eszv","../Data.Maybe/index.js":"7bX1p","../Halogen.Component/index.js":"8dM7y","../Halogen.HTML.Elements/index.js":"7rm1k","../Halogen.Query.HalogenM/index.js":"kbUmW","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../CSS.Display/index.js":"aKTjD","../CSS.Flexbox/index.js":"3ZWsc","../CSS.Geometry/index.js":"54WNO","../CSS.Size/index.js":"cd0fS","../CSS.Stylesheet/index.js":"k97a8","../Control.Bind/index.js":"5hjxD","../Halogen.HTML.CSS/index.js":"zRRWZ","../Halogen.HTML.Properties/index.js":"6klmN","../CSS.Overflow/index.js":"6Xulf","../Data.Head/index.js":"786Xv","../CSS.Font/index.js":"9Iwns","../Data.NonEmpty/index.js":"8yVpU","../App.InputBar/index.js":"hX7mO","../App.ShowResults/index.js":"40T8D","../App.Colours/index.js":"c6QRT","../CSS.Border/index.js":"1es03","../App.Curtain/index.js":"8Sbo3"}],"dWLHm":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "OpenCurtainToTheRight", ()=>OpenCurtainToTheRight);
@@ -52680,8 +52679,44 @@ parcelHelpers.export(exports, "Search", ()=>Search);
 parcelHelpers.export(exports, "OpenCard", ()=>OpenCard);
 parcelHelpers.export(exports, "ClearCard", ()=>ClearCard);
 parcelHelpers.export(exports, "css", ()=>css);
+parcelHelpers.export(exports, "English", ()=>English);
+parcelHelpers.export(exports, "Russian", ()=>Russian);
+parcelHelpers.export(exports, "German", ()=>German);
+parcelHelpers.export(exports, "Hebrew", ()=>Hebrew);
+parcelHelpers.export(exports, "French", ()=>French);
+parcelHelpers.export(exports, "Latvian", ()=>Latvian);
 var _indexJs = require("../Halogen.HTML.Properties/index.js");
 var _indexJs1 = require("../Web.HTML.Common/index.js");
+var English = /* #__PURE__ */ function() {
+    function English() {}
+    English.value = new English();
+    return English;
+}();
+var Russian = /* #__PURE__ */ function() {
+    function Russian() {}
+    Russian.value = new Russian();
+    return Russian;
+}();
+var German = /* #__PURE__ */ function() {
+    function German() {}
+    German.value = new German();
+    return German;
+}();
+var Hebrew = /* #__PURE__ */ function() {
+    function Hebrew() {}
+    Hebrew.value = new Hebrew();
+    return Hebrew;
+}();
+var French = /* #__PURE__ */ function() {
+    function French() {}
+    French.value = new French();
+    return French;
+}();
+var Latvian = /* #__PURE__ */ function() {
+    function Latvian() {}
+    Latvian.value = new Latvian();
+    return Latvian;
+}();
 var OpenCurtainToTheRight = /* #__PURE__ */ function() {
     function OpenCurtainToTheRight(value0) {
         this.value0 = value0;
@@ -52744,106 +52779,518 @@ var footer = /* #__PURE__ */ _indexJs2.div([
     ])
 ]);
 
-},{"../App.Common/index.js":"dWLHm","../Halogen.HTML.Core/index.js":"9NBcR","../Halogen.HTML.Elements/index.js":"7rm1k","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"ckqDh":[function(require,module,exports) {
+},{"../App.Common/index.js":"dWLHm","../Halogen.HTML.Core/index.js":"9NBcR","../Halogen.HTML.Elements/index.js":"7rm1k","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"aKTjD":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "languageIcon", ()=>languageIcon);
+parcelHelpers.export(exports, "Position", ()=>Position);
+parcelHelpers.export(exports, "position", ()=>position);
+parcelHelpers.export(exports, "static", ()=>$$static);
+parcelHelpers.export(exports, "absolute", ()=>absolute);
+parcelHelpers.export(exports, "fixed", ()=>fixed);
+parcelHelpers.export(exports, "relative", ()=>relative);
+parcelHelpers.export(exports, "Display", ()=>Display);
+parcelHelpers.export(exports, "inline", ()=>inline);
+parcelHelpers.export(exports, "block", ()=>block);
+parcelHelpers.export(exports, "listItem", ()=>listItem);
+parcelHelpers.export(exports, "runIn", ()=>runIn);
+parcelHelpers.export(exports, "inlineBlock", ()=>inlineBlock);
+parcelHelpers.export(exports, "displayTable", ()=>displayTable);
+parcelHelpers.export(exports, "inlineTable", ()=>inlineTable);
+parcelHelpers.export(exports, "tableRowGroup", ()=>tableRowGroup);
+parcelHelpers.export(exports, "tableHeaderGroup", ()=>tableHeaderGroup);
+parcelHelpers.export(exports, "tableFooterGroup", ()=>tableFooterGroup);
+parcelHelpers.export(exports, "tableRow", ()=>tableRow);
+parcelHelpers.export(exports, "tableColumnGroup", ()=>tableColumnGroup);
+parcelHelpers.export(exports, "tableColumn", ()=>tableColumn);
+parcelHelpers.export(exports, "tableCell", ()=>tableCell);
+parcelHelpers.export(exports, "tableCaption", ()=>tableCaption);
+parcelHelpers.export(exports, "displayNone", ()=>displayNone);
+parcelHelpers.export(exports, "displayInherit", ()=>displayInherit);
+parcelHelpers.export(exports, "flex", ()=>flex);
+parcelHelpers.export(exports, "inlineFlex", ()=>inlineFlex);
+parcelHelpers.export(exports, "grid", ()=>grid);
+parcelHelpers.export(exports, "inlineGrid", ()=>inlineGrid);
+parcelHelpers.export(exports, "display", ()=>display);
+parcelHelpers.export(exports, "FloatLeft", ()=>FloatLeft);
+parcelHelpers.export(exports, "FloatRight", ()=>FloatRight);
+parcelHelpers.export(exports, "FloatNone", ()=>FloatNone);
+parcelHelpers.export(exports, "floatLeft", ()=>floatLeft);
+parcelHelpers.export(exports, "floatRight", ()=>floatRight);
+parcelHelpers.export(exports, "float", ()=>$$float);
+parcelHelpers.export(exports, "ClearFloatLeft", ()=>ClearFloatLeft);
+parcelHelpers.export(exports, "ClearFloatRight", ()=>ClearFloatRight);
+parcelHelpers.export(exports, "ClearFloatBoth", ()=>ClearFloatBoth);
+parcelHelpers.export(exports, "ClearFloatNone", ()=>ClearFloatNone);
+parcelHelpers.export(exports, "ClearFloatInherit", ()=>ClearFloatInherit);
+parcelHelpers.export(exports, "ClearFloatInlineStart", ()=>ClearFloatInlineStart);
+parcelHelpers.export(exports, "ClearFloatInlineEnd", ()=>ClearFloatInlineEnd);
+parcelHelpers.export(exports, "clearLeft", ()=>clearLeft);
+parcelHelpers.export(exports, "clearRight", ()=>clearRight);
+parcelHelpers.export(exports, "clearBoth", ()=>clearBoth);
+parcelHelpers.export(exports, "clearInlineStart", ()=>clearInlineStart);
+parcelHelpers.export(exports, "clearInlineEnd", ()=>clearInlineEnd);
+parcelHelpers.export(exports, "clear", ()=>clear);
+parcelHelpers.export(exports, "opacity", ()=>opacity);
+parcelHelpers.export(exports, "Visibility", ()=>Visibility);
+parcelHelpers.export(exports, "collapse", ()=>collapse);
+parcelHelpers.export(exports, "visibility", ()=>visibility);
+parcelHelpers.export(exports, "zIndex", ()=>zIndex);
+parcelHelpers.export(exports, "eqPosition", ()=>eqPosition);
+parcelHelpers.export(exports, "ordPosition", ()=>ordPosition);
+parcelHelpers.export(exports, "valPosition", ()=>valPosition);
+parcelHelpers.export(exports, "eqDisplay", ()=>eqDisplay);
+parcelHelpers.export(exports, "ordDisplay", ()=>ordDisplay);
+parcelHelpers.export(exports, "valDisplay", ()=>valDisplay);
+parcelHelpers.export(exports, "eqFloat", ()=>eqFloat);
+parcelHelpers.export(exports, "showFloat", ()=>showFloat);
+parcelHelpers.export(exports, "valFloat", ()=>valFloat);
+parcelHelpers.export(exports, "noneFloat", ()=>noneFloat);
+parcelHelpers.export(exports, "eqClearFloat", ()=>eqClearFloat);
+parcelHelpers.export(exports, "showClearFloat", ()=>showClearFloat);
+parcelHelpers.export(exports, "valClearFloat", ()=>valClearFloat);
+parcelHelpers.export(exports, "noneClearFloat", ()=>noneClearFloat);
+parcelHelpers.export(exports, "inheritClearFloat", ()=>inheritClearFloat);
+parcelHelpers.export(exports, "valVisibility", ()=>valVisibility);
+parcelHelpers.export(exports, "otherVisibility", ()=>otherVisibility);
+parcelHelpers.export(exports, "inheritVisibility", ()=>inheritVisibility);
+parcelHelpers.export(exports, "initialVisibility", ()=>initialVisibility);
+parcelHelpers.export(exports, "unsetVisibility", ()=>unsetVisibility);
+parcelHelpers.export(exports, "hiddenVisibility", ()=>hiddenVisibility);
+parcelHelpers.export(exports, "visibleVisibility", ()=>visibleVisibility);
 // Generated by purs version 0.15.15
-var _indexJs = require("../CSS.Geometry/index.js");
-var _indexJs1 = require("../CSS.Size/index.js");
-var _indexJs2 = require("../CSS.Stylesheet/index.js");
-var _indexJs3 = require("../Control.Bind/index.js");
-var _indexJs4 = require("../Halogen.HTML.CSS/index.js");
-var _indexJs5 = require("../Halogen.HTML.Elements/index.js");
-var _indexJs6 = require("../Halogen.HTML.Properties/index.js");
-var discard = /* #__PURE__ */ _indexJs3.discard(_indexJs3.discardUnit)(_indexJs2.bindStyleM);
-var languageIcon = /* #__PURE__ */ _indexJs5.div([
-    /* #__PURE__ */ _indexJs4.style(/* #__PURE__ */ discard(/* #__PURE__ */ _indexJs.marginLeft(/* #__PURE__ */ _indexJs1.pct(90.0)))(function() {
-        return _indexJs.marginTop(_indexJs1.em(2.0));
-    }))
-])([
-    /* #__PURE__ */ _indexJs5.img([
-        /* #__PURE__ */ _indexJs4.style(/* #__PURE__ */ discard(/* #__PURE__ */ _indexJs.width(/* #__PURE__ */ _indexJs1.px(40.0)))(function() {
-            return _indexJs.height(_indexJs1.px(40.0));
-        })),
-        /* #__PURE__ */ _indexJs6.src("../assets/ivrit3.png"),
-        /* #__PURE__ */ _indexJs6.alt("language")
-    ])
-]);
-
-},{"../CSS.Geometry/index.js":"54WNO","../CSS.Size/index.js":"cd0fS","../CSS.Stylesheet/index.js":"k97a8","../Control.Bind/index.js":"5hjxD","../Halogen.HTML.CSS/index.js":"zRRWZ","../Halogen.HTML.Elements/index.js":"7rm1k","../Halogen.HTML.Properties/index.js":"6klmN","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"54WNO":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "width", ()=>width);
-parcelHelpers.export(exports, "height", ()=>height);
-parcelHelpers.export(exports, "minWidth", ()=>minWidth);
-parcelHelpers.export(exports, "minHeight", ()=>minHeight);
-parcelHelpers.export(exports, "maxWidth", ()=>maxWidth);
-parcelHelpers.export(exports, "maxHeight", ()=>maxHeight);
-parcelHelpers.export(exports, "top", ()=>top);
-parcelHelpers.export(exports, "bottom", ()=>bottom);
-parcelHelpers.export(exports, "left", ()=>left);
-parcelHelpers.export(exports, "right", ()=>right);
-parcelHelpers.export(exports, "padding", ()=>padding);
-parcelHelpers.export(exports, "paddingTop", ()=>paddingTop);
-parcelHelpers.export(exports, "paddingBottom", ()=>paddingBottom);
-parcelHelpers.export(exports, "paddingLeft", ()=>paddingLeft);
-parcelHelpers.export(exports, "paddingRight", ()=>paddingRight);
-parcelHelpers.export(exports, "margin", ()=>margin);
-parcelHelpers.export(exports, "marginTop", ()=>marginTop);
-parcelHelpers.export(exports, "marginBottom", ()=>marginBottom);
-parcelHelpers.export(exports, "marginLeft", ()=>marginLeft);
-parcelHelpers.export(exports, "marginRight", ()=>marginRight);
-parcelHelpers.export(exports, "lineHeight", ()=>lineHeight);
-// Generated by purs version 0.15.15
-var _indexJs = require("../CSS.Property/index.js");
-var _indexJs1 = require("../CSS.Size/index.js");
+var _indexJs = require("../CSS.Common/index.js");
+var _indexJs1 = require("../CSS.Property/index.js");
 var _indexJs2 = require("../CSS.String/index.js");
 var _indexJs3 = require("../CSS.Stylesheet/index.js");
-var _indexJs4 = require("../Data.Tuple/index.js");
-var key = /* #__PURE__ */ _indexJs3.key(_indexJs1.valSize);
-var fromString = /* #__PURE__ */ _indexJs2.fromString(_indexJs.isStringKey);
-var valTuple = /* #__PURE__ */ _indexJs.valTuple(_indexJs1.valSize)(_indexJs1.valSize);
-var key1 = /* #__PURE__ */ _indexJs3.key(/* #__PURE__ */ _indexJs.valTuple(valTuple)(valTuple));
-var width = /* #__PURE__ */ key(/* #__PURE__ */ fromString("width"));
-var top = /* #__PURE__ */ key(/* #__PURE__ */ fromString("top"));
-var right = /* #__PURE__ */ key(/* #__PURE__ */ fromString("right"));
-var paddingTop = /* #__PURE__ */ key(/* #__PURE__ */ fromString("padding-top"));
-var paddingRight = /* #__PURE__ */ key(/* #__PURE__ */ fromString("padding-right"));
-var paddingLeft = /* #__PURE__ */ key(/* #__PURE__ */ fromString("padding-left"));
-var paddingBottom = /* #__PURE__ */ key(/* #__PURE__ */ fromString("padding-bottom"));
-var padding = function(a) {
-    return function(b) {
-        return function(c) {
-            return function(d) {
-                return key1(fromString("padding"))(new _indexJs4.Tuple(new _indexJs4.Tuple(a, b), new _indexJs4.Tuple(c, d)));
-            };
-        };
-    };
+var _indexJs4 = require("../Data.Eq/index.js");
+var _indexJs5 = require("../Data.Ord/index.js");
+var _indexJs6 = require("../Data.Show/index.js");
+var fromString = /* #__PURE__ */ _indexJs2.fromString(_indexJs1.isStringKey);
+var fromString1 = /* #__PURE__ */ _indexJs2.fromString(_indexJs1.isStringValue);
+var eq = /* #__PURE__ */ _indexJs4.eq(_indexJs1.eqValue);
+var compare = /* #__PURE__ */ _indexJs5.compare(_indexJs1.ordValue);
+var Visibility = function(x) {
+    return x;
 };
-var minWidth = /* #__PURE__ */ key(/* #__PURE__ */ fromString("min-width"));
-var minHeight = /* #__PURE__ */ key(/* #__PURE__ */ fromString("min-height"));
-var maxWidth = /* #__PURE__ */ key(/* #__PURE__ */ fromString("max-width"));
-var maxHeight = /* #__PURE__ */ key(/* #__PURE__ */ fromString("max-height"));
-var marginTop = /* #__PURE__ */ key(/* #__PURE__ */ fromString("margin-top"));
-var marginRight = /* #__PURE__ */ key(/* #__PURE__ */ fromString("margin-right"));
-var marginLeft = /* #__PURE__ */ key(/* #__PURE__ */ fromString("margin-left"));
-var marginBottom = /* #__PURE__ */ key(/* #__PURE__ */ fromString("margin-bottom"));
-var margin = function(a) {
-    return function(b) {
-        return function(c) {
-            return function(d) {
-                return key1(fromString("margin"))(new _indexJs4.Tuple(new _indexJs4.Tuple(a, b), new _indexJs4.Tuple(c, d)));
-            };
-        };
-    };
+var Position = function(x) {
+    return x;
 };
-var lineHeight = /* #__PURE__ */ key(/* #__PURE__ */ fromString("line-height"));
-var left = /* #__PURE__ */ key(/* #__PURE__ */ fromString("left"));
-var height = /* #__PURE__ */ key(/* #__PURE__ */ fromString("height"));
-var bottom = /* #__PURE__ */ key(/* #__PURE__ */ fromString("bottom"));
+var FloatLeft = /* #__PURE__ */ function() {
+    function FloatLeft() {}
+    FloatLeft.value = new FloatLeft();
+    return FloatLeft;
+}();
+var FloatRight = /* #__PURE__ */ function() {
+    function FloatRight() {}
+    FloatRight.value = new FloatRight();
+    return FloatRight;
+}();
+var FloatNone = /* #__PURE__ */ function() {
+    function FloatNone() {}
+    FloatNone.value = new FloatNone();
+    return FloatNone;
+}();
+var Display = function(x) {
+    return x;
+};
+var ClearFloatLeft = /* #__PURE__ */ function() {
+    function ClearFloatLeft() {}
+    ClearFloatLeft.value = new ClearFloatLeft();
+    return ClearFloatLeft;
+}();
+var ClearFloatRight = /* #__PURE__ */ function() {
+    function ClearFloatRight() {}
+    ClearFloatRight.value = new ClearFloatRight();
+    return ClearFloatRight;
+}();
+var ClearFloatBoth = /* #__PURE__ */ function() {
+    function ClearFloatBoth() {}
+    ClearFloatBoth.value = new ClearFloatBoth();
+    return ClearFloatBoth;
+}();
+var ClearFloatNone = /* #__PURE__ */ function() {
+    function ClearFloatNone() {}
+    ClearFloatNone.value = new ClearFloatNone();
+    return ClearFloatNone;
+}();
+var ClearFloatInherit = /* #__PURE__ */ function() {
+    function ClearFloatInherit() {}
+    ClearFloatInherit.value = new ClearFloatInherit();
+    return ClearFloatInherit;
+}();
+var ClearFloatInlineStart = /* #__PURE__ */ function() {
+    function ClearFloatInlineStart() {}
+    ClearFloatInlineStart.value = new ClearFloatInlineStart();
+    return ClearFloatInlineStart;
+}();
+var ClearFloatInlineEnd = /* #__PURE__ */ function() {
+    function ClearFloatInlineEnd() {}
+    ClearFloatInlineEnd.value = new ClearFloatInlineEnd();
+    return ClearFloatInlineEnd;
+}();
+var visibleVisibility = _indexJs.visibleValue;
+var valVisibility = _indexJs1.valValue;
+var unsetVisibility = _indexJs.unsetValue;
+var otherVisibility = _indexJs.otherValue;
+var initialVisibility = _indexJs.initialValue;
+var inheritVisibility = _indexJs.inheritValue;
+var hiddenVisibility = _indexJs.hiddenValue;
+var zIndex = /* #__PURE__ */ function() {
+    var $64 = _indexJs3.key(_indexJs1.valString)(fromString("z-index"));
+    var $65 = _indexJs6.show(_indexJs6.showInt);
+    return function($66) {
+        return $64($65($66));
+    };
+}();
+var visibility = /* #__PURE__ */ _indexJs3.key(valVisibility)(/* #__PURE__ */ fromString("visibility"));
+var valPosition = {
+    value: function(v) {
+        return v;
+    }
+};
+var valFloat = {
+    value: function(v) {
+        if (v instanceof FloatLeft) return fromString1("left");
+        if (v instanceof FloatRight) return fromString1("right");
+        if (v instanceof FloatNone) return fromString1("none");
+        throw new Error("Failed pattern match at CSS.Display (line 116, column 1 - line 119, column 40): " + [
+            v.constructor.name
+        ]);
+    }
+};
+var valDisplay = {
+    value: function(v) {
+        return v;
+    }
+};
+var valClearFloat = {
+    value: function(v) {
+        if (v instanceof ClearFloatLeft) return fromString1("left");
+        if (v instanceof ClearFloatRight) return fromString1("right");
+        if (v instanceof ClearFloatBoth) return fromString1("both");
+        if (v instanceof ClearFloatNone) return fromString1("none");
+        if (v instanceof ClearFloatInherit) return fromString1("inherit");
+        if (v instanceof ClearFloatInlineStart) return fromString1("inline-start");
+        if (v instanceof ClearFloatInlineEnd) return fromString1("inline-end");
+        throw new Error("Failed pattern match at CSS.Display (line 153, column 1 - line 160, column 56): " + [
+            v.constructor.name
+        ]);
+    }
+};
+var tableRowGroup = /* #__PURE__ */ fromString1("table-row-Group");
+var tableRow = /* #__PURE__ */ fromString1("table-row");
+var tableHeaderGroup = /* #__PURE__ */ fromString1("table-header-group");
+var tableFooterGroup = /* #__PURE__ */ fromString1("table-footer-group");
+var tableColumnGroup = /* #__PURE__ */ fromString1("table-column-group");
+var tableColumn = /* #__PURE__ */ fromString1("table-column");
+var tableCell = /* #__PURE__ */ fromString1("table-cell");
+var tableCaption = /* #__PURE__ */ fromString1("table-caption");
+var $$static = /* #__PURE__ */ fromString1("static");
+var showFloat = {
+    show: function(v) {
+        if (v instanceof FloatLeft) return "FloatLeft";
+        if (v instanceof FloatRight) return "FloatRight";
+        if (v instanceof FloatNone) return "FloatNone";
+        throw new Error("Failed pattern match at CSS.Display (line 111, column 1 - line 114, column 31): " + [
+            v.constructor.name
+        ]);
+    }
+};
+var showClearFloat = {
+    show: function(v) {
+        if (v instanceof ClearFloatLeft) return "ClearFloatLeft";
+        if (v instanceof ClearFloatRight) return "ClearFloatRight";
+        if (v instanceof ClearFloatBoth) return "ClearFloatBoth";
+        if (v instanceof ClearFloatNone) return "ClearFloatNone";
+        if (v instanceof ClearFloatInherit) return "ClearFloatInherit";
+        if (v instanceof ClearFloatInlineStart) return "ClearFloatInlineStart";
+        if (v instanceof ClearFloatInlineEnd) return "ClearFloatInlineEnd";
+        throw new Error("Failed pattern match at CSS.Display (line 144, column 1 - line 151, column 51): " + [
+            v.constructor.name
+        ]);
+    }
+};
+var runIn = /* #__PURE__ */ fromString1("runIn");
+var relative = /* #__PURE__ */ fromString1("relative");
+var position = /* #__PURE__ */ _indexJs3.key(valPosition)(/* #__PURE__ */ fromString("position"));
+var opacity = /* #__PURE__ */ _indexJs3.key(_indexJs1.valNumber)(/* #__PURE__ */ fromString("opacity"));
+var noneFloat = /* #__PURE__ */ function() {
+    return {
+        none: FloatNone.value
+    };
+}();
+var noneClearFloat = /* #__PURE__ */ function() {
+    return {
+        none: ClearFloatNone.value
+    };
+}();
+var listItem = /* #__PURE__ */ fromString1("list-item");
+var inlineTable = /* #__PURE__ */ fromString1("inline-table");
+var inlineGrid = /* #__PURE__ */ fromString1("inline-grid");
+var inlineFlex = /* #__PURE__ */ fromString1("inline-flex");
+var inlineBlock = /* #__PURE__ */ fromString1("inline-block");
+var inline = /* #__PURE__ */ fromString1("inline");
+var inheritClearFloat = /* #__PURE__ */ function() {
+    return {
+        inherit: ClearFloatInherit.value
+    };
+}();
+var grid = /* #__PURE__ */ fromString1("grid");
+var floatRight = /* #__PURE__ */ function() {
+    return FloatRight.value;
+}();
+var floatLeft = /* #__PURE__ */ function() {
+    return FloatLeft.value;
+}();
+var $$float = /* #__PURE__ */ _indexJs3.key(valFloat)(/* #__PURE__ */ fromString("float"));
+var flex = /* #__PURE__ */ fromString1("flex");
+var fixed = /* #__PURE__ */ fromString1("fixed");
+var eqPosition = {
+    eq: function(x) {
+        return function(y) {
+            return eq(x)(y);
+        };
+    }
+};
+var ordPosition = {
+    compare: function(x) {
+        return function(y) {
+            return compare(x)(y);
+        };
+    },
+    Eq0: function() {
+        return eqPosition;
+    }
+};
+var eqFloat = {
+    eq: function(x) {
+        return function(y) {
+            if (x instanceof FloatLeft && y instanceof FloatLeft) return true;
+            if (x instanceof FloatRight && y instanceof FloatRight) return true;
+            if (x instanceof FloatNone && y instanceof FloatNone) return true;
+            return false;
+        };
+    }
+};
+var eqDisplay = {
+    eq: function(x) {
+        return function(y) {
+            return eq(x)(y);
+        };
+    }
+};
+var ordDisplay = {
+    compare: function(x) {
+        return function(y) {
+            return compare(x)(y);
+        };
+    },
+    Eq0: function() {
+        return eqDisplay;
+    }
+};
+var eqClearFloat = {
+    eq: function(x) {
+        return function(y) {
+            if (x instanceof ClearFloatLeft && y instanceof ClearFloatLeft) return true;
+            if (x instanceof ClearFloatRight && y instanceof ClearFloatRight) return true;
+            if (x instanceof ClearFloatBoth && y instanceof ClearFloatBoth) return true;
+            if (x instanceof ClearFloatNone && y instanceof ClearFloatNone) return true;
+            if (x instanceof ClearFloatInherit && y instanceof ClearFloatInherit) return true;
+            if (x instanceof ClearFloatInlineStart && y instanceof ClearFloatInlineStart) return true;
+            if (x instanceof ClearFloatInlineEnd && y instanceof ClearFloatInlineEnd) return true;
+            return false;
+        };
+    }
+};
+var displayTable = /* #__PURE__ */ fromString1("table");
+var displayNone = /* #__PURE__ */ fromString1("none");
+var displayInherit = /* #__PURE__ */ fromString1("inherit");
+var display = /* #__PURE__ */ _indexJs3.key(valDisplay)(/* #__PURE__ */ fromString("display"));
+var collapse = /* #__PURE__ */ fromString1("collapse");
+var clearRight = /* #__PURE__ */ function() {
+    return ClearFloatRight.value;
+}();
+var clearLeft = /* #__PURE__ */ function() {
+    return ClearFloatLeft.value;
+}();
+var clearInlineStart = /* #__PURE__ */ function() {
+    return ClearFloatInlineStart.value;
+}();
+var clearInlineEnd = /* #__PURE__ */ function() {
+    return ClearFloatInlineEnd.value;
+}();
+var clearBoth = /* #__PURE__ */ function() {
+    return ClearFloatBoth.value;
+}();
+var clear = /* #__PURE__ */ _indexJs3.key(valClearFloat)(/* #__PURE__ */ fromString("clear"));
+var block = /* #__PURE__ */ fromString1("block");
+var absolute = /* #__PURE__ */ fromString1("absolute");
 
-},{"../CSS.Property/index.js":"5ytk4","../CSS.Size/index.js":"cd0fS","../CSS.String/index.js":"9bTqK","../CSS.Stylesheet/index.js":"k97a8","../Data.Tuple/index.js":"ib0Ds","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"5ytk4":[function(require,module,exports) {
+},{"../CSS.Common/index.js":"aIpXQ","../CSS.Property/index.js":"5ytk4","../CSS.String/index.js":"9bTqK","../CSS.Stylesheet/index.js":"k97a8","../Data.Eq/index.js":"8OmSH","../Data.Ord/index.js":"7HnPT","../Data.Show/index.js":"aWqNo","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"aIpXQ":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "all", ()=>all);
+parcelHelpers.export(exports, "auto", ()=>auto);
+parcelHelpers.export(exports, "baseline", ()=>baseline);
+parcelHelpers.export(exports, "bottom", ()=>bottom);
+parcelHelpers.export(exports, "center", ()=>center);
+parcelHelpers.export(exports, "hidden", ()=>hidden);
+parcelHelpers.export(exports, "inherit", ()=>inherit);
+parcelHelpers.export(exports, "initial", ()=>initial);
+parcelHelpers.export(exports, "middle", ()=>middle);
+parcelHelpers.export(exports, "none", ()=>none);
+parcelHelpers.export(exports, "normal", ()=>normal);
+parcelHelpers.export(exports, "other", ()=>other);
+parcelHelpers.export(exports, "top", ()=>top);
+parcelHelpers.export(exports, "unset", ()=>unset);
+parcelHelpers.export(exports, "url", ()=>url);
+parcelHelpers.export(exports, "visible", ()=>visible);
+parcelHelpers.export(exports, "browsers", ()=>browsers);
+parcelHelpers.export(exports, "call", ()=>call);
+parcelHelpers.export(exports, "allValue", ()=>allValue);
+parcelHelpers.export(exports, "autoValue", ()=>autoValue);
+parcelHelpers.export(exports, "baselineValue", ()=>baselineValue);
+parcelHelpers.export(exports, "centerValue", ()=>centerValue);
+parcelHelpers.export(exports, "inheritValue", ()=>inheritValue);
+parcelHelpers.export(exports, "normalValue", ()=>normalValue);
+parcelHelpers.export(exports, "noneValue", ()=>noneValue);
+parcelHelpers.export(exports, "visibleValue", ()=>visibleValue);
+parcelHelpers.export(exports, "hiddenValue", ()=>hiddenValue);
+parcelHelpers.export(exports, "otherValue", ()=>otherValue);
+parcelHelpers.export(exports, "initialValue", ()=>initialValue);
+parcelHelpers.export(exports, "unsetValue", ()=>unsetValue);
+parcelHelpers.export(exports, "topValue", ()=>topValue);
+parcelHelpers.export(exports, "middleValue", ()=>middleValue);
+parcelHelpers.export(exports, "bottomValue", ()=>bottomValue);
+parcelHelpers.export(exports, "urlValue", ()=>urlValue);
+// Generated by purs version 0.15.15
+var _indexJs = require("../CSS.Property/index.js");
+var _indexJs1 = require("../CSS.String/index.js");
+var _indexJs2 = require("../Control.Category/index.js");
+var _indexJs3 = require("../Data.Semigroup/index.js");
+var _indexJs4 = require("../Data.Tuple/index.js");
+var fromString = /* #__PURE__ */ _indexJs1.fromString(_indexJs.isStringValue);
+var visibleValue = {
+    visible: /* #__PURE__ */ fromString("visible")
+};
+var visible = function(dict) {
+    return dict.visible;
+};
+var urlValue = {
+    url: function(s) {
+        return fromString('url("' + (s + '")'));
+    }
+};
+var url = function(dict) {
+    return dict.url;
+};
+var unsetValue = {
+    unset: /* #__PURE__ */ fromString("unset")
+};
+var unset = function(dict) {
+    return dict.unset;
+};
+var topValue = {
+    top: /* #__PURE__ */ fromString("top")
+};
+var top = function(dict) {
+    return dict.top;
+};
+var otherValue = {
+    other: /* #__PURE__ */ _indexJs2.identity(_indexJs2.categoryFn)
+};
+var other = function(dict) {
+    return dict.other;
+};
+var normalValue = {
+    normal: /* #__PURE__ */ fromString("normal")
+};
+var normal = function(dict) {
+    return dict.normal;
+};
+var noneValue = {
+    none: /* #__PURE__ */ fromString("none")
+};
+var none = function(dict) {
+    return dict.none;
+};
+var middleValue = {
+    middle: /* #__PURE__ */ fromString("middle")
+};
+var middle = function(dict) {
+    return dict.middle;
+};
+var initialValue = {
+    initial: /* #__PURE__ */ fromString("initial")
+};
+var initial = function(dict) {
+    return dict.initial;
+};
+var inheritValue = {
+    inherit: /* #__PURE__ */ fromString("inherit")
+};
+var inherit = function(dict) {
+    return dict.inherit;
+};
+var hiddenValue = {
+    hidden: /* #__PURE__ */ fromString("hidden")
+};
+var hidden = function(dict) {
+    return dict.hidden;
+};
+var centerValue = {
+    center: /* #__PURE__ */ fromString("center")
+};
+var center = function(dict) {
+    return dict.center;
+};
+var call = function(dictIsString) {
+    var fromString1 = _indexJs1.fromString(dictIsString);
+    return function(dictMonoid) {
+        var append1 = _indexJs3.append(dictMonoid.Semigroup0());
+        return function(fn) {
+            return function(arg) {
+                return append1(fn)(append1(fromString1("("))(append1(arg)(fromString1(")"))));
+            };
+        };
+    };
+};
+var browsers = /* #__PURE__ */ function() {
+    return new _indexJs.Prefixed([
+        new _indexJs4.Tuple("-webkit-", ""),
+        new _indexJs4.Tuple("-moz-", ""),
+        new _indexJs4.Tuple("-ms-", ""),
+        new _indexJs4.Tuple("-o-", ""),
+        new _indexJs4.Tuple("", "")
+    ]);
+}();
+var bottomValue = {
+    bottom: /* #__PURE__ */ fromString("bottom")
+};
+var bottom = function(dict) {
+    return dict.bottom;
+};
+var baselineValue = {
+    baseline: /* #__PURE__ */ fromString("baseline")
+};
+var baseline = function(dict) {
+    return dict.baseline;
+};
+var autoValue = {
+    auto: /* #__PURE__ */ fromString("auto")
+};
+var auto = function(dict) {
+    return dict.auto;
+};
+var allValue = {
+    all: /* #__PURE__ */ fromString("all")
+};
+var all = function(dict) {
+    return dict.all;
+};
+
+},{"../CSS.Property/index.js":"5ytk4","../CSS.String/index.js":"9bTqK","../Control.Category/index.js":"13EFp","../Data.Semigroup/index.js":"3JeZO","../Data.Tuple/index.js":"ib0Ds","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"5ytk4":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "value", ()=>value);
@@ -55458,444 +55905,7 @@ var fanout = function(dictCategory) {
     };
 };
 
-},{"../Control.Category/index.js":"13EFp","../Control.Semigroupoid/index.js":"k31Vb","../Data.Functor/index.js":"l8Eoe","../Data.Profunctor/index.js":"cUk04","../Data.Tuple/index.js":"ib0Ds","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cd0fS":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "BasicSize", ()=>BasicSize);
-parcelHelpers.export(exports, "SumSize", ()=>SumSize);
-parcelHelpers.export(exports, "DiffSize", ()=>DiffSize);
-parcelHelpers.export(exports, "MultSize", ()=>MultSize);
-parcelHelpers.export(exports, "DivSize", ()=>DivSize);
-parcelHelpers.export(exports, "sizeToString", ()=>sizeToString);
-parcelHelpers.export(exports, "nil", ()=>nil);
-parcelHelpers.export(exports, "unitless", ()=>unitless);
-parcelHelpers.export(exports, "px", ()=>px);
-parcelHelpers.export(exports, "pt", ()=>pt);
-parcelHelpers.export(exports, "em", ()=>em);
-parcelHelpers.export(exports, "ex", ()=>ex);
-parcelHelpers.export(exports, "ch", ()=>ch);
-parcelHelpers.export(exports, "pct", ()=>pct);
-parcelHelpers.export(exports, "rem", ()=>rem);
-parcelHelpers.export(exports, "vw", ()=>vw);
-parcelHelpers.export(exports, "vh", ()=>vh);
-parcelHelpers.export(exports, "vmin", ()=>vmin);
-parcelHelpers.export(exports, "vmax", ()=>vmax);
-parcelHelpers.export(exports, "calcSum", ()=>calcSum);
-parcelHelpers.export(exports, "calcDiff", ()=>calcDiff);
-parcelHelpers.export(exports, "calcMult", ()=>calcMult);
-parcelHelpers.export(exports, "calcMultFlipped", ()=>calcMultFlipped);
-parcelHelpers.export(exports, "calcDiv", ()=>calcDiv);
-parcelHelpers.export(exports, "sym", ()=>sym);
-parcelHelpers.export(exports, "Angle", ()=>Angle);
-parcelHelpers.export(exports, "deg", ()=>deg);
-parcelHelpers.export(exports, "rad", ()=>rad);
-parcelHelpers.export(exports, "isStringSize", ()=>isStringSize);
-parcelHelpers.export(exports, "valSize", ()=>valSize);
-parcelHelpers.export(exports, "autoSize", ()=>autoSize);
-parcelHelpers.export(exports, "inheritSize", ()=>inheritSize);
-parcelHelpers.export(exports, "initialSize", ()=>initialSize);
-parcelHelpers.export(exports, "unsetSize", ()=>unsetSize);
-parcelHelpers.export(exports, "sizeCombinationPercentage1", ()=>sizeCombinationPercentage1);
-parcelHelpers.export(exports, "sizeCombinationLengthUnit1", ()=>sizeCombinationLengthUnit1);
-parcelHelpers.export(exports, "sizeCombinationPercentage", ()=>sizeCombinationPercentage);
-parcelHelpers.export(exports, "sizeCombinationLengthUnit", ()=>sizeCombinationLengthUnit);
-parcelHelpers.export(exports, "eqAngle", ()=>eqAngle);
-parcelHelpers.export(exports, "ordAngle", ()=>ordAngle);
-parcelHelpers.export(exports, "valAngle", ()=>valAngle);
-// Generated by purs version 0.15.15
-var _indexJs = require("../CSS.Common/index.js");
-var _indexJs1 = require("../CSS.Property/index.js");
-var _indexJs2 = require("../CSS.String/index.js");
-var _indexJs3 = require("../Data.Eq/index.js");
-var _indexJs4 = require("../Data.Exists/index.js");
-var _indexJs5 = require("../Data.Function/index.js");
-var _indexJs6 = require("../Data.Ord/index.js");
-var _indexJs7 = require("../Data.Semigroup/index.js");
-var _indexJs8 = require("../Data.Show/index.js");
-var append = /* #__PURE__ */ _indexJs7.append(_indexJs1.semigroupValue);
-var value = /* #__PURE__ */ _indexJs1.value(_indexJs1.valNumber);
-var fromString = /* #__PURE__ */ _indexJs2.fromString(_indexJs1.isStringValue);
-var show = /* #__PURE__ */ _indexJs8.show(_indexJs8.showNumber);
-var append2 = /* #__PURE__ */ _indexJs7.append(_indexJs1.semigroupPrefixed);
-var eq = /* #__PURE__ */ _indexJs3.eq(_indexJs1.eqValue);
-var compare = /* #__PURE__ */ _indexJs6.compare(_indexJs1.ordValue);
-var BasicSize = /* #__PURE__ */ function() {
-    function BasicSize(value0) {
-        this.value0 = value0;
-    }
-    BasicSize.create = function(value0) {
-        return new BasicSize(value0);
-    };
-    return BasicSize;
-}();
-var SumSize = /* #__PURE__ */ function() {
-    function SumSize(value0, value1) {
-        this.value0 = value0;
-        this.value1 = value1;
-    }
-    SumSize.create = function(value0) {
-        return function(value1) {
-            return new SumSize(value0, value1);
-        };
-    };
-    return SumSize;
-}();
-var DiffSize = /* #__PURE__ */ function() {
-    function DiffSize(value0, value1) {
-        this.value0 = value0;
-        this.value1 = value1;
-    }
-    DiffSize.create = function(value0) {
-        return function(value1) {
-            return new DiffSize(value0, value1);
-        };
-    };
-    return DiffSize;
-}();
-var MultSize = /* #__PURE__ */ function() {
-    function MultSize(value0, value1) {
-        this.value0 = value0;
-        this.value1 = value1;
-    }
-    MultSize.create = function(value0) {
-        return function(value1) {
-            return new MultSize(value0, value1);
-        };
-    };
-    return MultSize;
-}();
-var DivSize = /* #__PURE__ */ function() {
-    function DivSize(value0, value1) {
-        this.value0 = value0;
-        this.value1 = value1;
-    }
-    DivSize.create = function(value0) {
-        return function(value1) {
-            return new DivSize(value0, value1);
-        };
-    };
-    return DivSize;
-}();
-var Angle = function(x) {
-    return x;
-};
-var sizeCombinationPercentage = {};
-var sizeCombinationPercentage1 = {};
-var sizeCombinationLengthUnit = {};
-var sizeCombinationLengthUnit1 = {};
-var vw = function(i) {
-    return new BasicSize(append(value(i))(fromString("vw")));
-};
-var vmin = function(i) {
-    return new BasicSize(append(value(i))(fromString("vmin")));
-};
-var vmax = function(i) {
-    return new BasicSize(append(value(i))(fromString("vmax")));
-};
-var vh = function(i) {
-    return new BasicSize(append(value(i))(fromString("vh")));
-};
-var valAngle = {
-    value: function(v) {
-        return v;
-    }
-};
-var unitless = function($46) {
-    return BasicSize.create(value($46));
-};
-var sym = function(f) {
-    return function(a) {
-        return f(a)(a)(a)(a);
-    };
-};
-var sizeToString = function(v) {
-    if (v instanceof BasicSize) return _indexJs1.plain(v.value0);
-    if (v instanceof SumSize) return _indexJs4.runExists(function(a$prime) {
-        return _indexJs4.runExists(function(b$prime) {
-            return "(" + (sizeToString(a$prime) + (" + " + (sizeToString(b$prime) + ")")));
-        })(v.value1);
-    })(v.value0);
-    if (v instanceof DiffSize) return _indexJs4.runExists(function(a$prime) {
-        return _indexJs4.runExists(function(b$prime) {
-            return "(" + (sizeToString(a$prime) + (" - " + (sizeToString(b$prime) + ")")));
-        })(v.value1);
-    })(v.value0);
-    if (v instanceof MultSize) return _indexJs4.runExists(function(b$prime) {
-        return "(" + (show(v.value0) + (" * " + (sizeToString(b$prime) + ")")));
-    })(v.value1);
-    if (v instanceof DivSize) return _indexJs4.runExists(function(b$prime) {
-        return "(" + (sizeToString(b$prime) + (" / " + (show(v.value0) + ")")));
-    })(v.value1);
-    throw new Error("Failed pattern match at CSS.Size (line 29, column 1 - line 29, column 43): " + [
-        v.constructor.name
-    ]);
-};
-var valSize = {
-    value: function(v) {
-        if (v instanceof BasicSize) return v.value0;
-        return append2(_indexJs.browsers)(new _indexJs1.Plain("calc" + sizeToString(v)));
-    }
-};
-var rem = function(i) {
-    return new BasicSize(append(value(i))(fromString("rem")));
-};
-var rad = function(i) {
-    return append(value(i))(fromString("rad"));
-};
-var px = function(i) {
-    return new BasicSize(append(value(i))(fromString("px")));
-};
-var pt = function(i) {
-    return new BasicSize(append(value(i))(fromString("pt")));
-};
-var pct = function(i) {
-    return new BasicSize(append(value(i))(fromString("%")));
-};
-var nil = /* #__PURE__ */ function() {
-    return new BasicSize(fromString("0"));
-}();
-var isStringSize = {
-    fromString: function($47) {
-        return BasicSize.create(fromString($47));
-    }
-};
-var fromString1 = /* #__PURE__ */ _indexJs2.fromString(isStringSize);
-var unsetSize = {
-    unset: /* #__PURE__ */ fromString1("unset")
-};
-var initialSize = {
-    initial: /* #__PURE__ */ fromString1("initial")
-};
-var inheritSize = {
-    inherit: /* #__PURE__ */ fromString1("inherit")
-};
-var ex = function(i) {
-    return new BasicSize(append(value(i))(fromString("ex")));
-};
-var eqAngle = function(dictEq) {
-    return {
-        eq: function(x) {
-            return function(y) {
-                return eq(x)(y);
-            };
-        }
-    };
-};
-var ordAngle = function(dictOrd) {
-    var eqAngle1 = eqAngle(dictOrd.Eq0());
-    return {
-        compare: function(x) {
-            return function(y) {
-                return compare(x)(y);
-            };
-        },
-        Eq0: function() {
-            return eqAngle1;
-        }
-    };
-};
-var em = function(i) {
-    return new BasicSize(append(value(i))(fromString("em")));
-};
-var deg = function(i) {
-    return append(value(i))(fromString("deg"));
-};
-var ch = function(i) {
-    return new BasicSize(append(value(i))(fromString("ch")));
-};
-var calcSum = function() {
-    return function(a) {
-        return function(b) {
-            return new SumSize(_indexJs4.mkExists(a), _indexJs4.mkExists(b));
-        };
-    };
-};
-var calcMult = function(a) {
-    return function(b) {
-        return new MultSize(a, _indexJs4.mkExists(b));
-    };
-};
-var calcMultFlipped = /* #__PURE__ */ _indexJs5.flip(calcMult);
-var calcDiv = function(a) {
-    return function(b) {
-        return new DivSize(b, _indexJs4.mkExists(a));
-    };
-};
-var calcDiff = function() {
-    return function(a) {
-        return function(b) {
-            return new DiffSize(_indexJs4.mkExists(a), _indexJs4.mkExists(b));
-        };
-    };
-};
-var autoSize = {
-    auto: /* #__PURE__ */ fromString1("auto")
-};
-
-},{"../CSS.Common/index.js":"aIpXQ","../CSS.Property/index.js":"5ytk4","../CSS.String/index.js":"9bTqK","../Data.Eq/index.js":"8OmSH","../Data.Exists/index.js":"8XzAV","../Data.Function/index.js":"49fNQ","../Data.Ord/index.js":"7HnPT","../Data.Semigroup/index.js":"3JeZO","../Data.Show/index.js":"aWqNo","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"aIpXQ":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "all", ()=>all);
-parcelHelpers.export(exports, "auto", ()=>auto);
-parcelHelpers.export(exports, "baseline", ()=>baseline);
-parcelHelpers.export(exports, "bottom", ()=>bottom);
-parcelHelpers.export(exports, "center", ()=>center);
-parcelHelpers.export(exports, "hidden", ()=>hidden);
-parcelHelpers.export(exports, "inherit", ()=>inherit);
-parcelHelpers.export(exports, "initial", ()=>initial);
-parcelHelpers.export(exports, "middle", ()=>middle);
-parcelHelpers.export(exports, "none", ()=>none);
-parcelHelpers.export(exports, "normal", ()=>normal);
-parcelHelpers.export(exports, "other", ()=>other);
-parcelHelpers.export(exports, "top", ()=>top);
-parcelHelpers.export(exports, "unset", ()=>unset);
-parcelHelpers.export(exports, "url", ()=>url);
-parcelHelpers.export(exports, "visible", ()=>visible);
-parcelHelpers.export(exports, "browsers", ()=>browsers);
-parcelHelpers.export(exports, "call", ()=>call);
-parcelHelpers.export(exports, "allValue", ()=>allValue);
-parcelHelpers.export(exports, "autoValue", ()=>autoValue);
-parcelHelpers.export(exports, "baselineValue", ()=>baselineValue);
-parcelHelpers.export(exports, "centerValue", ()=>centerValue);
-parcelHelpers.export(exports, "inheritValue", ()=>inheritValue);
-parcelHelpers.export(exports, "normalValue", ()=>normalValue);
-parcelHelpers.export(exports, "noneValue", ()=>noneValue);
-parcelHelpers.export(exports, "visibleValue", ()=>visibleValue);
-parcelHelpers.export(exports, "hiddenValue", ()=>hiddenValue);
-parcelHelpers.export(exports, "otherValue", ()=>otherValue);
-parcelHelpers.export(exports, "initialValue", ()=>initialValue);
-parcelHelpers.export(exports, "unsetValue", ()=>unsetValue);
-parcelHelpers.export(exports, "topValue", ()=>topValue);
-parcelHelpers.export(exports, "middleValue", ()=>middleValue);
-parcelHelpers.export(exports, "bottomValue", ()=>bottomValue);
-parcelHelpers.export(exports, "urlValue", ()=>urlValue);
-// Generated by purs version 0.15.15
-var _indexJs = require("../CSS.Property/index.js");
-var _indexJs1 = require("../CSS.String/index.js");
-var _indexJs2 = require("../Control.Category/index.js");
-var _indexJs3 = require("../Data.Semigroup/index.js");
-var _indexJs4 = require("../Data.Tuple/index.js");
-var fromString = /* #__PURE__ */ _indexJs1.fromString(_indexJs.isStringValue);
-var visibleValue = {
-    visible: /* #__PURE__ */ fromString("visible")
-};
-var visible = function(dict) {
-    return dict.visible;
-};
-var urlValue = {
-    url: function(s) {
-        return fromString('url("' + (s + '")'));
-    }
-};
-var url = function(dict) {
-    return dict.url;
-};
-var unsetValue = {
-    unset: /* #__PURE__ */ fromString("unset")
-};
-var unset = function(dict) {
-    return dict.unset;
-};
-var topValue = {
-    top: /* #__PURE__ */ fromString("top")
-};
-var top = function(dict) {
-    return dict.top;
-};
-var otherValue = {
-    other: /* #__PURE__ */ _indexJs2.identity(_indexJs2.categoryFn)
-};
-var other = function(dict) {
-    return dict.other;
-};
-var normalValue = {
-    normal: /* #__PURE__ */ fromString("normal")
-};
-var normal = function(dict) {
-    return dict.normal;
-};
-var noneValue = {
-    none: /* #__PURE__ */ fromString("none")
-};
-var none = function(dict) {
-    return dict.none;
-};
-var middleValue = {
-    middle: /* #__PURE__ */ fromString("middle")
-};
-var middle = function(dict) {
-    return dict.middle;
-};
-var initialValue = {
-    initial: /* #__PURE__ */ fromString("initial")
-};
-var initial = function(dict) {
-    return dict.initial;
-};
-var inheritValue = {
-    inherit: /* #__PURE__ */ fromString("inherit")
-};
-var inherit = function(dict) {
-    return dict.inherit;
-};
-var hiddenValue = {
-    hidden: /* #__PURE__ */ fromString("hidden")
-};
-var hidden = function(dict) {
-    return dict.hidden;
-};
-var centerValue = {
-    center: /* #__PURE__ */ fromString("center")
-};
-var center = function(dict) {
-    return dict.center;
-};
-var call = function(dictIsString) {
-    var fromString1 = _indexJs1.fromString(dictIsString);
-    return function(dictMonoid) {
-        var append1 = _indexJs3.append(dictMonoid.Semigroup0());
-        return function(fn) {
-            return function(arg) {
-                return append1(fn)(append1(fromString1("("))(append1(arg)(fromString1(")"))));
-            };
-        };
-    };
-};
-var browsers = /* #__PURE__ */ function() {
-    return new _indexJs.Prefixed([
-        new _indexJs4.Tuple("-webkit-", ""),
-        new _indexJs4.Tuple("-moz-", ""),
-        new _indexJs4.Tuple("-ms-", ""),
-        new _indexJs4.Tuple("-o-", ""),
-        new _indexJs4.Tuple("", "")
-    ]);
-}();
-var bottomValue = {
-    bottom: /* #__PURE__ */ fromString("bottom")
-};
-var bottom = function(dict) {
-    return dict.bottom;
-};
-var baselineValue = {
-    baseline: /* #__PURE__ */ fromString("baseline")
-};
-var baseline = function(dict) {
-    return dict.baseline;
-};
-var autoValue = {
-    auto: /* #__PURE__ */ fromString("auto")
-};
-var auto = function(dict) {
-    return dict.auto;
-};
-var allValue = {
-    all: /* #__PURE__ */ fromString("all")
-};
-var all = function(dict) {
-    return dict.all;
-};
-
-},{"../CSS.Property/index.js":"5ytk4","../CSS.String/index.js":"9bTqK","../Control.Category/index.js":"13EFp","../Data.Semigroup/index.js":"3JeZO","../Data.Tuple/index.js":"ib0Ds","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"k97a8":[function(require,module,exports) {
+},{"../Control.Category/index.js":"13EFp","../Control.Semigroupoid/index.js":"k31Vb","../Data.Functor/index.js":"l8Eoe","../Data.Profunctor/index.js":"cUk04","../Data.Tuple/index.js":"ib0Ds","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"k97a8":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "MediaType", ()=>MediaType);
@@ -57083,7 +57093,803 @@ var execWriter = function(m) {
     return _indexJs5.snd(runWriter(m));
 };
 
-},{"../Control.Applicative/index.js":"4mdh2","../Control.Monad.Writer.Class/index.js":"gNvOa","../Control.Monad.Writer.Trans/index.js":"1mORG","../Data.Identity/index.js":"bbeC9","../Data.Newtype/index.js":"lDspO","../Data.Tuple/index.js":"ib0Ds","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"zRRWZ":[function(require,module,exports) {
+},{"../Control.Applicative/index.js":"4mdh2","../Control.Monad.Writer.Class/index.js":"gNvOa","../Control.Monad.Writer.Trans/index.js":"1mORG","../Data.Identity/index.js":"bbeC9","../Data.Newtype/index.js":"lDspO","../Data.Tuple/index.js":"ib0Ds","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3ZWsc":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "flexEnd", ()=>flexEnd);
+parcelHelpers.export(exports, "flexStart", ()=>flexStart);
+parcelHelpers.export(exports, "spaceAround", ()=>spaceAround);
+parcelHelpers.export(exports, "spaceBetween", ()=>spaceBetween);
+parcelHelpers.export(exports, "stretch", ()=>stretch);
+parcelHelpers.export(exports, "AlignContentValue", ()=>AlignContentValue);
+parcelHelpers.export(exports, "alignContent", ()=>alignContent);
+parcelHelpers.export(exports, "AlignItemsValue", ()=>AlignItemsValue);
+parcelHelpers.export(exports, "alignItems", ()=>alignItems);
+parcelHelpers.export(exports, "AlignSelfValue", ()=>AlignSelfValue);
+parcelHelpers.export(exports, "alignSelf", ()=>alignSelf);
+parcelHelpers.export(exports, "flex", ()=>flex);
+parcelHelpers.export(exports, "flexBasis", ()=>flexBasis);
+parcelHelpers.export(exports, "FlexDirection", ()=>FlexDirection);
+parcelHelpers.export(exports, "row", ()=>row);
+parcelHelpers.export(exports, "rowReverse", ()=>rowReverse);
+parcelHelpers.export(exports, "column", ()=>column);
+parcelHelpers.export(exports, "columnReverse", ()=>columnReverse);
+parcelHelpers.export(exports, "flexDirection", ()=>flexDirection);
+parcelHelpers.export(exports, "flexFlow", ()=>flexFlow);
+parcelHelpers.export(exports, "flexGrow", ()=>flexGrow);
+parcelHelpers.export(exports, "flexShrink", ()=>flexShrink);
+parcelHelpers.export(exports, "FlexWrap", ()=>FlexWrap);
+parcelHelpers.export(exports, "nowrap", ()=>nowrap);
+parcelHelpers.export(exports, "wrap", ()=>wrap);
+parcelHelpers.export(exports, "wrapReverse", ()=>wrapReverse);
+parcelHelpers.export(exports, "flexWrap", ()=>flexWrap);
+parcelHelpers.export(exports, "JustifyContentValue", ()=>JustifyContentValue);
+parcelHelpers.export(exports, "justifyContent", ()=>justifyContent);
+parcelHelpers.export(exports, "order", ()=>order);
+parcelHelpers.export(exports, "flexEndValue", ()=>flexEndValue);
+parcelHelpers.export(exports, "flexStartValue", ()=>flexStartValue);
+parcelHelpers.export(exports, "spaceAroundValue", ()=>spaceAroundValue);
+parcelHelpers.export(exports, "spaceBetweenValue", ()=>spaceBetweenValue);
+parcelHelpers.export(exports, "stretchValue", ()=>stretchValue);
+parcelHelpers.export(exports, "eqAlignContentValue", ()=>eqAlignContentValue);
+parcelHelpers.export(exports, "ordAlignContentValue", ()=>ordAlignContentValue);
+parcelHelpers.export(exports, "isStringAlignContentValue", ()=>isStringAlignContentValue);
+parcelHelpers.export(exports, "valAlignContentValue", ()=>valAlignContentValue);
+parcelHelpers.export(exports, "otherAlignContentValue", ()=>otherAlignContentValue);
+parcelHelpers.export(exports, "inheritAlignContentValue", ()=>inheritAlignContentValue);
+parcelHelpers.export(exports, "flexStartAlignContentValue", ()=>flexStartAlignContentValue);
+parcelHelpers.export(exports, "flexEndAlignContentValue", ()=>flexEndAlignContentValue);
+parcelHelpers.export(exports, "centerAlignContentValue", ()=>centerAlignContentValue);
+parcelHelpers.export(exports, "spaceBetweenAlignContentValue", ()=>spaceBetweenAlignContentValue);
+parcelHelpers.export(exports, "spaceAroundAlignContentValue", ()=>spaceAroundAlignContentValue);
+parcelHelpers.export(exports, "stretchAlignContentValue", ()=>stretchAlignContentValue);
+parcelHelpers.export(exports, "eqAlignItemsValue", ()=>eqAlignItemsValue);
+parcelHelpers.export(exports, "ordAlignItemsValue", ()=>ordAlignItemsValue);
+parcelHelpers.export(exports, "isStringAlignItemsValue", ()=>isStringAlignItemsValue);
+parcelHelpers.export(exports, "valAlignItemsValue", ()=>valAlignItemsValue);
+parcelHelpers.export(exports, "otherAlignItemsValue", ()=>otherAlignItemsValue);
+parcelHelpers.export(exports, "inheritAlignItemsValue", ()=>inheritAlignItemsValue);
+parcelHelpers.export(exports, "baselineAlignItemsValue", ()=>baselineAlignItemsValue);
+parcelHelpers.export(exports, "centerAlignItemsValue", ()=>centerAlignItemsValue);
+parcelHelpers.export(exports, "flexEndAlignItemsValue", ()=>flexEndAlignItemsValue);
+parcelHelpers.export(exports, "flexStartAlignItemsValue", ()=>flexStartAlignItemsValue);
+parcelHelpers.export(exports, "stretchAlignItemsValue", ()=>stretchAlignItemsValue);
+parcelHelpers.export(exports, "eqAlignSelfValue", ()=>eqAlignSelfValue);
+parcelHelpers.export(exports, "ordAlignSelfValue", ()=>ordAlignSelfValue);
+parcelHelpers.export(exports, "isStringAlignSelfValue", ()=>isStringAlignSelfValue);
+parcelHelpers.export(exports, "valAlignSelfValue", ()=>valAlignSelfValue);
+parcelHelpers.export(exports, "otherAlignSelfValue", ()=>otherAlignSelfValue);
+parcelHelpers.export(exports, "inheritAlignSelfValue", ()=>inheritAlignSelfValue);
+parcelHelpers.export(exports, "autoAlignSelfValue", ()=>autoAlignSelfValue);
+parcelHelpers.export(exports, "baselineAlignSelfValue", ()=>baselineAlignSelfValue);
+parcelHelpers.export(exports, "centerAlignSelfValue", ()=>centerAlignSelfValue);
+parcelHelpers.export(exports, "flexEndAlignSelfValue", ()=>flexEndAlignSelfValue);
+parcelHelpers.export(exports, "flexStartAlignSelfValue", ()=>flexStartAlignSelfValue);
+parcelHelpers.export(exports, "stretchAlignSelfValue", ()=>stretchAlignSelfValue);
+parcelHelpers.export(exports, "eqFlexDirection", ()=>eqFlexDirection);
+parcelHelpers.export(exports, "ordFlexDirection", ()=>ordFlexDirection);
+parcelHelpers.export(exports, "valFlexDirection", ()=>valFlexDirection);
+parcelHelpers.export(exports, "otherFlexDirection", ()=>otherFlexDirection);
+parcelHelpers.export(exports, "eqFlexWrap", ()=>eqFlexWrap);
+parcelHelpers.export(exports, "ordFlexWrap", ()=>ordFlexWrap);
+parcelHelpers.export(exports, "valFlexWrap", ()=>valFlexWrap);
+parcelHelpers.export(exports, "otherFlexWrap", ()=>otherFlexWrap);
+parcelHelpers.export(exports, "eqJustifyContentValue", ()=>eqJustifyContentValue);
+parcelHelpers.export(exports, "ordJustifyContentValue", ()=>ordJustifyContentValue);
+parcelHelpers.export(exports, "isStringJustifyContentValue", ()=>isStringJustifyContentValue);
+parcelHelpers.export(exports, "valJustifyContentValue", ()=>valJustifyContentValue);
+parcelHelpers.export(exports, "otherJustifyContentValue", ()=>otherJustifyContentValue);
+parcelHelpers.export(exports, "inheritJustifyContentValue", ()=>inheritJustifyContentValue);
+parcelHelpers.export(exports, "centerJustifyContentValue", ()=>centerJustifyContentValue);
+parcelHelpers.export(exports, "flexEndJustifyContentValue", ()=>flexEndJustifyContentValue);
+parcelHelpers.export(exports, "flexStartJustifyContentValue", ()=>flexStartJustifyContentValue);
+parcelHelpers.export(exports, "spaceAroundJustifyContentValue", ()=>spaceAroundJustifyContentValue);
+parcelHelpers.export(exports, "spaceBetweenJustifyContentValue", ()=>spaceBetweenJustifyContentValue);
+// Generated by purs version 0.15.15
+var _indexJs = require("../CSS.Property/index.js");
+var _indexJs1 = require("../CSS.Size/index.js");
+var _indexJs2 = require("../CSS.String/index.js");
+var _indexJs3 = require("../CSS.Stylesheet/index.js");
+var _indexJs4 = require("../Data.Eq/index.js");
+var _indexJs5 = require("../Data.Ord/index.js");
+var _indexJs6 = require("../Data.Show/index.js");
+var _indexJs7 = require("../Data.Tuple/index.js");
+var fromString = /* #__PURE__ */ _indexJs2.fromString(_indexJs.isStringValue);
+var key = /* #__PURE__ */ _indexJs3.key(_indexJs.valValue);
+var fromString1 = /* #__PURE__ */ _indexJs2.fromString(_indexJs.isStringKey);
+var show = /* #__PURE__ */ _indexJs6.show(_indexJs6.showInt);
+var show1 = /* #__PURE__ */ _indexJs6.show(_indexJs6.showNumber);
+var valTuple = /* #__PURE__ */ _indexJs.valTuple(_indexJs.valValue);
+var key1 = /* #__PURE__ */ _indexJs3.key(/* #__PURE__ */ valTuple(/* #__PURE__ */ valTuple(_indexJs.valValue)));
+var value = /* #__PURE__ */ _indexJs.value(_indexJs1.valSize);
+var eq = /* #__PURE__ */ _indexJs4.eq(_indexJs.eqValue);
+var compare = /* #__PURE__ */ _indexJs5.compare(_indexJs.ordValue);
+var JustifyContentValue = function(x) {
+    return x;
+};
+var FlexWrap = function(x) {
+    return x;
+};
+var FlexDirection = function(x) {
+    return x;
+};
+var AlignSelfValue = function(x) {
+    return x;
+};
+var AlignItemsValue = function(x) {
+    return x;
+};
+var AlignContentValue = function(x) {
+    return x;
+};
+var wrapReverse = /* #__PURE__ */ fromString("wrap-reverse");
+var wrap = /* #__PURE__ */ fromString("wrap");
+var valJustifyContentValue = {
+    value: function(v) {
+        return v;
+    }
+};
+var valFlexWrap = {
+    value: function(v) {
+        return v;
+    }
+};
+var valFlexDirection = {
+    value: function(v) {
+        return v;
+    }
+};
+var key2 = /* #__PURE__ */ _indexJs3.key(/* #__PURE__ */ _indexJs.valTuple(valFlexDirection)(valFlexWrap));
+var valAlignSelfValue = {
+    value: function(v) {
+        return v;
+    }
+};
+var valAlignItemsValue = {
+    value: function(v) {
+        return v;
+    }
+};
+var valAlignContentValue = {
+    value: function(v) {
+        return v;
+    }
+};
+var stretchValue = {
+    stretch: /* #__PURE__ */ fromString("stretch")
+};
+var stretch = function(dict) {
+    return dict.stretch;
+};
+var spaceBetweenValue = {
+    spaceBetween: /* #__PURE__ */ fromString("space-between")
+};
+var spaceBetween = function(dict) {
+    return dict.spaceBetween;
+};
+var spaceAroundValue = {
+    spaceAround: /* #__PURE__ */ fromString("space-around")
+};
+var spaceAround = function(dict) {
+    return dict.spaceAround;
+};
+var rowReverse = /* #__PURE__ */ fromString("row-reverse");
+var row = /* #__PURE__ */ fromString("row");
+var otherJustifyContentValue = {
+    other: JustifyContentValue
+};
+var otherFlexWrap = {
+    other: FlexWrap
+};
+var otherFlexDirection = {
+    other: FlexDirection
+};
+var otherAlignSelfValue = {
+    other: AlignSelfValue
+};
+var otherAlignItemsValue = {
+    other: AlignItemsValue
+};
+var otherAlignContentValue = {
+    other: AlignContentValue
+};
+var order = function(i) {
+    return key(fromString1("order"))(fromString(show(i)));
+};
+var nowrap = /* #__PURE__ */ fromString("nowrap");
+var justifyContent = /* #__PURE__ */ _indexJs3.key(valJustifyContentValue)(/* #__PURE__ */ fromString1("justify-content"));
+var isStringJustifyContentValue = {
+    fromString: function($116) {
+        return JustifyContentValue(fromString($116));
+    }
+};
+var fromString2 = /* #__PURE__ */ _indexJs2.fromString(isStringJustifyContentValue);
+var spaceAroundJustifyContentValue = {
+    spaceAround: /* #__PURE__ */ fromString2("space-around")
+};
+var spaceBetweenJustifyContentValue = {
+    spaceBetween: /* #__PURE__ */ fromString2("space-between")
+};
+var isStringAlignSelfValue = {
+    fromString: function($117) {
+        return AlignSelfValue(fromString($117));
+    }
+};
+var fromString3 = /* #__PURE__ */ _indexJs2.fromString(isStringAlignSelfValue);
+var stretchAlignSelfValue = {
+    stretch: /* #__PURE__ */ fromString3("stretch")
+};
+var isStringAlignItemsValue = {
+    fromString: function($118) {
+        return AlignItemsValue(fromString($118));
+    }
+};
+var fromString4 = /* #__PURE__ */ _indexJs2.fromString(isStringAlignItemsValue);
+var stretchAlignItemsValue = {
+    stretch: /* #__PURE__ */ fromString4("stretch")
+};
+var isStringAlignContentValue = {
+    fromString: function($119) {
+        return AlignContentValue(fromString($119));
+    }
+};
+var fromString5 = /* #__PURE__ */ _indexJs2.fromString(isStringAlignContentValue);
+var spaceAroundAlignContentValue = {
+    spaceAround: /* #__PURE__ */ fromString5("space-around")
+};
+var spaceBetweenAlignContentValue = {
+    spaceBetween: /* #__PURE__ */ fromString5("space-between")
+};
+var stretchAlignContentValue = {
+    stretch: /* #__PURE__ */ fromString5("stretch")
+};
+var inheritJustifyContentValue = {
+    inherit: /* #__PURE__ */ fromString2("inherit")
+};
+var inheritAlignSelfValue = {
+    inherit: /* #__PURE__ */ fromString3("inherit")
+};
+var inheritAlignItemsValue = {
+    inherit: /* #__PURE__ */ fromString4("inherit")
+};
+var inheritAlignContentValue = {
+    inherit: /* #__PURE__ */ fromString5("inherit")
+};
+var flexWrap = /* #__PURE__ */ _indexJs3.key(valFlexWrap)(/* #__PURE__ */ fromString1("flex-wrap"));
+var flexStartValue = {
+    flexStart: /* #__PURE__ */ fromString("flex-start")
+};
+var flexStartJustifyContentValue = {
+    flexStart: /* #__PURE__ */ fromString2("flex-start")
+};
+var flexStartAlignSelfValue = {
+    flexStart: /* #__PURE__ */ fromString3("flex-start")
+};
+var flexStartAlignItemsValue = {
+    flexStart: /* #__PURE__ */ fromString4("flex-start")
+};
+var flexStartAlignContentValue = {
+    flexStart: /* #__PURE__ */ fromString5("flex-start")
+};
+var flexStart = function(dict) {
+    return dict.flexStart;
+};
+var flexShrink = function(i) {
+    return key(fromString1("flex-shrink"))(fromString(show1(i)));
+};
+var flexGrow = function(i) {
+    return key(fromString1("flex-grow"))(fromString(show1(i)));
+};
+var flexFlow = function(d) {
+    return function(w) {
+        return key2(fromString1("flex-flow"))(new _indexJs7.Tuple(d, w));
+    };
+};
+var flexEndValue = {
+    flexEnd: /* #__PURE__ */ fromString("flex-end")
+};
+var flexEndJustifyContentValue = {
+    flexEnd: /* #__PURE__ */ fromString2("flex-end")
+};
+var flexEndAlignSelfValue = {
+    flexEnd: /* #__PURE__ */ fromString3("flex-end")
+};
+var flexEndAlignItemsValue = {
+    flexEnd: /* #__PURE__ */ fromString4("flex-end")
+};
+var flexEndAlignContentValue = {
+    flexEnd: /* #__PURE__ */ fromString5("flex-end")
+};
+var flexEnd = function(dict) {
+    return dict.flexEnd;
+};
+var flexDirection = /* #__PURE__ */ _indexJs3.key(valFlexDirection)(/* #__PURE__ */ fromString1("flex-direction"));
+var flexBasis = /* #__PURE__ */ _indexJs3.key(_indexJs1.valSize)(/* #__PURE__ */ fromString1("flex-basis"));
+var flex = function(g) {
+    return function(s) {
+        return function(b) {
+            var ss = fromString(show1(s));
+            var gs = fromString(show1(g));
+            return key1(fromString1("flex"))(new _indexJs7.Tuple(gs, new _indexJs7.Tuple(ss, value(b))));
+        };
+    };
+};
+var eqJustifyContentValue = {
+    eq: function(x) {
+        return function(y) {
+            return eq(x)(y);
+        };
+    }
+};
+var ordJustifyContentValue = {
+    compare: function(x) {
+        return function(y) {
+            return compare(x)(y);
+        };
+    },
+    Eq0: function() {
+        return eqJustifyContentValue;
+    }
+};
+var eqFlexWrap = {
+    eq: function(x) {
+        return function(y) {
+            return eq(x)(y);
+        };
+    }
+};
+var ordFlexWrap = {
+    compare: function(x) {
+        return function(y) {
+            return compare(x)(y);
+        };
+    },
+    Eq0: function() {
+        return eqFlexWrap;
+    }
+};
+var eqFlexDirection = {
+    eq: function(x) {
+        return function(y) {
+            return eq(x)(y);
+        };
+    }
+};
+var ordFlexDirection = {
+    compare: function(x) {
+        return function(y) {
+            return compare(x)(y);
+        };
+    },
+    Eq0: function() {
+        return eqFlexDirection;
+    }
+};
+var eqAlignSelfValue = {
+    eq: function(x) {
+        return function(y) {
+            return eq(x)(y);
+        };
+    }
+};
+var ordAlignSelfValue = {
+    compare: function(x) {
+        return function(y) {
+            return compare(x)(y);
+        };
+    },
+    Eq0: function() {
+        return eqAlignSelfValue;
+    }
+};
+var eqAlignItemsValue = {
+    eq: function(x) {
+        return function(y) {
+            return eq(x)(y);
+        };
+    }
+};
+var ordAlignItemsValue = {
+    compare: function(x) {
+        return function(y) {
+            return compare(x)(y);
+        };
+    },
+    Eq0: function() {
+        return eqAlignItemsValue;
+    }
+};
+var eqAlignContentValue = {
+    eq: function(x) {
+        return function(y) {
+            return eq(x)(y);
+        };
+    }
+};
+var ordAlignContentValue = {
+    compare: function(x) {
+        return function(y) {
+            return compare(x)(y);
+        };
+    },
+    Eq0: function() {
+        return eqAlignContentValue;
+    }
+};
+var columnReverse = /* #__PURE__ */ fromString("column-reverse");
+var column = /* #__PURE__ */ fromString("column");
+var centerJustifyContentValue = {
+    center: /* #__PURE__ */ fromString2("center")
+};
+var centerAlignSelfValue = {
+    center: /* #__PURE__ */ fromString3("center")
+};
+var centerAlignItemsValue = {
+    center: /* #__PURE__ */ fromString4("center")
+};
+var centerAlignContentValue = {
+    center: /* #__PURE__ */ fromString5("center")
+};
+var baselineAlignSelfValue = {
+    baseline: /* #__PURE__ */ fromString3("baseline")
+};
+var baselineAlignItemsValue = {
+    baseline: /* #__PURE__ */ fromString4("baseline")
+};
+var autoAlignSelfValue = {
+    auto: /* #__PURE__ */ fromString3("auto")
+};
+var alignSelf = /* #__PURE__ */ _indexJs3.key(valAlignSelfValue)(/* #__PURE__ */ fromString1("align-self"));
+var alignItems = /* #__PURE__ */ _indexJs3.key(valAlignItemsValue)(/* #__PURE__ */ fromString1("align-items"));
+var alignContent = /* #__PURE__ */ _indexJs3.key(valAlignContentValue)(/* #__PURE__ */ fromString1("align-content"));
+
+},{"../CSS.Property/index.js":"5ytk4","../CSS.Size/index.js":"cd0fS","../CSS.String/index.js":"9bTqK","../CSS.Stylesheet/index.js":"k97a8","../Data.Eq/index.js":"8OmSH","../Data.Ord/index.js":"7HnPT","../Data.Show/index.js":"aWqNo","../Data.Tuple/index.js":"ib0Ds","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cd0fS":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "BasicSize", ()=>BasicSize);
+parcelHelpers.export(exports, "SumSize", ()=>SumSize);
+parcelHelpers.export(exports, "DiffSize", ()=>DiffSize);
+parcelHelpers.export(exports, "MultSize", ()=>MultSize);
+parcelHelpers.export(exports, "DivSize", ()=>DivSize);
+parcelHelpers.export(exports, "sizeToString", ()=>sizeToString);
+parcelHelpers.export(exports, "nil", ()=>nil);
+parcelHelpers.export(exports, "unitless", ()=>unitless);
+parcelHelpers.export(exports, "px", ()=>px);
+parcelHelpers.export(exports, "pt", ()=>pt);
+parcelHelpers.export(exports, "em", ()=>em);
+parcelHelpers.export(exports, "ex", ()=>ex);
+parcelHelpers.export(exports, "ch", ()=>ch);
+parcelHelpers.export(exports, "pct", ()=>pct);
+parcelHelpers.export(exports, "rem", ()=>rem);
+parcelHelpers.export(exports, "vw", ()=>vw);
+parcelHelpers.export(exports, "vh", ()=>vh);
+parcelHelpers.export(exports, "vmin", ()=>vmin);
+parcelHelpers.export(exports, "vmax", ()=>vmax);
+parcelHelpers.export(exports, "calcSum", ()=>calcSum);
+parcelHelpers.export(exports, "calcDiff", ()=>calcDiff);
+parcelHelpers.export(exports, "calcMult", ()=>calcMult);
+parcelHelpers.export(exports, "calcMultFlipped", ()=>calcMultFlipped);
+parcelHelpers.export(exports, "calcDiv", ()=>calcDiv);
+parcelHelpers.export(exports, "sym", ()=>sym);
+parcelHelpers.export(exports, "Angle", ()=>Angle);
+parcelHelpers.export(exports, "deg", ()=>deg);
+parcelHelpers.export(exports, "rad", ()=>rad);
+parcelHelpers.export(exports, "isStringSize", ()=>isStringSize);
+parcelHelpers.export(exports, "valSize", ()=>valSize);
+parcelHelpers.export(exports, "autoSize", ()=>autoSize);
+parcelHelpers.export(exports, "inheritSize", ()=>inheritSize);
+parcelHelpers.export(exports, "initialSize", ()=>initialSize);
+parcelHelpers.export(exports, "unsetSize", ()=>unsetSize);
+parcelHelpers.export(exports, "sizeCombinationPercentage1", ()=>sizeCombinationPercentage1);
+parcelHelpers.export(exports, "sizeCombinationLengthUnit1", ()=>sizeCombinationLengthUnit1);
+parcelHelpers.export(exports, "sizeCombinationPercentage", ()=>sizeCombinationPercentage);
+parcelHelpers.export(exports, "sizeCombinationLengthUnit", ()=>sizeCombinationLengthUnit);
+parcelHelpers.export(exports, "eqAngle", ()=>eqAngle);
+parcelHelpers.export(exports, "ordAngle", ()=>ordAngle);
+parcelHelpers.export(exports, "valAngle", ()=>valAngle);
+// Generated by purs version 0.15.15
+var _indexJs = require("../CSS.Common/index.js");
+var _indexJs1 = require("../CSS.Property/index.js");
+var _indexJs2 = require("../CSS.String/index.js");
+var _indexJs3 = require("../Data.Eq/index.js");
+var _indexJs4 = require("../Data.Exists/index.js");
+var _indexJs5 = require("../Data.Function/index.js");
+var _indexJs6 = require("../Data.Ord/index.js");
+var _indexJs7 = require("../Data.Semigroup/index.js");
+var _indexJs8 = require("../Data.Show/index.js");
+var append = /* #__PURE__ */ _indexJs7.append(_indexJs1.semigroupValue);
+var value = /* #__PURE__ */ _indexJs1.value(_indexJs1.valNumber);
+var fromString = /* #__PURE__ */ _indexJs2.fromString(_indexJs1.isStringValue);
+var show = /* #__PURE__ */ _indexJs8.show(_indexJs8.showNumber);
+var append2 = /* #__PURE__ */ _indexJs7.append(_indexJs1.semigroupPrefixed);
+var eq = /* #__PURE__ */ _indexJs3.eq(_indexJs1.eqValue);
+var compare = /* #__PURE__ */ _indexJs6.compare(_indexJs1.ordValue);
+var BasicSize = /* #__PURE__ */ function() {
+    function BasicSize(value0) {
+        this.value0 = value0;
+    }
+    BasicSize.create = function(value0) {
+        return new BasicSize(value0);
+    };
+    return BasicSize;
+}();
+var SumSize = /* #__PURE__ */ function() {
+    function SumSize(value0, value1) {
+        this.value0 = value0;
+        this.value1 = value1;
+    }
+    SumSize.create = function(value0) {
+        return function(value1) {
+            return new SumSize(value0, value1);
+        };
+    };
+    return SumSize;
+}();
+var DiffSize = /* #__PURE__ */ function() {
+    function DiffSize(value0, value1) {
+        this.value0 = value0;
+        this.value1 = value1;
+    }
+    DiffSize.create = function(value0) {
+        return function(value1) {
+            return new DiffSize(value0, value1);
+        };
+    };
+    return DiffSize;
+}();
+var MultSize = /* #__PURE__ */ function() {
+    function MultSize(value0, value1) {
+        this.value0 = value0;
+        this.value1 = value1;
+    }
+    MultSize.create = function(value0) {
+        return function(value1) {
+            return new MultSize(value0, value1);
+        };
+    };
+    return MultSize;
+}();
+var DivSize = /* #__PURE__ */ function() {
+    function DivSize(value0, value1) {
+        this.value0 = value0;
+        this.value1 = value1;
+    }
+    DivSize.create = function(value0) {
+        return function(value1) {
+            return new DivSize(value0, value1);
+        };
+    };
+    return DivSize;
+}();
+var Angle = function(x) {
+    return x;
+};
+var sizeCombinationPercentage = {};
+var sizeCombinationPercentage1 = {};
+var sizeCombinationLengthUnit = {};
+var sizeCombinationLengthUnit1 = {};
+var vw = function(i) {
+    return new BasicSize(append(value(i))(fromString("vw")));
+};
+var vmin = function(i) {
+    return new BasicSize(append(value(i))(fromString("vmin")));
+};
+var vmax = function(i) {
+    return new BasicSize(append(value(i))(fromString("vmax")));
+};
+var vh = function(i) {
+    return new BasicSize(append(value(i))(fromString("vh")));
+};
+var valAngle = {
+    value: function(v) {
+        return v;
+    }
+};
+var unitless = function($46) {
+    return BasicSize.create(value($46));
+};
+var sym = function(f) {
+    return function(a) {
+        return f(a)(a)(a)(a);
+    };
+};
+var sizeToString = function(v) {
+    if (v instanceof BasicSize) return _indexJs1.plain(v.value0);
+    if (v instanceof SumSize) return _indexJs4.runExists(function(a$prime) {
+        return _indexJs4.runExists(function(b$prime) {
+            return "(" + (sizeToString(a$prime) + (" + " + (sizeToString(b$prime) + ")")));
+        })(v.value1);
+    })(v.value0);
+    if (v instanceof DiffSize) return _indexJs4.runExists(function(a$prime) {
+        return _indexJs4.runExists(function(b$prime) {
+            return "(" + (sizeToString(a$prime) + (" - " + (sizeToString(b$prime) + ")")));
+        })(v.value1);
+    })(v.value0);
+    if (v instanceof MultSize) return _indexJs4.runExists(function(b$prime) {
+        return "(" + (show(v.value0) + (" * " + (sizeToString(b$prime) + ")")));
+    })(v.value1);
+    if (v instanceof DivSize) return _indexJs4.runExists(function(b$prime) {
+        return "(" + (sizeToString(b$prime) + (" / " + (show(v.value0) + ")")));
+    })(v.value1);
+    throw new Error("Failed pattern match at CSS.Size (line 29, column 1 - line 29, column 43): " + [
+        v.constructor.name
+    ]);
+};
+var valSize = {
+    value: function(v) {
+        if (v instanceof BasicSize) return v.value0;
+        return append2(_indexJs.browsers)(new _indexJs1.Plain("calc" + sizeToString(v)));
+    }
+};
+var rem = function(i) {
+    return new BasicSize(append(value(i))(fromString("rem")));
+};
+var rad = function(i) {
+    return append(value(i))(fromString("rad"));
+};
+var px = function(i) {
+    return new BasicSize(append(value(i))(fromString("px")));
+};
+var pt = function(i) {
+    return new BasicSize(append(value(i))(fromString("pt")));
+};
+var pct = function(i) {
+    return new BasicSize(append(value(i))(fromString("%")));
+};
+var nil = /* #__PURE__ */ function() {
+    return new BasicSize(fromString("0"));
+}();
+var isStringSize = {
+    fromString: function($47) {
+        return BasicSize.create(fromString($47));
+    }
+};
+var fromString1 = /* #__PURE__ */ _indexJs2.fromString(isStringSize);
+var unsetSize = {
+    unset: /* #__PURE__ */ fromString1("unset")
+};
+var initialSize = {
+    initial: /* #__PURE__ */ fromString1("initial")
+};
+var inheritSize = {
+    inherit: /* #__PURE__ */ fromString1("inherit")
+};
+var ex = function(i) {
+    return new BasicSize(append(value(i))(fromString("ex")));
+};
+var eqAngle = function(dictEq) {
+    return {
+        eq: function(x) {
+            return function(y) {
+                return eq(x)(y);
+            };
+        }
+    };
+};
+var ordAngle = function(dictOrd) {
+    var eqAngle1 = eqAngle(dictOrd.Eq0());
+    return {
+        compare: function(x) {
+            return function(y) {
+                return compare(x)(y);
+            };
+        },
+        Eq0: function() {
+            return eqAngle1;
+        }
+    };
+};
+var em = function(i) {
+    return new BasicSize(append(value(i))(fromString("em")));
+};
+var deg = function(i) {
+    return append(value(i))(fromString("deg"));
+};
+var ch = function(i) {
+    return new BasicSize(append(value(i))(fromString("ch")));
+};
+var calcSum = function() {
+    return function(a) {
+        return function(b) {
+            return new SumSize(_indexJs4.mkExists(a), _indexJs4.mkExists(b));
+        };
+    };
+};
+var calcMult = function(a) {
+    return function(b) {
+        return new MultSize(a, _indexJs4.mkExists(b));
+    };
+};
+var calcMultFlipped = /* #__PURE__ */ _indexJs5.flip(calcMult);
+var calcDiv = function(a) {
+    return function(b) {
+        return new DivSize(b, _indexJs4.mkExists(a));
+    };
+};
+var calcDiff = function() {
+    return function(a) {
+        return function(b) {
+            return new DiffSize(_indexJs4.mkExists(a), _indexJs4.mkExists(b));
+        };
+    };
+};
+var autoSize = {
+    auto: /* #__PURE__ */ fromString1("auto")
+};
+
+},{"../CSS.Common/index.js":"aIpXQ","../CSS.Property/index.js":"5ytk4","../CSS.String/index.js":"9bTqK","../Data.Eq/index.js":"8OmSH","../Data.Exists/index.js":"8XzAV","../Data.Function/index.js":"49fNQ","../Data.Ord/index.js":"7HnPT","../Data.Semigroup/index.js":"3JeZO","../Data.Show/index.js":"aWqNo","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"54WNO":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "width", ()=>width);
+parcelHelpers.export(exports, "height", ()=>height);
+parcelHelpers.export(exports, "minWidth", ()=>minWidth);
+parcelHelpers.export(exports, "minHeight", ()=>minHeight);
+parcelHelpers.export(exports, "maxWidth", ()=>maxWidth);
+parcelHelpers.export(exports, "maxHeight", ()=>maxHeight);
+parcelHelpers.export(exports, "top", ()=>top);
+parcelHelpers.export(exports, "bottom", ()=>bottom);
+parcelHelpers.export(exports, "left", ()=>left);
+parcelHelpers.export(exports, "right", ()=>right);
+parcelHelpers.export(exports, "padding", ()=>padding);
+parcelHelpers.export(exports, "paddingTop", ()=>paddingTop);
+parcelHelpers.export(exports, "paddingBottom", ()=>paddingBottom);
+parcelHelpers.export(exports, "paddingLeft", ()=>paddingLeft);
+parcelHelpers.export(exports, "paddingRight", ()=>paddingRight);
+parcelHelpers.export(exports, "margin", ()=>margin);
+parcelHelpers.export(exports, "marginTop", ()=>marginTop);
+parcelHelpers.export(exports, "marginBottom", ()=>marginBottom);
+parcelHelpers.export(exports, "marginLeft", ()=>marginLeft);
+parcelHelpers.export(exports, "marginRight", ()=>marginRight);
+parcelHelpers.export(exports, "lineHeight", ()=>lineHeight);
+// Generated by purs version 0.15.15
+var _indexJs = require("../CSS.Property/index.js");
+var _indexJs1 = require("../CSS.Size/index.js");
+var _indexJs2 = require("../CSS.String/index.js");
+var _indexJs3 = require("../CSS.Stylesheet/index.js");
+var _indexJs4 = require("../Data.Tuple/index.js");
+var key = /* #__PURE__ */ _indexJs3.key(_indexJs1.valSize);
+var fromString = /* #__PURE__ */ _indexJs2.fromString(_indexJs.isStringKey);
+var valTuple = /* #__PURE__ */ _indexJs.valTuple(_indexJs1.valSize)(_indexJs1.valSize);
+var key1 = /* #__PURE__ */ _indexJs3.key(/* #__PURE__ */ _indexJs.valTuple(valTuple)(valTuple));
+var width = /* #__PURE__ */ key(/* #__PURE__ */ fromString("width"));
+var top = /* #__PURE__ */ key(/* #__PURE__ */ fromString("top"));
+var right = /* #__PURE__ */ key(/* #__PURE__ */ fromString("right"));
+var paddingTop = /* #__PURE__ */ key(/* #__PURE__ */ fromString("padding-top"));
+var paddingRight = /* #__PURE__ */ key(/* #__PURE__ */ fromString("padding-right"));
+var paddingLeft = /* #__PURE__ */ key(/* #__PURE__ */ fromString("padding-left"));
+var paddingBottom = /* #__PURE__ */ key(/* #__PURE__ */ fromString("padding-bottom"));
+var padding = function(a) {
+    return function(b) {
+        return function(c) {
+            return function(d) {
+                return key1(fromString("padding"))(new _indexJs4.Tuple(new _indexJs4.Tuple(a, b), new _indexJs4.Tuple(c, d)));
+            };
+        };
+    };
+};
+var minWidth = /* #__PURE__ */ key(/* #__PURE__ */ fromString("min-width"));
+var minHeight = /* #__PURE__ */ key(/* #__PURE__ */ fromString("min-height"));
+var maxWidth = /* #__PURE__ */ key(/* #__PURE__ */ fromString("max-width"));
+var maxHeight = /* #__PURE__ */ key(/* #__PURE__ */ fromString("max-height"));
+var marginTop = /* #__PURE__ */ key(/* #__PURE__ */ fromString("margin-top"));
+var marginRight = /* #__PURE__ */ key(/* #__PURE__ */ fromString("margin-right"));
+var marginLeft = /* #__PURE__ */ key(/* #__PURE__ */ fromString("margin-left"));
+var marginBottom = /* #__PURE__ */ key(/* #__PURE__ */ fromString("margin-bottom"));
+var margin = function(a) {
+    return function(b) {
+        return function(c) {
+            return function(d) {
+                return key1(fromString("margin"))(new _indexJs4.Tuple(new _indexJs4.Tuple(a, b), new _indexJs4.Tuple(c, d)));
+            };
+        };
+    };
+};
+var lineHeight = /* #__PURE__ */ key(/* #__PURE__ */ fromString("line-height"));
+var left = /* #__PURE__ */ key(/* #__PURE__ */ fromString("left"));
+var height = /* #__PURE__ */ key(/* #__PURE__ */ fromString("height"));
+var bottom = /* #__PURE__ */ key(/* #__PURE__ */ fromString("bottom"));
+
+},{"../CSS.Property/index.js":"5ytk4","../CSS.Size/index.js":"cd0fS","../CSS.String/index.js":"9bTqK","../CSS.Stylesheet/index.js":"k97a8","../Data.Tuple/index.js":"ib0Ds","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"zRRWZ":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "style", ()=>style);
@@ -59591,805 +60397,7 @@ var biapplicativeProduct2 = function(dictBiapplicative) {
     };
 };
 
-},{"../Control.Biapplicative/index.js":"bdkLJ","../Control.Biapply/index.js":"8B5fC","../Data.Bifunctor/index.js":"eVWzO","../Data.Eq/index.js":"8OmSH","../Data.Functor/index.js":"l8Eoe","../Data.Ord/index.js":"7HnPT","../Data.Ordering/index.js":"fbrWW","../Data.Profunctor/index.js":"cUk04","../Data.Show/index.js":"aWqNo","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"aKTjD":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Position", ()=>Position);
-parcelHelpers.export(exports, "position", ()=>position);
-parcelHelpers.export(exports, "static", ()=>$$static);
-parcelHelpers.export(exports, "absolute", ()=>absolute);
-parcelHelpers.export(exports, "fixed", ()=>fixed);
-parcelHelpers.export(exports, "relative", ()=>relative);
-parcelHelpers.export(exports, "Display", ()=>Display);
-parcelHelpers.export(exports, "inline", ()=>inline);
-parcelHelpers.export(exports, "block", ()=>block);
-parcelHelpers.export(exports, "listItem", ()=>listItem);
-parcelHelpers.export(exports, "runIn", ()=>runIn);
-parcelHelpers.export(exports, "inlineBlock", ()=>inlineBlock);
-parcelHelpers.export(exports, "displayTable", ()=>displayTable);
-parcelHelpers.export(exports, "inlineTable", ()=>inlineTable);
-parcelHelpers.export(exports, "tableRowGroup", ()=>tableRowGroup);
-parcelHelpers.export(exports, "tableHeaderGroup", ()=>tableHeaderGroup);
-parcelHelpers.export(exports, "tableFooterGroup", ()=>tableFooterGroup);
-parcelHelpers.export(exports, "tableRow", ()=>tableRow);
-parcelHelpers.export(exports, "tableColumnGroup", ()=>tableColumnGroup);
-parcelHelpers.export(exports, "tableColumn", ()=>tableColumn);
-parcelHelpers.export(exports, "tableCell", ()=>tableCell);
-parcelHelpers.export(exports, "tableCaption", ()=>tableCaption);
-parcelHelpers.export(exports, "displayNone", ()=>displayNone);
-parcelHelpers.export(exports, "displayInherit", ()=>displayInherit);
-parcelHelpers.export(exports, "flex", ()=>flex);
-parcelHelpers.export(exports, "inlineFlex", ()=>inlineFlex);
-parcelHelpers.export(exports, "grid", ()=>grid);
-parcelHelpers.export(exports, "inlineGrid", ()=>inlineGrid);
-parcelHelpers.export(exports, "display", ()=>display);
-parcelHelpers.export(exports, "FloatLeft", ()=>FloatLeft);
-parcelHelpers.export(exports, "FloatRight", ()=>FloatRight);
-parcelHelpers.export(exports, "FloatNone", ()=>FloatNone);
-parcelHelpers.export(exports, "floatLeft", ()=>floatLeft);
-parcelHelpers.export(exports, "floatRight", ()=>floatRight);
-parcelHelpers.export(exports, "float", ()=>$$float);
-parcelHelpers.export(exports, "ClearFloatLeft", ()=>ClearFloatLeft);
-parcelHelpers.export(exports, "ClearFloatRight", ()=>ClearFloatRight);
-parcelHelpers.export(exports, "ClearFloatBoth", ()=>ClearFloatBoth);
-parcelHelpers.export(exports, "ClearFloatNone", ()=>ClearFloatNone);
-parcelHelpers.export(exports, "ClearFloatInherit", ()=>ClearFloatInherit);
-parcelHelpers.export(exports, "ClearFloatInlineStart", ()=>ClearFloatInlineStart);
-parcelHelpers.export(exports, "ClearFloatInlineEnd", ()=>ClearFloatInlineEnd);
-parcelHelpers.export(exports, "clearLeft", ()=>clearLeft);
-parcelHelpers.export(exports, "clearRight", ()=>clearRight);
-parcelHelpers.export(exports, "clearBoth", ()=>clearBoth);
-parcelHelpers.export(exports, "clearInlineStart", ()=>clearInlineStart);
-parcelHelpers.export(exports, "clearInlineEnd", ()=>clearInlineEnd);
-parcelHelpers.export(exports, "clear", ()=>clear);
-parcelHelpers.export(exports, "opacity", ()=>opacity);
-parcelHelpers.export(exports, "Visibility", ()=>Visibility);
-parcelHelpers.export(exports, "collapse", ()=>collapse);
-parcelHelpers.export(exports, "visibility", ()=>visibility);
-parcelHelpers.export(exports, "zIndex", ()=>zIndex);
-parcelHelpers.export(exports, "eqPosition", ()=>eqPosition);
-parcelHelpers.export(exports, "ordPosition", ()=>ordPosition);
-parcelHelpers.export(exports, "valPosition", ()=>valPosition);
-parcelHelpers.export(exports, "eqDisplay", ()=>eqDisplay);
-parcelHelpers.export(exports, "ordDisplay", ()=>ordDisplay);
-parcelHelpers.export(exports, "valDisplay", ()=>valDisplay);
-parcelHelpers.export(exports, "eqFloat", ()=>eqFloat);
-parcelHelpers.export(exports, "showFloat", ()=>showFloat);
-parcelHelpers.export(exports, "valFloat", ()=>valFloat);
-parcelHelpers.export(exports, "noneFloat", ()=>noneFloat);
-parcelHelpers.export(exports, "eqClearFloat", ()=>eqClearFloat);
-parcelHelpers.export(exports, "showClearFloat", ()=>showClearFloat);
-parcelHelpers.export(exports, "valClearFloat", ()=>valClearFloat);
-parcelHelpers.export(exports, "noneClearFloat", ()=>noneClearFloat);
-parcelHelpers.export(exports, "inheritClearFloat", ()=>inheritClearFloat);
-parcelHelpers.export(exports, "valVisibility", ()=>valVisibility);
-parcelHelpers.export(exports, "otherVisibility", ()=>otherVisibility);
-parcelHelpers.export(exports, "inheritVisibility", ()=>inheritVisibility);
-parcelHelpers.export(exports, "initialVisibility", ()=>initialVisibility);
-parcelHelpers.export(exports, "unsetVisibility", ()=>unsetVisibility);
-parcelHelpers.export(exports, "hiddenVisibility", ()=>hiddenVisibility);
-parcelHelpers.export(exports, "visibleVisibility", ()=>visibleVisibility);
-// Generated by purs version 0.15.15
-var _indexJs = require("../CSS.Common/index.js");
-var _indexJs1 = require("../CSS.Property/index.js");
-var _indexJs2 = require("../CSS.String/index.js");
-var _indexJs3 = require("../CSS.Stylesheet/index.js");
-var _indexJs4 = require("../Data.Eq/index.js");
-var _indexJs5 = require("../Data.Ord/index.js");
-var _indexJs6 = require("../Data.Show/index.js");
-var fromString = /* #__PURE__ */ _indexJs2.fromString(_indexJs1.isStringKey);
-var fromString1 = /* #__PURE__ */ _indexJs2.fromString(_indexJs1.isStringValue);
-var eq = /* #__PURE__ */ _indexJs4.eq(_indexJs1.eqValue);
-var compare = /* #__PURE__ */ _indexJs5.compare(_indexJs1.ordValue);
-var Visibility = function(x) {
-    return x;
-};
-var Position = function(x) {
-    return x;
-};
-var FloatLeft = /* #__PURE__ */ function() {
-    function FloatLeft() {}
-    FloatLeft.value = new FloatLeft();
-    return FloatLeft;
-}();
-var FloatRight = /* #__PURE__ */ function() {
-    function FloatRight() {}
-    FloatRight.value = new FloatRight();
-    return FloatRight;
-}();
-var FloatNone = /* #__PURE__ */ function() {
-    function FloatNone() {}
-    FloatNone.value = new FloatNone();
-    return FloatNone;
-}();
-var Display = function(x) {
-    return x;
-};
-var ClearFloatLeft = /* #__PURE__ */ function() {
-    function ClearFloatLeft() {}
-    ClearFloatLeft.value = new ClearFloatLeft();
-    return ClearFloatLeft;
-}();
-var ClearFloatRight = /* #__PURE__ */ function() {
-    function ClearFloatRight() {}
-    ClearFloatRight.value = new ClearFloatRight();
-    return ClearFloatRight;
-}();
-var ClearFloatBoth = /* #__PURE__ */ function() {
-    function ClearFloatBoth() {}
-    ClearFloatBoth.value = new ClearFloatBoth();
-    return ClearFloatBoth;
-}();
-var ClearFloatNone = /* #__PURE__ */ function() {
-    function ClearFloatNone() {}
-    ClearFloatNone.value = new ClearFloatNone();
-    return ClearFloatNone;
-}();
-var ClearFloatInherit = /* #__PURE__ */ function() {
-    function ClearFloatInherit() {}
-    ClearFloatInherit.value = new ClearFloatInherit();
-    return ClearFloatInherit;
-}();
-var ClearFloatInlineStart = /* #__PURE__ */ function() {
-    function ClearFloatInlineStart() {}
-    ClearFloatInlineStart.value = new ClearFloatInlineStart();
-    return ClearFloatInlineStart;
-}();
-var ClearFloatInlineEnd = /* #__PURE__ */ function() {
-    function ClearFloatInlineEnd() {}
-    ClearFloatInlineEnd.value = new ClearFloatInlineEnd();
-    return ClearFloatInlineEnd;
-}();
-var visibleVisibility = _indexJs.visibleValue;
-var valVisibility = _indexJs1.valValue;
-var unsetVisibility = _indexJs.unsetValue;
-var otherVisibility = _indexJs.otherValue;
-var initialVisibility = _indexJs.initialValue;
-var inheritVisibility = _indexJs.inheritValue;
-var hiddenVisibility = _indexJs.hiddenValue;
-var zIndex = /* #__PURE__ */ function() {
-    var $64 = _indexJs3.key(_indexJs1.valString)(fromString("z-index"));
-    var $65 = _indexJs6.show(_indexJs6.showInt);
-    return function($66) {
-        return $64($65($66));
-    };
-}();
-var visibility = /* #__PURE__ */ _indexJs3.key(valVisibility)(/* #__PURE__ */ fromString("visibility"));
-var valPosition = {
-    value: function(v) {
-        return v;
-    }
-};
-var valFloat = {
-    value: function(v) {
-        if (v instanceof FloatLeft) return fromString1("left");
-        if (v instanceof FloatRight) return fromString1("right");
-        if (v instanceof FloatNone) return fromString1("none");
-        throw new Error("Failed pattern match at CSS.Display (line 116, column 1 - line 119, column 40): " + [
-            v.constructor.name
-        ]);
-    }
-};
-var valDisplay = {
-    value: function(v) {
-        return v;
-    }
-};
-var valClearFloat = {
-    value: function(v) {
-        if (v instanceof ClearFloatLeft) return fromString1("left");
-        if (v instanceof ClearFloatRight) return fromString1("right");
-        if (v instanceof ClearFloatBoth) return fromString1("both");
-        if (v instanceof ClearFloatNone) return fromString1("none");
-        if (v instanceof ClearFloatInherit) return fromString1("inherit");
-        if (v instanceof ClearFloatInlineStart) return fromString1("inline-start");
-        if (v instanceof ClearFloatInlineEnd) return fromString1("inline-end");
-        throw new Error("Failed pattern match at CSS.Display (line 153, column 1 - line 160, column 56): " + [
-            v.constructor.name
-        ]);
-    }
-};
-var tableRowGroup = /* #__PURE__ */ fromString1("table-row-Group");
-var tableRow = /* #__PURE__ */ fromString1("table-row");
-var tableHeaderGroup = /* #__PURE__ */ fromString1("table-header-group");
-var tableFooterGroup = /* #__PURE__ */ fromString1("table-footer-group");
-var tableColumnGroup = /* #__PURE__ */ fromString1("table-column-group");
-var tableColumn = /* #__PURE__ */ fromString1("table-column");
-var tableCell = /* #__PURE__ */ fromString1("table-cell");
-var tableCaption = /* #__PURE__ */ fromString1("table-caption");
-var $$static = /* #__PURE__ */ fromString1("static");
-var showFloat = {
-    show: function(v) {
-        if (v instanceof FloatLeft) return "FloatLeft";
-        if (v instanceof FloatRight) return "FloatRight";
-        if (v instanceof FloatNone) return "FloatNone";
-        throw new Error("Failed pattern match at CSS.Display (line 111, column 1 - line 114, column 31): " + [
-            v.constructor.name
-        ]);
-    }
-};
-var showClearFloat = {
-    show: function(v) {
-        if (v instanceof ClearFloatLeft) return "ClearFloatLeft";
-        if (v instanceof ClearFloatRight) return "ClearFloatRight";
-        if (v instanceof ClearFloatBoth) return "ClearFloatBoth";
-        if (v instanceof ClearFloatNone) return "ClearFloatNone";
-        if (v instanceof ClearFloatInherit) return "ClearFloatInherit";
-        if (v instanceof ClearFloatInlineStart) return "ClearFloatInlineStart";
-        if (v instanceof ClearFloatInlineEnd) return "ClearFloatInlineEnd";
-        throw new Error("Failed pattern match at CSS.Display (line 144, column 1 - line 151, column 51): " + [
-            v.constructor.name
-        ]);
-    }
-};
-var runIn = /* #__PURE__ */ fromString1("runIn");
-var relative = /* #__PURE__ */ fromString1("relative");
-var position = /* #__PURE__ */ _indexJs3.key(valPosition)(/* #__PURE__ */ fromString("position"));
-var opacity = /* #__PURE__ */ _indexJs3.key(_indexJs1.valNumber)(/* #__PURE__ */ fromString("opacity"));
-var noneFloat = /* #__PURE__ */ function() {
-    return {
-        none: FloatNone.value
-    };
-}();
-var noneClearFloat = /* #__PURE__ */ function() {
-    return {
-        none: ClearFloatNone.value
-    };
-}();
-var listItem = /* #__PURE__ */ fromString1("list-item");
-var inlineTable = /* #__PURE__ */ fromString1("inline-table");
-var inlineGrid = /* #__PURE__ */ fromString1("inline-grid");
-var inlineFlex = /* #__PURE__ */ fromString1("inline-flex");
-var inlineBlock = /* #__PURE__ */ fromString1("inline-block");
-var inline = /* #__PURE__ */ fromString1("inline");
-var inheritClearFloat = /* #__PURE__ */ function() {
-    return {
-        inherit: ClearFloatInherit.value
-    };
-}();
-var grid = /* #__PURE__ */ fromString1("grid");
-var floatRight = /* #__PURE__ */ function() {
-    return FloatRight.value;
-}();
-var floatLeft = /* #__PURE__ */ function() {
-    return FloatLeft.value;
-}();
-var $$float = /* #__PURE__ */ _indexJs3.key(valFloat)(/* #__PURE__ */ fromString("float"));
-var flex = /* #__PURE__ */ fromString1("flex");
-var fixed = /* #__PURE__ */ fromString1("fixed");
-var eqPosition = {
-    eq: function(x) {
-        return function(y) {
-            return eq(x)(y);
-        };
-    }
-};
-var ordPosition = {
-    compare: function(x) {
-        return function(y) {
-            return compare(x)(y);
-        };
-    },
-    Eq0: function() {
-        return eqPosition;
-    }
-};
-var eqFloat = {
-    eq: function(x) {
-        return function(y) {
-            if (x instanceof FloatLeft && y instanceof FloatLeft) return true;
-            if (x instanceof FloatRight && y instanceof FloatRight) return true;
-            if (x instanceof FloatNone && y instanceof FloatNone) return true;
-            return false;
-        };
-    }
-};
-var eqDisplay = {
-    eq: function(x) {
-        return function(y) {
-            return eq(x)(y);
-        };
-    }
-};
-var ordDisplay = {
-    compare: function(x) {
-        return function(y) {
-            return compare(x)(y);
-        };
-    },
-    Eq0: function() {
-        return eqDisplay;
-    }
-};
-var eqClearFloat = {
-    eq: function(x) {
-        return function(y) {
-            if (x instanceof ClearFloatLeft && y instanceof ClearFloatLeft) return true;
-            if (x instanceof ClearFloatRight && y instanceof ClearFloatRight) return true;
-            if (x instanceof ClearFloatBoth && y instanceof ClearFloatBoth) return true;
-            if (x instanceof ClearFloatNone && y instanceof ClearFloatNone) return true;
-            if (x instanceof ClearFloatInherit && y instanceof ClearFloatInherit) return true;
-            if (x instanceof ClearFloatInlineStart && y instanceof ClearFloatInlineStart) return true;
-            if (x instanceof ClearFloatInlineEnd && y instanceof ClearFloatInlineEnd) return true;
-            return false;
-        };
-    }
-};
-var displayTable = /* #__PURE__ */ fromString1("table");
-var displayNone = /* #__PURE__ */ fromString1("none");
-var displayInherit = /* #__PURE__ */ fromString1("inherit");
-var display = /* #__PURE__ */ _indexJs3.key(valDisplay)(/* #__PURE__ */ fromString("display"));
-var collapse = /* #__PURE__ */ fromString1("collapse");
-var clearRight = /* #__PURE__ */ function() {
-    return ClearFloatRight.value;
-}();
-var clearLeft = /* #__PURE__ */ function() {
-    return ClearFloatLeft.value;
-}();
-var clearInlineStart = /* #__PURE__ */ function() {
-    return ClearFloatInlineStart.value;
-}();
-var clearInlineEnd = /* #__PURE__ */ function() {
-    return ClearFloatInlineEnd.value;
-}();
-var clearBoth = /* #__PURE__ */ function() {
-    return ClearFloatBoth.value;
-}();
-var clear = /* #__PURE__ */ _indexJs3.key(valClearFloat)(/* #__PURE__ */ fromString("clear"));
-var block = /* #__PURE__ */ fromString1("block");
-var absolute = /* #__PURE__ */ fromString1("absolute");
-
-},{"../CSS.Common/index.js":"aIpXQ","../CSS.Property/index.js":"5ytk4","../CSS.String/index.js":"9bTqK","../CSS.Stylesheet/index.js":"k97a8","../Data.Eq/index.js":"8OmSH","../Data.Ord/index.js":"7HnPT","../Data.Show/index.js":"aWqNo","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3ZWsc":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "flexEnd", ()=>flexEnd);
-parcelHelpers.export(exports, "flexStart", ()=>flexStart);
-parcelHelpers.export(exports, "spaceAround", ()=>spaceAround);
-parcelHelpers.export(exports, "spaceBetween", ()=>spaceBetween);
-parcelHelpers.export(exports, "stretch", ()=>stretch);
-parcelHelpers.export(exports, "AlignContentValue", ()=>AlignContentValue);
-parcelHelpers.export(exports, "alignContent", ()=>alignContent);
-parcelHelpers.export(exports, "AlignItemsValue", ()=>AlignItemsValue);
-parcelHelpers.export(exports, "alignItems", ()=>alignItems);
-parcelHelpers.export(exports, "AlignSelfValue", ()=>AlignSelfValue);
-parcelHelpers.export(exports, "alignSelf", ()=>alignSelf);
-parcelHelpers.export(exports, "flex", ()=>flex);
-parcelHelpers.export(exports, "flexBasis", ()=>flexBasis);
-parcelHelpers.export(exports, "FlexDirection", ()=>FlexDirection);
-parcelHelpers.export(exports, "row", ()=>row);
-parcelHelpers.export(exports, "rowReverse", ()=>rowReverse);
-parcelHelpers.export(exports, "column", ()=>column);
-parcelHelpers.export(exports, "columnReverse", ()=>columnReverse);
-parcelHelpers.export(exports, "flexDirection", ()=>flexDirection);
-parcelHelpers.export(exports, "flexFlow", ()=>flexFlow);
-parcelHelpers.export(exports, "flexGrow", ()=>flexGrow);
-parcelHelpers.export(exports, "flexShrink", ()=>flexShrink);
-parcelHelpers.export(exports, "FlexWrap", ()=>FlexWrap);
-parcelHelpers.export(exports, "nowrap", ()=>nowrap);
-parcelHelpers.export(exports, "wrap", ()=>wrap);
-parcelHelpers.export(exports, "wrapReverse", ()=>wrapReverse);
-parcelHelpers.export(exports, "flexWrap", ()=>flexWrap);
-parcelHelpers.export(exports, "JustifyContentValue", ()=>JustifyContentValue);
-parcelHelpers.export(exports, "justifyContent", ()=>justifyContent);
-parcelHelpers.export(exports, "order", ()=>order);
-parcelHelpers.export(exports, "flexEndValue", ()=>flexEndValue);
-parcelHelpers.export(exports, "flexStartValue", ()=>flexStartValue);
-parcelHelpers.export(exports, "spaceAroundValue", ()=>spaceAroundValue);
-parcelHelpers.export(exports, "spaceBetweenValue", ()=>spaceBetweenValue);
-parcelHelpers.export(exports, "stretchValue", ()=>stretchValue);
-parcelHelpers.export(exports, "eqAlignContentValue", ()=>eqAlignContentValue);
-parcelHelpers.export(exports, "ordAlignContentValue", ()=>ordAlignContentValue);
-parcelHelpers.export(exports, "isStringAlignContentValue", ()=>isStringAlignContentValue);
-parcelHelpers.export(exports, "valAlignContentValue", ()=>valAlignContentValue);
-parcelHelpers.export(exports, "otherAlignContentValue", ()=>otherAlignContentValue);
-parcelHelpers.export(exports, "inheritAlignContentValue", ()=>inheritAlignContentValue);
-parcelHelpers.export(exports, "flexStartAlignContentValue", ()=>flexStartAlignContentValue);
-parcelHelpers.export(exports, "flexEndAlignContentValue", ()=>flexEndAlignContentValue);
-parcelHelpers.export(exports, "centerAlignContentValue", ()=>centerAlignContentValue);
-parcelHelpers.export(exports, "spaceBetweenAlignContentValue", ()=>spaceBetweenAlignContentValue);
-parcelHelpers.export(exports, "spaceAroundAlignContentValue", ()=>spaceAroundAlignContentValue);
-parcelHelpers.export(exports, "stretchAlignContentValue", ()=>stretchAlignContentValue);
-parcelHelpers.export(exports, "eqAlignItemsValue", ()=>eqAlignItemsValue);
-parcelHelpers.export(exports, "ordAlignItemsValue", ()=>ordAlignItemsValue);
-parcelHelpers.export(exports, "isStringAlignItemsValue", ()=>isStringAlignItemsValue);
-parcelHelpers.export(exports, "valAlignItemsValue", ()=>valAlignItemsValue);
-parcelHelpers.export(exports, "otherAlignItemsValue", ()=>otherAlignItemsValue);
-parcelHelpers.export(exports, "inheritAlignItemsValue", ()=>inheritAlignItemsValue);
-parcelHelpers.export(exports, "baselineAlignItemsValue", ()=>baselineAlignItemsValue);
-parcelHelpers.export(exports, "centerAlignItemsValue", ()=>centerAlignItemsValue);
-parcelHelpers.export(exports, "flexEndAlignItemsValue", ()=>flexEndAlignItemsValue);
-parcelHelpers.export(exports, "flexStartAlignItemsValue", ()=>flexStartAlignItemsValue);
-parcelHelpers.export(exports, "stretchAlignItemsValue", ()=>stretchAlignItemsValue);
-parcelHelpers.export(exports, "eqAlignSelfValue", ()=>eqAlignSelfValue);
-parcelHelpers.export(exports, "ordAlignSelfValue", ()=>ordAlignSelfValue);
-parcelHelpers.export(exports, "isStringAlignSelfValue", ()=>isStringAlignSelfValue);
-parcelHelpers.export(exports, "valAlignSelfValue", ()=>valAlignSelfValue);
-parcelHelpers.export(exports, "otherAlignSelfValue", ()=>otherAlignSelfValue);
-parcelHelpers.export(exports, "inheritAlignSelfValue", ()=>inheritAlignSelfValue);
-parcelHelpers.export(exports, "autoAlignSelfValue", ()=>autoAlignSelfValue);
-parcelHelpers.export(exports, "baselineAlignSelfValue", ()=>baselineAlignSelfValue);
-parcelHelpers.export(exports, "centerAlignSelfValue", ()=>centerAlignSelfValue);
-parcelHelpers.export(exports, "flexEndAlignSelfValue", ()=>flexEndAlignSelfValue);
-parcelHelpers.export(exports, "flexStartAlignSelfValue", ()=>flexStartAlignSelfValue);
-parcelHelpers.export(exports, "stretchAlignSelfValue", ()=>stretchAlignSelfValue);
-parcelHelpers.export(exports, "eqFlexDirection", ()=>eqFlexDirection);
-parcelHelpers.export(exports, "ordFlexDirection", ()=>ordFlexDirection);
-parcelHelpers.export(exports, "valFlexDirection", ()=>valFlexDirection);
-parcelHelpers.export(exports, "otherFlexDirection", ()=>otherFlexDirection);
-parcelHelpers.export(exports, "eqFlexWrap", ()=>eqFlexWrap);
-parcelHelpers.export(exports, "ordFlexWrap", ()=>ordFlexWrap);
-parcelHelpers.export(exports, "valFlexWrap", ()=>valFlexWrap);
-parcelHelpers.export(exports, "otherFlexWrap", ()=>otherFlexWrap);
-parcelHelpers.export(exports, "eqJustifyContentValue", ()=>eqJustifyContentValue);
-parcelHelpers.export(exports, "ordJustifyContentValue", ()=>ordJustifyContentValue);
-parcelHelpers.export(exports, "isStringJustifyContentValue", ()=>isStringJustifyContentValue);
-parcelHelpers.export(exports, "valJustifyContentValue", ()=>valJustifyContentValue);
-parcelHelpers.export(exports, "otherJustifyContentValue", ()=>otherJustifyContentValue);
-parcelHelpers.export(exports, "inheritJustifyContentValue", ()=>inheritJustifyContentValue);
-parcelHelpers.export(exports, "centerJustifyContentValue", ()=>centerJustifyContentValue);
-parcelHelpers.export(exports, "flexEndJustifyContentValue", ()=>flexEndJustifyContentValue);
-parcelHelpers.export(exports, "flexStartJustifyContentValue", ()=>flexStartJustifyContentValue);
-parcelHelpers.export(exports, "spaceAroundJustifyContentValue", ()=>spaceAroundJustifyContentValue);
-parcelHelpers.export(exports, "spaceBetweenJustifyContentValue", ()=>spaceBetweenJustifyContentValue);
-// Generated by purs version 0.15.15
-var _indexJs = require("../CSS.Property/index.js");
-var _indexJs1 = require("../CSS.Size/index.js");
-var _indexJs2 = require("../CSS.String/index.js");
-var _indexJs3 = require("../CSS.Stylesheet/index.js");
-var _indexJs4 = require("../Data.Eq/index.js");
-var _indexJs5 = require("../Data.Ord/index.js");
-var _indexJs6 = require("../Data.Show/index.js");
-var _indexJs7 = require("../Data.Tuple/index.js");
-var fromString = /* #__PURE__ */ _indexJs2.fromString(_indexJs.isStringValue);
-var key = /* #__PURE__ */ _indexJs3.key(_indexJs.valValue);
-var fromString1 = /* #__PURE__ */ _indexJs2.fromString(_indexJs.isStringKey);
-var show = /* #__PURE__ */ _indexJs6.show(_indexJs6.showInt);
-var show1 = /* #__PURE__ */ _indexJs6.show(_indexJs6.showNumber);
-var valTuple = /* #__PURE__ */ _indexJs.valTuple(_indexJs.valValue);
-var key1 = /* #__PURE__ */ _indexJs3.key(/* #__PURE__ */ valTuple(/* #__PURE__ */ valTuple(_indexJs.valValue)));
-var value = /* #__PURE__ */ _indexJs.value(_indexJs1.valSize);
-var eq = /* #__PURE__ */ _indexJs4.eq(_indexJs.eqValue);
-var compare = /* #__PURE__ */ _indexJs5.compare(_indexJs.ordValue);
-var JustifyContentValue = function(x) {
-    return x;
-};
-var FlexWrap = function(x) {
-    return x;
-};
-var FlexDirection = function(x) {
-    return x;
-};
-var AlignSelfValue = function(x) {
-    return x;
-};
-var AlignItemsValue = function(x) {
-    return x;
-};
-var AlignContentValue = function(x) {
-    return x;
-};
-var wrapReverse = /* #__PURE__ */ fromString("wrap-reverse");
-var wrap = /* #__PURE__ */ fromString("wrap");
-var valJustifyContentValue = {
-    value: function(v) {
-        return v;
-    }
-};
-var valFlexWrap = {
-    value: function(v) {
-        return v;
-    }
-};
-var valFlexDirection = {
-    value: function(v) {
-        return v;
-    }
-};
-var key2 = /* #__PURE__ */ _indexJs3.key(/* #__PURE__ */ _indexJs.valTuple(valFlexDirection)(valFlexWrap));
-var valAlignSelfValue = {
-    value: function(v) {
-        return v;
-    }
-};
-var valAlignItemsValue = {
-    value: function(v) {
-        return v;
-    }
-};
-var valAlignContentValue = {
-    value: function(v) {
-        return v;
-    }
-};
-var stretchValue = {
-    stretch: /* #__PURE__ */ fromString("stretch")
-};
-var stretch = function(dict) {
-    return dict.stretch;
-};
-var spaceBetweenValue = {
-    spaceBetween: /* #__PURE__ */ fromString("space-between")
-};
-var spaceBetween = function(dict) {
-    return dict.spaceBetween;
-};
-var spaceAroundValue = {
-    spaceAround: /* #__PURE__ */ fromString("space-around")
-};
-var spaceAround = function(dict) {
-    return dict.spaceAround;
-};
-var rowReverse = /* #__PURE__ */ fromString("row-reverse");
-var row = /* #__PURE__ */ fromString("row");
-var otherJustifyContentValue = {
-    other: JustifyContentValue
-};
-var otherFlexWrap = {
-    other: FlexWrap
-};
-var otherFlexDirection = {
-    other: FlexDirection
-};
-var otherAlignSelfValue = {
-    other: AlignSelfValue
-};
-var otherAlignItemsValue = {
-    other: AlignItemsValue
-};
-var otherAlignContentValue = {
-    other: AlignContentValue
-};
-var order = function(i) {
-    return key(fromString1("order"))(fromString(show(i)));
-};
-var nowrap = /* #__PURE__ */ fromString("nowrap");
-var justifyContent = /* #__PURE__ */ _indexJs3.key(valJustifyContentValue)(/* #__PURE__ */ fromString1("justify-content"));
-var isStringJustifyContentValue = {
-    fromString: function($116) {
-        return JustifyContentValue(fromString($116));
-    }
-};
-var fromString2 = /* #__PURE__ */ _indexJs2.fromString(isStringJustifyContentValue);
-var spaceAroundJustifyContentValue = {
-    spaceAround: /* #__PURE__ */ fromString2("space-around")
-};
-var spaceBetweenJustifyContentValue = {
-    spaceBetween: /* #__PURE__ */ fromString2("space-between")
-};
-var isStringAlignSelfValue = {
-    fromString: function($117) {
-        return AlignSelfValue(fromString($117));
-    }
-};
-var fromString3 = /* #__PURE__ */ _indexJs2.fromString(isStringAlignSelfValue);
-var stretchAlignSelfValue = {
-    stretch: /* #__PURE__ */ fromString3("stretch")
-};
-var isStringAlignItemsValue = {
-    fromString: function($118) {
-        return AlignItemsValue(fromString($118));
-    }
-};
-var fromString4 = /* #__PURE__ */ _indexJs2.fromString(isStringAlignItemsValue);
-var stretchAlignItemsValue = {
-    stretch: /* #__PURE__ */ fromString4("stretch")
-};
-var isStringAlignContentValue = {
-    fromString: function($119) {
-        return AlignContentValue(fromString($119));
-    }
-};
-var fromString5 = /* #__PURE__ */ _indexJs2.fromString(isStringAlignContentValue);
-var spaceAroundAlignContentValue = {
-    spaceAround: /* #__PURE__ */ fromString5("space-around")
-};
-var spaceBetweenAlignContentValue = {
-    spaceBetween: /* #__PURE__ */ fromString5("space-between")
-};
-var stretchAlignContentValue = {
-    stretch: /* #__PURE__ */ fromString5("stretch")
-};
-var inheritJustifyContentValue = {
-    inherit: /* #__PURE__ */ fromString2("inherit")
-};
-var inheritAlignSelfValue = {
-    inherit: /* #__PURE__ */ fromString3("inherit")
-};
-var inheritAlignItemsValue = {
-    inherit: /* #__PURE__ */ fromString4("inherit")
-};
-var inheritAlignContentValue = {
-    inherit: /* #__PURE__ */ fromString5("inherit")
-};
-var flexWrap = /* #__PURE__ */ _indexJs3.key(valFlexWrap)(/* #__PURE__ */ fromString1("flex-wrap"));
-var flexStartValue = {
-    flexStart: /* #__PURE__ */ fromString("flex-start")
-};
-var flexStartJustifyContentValue = {
-    flexStart: /* #__PURE__ */ fromString2("flex-start")
-};
-var flexStartAlignSelfValue = {
-    flexStart: /* #__PURE__ */ fromString3("flex-start")
-};
-var flexStartAlignItemsValue = {
-    flexStart: /* #__PURE__ */ fromString4("flex-start")
-};
-var flexStartAlignContentValue = {
-    flexStart: /* #__PURE__ */ fromString5("flex-start")
-};
-var flexStart = function(dict) {
-    return dict.flexStart;
-};
-var flexShrink = function(i) {
-    return key(fromString1("flex-shrink"))(fromString(show1(i)));
-};
-var flexGrow = function(i) {
-    return key(fromString1("flex-grow"))(fromString(show1(i)));
-};
-var flexFlow = function(d) {
-    return function(w) {
-        return key2(fromString1("flex-flow"))(new _indexJs7.Tuple(d, w));
-    };
-};
-var flexEndValue = {
-    flexEnd: /* #__PURE__ */ fromString("flex-end")
-};
-var flexEndJustifyContentValue = {
-    flexEnd: /* #__PURE__ */ fromString2("flex-end")
-};
-var flexEndAlignSelfValue = {
-    flexEnd: /* #__PURE__ */ fromString3("flex-end")
-};
-var flexEndAlignItemsValue = {
-    flexEnd: /* #__PURE__ */ fromString4("flex-end")
-};
-var flexEndAlignContentValue = {
-    flexEnd: /* #__PURE__ */ fromString5("flex-end")
-};
-var flexEnd = function(dict) {
-    return dict.flexEnd;
-};
-var flexDirection = /* #__PURE__ */ _indexJs3.key(valFlexDirection)(/* #__PURE__ */ fromString1("flex-direction"));
-var flexBasis = /* #__PURE__ */ _indexJs3.key(_indexJs1.valSize)(/* #__PURE__ */ fromString1("flex-basis"));
-var flex = function(g) {
-    return function(s) {
-        return function(b) {
-            var ss = fromString(show1(s));
-            var gs = fromString(show1(g));
-            return key1(fromString1("flex"))(new _indexJs7.Tuple(gs, new _indexJs7.Tuple(ss, value(b))));
-        };
-    };
-};
-var eqJustifyContentValue = {
-    eq: function(x) {
-        return function(y) {
-            return eq(x)(y);
-        };
-    }
-};
-var ordJustifyContentValue = {
-    compare: function(x) {
-        return function(y) {
-            return compare(x)(y);
-        };
-    },
-    Eq0: function() {
-        return eqJustifyContentValue;
-    }
-};
-var eqFlexWrap = {
-    eq: function(x) {
-        return function(y) {
-            return eq(x)(y);
-        };
-    }
-};
-var ordFlexWrap = {
-    compare: function(x) {
-        return function(y) {
-            return compare(x)(y);
-        };
-    },
-    Eq0: function() {
-        return eqFlexWrap;
-    }
-};
-var eqFlexDirection = {
-    eq: function(x) {
-        return function(y) {
-            return eq(x)(y);
-        };
-    }
-};
-var ordFlexDirection = {
-    compare: function(x) {
-        return function(y) {
-            return compare(x)(y);
-        };
-    },
-    Eq0: function() {
-        return eqFlexDirection;
-    }
-};
-var eqAlignSelfValue = {
-    eq: function(x) {
-        return function(y) {
-            return eq(x)(y);
-        };
-    }
-};
-var ordAlignSelfValue = {
-    compare: function(x) {
-        return function(y) {
-            return compare(x)(y);
-        };
-    },
-    Eq0: function() {
-        return eqAlignSelfValue;
-    }
-};
-var eqAlignItemsValue = {
-    eq: function(x) {
-        return function(y) {
-            return eq(x)(y);
-        };
-    }
-};
-var ordAlignItemsValue = {
-    compare: function(x) {
-        return function(y) {
-            return compare(x)(y);
-        };
-    },
-    Eq0: function() {
-        return eqAlignItemsValue;
-    }
-};
-var eqAlignContentValue = {
-    eq: function(x) {
-        return function(y) {
-            return eq(x)(y);
-        };
-    }
-};
-var ordAlignContentValue = {
-    compare: function(x) {
-        return function(y) {
-            return compare(x)(y);
-        };
-    },
-    Eq0: function() {
-        return eqAlignContentValue;
-    }
-};
-var columnReverse = /* #__PURE__ */ fromString("column-reverse");
-var column = /* #__PURE__ */ fromString("column");
-var centerJustifyContentValue = {
-    center: /* #__PURE__ */ fromString2("center")
-};
-var centerAlignSelfValue = {
-    center: /* #__PURE__ */ fromString3("center")
-};
-var centerAlignItemsValue = {
-    center: /* #__PURE__ */ fromString4("center")
-};
-var centerAlignContentValue = {
-    center: /* #__PURE__ */ fromString5("center")
-};
-var baselineAlignSelfValue = {
-    baseline: /* #__PURE__ */ fromString3("baseline")
-};
-var baselineAlignItemsValue = {
-    baseline: /* #__PURE__ */ fromString4("baseline")
-};
-var autoAlignSelfValue = {
-    auto: /* #__PURE__ */ fromString3("auto")
-};
-var alignSelf = /* #__PURE__ */ _indexJs3.key(valAlignSelfValue)(/* #__PURE__ */ fromString1("align-self"));
-var alignItems = /* #__PURE__ */ _indexJs3.key(valAlignItemsValue)(/* #__PURE__ */ fromString1("align-items"));
-var alignContent = /* #__PURE__ */ _indexJs3.key(valAlignContentValue)(/* #__PURE__ */ fromString1("align-content"));
-
-},{"../CSS.Property/index.js":"5ytk4","../CSS.Size/index.js":"cd0fS","../CSS.String/index.js":"9bTqK","../CSS.Stylesheet/index.js":"k97a8","../Data.Eq/index.js":"8OmSH","../Data.Ord/index.js":"7HnPT","../Data.Show/index.js":"aWqNo","../Data.Tuple/index.js":"ib0Ds","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"6Xulf":[function(require,module,exports) {
+},{"../Control.Biapplicative/index.js":"bdkLJ","../Control.Biapply/index.js":"8B5fC","../Data.Bifunctor/index.js":"eVWzO","../Data.Eq/index.js":"8OmSH","../Data.Functor/index.js":"l8Eoe","../Data.Ord/index.js":"7HnPT","../Data.Ordering/index.js":"fbrWW","../Data.Profunctor/index.js":"cUk04","../Data.Show/index.js":"aWqNo","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"6Xulf":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Overflow", ()=>Overflow);
@@ -60509,7 +60517,7 @@ var seedENumberList = /* #__PURE__ */ _indexJs2.concat(/* #__PURE__ */ _indexJs2
 ]));
 var findENumbersInList = function(query) {
     var filterEntry = function(entry) {
-        return _indexJs9.contains(query)(entry.e_number) || _indexJs9.contains(query)(entry.name);
+        return _indexJs9.contains(query)(entry.e_number) || _indexJs9.contains(query)(entry.name_english) || _indexJs9.contains(query)(entry.name_russian) || _indexJs9.contains(query)(entry.name_german) || _indexJs9.contains(query)(entry.name_hebrew) || _indexJs9.contains(query)(entry.name_french) || _indexJs9.contains(query)(entry.name_latvian);
     };
     return _indexJs2.filter(filterEntry)(seedENumberList);
 };
@@ -60517,14 +60525,18 @@ var findENumbersInList = function(query) {
 },{"../Data.Foldable/index.js":"6KsE0","../Data.List/index.js":"7Vb9H","../Data.Nb200to299/index.js":"9MpVt","../Data.String.CodeUnits/index.js":"5hEXg","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../Data.ENumberTypes/index.js":"7FE0O","../Data.Nb100to199/index.js":"iNx5Y","../Data.Nb300to399/index.js":"hlbWj","../Data.Nb400to499/index.js":"aJEWw","../Data.Nb500to599/index.js":"ez82O","../Data.Nb600to699/index.js":"l7eD1"}],"9MpVt":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "preservatENumberList", ()=>preservatENumberList);
-parcelHelpers.export(exports, "e200", ()=>e200);
 parcelHelpers.export(exports, "e201", ()=>e201);
-// Generated by purs version 0.15.15
+parcelHelpers.export(exports, "preservatENumberList", ()=>preservatENumberList);
+// Preservatives (200-299)
 var _indexJs = require("../Data.ENumberTypes/index.js");
 var e201 = /* #__PURE__ */ function() {
     return {
-        name: "Sodium sorbate",
+        name_english: "Sodium sorbate",
+        name_russian: "Сорбат натрия",
+        name_german: "Natriumsorbat",
+        name_hebrew: "סורבט נתרן",
+        name_french: "Sorbate de sodium",
+        name_latvian: "Nātrija sorbāts",
         e_number: "E201",
         group: _indexJs.Preservative.value,
         source: [
@@ -60535,9 +60547,15 @@ var e201 = /* #__PURE__ */ function() {
         kosher: _indexJs.KosherNeedPassoverHashgoho.value
     };
 }();
+// seed data ---
 var e200 = /* #__PURE__ */ function() {
     return {
-        name: "Sorbic acid",
+        name_english: "Sorbic acid",
+        name_russian: "Сорбиновая кислота",
+        name_german: "Sorbins\xe4ure",
+        name_hebrew: "חומצה סורבית",
+        name_french: "Acide sorbique",
+        name_latvian: "Sorbīnskābe",
         e_number: "E200",
         group: _indexJs.Preservative.value,
         source: [
@@ -60751,11 +60769,16 @@ var emptyENumberList = /* #__PURE__ */ _indexJs.empty(_indexJs1.plusList);
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "colorENumberList", ()=>colorENumberList);
-// Generated by purs version 0.15.15
+// Food Colours 100-199
 var _indexJs = require("../Data.ENumberTypes/index.js");
 var e150a = /* #__PURE__ */ function() {
     return {
-        name: "Plain Caramel",
+        name_english: "Plain Caramel",
+        name_russian: "Простой карамель",
+        name_german: "Einfaches Zuckerkul\xf6r",
+        name_hebrew: "קרמל פשוט",
+        name_french: "Caramel simple",
+        name_latvian: "Vienkāršs karamēlis",
         e_number: "E150a",
         group: _indexJs.Colour.value,
         source: [],
@@ -60765,7 +60788,12 @@ var e150a = /* #__PURE__ */ function() {
 }();
 var e141 = /* #__PURE__ */ function() {
     return {
-        name: "Copper complexes of chlorophyll and chlorophyllins",
+        name_english: "Copper complexes of chlorophyll and chlorophyllins",
+        name_russian: "Медные комплексы хлорофилла и хлорофиллинов",
+        name_german: "Kupferkomplexe von Chlorophyll und Chlorophyllinen",
+        name_hebrew: "מורכבי נחושת של כלורופיל וכלורופילינים",
+        name_french: "Complexes de cuivre de chlorophylle et de chlorophyllines",
+        name_latvian: "Varšu kompleksi ar hlorofillu un hlorofilīniem",
         e_number: "E141",
         group: _indexJs.Colour.value,
         source: [
@@ -60777,7 +60805,12 @@ var e141 = /* #__PURE__ */ function() {
 }();
 var e140 = /* #__PURE__ */ function() {
     return {
-        name: "Chlorophyll",
+        name_english: "Chlorophyll",
+        name_russian: "Хлорофилл",
+        name_german: "Chlorophylle und Chlorophylline",
+        name_hebrew: "כלורופיל",
+        name_french: "Chlorophylle",
+        name_latvian: "Hlorofils",
         e_number: "E140",
         group: _indexJs.Colour.value,
         source: [
@@ -60789,7 +60822,12 @@ var e140 = /* #__PURE__ */ function() {
 }();
 var e131 = /* #__PURE__ */ function() {
     return {
-        name: "Patent Blue V",
+        name_english: "Patent Blue V",
+        name_russian: "Патент синий V",
+        name_german: "Patentblau V",
+        name_hebrew: "פטנט כחול V",
+        name_french: "Bleu patent\xe9 V",
+        name_latvian: "Patenta zils V",
         e_number: "E131",
         group: _indexJs.Colour.value,
         source: [
@@ -60802,7 +60840,12 @@ var e131 = /* #__PURE__ */ function() {
 }();
 var e129 = /* #__PURE__ */ function() {
     return {
-        name: "Allura Red AC",
+        name_english: "Allura Red AC",
+        name_russian: "Аллура красный AC",
+        name_german: "Allurarot AC",
+        name_hebrew: "אלורה אדום AC",
+        name_french: "Rouge Allura AC",
+        name_latvian: "Allura sarkans AC",
         e_number: "E129",
         group: _indexJs.Colour.value,
         source: [
@@ -60815,7 +60858,12 @@ var e129 = /* #__PURE__ */ function() {
 }();
 var e124 = /* #__PURE__ */ function() {
     return {
-        name: "Ponceau 4R, Cochineal Red A",
+        name_english: "Ponceau 4R, Cochineal Red A",
+        name_russian: "Понсо 4R, Кошениль красный A",
+        name_german: "Ponceau 4R, Cochenillerot A",
+        name_hebrew: "פונסו 4R, כרמין אדום A",
+        name_french: "Ponceau 4R, Rouge cochenille A",
+        name_latvian: "Ponso 4R, Kohīnēls sarkans A",
         e_number: "E124",
         group: _indexJs.Colour.value,
         source: [
@@ -60828,7 +60876,12 @@ var e124 = /* #__PURE__ */ function() {
 }();
 var e123 = /* #__PURE__ */ function() {
     return {
-        name: "Amaranth",
+        name_english: "Amaranth",
+        name_russian: "Амарант",
+        name_german: "Amaranth",
+        name_hebrew: "אמרנת",
+        name_french: "Amarante",
+        name_latvian: "Amarants",
         e_number: "E123",
         group: _indexJs.Colour.value,
         source: [
@@ -60841,7 +60894,12 @@ var e123 = /* #__PURE__ */ function() {
 }();
 var e121 = /* #__PURE__ */ function() {
     return {
-        name: "Citrus Red Nr.2",
+        name_english: "Citrus Red Nr.2",
+        name_russian: "Цитрусовый красный №2",
+        name_german: "Zitrusrot Nr.2",
+        name_hebrew: "אדום סיטרוס מספר 2",
+        name_french: "Rouge citron n \xb0 2",
+        name_latvian: "Citrona sarkans Nr.2",
         e_number: "E121",
         group: _indexJs.Colour.value,
         source: [
@@ -60853,7 +60911,12 @@ var e121 = /* #__PURE__ */ function() {
 }();
 var e120 = /* #__PURE__ */ function() {
     return {
-        name: "Cochineal",
+        name_english: "Cochineal",
+        name_russian: "Кошениль",
+        name_german: "Cochenille (Echtes Karmin)",
+        name_hebrew: "כרמין",
+        name_french: "Cochenille",
+        name_latvian: "Kohīnēls",
         e_number: "E120",
         group: _indexJs.Colour.value,
         source: [
@@ -60865,7 +60928,12 @@ var e120 = /* #__PURE__ */ function() {
 }();
 var e110 = /* #__PURE__ */ function() {
     return {
-        name: "Sunset Yellow FCF, Orange Yellow S",
+        name_english: "Sunset Yellow FCF, Orange Yellow S",
+        name_russian: "Закат желтый FCF, Оранжевый желтый S",
+        name_german: "Sonnenuntergang Gelb FCF, Orange Gelb S",
+        name_hebrew: "צהריים צהוב FCF, כתום צהוב S",
+        name_french: "Coucher de soleil jaune FCF, Orange jaune S",
+        name_latvian: "Saules rieti dzeltenais FCF, Oranžais dzeltenais S",
         e_number: "E110",
         group: _indexJs.Colour.value,
         source: [
@@ -60877,7 +60945,12 @@ var e110 = /* #__PURE__ */ function() {
 }();
 var e104 = /* #__PURE__ */ function() {
     return {
-        name: "Quinoline Yellow",
+        name_english: "Quinoline Yellow",
+        name_russian: "Кинолиновый желтый",
+        name_german: "Chinolingelb",
+        name_hebrew: "קוינולין צהוב",
+        name_french: "Jaune de quinol\xe9ine",
+        name_latvian: "Kinolīna dzeltenais",
         e_number: "E104",
         group: _indexJs.Colour.value,
         source: [],
@@ -60887,7 +60960,12 @@ var e104 = /* #__PURE__ */ function() {
 }();
 var e102 = /* #__PURE__ */ function() {
     return {
-        name: "Tartrazine",
+        name_english: "Tartrazine",
+        name_russian: "Тартразин",
+        name_german: "Tartrazin",
+        name_hebrew: "טרטרזין",
+        name_french: "Tartrazine",
+        name_latvian: "Tartrazīns",
         e_number: "E102",
         group: _indexJs.Colour.value,
         source: [],
@@ -60897,7 +60975,12 @@ var e102 = /* #__PURE__ */ function() {
 }();
 var e101 = /* #__PURE__ */ function() {
     return {
-        name: "Riboflavin",
+        name_english: "Riboflavin",
+        name_russian: "Рибофлавин",
+        name_german: "Riboflavin",
+        name_hebrew: "ריבופלבין",
+        name_french: "Riboflavine",
+        name_latvian: "Riboflavīns",
         e_number: "E101",
         group: _indexJs.Colour.value,
         source: [
@@ -60909,9 +60992,15 @@ var e101 = /* #__PURE__ */ function() {
         kosher: _indexJs.KosherNeedPassoverHashgoho.value
     };
 }();
+// seed data ---
 var e100 = /* #__PURE__ */ function() {
     return {
-        name: "Curcumin",
+        name_english: "Curcumin",
+        name_russian: "Куркумин",
+        name_german: "Curcumin",
+        name_hebrew: "קורקומין",
+        name_french: "Curcumine",
+        name_latvian: "Kurkumīns",
         e_number: "E100",
         group: _indexJs.Colour.value,
         source: [
@@ -60927,11 +61016,16 @@ var colorENumberList = /* #__PURE__ */ _indexJs.insertEntry(e100)(/* #__PURE__ *
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "antioxidantENumberList", ()=>antioxidantENumberList);
-// Generated by purs version 0.15.15
+// Antioxidants and Acidity Regulators (300-399)
 var _indexJs = require("../Data.ENumberTypes/index.js");
 var e301 = /* #__PURE__ */ function() {
     return {
-        name: "Sodium L-ascorbate",
+        name_english: "Sodium ascorbate",
+        name_russian: "Натрия аскорбат",
+        name_german: "Natriumascorbat",
+        name_hebrew: "אסקורבט נתרן",
+        name_french: "Ascorbate de sodium",
+        name_latvian: "Nātrija askorbāts",
         e_number: "E301",
         group: _indexJs.Antioxidant.value,
         source: [],
@@ -60941,7 +61035,12 @@ var e301 = /* #__PURE__ */ function() {
 }();
 var e300 = /* #__PURE__ */ function() {
     return {
-        name: "Ascorbic acid",
+        name_english: "Ascorbic acid",
+        name_russian: "Аскорбиновая кислота",
+        name_german: "Ascorbins\xe4ure",
+        name_hebrew: "חומצה אסקורבית",
+        name_french: "Acide ascorbique",
+        name_latvian: "Askorbīnskābe",
         e_number: "E300",
         group: _indexJs.Antioxidant.value,
         source: [],
@@ -60955,11 +61054,16 @@ var antioxidantENumberList = /* #__PURE__ */ _indexJs.insertEntry(e300)(/* #__PU
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "stabilizerENumberList", ()=>stabilizerENumberList);
-// Generated by purs version 0.15.15
+// Thickeners, Stabilizers & Emulsifiers (400 - 499)
 var _indexJs = require("../Data.ENumberTypes/index.js");
 var e401 = /* #__PURE__ */ function() {
     return {
-        name: "Sodium alginate",
+        name_english: "Sodium alginate",
+        name_russian: "Альгинат натрия",
+        name_german: "Natriumalginat",
+        name_hebrew: "אלגינט נתרן",
+        name_french: "Alginate de sodium",
+        name_latvian: "nātrija algināts",
         e_number: "E401",
         group: _indexJs.Stabilizer.value,
         source: [
@@ -60971,7 +61075,12 @@ var e401 = /* #__PURE__ */ function() {
 }();
 var e400 = /* #__PURE__ */ function() {
     return {
-        name: "Alginic acid",
+        name_english: "Alginic acid",
+        name_russian: "Альгиновая кислота",
+        name_german: "Algins\xe4ure",
+        name_hebrew: "אלגינט",
+        name_french: "Acide alginique",
+        name_latvian: "algīnskābe",
         e_number: "E400",
         group: _indexJs.Stabilizer.value,
         source: [
@@ -60991,7 +61100,12 @@ parcelHelpers.export(exports, "regulatorENumberList", ()=>regulatorENumberList);
 var _indexJs = require("../Data.ENumberTypes/index.js");
 var e500 = /* #__PURE__ */ function() {
     return {
-        name: "Sodium Carbonate Sodium hydrogen carbonate (Sodium bicarbonate; Baking soda; Bicabonate of soda) Sodium sesquicarbonate (Trona), Natriumcarbonat (Soda)",
+        name_english: "Sodium Carbonate Sodium hydrogen carbonate (Sodium bicarbonate; Baking soda; Bicabonate of soda) ",
+        name_russian: "Углекислый натрий, гидрокарбонат натрия (натрий бикарбонат, пищевая сода)",
+        name_german: "Natriumcarbonat, Natriumhydrogencarbonat (Natron, Backsoda, Speisesoda)",
+        name_hebrew: "סודיום קרבונט, סודיום הידרוגנקרבונט (סודיום ביקרבונט, סודיום קרבונט, סודיום קרבונט)",
+        name_french: "Carbonate de sodium, Hydrog\xe9nocarbonate de sodium (Bicarbonate de soude)",
+        name_latvian: "Nātrija karbonāts, Nātrija hidrogēnkarbonāts (Soda, Sālsoda)Sodium sesquicarbonate (Trona), Natriumcarbonat (Soda)",
         e_number: "E500",
         group: _indexJs.AcidityRegulator.value,
         source: [],
@@ -61009,7 +61123,12 @@ parcelHelpers.export(exports, "flavourENumberList", ()=>flavourENumberList);
 var _indexJs = require("../Data.ENumberTypes/index.js");
 var e620 = /* #__PURE__ */ function() {
     return {
-        name: "L-Glutamic acid",
+        name_english: "L-Glutamic acid",
+        name_russian: "L-Глутаминовая кислота",
+        name_german: "L-Glutamins\xe4ure",
+        name_hebrew: "L-חומצה גלוטמית",
+        name_french: "Acide L-glutamique",
+        name_latvian: "L-Glutamīnskābe",
         e_number: "E620",
         group: _indexJs.FlavourEnchancer.value,
         source: [],
@@ -62278,7 +62397,6 @@ var border = function(a) {
 },{"../CSS.Property/index.js":"5ytk4","../CSS.Size/index.js":"cd0fS","../CSS.String/index.js":"9bTqK","../CSS.Stylesheet/index.js":"k97a8","../Data.Eq/index.js":"8OmSH","../Data.Ord/index.js":"7HnPT","../Data.Tuple/index.js":"ib0Ds","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"40T8D":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "showResults", ()=>showResults);
 parcelHelpers.export(exports, "simpleShowResults", ()=>simpleShowResults);
 // Generated by purs version 0.15.15
 var _indexJs = require("../App.Colours/index.js");
@@ -62291,23 +62409,35 @@ var _indexJs6 = require("../Control.Bind/index.js");
 var _indexJs7 = require("../Data.Array/index.js");
 var _indexJs8 = require("../Data.ENumberTypes/index.js");
 var _indexJs9 = require("../Data.Functor/index.js");
-var _indexJs10 = require("../Data.Head/index.js");
-var _indexJs11 = require("../Data.Int/index.js");
-var _indexJs12 = require("../Data.List.Types/index.js");
-var _indexJs13 = require("../Halogen.HTML.CSS/index.js");
-var _indexJs14 = require("../Halogen.HTML.Core/index.js");
-var _indexJs15 = require("../Halogen.HTML.Elements/index.js");
-var _indexJs16 = require("../Halogen.HTML.Events/index.js");
+var _indexJs10 = require("../Data.Int/index.js");
+var _indexJs11 = require("../Data.List.Types/index.js");
+var _indexJs12 = require("../Halogen.HTML.CSS/index.js");
+var _indexJs13 = require("../Halogen.HTML.Core/index.js");
+var _indexJs14 = require("../Halogen.HTML.Elements/index.js");
+var _indexJs15 = require("../Halogen.HTML.Events/index.js");
 var elem = /* #__PURE__ */ _indexJs7.elem(_indexJs8.eqSource);
 var discard = /* #__PURE__ */ _indexJs6.discard(_indexJs6.discardUnit)(_indexJs5.bindStyleM);
 var map = /* #__PURE__ */ _indexJs9.map(_indexJs9.functorArray);
-var fromFoldable = /* #__PURE__ */ _indexJs7.fromFoldable(_indexJs12.foldableList);
+var fromFoldable = /* #__PURE__ */ _indexJs7.fromFoldable(_indexJs11.foldableList);
+var getNameByLanguage = function(card) {
+    return function(lang) {
+        if (lang instanceof _indexJs1.English) return card.name_english;
+        if (lang instanceof _indexJs1.Russian) return card.name_russian;
+        if (lang instanceof _indexJs1.German) return card.name_german;
+        if (lang instanceof _indexJs1.Hebrew) return card.name_hebrew;
+        if (lang instanceof _indexJs1.French) return card.name_french;
+        if (lang instanceof _indexJs1.Latvian) return card.name_latvian;
+        throw new Error("Failed pattern match at App.ShowResults (line 94, column 31 - line 100, column 33): " + [
+            lang.constructor.name
+        ]);
+    };
+};
 var containsDairy = function(arr) {
     return elem(_indexJs8.Dairy.value)(arr);
 };
 var getBackgroundForKashrut = function(k) {
-    var $9 = containsDairy(k.source);
-    if ($9) return _indexJs.skyblue;
+    var $10 = containsDairy(k.source);
+    if ($10) return _indexJs.skyblue;
     if (k.kosher instanceof _indexJs8.NotKosher) return _indexJs.black;
     if (k.kosher instanceof _indexJs8.KosherIncludingPassover) return _indexJs.green;
     if (k.kosher instanceof _indexJs8.KosherNeedPassoverHashgoho) return _indexJs.marine;
@@ -62315,55 +62445,39 @@ var getBackgroundForKashrut = function(k) {
     if (k.kosher instanceof _indexJs8.OftenKosherNeedHashgoho) return _indexJs.orange;
     if (k.kosher instanceof _indexJs8.NeedHashgohoWholeYear) return _indexJs.lightred;
     if (k.kosher instanceof _indexJs8.KosherForbidden) return _indexJs.brightred;
-    throw new Error("Failed pattern match at App.ShowResults (line 90, column 5 - line 97, column 37): " + [
+    throw new Error("Failed pattern match at App.ShowResults (line 104, column 5 - line 111, column 37): " + [
         k.kosher.constructor.name
     ]);
 };
-var renderENumber = function(eNumber) {
-    return _indexJs15.div([
-        _indexJs1.css("e-number-card"),
-        _indexJs13.style(discard(_indexJs3.color(_indexJs.black))(function() {
-            return _indexJs2.borderLeft(_indexJs2.solid)(_indexJs4.em(1.2))(getBackgroundForKashrut(eNumber));
-        }))
-    ])([
-        _indexJs14.text(eNumber.e_number + (" " + eNumber.name)),
-        _indexJs15.div([
-            _indexJs1.css("sources")
-        ])([
-            _indexJs14.text(_indexJs10.showSources(eNumber.source)),
-            _indexJs15.br_,
-            _indexJs14.text(_indexJs10.showK(eNumber.kosher))
-        ])
-    ]);
-};
-var showResults = function(arr) {
-    return _indexJs15.div([
-        _indexJs1.css("results-bar")
-    ])(map(renderENumber)(fromFoldable(arr)));
-};
 var simpleRenderENumber = function(eNumber) {
-    return _indexJs15.div([
-        _indexJs16.onClick(function(v) {
-            return new _indexJs1.OpenCard(eNumber);
-        }),
-        _indexJs13.style(discard(_indexJs3.color(_indexJs.black))(function() {
-            return _indexJs2.borderLeft(_indexJs2.solid)(_indexJs4.em(0.8))(getBackgroundForKashrut(eNumber));
-        }))
-    ])([
-        _indexJs14.text(eNumber.e_number + (" " + eNumber.name))
-    ]);
+    return function(lang) {
+        return _indexJs14.div([
+            _indexJs15.onClick(function(v) {
+                return new _indexJs1.OpenCard(eNumber);
+            }),
+            _indexJs12.style(discard(_indexJs3.color(_indexJs.black))(function() {
+                return _indexJs2.borderLeft(_indexJs2.solid)(_indexJs4.em(0.8))(getBackgroundForKashrut(eNumber));
+            }))
+        ])([
+            _indexJs13.text(eNumber.e_number + (" " + getNameByLanguage(eNumber)(lang)))
+        ]);
+    };
 };
 var simpleShowResults = function(arr) {
-    return _indexJs15.div([
-        _indexJs1.css("simple-results-bar")
-    ])(map(simpleRenderENumber)(fromFoldable(arr)));
+    return function(lang) {
+        return _indexJs14.div([
+            _indexJs1.css("simple-results-bar")
+        ])(map(function(eNumber) {
+            return simpleRenderENumber(eNumber)(lang);
+        })(fromFoldable(arr)));
+    };
 };
 var calculateMinHeight = function(v) {
     if (v === 1) return 50.0;
-    return 15.0 * _indexJs11.toNumber(v);
+    return 15.0 * _indexJs10.toNumber(v);
 };
 
-},{"../App.Colours/index.js":"c6QRT","../App.Common/index.js":"dWLHm","../CSS.Border/index.js":"1es03","../CSS.Font/index.js":"9Iwns","../CSS.Size/index.js":"cd0fS","../CSS.Stylesheet/index.js":"k97a8","../Control.Bind/index.js":"5hjxD","../Data.Array/index.js":"fFSAq","../Data.ENumberTypes/index.js":"7FE0O","../Data.Functor/index.js":"l8Eoe","../Data.Head/index.js":"786Xv","../Data.Int/index.js":"ezDMN","../Data.List.Types/index.js":"5Eszv","../Halogen.HTML.CSS/index.js":"zRRWZ","../Halogen.HTML.Core/index.js":"9NBcR","../Halogen.HTML.Elements/index.js":"7rm1k","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../Halogen.HTML.Events/index.js":"aoDbU"}],"8Sbo3":[function(require,module,exports) {
+},{"../App.Colours/index.js":"c6QRT","../App.Common/index.js":"dWLHm","../CSS.Border/index.js":"1es03","../CSS.Font/index.js":"9Iwns","../CSS.Size/index.js":"cd0fS","../CSS.Stylesheet/index.js":"k97a8","../Control.Bind/index.js":"5hjxD","../Data.Array/index.js":"fFSAq","../Data.ENumberTypes/index.js":"7FE0O","../Data.Functor/index.js":"l8Eoe","../Data.Int/index.js":"ezDMN","../Data.List.Types/index.js":"5Eszv","../Halogen.HTML.CSS/index.js":"zRRWZ","../Halogen.HTML.Core/index.js":"9NBcR","../Halogen.HTML.Elements/index.js":"7rm1k","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../Halogen.HTML.Events/index.js":"aoDbU"}],"8Sbo3":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "curtain", ()=>curtain);
@@ -62383,12 +62497,27 @@ var _indexJs11 = require("../Halogen.HTML.Events/index.js");
 var _indexJs12 = require("../Halogen.HTML.Properties/index.js");
 var append1 = /* #__PURE__ */ _indexJs7.append(_indexJs7.semigroupArray);
 var discard = /* #__PURE__ */ _indexJs5.discard(_indexJs5.discardUnit)(_indexJs4.bindStyleM);
+var getTextByLanguage = function(e) {
+    return function(lang) {
+        if (lang instanceof _indexJs.English) return e.name_english;
+        if (lang instanceof _indexJs.Russian) return e.name_russian;
+        if (lang instanceof _indexJs.German) return e.name_german;
+        if (lang instanceof _indexJs.Hebrew) return e.name_hebrew;
+        if (lang instanceof _indexJs.French) return e.name_french;
+        if (lang instanceof _indexJs.Latvian) return e.name_latvian;
+        throw new Error("Failed pattern match at App.Curtain (line 59, column 28 - line 65, column 28): " + [
+            lang.constructor.name
+        ]);
+    };
+};
 var getTextFromENumber = function(e_number) {
-    if (e_number instanceof _indexJs6.Just) return e_number.value0.name + (" " + e_number.value0.description);
-    if (e_number instanceof _indexJs6.Nothing) return "No ENumber Selected";
-    throw new Error("Failed pattern match at App.Curtain (line 51, column 3 - line 53, column 37): " + [
-        e_number.constructor.name
-    ]);
+    return function(lang) {
+        if (e_number instanceof _indexJs6.Just) return getTextByLanguage(e_number.value0)(lang) + (" " + e_number.value0.description);
+        if (e_number instanceof _indexJs6.Nothing) return "No ENumber Selected";
+        throw new Error("Failed pattern match at App.Curtain (line 53, column 3 - line 55, column 37): " + [
+            e_number.constructor.name
+        ]);
+    };
 };
 var getCurtainClassList = function(moveCurtain) {
     return append1([
@@ -62434,34 +62563,36 @@ var curtain = function(open) {
 };
 var card = function(open) {
     return function(e_number) {
-        return _indexJs10.div([
-            _indexJs12.classes(getCardClassList(open)),
-            _indexJs8.style(discard(_indexJs2.paddingTop(_indexJs3.pct(7.0)))(function() {
-                return discard(_indexJs2.paddingRight(_indexJs3.px(40.0)))(function() {
-                    return _indexJs2.paddingLeft(_indexJs3.px(70.0));
-                });
-            })),
-            _indexJs11.onClick(function(v) {
-                return _indexJs.ClearCard.value;
-            })
-        ])([
-            _indexJs10.div([
-                _indexJs12.id("curtain-content-one"),
-                _indexJs8.style(discard(_indexJs2.margin(_indexJs3.px(0.0))(_indexJs3.px(10.0))(_indexJs3.px(60.0))(_indexJs3.px(10.0)))(function() {
-                    return _indexJs1.fontSize(_indexJs3.px(30.0));
-                }))
+        return function(lang) {
+            return _indexJs10.div([
+                _indexJs12.classes(getCardClassList(open)),
+                _indexJs8.style(discard(_indexJs2.paddingTop(_indexJs3.pct(7.0)))(function() {
+                    return discard(_indexJs2.paddingRight(_indexJs3.px(40.0)))(function() {
+                        return _indexJs2.paddingLeft(_indexJs3.px(70.0));
+                    });
+                })),
+                _indexJs11.onClick(function(v) {
+                    return _indexJs.ClearCard.value;
+                })
             ])([
-                _indexJs9.text(getTextFromENumber(e_number))
-            ]),
-            _indexJs10.div([
-                _indexJs12.id("curtain-content-two"),
-                _indexJs8.style(discard(_indexJs2.margin(_indexJs3.px(60.0))(_indexJs3.px(20.0))(_indexJs3.px(40.0))(_indexJs3.px(10.0)))(function() {
-                    return _indexJs1.fontSize(_indexJs3.px(20.0));
-                }))
-            ])([
-                _indexJs9.text("not implemented card")
-            ])
-        ]);
+                _indexJs10.div([
+                    _indexJs12.id("curtain-content-one"),
+                    _indexJs8.style(discard(_indexJs2.margin(_indexJs3.px(0.0))(_indexJs3.px(10.0))(_indexJs3.px(60.0))(_indexJs3.px(10.0)))(function() {
+                        return _indexJs1.fontSize(_indexJs3.px(30.0));
+                    }))
+                ])([
+                    _indexJs9.text(getTextFromENumber(e_number)(lang))
+                ]),
+                _indexJs10.div([
+                    _indexJs12.id("curtain-content-two"),
+                    _indexJs8.style(discard(_indexJs2.margin(_indexJs3.px(60.0))(_indexJs3.px(20.0))(_indexJs3.px(40.0))(_indexJs3.px(10.0)))(function() {
+                        return _indexJs1.fontSize(_indexJs3.px(20.0));
+                    }))
+                ])([
+                    _indexJs9.text("not implemented card")
+                ])
+            ]);
+        };
     };
 };
 

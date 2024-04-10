@@ -48,7 +48,12 @@ showSources arr = foldl (\acc x -> acc <> " " <> showSource x) "src: " arr
 findENumbersInList :: String -> ENumberList
 findENumbersInList query = filter filterEntry seedENumberList
   where filterEntry::ENumber -> Boolean
-        filterEntry entry = contains (Pattern query) entry.e_number || contains (Pattern query) entry.name
+        filterEntry entry = contains (Pattern query) entry.e_number || contains (Pattern query) entry.name_english
+         || contains (Pattern query) entry.name_russian
+           || contains (Pattern query) entry.name_german
+             || contains (Pattern query) entry.name_hebrew
+               || contains (Pattern query) entry.name_french
+                || contains (Pattern query) entry.name_latvian
 
 seedENumberList:: ENumberList
 seedENumberList = concat $ fromFoldable 

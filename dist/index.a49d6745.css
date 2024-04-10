@@ -138,9 +138,10 @@ html, body, #main-container {
   color: brown;
   background: linear-gradient(to left, #b9b9bb80, #cbcbcd80, #dddddf80);
   border: 1px solid gray;
-  border-radius: 15px;
+  border-radius: 5px;
   flex-direction: column;
   grid-area: sr2;
+  margin: .1em;
   font-family: inherit;
   transition: transform .8s ease-out;
   display: flex;

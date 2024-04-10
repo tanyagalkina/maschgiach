@@ -208,7 +208,8 @@ html, body {
   justify-content: baseline;
   /* top: 0;
   left: 0; */
-  border-radius: 15px;
+  margin: 0.1em;
+  border-radius: 5px;
   border: 1px solid grey;
   /* left: 30%; */
   /* width: 100%;

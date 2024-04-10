@@ -2,7 +2,7 @@
 
 module Data.Nb100to199 (colorENumberList) where
 
-import Data.ENumberTypes(ENumber, ENumberList, AdditiveGroup(..), Kashrut(..), Source(..), insertEntry, emptyENumberList)
+import Data.ENumberTypes (ENumber, ENumberList, AdditiveGroup(..), Kashrut(..), Source(..), insertEntry, emptyENumberList)
 
 
 infixr 5 insertEntry as ++
@@ -15,7 +15,12 @@ colorENumberList = e100 ++ e101 ++ e102 ++ e104 ++ e110 ++ e120
 -- seed data ---
 e100 ∷ ENumber
 e100 = {
-  name: "Curcumin"
+  name_english: "Curcumin"
+  , name_russian: "Куркумин"
+  , name_german: "Curcumin"
+  , name_hebrew: "קורקומין"
+  , name_french: "Curcumine"
+  , name_latvian: "Kurkumīns"
   , e_number: "E100"
   , group: Colour
   , source: [Vegan]
@@ -25,7 +30,12 @@ e100 = {
 
 e101 ∷ ENumber
 e101 = {
-  name: "Riboflavin"
+  name_english: "Riboflavin"
+  , name_russian: "Рибофлавин"
+  , name_german: "Riboflavin"
+  , name_hebrew: "ריבופלבין"
+  , name_french: "Riboflavine"
+  , name_latvian: "Riboflavīns"
   , e_number: "E101"
   , group: Colour
   , source: [Dairy, Animal, Chametz]
@@ -35,7 +45,12 @@ e101 = {
 
 e102 ∷ ENumber
 e102 = {
-  name: "Tartrazine"
+  name_english: "Tartrazine"
+  , name_russian: "Тартразин"
+  , name_german: "Tartrazin"
+  , name_hebrew: "טרטרזין"
+  , name_french: "Tartrazine"
+  , name_latvian: "Tartrazīns"
   , e_number: "E102"
   , group: Colour
   , source: [] 
@@ -45,7 +60,12 @@ e102 = {
 
 e104 ∷ ENumber
 e104 = {
-  name: "Quinoline Yellow"
+  name_english: "Quinoline Yellow"
+  , name_russian: "Кинолиновый желтый"
+  , name_german: "Chinolingelb"
+  , name_hebrew: "קוינולין צהוב"
+  , name_french: "Jaune de quinoléine"
+  , name_latvian: "Kinolīna dzeltenais"
   , e_number: "E104"
   , group: Colour
   , source: []
@@ -55,7 +75,12 @@ e104 = {
 
 e110 ∷ ENumber
 e110 = {
-  name: "Sunset Yellow FCF, Orange Yellow S"
+  name_english: "Sunset Yellow FCF, Orange Yellow S"
+  , name_russian: "Закат желтый FCF, Оранжевый желтый S"
+  , name_german: "Sonnenuntergang Gelb FCF, Orange Gelb S"
+  , name_hebrew: "צהריים צהוב FCF, כתום צהוב S"
+  , name_french: "Coucher de soleil jaune FCF, Orange jaune S"
+  , name_latvian: "Saules rieti dzeltenais FCF, Oranžais dzeltenais S"
   , e_number: "E110"
   , group: Colour
   , source: [Synthetic] 
@@ -65,7 +90,12 @@ e110 = {
 
 e120 :: ENumber
 e120 = {
-  name: "Cochineal"
+  name_english: "Cochineal"
+  , name_russian: "Кошениль"
+  , name_german: "Cochenille (Echtes Karmin)"
+  , name_hebrew: "כרמין"
+  , name_french: "Cochenille"
+  , name_latvian: "Kohīnēls"
   , e_number: "E120"
   , group: Colour
   , source: [Animal]
@@ -75,7 +105,12 @@ e120 = {
 
 e121 :: ENumber
 e121 = {
-  name: "Citrus Red Nr.2"
+  name_english: "Citrus Red Nr.2"
+  , name_russian: "Цитрусовый красный №2"
+  , name_german: "Zitrusrot Nr.2"
+  , name_hebrew: "אדום סיטרוס מספר 2"
+  , name_french: "Rouge citron n ° 2"
+  , name_latvian: "Citrona sarkans Nr.2"
   , e_number: "E121"
   , group: Colour
   , source: [Synthetic]
@@ -86,7 +121,12 @@ e121 = {
 
 e123 :: ENumber
 e123 = {
-  name: "Amaranth"
+  name_english: "Amaranth"
+  , name_russian: "Амарант"
+  , name_german: "Amaranth"
+  , name_hebrew: "אמרנת"
+  , name_french: "Amarante"
+  , name_latvian: "Amarants"
   , e_number: "E123"
   , group: Colour
   , source: [Synthetic, Dangerous]
@@ -96,7 +136,12 @@ e123 = {
 
 e124 :: ENumber
 e124 = {
-  name: "Ponceau 4R, Cochineal Red A"
+  name_english: "Ponceau 4R, Cochineal Red A"
+  , name_russian: "Понсо 4R, Кошениль красный A"
+  , name_german: "Ponceau 4R, Cochenillerot A"
+  , name_hebrew: "פונסו 4R, כרמין אדום A"
+  , name_french: "Ponceau 4R, Rouge cochenille A"
+  , name_latvian: "Ponso 4R, Kohīnēls sarkans A"
   , e_number: "E124"
   , group: Colour
   , source: [Synthetic, Dangerous]
@@ -106,7 +151,12 @@ e124 = {
 
 e129 :: ENumber
 e129 = {
-  name: "Allura Red AC"
+  name_english: "Allura Red AC"
+  , name_russian: "Аллура красный AC"
+  , name_german: "Allurarot AC"
+  , name_hebrew: "אלורה אדום AC"
+  , name_french: "Rouge Allura AC"
+  , name_latvian: "Allura sarkans AC"
   , e_number: "E129"
   , group: Colour
   , source: [Synthetic, Dangerous]
@@ -116,7 +166,12 @@ e129 = {
 
 e131 :: ENumber
 e131 = {
-  name: "Patent Blue V"
+  name_english: "Patent Blue V"
+  , name_russian: "Патент синий V"
+  , name_german: "Patentblau V"
+  , name_hebrew: "פטנט כחול V"
+  , name_french: "Bleu patenté V"
+  , name_latvian: "Patenta zils V"
   , e_number: "E131"
   , group: Colour
   , source: [Synthetic, Dangerous]
@@ -126,7 +181,12 @@ e131 = {
 
 e140 :: ENumber
 e140 = {
-  name: "Chlorophyll"
+  name_english: "Chlorophyll"
+  , name_russian: "Хлорофилл"
+  , name_german: "Chlorophylle und Chlorophylline"
+  , name_hebrew: "כלורופיל"
+  , name_french: "Chlorophylle"
+  , name_latvian: "Hlorofils"
   , e_number: "E140"
   , group: Colour
   , source: [Wine]
@@ -136,7 +196,12 @@ e140 = {
 
 e141 :: ENumber
 e141 = {
-  name: "Copper complexes of chlorophyll and chlorophyllins"
+  name_english: "Copper complexes of chlorophyll and chlorophyllins"
+  , name_russian: "Медные комплексы хлорофилла и хлорофиллинов"
+  , name_german: "Kupferkomplexe von Chlorophyll und Chlorophyllinen"
+  , name_hebrew: "מורכבי נחושת של כלורופיל וכלורופילינים"
+  , name_french: "Complexes de cuivre de chlorophylle et de chlorophyllines"
+  , name_latvian: "Varšu kompleksi ar hlorofillu un hlorofilīniem"
   , e_number: "E141"
   , group: Colour
   , source: [Wine]
@@ -147,7 +212,12 @@ e141 = {
 
 e150a :: ENumber
 e150a =  {
-  name: "Plain Caramel"
+  name_english: "Plain Caramel"
+  , name_russian: "Простой карамель"
+  , name_german: "Einfaches Zuckerkulör"
+  , name_hebrew: "קרמל פשוט"
+  , name_french: "Caramel simple"
+  , name_latvian: "Vienkāršs karamēlis"
   , e_number: "E150a"
   , group: Colour
   , source: []

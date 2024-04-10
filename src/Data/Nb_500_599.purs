@@ -15,7 +15,12 @@ regulatorENumberList =  e500 ++ emptyENumberList
 
 e500 :: ENumber
 e500 = {
-  name: "Sodium Carbonate Sodium hydrogen carbonate (Sodium bicarbonate; Baking soda; Bicabonate of soda) "
+  name_english: "Sodium Carbonate Sodium hydrogen carbonate (Sodium bicarbonate; Baking soda; Bicabonate of soda) "
+  , name_russian: "Углекислый натрий, гидрокарбонат натрия (натрий бикарбонат, пищевая сода)"
+  , name_german: "Natriumcarbonat, Natriumhydrogencarbonat (Natron, Backsoda, Speisesoda)"
+  , name_hebrew: "סודיום קרבונט, סודיום הידרוגנקרבונט (סודיום ביקרבונט, סודיום קרבונט, סודיום קרבונט)"
+  , name_french: "Carbonate de sodium, Hydrogénocarbonate de sodium (Bicarbonate de soude)"
+  , name_latvian: "Nātrija karbonāts, Nātrija hidrogēnkarbonāts (Soda, Sālsoda)"
  <> "Sodium sesquicarbonate (Trona), "
  <> "Natriumcarbonat (Soda)" 
   , e_number: "E500"

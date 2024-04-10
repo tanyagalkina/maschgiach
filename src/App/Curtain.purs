@@ -1,18 +1,20 @@
 module App.Curtain (curtain, card) where
 
 import Prelude
+
+import App.Common (Action(..), CardDisplayLanguage(..))
+import CSS (paddingTop, paddingRight, paddingLeft, margin, fontSize, pct, px)
+import Data.ENumberTypes (ENumber)
 import Data.Maybe (Maybe(Just, Nothing))
 import Halogen.HTML as HH
-import App.Common (Action(..))
-import Data.ENumberTypes(ENumber)
-import Halogen.HTML.Properties as HP
 import Halogen.HTML.CSS as CSS
 import Halogen.HTML.Events as HE
-import CSS (paddingTop, paddingRight, paddingLeft, margin, fontSize, pct, px)
+import Halogen.HTML.Properties as HP
+import Web.HTML.Event.EventTypes (offline)
 
 
-card :: forall w. Boolean -> Maybe ENumber -> HH.HTML w Action
-card open e_number =  HH.div [ 
+card :: forall w. Boolean -> Maybe ENumber -> CardDisplayLanguage -> HH.HTML w Action
+card open e_number lang =  HH.div [ 
                    HP.classes $ getCardClassList open
                    
                     --   TODO: clean the styles
@@ -31,7 +33,7 @@ card open e_number =  HH.div [
                        fontSize $ px 30.0
                     ] 
                     [HH.text 
-                    $ getTextFromENumber e_number
+                    $ getTextFromENumber e_number lang
                     -- "ENumber: this is the ENumber" <> e_number.name -- e_number
                     -- " This ENumber Dictionary is based on Sefer Mahor LeKaschrut and on Sefer of Rabbi Pantelyat; it is not exhaustive and is meant to be used as a reference only. For more information, please consult a competent Halachic authority."
                     ]
@@ -46,12 +48,21 @@ card open e_number =  HH.div [
 
 
 
-getTextFromENumber :: Maybe ENumber -> String
-getTextFromENumber e_number = 
+getTextFromENumber :: Maybe ENumber -> CardDisplayLanguage -> String
+getTextFromENumber e_number lang = 
   case e_number of
-    Just e -> e.name <> " " <> e.description
+    Just e -> (getTextByLanguage e lang)  <> " " <> e.description
     Nothing -> "No ENumber Selected"
 
+
+getTextByLanguage :: ENumber -> CardDisplayLanguage -> String
+getTextByLanguage e lang = case lang of
+  English -> e.name_english
+  Russian -> e.name_russian
+  German -> e.name_german
+  Hebrew -> e.name_hebrew
+  French -> e.name_french
+  Latvian -> e.name_latvian
 
 curtain :: forall w . Boolean -> HH.HTML w Action
 curtain open =  HH.div [ 

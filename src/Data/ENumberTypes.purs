@@ -3,7 +3,8 @@ module Data.ENumberTypes (ENumber, ENumberList, AdditiveGroup(..), Source(..), K
 import Prelude
 
 import Control.Plus (empty)
-import Data.List(List(..))
+import Data.List (List(..))
+import Data.Maybe (Maybe)
 
 
 infixr 5 insertEntry as ++
@@ -25,7 +26,12 @@ derive instance eqSource :: Eq Source
 
 
 type ENumber = {
-  name :: String
+    name_english :: String
+  , name_russian :: String
+  , name_german :: String
+  , name_hebrew :: String
+  , name_french :: String
+  , name_latvian :: String
   , e_number :: String
   , group :: AdditiveGroup
   , source :: Array Source  

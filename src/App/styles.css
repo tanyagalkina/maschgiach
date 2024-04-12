@@ -64,6 +64,7 @@ html, body {
 
   border: solid 3px green;
   overflow-y: auto;
+  font-size: 40px;
 
 }
 

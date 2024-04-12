@@ -3,7 +3,7 @@ module App.Body (component) where
 import Prelude
 
 import App.Colours (brightred)
-import App.Common (Action(..), State, css, CardDisplayLanguage(English, Russian))
+import App.Common (Action(..), CardDisplayLanguage(..), State, css)
 import App.Curtain (curtain, card)
 import App.Footer (footer)
 import App.InputBar (simpleInputBar)
@@ -90,7 +90,7 @@ render state =
 
           -- , mainContainerGridProperties])
               [
-                languageIcon -- 1.
+                languageIcon state.cardDisplayLanguage-- 1.
                                 -- fontFamily ["monospace"] (monospace :|[] )
                               -- gridTemplateRows [?, ?, ?, ?]
                               -- , HP.attr 
@@ -156,11 +156,22 @@ render state =
 
 handleAction :: forall o m. Action → H.HalogenM State Action () o m Unit
 handleAction = case _ of
-  OpenCurtainToTheRight str -> H.modify_ \st -> st { moveCurtain = true, results = searchNumber str}
-  Search str -> H.modify_ \st -> st { results = searchNumber str}
+  OpenCurtainToTheRight str -> H.modify_ \st -> st { moveCurtain = true, results = searchNumber str }
+  Search str -> H.modify_ \st -> st { results = searchNumber str }
   -- TODO: See why results gets cleared when card is opened
-  OpenCard eNumber -> H.modify_ \st -> st {currentCard = Just eNumber, cardAppear = true}
-  ClearCard -> H.modify_ \st -> st { currentCard = Nothing, moveCurtain = true, cardAppear = false} 
+  OpenCard eNumber -> H.modify_ \st -> st {currentCard = Just eNumber, cardAppear = true }
+  ClearCard -> H.modify_ \st -> st { currentCard = Nothing, moveCurtain = true, cardAppear = false } 
+  SetCardDisplayLanguage _lang -> H.modify_ \st -> st { cardDisplayLanguage = nextLang st.cardDisplayLanguage }
+
+
+nextLang :: CardDisplayLanguage -> CardDisplayLanguage
+nextLang lang = case lang of
+  English -> Russian
+  Russian -> German
+  German -> Hebrew
+  Hebrew -> French
+  French -> Latvian
+  Latvian -> English
 
 searchNumber :: String -> ENumberList
 searchNumber str = findENumbersInList str

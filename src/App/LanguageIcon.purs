@@ -33,20 +33,11 @@ languageIcon lang = HH.div [
             CSS.style do 
              width $ px 40.0
              height $ px 40.0
-          --  , chooseIcon lang  
           , HP.src (chooseIcon lang)
-        -- "../assets/ivrit3.png"
            , HP.alt "language"
-           -- the language will be ignored for now, the button will switch toi the nex in the list
+           -- the language will be ignored for now, the button will switch to the nex in the list
            , HE.onClick $ \_ -> SetCardDisplayLanguage English
           ]
-          -- , HH.div [
-          --   CSS.style do
-          --    marginLeft $ pct 10.0
-          --    marginTop $ em 1.0
-          --    marginBottom $ em 1.0
-          -- ]
-          -- [ HH.text "עברית" ]
          ] 
 
 

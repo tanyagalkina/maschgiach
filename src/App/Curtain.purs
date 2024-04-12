@@ -5,6 +5,7 @@ import Prelude
 import App.Common (Action(..), CardDisplayLanguage(..))
 import CSS (paddingTop, paddingRight, paddingLeft, margin, fontSize, pct, px)
 import Data.ENumberTypes (ENumber)
+import Data.Head (showK, showKFrench, showKGerman, showKHebrew, showKLatvian, showKRussian)
 import Data.Maybe (Maybe(Just, Nothing))
 import Halogen.HTML as HH
 import Halogen.HTML.CSS as CSS
@@ -18,19 +19,20 @@ card open e_number lang =  HH.div [
                    HP.classes $ getCardClassList open
                    
                     --   TODO: clean the styles
-                    ,CSS.style do
-                       paddingTop $ pct 7.0
-                       paddingRight $ px 40.0
-                       paddingLeft $ px 70.0
+                    -- ,CSS.style do
+                      --  paddingTop $ pct 7.0
+                      --  paddingRight $ px 40.0
+                      --  paddingLeft $ px 70.0
                       --  alignItems flexStart
                     , HE.onClick $ \_ -> ClearCard 
                    ]
                    [
+                    -- TODO: clean the styles here, ti si not clear what is the purpose of the styles
                     HH.div[
                      HP.id "curtain-content-one"
                      , CSS.style do
                        margin (px 0.0 )   (px 10.0 )   (px 60.0 )  (px 10.0 ) 
-                       fontSize $ px 30.0
+                       fontSize $ px 60.0
                     ] 
                     [HH.text 
                     $ getTextFromENumber e_number lang
@@ -42,8 +44,8 @@ card open e_number lang =  HH.div [
                       HP.id "curtain-content-two"
                       , CSS.style do
                         margin (px 60.0) (px 20.0) (px 40.0) (px 10.0)
-                        fontSize $ px 20.0
-                    ] [HH.text "not implemented card"]
+                        fontSize $ px 60.0
+                    ] [HH.text $ getKashrutFromENumber e_number lang]
                   ]
 
 
@@ -54,7 +56,6 @@ getTextFromENumber e_number lang =
     Just e -> (getTextByLanguage e lang)  <> " " <> e.description
     Nothing -> "No ENumber Selected"
 
-
 getTextByLanguage :: ENumber -> CardDisplayLanguage -> String
 getTextByLanguage e lang = case lang of
   English -> e.name_english
@@ -63,6 +64,22 @@ getTextByLanguage e lang = case lang of
   Hebrew -> e.name_hebrew
   French -> e.name_french
   Latvian -> e.name_latvian
+
+
+getKashrutFromENumber :: Maybe ENumber -> CardDisplayLanguage -> String
+getKashrutFromENumber e_number lang = 
+  case e_number of
+    Just e -> (getKashrutByLanguage e lang)
+    Nothing -> "No ENumber Selected"
+
+getKashrutByLanguage :: ENumber -> CardDisplayLanguage -> String
+getKashrutByLanguage e lang = case lang of
+  English -> showK e.kosher
+  Russian -> showKRussian e.kosher
+  German -> showKGerman e.kosher
+  Hebrew -> showKHebrew e.kosher
+  French -> showKFrench e.kosher
+  Latvian -> showKLatvian e.kosher
 
 curtain :: forall w . Boolean -> HH.HTML w Action
 curtain open =  HH.div [ 

@@ -132,9 +132,10 @@ render state =
                       [
                          simpleInputBar
                           , simpleShowResults state.results state.cardDisplayLanguage
-                          , card state.cardAppear state.currentCard state.cardDisplayLanguage
+                          -- , card state.cardAppear state.currentCard state.cardDisplayLanguage
                           -- , card2 state.moveCurtain state.card
                       ]
+                  , card state.cardAppear state.currentCard state.cardDisplayLanguage    
                   , curtain state.moveCurtain
                   --  ,HH.div_[HH.text "the rest of the screen"]]
 

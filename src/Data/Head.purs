@@ -1,6 +1,11 @@
 module Data.Head
  (findENumbersInList
  ,showK
+ , showKRussian
+  , showKGerman
+  , showKHebrew
+  , showKFrench
+  , showKLatvian
  , showSources
 )
 where
@@ -9,7 +14,7 @@ import Prelude
 
 import CSS (query)
 import Control.Comonad.Trans.Class (lower)
-import Data.ENumberTypes (Kashrut(..), Source(..), ENumber, ENumberList)
+import Data.ENumberTypes (ENumber, ENumberList, Kashrut(..), Source(..))
 import Data.Foldable (foldl)
 import Data.Generic.Rep (to)
 import Data.List (fromFoldable, filter, concat)
@@ -22,6 +27,7 @@ import Data.Nb600to699 (flavourENumberList)
 import Data.String.CodeUnits (contains)
 import Data.String.Common (toLower)
 import Data.String.Pattern (Pattern(..))
+import Web.HTML.Event.EventTypes (offline)
 
 
 showK :: Kashrut -> String
@@ -33,6 +39,56 @@ showK kashrut = case kashrut of
   OftenKosherNeedHashgoho -> "Often Kosher, needs Hashgoho"
   NeedHashgohoWholeYear -> "Needs Hashgoho whole year"
   KosherForbidden -> "Kosher, FORBIDDEN"
+
+showKRussian :: Kashrut -> String
+showKRussian kashrut = case kashrut of
+  NotKosher -> "Не кашерно!"
+  KosherIncludingPassover -> "Кашерно включая Песах"
+  KosherNeedPassoverHashgoho -> "Кашерно, требуется хашгоха на Песах"
+  UsuallyKosherRarelyNeedHashgoho -> "Обычно кашерно, редко требуется хашгоха"
+  OftenKosherNeedHashgoho -> "Часто кашерно, требуется хашгоха"
+  NeedHashgohoWholeYear -> "Требуется хашгоха весь год"
+  KosherForbidden -> "Кашерно, ЗАПРЕЩЕНО"
+
+showKGerman :: Kashrut -> String
+showKGerman kashrut = case kashrut of
+  NotKosher -> "Nicht koscher!"
+  KosherIncludingPassover -> "Koscher einschließlich Pessach"
+  KosherNeedPassoverHashgoho -> "Koscher, benötigt Hashgoho für Pessach"
+  UsuallyKosherRarelyNeedHashgoho -> "Normalerweise koscher, benötigt selten Hashgoho"
+  OftenKosherNeedHashgoho -> "Oft koscher, benötigt Hashgoho"
+  NeedHashgohoWholeYear -> "Benötigt Haschgocho für das ganze Jahr"
+  KosherForbidden -> "Koscher, VERBOTEN"
+
+showKHebrew :: Kashrut -> String
+showKHebrew kashrut = case kashrut of
+  NotKosher -> "לא כשר!"
+  KosherIncludingPassover -> "כשר כולל פסח"
+  KosherNeedPassoverHashgoho -> "כשר, צריך השגחה לפסח"
+  UsuallyKosherRarelyNeedHashgoho -> "צריך השגחה, כשר בדרך כלל"
+  OftenKosherNeedHashgoho -> "כשר בדרך כלל, צריך השגחה"
+  NeedHashgohoWholeYear -> "צריר השגחה כל השנה"
+  KosherForbidden -> "כשר,אסור"    
+
+showKFrench :: Kashrut -> String
+showKFrench kashrut = case kashrut of
+  NotKosher -> "Pas cacher!"
+  KosherIncludingPassover -> "Casher pour toute l'année, y compris Pessa'h (Pâque)"
+  KosherNeedPassoverHashgoho -> "Casher pour toute l'année mais nécessite une surveillance spécifique pour Pessa'h (Pâque)"
+  UsuallyKosherRarelyNeedHashgoho -> "Généralement cacher, rarement besoin de Hashgoho"
+  OftenKosherNeedHashgoho -> "Souvent cacher, besoin de Hashgoho"
+  NeedHashgohoWholeYear -> "Nécessite une surveillance rabbinique toute l'année"
+  KosherForbidden -> "Cacher, INTERDIT"
+
+showKLatvian :: Kashrut -> String
+showKLatvian kashrut = case kashrut of
+  NotKosher -> "Nav košers!"
+  KosherIncludingPassover -> "Košers ieskaitot Pēsah"
+  KosherNeedPassoverHashgoho -> "Košers, nepieciešama uzraudzība Pēsah"
+  UsuallyKosherRarelyNeedHashgoho -> "Parasti košers, reti nepieciešama uzraudzība"
+  OftenKosherNeedHashgoho -> "Bieži košers, nepieciešama uzraudzība"
+  NeedHashgohoWholeYear -> "Nepieciešama uzraudzība visu gadu"
+  KosherForbidden -> "Košers, AIZLIEGTS"  
 
 showSource :: Source -> String
 showSource source = case source of

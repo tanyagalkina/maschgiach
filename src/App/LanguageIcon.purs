@@ -10,7 +10,7 @@ import Halogen.HTML.Properties (InputType(..))
 import Halogen.HTML.Properties as HP
 import Web.DOM.Document (doctype)
 import Web.DOM.ShadowRoot (ShadowRootMode(..))
-import CSS(marginLeft, marginTop, pct, em, width, height, px)
+import CSS(marginLeft, marginTop, marginBottom, pct, em, width, height, px)
 
 
 import App.Common( Action(..) )
@@ -23,6 +23,7 @@ languageIcon = HH.div [
             CSS.style do
              marginLeft $ pct 90.0
              marginTop $ em 2.0
+             marginBottom $ em 2.0
          ]
          [HH.img 
           [

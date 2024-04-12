@@ -1,4 +1,4 @@
-html, body, #main-container {
+html, body {
   width: 100%;
   min-width: 100vw;
   height: 100%;
@@ -7,16 +7,23 @@ html, body, #main-container {
   overflow: hidden;
 }
 
+#main-container {
+  width: 100%;
+  min-width: 100vw;
+  height: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
 .my-grid-container {
-  grid-gap: 10px;
   grid-template: "sr1 sr1 sr1 sr1 sr1 sr1 sr1 sr1" 90vh
-  / 900px 10px;
+  / 100vw;
   display: grid;
 }
 
 @media (width >= 1200px) {
   .my-grid-container {
-    grid-template: "sr1 sr1 sr2 sr2 sr2 sr2 sr2 sr2" 90vh
+    grid-template: "sr1 sr1 sr1 sr2 sr2 sr2 sr2 sr2" 90vh
     / 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     display: grid;
   }
@@ -34,6 +41,7 @@ html, body, #main-container {
 
 .simple-results-bar {
   border: 3px solid green;
+  overflow-y: auto;
 }
 
 .my-search-and-results {

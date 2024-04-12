@@ -32,7 +32,7 @@ component :: forall query input output m . H.Component query input output m
 component =
   H.mkComponent
     { 
-     initialState: \_ -> { moveCurtain: false, results: empty, currentCard: Nothing, cardAppear: false, cardDisplayLanguage : Russian}
+     initialState: \_ -> { moveCurtain: false, results: empty, currentCard: Nothing, cardAppear: false, cardDisplayLanguage : English}
     , render
     , eval: H.mkEval H.defaultEval { handleAction = handleAction }
     }
@@ -43,6 +43,7 @@ mainContainerFlexVariantStyle = CSS.style do
             display flex 
             flexDirection column
             overflow hidden
+            justifyContent spaceAround
             -- TODO: how to make the main container resizable ( now it is hardcoded to 300vh )
             -- minHeight $ vh 300.0
             -- maxWidth $ pct 100.0
@@ -89,7 +90,7 @@ render state =
 
           -- , mainContainerGridProperties])
               [
-                --  languageIcon -- 1.
+                languageIcon -- 1.
                                 -- fontFamily ["monospace"] (monospace :|[] )
                               -- gridTemplateRows [?, ?, ?, ?]
                               -- , HP.attr 
@@ -100,7 +101,7 @@ render state =
                               --       -- "grid-template-rows: 30px 500px 60px;"
                               --     )
                           -- ]
-                  HH.div [
+                  , HH.div [
                     -- HP.id "center-container" -- 2.
                          css "my-grid-container"  -- grid on desktop || ?? on mobile
                   -- , CSS.style do
@@ -117,6 +118,7 @@ render state =
                         HH.div[
                         css "my-search-and-results"
                         ,CSS.style do
+                          -- width $ pct 100.0 
                   -- display grid
                           display flex
                           flexDirection column
@@ -151,11 +153,6 @@ render state =
           -- , curtain state.moveCurtain
           ,footer --3.
 ]]
-
--- TODO: add transitionEndListener to curtain
--- getCurtain :: forall w. Boolean -> HH.HTML w Action
--- getCurtain moveCurtain | moveCurtain == false = curtain moveCurtain
---                        | otherwise = HH.div [] [] 
 
 handleAction :: forall o m. Action → H.HalogenM State Action () o m Unit
 handleAction = case _ of

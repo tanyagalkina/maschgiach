@@ -52519,40 +52519,44 @@ var _indexJs1 = require("../App.Common/index.js");
 var _indexJs2 = require("../App.Curtain/index.js");
 var _indexJs3 = require("../App.Footer/index.js");
 var _indexJs4 = require("../App.InputBar/index.js");
-var _indexJs5 = require("../App.ShowResults/index.js");
-var _indexJs6 = require("../CSS.Border/index.js");
-var _indexJs7 = require("../CSS.Display/index.js");
-var _indexJs8 = require("../CSS.Flexbox/index.js");
-var _indexJs9 = require("../CSS.Font/index.js");
-var _indexJs10 = require("../CSS.Geometry/index.js");
-var _indexJs11 = require("../CSS.Overflow/index.js");
-var _indexJs12 = require("../CSS.Size/index.js");
-var _indexJs13 = require("../CSS.Stylesheet/index.js");
-var _indexJs14 = require("../Control.Bind/index.js");
-var _indexJs15 = require("../Control.Monad.State.Class/index.js");
-var _indexJs16 = require("../Control.Plus/index.js");
-var _indexJs17 = require("../Data.Head/index.js");
-var _indexJs18 = require("../Data.List.Types/index.js");
-var _indexJs19 = require("../Data.Maybe/index.js");
-var _indexJs20 = require("../Data.NonEmpty/index.js");
-var _indexJs21 = require("../Halogen.Component/index.js");
-var _indexJs22 = require("../Halogen.HTML.CSS/index.js");
-var _indexJs23 = require("../Halogen.HTML.Elements/index.js");
-var _indexJs24 = require("../Halogen.HTML.Properties/index.js");
-var _indexJs25 = require("../Halogen.Query.HalogenM/index.js");
-var discard = /* #__PURE__ */ _indexJs14.discard(_indexJs14.discardUnit)(_indexJs13.bindStyleM);
-var flexStart = /* #__PURE__ */ _indexJs8.flexStart(_indexJs8.flexStartAlignItemsValue);
-var modify_ = /* #__PURE__ */ _indexJs15.modify_(_indexJs25.monadStateHalogenM);
-var empty = /* #__PURE__ */ _indexJs16.empty(_indexJs18.plusList);
+var _indexJs5 = require("../App.LanguageIcon/index.js");
+var _indexJs6 = require("../App.ShowResults/index.js");
+var _indexJs7 = require("../CSS.Border/index.js");
+var _indexJs8 = require("../CSS.Display/index.js");
+var _indexJs9 = require("../CSS.Flexbox/index.js");
+var _indexJs10 = require("../CSS.Font/index.js");
+var _indexJs11 = require("../CSS.Geometry/index.js");
+var _indexJs12 = require("../CSS.Overflow/index.js");
+var _indexJs13 = require("../CSS.Size/index.js");
+var _indexJs14 = require("../CSS.Stylesheet/index.js");
+var _indexJs15 = require("../Control.Bind/index.js");
+var _indexJs16 = require("../Control.Monad.State.Class/index.js");
+var _indexJs17 = require("../Control.Plus/index.js");
+var _indexJs18 = require("../Data.Head/index.js");
+var _indexJs19 = require("../Data.List.Types/index.js");
+var _indexJs20 = require("../Data.Maybe/index.js");
+var _indexJs21 = require("../Data.NonEmpty/index.js");
+var _indexJs22 = require("../Halogen.Component/index.js");
+var _indexJs23 = require("../Halogen.HTML.CSS/index.js");
+var _indexJs24 = require("../Halogen.HTML.Elements/index.js");
+var _indexJs25 = require("../Halogen.HTML.Properties/index.js");
+var _indexJs26 = require("../Halogen.Query.HalogenM/index.js");
+var discard = /* #__PURE__ */ _indexJs15.discard(_indexJs15.discardUnit)(_indexJs14.bindStyleM);
+var spaceAround = /* #__PURE__ */ _indexJs9.spaceAround(_indexJs9.spaceAroundJustifyContentValue);
+var flexStart = /* #__PURE__ */ _indexJs9.flexStart(_indexJs9.flexStartAlignItemsValue);
+var modify_ = /* #__PURE__ */ _indexJs16.modify_(_indexJs26.monadStateHalogenM);
+var empty = /* #__PURE__ */ _indexJs17.empty(_indexJs19.plusList);
 var searchNumber = function(str) {
-    return _indexJs17.findENumbersInList(str);
+    return _indexJs18.findENumbersInList(str);
 };
-var mainContainerFlexVariantStyle = /* #__PURE__ */ _indexJs22.style(/* #__PURE__ */ discard(/* #__PURE__ */ _indexJs7.display(_indexJs7.flex))(function() {
-    return discard(_indexJs8.flexDirection(_indexJs8.column))(function() {
-        return discard(_indexJs11.overflow(_indexJs11.hidden))(function() {
-            return _indexJs9.fontFamily([
-                "some string"
-            ])(new _indexJs20.NonEmpty(_indexJs9.monospace, []));
+var mainContainerFlexVariantStyle = /* #__PURE__ */ _indexJs23.style(/* #__PURE__ */ discard(/* #__PURE__ */ _indexJs8.display(_indexJs8.flex))(function() {
+    return discard(_indexJs9.flexDirection(_indexJs9.column))(function() {
+        return discard(_indexJs12.overflow(_indexJs12.hidden))(function() {
+            return discard(_indexJs9.justifyContent(spaceAround))(function() {
+                return _indexJs10.fontFamily([
+                    "some string"
+                ])(new _indexJs21.NonEmpty(_indexJs10.monospace, []));
+            });
         });
     });
 }));
@@ -52576,25 +52580,26 @@ var mainContainerFlexVariantStyle = /* #__PURE__ */ _indexJs22.style(/* #__PURE_
 // d :: StyleM Unit
 // d = display grid
 var render = function(state) {
-    return _indexJs23.div_([
-        _indexJs23.div([
-            _indexJs24.id("main-container"),
+    return _indexJs24.div_([
+        _indexJs24.div([
+            _indexJs25.id("main-container"),
             mainContainerFlexVariantStyle
         ])([
-            _indexJs23.div([
+            _indexJs5.languageIcon,
+            _indexJs24.div([
                 _indexJs1.css("my-grid-container")
             ])([
-                _indexJs23.div([
+                _indexJs24.div([
                     _indexJs1.css("my-search-and-results"),
-                    _indexJs22.style(discard(_indexJs7.display(_indexJs7.flex))(function() {
-                        return discard(_indexJs8.flexDirection(_indexJs8.column))(function() {
-                            return discard(_indexJs8.alignItems(flexStart))(function() {
-                                return discard(_indexJs10.height(_indexJs12.vh(100.0)))(function() {
-                                    return discard(_indexJs10.paddingTop(_indexJs12.vh(5.0)))(function() {
-                                        return discard(_indexJs6.border(_indexJs6.solid)(_indexJs12.px(3.0))(_indexJs.brightred))(function() {
-                                            return _indexJs9.fontFamily([
+                    _indexJs23.style(discard(_indexJs8.display(_indexJs8.flex))(function() {
+                        return discard(_indexJs9.flexDirection(_indexJs9.column))(function() {
+                            return discard(_indexJs9.alignItems(flexStart))(function() {
+                                return discard(_indexJs11.height(_indexJs13.vh(100.0)))(function() {
+                                    return discard(_indexJs11.paddingTop(_indexJs13.vh(5.0)))(function() {
+                                        return discard(_indexJs7.border(_indexJs7.solid)(_indexJs13.px(3.0))(_indexJs.brightred))(function() {
+                                            return _indexJs10.fontFamily([
                                                 "monospace"
-                                            ])(new _indexJs20.NonEmpty(_indexJs9.monospace, []));
+                                            ])(new _indexJs21.NonEmpty(_indexJs10.monospace, []));
                                         });
                                     });
                                 });
@@ -52603,7 +52608,7 @@ var render = function(state) {
                     }))
                 ])([
                     _indexJs4.simpleInputBar,
-                    _indexJs5.simpleShowResults(state.results)(state.cardDisplayLanguage),
+                    _indexJs6.simpleShowResults(state.results)(state.cardDisplayLanguage),
                     _indexJs2.card(state.cardAppear)(state.currentCard)(state.cardDisplayLanguage)
                 ]),
                 _indexJs2.curtain(state.moveCurtain)
@@ -52612,66 +52617,62 @@ var render = function(state) {
         ])
     ]);
 };
-// TODO: add transitionEndListener to curtain
-// getCurtain :: forall w. Boolean -> HH.HTML w Action
-// getCurtain moveCurtain | moveCurtain == false = curtain moveCurtain
-//                        | otherwise = HH.div [] [] 
 var handleAction = function(v) {
     if (v instanceof _indexJs1.OpenCurtainToTheRight) return modify_(function(st) {
-        var $13 = {};
-        for(var $14 in st)if (({}).hasOwnProperty.call(st, $14)) $13[$14] = st[$14];
-        $13.moveCurtain = true;
-        $13.results = searchNumber(v.value0);
-        return $13;
+        var $14 = {};
+        for(var $15 in st)if (({}).hasOwnProperty.call(st, $15)) $14[$15] = st[$15];
+        $14.moveCurtain = true;
+        $14.results = searchNumber(v.value0);
+        return $14;
     });
     if (v instanceof _indexJs1.Search) return modify_(function(st) {
-        var $17 = {};
-        for(var $18 in st)if (({}).hasOwnProperty.call(st, $18)) $17[$18] = st[$18];
-        $17.results = searchNumber(v.value0);
-        return $17;
+        var $18 = {};
+        for(var $19 in st)if (({}).hasOwnProperty.call(st, $19)) $18[$19] = st[$19];
+        $18.results = searchNumber(v.value0);
+        return $18;
     });
     if (v instanceof _indexJs1.OpenCard) return modify_(function(st) {
-        var $21 = {};
-        for(var $22 in st)if (({}).hasOwnProperty.call(st, $22)) $21[$22] = st[$22];
-        $21.currentCard = new _indexJs19.Just(v.value0);
-        $21.cardAppear = true;
-        return $21;
+        var $22 = {};
+        for(var $23 in st)if (({}).hasOwnProperty.call(st, $23)) $22[$23] = st[$23];
+        $22.currentCard = new _indexJs20.Just(v.value0);
+        $22.cardAppear = true;
+        return $22;
     });
     if (v instanceof _indexJs1.ClearCard) return modify_(function(st) {
-        var $25 = {};
-        for(var $26 in st)if (({}).hasOwnProperty.call(st, $26)) $25[$26] = st[$26];
-        $25.currentCard = _indexJs19.Nothing.value;
-        $25.moveCurtain = true;
-        $25.cardAppear = false;
-        return $25;
+        var $26 = {};
+        for(var $27 in st)if (({}).hasOwnProperty.call(st, $27)) $26[$27] = st[$27];
+        $26.currentCard = _indexJs20.Nothing.value;
+        $26.moveCurtain = true;
+        $26.cardAppear = false;
+        return $26;
     });
-    throw new Error("Failed pattern match at App.Body (line 161, column 16 - line 166, column 100): " + [
+    throw new Error("Failed pattern match at App.Body (line 158, column 16 - line 163, column 100): " + [
         v.constructor.name
     ]);
 };
 var component = /* #__PURE__ */ function() {
-    return _indexJs21.mkComponent({
+    return _indexJs22.mkComponent({
         initialState: function(v) {
             return {
                 moveCurtain: false,
                 results: empty,
-                currentCard: _indexJs19.Nothing.value,
+                currentCard: _indexJs20.Nothing.value,
                 cardAppear: false,
-                cardDisplayLanguage: _indexJs1.Russian.value
+                cardDisplayLanguage: _indexJs1.English.value
             };
         },
         render: render,
-        "eval": _indexJs21.mkEval({
-            handleQuery: _indexJs21.defaultEval.handleQuery,
-            receive: _indexJs21.defaultEval.receive,
-            initialize: _indexJs21.defaultEval.initialize,
-            finalize: _indexJs21.defaultEval.finalize,
+        "eval": _indexJs22.mkEval({
+            handleQuery: _indexJs22.defaultEval.handleQuery,
+            receive: _indexJs22.defaultEval.receive,
+            initialize: _indexJs22.defaultEval.initialize,
+            finalize: _indexJs22.defaultEval.finalize,
             handleAction: handleAction
         })
     });
 }();
 
-},{"../App.Common/index.js":"dWLHm","../App.Footer/index.js":"4g0ou","../Control.Monad.State.Class/index.js":"ls1CC","../Control.Plus/index.js":"jm5q9","../Data.List.Types/index.js":"5Eszv","../Data.Maybe/index.js":"7bX1p","../Halogen.Component/index.js":"8dM7y","../Halogen.HTML.Elements/index.js":"7rm1k","../Halogen.Query.HalogenM/index.js":"kbUmW","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../CSS.Display/index.js":"aKTjD","../CSS.Flexbox/index.js":"3ZWsc","../CSS.Geometry/index.js":"54WNO","../CSS.Size/index.js":"cd0fS","../CSS.Stylesheet/index.js":"k97a8","../Control.Bind/index.js":"5hjxD","../Halogen.HTML.CSS/index.js":"zRRWZ","../Halogen.HTML.Properties/index.js":"6klmN","../CSS.Overflow/index.js":"6Xulf","../Data.Head/index.js":"786Xv","../CSS.Font/index.js":"9Iwns","../Data.NonEmpty/index.js":"8yVpU","../App.InputBar/index.js":"hX7mO","../App.ShowResults/index.js":"40T8D","../App.Colours/index.js":"c6QRT","../CSS.Border/index.js":"1es03","../App.Curtain/index.js":"8Sbo3"}],"dWLHm":[function(require,module,exports) {
+},{"../App.Common/index.js":"dWLHm","../App.Footer/index.js":"4g0ou","../Control.Monad.State.Class/index.js":"ls1CC","../Control.Plus/index.js":"jm5q9","../Data.List.Types/index.js":"5Eszv","../Data.Maybe/index.js":"7bX1p","../Halogen.Component/index.js":"8dM7y","../Halogen.HTML.Elements/index.js":"7rm1k","../Halogen.Query.HalogenM/index.js":"kbUmW","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../CSS.Display/index.js":"aKTjD","../CSS.Flexbox/index.js":"3ZWsc","../CSS.Geometry/index.js":"54WNO","../CSS.Size/index.js":"cd0fS","../CSS.Stylesheet/index.js":"k97a8","../Control.Bind/index.js":"5hjxD","../Halogen.HTML.CSS/index.js":"zRRWZ","../Halogen.HTML.Properties/index.js":"6klmN","../CSS.Overflow/index.js":"6Xulf","../Data.Head/index.js":"786Xv","../CSS.Font/index.js":"9Iwns","../Data.NonEmpty/index.js":"8yVpU","../App.InputBar/index.js":"hX7mO","../App.ShowResults/index.js":"40T8D","../App.Colours/index.js":"c6QRT","../CSS.Border/index.js":"1es03","../App.Curtain/index.js":"8Sbo3","../App.LanguageIcon/index.js":"ckqDh"}],"dWLHm":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "OpenCurtainToTheRight", ()=>OpenCurtainToTheRight);
@@ -60473,6 +60474,7 @@ var _indexJs6 = require("../Data.Nb400to499/index.js");
 var _indexJs7 = require("../Data.Nb500to599/index.js");
 var _indexJs8 = require("../Data.Nb600to699/index.js");
 var _indexJs9 = require("../Data.String.CodeUnits/index.js");
+var _indexJs10 = require("../Data.String.Common/index.js");
 var foldl = /* #__PURE__ */ _indexJs1.foldl(_indexJs1.foldableArray);
 var showSource = function(source) {
     if (source instanceof _indexJs.Chametz) return "Chametz";
@@ -60484,7 +60486,7 @@ var showSource = function(source) {
     if (source instanceof _indexJs.Vegan) return "Vegan";
     if (source instanceof _indexJs.Synthetic) return "Synthetic";
     if (source instanceof _indexJs.Dangerous) return "Dangerous";
-    throw new Error("Failed pattern match at Data.Head (line 34, column 21 - line 43, column 27): " + [
+    throw new Error("Failed pattern match at Data.Head (line 38, column 21 - line 47, column 27): " + [
         source.constructor.name
     ]);
 };
@@ -60503,7 +60505,7 @@ var showK = function(kashrut) {
     if (kashrut instanceof _indexJs.OftenKosherNeedHashgoho) return "Often Kosher, needs Hashgoho";
     if (kashrut instanceof _indexJs.NeedHashgohoWholeYear) return "Needs Hashgoho whole year";
     if (kashrut instanceof _indexJs.KosherForbidden) return "Kosher, FORBIDDEN";
-    throw new Error("Failed pattern match at Data.Head (line 24, column 17 - line 31, column 41): " + [
+    throw new Error("Failed pattern match at Data.Head (line 28, column 17 - line 35, column 41): " + [
         kashrut.constructor.name
     ]);
 };
@@ -60517,12 +60519,16 @@ var seedENumberList = /* #__PURE__ */ _indexJs2.concat(/* #__PURE__ */ _indexJs2
 ]));
 var findENumbersInList = function(query) {
     var filterEntry = function(entry) {
-        return _indexJs9.contains(query)(entry.e_number) || _indexJs9.contains(query)(entry.name_english) || _indexJs9.contains(query)(entry.name_russian) || _indexJs9.contains(query)(entry.name_german) || _indexJs9.contains(query)(entry.name_hebrew) || _indexJs9.contains(query)(entry.name_french) || _indexJs9.contains(query)(entry.name_latvian);
+        var lowerQuery = _indexJs10.toLower(query);
+        var containsIgnoreCase = function(field) {
+            return _indexJs9.contains(lowerQuery)(_indexJs10.toLower(field));
+        };
+        return containsIgnoreCase(entry.e_number) || containsIgnoreCase(entry.name_english) || containsIgnoreCase(entry.name_russian) || containsIgnoreCase(entry.name_german) || containsIgnoreCase(entry.name_hebrew) || containsIgnoreCase(entry.name_french) || containsIgnoreCase(entry.name_latvian);
     };
     return _indexJs2.filter(filterEntry)(seedENumberList);
 };
 
-},{"../Data.Foldable/index.js":"6KsE0","../Data.List/index.js":"7Vb9H","../Data.Nb200to299/index.js":"9MpVt","../Data.String.CodeUnits/index.js":"5hEXg","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../Data.ENumberTypes/index.js":"7FE0O","../Data.Nb100to199/index.js":"iNx5Y","../Data.Nb300to399/index.js":"hlbWj","../Data.Nb400to499/index.js":"aJEWw","../Data.Nb500to599/index.js":"ez82O","../Data.Nb600to699/index.js":"l7eD1"}],"9MpVt":[function(require,module,exports) {
+},{"../Data.Foldable/index.js":"6KsE0","../Data.List/index.js":"7Vb9H","../Data.Nb200to299/index.js":"9MpVt","../Data.String.CodeUnits/index.js":"5hEXg","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../Data.ENumberTypes/index.js":"7FE0O","../Data.Nb100to199/index.js":"iNx5Y","../Data.Nb300to399/index.js":"hlbWj","../Data.Nb400to499/index.js":"aJEWw","../Data.Nb500to599/index.js":"ez82O","../Data.Nb600to699/index.js":"l7eD1","../Data.String.Common/index.js":"kSPQ6"}],"9MpVt":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "e201", ()=>e201);
@@ -62596,6 +62602,36 @@ var card = function(open) {
     };
 };
 
-},{"../App.Common/index.js":"dWLHm","../CSS.Font/index.js":"9Iwns","../CSS.Geometry/index.js":"54WNO","../CSS.Size/index.js":"cd0fS","../CSS.Stylesheet/index.js":"k97a8","../Control.Bind/index.js":"5hjxD","../Data.Maybe/index.js":"7bX1p","../Data.Semigroup/index.js":"3JeZO","../Halogen.HTML.CSS/index.js":"zRRWZ","../Halogen.HTML.Core/index.js":"9NBcR","../Halogen.HTML.Elements/index.js":"7rm1k","../Halogen.HTML.Events/index.js":"aoDbU","../Halogen.HTML.Properties/index.js":"6klmN","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["7lR9l","d9Zcj"], "d9Zcj", "parcelRequire94c2")
+},{"../App.Common/index.js":"dWLHm","../CSS.Font/index.js":"9Iwns","../CSS.Geometry/index.js":"54WNO","../CSS.Size/index.js":"cd0fS","../CSS.Stylesheet/index.js":"k97a8","../Control.Bind/index.js":"5hjxD","../Data.Maybe/index.js":"7bX1p","../Data.Semigroup/index.js":"3JeZO","../Halogen.HTML.CSS/index.js":"zRRWZ","../Halogen.HTML.Core/index.js":"9NBcR","../Halogen.HTML.Elements/index.js":"7rm1k","../Halogen.HTML.Events/index.js":"aoDbU","../Halogen.HTML.Properties/index.js":"6klmN","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"ckqDh":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "languageIcon", ()=>languageIcon);
+var _indexJs = require("../CSS.Geometry/index.js");
+var _indexJs1 = require("../CSS.Size/index.js");
+var _indexJs2 = require("../CSS.Stylesheet/index.js");
+var _indexJs3 = require("../Control.Bind/index.js");
+var _indexJs4 = require("../Halogen.HTML.CSS/index.js");
+var _indexJs5 = require("../Halogen.HTML.Elements/index.js");
+var _indexJs6 = require("../Halogen.HTML.Properties/index.js");
+var discard = /* #__PURE__ */ _indexJs3.discard(_indexJs3.discardUnit)(_indexJs2.bindStyleM);
+// css :: forall r i. String -> HH.IProp (class :: String | r) i
+// css = HP.class_ <<< HH.ClassName
+var languageIcon = /* #__PURE__ */ _indexJs5.div([
+    /* #__PURE__ */ _indexJs4.style(/* #__PURE__ */ discard(/* #__PURE__ */ _indexJs.marginLeft(/* #__PURE__ */ _indexJs1.pct(90.0)))(function() {
+        return discard(_indexJs.marginTop(_indexJs1.em(2.0)))(function() {
+            return _indexJs.marginBottom(_indexJs1.em(2.0));
+        });
+    }))
+])([
+    /* #__PURE__ */ _indexJs5.img([
+        /* #__PURE__ */ _indexJs4.style(/* #__PURE__ */ discard(/* #__PURE__ */ _indexJs.width(/* #__PURE__ */ _indexJs1.px(40.0)))(function() {
+            return _indexJs.height(_indexJs1.px(40.0));
+        })),
+        /* #__PURE__ */ _indexJs6.src("../assets/ivrit3.png"),
+        /* #__PURE__ */ _indexJs6.alt("language")
+    ])
+]);
+
+},{"../CSS.Geometry/index.js":"54WNO","../CSS.Size/index.js":"cd0fS","../CSS.Stylesheet/index.js":"k97a8","../Control.Bind/index.js":"5hjxD","../Halogen.HTML.CSS/index.js":"zRRWZ","../Halogen.HTML.Elements/index.js":"7rm1k","../Halogen.HTML.Properties/index.js":"6klmN","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["7lR9l","d9Zcj"], "d9Zcj", "parcelRequire94c2")
 
 //# sourceMappingURL=index.f708bf3c.js.map

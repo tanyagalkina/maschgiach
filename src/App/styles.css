@@ -1,24 +1,3 @@
-/* .main-container {
-
-  display: grid;
-  grid-template-columns: 200px 600px ;
-  grid-template-rows: 600px 300px 200px;
-  grid-template-areas: 
-  "input-bar input-bar results-bar"
-  "footer footer footer" 
-  "footer footer footer";
-  grid-gap: 15px;
-
-} */
-
-/* select by type */
-/* body {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  overflow-x: hidden; 
-} */
-
 html, body {
   height: 100%;
   width: 100%;
@@ -36,17 +15,28 @@ html, body {
   min-height: 100vh; /* Ensure at least the full height of the viewport */
   overflow-x: hidden;
   overflow-y: hidden; 
-  margin: 0; /* Remove default margin */
+  /* margin: 0; Remove default margin */
 }
 
+/* @media(max-width: 800px) { */
 .my-grid-container {
   display: grid;
-  grid-gap : 10px;
-  grid-template-columns: 900px 10px;
+  grid-template-columns: 100vw;
   grid-template-rows: 90vh 10vh;
   grid-template-areas: 
   "sr1 sr1 sr1 sr1 sr1 sr1 sr1 sr1"
 }
+/* } */
+
+/* @media(ma-width: 1199px) {
+  .my-grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 90vh 10vh;
+    grid-template-areas:
+    "sr1 sr1 sr1 sr1 sr1 sr1 sr1 sr2"
+  }
+} */
 
 @media(min-width: 1200px) {
   .my-grid-container {
@@ -54,7 +44,7 @@ html, body {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 90vh 10vh;
     grid-template-areas:
-    "sr1 sr1 sr2 sr2 sr2 sr2 sr2 sr2"
+    "sr1 sr1 sr1 sr2 sr2 sr2 sr2 sr2"
   }
 } 
 
@@ -73,6 +63,7 @@ html, body {
 .simple-results-bar {
 
   border: solid 3px green;
+  overflow-y: auto;
 
 }
 

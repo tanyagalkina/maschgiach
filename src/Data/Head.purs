@@ -7,8 +7,11 @@ where
 
 import Prelude
 
+import CSS (query)
+import Control.Comonad.Trans.Class (lower)
 import Data.ENumberTypes (Kashrut(..), Source(..), ENumber, ENumberList)
 import Data.Foldable (foldl)
+import Data.Generic.Rep (to)
 import Data.List (fromFoldable, filter, concat)
 import Data.Nb100to199 (colorENumberList)
 import Data.Nb200to299 (preservatENumberList)
@@ -17,6 +20,7 @@ import Data.Nb400to499 (stabilizerENumberList)
 import Data.Nb500to599 (regulatorENumberList)
 import Data.Nb600to699 (flavourENumberList)
 import Data.String.CodeUnits (contains)
+import Data.String.Common (toLower)
 import Data.String.Pattern (Pattern(..))
 
 
@@ -48,12 +52,18 @@ showSources arr = foldl (\acc x -> acc <> " " <> showSource x) "src: " arr
 findENumbersInList :: String -> ENumberList
 findENumbersInList query = filter filterEntry seedENumberList
   where filterEntry::ENumber -> Boolean
-        filterEntry entry = contains (Pattern query) entry.e_number || contains (Pattern query) entry.name_english
-         || contains (Pattern query) entry.name_russian
-           || contains (Pattern query) entry.name_german
-             || contains (Pattern query) entry.name_hebrew
-               || contains (Pattern query) entry.name_french
-                || contains (Pattern query) entry.name_latvian
+        filterEntry entry = 
+          let 
+            lowerQuery = toLower query
+            containsIgnoreCase field = contains ( Pattern $ lowerQuery) (toLower field)
+          in
+              containsIgnoreCase entry.e_number
+              || containsIgnoreCase entry.name_english
+              || containsIgnoreCase entry.name_russian
+              || containsIgnoreCase entry.name_german
+              || containsIgnoreCase entry.name_hebrew
+              || containsIgnoreCase entry.name_french
+              || containsIgnoreCase entry.name_latvian
 
 seedENumberList:: ENumberList
 seedENumberList = concat $ fromFoldable 

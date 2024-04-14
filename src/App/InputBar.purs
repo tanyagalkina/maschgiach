@@ -2,9 +2,9 @@ module App.InputBar (simpleInputBar) where
 
 import Prelude
 
+import App.Colours (orange)
 import App.Common (Action(..), css)
-import App.Colours(green)
-import CSS (fontSize, height, margin, marginLeft, marginTop, px, width, pct, border, solid, vh, em, minHeight)
+import CSS (border, borderRadius, display, em, flex, flexDirection, fontSize, height, margin, marginLeft, marginTop, minHeight, pct, position, px, relative, row, solid, vh, width, left)
 import Halogen.HTML as HH
 import Halogen.HTML.CSS as CSS
 import Halogen.HTML.Events as HE
@@ -36,11 +36,25 @@ import Halogen.HTML.Properties as HP
 simpleInputBar :: forall w . HH.HTML w Action
 simpleInputBar  = HH.div [
   CSS.style do
-      width $ pct 100.0
+      width $ pct 90.0
+      margin (pct 0.0) (pct 5.0) (pct 0.0) (pct 5.0)
       minHeight $ px 95.0
-      border solid (px 3.0) green
+      border solid (px 3.0) orange
+      display flex
+      flexDirection row
+      borderRadius (px 10.0) (px 10.0) (px 10.0) (px 10.0)
+
 ] [
-                 HH.input
+                HH.img [
+                CSS.style do
+                  position relative 
+                  width $ px 80.0
+                  height $ px 80.0
+                  margin (px 10.0 )   (px 10.0 )   (px 10.0 )  (px 10.0 )
+               ,  HP.src "../assets/AmpelmannLupe.svg"
+               , HP.alt "lupe"
+              ]
+                 , HH.input
                   [
                     css "simple-input-bar"
                     , HP.type_ HP.InputText
@@ -52,4 +66,4 @@ simpleInputBar  = HH.div [
                     -- marginLeft $ px 10.0
                     , HE.onValueInput \str -> OpenCurtainToTheRight str
                   ]
-                ]
+               ]

@@ -44,9 +44,6 @@ mainContainerFlexVariantStyle = CSS.style do
             flexDirection column
             overflow hidden
             justifyContent spaceAround
-            -- TODO: how to make the main container resizable ( now it is hardcoded to 300vh )
-            -- minHeight $ vh 300.0
-            -- maxWidth $ pct 100.0
               -- TODO: understand the font-family css rule
               -- fontFamily ["some string"] (systemUi :|[] )
             fontFamily ["some string"] (monospace :|[] )
@@ -126,7 +123,7 @@ render state =
                           alignItems flexStart
                           height $ vh 100.0
                           paddingTop $ vh 5.0
-                          border solid (px 3.0) brightred
+                          -- border solid (px 3.0) brightred
                           fontFamily ["monospace"] (monospace :|[] )
                       ]
                       [

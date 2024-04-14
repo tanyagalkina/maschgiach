@@ -25,7 +25,7 @@ languageIcon lang = HH.div [
             CSS.style do
              marginLeft $ pct 90.0
              marginTop $ em 2.0
-             marginBottom $ em 2.0
+             marginBottom $ em 1.5
          ]
          [
           HH.img 

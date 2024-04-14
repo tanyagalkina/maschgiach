@@ -84,7 +84,7 @@ showKLatvian :: Kashrut -> String
 showKLatvian kashrut = case kashrut of
   NotKosher -> "Nav košers!"
   KosherIncludingPassover -> "Košers ieskaitot Pēsah"
-  KosherNeedPassoverHashgoho -> "Košers, nepieciešama uzraudzība Pēsah"
+  KosherNeedPassoverHashgoho -> "Košers, nepieciešama uzraudzība Pēsah laikā"
   UsuallyKosherRarelyNeedHashgoho -> "Parasti košers, reti nepieciešama uzraudzība"
   OftenKosherNeedHashgoho -> "Bieži košers, nepieciešama uzraudzība"
   NeedHashgohoWholeYear -> "Nepieciešama uzraudzība visu gadu"

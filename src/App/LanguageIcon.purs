@@ -4,21 +4,10 @@ import Prelude
 
 import App.Common (Action(..), CardDisplayLanguage(..))
 import CSS (marginLeft, marginTop, marginBottom, pct, em, width, height, px)
-import Data.List.Internal (Set)
-import Halogen.HTML (fromPlainHTML)
 import Halogen.HTML as HH
 import Halogen.HTML.CSS as CSS
-import Halogen.HTML.Events (onClick, onInput)
 import Halogen.HTML.Events as HE
-import Halogen.HTML.Events as HE
-import Halogen.HTML.Properties (InputType(..))
 import Halogen.HTML.Properties as HP
-import Web.DOM.Document (doctype)
-import Web.DOM.ShadowRoot (ShadowRootMode(..))
-
--- css :: forall r i. String -> HH.IProp (class :: String | r) i
--- css = HP.class_ <<< HH.ClassName
-
 
 languageIcon :: CardDisplayLanguage -> forall w . HH.HTML w Action
 languageIcon lang = HH.div [

@@ -15,28 +15,33 @@ html, body {
   overflow: hidden;
 }
 
-.my-grid-container {
+.center-container {
   grid-template: "sr1 sr1 sr1 sr1 sr1 sr1 sr1 sr1" 90vh
   / 100vw;
   display: grid;
 }
 
 @media (width >= 1200px) {
-  .my-grid-container {
+  .center-container {
     grid-template: "sr1 sr1 sr1 sr2 sr2 sr2 sr2 sr2" 90vh
     / 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     display: grid;
   }
 }
 
-.simple-input-bar {
+.input-bar {
+  padding-top: 20%px;
+  vertical-align: bottom;
+  box-sizing: border-box;
   border: none;
   outline: none;
   width: 80%;
   height: 100%;
-  font-size: 30px;
+  margin: 0;
+  padding: 0;
+  font-size: 40px;
+  line-height: 100%;
   position: relative;
-  left: 5%;
 }
 
 .simple-results-bar {
@@ -44,42 +49,8 @@ html, body {
   overflow-y: auto;
 }
 
-.my-search-and-results {
+.search-and-results {
   grid-area: sr1;
-}
-
-.input-bar {
-  color: #761212;
-  background-color: #fcf7f7;
-  border: 1px solid gray;
-  border-radius: 4px;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-  width: 70%;
-  margin: 8px 0;
-  padding: 12px 20px;
-  font-family: inherit;
-  font-size: 40px;
-  display: flex;
-  position: absolute;
-  left: 15%;
-}
-
-.input-bar:focus, .input-bar:active, .input-bar:hover, .input-bar:visited {
-  border: 1px solid gray !important;
-  outline: none !important;
-}
-
-.input-bar input {
-  color: inherit;
-  font-size: inherit;
-  background: none;
-  border: none;
-  outline: none;
-  width: 100%;
-  font-family: inherit;
-  font-weight: 500;
 }
 
 .results-bar {

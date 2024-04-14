@@ -6,43 +6,13 @@ module App.InputBar
 
 import Prelude
 
-import App.Colours (orange, brown)
+import App.Colours (brown)
 import App.Common (Action(..), css)
-import CSS (border, borderRadius, display, em, flex, flexDirection, fontSize, height, margin, marginLeft, marginTop, minHeight, pct, position, px, relative, row, solid, vh, width, left, borderBottom)
-import Data.Foldable (sequence_)
-import Halogen as H
+import CSS (borderBottom, display, flex, flexDirection, height, margin, minHeight, pct, position, px, relative, row, solid, width)
 import Halogen.HTML as HH
 import Halogen.HTML.CSS as CSS
-import Halogen.HTML.Elements as HE
 import Halogen.HTML.Events as HE
 import Halogen.HTML.Properties as HP
-import Web.HTML.HTMLAudioElement (create', toHTMLMediaElement)
-import Web.HTML.HTMLMediaElement (play)
-import Data.Functor ( void )
--- import Web.Audio
-
--- inputBar :: forall w . HH.HTML w Action
--- inputBar = HH.div 
---               [ css "input-bar" ]
---               [
---               HH.img [
---                 CSS.style do
---                   width $ px 80.0
---                   height $ px 80.0
---                   margin (px 5.0 )   (px 5.0 )   (px 5.0 )  (px 5.0 )
---                ,  HP.src "../assets/AmpelmannLupe.svg"
---                , HP.alt "lupe"
---               ]
---               , HH.input
---               [
---                 HP.type_ HP.InputText
---               , CSS.style do
---                 fontSize $ px 40.0
---                 marginTop $ px 12.0
---                 marginLeft $ px 10.0
---               , HE.onValueInput \str -> OpenCurtainToTheRight str
---               ]
---           ]
 
 simpleInputBar :: forall w . HH.HTML w Action
 simpleInputBar  = HH.div [
@@ -67,20 +37,8 @@ simpleInputBar  = HH.div [
               ]
                  , HH.input
                   [
-                    css "simple-input-bar"
+                    css "input-bar"
                     , HP.type_ HP.InputText
                     , HE.onValueInput \str -> OpenCurtainToTheRight str
-                    -- , HE.onValueInput \_ -> TypingSound
-                    -- , HE.onValueInput \str -> sequence_
-                    --     [
-                    --       H.raise $ OpenCurtainToTheRight str
-                    --     , H.raise TypingSound]
-                    -- , HE.onValueInput \str -> OpenCurtainToTheRight str
-                    -- , HE.onValueInput \_ -> TypingSound
                   ]
                ]
-
--- mediaElem ∷ Effect HTMLMediaElement
--- mediaElem = do  
---   audioEl <- create' "soundfile-url"
---   pure $ toHTMLMediaElement audioEl             

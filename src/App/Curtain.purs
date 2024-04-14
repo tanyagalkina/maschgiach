@@ -3,7 +3,7 @@ module App.Curtain (curtain, card) where
 import Prelude
 
 import App.Common (Action(..), CardDisplayLanguage(..))
-import CSS (paddingTop, paddingRight, paddingLeft, margin, fontSize, pct, px)
+import CSS (fontSize, margin, px)
 import Data.ENumberTypes (ENumber)
 import Data.Head (showK, showKFrench, showKGerman, showKHebrew, showKLatvian, showKRussian)
 import Data.Maybe (Maybe(Just, Nothing))
@@ -11,23 +11,15 @@ import Halogen.HTML as HH
 import Halogen.HTML.CSS as CSS
 import Halogen.HTML.Events as HE
 import Halogen.HTML.Properties as HP
-import Web.HTML.Event.EventTypes (offline)
 
 
 card :: forall w. Boolean -> Maybe ENumber -> CardDisplayLanguage -> HH.HTML w Action
 card open e_number lang =  HH.div [ 
                    HP.classes $ getCardClassList open
-                   
-                    --   TODO: clean the styles
-                    -- ,CSS.style do
-                      --  paddingTop $ pct 7.0
-                      --  paddingRight $ px 40.0
-                      --  paddingLeft $ px 70.0
-                      --  alignItems flexStart
                     , HE.onClick $ \_ -> ClearCard 
                    ]
                    [
-                    -- TODO: clean the styles here, ti si not clear what is the purpose of the styles
+                    -- TODO: clean the styles here, it is not clear what is the purpose of the styles
                     HH.div[
                      HP.id "curtain-content-one"
                      , CSS.style do
@@ -39,7 +31,6 @@ card open e_number lang =  HH.div [
                     -- "ENumber: this is the ENumber" <> e_number.name -- e_number
                     -- " This ENumber Dictionary is based on Sefer Mahor LeKaschrut and on Sefer of Rabbi Pantelyat; it is not exhaustive and is meant to be used as a reference only. For more information, please consult a competent Halachic authority."
                     ]
-
                     ,HH.div[
                       HP.id "curtain-content-two"
                       , CSS.style do
@@ -48,12 +39,10 @@ card open e_number lang =  HH.div [
                     ] [HH.text $ getKashrutFromENumber e_number lang]
                   ]
 
-
-
 getTextFromENumber :: Maybe ENumber -> CardDisplayLanguage -> String
 getTextFromENumber e_number lang = 
   case e_number of
-    Just e -> (getTextByLanguage e lang)  <> " " <> e.description
+    Just e -> e.e_number <>  " " <> (getTextByLanguage e lang)  <> " " <> e.description
     Nothing -> "No ENumber Selected"
 
 getTextByLanguage :: ENumber -> CardDisplayLanguage -> String
@@ -84,12 +73,6 @@ getKashrutByLanguage e lang = case lang of
 curtain :: forall w . Boolean -> HH.HTML w Action
 curtain open =  HH.div [ 
                    HP.classes $ getCurtainClassList open
-                    --   TODO: clean the styles
-                    -- ,CSS.style do
-                    --    paddingTop $ pct 7.0
-                    --    paddingRight $ px 40.0
-                    --    paddingLeft $ px 70.0
-                      --  alignItems flexStart
                    ]
                    [
                     HH.div[

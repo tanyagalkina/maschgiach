@@ -1,18 +1,12 @@
 module App.Colours (crimsonred, brown, green, marine, nogrey, skyblue, softred, brightred, yellow, orange, black, lightred) where
 
-import Prelude
-
-import CSS.Color (Color, black, rgba)
+import CSS.Color (Color, rgba)
 
 orange :: Color
 orange = rgba 255 165 0 1.0
 
 green :: Color
 green = rgba 0 255 0 0.8
-
--- green :: Color
--- green = rgba 47 158 21 0.9
-
 
 
 softred :: Color

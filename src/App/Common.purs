@@ -3,13 +3,11 @@ module App.Common(Action (OpenCurtainToTheRight, Search, OpenCard, ClearCard, Se
 import Prelude
 
 import Data.ENumberTypes (ENumberList, ENumber)
-import Data.List.Internal (Set)
-import Data.List.Lazy ((..))
 import Data.Maybe (Maybe)
 import Halogen.HTML as HH
 import Halogen.HTML.Properties as HP
 import Effect (Effect)
-import Web.HTML.HTMLMediaElement (HTMLMediaElement, play)
+import Web.HTML.HTMLMediaElement (HTMLMediaElement)
 
 data CardDisplayLanguage = English | Russian | German | Hebrew | French | Latvian
 

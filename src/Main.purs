@@ -15,9 +15,7 @@ main = HA.runHalogenAff do
   body <- HA.awaitBody
   -- runUI :: forall r f i o. RenderSpec r -> Component f i o Aff -> i -> Aff (HalogenIO f o Aff)
   runUI Body.component unit body
-
-
-
+  
 ----- ===== EXAMPLES ===== -----
 
 -- w stands for widget, i stands for input

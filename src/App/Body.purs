@@ -25,6 +25,7 @@ import Data.String.Regex (search)
 import Effect (Effect)
 import Effect.Aff (Aff)
 import Effect.Class (liftEffect, class MonadEffect)
+import Effect.Class.Console (log)
 import Halogen (AttrName(..))
 import Halogen as H
 import Halogen.HTML as HH
@@ -32,14 +33,13 @@ import Halogen.HTML.CSS as CSS
 import Halogen.HTML.Properties as HP
 import Web.HTML.HTMLAudioElement (create', toHTMLMediaElement)
 import Web.HTML.HTMLMediaElement (HTMLMediaElement, play)
-import Effect.Class.Console ( log )
 
 
 component :: forall query input output m. MonadEffect m => H.Component query input output m 
 component =
   H.mkComponent
     { 
-     initialState: \_ -> { moveCurtain: false, results: empty, currentCard: Nothing, cardAppear: false, cardDisplayLanguage : English}
+     initialState: \_ -> { moveCurtain: false, results: empty, currentCard: Nothing, cardAppear: false, cardDisplayLanguage : English, typingSound: mediaElem}
     , render
     , eval: H.mkEval H.defaultEval { handleAction = handleAction }
     }
@@ -162,8 +162,10 @@ render state =
 handleAction :: forall o m. MonadEffect m => Action → H.HalogenM State Action () o m Unit
 handleAction = case _ of
   OpenCurtainToTheRight str -> do
-                                  audioElem <- H.liftEffect mediaElem
-                                  H.liftEffect $ play audioElem
+                                 --  audioElem <- H.liftEffect $ H.gets _.typingSound
+                                  audioElem <- H.gets _.typingSound
+                                  H.liftEffect $ audioElem >>= play
+                                  -- H.liftEffect $ play audioElem
                                   H.modify_ \st -> st { moveCurtain = true, results = searchNumber str }
   Search str -> H.modify_ \st -> st { results = searchNumber str }
   -- TODO: See why results gets cleared when card is opened
@@ -182,7 +184,7 @@ handleAction = case _ of
 -- mediaElem :: forall eff. String -> Aff (HTML | eff) HTML.HTMLMediaElement
 mediaElem :: Effect HTMLMediaElement
 mediaElem = do  
-  audioEl <- create' "../assets/typewriter.mp3"
+  audioEl <- create' "../assets/click-button.mp3"
   log "audioEl CREATED SUCCESSFULLY"
   pure $ toHTMLMediaElement audioEl             
 

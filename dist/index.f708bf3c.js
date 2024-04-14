@@ -61413,7 +61413,7 @@ var discard = /* #__PURE__ */ _indexJs6.discard(_indexJs6.discardUnit)(_indexJs5
 var simpleInputBar = /* #__PURE__ */ function() {
     return _indexJs10.div([
         _indexJs8.style(discard(_indexJs3.width(_indexJs4.pct(100.0)))(function() {
-            return discard(_indexJs3.height(_indexJs4.em(7.0)))(function() {
+            return discard(_indexJs3.minHeight(_indexJs4.px(95.0)))(function() {
                 return _indexJs2.border(_indexJs2.solid)(_indexJs4.px(3.0))(_indexJs.green);
             });
         }))

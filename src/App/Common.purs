@@ -1,4 +1,4 @@
-module App.Common(Action (OpenCurtainToTheRight, Search, OpenCard, ClearCard, SetCardDisplayLanguage) , State, css, CardDisplayLanguage(..)) where
+module App.Common(Action (OpenCurtainToTheRight, Search, OpenCard, ClearCard, SetCardDisplayLanguage, TypingSound) , State, css, CardDisplayLanguage(..)) where
 
 import Prelude
 
@@ -16,6 +16,7 @@ type State
 
 data Action
   = OpenCurtainToTheRight String | Search String | OpenCard ENumber | ClearCard | SetCardDisplayLanguage CardDisplayLanguage
+   | TypingSound
 
 css :: forall r i. String -> HH.IProp (class :: String | r) i
 css = HP.class_ <<< HH.ClassName  

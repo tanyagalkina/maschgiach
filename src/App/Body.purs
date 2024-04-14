@@ -22,13 +22,20 @@ import Data.Head (findENumbersInList)
 import Data.Maybe (Maybe(..))
 import Data.NonEmpty ((:|))
 import Data.String.Regex (search)
+import Effect (Effect)
+import Effect.Aff (Aff)
+import Effect.Class (liftEffect, class MonadEffect)
 import Halogen (AttrName(..))
 import Halogen as H
 import Halogen.HTML as HH
 import Halogen.HTML.CSS as CSS
 import Halogen.HTML.Properties as HP
+import Web.HTML.HTMLAudioElement (create', toHTMLMediaElement)
+import Web.HTML.HTMLMediaElement (HTMLMediaElement, play)
+import Effect.Class.Console ( log )
 
-component :: forall query input output m . H.Component query input output m 
+
+component :: forall query input output m. MonadEffect m => H.Component query input output m 
 component =
   H.mkComponent
     { 
@@ -152,15 +159,32 @@ render state =
           ,footer --3.
 ]]
 
-handleAction :: forall o m. Action → H.HalogenM State Action () o m Unit
+handleAction :: forall o m. MonadEffect m => Action → H.HalogenM State Action () o m Unit
 handleAction = case _ of
-  OpenCurtainToTheRight str -> H.modify_ \st -> st { moveCurtain = true, results = searchNumber str }
+  OpenCurtainToTheRight str -> do
+                                  audioElem <- H.liftEffect mediaElem
+                                  H.liftEffect $ play audioElem
+                                  H.modify_ \st -> st { moveCurtain = true, results = searchNumber str }
   Search str -> H.modify_ \st -> st { results = searchNumber str }
   -- TODO: See why results gets cleared when card is opened
   OpenCard eNumber -> H.modify_ \st -> st {currentCard = Just eNumber, cardAppear = true }
   ClearCard -> H.modify_ \st -> st { currentCard = Nothing, moveCurtain = true, cardAppear = false } 
   SetCardDisplayLanguage _lang -> H.modify_ \st -> st { cardDisplayLanguage = nextLang st.cardDisplayLanguage }
+  TypingSound -> do
+        log "I am typing sound"
+        audioElem <- H.liftEffect mediaElem
+        H.liftEffect $ play audioElem
+        -- pure unit
 
+
+
+-- mediaElem :: forall eff. String -> Eff (HTML | eff) (Maybe HTML.HTMLMediaElement)
+-- mediaElem :: forall eff. String -> Aff (HTML | eff) HTML.HTMLMediaElement
+mediaElem :: Effect HTMLMediaElement
+mediaElem = do  
+  audioEl <- create' "../assets/typewriter.mp3"
+  log "audioEl CREATED SUCCESSFULLY"
+  pure $ toHTMLMediaElement audioEl             
 
 nextLang :: CardDisplayLanguage -> CardDisplayLanguage
 nextLang lang = case lang of

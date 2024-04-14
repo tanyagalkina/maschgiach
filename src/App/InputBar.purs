@@ -1,14 +1,25 @@
-module App.InputBar (simpleInputBar) where
+module App.InputBar
+  ( 
+   simpleInputBar
+  )
+  where
 
 import Prelude
 
 import App.Colours (orange, brown)
 import App.Common (Action(..), css)
 import CSS (border, borderRadius, display, em, flex, flexDirection, fontSize, height, margin, marginLeft, marginTop, minHeight, pct, position, px, relative, row, solid, vh, width, left, borderBottom)
+import Data.Foldable (sequence_)
+import Halogen as H
 import Halogen.HTML as HH
 import Halogen.HTML.CSS as CSS
+import Halogen.HTML.Elements as HE
 import Halogen.HTML.Events as HE
 import Halogen.HTML.Properties as HP
+import Web.HTML.HTMLAudioElement (create', toHTMLMediaElement)
+import Web.HTML.HTMLMediaElement (play)
+import Data.Functor ( void )
+-- import Web.Audio
 
 -- inputBar :: forall w . HH.HTML w Action
 -- inputBar = HH.div 
@@ -58,12 +69,18 @@ simpleInputBar  = HH.div [
                   [
                     css "simple-input-bar"
                     , HP.type_ HP.InputText
-                    --,CSS.style do
-                    --  width $ pct 100.0
-                    -- , CSS.style do
-                    -- fontSize $ px 40.0
-                    -- marginTop $ px 12.0
-                    -- marginLeft $ px 10.0
                     , HE.onValueInput \str -> OpenCurtainToTheRight str
+                    -- , HE.onValueInput \_ -> TypingSound
+                    -- , HE.onValueInput \str -> sequence_
+                    --     [
+                    --       H.raise $ OpenCurtainToTheRight str
+                    --     , H.raise TypingSound]
+                    -- , HE.onValueInput \str -> OpenCurtainToTheRight str
+                    -- , HE.onValueInput \_ -> TypingSound
                   ]
                ]
+
+-- mediaElem ∷ Effect HTMLMediaElement
+-- mediaElem = do  
+--   audioEl <- create' "soundfile-url"
+--   pure $ toHTMLMediaElement audioEl             

@@ -4,7 +4,7 @@ import Prelude
 
 import App.Common (Action(..), css)
 import App.Colours(green)
-import CSS (fontSize, height, margin, marginLeft, marginTop, px, width, pct, border, solid)
+import CSS (fontSize, height, margin, marginLeft, marginTop, px, width, pct, border, solid, vh, em)
 import Halogen.HTML as HH
 import Halogen.HTML.CSS as CSS
 import Halogen.HTML.Events as HE
@@ -37,7 +37,7 @@ simpleInputBar :: forall w . HH.HTML w Action
 simpleInputBar  = HH.div [
   CSS.style do
       width $ pct 100.0
-      height $ px 80.0
+      height $ em 7.0
       border solid (px 3.0) green
 ] [
                  HH.input

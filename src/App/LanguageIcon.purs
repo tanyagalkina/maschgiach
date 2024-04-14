@@ -31,8 +31,8 @@ languageIcon lang = HH.div [
           HH.img 
           [
             CSS.style do 
-             width $ px 40.0
-             height $ px 40.0
+             width $ px 60.0
+             height $ px 60.0
           , HP.src (chooseIcon lang)
            , HP.alt "language"
            -- the language will be ignored for now, the button will switch to the nex in the list

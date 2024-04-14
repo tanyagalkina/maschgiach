@@ -2,9 +2,9 @@ module App.InputBar (simpleInputBar) where
 
 import Prelude
 
-import App.Colours (orange)
+import App.Colours (orange, brown)
 import App.Common (Action(..), css)
-import CSS (border, borderRadius, display, em, flex, flexDirection, fontSize, height, margin, marginLeft, marginTop, minHeight, pct, position, px, relative, row, solid, vh, width, left)
+import CSS (border, borderRadius, display, em, flex, flexDirection, fontSize, height, margin, marginLeft, marginTop, minHeight, pct, position, px, relative, row, solid, vh, width, left, borderBottom)
 import Halogen.HTML as HH
 import Halogen.HTML.CSS as CSS
 import Halogen.HTML.Events as HE
@@ -39,10 +39,10 @@ simpleInputBar  = HH.div [
       width $ pct 90.0
       margin (pct 0.0) (pct 5.0) (pct 0.0) (pct 5.0)
       minHeight $ px 95.0
-      border solid (px 3.0) orange
+      borderBottom solid (px 3.0) brown
       display flex
       flexDirection row
-      borderRadius (px 10.0) (px 10.0) (px 10.0) (px 10.0)
+      -- borderRadius (px 10.0) (px 10.0) (px 10.0) (px 10.0)
 
 ] [
                 HH.img [

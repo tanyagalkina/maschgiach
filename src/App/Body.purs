@@ -127,7 +127,7 @@ render state =
                           fontFamily ["monospace"] (monospace :|[] )
                       ]
                       [
-                         simpleInputBar
+                           simpleInputBar
                           , simpleShowResults state.results state.cardDisplayLanguage
                           -- , card state.cardAppear state.currentCard state.cardDisplayLanguage
                           -- , card2 state.moveCurtain state.card

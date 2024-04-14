@@ -5,7 +5,7 @@ import Prelude
 import App.Colours (green, marine, skyblue, brightred, yellow, orange, black, lightred)
 import App.Common (Action(..), CardDisplayLanguage(English, Russian, German, Hebrew, French, Latvian), css)
 import App.Curtain (card)
-import CSS (Color, backgroundColor, borderLeft, borderRadius, color, em, maxHeight, minHeight, paddingTop, px, solid, vh)
+import CSS (Color, backgroundColor, borderLeft, borderRadius, color, em, maxHeight, minHeight, paddingTop, px, solid, vh, margin, borderBottom)
 import Data.Array (fromFoldable, elem)
 import Data.ENumberTypes (ENumber, ENumberList, Kashrut(..), Source(..))
 import Data.Head (showSources, showK)
@@ -43,7 +43,9 @@ simpleRenderENumber eNumber lang =
           ,CSS.style do
           -- backgroundColor nogrey
           color black
-          borderLeft solid (em $ 0.8) $ getBackgroundForKashrut eNumber 
+          borderLeft solid (em $ 0.3) $ getBackgroundForKashrut eNumber 
+          borderBottom solid (em $ 0.1) $  getBackgroundForKashrut eNumber 
+          margin (px 5.0) (px 5.0) (px 5.0) (px 5.0)
             -- (backgroundColor $ (getBackgroundForKashrut eNumber))
             -- (color $ getColorForKashrut eNumber)
             -- my_style make reusable

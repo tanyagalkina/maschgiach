@@ -2,6 +2,7 @@ module App.Body (component) where
 
 import Prelude
 
+import App.Assets (typeSound)
 import App.Common (Action(..), CardDisplayLanguage(..), State, css)
 import App.Curtain (curtain, card)
 import App.Footer (footer)
@@ -102,7 +103,8 @@ handleAction = case _ of
 
 mediaElem :: Effect HTMLMediaElement
 mediaElem = do  
-  audioEl <- create' "../assets/click-button.mp3"
+  -- audioEl <- create' "../assets/click-button.mp3"
+  audioEl <- create' typeSound
   log "audio element created"
   pure $ toHTMLMediaElement audioEl             
 

@@ -6,6 +6,7 @@ module App.InputBar
 
 import Prelude
 
+import App.Assets (ampelmann)
 import App.Colours (brown)
 import App.Common (Action(..), css)
 import CSS (borderBottom, display, flex, flexDirection, height, margin, minHeight, pct, position, px, relative, row, solid, width)
@@ -32,7 +33,8 @@ simpleInputBar  = HH.div [
                   width $ px 80.0
                   height $ px 80.0
                   margin (px 10.0 )   (px 10.0 )   (px 10.0 )  (px 10.0 )
-               ,  HP.src "../assets/AmpelmannLupe.svg"
+              --  ,  HP.src "../assets/AmpelmannLupe.svg"
+               , HP.src ampelmann
                , HP.alt "lupe"
               ]
                  , HH.input

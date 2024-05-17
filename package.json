@@ -1,17 +1,18 @@
 {
-  "private": true,
-  "devDependencies": {
-    "parcel": "2.7.0",
-    "purescript": "^0.15.4",
-    "spago": "^0.20.9"
-  },
+  "name": "maschgiach",
+  "source": "dev/index.html",
   "scripts": {
-    "build": "spago build",
+    "start": "parcel dev/index.html --open",
     "test": "spago test",
-    "serve": "parcel dev/index.html --open",
-    "build-prod": "rm -rf prod && mkdir -p prod && cp dev/index.html prod/ && spago bundle-app --to prod/index.js && parcel build prod/index.html"
+    "build": "npx spago build && parcel build dev/index.html"
   },
-  "dependencies": {
-    "chalk": "^5.3.0"
+  "devDependencies": {
+    "@parcel/compressor-brotli": "^2.12.0",
+    "@parcel/compressor-gzip": "^2.12.0",
+    "@parcel/packager-raw-url": "^2.12.0",
+    "@parcel/transformer-webmanifest": "^2.12.0",
+    "parcel": "2.12.0",
+    "purescript": "^0.15.15",
+    "spago": "^0.21.0"
   }
 }

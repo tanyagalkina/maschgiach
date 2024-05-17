@@ -1,0 +1,10 @@
+node_modules/
+.spago/
+dist/
+.parcel_cache/
+.psc-ide-port
+.purs-repl
+output/
+# check if need the lock files
+package-lock.json
+yarn.lock

@@ -2,6 +2,7 @@ module App.LanguageIcon ( languageIcon ) where
 
 import Prelude
 
+import App.Assets (englishIcon, frenchIcon, germanIcon, hebrewIcon, latvianIcon, russianIcon)
 import App.Common (Action(..), CardDisplayLanguage(..))
 import CSS (marginLeft, marginTop, marginBottom, pct, em, width, height, px)
 import Halogen.HTML as HH
@@ -32,10 +33,10 @@ languageIcon lang = HH.div [
 
 chooseIcon :: CardDisplayLanguage -> String
 chooseIcon lang = case lang of 
-                    English -> "../assets/english.png"
-                    Russian -> "../assets/russian.png"
-                    German -> "../assets/german.png"
-                    Hebrew -> "../assets/ivrit3.png"
-                    French -> "../assets/french.png"
-                    Latvian -> "../assets/latvian.png"
+                    English -> englishIcon
+                    Russian -> russianIcon
+                    German -> germanIcon
+                    Hebrew -> hebrewIcon
+                    French -> frenchIcon
+                    Latvian -> latvianIcon
                                 

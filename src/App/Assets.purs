@@ -9,4 +9,5 @@ foreign import hebrewIcon :: String
 foreign import latvianIcon :: String
 foreign import russianIcon :: String
 foreign import frenchIcon :: String
+foreign import roshTov :: String
 

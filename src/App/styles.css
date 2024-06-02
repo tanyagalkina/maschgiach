@@ -3,6 +3,7 @@ html, body {
   width: 100%;
   min-width: 100vw; /* Ensure at least the full width of the viewport */
   min-height: 100vh; /* Ensure at least the full height of the viewport */
+  border: solid 6px red;
   overflow-x: hidden;
   overflow-y: hidden; 
   margin: 0; /* Remove default margin */
@@ -237,4 +238,10 @@ html, body {
 .resources {
   padding: 0.8em;
   font-size: 0.8em;
-}
+}/* Rosh_Tov Logo */
+
+
+
+
+
+

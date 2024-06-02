@@ -5,10 +5,10 @@ import Prelude
 import App.Assets (typeSound)
 import App.Common (Action(..), CardDisplayLanguage(..), State, css)
 import App.Curtain (curtain, card)
-import App.Footer (footer)
-import App.InputBar (simpleInputBar)
-import App.LanguageIcon (languageIcon)
-import App.ShowResults (showResults)
+import App.Footer (footer, newFooter)
+import App.InputBar (simpleInputBar, searchBar)
+import App.LanguageIcon (languageIcon, headerWithLangSwitches)
+import App.ShowResults (showResults, resultsAndCard)
 import CSS (alignItems, column, display, flex, flexDirection, flexStart, height, justifyContent, paddingTop)
 import CSS.Flexbox (spaceAround)
 import CSS.Font (fontFamily, monospace)
@@ -44,7 +44,7 @@ mainContainerFlexVariantStyle = CSS.style do
             display flex 
             flexDirection column
             overflow hidden
-            justifyContent spaceAround
+            -- justifyContent spaceAround
               -- TODO: understand the font-family css rule
               -- fontFamily ["some string"] (systemUi :|[] )
             fontFamily ["some string"] (monospace :|[] )
@@ -57,34 +57,40 @@ render state =
             HH.div [ 
                     HP.id "main-container"
                     ,mainContainerFlexVariantStyle
-            ] 
+            ]
             [
-              languageIcon state.cardDisplayLanguage
-              , HH.div [
-                         css "center-container"
-                ]
-                [
-                  HH.div[
-                          css "search-and-results"
-                         ,CSS.style do
-                          display flex
-                          flexDirection column
-                          -- justifyContent spaceAround
-                          alignItems flexStart
-                          height $ vh 100.0
-                          paddingTop $ vh 5.0
-                          -- border solid (px 3.0) brightred
-                          fontFamily ["monospace"] (monospace :|[] )
-                      ]
-                      [
-                           simpleInputBar
-                          , showResults state.results state.cardDisplayLanguage
-                      ]
-                  , card state.cardAppear state.currentCard state.cardDisplayLanguage    
-                  , curtain state.moveCurtain
-                ]
-          ,footer
-]]
+                headerWithLangSwitches state.cardDisplayLanguage
+              , searchBar
+              , resultsAndCard state.results state.cardDisplayLanguage
+              , newFooter
+            ] 
+          --   [
+          --     languageIcon state.cardDisplayLanguage
+          --     , HH.div [
+          --                css "center-container"
+          --       ]
+          --       [
+          --         HH.div[
+          --                 css "search-and-results"
+          --                ,CSS.style do
+          --                 display flex
+          --                 flexDirection column
+          --                 -- justifyContent spaceAround
+          --                 alignItems flexStart
+          --                 height $ vh 100.0
+          --                 paddingTop $ vh 5.0
+          --                 -- border solid (px 3.0) brightred
+          --                 fontFamily ["monospace"] (monospace :|[] )
+          --             ]
+          --             [
+          --                  simpleInputBar
+          --                 , showResults state.results state.cardDisplayLanguage
+          --             ]
+          --         , card state.cardAppear state.currentCard state.cardDisplayLanguage    
+          --         , curtain state.moveCurtain
+          --       ]
+          -- ,footer
+        ]
 
 handleAction :: forall o m. MonadEffect m => Action → H.HalogenM State Action () o m Unit
 handleAction = case _ of

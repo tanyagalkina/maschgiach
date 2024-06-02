@@ -1,9 +1,13 @@
-module App.Colours (crimsonred, brown, green, marine, nogrey, skyblue, softred, brightred, yellow, orange, black, lightred) where
+module App.Colours (crimsonred, brown, green, marine, nogrey, skyblue, softred, brightred, yellow, orange, black,
+red, lightred, violet) where
 
 import CSS.Color (Color, rgba)
 
 orange :: Color
 orange = rgba 255 165 0 1.0
+
+red :: Color
+red = rgba 255 0 0 0.8
 
 green :: Color
 green = rgba 0 255 0 0.8
@@ -68,3 +72,6 @@ brown = rgba 118 18 18 1.0
 
 brightred :: Color
 brightred = rgba 255 69 0 1.0
+
+violet :: Color
+violet = rgba 50 23 138 1.0

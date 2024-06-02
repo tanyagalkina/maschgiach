@@ -80,7 +80,7 @@ showKFrench kashrut = case kashrut of
   NeedHashgohoWholeYear -> "Nécessite une surveillance rabbinique toute l'année"
   KosherForbidden -> "Cacher, INTERDIT"
 
-showKLatvian :: Kashrut -> String
+showKLatvian :: Kashrut -> String 
 showKLatvian kashrut = case kashrut of
   NotKosher -> "Nav košers!"
   KosherIncludingPassover -> "Košers ieskaitot Pēsah"

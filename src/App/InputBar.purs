@@ -1,19 +1,44 @@
 module App.InputBar
   ( 
    simpleInputBar
+  , searchBar
   )
   where
 
 import Prelude
 
-import App.Assets (ampelmann)
-import App.Colours (brown)
+import App.Assets (ampelmann, roshTov)
+import App.Colours (brown, violet)
 import App.Common (Action(..), css)
-import CSS (borderBottom, display, flex, flexDirection, height, margin, minHeight, pct, position, px, relative, row, solid, width)
+import CSS (backgroundColor, border, borderBottom, display, flex, flexDirection, height, margin, minHeight, pct, position, px, relative, row, solid, width)
+import CSS.Selector (with)
 import Halogen.HTML as HH
 import Halogen.HTML.CSS as CSS
 import Halogen.HTML.Events as HE
 import Halogen.HTML.Properties as HP
+
+searchBar:: forall w . HH.HTML w Action
+searchBar = HH.div [
+          CSS.style do
+            border solid (px 2.0) brown
+            -- width $ pct 100.0
+            height $ px 80.0
+            display flex
+            flexDirection row
+            backgroundColor violet
+          ]
+        [
+         HH.img [
+          -- CSS.style do
+          --   width $ px 80.0
+          --   height $ px 80.0
+          --   margin (px 10.0 )   (px 10.0 )   (px 10.0 )  (px 10.0 )
+            HP.src roshTov
+            , HP.alt "roshTov"
+          ] 
+        , HH.input [
+         ]
+      ]
 
 simpleInputBar :: forall w . HH.HTML w Action
 simpleInputBar  = HH.div [

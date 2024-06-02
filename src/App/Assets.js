@@ -6,5 +6,6 @@ import hebrewIcon from '../../src/assets/ivrit3.png'
 import latvianIcon from '../../src/assets/latvian.png'
 import russianIcon from '../../src/assets/russian.png'
 import frenchIcon from '../../src/assets/french.png'
+import roshTov from '../../src/assets/roshTov.svg'
 
-export { ampelmann, typeSound, englishIcon, germanIcon, hebrewIcon, latvianIcon, russianIcon, frenchIcon}
+export { ampelmann, typeSound, englishIcon, germanIcon, hebrewIcon, latvianIcon, russianIcon, frenchIcon, roshTov}

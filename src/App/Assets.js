@@ -7,5 +7,8 @@ import latvianIcon from '../../src/assets/latvian.png'
 import russianIcon from '../../src/assets/russian.png'
 import frenchIcon from '../../src/assets/french.png'
 import roshTov from '../../src/assets/roshTov.svg'
+import magnifyingGlass from '../../src/assets/magnifying-glass.svg'
+import rightArrow from '../../src/assets/RightArrow.svg'
+import rightArrowWhite from '../../src/assets/rightArrowWhite.svg' 
 
-export { ampelmann, typeSound, englishIcon, germanIcon, hebrewIcon, latvianIcon, russianIcon, frenchIcon, roshTov}
+export { ampelmann, typeSound, englishIcon, germanIcon, hebrewIcon, latvianIcon, russianIcon, frenchIcon, roshTov, magnifyingGlass, rightArrow, rightArrowWhite}

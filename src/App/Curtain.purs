@@ -1,4 +1,4 @@
-module App.Curtain (curtain, card) where
+module App.Curtain (curtain, card, newCard) where
 
 import Prelude
 
@@ -13,10 +13,18 @@ import Halogen.HTML.Events as HE
 import Halogen.HTML.Properties as HP
 
 
+newCard :: forall w. Boolean -> Maybe ENumber -> CardDisplayLanguage -> HH.HTML w Action
+newCard open e_number lang =  HH.div [ 
+                   HP.classes $ getCardClassList open
+                   , HE.onClick $ \_ -> ClearCard 
+                   ]
+                   []
+
+
 card :: forall w. Boolean -> Maybe ENumber -> CardDisplayLanguage -> HH.HTML w Action
 card open e_number lang =  HH.div [ 
                    HP.classes $ getCardClassList open
-                    , HE.onClick $ \_ -> ClearCard 
+                    -- , HE.onClick $ \_ -> ClearCard 
                    ]
                    [
                     -- TODO: clean the styles here, it is not clear what is the purpose of the styles
@@ -33,6 +41,7 @@ card open e_number lang =  HH.div [
                     ]
                     ,HH.div[
                       HP.id "curtain-content-two"
+                       , HE.onClick $ \_ -> ClearCard
                       , CSS.style do
                         margin (px 60.0) (px 20.0) (px 40.0) (px 10.0)
                         fontSize $ px 60.0

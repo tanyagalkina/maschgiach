@@ -45,6 +45,7 @@
   , "strings"
   , "tailrec"
   , "test-unit"
+  , "these"
   , "transformers"
   , "tuples"
   , "unfoldable"

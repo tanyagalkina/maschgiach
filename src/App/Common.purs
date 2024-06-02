@@ -1,4 +1,4 @@
-module App.Common(Action (OpenCurtainToTheRight, Search, OpenCard, ClearCard, SetCardDisplayLanguage, TypingSound) , State, css, CardDisplayLanguage(..)) where
+module App.Common(Action (DoSearch, Search, OpenCard, ClearCard, SetCardDisplayLanguage, TypingSound) , State, css, CardDisplayLanguage(..)) where
 
 import Prelude
 
@@ -11,11 +11,14 @@ import Web.HTML.HTMLMediaElement (HTMLMediaElement)
 
 data CardDisplayLanguage = English | Russian | German | Hebrew | French | Latvian
 
+derive instance eqCardDisplayLanguage :: Eq CardDisplayLanguage
+
+
 type State
-  = { moveCurtain :: Boolean, results:: ENumberList, currentCard:: Maybe ENumber, cardAppear ::Boolean, cardDisplayLanguage:: CardDisplayLanguage, typingSound:: Effect HTMLMediaElement}
+  = { moveCurtain :: Boolean, results:: ENumberList, currentCard:: Maybe ENumber, cardAppear ::Boolean, cardDisplayLanguage:: CardDisplayLanguage, typingSound:: Effect HTMLMediaElement, searchStr:: String}
 
 data Action
-  = OpenCurtainToTheRight String | Search String | OpenCard ENumber | ClearCard | SetCardDisplayLanguage CardDisplayLanguage
+  = DoSearch String | Search String | OpenCard ENumber | ClearCard | SetCardDisplayLanguage CardDisplayLanguage
    | TypingSound
 
 css :: forall r i. String -> HH.IProp (class :: String | r) i

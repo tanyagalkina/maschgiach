@@ -10,4 +10,7 @@ foreign import latvianIcon :: String
 foreign import russianIcon :: String
 foreign import frenchIcon :: String
 foreign import roshTov :: String
+foreign import magnifyingGlass :: String
+foreign import rightArrow :: String
+foreign import rightArrowWhite :: String
 

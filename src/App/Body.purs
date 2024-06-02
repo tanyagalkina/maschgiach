@@ -4,7 +4,7 @@ import Prelude
 
 import App.Assets (typeSound)
 import App.Common (Action(..), CardDisplayLanguage(..), State, css)
-import App.Curtain (curtain, card)
+import App.Curtain (curtain, card, newCard)
 import App.Footer (footer, newFooter)
 import App.InputBar (simpleInputBar, searchBar)
 import App.LanguageIcon (languageIcon, headerWithLangSwitches)
@@ -26,6 +26,7 @@ import Halogen as H
 import Halogen.HTML as HH
 import Halogen.HTML.CSS as CSS
 import Halogen.HTML.Properties as HP
+import Web.DOM.Document (doctype)
 import Web.HTML.HTMLAudioElement (create', toHTMLMediaElement)
 import Web.HTML.HTMLMediaElement (HTMLMediaElement, play)
 
@@ -33,7 +34,7 @@ component :: forall query input output m. MonadEffect m => H.Component query inp
 component =
   H.mkComponent
     { 
-     initialState: \_ -> { moveCurtain: false, results: empty, currentCard: Nothing, cardAppear: false, cardDisplayLanguage : English, typingSound: mediaElem}
+     initialState: \_ -> { moveCurtain: false, results: empty, currentCard: Nothing, cardAppear: false, cardDisplayLanguage : English, typingSound: mediaElem, searchStr: ""}
     , render
     , eval: H.mkEval H.defaultEval { handleAction = handleAction }
     }
@@ -60,8 +61,11 @@ render state =
             ]
             [
                 headerWithLangSwitches state.cardDisplayLanguage
-              , searchBar
-              , resultsAndCard state.results state.cardDisplayLanguage
+              , searchBar $ state.searchStr
+--               card :: forall w. Boolean -> Maybe ENumber -> CardDisplayLanguage -> HH.HTML w Action
+-- card open e_number lang =  HH.div [ 
+              , (case state.currentCard of Just(_) -> card state.cardAppear state.currentCard state.cardDisplayLanguage 
+                                           Nothing -> resultsAndCard state.results state.cardDisplayLanguage)
               , newFooter
             ] 
           --   [
@@ -94,15 +98,20 @@ render state =
 
 handleAction :: forall o m. MonadEffect m => Action → H.HalogenM State Action () o m Unit
 handleAction = case _ of
-  OpenCurtainToTheRight str -> do
+  DoSearch str -> do
                                   -- TODO: try to use AudioCtx to reduce sound delay
                                   -- audioElem <- H.gets _.typingSound
                                   -- H.liftEffect $ audioElem >>= play
-                                  H.modify_ \st -> st { moveCurtain = true, results = searchNumber str }
-  Search str -> H.modify_ \st -> st { results = searchNumber str }
-  OpenCard eNumber -> H.modify_ \st -> st {currentCard = Just eNumber, cardAppear = true }
-  ClearCard -> H.modify_ \st -> st { currentCard = Nothing, moveCurtain = true, cardAppear = false } 
-  SetCardDisplayLanguage _lang -> H.modify_ \st -> st { cardDisplayLanguage = nextLang st.cardDisplayLanguage }
+                                  H.modify_ \st -> st { searchStr = str, moveCurtain = true, results = searchNumber str }
+  Search str -> H.modify_ \st -> st { searchStr = str, results = searchNumber str }
+  OpenCard eNumber -> do
+                     log "Opening Card"
+                     H.modify_ \st -> st {currentCard = Just eNumber, cardAppear = true }
+  ClearCard -> do
+              log "Clearing card"
+              H.modify_ \st -> st { currentCard = Nothing, moveCurtain = true, cardAppear = false } 
+  SetCardDisplayLanguage lang -> H.modify_ \st -> st { cardDisplayLanguage = lang }
+  -- SetCardDisplayLanguage _lang -> H.modify_ \st -> st { cardDisplayLanguage = nextLang st.cardDisplayLanguage }
   TypingSound -> do
         audioElem <- H.liftEffect mediaElem
         H.liftEffect $ play audioElem

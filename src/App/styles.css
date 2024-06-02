@@ -36,6 +36,11 @@ html, body {
   }
 } 
 
+.new-input-bar {
+  border: none;
+  outline: none;
+}
+
 /*  relative to parent component */
 .input-bar {
   position: relative;

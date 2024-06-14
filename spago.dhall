@@ -39,6 +39,7 @@
   , "parallel"
   , "prelude"
   , "profunctor"
+  , "profunctor-lenses"
   , "random"
   , "refs"
   , "st"

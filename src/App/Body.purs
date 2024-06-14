@@ -26,7 +26,6 @@ import Halogen as H
 import Halogen.HTML as HH
 import Halogen.HTML.CSS as CSS
 import Halogen.HTML.Properties as HP
-import Web.DOM.Document (doctype)
 import Web.HTML.HTMLAudioElement (create', toHTMLMediaElement)
 import Web.HTML.HTMLMediaElement (HTMLMediaElement, play)
 
@@ -64,6 +63,7 @@ render state =
               , searchBar $ state.searchStr
 --               card :: forall w. Boolean -> Maybe ENumber -> CardDisplayLanguage -> HH.HTML w Action
 -- card open e_number lang =  HH.div [ 
+                -- FIXME: refactor this ugly piece
               , (case state.currentCard of Just(_) -> card state.cardAppear state.currentCard state.cardDisplayLanguage 
                                            Nothing -> resultsAndCard state.results state.cardDisplayLanguage)
               , newFooter

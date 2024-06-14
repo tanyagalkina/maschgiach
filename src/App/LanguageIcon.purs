@@ -42,42 +42,38 @@ headerWithLangSwitches lang = HH.div [
             display flex
             -- flexDirection row is it default direction ? 
             alignItems center
-            justifyContent spaceBetween -- FIXME: current:  is this needed? 
+            justifyContent spaceAround -- FIXME: current:  is this needed? 
             --  marginLeft $ pct 90.0
             top $ px 0.0
             -- in Figma: height $ px 92.0 (46 + 46 + 46)
-            height $ px 136.0
+            height $ px 80.0
             -- width $ px 428.0
             --  marginBottom $ em 1.5 
-            border solid (px $ 2.0) red
+            -- border solid (px $ 2.0) red
          ]
          [
           HH.div[
             CSS.style do
               fontFamily ["Arial"] (monospace :|[] )
-              fontSize $ px 40.0
+              -- fontSize $ px 20.0
+              fontSize $ pct 100.0
               fontWeight $ bold
               color $ violet
-              border solid (px 2.0) brown
-              -- marginTop $ px 60.0
-              -- marginLeft $ px 20.0
-
-            --   width $ pct 100.0
-            --   height $ px 100.0
-            --   top $ px 0.00
-
+              -- border solid (px 2.0) brown
+              marginTop $ px 40.0
           ]
           [HH.text "MaschgiachApp"]
           , HH.div [
             CSS.style do
-              border solid (px 4.0) green
+              -- border solid (px 4.0) green
               display flex
               alignItems center
-              justifyContent spaceBetween
+              justifyContent spaceAround
               -- Figma: width $ px 144.0 FIXME: current: clrearify absolute and relative sizes
               -- Figma: height $ px 25.0
-              width $ px 300.0
-              height $ px 50.0
+              marginTop $ px 30.0
+              width $ px 250.0
+              height $ px 30.0
             ]
             [
               HH.img 
@@ -130,9 +126,9 @@ headerWithLangSwitches lang = HH.div [
 
 getLangIconStyle ∷ ∀ (i4 ∷ Type) (r5 ∷ Row Type). CardDisplayLanguage → CardDisplayLanguage → HP.IProp ( style ∷ String | r5 ) i4
 getLangIconStyle buttonLang currentLang = CSS.style do 
-                  width $ px 50.0
-                  height $ px 50.0
-                  --  opacity $ 0.5
+                  width $ px 30.0
+                  height $ px 30.0
+                  --  opacity $ .5
                   opacity $ getOpacity buttonLang currentLang
 getOpacity :: CardDisplayLanguage -> CardDisplayLanguage -> Number
 getOpacity buttonLang currentLang = if buttonLang == currentLang then 1.0 else 0.3

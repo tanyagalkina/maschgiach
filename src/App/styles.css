@@ -1,22 +1,32 @@
 html, body {
   height: 100%;
   width: 100%;
-  min-width: 100vw; /* Ensure at least the full width of the viewport */
-  min-height: 100vh; /* Ensure at least the full height of the viewport */
-  border: solid 6px red;
+  /*min-width: 100vw; /* Ensure at least the full width of the viewport */
+  /*min-height: 100vh; Ensure at least the full height of the viewport */
+  /*border: solid 6px red;*/
   overflow-x: hidden;
   overflow-y: hidden; 
   margin: 0; /* Remove default margin */
+  padding: 0;
+  box-sizing: border-box;
 }
 
 #main-container {
-  height: 100%;
-  width: 100%;
-  min-width: 100vw; /* Ensure at least the full width of the viewport */
-  min-height: 100vh; /* Ensure at least the full height of the viewport */
-  overflow-x: hidden;
-  overflow-y: hidden; 
+  height: 100vh;
+  width: 100vw;
+ /* min-width: 100vw; /* Ensure at least the full width of the viewport */
+  min-height: 100vh; /*Ensure at least the full height of the viewport */
+  overflow: hidden;
+  box-sizing: border-box;
+  /*overflow-x: hidden;*/
+  overflow-y: auto;
+  /* border: solid 6px greenyellow; */
 }
+
+* {
+  box-sizing: inherit;
+}
+
 
 .center-container {
   display: grid;
@@ -36,6 +46,12 @@ html, body {
   }
 } 
 
+
+.simple-result 
+{
+  overflow: hidden;
+
+}
 .new-input-bar {
   border: none;
   outline: none;
@@ -58,13 +74,6 @@ html, body {
   vertical-align: bottom;
   box-sizing: border-box;
   /* border: solid 3px orange; */
-}
-
-.simple-results-bar {
-  /* border: solid 3px green; */
-  overflow-y: auto;
-  font-size: 40px;
-
 }
 
 .search-and-results {

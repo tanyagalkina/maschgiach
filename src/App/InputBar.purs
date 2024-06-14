@@ -29,8 +29,8 @@ searchBar str = HH.div [
           CSS.style do
             border solid (px 2.0) brown
             -- width $ pct 100.0
-            -- in Figma: height $ px 80.0
-            height $ px 120.0
+            height $ px 80.0
+            -- יeight $ px 120.0
             display flex
             flexDirection row -- FIXME: current is row a default ?  
             backgroundColor violet
@@ -39,9 +39,9 @@ searchBar str = HH.div [
         [
          HH.img [
           CSS.style do
-          --   width $ px 80.0
-          --   height $ px 80.0
-             margin (px 20.0 )   (px 20.0 )   (px 20.0 )  (px 40.0 )
+             width $ px 60.0
+             height $ px 50.0
+             margin (px 15.0 )   (px 15.0 )   (px 15.0 )  (px 15.0 )
             ,HP.src roshTov
             , HP.alt "roshTov"
           ] 
@@ -53,7 +53,8 @@ searchBar str = HH.div [
             backgroundColor white
             -- FIXME: current: how to make elements proportional ?  pct or px ??
             width $ pct 80.0
-            margin (px 20.0) (px 20.0) (px 20.0) (px 20.0)
+            height $ px 50.0
+            margin (px 13.0) (px 15.0) (px 15.0) (px 15.0)
             borderRadius (px 50.0) (px 50.0) (px 50.0) (px 50.0)
             justifyContent spaceBetween
           
@@ -62,9 +63,9 @@ searchBar str = HH.div [
           -- FIXME: current: can we style the pleaeholder ? 
             [ HP.src magnifyingGlass
             , CSS.style do 
-                  width $ px 45.0
-                  height $ px 45.0
-                  margin (px 10.0) (px 10.0) (px 10.0) (px 20.0)
+                  width $ px 40.0
+                  height $ px 40.0
+                  margin (px 10.0) (px 10.0) (px 10.0) (px 10.0)
              ]
           , HH.input [
           HP.placeholder "Name or Number"
@@ -72,7 +73,7 @@ searchBar str = HH.div [
           , CSS.style do
             color violet
             width $ pct 85.0
-            height $ px 45.0
+            height $ px 50.0
             fontSize (case str of "" -> px 20.0
                                   _  -> px 30.0)
             -- FIXME: current: could not get it work i PS: border none, outline none 

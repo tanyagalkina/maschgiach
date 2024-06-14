@@ -23,14 +23,14 @@ newCard open e_number lang =  HH.div [
 
 card :: forall w. Boolean -> Maybe ENumber -> CardDisplayLanguage -> HH.HTML w Action
 card open e_number lang =  HH.div [ 
-                   HP.classes $ getCardClassList open
+                   -- HP.classes $ getCardClassList open
                     -- , HE.onClick $ \_ -> ClearCard 
                    ]
                    [
                     -- TODO: clean the styles here, it is not clear what is the purpose of the styles
                     HH.div[
-                     HP.id "curtain-content-one"
-                     , CSS.style do
+                     -- HP.id "curtain-content-one"
+                     CSS.style do
                        margin (px 0.0 )   (px 10.0 )   (px 60.0 )  (px 10.0 ) 
                        fontSize $ px 60.0
                     ] 
@@ -40,8 +40,8 @@ card open e_number lang =  HH.div [
                     -- " This ENumber Dictionary is based on Sefer Mahor LeKaschrut and on Sefer of Rabbi Pantelyat; it is not exhaustive and is meant to be used as a reference only. For more information, please consult a competent Halachic authority."
                     ]
                     ,HH.div[
-                      HP.id "curtain-content-two"
-                       , HE.onClick $ \_ -> ClearCard
+                      -- HP.id "curtain-content-two"
+                       HE.onClick $ \_ -> ClearCard
                       , CSS.style do
                         margin (px 60.0) (px 20.0) (px 40.0) (px 10.0)
                         fontSize $ px 60.0

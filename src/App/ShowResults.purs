@@ -5,10 +5,15 @@ import Prelude
 import App.Assets (rightArrow, rightArrowWhite)
 import App.Colours (green, marine, skyblue, brightred, yellow, orange, black, lightred, white)
 import App.Common (Action(..), CardDisplayLanguage(English, Russian, German, Hebrew, French, Latvian), css)
-import CSS (Color, alignItems, backgroundColor, border, borderBottom, borderLeft, color, display, em, flex, flexGrow, height, justifyContent, margin, marginLeft, maxWidth, pct, px, solid, space, spaceBetween, width, marginRight)
-import CSS.Common (center)
+import CSS (Color, alignItems, backgroundColor, border, borderBottom, borderLeft, color, display, em, flex, flexGrow, fontSize, height, justifyContent, margin, marginLeft, marginRight, maxWidth, pct, px, solid, space, spaceBetween,
+width)
+import CSS.Common (center, auto)
+import CSS.Font (fontFamily, monospace)
+import CSS.Overflow (overflowY, overflow, overflowAuto, overflowInherit)
 import Data.Array (fromFoldable, elem)
 import Data.ENumberTypes (ENumber, ENumberList, Kashrut(..), Source(..))
+import Data.NonEmpty ((:|))
+import Data.Lens (over)
 import Halogen.HTML as HH
 import Halogen.HTML.CSS as CSS
 import Halogen.HTML.Events as HE
@@ -25,7 +30,14 @@ resultsAndCard arr lang = HH.div [
 
 showResults :: forall w. ENumberList -> CardDisplayLanguage -> HH.HTML w Action
 showResults arr lang =
-  HH.div [ css "simple-results-bar" ] $
+  HH.div 
+   [ CSS.style do
+        overflowY $ overflowAuto
+        flexGrow 1.0
+        height (pct 100.0)
+        fontFamily ["Arial"] (monospace :|[] )
+        fontSize (px 20.0)
+   ] $
     map (\eNumber -> renderENumber eNumber lang) (fromFoldable arr)
 
 
@@ -34,6 +46,7 @@ renderENumber eNumber lang =
     HH.div
         [ 
           HE.onClick $ \_ -> OpenCard eNumber 
+          , css "simple-result"
           ,CSS.style do
             height (px 94.0)
             color (case eNumber.kosher of

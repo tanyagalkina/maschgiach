@@ -10,7 +10,7 @@ red :: Color
 red = rgba 255 0 0 0.8
 
 green :: Color
-green = rgba 0 255 0 0.8
+green = rgba 188 237 159 1.0
 
 
 softred :: Color

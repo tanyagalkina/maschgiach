@@ -5,7 +5,7 @@ import Prelude
 import App.Assets (englishIcon, frenchIcon, germanIcon, hebrewIcon, latvianIcon, russianIcon)
 import App.Colours (brown, red, violet, green)
 import App.Common (Action(..), CardDisplayLanguage(..))
-import CSS (alignItems, bold, border, color, display, em, flex, flexDirection, fontFamily, fontSize, fontWeight, header, height, justifyContent, marginBottom, marginLeft, marginTop, opacity, pct, px, row, solid, spaceBetween, spaceAround, top, width)
+import CSS (alignItems, bold, border, color, display, em, flex, flexDirection, fontFamily, fontSize, fontWeight, header, height, justifyContent, marginBottom, marginLeft, marginTop, opacity, pct, px, row, solid, spaceAround, spaceBetween, top, width)
 import CSS.Common (center)
 import CSS.Font (fontFamily, monospace)
 import CSS.TextAlign (justify)
@@ -42,11 +42,11 @@ headerWithLangSwitches lang = HH.div [
             display flex
             -- flexDirection row is it default direction ? 
             alignItems center
-            justifyContent spaceAround -- FIXME: current:  is this needed? 
+            justifyContent spaceBetween -- FIXME: current:  is this needed? 
             --  marginLeft $ pct 90.0
             top $ px 0.0
             -- in Figma: height $ px 92.0 (46 + 46 + 46)
-            height $ px 80.0
+            height $ px 70.0
             -- width $ px 428.0
             --  marginBottom $ em 1.5 
             -- border solid (px $ 2.0) red
@@ -61,6 +61,7 @@ headerWithLangSwitches lang = HH.div [
               color $ violet
               -- border solid (px 2.0) brown
               marginTop $ px 40.0
+              marginLeft $ px 10.0
           ]
           [HH.text "MaschgiachApp"]
           , HH.div [
@@ -72,7 +73,7 @@ headerWithLangSwitches lang = HH.div [
               -- Figma: width $ px 144.0 FIXME: current: clrearify absolute and relative sizes
               -- Figma: height $ px 25.0
               marginTop $ px 30.0
-              width $ px 250.0
+              width $ px 200.0
               height $ px 30.0
             ]
             [

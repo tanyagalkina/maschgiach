@@ -14,7 +14,7 @@ newFooter :: forall w i. HH.HTML w i
 newFooter = HH.div 
                    [
                     CSS.style do
-                      border solid (px 2.0) brown
+                      -- border solid (px 2.0) brown
                       height $ (px 52.0)
                       backgroundColor violet
                       

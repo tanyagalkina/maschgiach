@@ -3,17 +3,16 @@ module App.ShowResults (showResults, resultsAndCard) where
 import Prelude
 
 import App.Assets (rightArrow, rightArrowWhite)
-import App.Colours (green, marine, skyblue, brightred, yellow, orange, black, lightred, white)
+import App.Colours (black, brightred, green, lightred, marine, orangad, orange, skyblue, white, yellow)
 import App.Common (Action(..), CardDisplayLanguage(English, Russian, German, Hebrew, French, Latvian), css)
-import CSS (Color, alignItems, backgroundColor, border, borderBottom, borderLeft, color, display, em, flex, flexGrow, fontSize, height, justifyContent, margin, marginLeft, marginRight, maxWidth, pct, px, solid, space, spaceBetween,
-width)
+import CSS (Color, alignItems, backgroundColor, border, borderBottom, borderLeft, color, display, em, flex, flexGrow, fontSize, height, justifyContent, margin, marginLeft, marginRight, maxWidth, pct, px, solid, space, spaceBetween, width)
 import CSS.Common (center, auto)
 import CSS.Font (fontFamily, monospace)
 import CSS.Overflow (overflowY, overflow, overflowAuto, overflowInherit)
 import Data.Array (fromFoldable, elem)
 import Data.ENumberTypes (ENumber, ENumberList, Kashrut(..), Source(..))
-import Data.NonEmpty ((:|))
 import Data.Lens (over)
+import Data.NonEmpty ((:|))
 import Halogen.HTML as HH
 import Halogen.HTML.CSS as CSS
 import Halogen.HTML.Events as HE
@@ -48,7 +47,7 @@ renderENumber eNumber lang =
           HE.onClick $ \_ -> OpenCard eNumber 
           , css "simple-result"
           ,CSS.style do
-            height (px 94.0)
+            height (px 56.0)
             color (case eNumber.kosher of
               NotKosher -> white
               _ -> black)
@@ -59,7 +58,7 @@ renderENumber eNumber lang =
             backgroundColor $ getBackgroundForKashrut eNumber
           -- borderLeft solid (em $ 0.3) $ getBackgroundForKashrut eNumber 
           -- borderBottom solid (em $ 0.1) $  getBackgroundForKashrut eNumber 
-            borderBottom solid (px $ 2.0) $ white
+            borderBottom solid (px $ 1.0) $ white
          -- margin (px 5.0) (px 5.0) (px 5.0) (px 5.0)
           ]
         [HH.span 
@@ -79,8 +78,8 @@ renderENumber eNumber lang =
                                              _  -> rightArrow ) -- Path to your local icon
             , CSS.style do
             marginRight (px 40.0)
-            width (px 35.0)
-            height (px 35.0)
+            width (px 25.0)
+            height (px 25.0)
         ]
         ]
 
@@ -101,8 +100,9 @@ getBackgroundForKashrut k = if (containsDairy k.source) then skyblue else
         KosherNeedPassoverHashgoho -> marine
         UsuallyKosherRarelyNeedHashgoho -> yellow
         OftenKosherNeedHashgoho -> orange
-        NeedHashgohoWholeYear -> lightred
-        KosherForbidden -> brightred
+        NeedHashgohoWholeYear -> orangad
+        -- KosherForbidden -> brightred
+        KosherForbidden -> lightred
 
 
 containsDairy:: Array Source -> Boolean

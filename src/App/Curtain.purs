@@ -21,7 +21,8 @@ newCard open e_number lang =  HH.div [
                    []
 
 
-card :: forall w. Boolean -> Maybe ENumber -> CardDisplayLanguage -> HH.HTML w Action
+-- FIXME: rm open Boolean of not needed
+card :: forall w. Boolean -> ENumber -> CardDisplayLanguage -> HH.HTML w Action
 card open e_number lang =  HH.div [ 
                    -- HP.classes $ getCardClassList open
                     -- , HE.onClick $ \_ -> ClearCard 
@@ -48,11 +49,10 @@ card open e_number lang =  HH.div [
                     ] [HH.text $ getKashrutFromENumber e_number lang]
                   ]
 
-getTextFromENumber :: Maybe ENumber -> CardDisplayLanguage -> String
-getTextFromENumber e_number lang = 
-  case e_number of
-    Just e -> e.e_number <>  " " <> (getTextByLanguage e lang)  <> " " <> e.description
-    Nothing -> "No ENumber Selected"
+getTextFromENumber :: ENumber -> CardDisplayLanguage -> String
+getTextFromENumber e lang = 
+    
+    e.e_number <>  " " <> (getTextByLanguage e lang)  <> " " <> e.description
 
 getTextByLanguage :: ENumber -> CardDisplayLanguage -> String
 getTextByLanguage e lang = case lang of
@@ -64,11 +64,9 @@ getTextByLanguage e lang = case lang of
   Latvian -> e.name_latvian
 
 
-getKashrutFromENumber :: Maybe ENumber -> CardDisplayLanguage -> String
+getKashrutFromENumber :: ENumber -> CardDisplayLanguage -> String
 getKashrutFromENumber e_number lang = 
-  case e_number of
-    Just e -> (getKashrutByLanguage e lang)
-    Nothing -> "No ENumber Selected"
+    getKashrutByLanguage e_number lang
 
 getKashrutByLanguage :: ENumber -> CardDisplayLanguage -> String
 getKashrutByLanguage e lang = case lang of

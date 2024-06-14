@@ -64,7 +64,7 @@ render state =
 --               card :: forall w. Boolean -> Maybe ENumber -> CardDisplayLanguage -> HH.HTML w Action
 -- card open e_number lang =  HH.div [ 
                 -- FIXME: refactor this ugly piece
-              , (case state.currentCard of Just(_) -> card state.cardAppear state.currentCard state.cardDisplayLanguage 
+              , (case state.currentCard of Just(myCard) -> card state.cardAppear myCard state.cardDisplayLanguage 
                                            Nothing -> resultsAndCard state.results state.cardDisplayLanguage)
               , newFooter
             ] 

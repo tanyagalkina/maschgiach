@@ -1,5 +1,5 @@
 module App.Colours (crimsonred, brown, green, marine, nogrey, skyblue, softred, brightred, yellow, orange, black,
-red, lightred, violet, white) where
+red, orangad, violet, white, lightred) where
 
 import CSS.Color (Color, rgba)
 
@@ -12,6 +12,8 @@ red = rgba 255 0 0 0.8
 green :: Color
 green = rgba 188 237 159 1.0
 
+lightred :: Color
+lightred = rgba 217 95 109 1.0
 
 softred :: Color
 softred = rgba 205 92 92 1.0 
@@ -19,8 +21,8 @@ softred = rgba 205 92 92 1.0
 crimsonred :: Color
 crimsonred = rgba 220 20 60 1.0
 
-lightred :: Color
-lightred = rgba 255 0 0 0.8
+orangad :: Color
+orangad = rgba 255 157 111 1.0
 
 beige :: Color
 beige = rgba 210 180 140 0.8

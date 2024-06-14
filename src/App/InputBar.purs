@@ -27,12 +27,10 @@ import Halogen.HTML.Properties as HP
 searchBar:: forall w . String-> HH.HTML w Action
 searchBar str = HH.div [
           CSS.style do
-            border solid (px 2.0) brown
-            -- width $ pct 100.0
+            -- border solid (px 2.0) brown
             height $ px 80.0
-            -- יeight $ px 120.0
             display flex
-            flexDirection row -- FIXME: current is row a default ?  
+            flexDirection row -- FIXME: is row a default ?  
             backgroundColor violet
             justifyContent spaceBetween
           ]
@@ -54,7 +52,7 @@ searchBar str = HH.div [
             -- FIXME: current: how to make elements proportional ?  pct or px ??
             width $ pct 80.0
             height $ px 50.0
-            margin (px 13.0) (px 15.0) (px 15.0) (px 15.0)
+            margin (px 13.0) (px 15.0) (px 15.0) (px 0.0)
             borderRadius (px 50.0) (px 50.0) (px 50.0) (px 50.0)
             justifyContent spaceBetween
           
@@ -63,8 +61,8 @@ searchBar str = HH.div [
           -- FIXME: current: can we style the pleaeholder ? 
             [ HP.src magnifyingGlass
             , CSS.style do 
-                  width $ px 40.0
-                  height $ px 40.0
+                  width $ px 25.0
+                  height $ px 25.0
                   margin (px 10.0) (px 10.0) (px 10.0) (px 10.0)
              ]
           , HH.input [

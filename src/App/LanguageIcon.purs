@@ -46,7 +46,7 @@ headerWithLangSwitches lang = HH.div [
             --  marginLeft $ pct 90.0
             top $ px 0.0
             -- in Figma: height $ px 92.0 (46 + 46 + 46)
-            height $ px 70.0
+            height $ px 60.0
             -- width $ px 428.0
             --  marginBottom $ em 1.5 
             -- border solid (px $ 2.0) red
@@ -60,7 +60,7 @@ headerWithLangSwitches lang = HH.div [
               fontWeight $ bold
               color $ violet
               -- border solid (px 2.0) brown
-              marginTop $ px 40.0
+              marginTop $ px 30.0
               marginLeft $ px 10.0
           ]
           [HH.text "MaschgiachApp"]
@@ -72,7 +72,7 @@ headerWithLangSwitches lang = HH.div [
               justifyContent spaceAround
               -- Figma: width $ px 144.0 FIXME: current: clrearify absolute and relative sizes
               -- Figma: height $ px 25.0
-              marginTop $ px 30.0
+              marginTop $ px 20.0
               width $ px 200.0
               height $ px 30.0
             ]

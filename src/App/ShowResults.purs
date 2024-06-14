@@ -1,4 +1,4 @@
-module App.ShowResults (showResults, resultsAndCard) where
+module App.ShowResults (showResults, resultsAndCard, getBackgroundForKashrut) where
 
 import Prelude
 
@@ -22,6 +22,7 @@ import Halogen.HTML.Properties as HP
 resultsAndCard :: forall w. ENumberList -> CardDisplayLanguage -> HH.HTML w Action
 resultsAndCard arr lang = HH.div [
   CSS.style do
+    -- FIXME: why is it 100 px ???
     height (px 100.0)
     -- border solid (px 2.0) black
     flexGrow 1.0

@@ -2,14 +2,22 @@
 
 module Data.Nb100to199 (colorENumberList) where
 
-import Data.ENumberTypes (AdditiveGroup(..), ENumber, ENumberList, Kashrut(..), Source(..), emptyENumberList, insertEntry)
+import Affjax.RequestHeader (name)
+import CSS as C
+import CSS as C.I
+import Data.ENumberTypes (AdditiveGroup(..), ENumberList, Kashrut(..), Source(..), ENumber, emptyENumberList, insertEntry)
+import Data.Number (e)
 
 
 infixr 5 insertEntry as ++
 
 colorENumberList :: ENumberList
-colorENumberList = e100 ++ e101 ++ e101a ++ e102 ++ e103 ++ e104 ++ e105 ++ e106 ++ e110 ++ e120
-  ++ e121 ++ e123 ++ e124 ++ e129 ++ e131 ++ e140 ++ e141 ++ e150a
+colorENumberList = e100 ++ e101 ++ e101a ++ e102 ++ e103 ++ e104 ++ e105 ++ e106 ++ e107 ++
+ e110 ++ e111 ++
+ e120 ++ e121 ++ e122 ++ e123 ++ e124 ++ e125 ++ e126 ++ e127 ++ e128 ++ e129 ++
+ e130 ++ e131 ++ e132 ++ e133 ++
+ e140 ++ e141 ++ e142 ++ e143 ++
+ e150a ++ e150b_150d
   ++ emptyENumberList
 
 -- seed data ---
@@ -133,6 +141,21 @@ e106 = {
   , kosher: KosherNeedPassoverHashgoho
 }
 
+e107 :: ENumber
+e107 = {
+  name_english: "Yellow 2G"
+  , name_russian: "Желтый 2G"
+  , name_german: "Gelb 2G"
+  , name_hebrew: "2G צהוב "
+  , name_french: "Jaune 2G"
+  , name_latvian: "Dzeltenais 2G"
+  , e_number: "E107"
+  , group: Colour
+  , source: [Synthetic]
+  , description: "Yellow colouring"
+  , kosher: KosherIncludingPassover
+}
+
 e110 ∷ ENumber
 e110 = {
   name_english: "Sunset Yellow FCF, Orange Yellow S"
@@ -148,10 +171,25 @@ e110 = {
   , kosher: KosherIncludingPassover
 }
 
+e111 :: ENumber
+e111 = {
+  name_english: "Orange GGN"
+  , name_russian: "Оранжевый GGN"
+  , name_german: "Orange GGN"
+  , name_hebrew: "כתום GGN"
+  , name_french: "Orange GGN"
+  , name_latvian: "Oranžais GGN"
+  , e_number: "E111"
+  , group: Colour
+  , source: [Synthetic]
+  , description: "Orange colouring"
+  , kosher: KosherIncludingPassover
+}
+
 e120 :: ENumber
 e120 = {
   name_english: "Cochineal"
-  , name_russian: "Кошениль"
+  , name_russian: "Экстракт кошинели, Карминовая кислота, Кармин"
   , name_german: "Cochenille (Echtes Karmin)"
   , name_hebrew: "כרמין"
   , name_french: "Cochenille"
@@ -175,7 +213,22 @@ e121 = {
   , group: Colour
   , source: [Synthetic]
   , description: "Red colouring"
-  , kosher: KosherForbidden 
+  , kosher: KosherForbidden
+}
+
+e122 :: ENumber
+e122 = {
+  name_english: "Azorubine, Carmoisine"
+  , name_russian: "Азорубин, Кармуазин"
+  , name_german: "Azorubin, Carmoisin"
+  , name_hebrew: "אזורובין, כרמואיזין"
+  , name_french: "Azorubine, Carmoisine"
+  , name_latvian: "Azorubīns, Karmozīns"
+  , e_number: "E122"
+  , group: Colour
+  , source: [Synthetic, Dangerous]
+  , description: "Red colouring; C.I: 14720, Dangerous"
+  , kosher: KosherIncludingPassover
 }
 
 
@@ -205,7 +258,67 @@ e124 = {
   , e_number: "E124"
   , group: Colour
   , source: [Synthetic, Dangerous]
+  , description: "Red colouring; C.I: 16255, Dangerous"
+  , kosher: KosherIncludingPassover
+}
+
+e125 :: ENumber
+e125 = {
+  name_english: "Ponceau SX, Scarlet GN"
+  , name_russian: "Понсо SX, Скарлет GN"
+  , name_german: "Ponceau SX, Scarlet GN"
+  , name_hebrew: "פונסו SX, סקרלט GN"
+  , name_french: "Ponceau SX, Scarlet GN"
+  , name_latvian: "Ponso SX, Skarlets GN"
+  , e_number: "E125"
+  , group: Colour
+  , source: [Synthetic]
+  , description: "Red colouring; C.I: 14700"
+  , kosher: KosherIncludingPassover
+}
+
+e126 :: ENumber
+e126 = {
+  name_english: "Ponceau 6R"
+  , name_russian: "Понсо 6R"
+  , name_german: "Ponceau 6R"
+  , name_hebrew: "פונסו 6R"
+  , name_french: "Ponceau 6R"
+  , name_latvian: "Ponso 6R"
+  , e_number: "E126"
+  , group: Colour
+  , source: [Synthetic]
   , description: "Red colouring; C.I: 16255"
+  , kosher: KosherIncludingPassover
+}
+
+e127 :: ENumber
+e127 = {
+  name_english: "Erythrosine"
+  , name_russian: "Эритрозин"
+  , name_german: "Erythrosin"
+  , name_hebrew: "אריתרוזין"
+  , name_french: "Érythrosine"
+  , name_latvian: "Erītrozīns"
+  , e_number: "E127"
+  , group: Colour
+  , source: [Synthetic]
+  , description: "Red colouring; C.I: 45430 FD and C Red 3"
+  , kosher: KosherIncludingPassover
+}
+
+e128 :: ENumber
+e128 = {
+  name_english: "Red 2G"
+  , name_russian: "Красный 2G"
+  , name_german: "Rot 2G"
+  , name_hebrew: "2G אדום"
+  , name_french: "Rouge 2G"
+  , name_latvian: "Sarkans 2G"
+  , e_number: "E128"
+  , group: Colour
+  , source: [Synthetic]
+  , description: "Red colouring; C.I. 18050"
   , kosher: KosherIncludingPassover
 }
 
@@ -222,7 +335,22 @@ e129 = {
   , source: [Synthetic, Dangerous]
   , description: "Red colouring; C.I: 16035 FD and C Red 40: יש חוששים, מקובל ככשר"
   , kosher: NeedHashgohoWholeYear
-} 
+}
+
+e130 :: ENumber
+e130 = {
+  name_english: "Indanthrene Blue RS"
+  , name_russian: "Индантрен синий RS"
+  , name_german: "Indanthrenblau RS"
+  , name_hebrew: "אינדנתרן כחול RS"
+  , name_french: "Indanthrène bleu RS"
+  , name_latvian: "Indantrens zils RS"
+  , e_number: "E130"
+  , group: Colour
+  , source: [Synthetic]
+  , description: "Blue colouring; C.I: 73015"
+  , kosher: KosherIncludingPassover
+}
 
 e131 :: ENumber
 e131 = {
@@ -235,7 +363,37 @@ e131 = {
   , e_number: "E131"
   , group: Colour
   , source: [Synthetic, Dangerous]
-  , description: "Blue colouring; C.I: 42051"
+  , description: "Blue colouring; C.I: 42051, Dangerous"
+  , kosher: KosherIncludingPassover
+}
+
+e132 :: ENumber
+e132 = {
+  name_english: "Indigo Carmine, Indigotine"
+  , name_russian: "Индиго кармин, Индиготин"
+  , name_german: "Indigotin"
+  , name_hebrew: "אינדיגו כרמין, אינדיגוטין"
+  , name_french: "Indigotine"
+  , name_latvian: "Indigo karmins, Indigotīns"
+  , e_number: "E132"
+  , group: Colour
+  , source: [Synthetic, Dangerous]
+  , description: "Blue colouring; C.I: 73015, Dangerous"
+  , kosher: KosherIncludingPassover
+}
+
+e133 :: ENumber
+e133 = {
+  name_english: "Brilliant Blue FCF, Blue 2"
+  , name_russian: "Бриллиантовый синий FCF, Синий 2"
+  , name_german: "Brillantblau FCF, Blau 2"
+  , name_hebrew: "כחול בריליאנט FCF, כחול 2"
+  , name_french: "Bleu brillant FCF, Bleu 2"
+  , name_latvian: "Brilliant Blue FCF, Blue 2"
+  , e_number: "E133"
+  , group: Colour
+  , source: [Synthetic, Dangerous]
+  , description: "Blue colouring; C.I: 42090, Dangerous"
   , kosher: KosherIncludingPassover
 }
 
@@ -270,6 +428,36 @@ e141 = {
   
 }
 
+e142 :: ENumber
+e142 = {
+  name_english: "Food green S, Acid brillant green"
+  , name_russian: "Пищевой Зеленый S, Блестящий зеленый S"
+  , name_german: "Brillantsäure"
+  , name_hebrew: "ירוק S"
+  , name_french: "Vert S"
+  , name_latvian: "Zaļais S"
+  , e_number: "E142"
+  , group: Colour
+  , source: [Synthetic]
+  , description: "Green colouring, C.I. 44090, Dangerous"
+  , kosher: KosherIncludingPassover
+}
+
+e143 :: ENumber
+e143 = {
+  name_english: "Fast Green FCF (FD and Green 31)"
+  , name_russian: "Fast Green FCF (FD and Green 31)"
+  , name_german: "Fast Green FCF (FD and Green 31)"
+  , name_hebrew: "Fast Green FCF (FD and Green 31)"
+  , name_french: "Fast Green FCF (FD and Green 31)"
+  , name_latvian: "Fast Green FCF (FD and Green 31)"
+  , e_number: "E143"
+  , group: Colour
+  , source: [Synthetic]
+  , description: "Green colouring, C.I. 42053"
+  , kosher: KosherIncludingPassover
+}
+
 e150a :: ENumber
 e150a =  {
   name_english: "Plain Caramel"
@@ -279,6 +467,21 @@ e150a =  {
   , name_french: "Caramel simple"
   , name_latvian: "Vienkāršs karamēlis"
   , e_number: "E150a"
+  , group: Colour
+  , source: []
+  , description: "Brown colouring"
+  , kosher: KosherNeedPassoverHashgoho
+}
+
+e150b_150d :: ENumber
+e150b_150d = {
+  name_english: "Caustic sulphite caramel, Ammonia caramel, Sulphite ammonia caramel"
+  , name_russian: "Сахарный колер II, Сахарный колер III, Сахарный колер IV"
+  , name_german: "Ammoniak- und Sulfitkulör"
+  , name_hebrew: "קרמל סולפיט קוסטי"
+  , name_french: "Caramel"
+  , name_latvian: "Karamēlis"
+  , e_number: "E150b-150d"
   , group: Colour
   , source: []
   , description: "Brown colouring"

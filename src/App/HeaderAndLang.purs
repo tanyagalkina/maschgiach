@@ -40,16 +40,10 @@ headerWithLangSwitches :: CardDisplayLanguage -> forall w . HH.HTML w Action
 headerWithLangSwitches lang = HH.div [
             CSS.style do
             display flex
-            -- flexDirection row is it default direction ? 
             alignItems center
-            justifyContent spaceBetween -- FIXME: current:  is this needed? 
-            --  marginLeft $ pct 90.0
+            justifyContent spaceBetween
             top $ px 0.0
-            -- in Figma: height $ px 92.0 (46 + 46 + 46)
             height $ px 50.0
-            -- width $ px 428.0
-            --  marginBottom $ em 1.5 
-            -- border solid (px $ 2.0) red
          ]
          [
           HH.div[
@@ -112,17 +106,6 @@ headerWithLangSwitches lang = HH.div [
 
                 ]
             ]
-        --   HH.img 
-        --   [
-        --     CSS.style do 
-        --      width $ px 60.0
-        --      height $ px 60.0
-        --   , HP.src (chooseIcon lang)
-        --    , HP.alt "language"
-        --    -- the language will be ignored for now, the button will switch to the nex in the list
-        --    , HE.onClick $ \_ -> SetCardDisplayLanguage English
-
-        --  ]
          ]
 
 getLangIconStyle ∷ ∀ (i4 ∷ Type) (r5 ∷ Row Type). CardDisplayLanguage → CardDisplayLanguage → HP.IProp ( style ∷ String | r5 ) i4

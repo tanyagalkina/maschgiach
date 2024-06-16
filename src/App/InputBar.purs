@@ -72,7 +72,7 @@ searchBar str = HH.div [
             color violet
             width $ pct 85.0
             height $ px 50.0
-            fontSize (case str of "" -> px 20.0
+            fontSize (case str of "" -> px 15.0
                                   _  -> px 30.0)
             -- FIXME: current: could not get it work i PS: border none, outline none 
             -- FIXME: current: fix this hack, what is the right way ?

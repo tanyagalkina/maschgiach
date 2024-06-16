@@ -127,8 +127,8 @@ headerWithLangSwitches lang = HH.div [
 
 getLangIconStyle ∷ ∀ (i4 ∷ Type) (r5 ∷ Row Type). CardDisplayLanguage → CardDisplayLanguage → HP.IProp ( style ∷ String | r5 ) i4
 getLangIconStyle buttonLang currentLang = CSS.style do 
-                  width $ px 30.0
-                  height $ px 30.0
+                  width $ px 25.0
+                  height $ px 25.0
                   --  opacity $ .5
                   opacity $ getOpacity buttonLang currentLang
 getOpacity :: CardDisplayLanguage -> CardDisplayLanguage -> Number

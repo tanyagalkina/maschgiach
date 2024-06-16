@@ -2,13 +2,13 @@
 
 module Data.Nb100to199 (colorENumberList) where
 
-import Data.ENumberTypes (ENumber, ENumberList, AdditiveGroup(..), Kashrut(..), Source(..), insertEntry, emptyENumberList)
+import Data.ENumberTypes (AdditiveGroup(..), ENumber, ENumberList, Kashrut(..), Source(..), emptyENumberList, insertEntry)
 
 
 infixr 5 insertEntry as ++
 
 colorENumberList :: ENumberList
-colorENumberList = e100 ++ e101 ++ e102 ++ e104 ++ e110 ++ e120
+colorENumberList = e100 ++ e101 ++ e101a ++ e102 ++ e103 ++ e104 ++ e105 ++ e106 ++ e110 ++ e120
   ++ e121 ++ e123 ++ e124 ++ e129 ++ e131 ++ e140 ++ e141 ++ e150a
   ++ emptyENumberList
 
@@ -43,6 +43,21 @@ e101 = {
   , kosher: KosherNeedPassoverHashgoho
 }
 
+e101a :: ENumber
+e101a = {
+  name_english: "Riboflavin-5 Phosphate"
+  , name_russian: "Рибофлавин-5 фосфат"
+  , name_german: "Riboflavin-5Phosphat"
+  , name_hebrew: "ריבופלבין-5 פוספט"
+  , name_french: "Riboflavine-5 phosphate"
+  , name_latvian: "Riboflavīns-5 fosfāts"
+  , e_number: "E101a"
+  , group: Colour
+  , source: [Dairy, Animal, Chametz]
+  , description: "Yellow and Orange colouring"
+  , kosher: KosherNeedPassoverHashgoho
+}
+
 e102 ∷ ENumber
 e102 = {
   name_english: "Tartrazine"
@@ -54,6 +69,21 @@ e102 = {
   , e_number: "E102"
   , group: Colour
   , source: [] 
+  , description: "Yellow colouring"
+  , kosher: KosherIncludingPassover
+}
+
+e103 :: ENumber
+e103 = {
+  name_english: "Chrysoine resorcinol"
+  , name_russian: "Chrysoine resorcinol"
+  , name_german: "Chrysoine resorcinol"
+  , name_hebrew: "Chrysoine resorcinol"
+  , name_french: "Chrysoine resorcinol"
+  , name_latvian: "Chrysoine resorcinol"
+  , e_number: "E103"
+  , group: Colour
+  , source: []
   , description: "Yellow colouring"
   , kosher: KosherIncludingPassover
 }
@@ -71,6 +101,36 @@ e104 = {
   , source: []
   , description: "Yellow colouring"
   , kosher: KosherIncludingPassover
+}
+
+e105 :: ENumber
+e105 = {
+  name_english: "Fast Yellow"
+  , name_russian: "Fast Yellow"
+  , name_german: "Fast Yellow"
+  , name_hebrew: "Fast Yellow"
+  , name_french: "Fast Yellow"
+  , name_latvian: "Fast Yellow"
+  , e_number: "E105"
+  , group: Colour
+  , source: []
+  , description: "Yellow colouring"
+  , kosher: KosherIncludingPassover
+}
+
+e106 :: ENumber
+e106 = {
+  name_english: "Riboflavin 5 sodium phosphate"
+  , name_russian: "Riboflavin 5 sodium phosphate"
+  , name_german: "Riboflavin 5 sodium phosphate"
+  , name_hebrew: "Riboflavin 5 sodium phosphate"
+  , name_french: "Riboflavin 5 sodium phosphate"
+  , name_latvian: "Riboflavin 5 sodium phosphate"
+  , e_number: "E106"
+  , group: Colour
+  , source: []
+  , description: "Yellow colouring"
+  , kosher: KosherNeedPassoverHashgoho
 }
 
 e110 ∷ ENumber

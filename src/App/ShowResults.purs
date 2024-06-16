@@ -104,6 +104,7 @@ getBackgroundForKashrut k = if (containsDairy k.source) then skyblue else
         NeedHashgohoWholeYear -> orangad
         -- KosherForbidden -> brightred
         KosherForbidden -> lightred
+        IssuficientData -> brightred
 
 
 containsDairy:: Array Source -> Boolean

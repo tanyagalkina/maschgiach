@@ -19,6 +19,7 @@ data Kashrut = NotKosher
              | OftenKosherNeedHashgoho 
              | NeedHashgohoWholeYear
              | KosherForbidden
+             | IssuficientData
             --  | SafekKarshuth
 
 data Source = Chametz | Kitniyot | Dairy | Animal | Wine | Eggs | Vegan | Synthetic | Dangerous

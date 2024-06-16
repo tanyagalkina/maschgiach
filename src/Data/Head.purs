@@ -39,6 +39,7 @@ showK kashrut = case kashrut of
   OftenKosherNeedHashgoho -> "Often Kosher, needs Hashgoho"
   NeedHashgohoWholeYear -> "Needs Hashgoho whole year"
   KosherForbidden -> "Kosher, FORBIDDEN"
+  IssuficientData -> "Insufficient data"
 
 showKRussian :: Kashrut -> String
 showKRussian kashrut = case kashrut of
@@ -49,6 +50,7 @@ showKRussian kashrut = case kashrut of
   OftenKosherNeedHashgoho -> "Часто кашерно, требуется хашгоха"
   NeedHashgohoWholeYear -> "Требуется хашгоха весь год"
   KosherForbidden -> "Кашерно, ЗАПРЕЩЕНО"
+  IssuficientData -> "Недостаточно данных"
 
 showKGerman :: Kashrut -> String
 showKGerman kashrut = case kashrut of
@@ -59,6 +61,7 @@ showKGerman kashrut = case kashrut of
   OftenKosherNeedHashgoho -> "Oft koscher, benötigt Hashgoho"
   NeedHashgohoWholeYear -> "Benötigt Haschgocho für das ganze Jahr"
   KosherForbidden -> "Koscher, VERBOTEN"
+  IssuficientData -> "Unzureichende Daten"
 
 showKHebrew :: Kashrut -> String
 showKHebrew kashrut = case kashrut of
@@ -68,7 +71,9 @@ showKHebrew kashrut = case kashrut of
   UsuallyKosherRarelyNeedHashgoho -> "צריך השגחה, כשר בדרך כלל"
   OftenKosherNeedHashgoho -> "כשר בדרך כלל, צריך השגחה"
   NeedHashgohoWholeYear -> "צריר השגחה כל השנה"
-  KosherForbidden -> "כשר,אסור"    
+  KosherForbidden -> "כשר,אסור"
+  IssuficientData -> "מידע לא מספיק"    
+
 
 showKFrench :: Kashrut -> String
 showKFrench kashrut = case kashrut of
@@ -79,6 +84,7 @@ showKFrench kashrut = case kashrut of
   OftenKosherNeedHashgoho -> "Souvent cacher, besoin de Hashgoho"
   NeedHashgohoWholeYear -> "Nécessite une surveillance rabbinique toute l'année"
   KosherForbidden -> "Cacher, INTERDIT"
+  IssuficientData -> "Données insuffisantes"
 
 showKLatvian :: Kashrut -> String 
 showKLatvian kashrut = case kashrut of
@@ -89,6 +95,7 @@ showKLatvian kashrut = case kashrut of
   OftenKosherNeedHashgoho -> "Bieži košers, nepieciešama uzraudzība"
   NeedHashgohoWholeYear -> "Nepieciešama uzraudzība visu gadu"
   KosherForbidden -> "Košers, AIZLIEGTS"  
+  IssuficientData -> "Nepietiekami dati"
 
 showSource :: Source -> String
 showSource source = case source of

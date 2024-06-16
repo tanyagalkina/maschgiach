@@ -70,21 +70,42 @@ card open e_number lang =
                       -- FIXME: make real back sign
                         HH.text "< BACK"
                       ]
-                      -- description
+                      -- name description 
                       , HH.div
                          [
                          CSS.style do
-                       margin (px 20.0 )   (px 10.0 )   (px 60.0 )  (px 10.0 ) 
+                       margin (px 10.0 )   (px 10.0 )   (px 20.0 )  (px 10.0 ) 
                        fontSize $ px 20.0
                          ] 
                          [HH.text 
                          $ getTextFromENumber e_number lang
                          ]
+                      -- TODO: implement display of group and sources
+                      -- Group
+                      --  , HH.div
+                      --    [
+                      --    CSS.style do
+                      --         margin (px 10.0 )   (px 10.0 )   (px 20.0 )  (px 10.0 ) 
+                      --         fontSize $ px 20.0
+                      --    ] 
+                      --    [HH.text 
+                      --    $ getGroupFromENumber e_number lang
+                      --    ]
+                      -- -- Sources
+                      --  , HH.div
+                      --    [
+                      --    CSS.style do
+                      --  margin (px 10.0 )   (px 10.0 )   (px 20.0 )  (px 10.0 ) 
+                      --  fontSize $ px 20.0
+                      --    ] 
+                      --    [HH.text 
+                      --    $ getSrcFromENumber e_number lang
+                      --    ]   
 
                       -- kashrut  
                       ,HH.div[
                         CSS.style do
-                          margin (px 60.0) (px 20.0) (px 40.0) (px 10.0)
+                          margin (px 60.0) (px 20.0) (px 20.0) (px 10.0)
                           fontSize $ px 20.0
                           fontWeight bold
                          ] [HH.text $ getKashrutFromENumber e_number lang]
@@ -99,7 +120,7 @@ legend =
                       flexGrow 1.0
                       overflowY $ overflowAuto
                       flexDirection column
-                      -- FIXME: rm after testing
+                      -- FIXME: RM AFTER
                       -- border solid (px 2.0) lightred
                       marginTop (px 20.0)
 
@@ -114,31 +135,13 @@ getBorderColor e_number = case e_number.kosher of
   OftenKosherNeedHashgoho -> black
   NeedHashgohoWholeYear -> white
   KosherForbidden -> orangad
-
---  HH.div 
---    [ CSS.style do
---         overflowY $ overflowAuto
---         flexGrow 1.0
---         height (pct 100.0)
---         fontFamily ["Arial"] (monospace :|[] )
---         fontSize (px 20.0)
---    ] $
---     map (\eNumber -> renderENumber eNumber lang) (fromFoldable arr)
+  -- FIXME: this is placeholder Color
+  IssuficientData -> yellow
 
 type ListItem =
   { color :: Color
   , text :: String
   }
-
-
--- NotKosher -> black   
---         KosherIncludingPassover -> green
---         KosherNeedPassoverHashgoho -> marine
---         UsuallyKosherRarelyNeedHashgoho -> yellow
---         OftenKosherNeedHashgoho -> orange
---         NeedHashgohoWholeYear -> orangad
---         -- KosherForbidden -> brightred
---         KosherForbidden -> lightred
 
 listItems :: Array ListItem
 listItems =
@@ -166,16 +169,22 @@ renderListItem myItem =
             height (px 20.0)
             backgroundColor myItem.color
             borderRadius (px 50.0) (px 50.0) (px 50.0) (px 50.0)
-            -- borderRadius (pct 50.0)
-            -- margin (px 10.0) (px 10.0) (px 10.0) (px 10.0)
         ]
         []
     , HH.span [CSS.style do marginLeft (px 10.0)]
         [ HH.text myItem.text ]
     ]
 
+getSrcFromENumber :: ENumber -> CardDisplayLanguage -> String
+getSrcFromENumber e lang = case e.source of [] -> "" 
+                                            _  -> "Possible sources: "
+
+getGroupFromENumber :: ENumber -> CardDisplayLanguage -> String
+getGroupFromENumber e lang = "Group: " <> "Implement display of group"
+
 getTextFromENumber :: ENumber -> CardDisplayLanguage -> String
 getTextFromENumber e lang = e.e_number <>  " " <> (getTextByLanguage e lang)  <> " " <> e.description
+
 
 getTextByLanguage :: ENumber -> CardDisplayLanguage -> String
 getTextByLanguage e lang = case lang of

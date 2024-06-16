@@ -26,6 +26,7 @@ import Halogen as H
 import Halogen.HTML as HH
 import Halogen.HTML.CSS as CSS
 import Halogen.HTML.Properties as HP
+import Web.DOM.Document (doctype)
 import Web.HTML.HTMLAudioElement (create', toHTMLMediaElement)
 import Web.HTML.HTMLMediaElement (HTMLMediaElement, play)
 
@@ -102,8 +103,9 @@ handleAction = case _ of
                                   -- TODO: try to use AudioCtx to reduce sound delay
                                   -- audioElem <- H.gets _.typingSound
                                   -- H.liftEffect $ audioElem >>= play
-                                  H.modify_ \st -> st { searchStr = str, moveCurtain = true, results = searchNumber str }
-  Search str -> H.modify_ \st -> st { searchStr = str, results = searchNumber str }
+                                  H.modify_ \st -> st { searchStr = str, moveCurtain = true, results = searchNumber str
+                                  ,  currentCard = Nothing, cardAppear = false}
+  Search str ->  H.modify_ \st -> st { searchStr = str, results = searchNumber str, currentCard = Nothing, moveCurtain = true, cardAppear = false}
   OpenCard eNumber -> do
                      log "Opening Card"
                      H.modify_ \st -> st {currentCard = Just eNumber, cardAppear = true }

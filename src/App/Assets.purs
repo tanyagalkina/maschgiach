@@ -13,4 +13,5 @@ foreign import roshTov :: String
 foreign import magnifyingGlass :: String
 foreign import rightArrow :: String
 foreign import rightArrowWhite :: String
+foreign import back :: String
 

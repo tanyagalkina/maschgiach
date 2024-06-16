@@ -9,6 +9,9 @@ import frenchIcon from '../../src/assets/french.png'
 import roshTov from '../../src/assets/roshTov.svg'
 import magnifyingGlass from '../../src/assets/magnifying-glass.svg'
 import rightArrow from '../../src/assets/RightArrow.svg'
-import rightArrowWhite from '../../src/assets/rightArrowWhite.svg' 
+import rightArrowWhite from '../../src/assets/rightArrowWhite.svg'
+// FIXME: remove this back asset
+import back from '../../src/assets/Back.svg'
+import backArrow from '../../src/assets/backArrow.svg'
 
-export { ampelmann, typeSound, englishIcon, germanIcon, hebrewIcon, latvianIcon, russianIcon, frenchIcon, roshTov, magnifyingGlass, rightArrow, rightArrowWhite}
+export { ampelmann, typeSound, englishIcon, germanIcon, hebrewIcon, latvianIcon, russianIcon, frenchIcon, roshTov, magnifyingGlass, rightArrow, rightArrowWhite, back, backArrow}

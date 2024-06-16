@@ -4,7 +4,8 @@ import Prelude
 
 import Affjax.Web (get)
 import Ansi.Output (background)
-import App.Colours (black, lightred, white, green, marine, yellow, orangad, lightred)
+import App.Assets (back)
+import App.Colours (black, green, lightred, marine, orangad, white, yellow)
 import App.Common (Action(..), CardDisplayLanguage(..))
 import App.ShowResults (getBackgroundForKashrut)
 import CSS (alignItems, backgroundColor, bold, border, borderRadius, color, column, direction, display, flex, flexDirection, flexGrow, fontSize, fontWeight, height, margin, marginBottom, marginLeft, marginRight, marginTop, minHeight, pct, px, solid, width)
@@ -13,7 +14,7 @@ import CSS.Common (center)
 import CSS.Font (fontFamily, monospace)
 import CSS.Overflow (overflowY, overflow, overflowAuto, overflowInherit)
 import Data.Array (fromFoldable, elem)
-import Data.ENumberTypes (ENumber)
+import Data.ENumberTypes (ENumber, Kashrut(..))
 import Data.ENumberTypes (Kashrut(..))
 import Data.Head (showK, showKFrench, showKGerman, showKHebrew, showKLatvian, showKRussian)
 import Data.Maybe (Maybe(Just, Nothing))
@@ -22,8 +23,6 @@ import Halogen.HTML as HH
 import Halogen.HTML.CSS as CSS
 import Halogen.HTML.Events as HE
 import Halogen.HTML.Properties as HP
-import Web.HTML.History (back)
-
 
 newCard :: forall w. Boolean -> Maybe ENumber -> CardDisplayLanguage -> HH.HTML w Action
 newCard open e_number lang =  HH.div [ 
@@ -35,7 +34,8 @@ newCard open e_number lang =  HH.div [
 
 -- FIXME: rm open Boolean of not needed
 card :: forall w. Boolean -> ENumber -> CardDisplayLanguage -> HH.HTML w Action
-card open e_number lang =  HH.div [
+card open e_number lang =
+  HH.div [
                      CSS.style do
                        display flex
                        flexDirection column
@@ -43,8 +43,8 @@ card open e_number lang =  HH.div [
                        fontFamily ["Arial"] (monospace :|[] )
                        -- overflowY $ overflowAuto
                    ]
+                   -- back button, description, kashrut
                    [
-                    -- back button, description, kashrut
                     HH.div[
                       CSS.style do
                        minHeight $ (pct 30.0)
@@ -52,8 +52,6 @@ card open e_number lang =  HH.div [
                                                        _ -> black
                        backgroundColor $ getBackgroundForKashrut e_number
                        borderRadius (px 0.0) (px 0.0) (px 40.0) (px 0.0)
-                       
-                        
                     ]
                     [
                       -- back button
@@ -62,54 +60,60 @@ card open e_number lang =  HH.div [
                         , HE.onClick $ \_ -> ClearCard
                         , CSS.style do
                           margin (px 10.0) (px 10.0) (px 10.0) (px 10.0)
-                          fontSize $ px 30.0
-                      ] [HH.text "Back"]
-                    , HH.div[
-                     -- HP.id "curtain-content-one"
-                     CSS.style do
-                       margin (px 0.0 )   (px 10.0 )   (px 60.0 )  (px 10.0 ) 
+                          fontSize $ px 20.0
+                          border solid (px 2.0) $ getBorderColor e_number
+                          borderRadius (px 20.0) (px 20.0) (px 20.0) (px 20.0)
+                          backgroundColor $ getBackgroundForKashrut e_number
+                          color $ case e_number.kosher of NotKosher -> white
+                                                          _ -> black
+                      ][
+                      -- FIXME: make real back sign
+                        HH.text "< BACK"
+                      ]
+                      -- description
+                      , HH.div
+                         [
+                         CSS.style do
+                       margin (px 20.0 )   (px 10.0 )   (px 60.0 )  (px 10.0 ) 
                        fontSize $ px 20.0
-                    ] 
-                    [HH.text 
-                    $ getTextFromENumber e_number lang
-                    ]
-                    ,HH.div[
-                      -- HP.id "curtain-content-two"
-                      CSS.style do
-                        margin (px 60.0) (px 20.0) (px 40.0) (px 10.0)
-                        fontSize $ px 20.0
-                        fontWeight bold
-                    ] [HH.text $ getKashrutFromENumber e_number lang]
-                  ]
-                  -- ledend
-                  , HH.div [
+                         ] 
+                         [HH.text 
+                         $ getTextFromENumber e_number lang
+                         ]
+
+                      -- kashrut  
+                      ,HH.div[
+                        CSS.style do
+                          margin (px 60.0) (px 20.0) (px 40.0) (px 10.0)
+                          fontSize $ px 20.0
+                          fontWeight bold
+                         ] [HH.text $ getKashrutFromENumber e_number lang]
+                      ]
+                      , legend
+]
+legend:: forall w46 . HH.HTML w46 Action
+legend = 
+    HH.div [
                     CSS.style do
                       display flex
                       flexGrow 1.0
                       overflowY $ overflowAuto
                       flexDirection column
-                      border solid (px 2.0) lightred
+                      -- FIXME: rm after testing
+                      -- border solid (px 2.0) lightred
                       marginTop (px 20.0)
 
                   ] $ map renderListItem listItems
-                  -- [
-                  --   HH.span[
-                  --     CSS.style do
-                  --       margin (px 10.0) (px 10.0) (px 10.0) (px 10.0)
-                  --       fontSize $ px 15.0
-                  --   ] [HH.text "Kosher including Passover"]
-                  --    , HH.span[
-                  --     CSS.style do
-                  --       margin (px 10.0) (px 10.0) (px 10.0) (px 10.0)
-                  --       fontSize $ px 15.0
-                  --   ] [HH.text "Kosher including Passover"]
-                  --    , HH.span[
-                  --     CSS.style do
-                  --       margin (px 10.0) (px 10.0) (px 10.0) (px 10.0)
-                  --       fontSize $ px 15.0
-                  --   ] [HH.text "Kosher including Passover"]
-                  -- ]
-]
+
+getBorderColor :: ENumber -> Color
+getBorderColor e_number = case e_number.kosher of 
+  NotKosher -> orangad
+  KosherIncludingPassover -> marine
+  KosherNeedPassoverHashgoho -> green
+  UsuallyKosherRarelyNeedHashgoho -> marine
+  OftenKosherNeedHashgoho -> black
+  NeedHashgohoWholeYear -> white
+  KosherForbidden -> orangad
 
 --  HH.div 
 --    [ CSS.style do

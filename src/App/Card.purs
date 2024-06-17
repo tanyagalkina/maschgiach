@@ -12,7 +12,7 @@ import CSS (alignItems, backgroundColor, bold, border, borderRadius, color, colu
 import CSS.Color (Color(..))
 import CSS.Common (center)
 import CSS.Font (fontFamily, monospace)
-import CSS.Overflow (overflowY, overflow, overflowAuto, overflowInherit)
+import CSS.Overflow (overflowY, overflowX, overflow, overflowAuto, overflowInherit)
 import Data.Array (fromFoldable, elem)
 import Data.ENumberTypes (ENumber, Kashrut(..))
 import Data.ENumberTypes (Kashrut(..))
@@ -118,7 +118,8 @@ legend =
                     CSS.style do
                       display flex
                       flexGrow 1.0
-                      overflowY $ overflowAuto
+                      -- overflowY $ overflowAuto
+                      overflowX $ overflowInherit
                       flexDirection column
                       -- FIXME: RM AFTER
                       -- border solid (px 2.0) lightred
@@ -146,7 +147,7 @@ type ListItem =
 listItems :: Array ListItem
 listItems =
   [ { color: green, text: "Kosher including Passover" }
-  , { color: marine, text: "Kosher, needs Hashgoho for Passover" }
+  , { color: marine, text: "Kosher, Hashgoho for Passover" }
   , { color: orangad, text: "Needs Hashgoho whole year" }
   , { color: black, text: "Not Kosher!" }
   , { color: lightred, text: "Kosher, FORBIDDEN" }

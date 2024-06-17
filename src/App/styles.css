@@ -15,7 +15,7 @@ html, body {
   height: 100svh;
   width: 100vw;
  /* min-width: 100vw; /* Ensure at least the full width of the viewport */
-  min-height: 100svh; /*Ensure at least the full height of the viewport */
+  /*min-height: 100svh; Ensure at least the full height of the viewport*/
   overflow: hidden;
   box-sizing: border-box;
   /*overflow-x: hidden;*/

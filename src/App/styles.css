@@ -1,5 +1,5 @@
 html, body {
-  height: 100%;
+  height: 100svh;
   width: 100%;
   /*min-width: 100vw; /* Ensure at least the full width of the viewport */
   /*min-height: 100vh; Ensure at least the full height of the viewport */

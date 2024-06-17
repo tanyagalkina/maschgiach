@@ -14,6 +14,7 @@ html, body {
 #main-container {
   height: 100svh;
   width: 100vw;
+  max-height: 100svh;
  /* min-width: 100vw; /* Ensure at least the full width of the viewport */
   /*min-height: 100svh; Ensure at least the full height of the viewport*/
   overflow: hidden;

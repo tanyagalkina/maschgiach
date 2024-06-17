@@ -110,14 +110,14 @@ card open e_number lang =
                           fontWeight bold
                          ] [HH.text $ getKashrutFromENumber e_number lang]
                       ]
-                      , legend
+                     , legend
 ]
 legend:: forall w46 . HH.HTML w46 Action
 legend = 
     HH.div [
                     CSS.style do
                       display flex
-                      flexGrow 1.0
+                      -- flexGrow 1.0
                       -- overflowY $ overflowAuto
                       overflowX $ overflowInherit
                       flexDirection column

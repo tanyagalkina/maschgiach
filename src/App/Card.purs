@@ -47,7 +47,7 @@ card open e_number lang =
                    [
                     HH.div[
                       CSS.style do
-                       minHeight $ (pct 30.0)
+                       -- minHeight $ (pct 30.0)
                        color $ case e_number.kosher of NotKosher -> white
                                                        _ -> black
                        backgroundColor $ getBackgroundForKashrut e_number

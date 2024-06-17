@@ -26,7 +26,7 @@ import Halogen as H
 import Halogen.HTML as HH
 import Halogen.HTML.CSS as CSS
 import Halogen.HTML.Properties as HP
-import Web.DOM.Document (doctype)
+-- import Web.DOM.Document (doctype)
 import Web.HTML.HTMLAudioElement (create', toHTMLMediaElement)
 import Web.HTML.HTMLMediaElement (HTMLMediaElement, play)
 
@@ -62,39 +62,11 @@ render state =
             [
                 headerWithLangSwitches state.cardDisplayLanguage
               , searchBar $ state.searchStr
---               card :: forall w. Boolean -> Maybe ENumber -> CardDisplayLanguage -> HH.HTML w Action
--- card open e_number lang =  HH.div [ 
-                -- FIXME: refactor this ugly piece
-              , (case state.currentCard of Just(myCard) -> card state.cardAppear myCard state.cardDisplayLanguage 
-                                           Nothing -> resultsAndCard state.results state.cardDisplayLanguage)
+                -- FIXME: refactor for readability
+              , case state.currentCard of Just(myCard) -> card state.cardAppear myCard state.cardDisplayLanguage 
+                                          Nothing -> resultsAndCard state.results state.cardDisplayLanguage
               , newFooter
             ] 
-          --   [
-          --     languageIcon state.cardDisplayLanguage
-          --     , HH.div [
-          --                css "center-container"
-          --       ]
-          --       [
-          --         HH.div[
-          --                 css "search-and-results"
-          --                ,CSS.style do
-          --                 display flex
-          --                 flexDirection column
-          --                 -- justifyContent spaceAround
-          --                 alignItems flexStart
-          --                 height $ vh 100.0
-          --                 paddingTop $ vh 5.0
-          --                 -- border solid (px 3.0) brightred
-          --                 fontFamily ["monospace"] (monospace :|[] )
-          --             ]
-          --             [
-          --                  simpleInputBar
-          --                 , showResults state.results state.cardDisplayLanguage
-          --             ]
-          --         , card state.cardAppear state.currentCard state.cardDisplayLanguage    
-          --         , curtain state.moveCurtain
-          --       ]
-          -- ,footer
         ]
 
 handleAction :: forall o m. MonadEffect m => Action → H.HalogenM State Action () o m Unit
@@ -124,15 +96,6 @@ mediaElem = do
   audioEl <- create' typeSound
   log "audio element created"
   pure $ toHTMLMediaElement audioEl             
-
-nextLang :: CardDisplayLanguage -> CardDisplayLanguage
-nextLang lang = case lang of
-  English -> Russian
-  Russian -> German
-  German -> Hebrew
-  Hebrew -> French
-  French -> Latvian
-  Latvian -> English
 
 searchNumber :: String -> ENumberList
 -- searchNumber str = findENumbersInList str

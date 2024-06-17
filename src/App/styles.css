@@ -1,6 +1,7 @@
 html, body {
   height: 100%;
   width: 100%;
+  position: fixed;
   /*min-width: 100vw; /* Ensure at least the full width of the viewport */
   /*min-height: 100vh; Ensure at least the full height of the viewport */
   /*border: solid 6px red;*/

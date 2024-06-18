@@ -8,7 +8,7 @@ import App.Common (Action(..), CardDisplayLanguage(English, Russian, German, Heb
 import CSS (Color, alignItems, backgroundColor, border, borderBottom, borderLeft, color, display, em, flex, flexGrow, fontSize, height, justifyContent, margin, marginLeft, marginRight, maxWidth, pct, px, solid, space, spaceBetween, width)
 import CSS.Common (center, auto)
 import CSS.Font (fontFamily, monospace)
-import CSS.Overflow (overflowY, overflow, overflowAuto, overflowInherit)
+import CSS.Overflow (overflowY, overflowX, overflow, overflowAuto, overflowInherit)
 import Data.Array (fromFoldable, elem)
 import Data.ENumberTypes (ENumber, ENumberList, Kashrut(..), Source(..))
 import Data.Lens (over)
@@ -64,10 +64,12 @@ renderENumber eNumber lang =
           ]
         [HH.span 
            [
-            CSS.style do
+            css "simple-result-text"
+            , CSS.style do
               flexGrow 1.0
-              maxWidth (pct 90.0)
+              maxWidth (pct 90.0) -- FIXME: is this correct ?
               marginLeft (px 40.0)
+              -- overflowX $ overflowInherit
            ]  
            [ HH.text (eNumber.e_number <> " " <> (getNameByLanguage eNumber lang))
            ]

@@ -17,7 +17,7 @@ html, body {
   max-height: 100svh;
  /* min-width: 100vw; /* Ensure at least the full width of the viewport */
   /*min-height: 100svh; Ensure at least the full height of the viewport*/
-  overflow: hidden;
+  overflow: hidden; /* FIXME: is it correct here ? */
   box-sizing: border-box;
   /*overflow-x: hidden;*/
   overflow-y: auto;
@@ -26,6 +26,15 @@ html, body {
 
 * {
   box-sizing: inherit;
+}
+
+.simple-result-text {
+  /* display: inline-block; */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow : hidden;
 }
 
 

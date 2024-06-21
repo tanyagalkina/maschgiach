@@ -101,9 +101,10 @@ getBackgroundForKashrut k = if (containsDairy k.source) then skyblue else
         NotKosher -> black   
         KosherIncludingPassover -> green
         KosherNeedPassoverHashgoho -> marine
-        UsuallyKosherRarelyNeedHashgoho -> yellow
+        UsuallyKosherRarelyNeedsHashgoho -> yellow
         OftenKosherNeedHashgoho -> orange
         NeedHashgohoWholeYear -> orangad
+        NeedHashgohoWholeYearSomeAllow -> orangad
         -- KosherForbidden -> brightred
         KosherForbidden -> lightred
         IssuficientData -> brightred

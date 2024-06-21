@@ -15,7 +15,7 @@ import CSS.Font (fontFamily, monospace)
 import CSS.Overflow (overflowY, overflowX, overflow, overflowAuto, overflowInherit)
 import Data.Array (fromFoldable, elem)
 import Data.ENumberTypes (ENumber, Kashrut(..))
-import Data.ENumberTypes (Kashrut(..))
+-- import Data.ENumberTypes (Kashrut(..))
 import Data.Head (showK, showKFrench, showKGerman, showKHebrew, showKLatvian, showKRussian)
 import Data.Maybe (Maybe(Just, Nothing))
 import Data.NonEmpty ((:|))
@@ -132,9 +132,10 @@ getBorderColor e_number = case e_number.kosher of
   NotKosher -> orangad
   KosherIncludingPassover -> marine
   KosherNeedPassoverHashgoho -> green
-  UsuallyKosherRarelyNeedHashgoho -> marine
+  UsuallyKosherRarelyNeedsHashgoho -> marine
   OftenKosherNeedHashgoho -> black
   NeedHashgohoWholeYear -> white
+  NeedHashgohoWholeYearSomeAllow -> white
   KosherForbidden -> orangad
   -- FIXME: this is placeholder Color
   IssuficientData -> yellow

@@ -25,5 +25,5 @@ e620 = {
   , group: FlavourEnchancer 
   , source: []
   , description: ""
-  , kosher: NeedHashgohoWholeYear
+  , kosher: NeedHashgohoWholeYearSomeAllow
 }

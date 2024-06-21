@@ -15,11 +15,12 @@ data AdditiveGroup =  Colour | Preservative | Antioxidant | FlavourEnchancer | S
 data Kashrut = NotKosher   
              | KosherIncludingPassover 
              | KosherNeedPassoverHashgoho 
-             | UsuallyKosherRarelyNeedHashgoho
+             | UsuallyKosherRarelyNeedsHashgoho
              | OftenKosherNeedHashgoho 
              | NeedHashgohoWholeYear
              | KosherForbidden
              | IssuficientData
+             | NeedHashgohoWholeYearSomeAllow
             --  | SafekKarshuth
 
 data Source = Chametz | Kitniyot | Dairy | Animal | Wine | Eggs | Vegan | Synthetic | Dangerous

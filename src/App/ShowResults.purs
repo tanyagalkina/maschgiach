@@ -96,7 +96,7 @@ getNameByLanguage card lang = case lang of
     Latvian -> card.name_latvian
 
 getBackgroundForKashrut :: ENumber -> Color
-getBackgroundForKashrut k = if (containsDairy k.source) then skyblue else  
+getBackgroundForKashrut k =   
     case k.kosher of
         NotKosher -> black   
         KosherIncludingPassover -> green

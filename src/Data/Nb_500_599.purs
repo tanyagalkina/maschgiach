@@ -11,7 +11,7 @@ import Data.ENumberTypes (AdditiveGroup(..), ENumber, ENumberList, Kashrut(..), 
 infixr 5 insertEntry as ++
 
 regulatorENumberList :: ENumberList
-regulatorENumberList =  e500 ++ emptyENumberList
+regulatorENumberList =  e500 ++ e575 ++ emptyENumberList
 
 e500 :: ENumber
 e500 = {
@@ -28,4 +28,19 @@ e500 = {
   , source: []
   , description: ""
   , kosher: KosherIncludingPassover
+}
+
+e575 :: ENumber
+e575 = {
+  name_english: "Glucono-delta-lactone"
+  , name_russian: "Глюконо дельта-лактон"
+  , name_german: "Glucono-delta-lacton"
+  , name_hebrew: "גלוקונו-דלטה-לקטון"
+  , name_french: "Glucono-delta-lactone"
+  , name_latvian: "Glucono-delta-laktons"
+  , e_number: "E575"
+  , group: AcidityRegulator
+  , source: []
+  , description: ""
+  , kosher: OftenKosherNeedHashgoho
 }

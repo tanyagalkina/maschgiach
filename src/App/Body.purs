@@ -16,7 +16,7 @@ import CSS.Overflow (overflow, hidden)
 import CSS.Size (vh)
 import Control.Plus (empty)
 import Data.ENumberTypes (ENumberList)
-import Data.Head (findENumbersInList)
+import Data.Head (findENumbersInList, seedENumberList)
 import Data.Maybe (Maybe(..))
 import Data.NonEmpty ((:|))
 import Effect (Effect)
@@ -26,7 +26,7 @@ import Halogen as H
 import Halogen.HTML as HH
 import Halogen.HTML.CSS as CSS
 import Halogen.HTML.Properties as HP
--- import Web.DOM.Document (doctype)
+
 import Web.HTML.HTMLAudioElement (create', toHTMLMediaElement)
 import Web.HTML.HTMLMediaElement (HTMLMediaElement, play)
 
@@ -34,7 +34,7 @@ component :: forall query input output m. MonadEffect m => H.Component query inp
 component =
   H.mkComponent
     { 
-     initialState: \_ -> { moveCurtain: false, results: empty, currentCard: Nothing, cardAppear: false, cardDisplayLanguage : English, typingSound: mediaElem, searchStr: ""}
+     initialState: \_ -> { moveCurtain: false, results: seedENumberList, currentCard: Nothing, cardAppear: false, cardDisplayLanguage : English, typingSound: mediaElem, searchStr: ""}
     , render
     , eval: H.mkEval H.defaultEval { handleAction = handleAction }
     }
@@ -101,5 +101,6 @@ searchNumber :: String -> ENumberList
 -- searchNumber str = findENumbersInList str
 -- TODO: decide about the empty case
 searchNumber str = case str of
-  "" -> empty
+  -- "" -> empty
+  "" -> seedENumberList
   _ -> findENumbersInList str

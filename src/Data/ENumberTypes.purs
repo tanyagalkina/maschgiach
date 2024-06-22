@@ -23,7 +23,7 @@ data Kashrut = NotKosher
              | NeedHashgohoWholeYearSomeAllow
             --  | SafekKarshuth
 
-data Source = Chametz | Kitniyot | Dairy | Animal | Wine | Eggs | Vegan | Synthetic | Dangerous
+data Source = Chametz | Kitniyot | Dairy | Animal | Wine | Eggs | Vegan | Synthetic | Mushroom | Dangerous
 derive instance eqSource :: Eq Source
 
 

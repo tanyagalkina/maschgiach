@@ -1,5 +1,6 @@
 module Data.Head
  (findENumbersInList
+ , seedENumberList
  ,showK
  , showKRussian
   , showKGerman
@@ -35,8 +36,8 @@ showK kashrut = case kashrut of
   NotKosher -> "Not Kosher!"
   KosherIncludingPassover -> "Kosher including Passover"
   KosherNeedPassoverHashgoho -> "Kosher, needs Hashgoho for Passover"
-  UsuallyKosherRarelyNeedsHashgoho -> "Usually Kosher, rarely needs Hashgoho"
-  OftenKosherNeedHashgoho -> "Often Kosher, needs Hashgoho"
+  UsuallyKosherRarelyNeedsHashgoho -> "Needs Hashgoho, usually kosher"
+  OftenKosherNeedHashgoho -> "Needs Hashgoho, often kosher"
   NeedHashgohoWholeYear -> "Needs Hashgoho whole year"
   NeedHashgohoWholeYearSomeAllow -> "Needs Hashgoho whole year, some allow"
   KosherForbidden -> "Kosher, FORBIDDEN"
@@ -47,8 +48,8 @@ showKRussian kashrut = case kashrut of
   NotKosher -> "Не кашерно!"
   KosherIncludingPassover -> "Кашерно включая Песах"
   KosherNeedPassoverHashgoho -> "Кашерно, требуется хашгоха на Песах"
-  UsuallyKosherRarelyNeedsHashgoho -> "Обычно кашерно, редко требуется хашгоха"
-  OftenKosherNeedHashgoho -> "Часто кашерно, требуется хашгоха"
+  UsuallyKosherRarelyNeedsHashgoho -> "Требуется хашгоха, обычно кашерно"
+  OftenKosherNeedHashgoho -> "Требуется хашгоха, часто кашерно"
   NeedHashgohoWholeYear -> "Требуется хашгоха весь год"
   NeedHashgohoWholeYearSomeAllow -> "Требуется хашгоха весь год, некоторые разрешают"
   KosherForbidden -> "Кашерно, ЗАПРЕЩЕНО"
@@ -58,10 +59,10 @@ showKGerman :: Kashrut -> String
 showKGerman kashrut = case kashrut of
   NotKosher -> "Nicht koscher!"
   KosherIncludingPassover -> "Koscher einschließlich Pessach"
-  KosherNeedPassoverHashgoho -> "Koscher, benötigt Hashgoho für Pessach"
-  UsuallyKosherRarelyNeedsHashgoho -> "Normalerweise koscher, benötigt selten Hashgoho"
-  OftenKosherNeedHashgoho -> "Oft koscher, benötigt Hashgoho"
-  NeedHashgohoWholeYear -> "Benötigt Haschgocho für das ganze Jahr"
+  KosherNeedPassoverHashgoho -> "Koscher, benötigt Haschgoho für Pessach"
+  UsuallyKosherRarelyNeedsHashgoho -> "Benötigt Haschgoho, normalerweise koscher"
+  OftenKosherNeedHashgoho -> "Benötigt Haschgoho, oft koscher"
+  NeedHashgohoWholeYear -> "Benötigt Haschgoho für das ganze Jahr"
   NeedHashgohoWholeYearSomeAllow -> "Benötigt Haschgocho für das ganze Jahr, einige erlauben"
   KosherForbidden -> "Koscher, VERBOTEN"
   IssuficientData -> "Unzureichende Daten"
@@ -72,7 +73,7 @@ showKHebrew kashrut = case kashrut of
   KosherIncludingPassover -> "כשר, כולל פסח"
   KosherNeedPassoverHashgoho -> "כשר, צריך השגחה לפסח"
   UsuallyKosherRarelyNeedsHashgoho -> "צריך השגחה, כשר בדרך כלל"
-  OftenKosherNeedHashgoho -> "כשר בדרך כלל, צריך השגחה"
+  OftenKosherNeedHashgoho -> "צריך השגחה, כשר לעיתים קרובות"
   NeedHashgohoWholeYear -> "צריר השגחה כל השנה"
   NeedHashgohoWholeYearSomeAllow -> "צריך השגחה כל השנה, יש שמתירים"
   KosherForbidden -> "כשר,אסור"
@@ -84,8 +85,8 @@ showKFrench kashrut = case kashrut of
   NotKosher -> "Pas cacher!"
   KosherIncludingPassover -> "Casher pour toute l'année, y compris Pessa'h (Pâque)"
   KosherNeedPassoverHashgoho -> "Casher pour toute l'année mais nécessite une surveillance spécifique pour Pessa'h (Pâque)"
-  UsuallyKosherRarelyNeedsHashgoho -> "Généralement cacher, rarement besoin de Hashgoho"
-  OftenKosherNeedHashgoho -> "Souvent cacher, besoin de Hashgoho"
+  UsuallyKosherRarelyNeedsHashgoho -> "besoin de Hashgoho, généralement cacher"
+  OftenKosherNeedHashgoho -> "Besoin de Hashgoho, souvent cacher"
   NeedHashgohoWholeYear -> "Nécessite une surveillance rabbinique toute l'année"
   NeedHashgohoWholeYearSomeAllow -> "Nécessite une surveillance rabbinique toute l'année, certains autorisent"
   KosherForbidden -> "Cacher, INTERDIT"
@@ -96,8 +97,8 @@ showKLatvian kashrut = case kashrut of
   NotKosher -> "Nav košers!"
   KosherIncludingPassover -> "Košers ieskaitot Pēsah"
   KosherNeedPassoverHashgoho -> "Košers, nepieciešama uzraudzība Pēsah laikā"
-  UsuallyKosherRarelyNeedsHashgoho -> "Parasti košers, reti nepieciešama uzraudzība"
-  OftenKosherNeedHashgoho -> "Bieži košers, nepieciešama uzraudzība"
+  UsuallyKosherRarelyNeedsHashgoho -> "Nepieciešama uzraudzība, parasti košers"
+  OftenKosherNeedHashgoho -> "Nepieciešama uzraudzība, bieži košers"
   NeedHashgohoWholeYear -> "Nepieciešama uzraudzība visu gadu"
   NeedHashgohoWholeYearSomeAllow -> "Nepieciešama uzraudzība visu gadu, daži atļauj"
   KosherForbidden -> "Košers, AIZLIEGTS"  
@@ -114,6 +115,7 @@ showSource source = case source of
   Vegan -> "Vegan"
   Synthetic -> "Synthetic"
   Dangerous -> "Dangerous"
+  Mushroom -> "Mushrooms"
 
 showSources :: Array Source -> String
 showSources arr = foldl (\acc x -> acc <> " " <> showSource x) "src: " arr

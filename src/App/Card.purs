@@ -8,15 +8,16 @@ import App.Assets (backArrowBlack, backArrowWhite)
 import App.Colours (black, green, lightred, marine, orangad, white, yellow)
 import App.Common (Action(..), CardDisplayLanguage(..), css)
 import App.ShowResults (getBackgroundForKashrut)
-import CSS (alignItems, backgroundColor, bold, border, borderRadius, boxShadow, color, column, direction, display, flex, flexDirection, flexGrow, fontSize, fontWeight, height, margin, marginBottom, marginLeft, marginRight, marginTop, minHeight, opacity, pct, px, solid, space, spaceBetween, width, justifyContent, spaceAround, padding)
+import CSS (alignItems, backgroundColor, bold, border, borderRadius, boxShadow, color, column, direction, display, flex, flexDirection, flexGrow, fontSize, fontStyle, fontWeight, height, justifyContent, margin, marginBottom, marginLeft, marginRight, marginTop, minHeight, opacity, padding, pct, px, solid, space, spaceAround, spaceBetween, width, fontStyle)
 import CSS.Color (Color(..))
 import CSS.Common (center, none)
 import CSS.Font (fontFamily, monospace)
+import CSS.FontStyle(italic)
 import CSS.Overflow (overflowY, overflowX, overflow, overflowAuto, overflowInherit)
 import CSS.TextAlign (justify)
 import Data.Array (fromFoldable, elem)
 import Data.ENumberTypes (ENumber, Kashrut(..))
-import Data.Head (showK, showKFrench, showKGerman, showKHebrew, showKLatvian, showKRussian)
+import Data.Head (showK, showKFrench, showKGerman, showKHebrew, showKLatvian, showKRussian, showGroup)
 import Data.Maybe (Maybe(Just, Nothing))
 import Data.NonEmpty ((:|))
 import Halogen.HTML as HH
@@ -89,6 +90,7 @@ card open e_number lang =
                          CSS.style do
                        margin (px 20.0 )   (px 10.0 )   (px 20.0 )  (px 20.0 ) 
                        fontSize $ px 20.0
+                       
                          ] 
                          [HH.text 
                          $ getTextFromENumber e_number lang
@@ -96,15 +98,18 @@ card open e_number lang =
                    
                       -- TODO: implement display of group and sources
                       -- Group
-                      --  , HH.div
-                      --    [
-                      --    CSS.style do
-                      --         margin (px 10.0 )   (px 10.0 )   (px 20.0 )  (px 10.0 ) 
-                      --         fontSize $ px 20.0
-                      --    ] 
-                      --    [HH.text 
-                      --    $ getGroupFromENumber e_number lang
-                      --    ]
+                       , HH.div
+                         [
+                         CSS.style do
+                              margin (px 10.0 )   (px 10.0 )   (px 20.0 )  (px 20.0 ) 
+                              fontSize $ px 20.0
+                              fontWeight bold
+                              fontStyle italic
+                              color $ getBorderColor e_number
+                         ] 
+                         [HH.text 
+                         $ getGroupFromENumber e_number lang
+                         ]
                       -- -- Sources
                       --  , HH.div
                       --    [
@@ -207,10 +212,10 @@ getSrcFromENumber e lang = case e.source of [] -> ""
                                             _  -> "Possible sources: "
 
 getGroupFromENumber :: ENumber -> CardDisplayLanguage -> String
-getGroupFromENumber e lang = "Group: " <> "Implement display of group"
+getGroupFromENumber e lang = showGroup e.group lang
 
 getTextFromENumber :: ENumber -> CardDisplayLanguage -> String
-getTextFromENumber e lang = e.e_number <>  " " <> (getTextByLanguage e lang)  <> " " <> e.description
+getTextFromENumber e lang = e.e_number <>  " " <> (getTextByLanguage e lang)
 
 
 getTextByLanguage :: ENumber -> CardDisplayLanguage -> String

@@ -8,17 +8,20 @@ module Data.Head
   , showKFrench
   , showKLatvian
  , showSources
+ , showGroup
 )
 where
 
 import Prelude
 
+import App.Common (CardDisplayLanguage(..))
 import CSS (query)
 import Control.Comonad.Trans.Class (lower)
-import Data.ENumberTypes (ENumber, ENumberList, Kashrut(..), Source(..))
+import Data.ENumberTypes (ENumber, ENumberList, Kashrut(..), Source(..), AdditiveGroup(..))
 import Data.Foldable (foldl)
 import Data.Generic.Rep (to)
 import Data.List (fromFoldable, filter, concat)
+import Data.Monoid.Additive (Additive)
 import Data.Nb100to199 (colorENumberList)
 import Data.Nb200to299 (preservatENumberList)
 import Data.Nb300to399 (antioxidantENumberList)
@@ -120,6 +123,91 @@ showSource source = case source of
 showSources :: Array Source -> String
 showSources arr = foldl (\acc x -> acc <> " " <> showSource x) "src: " arr
 
+showGroup :: AdditiveGroup -> CardDisplayLanguage -> String
+showGroup group lang = case lang of
+  English -> showEnglishGroup group
+  Russian -> showRussianGroup group
+  German -> showGermanGroup group
+  Hebrew -> showHebrewGroup group
+  French -> showFrenchGroup group
+  Latvian -> showLatvianGroup group
+
+
+-- data AdditiveGroup =  Colour | Preservative | Antioxidant | FlavourEnchancer | Sweetener | Emulsifier | Stabilizer | AcidityRegulator | AntiCakingAgent 
+
+showEnglishGroup :: AdditiveGroup -> String
+showEnglishGroup group = case group of
+  Colour -> "Food Coloring"
+  Preservative -> "Preservative"
+  Antioxidant -> "Antioxidant"
+  Stabilizer -> "Stabilizer"
+  AcidityRegulator -> "Acidity Regulator"
+  AntiCakingAgent -> "Anti-Caking Agent"
+  Emulsifier -> "Emulsifier"
+  Sweetener -> "Sweetener"
+  FlavourEnchancer -> "Flavour Enchancer"
+
+showRussianGroup :: AdditiveGroup -> String
+showRussianGroup group = case group of
+  Colour -> "Краситель"
+  Preservative -> "Консервант"
+  Antioxidant -> "Антиоксидант"
+  Stabilizer -> "Стабилизатор"
+  AcidityRegulator -> "Регулятор кислотности"
+  AntiCakingAgent -> "Антиагломерант"
+  Emulsifier -> "Эмульгатор"
+  Sweetener -> "Подсластитель"
+  FlavourEnchancer -> "Усилитель вкуса"
+
+showGermanGroup :: AdditiveGroup -> String
+showGermanGroup group = case group of
+  Colour -> "Lebensmittelfarbe"
+  Preservative -> "Konservierungsmittel"
+  Antioxidant -> "Antioxidationsmittel"
+  Stabilizer -> "Stabilisator"
+  AcidityRegulator -> "Säureregulator"
+  AntiCakingAgent -> "Antiklumpmittel"
+  Emulsifier -> "Emulgator"
+  Sweetener -> "Süßstoff"
+  FlavourEnchancer -> "Geschmacksverstärker"
+
+showHebrewGroup :: AdditiveGroup -> String
+showHebrewGroup group = case group of
+  Colour -> " צבע מאכל"
+  Preservative -> "משמר"
+  Antioxidant -> "נוגד חמצון"
+  Stabilizer -> "מייצב"
+  AcidityRegulator -> "מכיל חומציות"
+  AntiCakingAgent -> "מונע קיבוע"
+  Emulsifier -> "מוליך"
+  Sweetener -> "ממתיק"
+  FlavourEnchancer -> "מחזק טעם"
+
+showFrenchGroup :: AdditiveGroup -> String
+showFrenchGroup group = case group of
+  Colour -> "Colorant"
+  Preservative -> "Conservateur"
+  Antioxidant -> "Antioxydant"
+  Stabilizer -> "Stabilisateur"
+  AcidityRegulator -> "Régulateur d'acidité"
+  AntiCakingAgent -> "Agent anti-agglomérant"
+  Emulsifier -> "Émulsifiant"
+  Sweetener -> "Édulcorant"
+  FlavourEnchancer -> "Exhausteur de goût"
+
+showLatvianGroup :: AdditiveGroup -> String
+showLatvianGroup group = case group of
+  Colour -> "Pārtikas krāsvielas"
+  Preservative -> "Konservants"
+  Antioxidant -> "Antioksidants"
+  Stabilizer -> "Stabilizators"
+  AcidityRegulator -> "Skābuma regulētājs"
+  AntiCakingAgent -> "Pretsalipes līdzeklis"
+  Emulsifier -> "Emulgators"
+  Sweetener -> "Saldinātājs"
+  FlavourEnchancer -> "Garšas pastiprinātājs"  
+
+      
 findENumbersInList :: String -> ENumberList
 findENumbersInList query = filter filterEntry seedENumberList
   where filterEntry::ENumber -> Boolean

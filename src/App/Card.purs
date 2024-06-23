@@ -60,7 +60,7 @@ card open e_number lang =
                         HP.id "back-button"
                         , HE.onClick $ \_ -> ClearCard
                         , CSS.style do
-                          padding (px 5.0) (px 10.0) (px 5.0) (px 10.0) 
+                          padding (px 5.0) (px 15.0) (px 5.0) (px 10.0) 
                           margin (px 20.0) (px 10.0) (px 10.0) (px 20.0)
                           fontSize $ px 20.0
                           display flex

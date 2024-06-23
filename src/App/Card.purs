@@ -8,7 +8,7 @@ import App.Assets (backArrowBlack, backArrowWhite)
 import App.Colours (black, green, lightred, marine, orangad, white, yellow)
 import App.Common (Action(..), CardDisplayLanguage(..))
 import App.ShowResults (getBackgroundForKashrut)
-import CSS (alignItems, backgroundColor, bold, border, borderRadius, boxShadow, color, column, direction, display, flex, flexDirection, flexGrow, fontSize, fontWeight, height, margin, marginBottom, marginLeft, marginRight, marginTop, minHeight, opacity, pct, px, solid, space, spaceBetween, width, justifyContent, spaceAround)
+import CSS (alignItems, backgroundColor, bold, border, borderRadius, boxShadow, color, column, direction, display, flex, flexDirection, flexGrow, fontSize, fontWeight, height, margin, marginBottom, marginLeft, marginRight, marginTop, minHeight, opacity, pct, px, solid, space, spaceBetween, width, justifyContent, spaceAround, padding)
 import CSS.Color (Color(..))
 import CSS.Common (center, none)
 import CSS.Font (fontFamily, monospace)
@@ -59,7 +59,8 @@ card open e_number lang =
                         HP.id "back-button"
                         , HE.onClick $ \_ -> ClearCard
                         , CSS.style do
-                          margin (px 10.0) (px 10.0) (px 10.0) (px 10.0)
+                          padding (px 5.0) (px 10.0) (px 5.0) (px 10.0) 
+                          margin (px 20.0) (px 10.0) (px 10.0) (px 20.0)
                           fontSize $ px 20.0
                           display flex
                           alignItems center
@@ -85,7 +86,7 @@ card open e_number lang =
                       , HH.div
                          [
                          CSS.style do
-                       margin (px 10.0 )   (px 10.0 )   (px 20.0 )  (px 10.0 ) 
+                       margin (px 20.0 )   (px 10.0 )   (px 20.0 )  (px 20.0 ) 
                        fontSize $ px 20.0
                          ] 
                          [HH.text 
@@ -117,7 +118,7 @@ card open e_number lang =
                       -- kashrut  
                       ,HH.div[
                         CSS.style do
-                          margin (px 60.0) (px 20.0) (px 20.0) (px 10.0)
+                          margin (px 60.0) (px 20.0) (px 20.0) (px 20.0)
                           fontSize $ px 20.0
                           fontWeight bold
                          ] [HH.text $ getKashrutFromENumber e_number lang]

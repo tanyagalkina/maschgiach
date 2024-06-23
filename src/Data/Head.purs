@@ -74,7 +74,7 @@ showKHebrew kashrut = case kashrut of
   KosherNeedPassoverHashgoho -> "כשר, צריך השגחה לפסח"
   UsuallyKosherRarelyNeedsHashgoho -> "צריך השגחה, כשר בדרך כלל"
   OftenKosherNeedHashgoho -> "צריך השגחה, כשר לעיתים קרובות"
-  NeedHashgohoWholeYear -> "צריר השגחה כל השנה"
+  NeedHashgohoWholeYear -> "צריך השגחה כל השנה"
   NeedHashgohoWholeYearSomeAllow -> "צריך השגחה כל השנה, יש שמתירים"
   KosherForbidden -> "כשר,אסור"
   IssuficientData -> "מידע לא מספיק"    

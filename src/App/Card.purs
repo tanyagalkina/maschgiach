@@ -73,12 +73,12 @@ card open e_number lang =
                       ]
                       [
                         HH.img [
-                          HP.src backArrowBlack
+                          HP.src $ case e_number.kosher of NotKosher -> backArrowWhite
+                                                           _ -> backArrowBlack
                           , CSS.style do
                             marginRight $ px 10.0
                           ]
                       ,
-                        -- HH.text "BACK"
                         HH.text $ getBackText lang
                       ]
                       -- name description 

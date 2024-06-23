@@ -24,8 +24,8 @@ import Halogen.HTML.Properties as HP
 
 
 -- FIXME: the str is probably not needed, use placeholder instead
-searchBar:: forall w . String-> HH.HTML w Action
-searchBar str = HH.div [
+searchBar:: forall w . String-> String -> HH.HTML w Action
+searchBar str placeholder = HH.div [
           CSS.style do
             -- border solid (px 2.0) brown
             height $ px 80.0
@@ -66,7 +66,7 @@ searchBar str = HH.div [
                   margin (px 10.0) (px 10.0) (px 10.0) (px 10.0)
              ]
           , HH.input [
-          HP.placeholder "Name or Number"
+          HP.placeholder placeholder
           , css "new-input-bar"
           , CSS.style do
             color violet

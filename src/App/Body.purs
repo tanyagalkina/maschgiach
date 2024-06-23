@@ -61,7 +61,7 @@ render state =
             ]
             [
                 headerWithLangSwitches state.cardDisplayLanguage
-              , searchBar $ state.searchStr
+              , searchBar state.searchStr $ getPlaceholderTxt state.cardDisplayLanguage
                 -- FIXME: refactor for readability
               , case state.currentCard of Just(myCard) -> card state.cardAppear myCard state.cardDisplayLanguage 
                                           Nothing -> resultsAndCard state.results state.cardDisplayLanguage
@@ -104,3 +104,12 @@ searchNumber str = case str of
   -- "" -> empty
   "" -> seedENumberList
   _ -> findENumbersInList str
+
+getPlaceholderTxt :: CardDisplayLanguage -> String
+getPlaceholderTxt lang = case lang of
+  English -> "Name or Number"
+  Russian -> "Название или номер"
+  French -> "Nom ou numéro"
+  German -> "Name oder Nummer"
+  Hebrew -> "שם או מספר"
+  Latvian -> "Nosaukums vai numurs"

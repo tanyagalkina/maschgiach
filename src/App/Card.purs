@@ -4,18 +4,18 @@ import Prelude
 
 import Affjax.Web (get)
 import Ansi.Output (background)
-import App.Assets (back)
+import App.Assets (backArrowBlack, backArrowWhite)
 import App.Colours (black, green, lightred, marine, orangad, white, yellow)
 import App.Common (Action(..), CardDisplayLanguage(..))
 import App.ShowResults (getBackgroundForKashrut)
-import CSS (alignItems, backgroundColor, bold, border, borderRadius, color, column, direction, display, flex, flexDirection, flexGrow, fontSize, fontWeight, height, margin, marginBottom, marginLeft, marginRight, marginTop, minHeight, pct, px, solid, width)
+import CSS (alignItems, backgroundColor, bold, border, borderRadius, boxShadow, color, column, direction, display, flex, flexDirection, flexGrow, fontSize, fontWeight, height, margin, marginBottom, marginLeft, marginRight, marginTop, minHeight, opacity, pct, px, solid, space, spaceBetween, width, justifyContent, spaceAround)
 import CSS.Color (Color(..))
-import CSS.Common (center)
+import CSS.Common (center, none)
 import CSS.Font (fontFamily, monospace)
 import CSS.Overflow (overflowY, overflowX, overflow, overflowAuto, overflowInherit)
+import CSS.TextAlign (justify)
 import Data.Array (fromFoldable, elem)
 import Data.ENumberTypes (ENumber, Kashrut(..))
--- import Data.ENumberTypes (Kashrut(..))
 import Data.Head (showK, showKFrench, showKGerman, showKHebrew, showKLatvian, showKRussian)
 import Data.Maybe (Maybe(Just, Nothing))
 import Data.NonEmpty ((:|))
@@ -61,14 +61,25 @@ card open e_number lang =
                         , CSS.style do
                           margin (px 10.0) (px 10.0) (px 10.0) (px 10.0)
                           fontSize $ px 20.0
+                          display flex
+                          alignItems center
                           border solid (px 2.0) $ getBorderColor e_number
                           borderRadius (px 20.0) (px 20.0) (px 20.0) (px 20.0)
-                          backgroundColor $ getBackgroundForKashrut e_number
+                          -- backgroundColor $ getBackgroundForKashrut e_number
+                          -- backgroundColor $ transparent <- FIXME: did not found transparent
+                          
                           color $ case e_number.kosher of NotKosher -> white
                                                           _ -> black
-                      ][
-                      -- FIXME: make real back sign
-                        HH.text "< BACK"
+                      ]
+                      [
+                        HH.img [
+                          HP.src backArrowBlack
+                          , CSS.style do
+                            marginRight $ px 10.0
+                          ]
+                      ,
+                        -- HH.text "BACK"
+                        HH.text $ getBackText lang
                       ]
                       -- name description 
                       , HH.div
@@ -80,6 +91,7 @@ card open e_number lang =
                          [HH.text 
                          $ getTextFromENumber e_number lang
                          ]
+                   
                       -- TODO: implement display of group and sources
                       -- Group
                       --  , HH.div
@@ -109,9 +121,11 @@ card open e_number lang =
                           fontSize $ px 20.0
                           fontWeight bold
                          ] [HH.text $ getKashrutFromENumber e_number lang]
-                      ]
+                      
                      -- , legend
-]
+                   ]
+                   ]
+
 legend:: forall w46 . HH.HTML w46 Action
 legend = 
     HH.div [
@@ -140,6 +154,15 @@ getBorderColor e_number = case e_number.kosher of
   -- FIXME: this is placeholder Color
   IssuficientData -> yellow
 
+
+getBackText :: CardDisplayLanguage -> String
+getBackText lang = case lang of
+  English -> "BACK"
+  Russian -> "НАЗАД"
+  German -> "ZURÜCK"
+  Hebrew -> "חזור"
+  French -> "RETOUR"
+  Latvian -> "ATPAKAĻ"
 type ListItem =
   { color :: Color
   , text :: String

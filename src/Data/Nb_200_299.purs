@@ -7,17 +7,12 @@ module Data.Nb200to299
   )
   where
 
-
--- import Affjax.RequestHeader (name)
-
-import Data.ENumberTypes (AdditiveGroup(..), ENumberList, Kashrut(..), Source(..), ENumber, emptyENumberList, insertEntry)
-
--- import Data.Number (e)
+import Data.ENumberTypes (AdditiveGroup(..), ENumber, ENumberList, Kashrut(..), Source(..), emptyENumberList, insertEntry)
 
 infixr 5 insertEntry as ++
 
 preservatENumberList :: ENumberList
-preservatENumberList = e200 ++ e201 ++ e202 ++ e203 ++ e209 ++ e210 ++ e211 ++ e212 ++ e213 ++ e214 ++ e215 ++ e216 ++ e217 ++ e218 ++ e219 ++ e220 ++ e221 ++ e222 ++ e223 ++ e224 ++ e225 ++ e226 ++ e227 ++ e228 ++ e230 ++ e231 ++ e232 ++ e233 ++ e234 ++ e235 ++ e236 ++ e237 ++ e238 ++ e239 ++ e240 ++ e242 ++ e249 ++ e250 ++ e251 ++ e252 ++
+preservatENumberList = e200 ++ e201 ++ e202 ++ e203 ++ e209 ++ e210 ++ e211 ++ e212 ++ e213 ++ e214 ++ e215 ++ e216 ++ e217 ++ e218 ++ e219 ++ e220 ++ e221 ++ e222 ++ e223 ++ e224 ++ e225 ++ e226 ++ e227 ++ e228 ++ e230 ++ e231 ++ e232 ++ e233 ++ e234 ++ e235 ++ e236 ++ e237 ++ e238 ++ e239 ++ e240 ++ e242 ++ e249 ++ e250 ++ e251 ++ e252 ++ e260 ++ e261 ++ e262 ++ e263 ++ e264 ++ e265 ++ e266 ++ e270 ++ e280 ++ e281 ++ e282 ++ e283 ++ e284 ++ e285 ++ e290 ++ e296 ++ e297 ++ 
   emptyENumberList
 
 -- seed data ---
@@ -622,6 +617,261 @@ e252 = {
   , kosher: UsuallyKosherRarelyNeedsHashgoho
 }
 
+e260 :: ENumber
+e260 = {
+  name_english: "Acetic acid"
+  , name_russian: "Уксусная кислота"
+  , name_german: "Essigsäure"
+  , name_hebrew: "חומצה חציבית"
+  , name_french: "Acide acétique"
+  , name_latvian: "Etānskābe"
+  , e_number: "E260"
+  , group: Preservative
+  , source: [Wine]
+  , description: ""
+  , kosher: NeedHashgohoWholeYear
+}
+
+e261 :: ENumber
+e261 = {
+  name_english: "Potassium acetate"
+  , name_russian: "Ацетат калия, уксуснокислый калий"
+  , name_german: "Kaliumacetat"
+  , name_hebrew: "אצטת קליום"
+  , name_french: "Acétate de potassium"
+  , name_latvian: "Kālija acetāts"
+  , e_number: "E261"
+  , group: Preservative
+  , source: [Wine]
+  , description: ""
+  , kosher: NeedHashgohoWholeYear  
+}
+
+e262 :: ENumber
+e262 = {
+  name_english: "Sodium acetate, Sodium hydrogen diacetate, Dykon"
+  , name_russian: "Ацетат натрия, уксуснокислый натрий"
+  , name_german: "Natriumacetat"
+  , name_hebrew: "אצטת נתרן"
+  , name_french: "Acétate de sodium"
+  , name_latvian: "Nātrija acetāts"
+  , e_number: "E262"
+  , group: Preservative
+  , source: [Wine]
+  , description: ""
+  , kosher: NeedHashgohoWholeYear
+}
+
+
+e263 :: ENumber
+e263 = {
+  name_english: "Calcium acetate"
+  , name_russian: "Ацетат кальция, уксуснокислый кальций"
+  , name_german: "Calciumacetat"
+  , name_hebrew: "אצטת סידן"
+  , name_french: "Acétate de calcium"
+  , name_latvian: "Kalcija acetāts"
+  , e_number: "E263"
+  , group: Preservative
+  , source: [Wine]
+  , description: ""
+  , kosher: NeedHashgohoWholeYear
+}
+
+e264 :: ENumber
+e264 = {
+  name_english: "Ammonium acetate"
+  , name_russian: "Ацетат аммония, уксуснокислый аммоний"
+  , name_german: "Ammoniumacetat"
+  , name_hebrew: "אצטת אמוניום"
+  , name_french: "Acétate d'ammonium"
+  , name_latvian: "Amonija acetāts"
+  , e_number: "E264"
+  , group: Preservative
+  , source: []
+  , description: ""
+  , kosher: NeedHashgohoWholeYear
+}
+
+e265 :: ENumber
+e265 = {
+  name_english: "Dehydroacetic acid"
+  , name_russian: "Дегидроуксусная кислота"
+  , name_german: "Dehydroessigsäure"
+  , name_hebrew: "חומצה דהידרואצטית"
+  , name_french: "Acide déhydroacétique"
+  , name_latvian: "Dehidroacetīnskābe"
+  , e_number: "E265"
+  , group: Preservative
+  , source: []
+  , description: ""
+  , kosher: NeedHashgohoWholeYear
+}
+
+e266 :: ENumber
+e266 = {
+  name_english: "Sodium dehydroacetate"
+  , name_russian: "Дегидроуксуснокислый натрий"
+  , name_german: "Natriumdehydroacetat"
+  , name_hebrew: "דהידרואצטט נתרן"
+  , name_french: "Déhydroacétate de sodium"
+  , name_latvian: "Nātrija dehidroacetāts"
+  , e_number: "E266"
+  , group: Preservative
+  , source: []
+  , description: ""
+  , kosher: NeedHashgohoWholeYear
+}
+
+e270 :: ENumber
+e270 = {
+  name_english: "Lactic acid"
+  , name_russian: "Молочная кислота"
+  , name_german: "Milchsäure"
+  , name_hebrew: "חומצה לקטית"
+  , name_french: "Acide lactique"
+  , name_latvian: "Piena skābe"
+  , e_number: "E270"
+  , group: Preservative
+  , source: []
+  , description: ""
+  , kosher: NeedHashgohoWholeYearSomeAllow
+}
+
+e280 :: ENumber
+e280 = {
+  name_english: "Propionic acid"
+  , name_russian: "Пропионовая кислота"
+  , name_german: "Propionsäure"
+  , name_hebrew: "חומצה פרופיונית"
+  , name_french: "Acide propionique"
+  , name_latvian: "Propionskābe"
+  , e_number: "E280"
+  , group: Preservative
+  , source: [Animal]
+  , description: ""
+  , kosher: UsuallyKosherRarelyNeedsHashgoho
+}
+
+e281 :: ENumber
+e281 = {
+  name_english: "Sodium propionate"
+  , name_russian: "Пропионат натрия"
+  , name_german: "Natriumpropionat"
+  , name_hebrew: "פרופיונט נתרן"
+  , name_french: "Propionate de sodium"
+  , name_latvian: "Nātrija propionāts"
+  , e_number: "E281"
+  , group: Preservative
+  , source: [Animal]
+  , description: ""
+  , kosher: UsuallyKosherRarelyNeedsHashgoho
+}
+
+e282 :: ENumber
+e282 = {
+  name_english: "Calcium propionate"
+  , name_russian: "Пропионат кальция"
+  , name_german: "Calciumpropionat"
+  , name_hebrew: "פרופיונט סידן"
+  , name_french: "Propionate de calcium"
+  , name_latvian: "Kalcija propionāts"
+  , e_number: "E282"
+  , group: Preservative
+  , source: [Animal]
+  , description: ""
+  , kosher: UsuallyKosherRarelyNeedsHashgoho
+}
+
+e283 :: ENumber
+e283 = {
+  name_english: "Potassium propionate"
+  , name_russian: "Пропионат калия"
+  , name_german: "Kaliumpropionat"
+  , name_hebrew: "פרופיונט קליום"
+  , name_french: "Propionate de potassium"
+  , name_latvian: "Kālija propionāts"
+  , e_number: "E283"
+  , group: Preservative
+  , source: [Animal]
+  , description: ""
+  , kosher: UsuallyKosherRarelyNeedsHashgoho
+}
+
+e284 :: ENumber
+e284 = {
+  name_english: "Boric acid"
+  , name_russian: "Борная кислота"
+  , name_german: "Borsäure"
+  , name_hebrew: "חומצה בורית"
+  , name_french: "Acide borique"
+  , name_latvian: "Borskābe"
+  , e_number: "E284"
+  , group: Preservative
+  , source: []
+  , description: ""
+  , kosher: KosherIncludingPassover
+}
+
+e285 :: ENumber
+e285 = {
+  name_english: "Sodium tetraborate, Borax"
+  , name_russian: "Тетраборат натрия, боракс"
+  , name_german: "Natriumtetraborat"
+  , name_hebrew: "טטרבורט נתרן"
+  , name_french: "Tétraborate de sodium"
+  , name_latvian: "Nātrija tetraborāts"
+  , e_number: "E285"
+  , group: Preservative
+  , source: []
+  , description: ""
+  , kosher: KosherIncludingPassover
+}
+
+e290 :: ENumber
+e290 = {
+  name_english: "Carbon dioxide"
+  , name_russian: "Диоксид углерода"
+  , name_german: "Kohlendioxid"
+  , name_hebrew: "דו-חמצן פחמימי"
+  , name_french: "Dioxyde de carbone"
+  , name_latvian: "Oglekļa dioksīds"
+  , e_number: "E290"
+  , group: Preservative
+  , source: []
+  , description: ""
+  , kosher: KosherNeedPassoverHashgoho
+}
+
+e296 :: ENumber
+e296 = {
+  name_english: "Malic acid"
+  , name_russian: "Яблочная кислота"
+  , name_german: "Apfelsäure"
+  , name_hebrew: "חומצה מלית"
+  , name_french: "Acide malique"
+  , name_latvian: "Ābolu skābe"
+  , e_number: "E296"
+  , group: Preservative
+  , source: [Synthetic]
+  , description: ""
+  , kosher: KosherNeedPassoverHashgoho
+}
+
+e297 :: ENumber
+e297 = {
+  name_english: "Fumaric acid"
+  , name_russian: "Фумаровая кислота"
+  , name_german: "Fumarsäure"
+  , name_hebrew: "חומצה פומרית"
+  , name_french: "Acide fumarique"
+  , name_latvian: "Fumārskābe"
+  , e_number: "E297"
+  , group: Preservative
+  , source: [Synthetic]
+  , description: ""
+  , kosher: KosherNeedPassoverHashgoho
+}
 
 
 

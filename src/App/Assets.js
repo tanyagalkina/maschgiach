@@ -12,6 +12,7 @@ import rightArrow from '../../src/assets/RightArrow.svg'
 import rightArrowWhite from '../../src/assets/rightArrowWhite.svg'
 // FIXME: remove this back asset
 import back from '../../src/assets/Back.svg'
-import backArrow from '../../src/assets/backArrow.svg'
+import backArrowBlack from '../../src/assets/backArrowBlack.svg'
+import backArrowWhite from '../../src/assets/backArrowWhite.svg'
 
-export { ampelmann, typeSound, englishIcon, germanIcon, hebrewIcon, latvianIcon, russianIcon, frenchIcon, roshTov, magnifyingGlass, rightArrow, rightArrowWhite, back, backArrow}
+export { ampelmann, typeSound, englishIcon, germanIcon, hebrewIcon, latvianIcon, russianIcon, frenchIcon, roshTov, magnifyingGlass, rightArrow, rightArrowWhite, back, backArrowBlack, backArrowWhite}

@@ -114,6 +114,10 @@ html, body {
 
 /*  E-NUMBER CARD */
 
+#back-button {
+  background-color: transparent;
+}
+
 .e-number-card .sources {
   visibility: hidden;
   transition: visibility 0.3s, opacity 0.3s ease;

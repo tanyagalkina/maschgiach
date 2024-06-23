@@ -10,7 +10,7 @@
   "scope": "https://tanyaberlin.netlify.app",
   "icons": [
     {
-      "src": "src/assets/required_app_icon.png",
+      "src": "src/assets/required_app_icon.svg",
       "sizes": "1024x386"
     },
     {

@@ -149,7 +149,7 @@ getBorderColor e_number = case e_number.kosher of
   KosherIncludingPassover -> marine
   KosherNeedPassoverHashgoho -> green
   UsuallyKosherRarelyNeedsHashgoho -> marine
-  OftenKosherNeedHashgoho -> black
+  OftenKosherNeedHashgoho -> green
   NeedHashgohoWholeYear -> white
   NeedHashgohoWholeYearSomeAllow -> white
   KosherForbidden -> orangad

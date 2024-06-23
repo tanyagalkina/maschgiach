@@ -6,7 +6,7 @@ import Affjax.Web (get)
 import Ansi.Output (background)
 import App.Assets (backArrowBlack, backArrowWhite)
 import App.Colours (black, green, lightred, marine, orangad, white, yellow)
-import App.Common (Action(..), CardDisplayLanguage(..))
+import App.Common (Action(..), CardDisplayLanguage(..), css)
 import App.ShowResults (getBackgroundForKashrut)
 import CSS (alignItems, backgroundColor, bold, border, borderRadius, boxShadow, color, column, direction, display, flex, flexDirection, flexGrow, fontSize, fontWeight, height, margin, marginBottom, marginLeft, marginRight, marginTop, minHeight, opacity, pct, px, solid, space, spaceBetween, width, justifyContent, spaceAround, padding)
 import CSS.Color (Color(..))
@@ -36,7 +36,8 @@ newCard open e_number lang =  HH.div [
 card :: forall w. Boolean -> ENumber -> CardDisplayLanguage -> HH.HTML w Action
 card open e_number lang =
   HH.div [
-                     CSS.style do
+                    css "fade-in"
+                     , CSS.style do
                        display flex
                        flexDirection column
                        flexGrow 1.0

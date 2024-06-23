@@ -57,7 +57,7 @@ headerWithLangSwitches lang = HH.div [
               marginTop $ px 20.0
               marginLeft $ px 10.0
           ]
-          [HH.text "MaschgiachApp"]
+          [HH.text "MashgiachApp"]
           , HH.div [
             CSS.style do
               -- border solid (px 4.0) green

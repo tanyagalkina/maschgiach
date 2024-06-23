@@ -332,7 +332,7 @@ e129 = {
   , group: Colour
   , source: [Synthetic, Dangerous]
   , description: "Red colouring; C.I: 16035 FD and C Red 40: יש חוששים, מקובל ככשר"
-  , kosher: NeedHashgohoWholeYear
+  , kosher: UsuallyKosherRarelyNeedsHashgoho
 }
 
 e130 :: ENumber
@@ -599,9 +599,9 @@ e160a = {
   , name_latvian: "Karotīni"
   , e_number: "E160a"
   , group: Colour
-  , source: []
+  , source: [Animal]
   , description: "Yellow/Orange colouring; C.I. 75130"
-  , kosher: KosherNeedPassoverHashgoho
+  , kosher: NeedHashgohoWholeYear
 }
 
 e160b :: ENumber
@@ -691,7 +691,7 @@ e161a = {
   , group: Colour
   , source: [Synthetic]
   , description: "Yellow/Orange colouring"
-  , kosher: NeedHashgohoWholeYear
+  , kosher: NeedHashgohoWholeYearSomeAllow
 }
 
 e161b :: ENumber
@@ -766,7 +766,7 @@ e161f = {
   , group: Colour
   , source: []
   , description: "Yellow colouring"
-  , kosher: NeedHashgohoWholeYear
+  , kosher: NeedHashgohoWholeYearSomeAllow
 }
 
 e161g :: ENumber

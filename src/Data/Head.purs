@@ -15,13 +15,9 @@ where
 import Prelude
 
 import App.Common (CardDisplayLanguage(..))
-import CSS (query)
-import Control.Comonad.Trans.Class (lower)
-import Data.ENumberTypes (ENumber, ENumberList, Kashrut(..), Source(..), AdditiveGroup(..))
+import Data.ENumberTypes (AdditiveGroup(..), ENumber, ENumberList, Kashrut(..), Source(..))
 import Data.Foldable (foldl)
-import Data.Generic.Rep (to)
 import Data.List (fromFoldable, filter, concat)
-import Data.Monoid.Additive (Additive)
 import Data.Nb100to199 (colorENumberList)
 import Data.Nb200to299 (preservatENumberList)
 import Data.Nb300to399 (antioxidantENumberList)
@@ -31,7 +27,8 @@ import Data.Nb600to699 (flavourENumberList)
 import Data.String.CodeUnits (contains)
 import Data.String.Common (toLower)
 import Data.String.Pattern (Pattern(..))
-import Web.HTML.Event.EventTypes (offline)
+
+-- import Web.HTML.Event.EventTypes (offline)
 
 
 showK :: Kashrut -> String
@@ -146,6 +143,8 @@ showEnglishGroup group = case group of
   Emulsifier -> "Emulsifier"
   Sweetener -> "Sweetener"
   FlavourEnchancer -> "Flavour Enchancer"
+  Acid -> "Acid"
+  None -> ""
 
 showRussianGroup :: AdditiveGroup -> String
 showRussianGroup group = case group of
@@ -158,6 +157,8 @@ showRussianGroup group = case group of
   Emulsifier -> "Эмульгатор"
   Sweetener -> "Подсластитель"
   FlavourEnchancer -> "Усилитель вкуса"
+  Acid -> "Кислота"
+  None -> ""
 
 showGermanGroup :: AdditiveGroup -> String
 showGermanGroup group = case group of
@@ -170,6 +171,9 @@ showGermanGroup group = case group of
   Emulsifier -> "Emulgator"
   Sweetener -> "Süßstoff"
   FlavourEnchancer -> "Geschmacksverstärker"
+  Acid -> "Säure"
+  None -> ""
+
 
 showHebrewGroup :: AdditiveGroup -> String
 showHebrewGroup group = case group of
@@ -177,11 +181,13 @@ showHebrewGroup group = case group of
   Preservative -> "משמר"
   Antioxidant -> "נוגד חמצון"
   Stabilizer -> "מייצב"
-  AcidityRegulator -> "מכיל חומציות"
+  AcidityRegulator -> "מווסת חומציות"
   AntiCakingAgent -> "מונע קיבוע"
   Emulsifier -> "מוליך"
   Sweetener -> "ממתיק"
   FlavourEnchancer -> "מחזק טעם"
+  Acid -> "חומצה"
+  None -> ""
 
 showFrenchGroup :: AdditiveGroup -> String
 showFrenchGroup group = case group of
@@ -194,6 +200,8 @@ showFrenchGroup group = case group of
   Emulsifier -> "Émulsifiant"
   Sweetener -> "Édulcorant"
   FlavourEnchancer -> "Exhausteur de goût"
+  Acid -> "Acide"
+  None -> ""
 
 showLatvianGroup :: AdditiveGroup -> String
 showLatvianGroup group = case group of
@@ -206,6 +214,8 @@ showLatvianGroup group = case group of
   Emulsifier -> "Emulgators"
   Sweetener -> "Saldinātājs"
   FlavourEnchancer -> "Garšas pastiprinātājs"  
+  Acid -> "Skābe"
+  None -> ""
 
       
 findENumbersInList :: String -> ENumberList

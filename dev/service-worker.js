@@ -1,4 +1,4 @@
-importScripts('/cache-files.js'); // Ensure this path matches the output location
+import { cacheData } from './cache-files.js'; // Ensure this path matches the output location
 
 const CACHE_NAME = `my-pwa-cache-${cacheData.cacheHash}`;
 

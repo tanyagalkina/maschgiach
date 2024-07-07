@@ -28,7 +28,7 @@ function generateHash(files) {
 }
 
 // Get all files in the dist folder
-const filesToCache = getFiles('./dist').map(file => file.replace('.dist/', '/'));
+const filesToCache = getFiles('./dist').map(file => file.replace('dist/', ''));
 
 // Generate a hash based on the files
 const cacheHash = generateHash(getFiles('./dist'));

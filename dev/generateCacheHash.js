@@ -41,4 +41,4 @@ const cacheData = {
 
 // Output as an ES module
 const cacheFilesContent = `export const cacheData = ${JSON.stringify(cacheData)};`;
-fs.writeFileSync('./dist/cache-files.js', cacheFilesContent);
+fs.writeFileSync('../dist/cache-files.js', cacheFilesContent);

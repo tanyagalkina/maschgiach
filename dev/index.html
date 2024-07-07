@@ -4,14 +4,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="white">
   <title>mashgiach</title>
   
 </head>
-<meta name="apple-mobile-web-app-capable" content="yes" />
 <link rel="manifest" href="../manifest.webmanifest">
 <link rel="icon" type = "image/x-icon" href = "../src/assets/AmpelmannLupe.svg">
 <body>
   <script src="./index.js" type="module"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./service-worker.js')
+        .then(function(registration) {
+            console.log('Service Worker registered with scope:', registration.scope);
+        }).catch(function(error) {
+            console.log('Service Worker registration failed:', error);
+        });
+    }
+</script>
 </body>
 
 </html>

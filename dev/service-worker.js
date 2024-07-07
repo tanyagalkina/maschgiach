@@ -1,14 +1,22 @@
-import { cacheData } from './cache-files.js'; // Ensure this path matches the output location
+const CACHE_NAME_PREFIX = 'my-pwa-cache-';
 
-const CACHE_NAME = `my-pwa-cache-${cacheData.cacheHash}`;
+async function getCacheData() {
+    const response = await fetch('./cache-files.js');
+    const scriptText = await response.text();
+    const cacheData = {};
+    eval(scriptText); // This will execute the exported cacheData assignment
+    return cacheData;
+}
 
 self.addEventListener('install', event => {
     event.waitUntil(
-        caches.open(CACHE_NAME)
-            .then(cache => {
-                console.log('Opened cache:', CACHE_NAME);
-                return cache.addAll(cacheData.urlsToCache);
-            })
+        (async () => {
+            const cacheData = await getCacheData();
+            const CACHE_NAME = `${CACHE_NAME_PREFIX}${cacheData.cacheHash}`;
+            const cache = await caches.open(CACHE_NAME);
+            console.log('Opened cache:', CACHE_NAME);
+            await cache.addAll(cacheData.urlsToCache);
+        })()
     );
 });
 
@@ -25,17 +33,20 @@ self.addEventListener('fetch', event => {
 });
 
 self.addEventListener('activate', event => {
-    const cacheWhitelist = [CACHE_NAME];
     event.waitUntil(
-        caches.keys().then(cacheNames => {
-            return Promise.all(
+        (async () => {
+            const cacheData = await getCacheData();
+            const CACHE_NAME = `${CACHE_NAME_PREFIX}${cacheData.cacheHash}`;
+            const cacheWhitelist = [CACHE_NAME];
+            const cacheNames = await caches.keys();
+            await Promise.all(
                 cacheNames.map(cacheName => {
-                    if (cacheWhitelist.indexOf(cacheName) === -1) {
+                    if (!cacheWhitelist.includes(cacheName)) {
                         console.log('Deleting cache:', cacheName);
                         return caches.delete(cacheName);
                     }
                 })
             );
-        })
+        })()
     );
 });

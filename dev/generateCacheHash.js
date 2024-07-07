@@ -34,3 +34,12 @@ const filesToCache = getFiles('./dist').map(file => file.replace('dist/', ''));
 const cacheHash = generateHash(getFiles('./dist'));
 
 // Write the file list and hash to a cache-files.js 
+// Write the file list and hash to a cache-files.js file in the dist directory
+const cacheData = {
+    cacheHash,
+    urlsToCache: filesToCache
+};
+
+// Ensure the file is placed in the correct directory
+const cacheFilesContent = `window.cacheData = ${JSON.stringify(cacheData)};`;
+fs.writeFileSync('./dist/cache-files.js', cacheFilesContent);

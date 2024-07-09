@@ -102,6 +102,7 @@ getBackgroundForKashrut k =
         NotKosher -> black   
         KosherIncludingPassover -> green
         KosherNeedPassoverHashgoho -> marine
+        KosherChametz -> skyblue
         UsuallyKosherRarelyNeedsHashgoho -> yellow
         OftenKosherNeedHashgoho -> orange
         NeedHashgohoWholeYear -> orangad

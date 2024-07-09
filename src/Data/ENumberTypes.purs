@@ -4,17 +4,16 @@ import Prelude
 
 import Control.Plus (empty)
 import Data.List (List(..))
-import Data.Maybe (Maybe)
-
 
 infixr 5 insertEntry as ++
 
 -- TODO: implement Show for AdditiveGroup LATER, because there are new variants coming
-data AdditiveGroup =  Colour | Preservative | Antioxidant | FlavourEnchancer | Sweetener | Emulsifier | Stabilizer | AcidityRegulator | AntiCakingAgent | Acid | None
+data AdditiveGroup =  Colour | Preservative | Antioxidant | FlavourEnchancer | Sweetener | Emulsifier | Stabilizer | AcidityRegulator | AntiCakingAgent | Acid | None | GellingAgent
 
 data Kashrut = NotKosher   
              | KosherIncludingPassover 
              | KosherNeedPassoverHashgoho 
+             | KosherChametz
              | UsuallyKosherRarelyNeedsHashgoho
              | OftenKosherNeedHashgoho 
              | NeedHashgohoWholeYear

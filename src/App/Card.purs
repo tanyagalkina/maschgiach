@@ -12,7 +12,7 @@ import CSS (alignItems, backgroundColor, bold, border, borderRadius, boxShadow, 
 import CSS.Color (Color(..))
 import CSS.Common (center, none)
 import CSS.Font (fontFamily, monospace)
-import CSS.FontStyle(italic)
+import CSS.FontStyle (italic)
 import CSS.Overflow (overflowY, overflowX, overflow, overflowAuto, overflowInherit)
 import CSS.TextAlign (justify)
 import Data.Array (fromFoldable, elem)
@@ -153,6 +153,7 @@ getBorderColor e_number = case e_number.kosher of
   NotKosher -> orangad
   KosherIncludingPassover -> marine
   KosherNeedPassoverHashgoho -> green
+  KosherChametz -> orangad
   UsuallyKosherRarelyNeedsHashgoho -> marine
   OftenKosherNeedHashgoho -> green
   NeedHashgohoWholeYear -> white

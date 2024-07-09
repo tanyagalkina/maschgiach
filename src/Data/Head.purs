@@ -35,6 +35,7 @@ showK :: Kashrut -> String
 showK kashrut = case kashrut of
   NotKosher -> "Not Kosher!"
   KosherIncludingPassover -> "Kosher including Passover"
+  KosherChametz -> "Kosher, chametz"
   KosherNeedPassoverHashgoho -> "Kosher, needs Hashgoho for Passover"
   UsuallyKosherRarelyNeedsHashgoho -> "Needs Hashgoho, usually kosher"
   OftenKosherNeedHashgoho -> "Needs Hashgoho, often kosher"
@@ -47,6 +48,7 @@ showKRussian :: Kashrut -> String
 showKRussian kashrut = case kashrut of
   NotKosher -> "Не кашерно!"
   KosherIncludingPassover -> "Кашерно включая Песах"
+  KosherChametz -> "Кашерно, хамец"
   KosherNeedPassoverHashgoho -> "Кашерно, требуется хашгоха на Песах"
   UsuallyKosherRarelyNeedsHashgoho -> "Требуется хашгоха, обычно кашерно"
   OftenKosherNeedHashgoho -> "Требуется хашгоха, часто кашерно"
@@ -59,6 +61,7 @@ showKGerman :: Kashrut -> String
 showKGerman kashrut = case kashrut of
   NotKosher -> "Nicht koscher!"
   KosherIncludingPassover -> "Koscher einschließlich Pessach"
+  KosherChametz -> "Koscher, Chametz"
   KosherNeedPassoverHashgoho -> "Koscher, benötigt Haschgoho für Pessach"
   UsuallyKosherRarelyNeedsHashgoho -> "Benötigt Haschgoho, normalerweise koscher"
   OftenKosherNeedHashgoho -> "Benötigt Haschgoho, oft koscher"
@@ -72,6 +75,7 @@ showKHebrew kashrut = case kashrut of
   NotKosher -> "לא כשר!"
   KosherIncludingPassover -> "כשר, כולל פסח"
   KosherNeedPassoverHashgoho -> "כשר, צריך השגחה לפסח"
+  KosherChametz -> "כשר, חמץ"
   UsuallyKosherRarelyNeedsHashgoho -> "צריך השגחה, כשר בדרך כלל"
   OftenKosherNeedHashgoho -> "צריך השגחה, כשר לעיתים קרובות"
   NeedHashgohoWholeYear -> "צריך השגחה כל השנה"
@@ -79,12 +83,12 @@ showKHebrew kashrut = case kashrut of
   KosherForbidden -> "כשר,אסור"
   IssuficientData -> "מידע לא מספיק"    
 
-
 showKFrench :: Kashrut -> String
 showKFrench kashrut = case kashrut of
   NotKosher -> "Pas cacher!"
   KosherIncludingPassover -> "Casher pour toute l'année, y compris Pessa'h (Pâque)"
   KosherNeedPassoverHashgoho -> "Casher pour toute l'année mais nécessite une surveillance spécifique pour Pessa'h (Pâque)"
+  KosherChametz -> "Cacher, hametz"
   UsuallyKosherRarelyNeedsHashgoho -> "besoin de Hashgoho, généralement cacher"
   OftenKosherNeedHashgoho -> "Besoin de Hashgoho, souvent cacher"
   NeedHashgohoWholeYear -> "Nécessite une surveillance rabbinique toute l'année"
@@ -97,6 +101,7 @@ showKLatvian kashrut = case kashrut of
   NotKosher -> "Nav košers!"
   KosherIncludingPassover -> "Košers ieskaitot Pēsah"
   KosherNeedPassoverHashgoho -> "Košers, nepieciešama uzraudzība Pēsah laikā"
+  KosherChametz -> "Košers, hametz"
   UsuallyKosherRarelyNeedsHashgoho -> "Nepieciešama uzraudzība, parasti košers"
   OftenKosherNeedHashgoho -> "Nepieciešama uzraudzība, bieži košers"
   NeedHashgohoWholeYear -> "Nepieciešama uzraudzība visu gadu"
@@ -143,6 +148,7 @@ showEnglishGroup group = case group of
   Emulsifier -> "Emulsifier"
   Sweetener -> "Sweetener"
   FlavourEnchancer -> "Flavour Enchancer"
+  GellingAgent -> "Gelling Agent"
   Acid -> "Acid"
   None -> ""
 
@@ -157,6 +163,7 @@ showRussianGroup group = case group of
   Emulsifier -> "Эмульгатор"
   Sweetener -> "Подсластитель"
   FlavourEnchancer -> "Усилитель вкуса"
+  GellingAgent -> "Желирующий агент"
   Acid -> "Кислота"
   None -> ""
 
@@ -171,6 +178,7 @@ showGermanGroup group = case group of
   Emulsifier -> "Emulgator"
   Sweetener -> "Süßstoff"
   FlavourEnchancer -> "Geschmacksverstärker"
+  GellingAgent -> "Geliermittel"
   Acid -> "Säure"
   None -> ""
 
@@ -186,6 +194,7 @@ showHebrewGroup group = case group of
   Emulsifier -> "מוליך"
   Sweetener -> "ממתיק"
   FlavourEnchancer -> "מחזק טעם"
+  GellingAgent -> "חומר מַקרִישׁ"
   Acid -> "חומצה"
   None -> ""
 
@@ -200,6 +209,7 @@ showFrenchGroup group = case group of
   Emulsifier -> "Émulsifiant"
   Sweetener -> "Édulcorant"
   FlavourEnchancer -> "Exhausteur de goût"
+  GellingAgent -> "Agent gélifiant"
   Acid -> "Acide"
   None -> ""
 
@@ -214,6 +224,7 @@ showLatvianGroup group = case group of
   Emulsifier -> "Emulgators"
   Sweetener -> "Saldinātājs"
   FlavourEnchancer -> "Garšas pastiprinātājs"  
+  GellingAgent -> "Želatīnviela"
   Acid -> "Skābe"
   None -> ""
 

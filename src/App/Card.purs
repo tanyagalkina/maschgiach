@@ -51,6 +51,7 @@ card open e_number lang =
                       CSS.style do
                        minHeight $ (pct 100.0)
                        color $ case e_number.kosher of NotKosher -> white
+                                                       MostlyNotKosher -> white
                                                        _ -> black
                        backgroundColor $ getBackgroundForKashrut e_number
                        borderRadius (px 0.0) (px 0.0) (px 40.0) (px 0.0)

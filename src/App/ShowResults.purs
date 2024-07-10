@@ -52,6 +52,7 @@ renderENumber eNumber lang =
             height (px 56.0)
             color (case eNumber.kosher of
               NotKosher -> white
+              MostlyNotKosher -> white
               _ -> black)
 
             display flex
@@ -79,6 +80,7 @@ renderENumber eNumber lang =
           -- ] 
           , HH.img
             [ HP.src (case eNumber.kosher of NotKosher -> rightArrowWhite
+                                             MostlyNotKosher -> rightArrowWhite
                                              _  -> rightArrow ) -- Path to your local icon
             , CSS.style do
             marginRight (px 40.0)

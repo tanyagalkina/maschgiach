@@ -72,11 +72,13 @@ card open e_number lang =
                           -- backgroundColor $ transparent <- FIXME: did not found transparent
                           
                           color $ case e_number.kosher of NotKosher -> white
+                                                          MostlyNotKosher -> white
                                                           _ -> black
                       ]
                       [
                         HH.img [
-                          HP.src $ case e_number.kosher of NotKosher -> backArrowWhite
+                          HP.src $ case e_number.kosher of NotKosher  -> backArrowWhite
+                                                           MostlyNotKosher -> backArrowWhite 
                                                            _ -> backArrowBlack
                           , CSS.style do
                             marginRight $ px 10.0

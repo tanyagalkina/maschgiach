@@ -99,7 +99,8 @@ getNameByLanguage card lang = case lang of
 getBackgroundForKashrut :: ENumber -> Color
 getBackgroundForKashrut k =   
     case k.kosher of
-        NotKosher -> black   
+        NotKosher -> black
+        MostlyNotKosher -> black   
         KosherIncludingPassover -> green
         KosherNeedPassoverHashgoho -> marine
         KosherChametz -> skyblue
@@ -112,6 +113,6 @@ getBackgroundForKashrut k =
         IssuficientData -> brightred
 
 
-containsDairy:: Array Source -> Boolean
-containsDairy arr = elem Dairy arr  
+-- containsDairy:: Array Source -> Boolean
+-- containsDairy arr = elem Dairy arr  
 

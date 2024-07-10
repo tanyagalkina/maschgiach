@@ -4,7 +4,7 @@ import Prelude
 
 import App.Assets (typeSound)
 import App.Common (Action(..), CardDisplayLanguage(..), State, css)
-import App.Curtain (curtain, card, newCard)
+import App.Card (curtain, card, newCard)
 import App.Footer (footer, newFooter)
 import App.InputBar (simpleInputBar, searchBar)
 import App.LanguageIcon (languageIcon, headerWithLangSwitches)

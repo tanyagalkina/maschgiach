@@ -34,6 +34,7 @@ import Data.String.Pattern (Pattern(..))
 showK :: Kashrut -> String
 showK kashrut = case kashrut of
   NotKosher -> "Not Kosher!"
+  MostlyNotKosher -> "Mostly not kosher!"
   KosherIncludingPassover -> "Kosher including Passover"
   KosherChametz -> "Kosher, chametz"
   KosherNeedPassoverHashgoho -> "Kosher, needs Hashgoho for Passover"
@@ -47,6 +48,7 @@ showK kashrut = case kashrut of
 showKRussian :: Kashrut -> String
 showKRussian kashrut = case kashrut of
   NotKosher -> "Не кашерно!"
+  MostlyNotKosher -> "Почти всегда не кашерно!"
   KosherIncludingPassover -> "Кашерно включая Песах"
   KosherChametz -> "Кашерно, хамец"
   KosherNeedPassoverHashgoho -> "Кашерно, требуется хашгоха на Песах"
@@ -60,6 +62,7 @@ showKRussian kashrut = case kashrut of
 showKGerman :: Kashrut -> String
 showKGerman kashrut = case kashrut of
   NotKosher -> "Nicht koscher!"
+  MostlyNotKosher -> "Meistens nicht koscher!"
   KosherIncludingPassover -> "Koscher einschließlich Pessach"
   KosherChametz -> "Koscher, Chametz"
   KosherNeedPassoverHashgoho -> "Koscher, benötigt Haschgoho für Pessach"
@@ -73,6 +76,7 @@ showKGerman kashrut = case kashrut of
 showKHebrew :: Kashrut -> String
 showKHebrew kashrut = case kashrut of
   NotKosher -> "לא כשר!"
+  MostlyNotKosher -> "בדרך כלל לא כשר!"
   KosherIncludingPassover -> "כשר, כולל פסח"
   KosherNeedPassoverHashgoho -> "כשר, צריך השגחה לפסח"
   KosherChametz -> "כשר, חמץ"
@@ -86,6 +90,7 @@ showKHebrew kashrut = case kashrut of
 showKFrench :: Kashrut -> String
 showKFrench kashrut = case kashrut of
   NotKosher -> "Pas cacher!"
+  MostlyNotKosher -> "Généralement pas cacher!"
   KosherIncludingPassover -> "Casher pour toute l'année, y compris Pessa'h (Pâque)"
   KosherNeedPassoverHashgoho -> "Casher pour toute l'année mais nécessite une surveillance spécifique pour Pessa'h (Pâque)"
   KosherChametz -> "Cacher, hametz"
@@ -99,6 +104,7 @@ showKFrench kashrut = case kashrut of
 showKLatvian :: Kashrut -> String 
 showKLatvian kashrut = case kashrut of
   NotKosher -> "Nav košers!"
+  MostlyNotKosher -> "Parasti nav košers!"
   KosherIncludingPassover -> "Košers ieskaitot Pēsah"
   KosherNeedPassoverHashgoho -> "Košers, nepieciešama uzraudzība Pēsah laikā"
   KosherChametz -> "Košers, hametz"

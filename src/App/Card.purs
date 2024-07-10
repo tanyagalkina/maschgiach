@@ -1,4 +1,4 @@
-module App.Curtain (curtain, card, newCard) where
+module App.Card (curtain, card, newCard) where
 
 import Prelude
 
@@ -151,6 +151,7 @@ legend =
 getBorderColor :: ENumber -> Color
 getBorderColor e_number = case e_number.kosher of 
   NotKosher -> orangad
+  MostlyNotKosher -> orangad
   KosherIncludingPassover -> marine
   KosherNeedPassoverHashgoho -> green
   KosherChametz -> orangad

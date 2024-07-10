@@ -10,7 +10,8 @@ infixr 5 insertEntry as ++
 -- TODO: implement Show for AdditiveGroup LATER, because there are new variants coming
 data AdditiveGroup =  Colour | Preservative | Antioxidant | FlavourEnchancer | Sweetener | Emulsifier | Stabilizer | AcidityRegulator | AntiCakingAgent | Acid | None | GellingAgent
 
-data Kashrut = NotKosher   
+data Kashrut = NotKosher 
+             | MostlyNotKosher   
              | KosherIncludingPassover 
              | KosherNeedPassoverHashgoho 
              | KosherChametz

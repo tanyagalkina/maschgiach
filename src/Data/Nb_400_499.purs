@@ -10,7 +10,7 @@ import Data.ENumberTypes (AdditiveGroup(..), ENumberList, Kashrut(..), Source(..
 infixr 5 insertEntry as ++
 
 stabilizerENumberList :: ENumberList
-stabilizerENumberList =  e400 ++ e401 ++ e402 ++ e403 ++ e404 ++ e405 ++ e406 ++ e407 ++ e407a ++ e408 ++ e409 ++ e410 ++ e411 ++ e412 ++ e413 ++ e414 ++ e415 ++ e416 ++ e417 ++ e418 ++ e419 ++ e420 ++ e421 ++ e422 ++ e424 ++ e425 ++ e425a ++ e425b ++ e426 ++ e427 ++ e428 ++ e429 ++ e430 ++ e431 ++ e432 ++ e433 ++ e434 ++ e435 ++ e436 ++ e440a ++ e440b ++ e441 ++ e442 ++ e443 ++ e444 ++ e445 ++ e446 ++ e450a ++ e450b ++ e450c ++ e450d ++ e450d ++ e450e ++ e450f ++ e450g ++ e451a ++ e451b ++ e452a ++ e452b ++ e452c ++ e452d ++ e452e ++
+stabilizerENumberList =  e400 ++ e401 ++ e402 ++ e403 ++ e404 ++ e405 ++ e406 ++ e407 ++ e407a ++ e408 ++ e409 ++ e410 ++ e411 ++ e412 ++ e413 ++ e414 ++ e415 ++ e416 ++ e417 ++ e418 ++ e419 ++ e420 ++ e421 ++ e422 ++ e424 ++ e425 ++ e425a ++ e425b ++ e426 ++ e427 ++ e428 ++ e429 ++ e430 ++ e431 ++ e432 ++ e433 ++ e434 ++ e435 ++ e436 ++ e440a ++ e440b ++ e441 ++ e442 ++ e443 ++ e444 ++ e445 ++ e446 ++ e450a ++ e450b ++ e450c ++ e450d ++ e450d ++ e450e ++ e450f ++ e450g ++ e451a ++ e451b ++ e452a ++ e452b ++ e452c ++ e452d ++ e452e ++ e459 ++ e460 ++ e461 ++ e462 ++ e463 ++ e464 ++ e465 ++ e466 ++ e469 ++ e470a ++ e470b ++ e471 ++ e472a ++ e472b ++ e472c ++ e472d ++ e472e ++ e472f ++
    emptyENumberList
 
 e400 :: ENumber
@@ -929,6 +929,282 @@ e452e = {
   , description: ""
   , kosher: KosherIncludingPassover
 }
+
+e459 :: ENumber
+e459 = {
+  name_english: "Beta-cyclodextrin"
+  , name_russian: "Бета-циклодекстрин"
+  , name_german: "Beta-Cyclodextrin"
+  , name_hebrew: "בטא-סיקלודקסטרין"
+  , name_french: "Bêta-cyclodextrine"
+  , name_latvian: "Beta-ciklodekstrīns"
+  , e_number: "E459"
+  , group: Emulsifier
+  , source: [Synthetic]
+  , description: ""
+  , kosher: KosherNeedPassoverHashgoho
+}
+
+e460 :: ENumber
+e460 = {
+  name_english: "Cellulose (Microcrystalline cellulose, Powdered cellulose)"
+  , name_russian: "Целлюлоза (Целлюлоза микрокристаллическая, Целлюлоза в порошке)"
+  , name_german: "Cellulose (Mikrokristalline Cellulose, Pulverisierte Cellulose)"
+  , name_hebrew: "סלולוזה (צלולוזה מיקרוקריסטלית, צלולוזה באבקה)"
+  , name_french: "Cellulose (Cellulose microcristalline, Cellulose en poudre)"
+  , name_latvian: "Celuloze (Mikrokristāliska celuloze, Pulverizēta celuloze)"
+  , e_number: "E460"
+  , group: Emulsifier
+  , source: [Vegan]
+  , description: "" -- TODO: check conflict: mahor lekashrut has needHashgohoWholeYear
+  , kosher: KosherNeedPassoverHashgoho
+}
+
+e461 :: ENumber
+e461 = {
+  name_english: "Methyl cellulose"
+  , name_russian: "Метилцеллюлоза"
+  , name_german: "Methylcellulose"
+  , name_hebrew: "מתיל צלולוזה"
+  , name_french: "Méthylcellulose"
+  , name_latvian: "Metilceluloze"
+  , e_number: "E461"
+  , group: Emulsifier
+  , source: [Vegan]
+  , description: "" -- TODO: check conflict: mahor lekashrut has needHashgohoWholeYear
+  , kosher: KosherIncludingPassover
+}
+
+e462 :: ENumber
+e462 = {
+  name_english: "Ethyl cellulose"
+  , name_russian: "Этилцеллюлоза"
+  , name_german: "Ethylcellulose"
+  , name_hebrew: "אתיל צלולוזה"
+  , name_french: "Éthylcellulose"
+  , name_latvian: "Etilceluloze"
+  , e_number: "E462"
+  , group: Emulsifier
+  , source: [Vegan]
+  , description: "" -- TODO: check conflict: mahor lekashrut has needHashgohoWholeYear
+  , kosher: KosherIncludingPassover
+}
+
+e463 :: ENumber
+e463 = {
+  name_english: "Hydroxypropyl cellulose"
+  , name_russian: "Гидроксипропилцеллюлоза"
+  , name_german: "Hydroxypropylcellulose"
+  , name_hebrew: "הידרוקסיפרופיל צלולוזה"
+  , name_french: "Hydroxypropylcellulose"
+  , name_latvian: "Hidroksipropilceluloze"
+  , e_number: "E463"
+  , group: Emulsifier
+  , source: [Vegan]
+  , description: "" -- TODO: check conflict: mahor lekashrut has needHashgohoWholeYear
+  , kosher: KosherIncludingPassover
+}
+
+e464 :: ENumber
+e464 = {
+  name_english: "Hypromellose (Hydroxypropyl methyl cellulose)"
+  , name_russian: "Гидроксипропилметилцеллюлоза"
+  , name_german: "Hydroxypropylmethylcellulose"
+  , name_hebrew: "הידרוקסיפרופיל מתיל צלולוזה"
+  , name_french: "Hydroxypropylméthylcellulose"
+  , name_latvian: "Hidroksipropilmetilceluloze"
+  , e_number: "E464"
+  , group: Emulsifier
+  , source: [Vegan, Wine]
+  , description: "" -- TODO: check conflict: mahor lekashrut has needHashgohoWholeYear
+  , kosher: KosherIncludingPassover
+}
+
+e465 :: ENumber
+e465 = {
+  name_english: "Ethyl methyl cellulose"
+  , name_russian: "Метилэтилцеллюлоза"
+  , name_german: "Methylethylcellulose"
+  , name_hebrew: "מתיל אתיל צלולוזה"
+  , name_french: "Méthyléthylcellulose"
+  , name_latvian: "Metiletilceluloze"
+  , e_number: "E465"
+  , group: Emulsifier
+  , source: [Vegan, Wine]
+  , description: "" -- TODO: check conflict: mahor lekashrut has needHashgohoWholeYear
+  , kosher: KosherIncludingPassover
+}
+
+e466 :: ENumber
+e466 = {
+  name_english: "Carboxymethyl cellulose, Sodium carboxymethyl cellulose"
+  , name_russian: "Карбоксиметилцеллозы натриевая соль, КМЦ"
+  , name_german: "Carboxymethylcellulose, Natriumcarboxymethylcellulose"
+  , name_hebrew: "קרבוקסימתיל צלולוזה, נתרן קרבוקסימתיל צלולוזה"
+  , name_french: "Carboxyméthylcellulose, Carboxyméthylcellulose de sodium"
+  , name_latvian: "Karboksimetilceluloze, Nātrija karboksimetilceluloze"
+  , e_number: "E466"
+  , group: Emulsifier
+  , source: [Vegan, Wine]
+  , description: "" -- TODO: check conflict: mahor lekashrut has needHashgohoWholeYear
+  , kosher: KosherIncludingPassover
+}
+
+e469 :: ENumber
+e469 = {
+  name_english: "Enzymically hydrolysed carboxymethylcellulose"
+  , name_russian: "Ферментативно гидролизованная карбоксиметилцеллюлоза"
+  , name_german: "Enzymatisch hydrolysierte Carboxymethylcellulose"
+  , name_hebrew: "קרבוקסימתיל צלולוזה הידרוליזה באמצעות אנזים"
+  , name_french: "Carboxyméthylcellulose hydrolysée par voie enzymatique"
+  , name_latvian: "Enzīmiski hidrolizēta karboksimetilceluloze"
+  , e_number: "E469"
+  , group: Emulsifier
+  , source: []
+  , description: ""
+  , kosher: NeedHashgohoWholeYear
+}
+
+e470a :: ENumber
+e470a = {
+  name_english: "Sodium, potassium and calcium salts of fatty acids"
+  , name_russian: "Жирных кислот соли алюминия, кальция, натрия,калия и аммония"
+  , name_german: "Natrium-, Kalium- und Calciumsalze von Fettsäuren"
+  , name_hebrew: "מלחי חומצות שומן של נתרן, קליום וסידן"
+  , name_french: "Sels de sodium, de potassium et de calcium d'acides gras"
+  , name_latvian: "Taukskābju nātrija, kālija un kalcija sāļi"
+  , e_number: "E470a"
+  , group: AntiCakingAgent
+  , source: [Animal]
+  , description: ""
+  , kosher: MostlyNotKosher
+}
+
+e470b :: ENumber
+e470b = {
+  name_english: "Magnesium salts of fatty acids"
+  , name_russian: "Магниевые соли жирных кислот"
+  , name_german: "Magnesiumsalze von Fettsäuren"
+  , name_hebrew: "מלחי חומצות שומן של מגנזיום"
+  , name_french: "Sels de magnésium d'acides gras"
+  , name_latvian: "Taukskābju magnija sāļi"
+  , e_number: "E470b"
+  , group: AntiCakingAgent
+  , source: [Animal]
+  , description: ""
+  , kosher: MostlyNotKosher
+}
+
+e471:: ENumber
+e471 = {
+  name_english: "Mono- and diglycerides of fatty acids"
+  , name_russian: "Моно- и диглицериды жирных кислот"
+  , name_german: "Mono- und Diglyceride von Speisefettsäuren"
+  , name_hebrew: "מונו- ודי גליצרידים של חומצות שומן"
+  , name_french: "Mono- et diglycérides d'acides gras"
+  , name_latvian: "Taukskābju mono- un diglicerīdi"
+  , e_number: "E471"
+  , group: Emulsifier
+  , source: [Synthetic, Animal]
+  , description: ""
+  , kosher: MostlyNotKosher
+}
+
+e472a :: ENumber
+e472a = {
+  name_english: "Acetic acid esters of mono- and diglycerides of fatty acids"
+  , name_russian: "Уксусная кислота эфиры моно- и диглицеридов жирных кислот"
+  , name_german: "Essigsäureester von Mono- und Diglyceriden von Speisefettsäuren"
+  , name_hebrew: "אצטט אצטרים של מונו- ודי גליצרידים של חומצות שומן"
+  , name_french: "Esters acétiques de mono- et diglycérides d'acides gras"
+  , name_latvian: "Taukskābju mono- un diglicerīdu acetāti"
+  , e_number: "E472a"
+  , group: Emulsifier
+  , source: [Synthetic, Animal]
+  , description: ""
+  , kosher: MostlyNotKosher
+}
+
+e472b :: ENumber
+e472b = {
+  name_english: "Lactic acid esters of mono- and diglycerides of fatty acids"
+  , name_russian: "Эфиры моно- и диглицеридов, молочной и жирных кислот"
+  , name_german: "Milchsäureester von Mono- und Diglyceriden von Speisefettsäuren"
+  , name_hebrew: "אצטט אצטרים של מונו- ודי גליצרידים של חומצות שומן"
+  , name_french: "Esters lactiques de mono- et diglycérides d'acides gras"
+  , name_latvian: "Taukskābju mono- un diglicerīdu acetāti"
+  , e_number: "E472b"
+  , group: Emulsifier
+  , source: [Animal]
+  , description: ""
+  , kosher: MostlyNotKosher
+}
+
+e472c :: ENumber
+e472c = {
+  name_english: "Citric acid esters of mono– and diglycerides of fatty acids"
+  , name_russian: "Эфиры моно- и диглицерилов, лимонной и жирных кислот"
+  , name_german: "Zitronensäureester von Mono- und Diglyceriden von Speisefettsäuren"
+  , name_hebrew: "אצטט אצטרים של מונו- ודי גליצרידים של חומצות שומן"
+  , name_french: "Esters citriques de mono- et diglycérides d'acides gras"
+  , name_latvian: "Taukskābju mono- un diglicerīdu citrāti"
+  , e_number: "E472c"
+  , group: Emulsifier
+  , source: [Animal, Chametz]
+  , description: ""
+  , kosher: MostlyNotKosher
+}
+
+e472d :: ENumber
+e472d = {
+  name_english: "Tartaric acid esters of mono– and diglycerides of fatty acids"
+  , name_russian: "Эфиры моно- и дигецеридов,винной и жирных кислот"
+  , name_german: "Weinsäureester von Mono- und Diglyceriden von Speisefettsäuren"
+  , name_hebrew: "אצטט אצטרים של מונו- ודי גליצרידים של חומצות שומן"
+  , name_french: "Esters tartriques de mono- et diglycérides d'acides gras"
+  , name_latvian: "Taukskābju mono- un diglicerīdu vīnāti"
+  , e_number: "E472d"
+  , group: Emulsifier
+  , source: [Animal, Wine]
+  , description: ""
+  , kosher: MostlyNotKosher
+}
+
+e472e :: ENumber
+e472e = {
+  name_english: "Mono- and diacetyl tartaric acid esters of mono- and diglycerides of fatty acids"
+  , name_russian: "Эфиры моно- и диглицеридов,диацетилвинной и жирных кислот"
+  , name_german: "Essigsäureester von Mono- und Diglyceriden von Speisefettsäuren"
+  , name_hebrew: "אצטט אצטרים של מונו- ודי גליצרידים של חומצות שומן"
+  , name_french: "Esters acétyltartriques de mono- et diglycérides d'acides gras"
+  , name_latvian: "Taukskābju mono- un diglicerīdu acetāti"
+  , e_number: "E472e"
+  , group: Emulsifier
+  , source: [Animal]
+  , description: ""
+  , kosher: MostlyNotKosher
+}
+
+e472f :: ENumber
+e472f = {
+  name_english: "Mixed acetic and tartaric acid esters of mono– and diglycerides of fatty acids"
+  , name_russian: "Смешанные эфиры моно- и диглицеридов, уксусной, винной и жирных кислот"
+  , name_german: "Gemischte Essig- und Weinsäureester von Mono- und Diglyceriden von Speisefettsäuren"
+  , name_hebrew: "אצטט אצטרים של מונו- ודי גליצרידים של חומצות שומן"
+  , name_french: "Esters acétiques et tartriques de mono- et diglycérides d'acides gras"
+  , name_latvian: "Taukskābju mono- un diglicerīdu acetāti"
+  , e_number: "E472f"
+  , group: Emulsifier
+  , source: [Animal, Wine]
+  , description: ""
+  , kosher: MostlyNotKosher
+}
+
+
+
+
+
+
 
 
 

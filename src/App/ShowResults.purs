@@ -61,7 +61,7 @@ renderENumber eNumber lang =
             backgroundColor $ getBackgroundForKashrut eNumber
           -- borderLeft solid (em $ 0.3) $ getBackgroundForKashrut eNumber 
           -- borderBottom solid (em $ 0.1) $  getBackgroundForKashrut eNumber 
-            borderBottom solid (px $ 1.0) $ white
+            borderBottom solid (px $ 0.5) $ white
          -- margin (px 5.0) (px 5.0) (px 5.0) (px 5.0)
           ]
         [HH.span 

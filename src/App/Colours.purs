@@ -1,5 +1,5 @@
-module App.Colours (crimsonred, brown, green, marine, nogrey, skyblue, softred, brightred, yellow, orange, black,
-red, orangad, violet, white, lightred) where
+module App.Colours (crimsonred, brown, green, darkergreen, nogrey, skyblue, softred, brightred, yellow, orange, black,
+red, orangad, violet, white, lightred, lightblue, grey, whitened) where
 
 import CSS.Color (Color, rgba)
 
@@ -13,7 +13,7 @@ green :: Color
 green = rgba 188 237 159 1.0
 
 lightred :: Color
-lightred = rgba 217 95 109 1.0
+lightred = rgba 202 49 66 1.0
 
 softred :: Color
 softred = rgba 205 92 92 1.0 
@@ -27,11 +27,15 @@ orangad = rgba 255 157 111 1.0
 beige :: Color
 beige = rgba 210 180 140 0.8
 
-marine :: Color
-marine = rgba 39 156 136 0.9
+darkergreen :: Color
+darkergreen = rgba 129 199 118 1.0
+
+lightblue :: Color
+lightblue = rgba 121 226 228 1.0
 
 skyblue :: Color
-skyblue = rgba 135 206 235 1.0
+skyblue = rgba 92 157 255 1.0
+-- skyblue = rgba 135 206 235 1.0
 -- Lavender: rgba(230, 230, 250, 1.0)
 
 peach :: Color
@@ -51,7 +55,7 @@ dark_yellow :: Color
 dark_yellow = rgba 205 141 0 0.583
 
 grey :: Color
-grey = rgba 185 185 187 0.8
+grey = rgba 118 128 135 1.0
 
 nogrey :: Color
 nogrey = rgba 185 185 187 0.3
@@ -64,7 +68,11 @@ black = rgba 0 0 0 1.0
 
 yellow :: Color
 -- yellow = rgba 235 185 0 0.610
-yellow = rgba 250 180 0 0.307
+-- yellow = rgba 250 180 0 0.307
+yellow = rgba 253 242 136 1.0
+
+whitened :: Color
+whitened = rgba 211 211 211 1.0
 
 salad :: Color
 salad = rgba 173 255 0 0.735

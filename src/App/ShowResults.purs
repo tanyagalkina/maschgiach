@@ -3,7 +3,7 @@ module App.ShowResults (showResults, resultsAndCard, getBackgroundForKashrut) wh
 import Prelude
 
 import App.Assets (rightArrow, rightArrowWhite)
-import App.Colours (black, brightred, green, lightred, marine, orangad, orange, skyblue, white, yellow)
+import App.Colours (black, brightred, green, lightred, darkergreen, orangad, orange, skyblue, white, yellow, lightblue, grey, whitened)
 import App.Common (Action(..), CardDisplayLanguage(English, Russian, German, Hebrew, French, Latvian), css)
 import CSS (Color, alignItems, backgroundColor, border, borderBottom, borderLeft, color, display, em, flex, flexGrow, fontSize, height, justifyContent, margin, marginLeft, marginRight, maxWidth, pct, px, solid, space, spaceBetween, width)
 import CSS.Common (center, auto)
@@ -17,6 +17,7 @@ import Halogen.HTML as HH
 import Halogen.HTML.CSS as CSS
 import Halogen.HTML.Events as HE
 import Halogen.HTML.Properties as HP
+import Web.HTML.Event.EventTypes (offline)
 
 
 resultsAndCard :: forall w. ENumberList -> CardDisplayLanguage -> HH.HTML w Action
@@ -61,7 +62,10 @@ renderENumber eNumber lang =
             backgroundColor $ getBackgroundForKashrut eNumber
           -- borderLeft solid (em $ 0.3) $ getBackgroundForKashrut eNumber 
           -- borderBottom solid (em $ 0.1) $  getBackgroundForKashrut eNumber 
-            borderBottom solid (px $ 0.5) $ white
+            borderBottom solid (px $ 0.1) $ case eNumber.kosher of
+                                                          NotKosher -> grey
+                                                          MostlyNotKosher -> grey
+                                                          _ -> white
          -- margin (px 5.0) (px 5.0) (px 5.0) (px 5.0)
           ]
         [HH.span 
@@ -104,15 +108,15 @@ getBackgroundForKashrut k =
         NotKosher -> black
         MostlyNotKosher -> black   
         KosherIncludingPassover -> green
-        KosherNeedPassoverHashgoho -> marine
-        KosherChametz -> skyblue
-        UsuallyKosherRarelyNeedsHashgoho -> yellow
-        OftenKosherNeedHashgoho -> orange
+        KosherNeedPassoverHashgoho -> darkergreen
+        KosherChametz -> darkergreen
+        UsuallyKosherRarelyNeedsHashgoho -> lightblue
+        OftenKosherNeedHashgoho -> skyblue
+        NeedHashgohoWholeYearSomeAllow -> yellow
         NeedHashgohoWholeYear -> orangad
-        NeedHashgohoWholeYearSomeAllow -> orangad
         -- KosherForbidden -> brightred
         KosherForbidden -> lightred
-        IssuficientData -> brightred
+        IssuficientData -> grey
 
 
 -- containsDairy:: Array Source -> Boolean

@@ -83,7 +83,6 @@ headerWithLangSwitches lang = HH.div [
                   getLangIconStyle German lang
                   , HP.src germanIcon  
                   , HP.alt "language" -- FIXME: current: what is this tag for ? 
-                  -- the language will be ignored for now, the button will switch to the nex in the list
                   , HE.onClick $ \_ -> SetCardDisplayLanguage German
 
                 ]
@@ -92,7 +91,6 @@ headerWithLangSwitches lang = HH.div [
                   getLangIconStyle English lang
                   , HP.src englishIcon  
                   , HP.alt "language"
-                  -- the language will be ignored for now, the button will switch to the nex in the list
                   , HE.onClick $ \_ -> SetCardDisplayLanguage English
 
                 ]
@@ -101,8 +99,15 @@ headerWithLangSwitches lang = HH.div [
                   getLangIconStyle Latvian lang
                   , HP.src latvianIcon  
                   , HP.alt "language" 
-                  -- the language will be ignored for now, the button will switch to the nex in the list
                   , HE.onClick $ \_ -> SetCardDisplayLanguage Latvian
+
+                ]
+                , HH.img 
+                [
+                  getLangIconStyle Russian lang
+                  , HP.src russianIcon  
+                  , HP.alt "language" 
+                  , HE.onClick $ \_ -> SetCardDisplayLanguage Russian
 
                 ]
             ]

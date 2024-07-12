@@ -5,7 +5,7 @@ import Prelude
 import Affjax.Web (get)
 import Ansi.Output (background)
 import App.Assets (backArrowBlack, backArrowWhite)
-import App.Colours (black, green, lightred, marine, orangad, white, yellow)
+import App.Colours (black, darkergreen, green, grey, lightred, orangad, skyblue, white, yellow)
 import App.Common (Action(..), CardDisplayLanguage(..), css)
 import App.ShowResults (getBackgroundForKashrut)
 import CSS (alignItems, backgroundColor, bold, border, borderRadius, boxShadow, color, column, direction, display, flex, flexDirection, flexGrow, fontSize, fontStyle, fontWeight, height, justifyContent, margin, marginBottom, marginLeft, marginRight, marginTop, minHeight, opacity, padding, pct, px, solid, space, spaceAround, spaceBetween, width, fontStyle)
@@ -54,7 +54,7 @@ card open e_number lang =
                                                        MostlyNotKosher -> white
                                                        _ -> black
                        backgroundColor $ getBackgroundForKashrut e_number
-                       borderRadius (px 0.0) (px 0.0) (px 40.0) (px 0.0)
+                       -- borderRadius (px 0.0) (px 0.0) (px 40.0) (px 0.0)
                     ]
                     [
                       -- back button
@@ -155,14 +155,14 @@ getBorderColor :: ENumber -> Color
 getBorderColor e_number = case e_number.kosher of 
   NotKosher -> orangad
   MostlyNotKosher -> orangad
-  KosherIncludingPassover -> marine
-  KosherNeedPassoverHashgoho -> green
+  KosherIncludingPassover -> grey
+  KosherNeedPassoverHashgoho -> yellow
   KosherChametz -> orangad
-  UsuallyKosherRarelyNeedsHashgoho -> marine
+  UsuallyKosherRarelyNeedsHashgoho -> white
   OftenKosherNeedHashgoho -> green
   NeedHashgohoWholeYear -> white
-  NeedHashgohoWholeYearSomeAllow -> white
-  KosherForbidden -> orangad
+  NeedHashgohoWholeYearSomeAllow -> grey
+  KosherForbidden -> skyblue
   -- FIXME: this is placeholder Color
   IssuficientData -> yellow
 
@@ -183,7 +183,7 @@ type ListItem =
 listItems :: Array ListItem
 listItems =
   [ { color: green, text: "Kosher including Passover" }
-  , { color: marine, text: "Kosher, Hashgoho for Passover" }
+  , { color: grey, text: "Kosher, Hashgoho for Passover" }
   , { color: orangad, text: "Needs Hashgoho whole year" }
   , { color: black, text: "Not Kosher!" }
   , { color: lightred, text: "Kosher, FORBIDDEN" }

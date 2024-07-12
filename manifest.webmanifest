@@ -14,11 +14,11 @@
       "sizes": "1024x386"
     },
     {
-      "src": "src/assets/app_icon.svg",
+      "src": "src/assets/image.png",
       "sizes": "148x148"
     },
     {
-      "src": "src/assets/app_icon.svg",
+      "src": "src/assets/image.png",
       "sizes": "866x866"
     }
   ],

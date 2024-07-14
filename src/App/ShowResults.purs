@@ -3,7 +3,7 @@ module App.ShowResults (showResults, resultsAndCard, getBackgroundForKashrut) wh
 import Prelude
 
 import App.Assets (rightArrow, rightArrowWhite)
-import App.Colours (black, brightred, green, lightred, darkergreen, orangad, orange, skyblue, white, yellow, lightblue, grey, whitened)
+import App.Colours (black, brightred, green, lightred, darkergreen, orangad, orange, skyblue, white, yellow, lightblue, grey, whitened, mediumgrey)
 import App.Common (Action(..), CardDisplayLanguage(English, Russian, German, Hebrew, French, Latvian), css)
 import CSS (Color, alignItems, backgroundColor, border, borderBottom, borderLeft, color, display, em, flex, flexGrow, fontSize, height, justifyContent, margin, marginLeft, marginRight, maxWidth, pct, px, solid, space, spaceBetween, width)
 import CSS.Common (center, auto)
@@ -65,7 +65,8 @@ renderENumber eNumber lang =
             borderBottom solid (px $ 0.1) $ case eNumber.kosher of
                                                           NotKosher -> grey
                                                           MostlyNotKosher -> grey
-                                                          _ -> white
+                                                          -- KosherIncludingPassover -> whitened
+                                                          _ -> whitened
          -- margin (px 5.0) (px 5.0) (px 5.0) (px 5.0)
           ]
         [HH.span 

@@ -1,5 +1,5 @@
 module App.Colours (crimsonred, brown, green, darkergreen, nogrey, skyblue, softred, brightred, yellow, orange, black,
-red, orangad, violet, white, lightred, lightblue, grey, whitened) where
+red, orangad, violet, white, lightred, lightblue, grey, mediumgrey, whitened) where
 
 import CSS.Color (Color, rgba)
 
@@ -57,6 +57,11 @@ dark_yellow = rgba 205 141 0 0.583
 grey :: Color
 grey = rgba 118 128 135 1.0
 
+mediumgrey :: Color
+mediumgrey = rgba 128 128 128 1.0
+
+
+
 nogrey :: Color
 nogrey = rgba 185 185 187 0.3
 
@@ -71,8 +76,10 @@ yellow :: Color
 -- yellow = rgba 250 180 0 0.307
 yellow = rgba 253 242 136 1.0
 
+-- whitened :: Color
+-- whitened = rgba 211 211 211 1.0
 whitened :: Color
-whitened = rgba 211 211 211 1.0
+whitened = rgba 255 255 220 1.0
 
 salad :: Color
 salad = rgba 173 255 0 0.735

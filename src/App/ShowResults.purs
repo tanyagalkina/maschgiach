@@ -66,7 +66,7 @@ renderENumber eNumber lang =
                                                           NotKosher -> grey
                                                           MostlyNotKosher -> grey
                                                           -- KosherIncludingPassover -> whitened
-                                                          _ -> whitened
+                                                          _ -> white
          -- margin (px 5.0) (px 5.0) (px 5.0) (px 5.0)
           ]
         [HH.span 

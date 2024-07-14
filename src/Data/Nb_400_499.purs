@@ -10,7 +10,8 @@ import Data.ENumberTypes (AdditiveGroup(..), ENumberList, Kashrut(..), Source(..
 infixr 5 insertEntry as ++
 
 stabilizerENumberList :: ENumberList
-stabilizerENumberList =  e400 ++ e401 ++ e402 ++ e403 ++ e404 ++ e405 ++ e406 ++ e407 ++ e407a ++ e408 ++ e409 ++ e410 ++ e411 ++ e412 ++ e413 ++ e414 ++ e415 ++ e416 ++ e417 ++ e418 ++ e419 ++ e420 ++ e421 ++ e422 ++ e424 ++ e425 ++ e425a ++ e425b ++ e426 ++ e427 ++ e428 ++ e429 ++ e430 ++ e431 ++ e432 ++ e433 ++ e434 ++ e435 ++ e436 ++ e440a ++ e440b ++ e441 ++ e442 ++ e443 ++ e444 ++ e445 ++ e446 ++ e450a ++ e450b ++ e450c ++ e450d ++ e450d ++ e450e ++ e450f ++ e450g ++ e451a ++ e451b ++ e452a ++ e452b ++ e452c ++ e452d ++ e452e ++ e459 ++ e460 ++ e461 ++ e462 ++ e463 ++ e464 ++ e465 ++ e466 ++ e469 ++ e470a ++ e470b ++ e471 ++ e472a ++ e472b ++ e472c ++ e472d ++ e472e ++ e472f ++
+stabilizerENumberList =  e400 ++ e401 ++ e402 ++ e403 ++ e404 ++ e405 ++ e406 ++ e407 ++ e407a ++ e408 ++ e409 ++ e410 ++ e411 ++ e412 ++ e413 ++ e414 ++ e415 ++ e416 ++ e417 ++ e418 ++ e419 ++ e420 ++ e421 ++ e422 ++ e424 ++ e425 ++ e425a ++ e425b ++ e426 ++ e427 ++ e428 ++ e429 ++ e430 ++ e431 ++ e432 ++ e433 ++ e434 ++ e435 ++ e436 ++ e440a ++ e440b ++ e441 ++ e442 ++ e443 ++ e444 ++ e445 ++ e446 ++ e450a ++ e450b ++ e450c ++ e450d ++ e450d ++ e450e ++ e450f ++ e450g ++ e451a ++ e451b ++ e452a ++ e452b ++ e452c ++ e452d ++ e452e ++ e459 ++ e460 ++ e461 ++ e462 ++ e463 ++ e464 ++ e465 ++ e466 ++ e469 ++ e470a ++ e470b ++ e471 ++ e472a ++ e472b ++ e472c ++ e472d ++ e472e ++ e472f ++ e473 ++ e474 ++ e475 ++ e476 ++ e477 ++ e478 ++ e479b ++ e480 ++ e481 ++ e482 ++ e483 ++ e484 ++ e485 ++ e486 ++ e487 ++ e488 ++ e489 ++ e490 ++ e491 ++ e492 ++ e493 ++ e494 ++ e495 ++ e496 ++ e497 ++ e498 ++ e499 ++ 
+
    emptyENumberList
 
 e400 :: ENumber
@@ -1199,6 +1200,414 @@ e472f = {
   , description: ""
   , kosher: MostlyNotKosher
 }
+
+e473 :: ENumber
+e473 = {
+  name_english: "Sucrose esters of fatty acids"
+  , name_russian: "Эфиры сахарозы и жирных кислот"
+  , name_german: "Zuckerester von Speisefettsäuren"
+  , name_hebrew: "אצטט אצטרים של סוכרוז וחומצות שומן"
+  , name_french: "Sucroesters d'acides gras alimentaires"
+  , name_latvian: "Taukskābju sāļi"
+  , e_number: "E473"
+  , group: Emulsifier
+  , source: [Animal]
+  , description: ""
+  , kosher: MostlyNotKosher
+}
+
+e474 :: ENumber
+e474 = {
+  name_english: "Sucroglycerides"
+  , name_russian: "Сахароглицериды"
+  , name_german: "Sucroglyceride"
+  , name_hebrew: "סוכרוגליצרידים"
+  , name_french: "Sucroglycérides"
+  , name_latvian: "Sucroglicerīdi"
+  , e_number: "E474"
+  , group: Emulsifier
+  , source: [Animal]
+  , description: ""
+  , kosher: MostlyNotKosher
+}
+
+e475 :: ENumber
+e475 = {
+  name_english: "Polyglycerol esters of fatty acids"
+  , name_russian: "Эфиры полиглицеридов и жирных кислот"
+  , name_german: "Polyglycerinester von Speisefettsäuren"
+  , name_hebrew: "אצטט אצטרים של פוליגליצרול וחומצות שומן"
+  , name_french: "Esters polyglycériques d'acides gras"
+  , name_latvian: "Taukskābju poliglicerīdi"
+  , e_number: "E475"
+  , group: Emulsifier
+  , source: [Animal]
+  , description: ""
+  , kosher: MostlyNotKosher
+}
+
+e476 :: ENumber
+e476 = {
+  name_english: "Polyglycerol polyricinoleate"
+  , name_russian: "Эфиры полиглицерина взаимоэтерифицированных рициноловых кислот"
+  , name_german: "Polyglycerinpolyricinoleat"
+  , name_hebrew: "פוליגליצרול פוליריצינולאט"
+  , name_french: "Polyricinoléate de polyglycérol"
+  , name_latvian: "Poliglicerīna poliricinoleāts"
+  , e_number: "E476"
+  , group: Emulsifier
+  , source: [Animal]
+  , description: ""
+  , kosher: MostlyNotKosher
+}
+
+e477 :: ENumber
+e477 = {
+  name_english: "Propylene glycol esters of fatty acids"
+  , name_russian: "Эфиры пропиленгликоля и жирных кислот"
+  , name_german: "Propylenglycolester von Speisefettsäuren"
+  , name_hebrew: "אצטט אצטרים של פרופילן גליקול וחומצות שומן"
+  , name_french: "Esters de propylèneglycol d'acides gras"
+  , name_latvian: "Taukskābju propilēnglikola esteri"
+  , e_number: "E477"
+  , group: Emulsifier
+  , source: [Animal]
+  , description: ""
+  , kosher: MostlyNotKosher
+}
+
+e478 :: ENumber
+e478 = {
+  name_english: "Lactylated fatty acid esters of glycerol and propane-1,2-diol"
+  , name_russian: "Эфиры лактиловых жирных кислот глицерина и пропиленгликоля"
+  , name_german: "Lactylierte Fettsäureester von Glycerin und Propan-1,2-diol"
+  , name_hebrew: "אצטט אצטרים של חומצות שומן לקטיליזירות של גליצרול ופרופאן-1,2-דיול"
+  , name_french: "Esters d'acides gras lactylés de glycérol et de propane-1,2-diol"
+  , name_latvian: "Taukskābju laktīlēti glicerīna un propan-1,2-diola esteri"
+  , e_number: "E478"
+  , group: Emulsifier
+  , source: [Animal, Dairy]
+  , description: ""
+  , kosher: MostlyNotKosher
+}
+
+e479b :: ENumber
+e479b = {
+  name_english: "Thermally oxidized soya bean oil interacted with mono- and diglycerides of fatty acids"
+  , name_russian: "Термически окисленное соевое масло с моно- и диглицеридами жирных кислот"
+  , name_german: "Thermooxidiertes Sojaöl mit Mono- und Diglyceriden von Speisefettsäuren"
+  , name_hebrew: "שמן סויה חמים מחומצן באמצעות מונו- ודי גליצרידים של חומצות שומן"
+  , name_french: "Huile de soja thermiquement oxydée en interaction avec des mono- et diglycérides d'acides gras"
+  , name_latvian: "Termiski oksidēts sojas pupu eļļa mijiedarbojas ar taukskābju mono- un diglicerīdiem"
+  , e_number: "E479"
+  , group: Emulsifier
+  , source: [Animal]
+  , description: ""
+  , kosher: MostlyNotKosher
+}
+
+e480 :: ENumber
+e480 = {
+  name_english: "Dioctyl sodium sulfosuccinate"
+  , name_russian: "Диоктилнатриевый сульфосукцинат"
+  , name_german: "Dioctyl-Natriumsulfosuccinat"
+  , name_hebrew: "דיוקטיל נתריום סולפוסוקסינט"
+  , name_french: "Dioctyl sulfosuccinate de sodium"
+  , name_latvian: "Dioctyl nātrija sulfosukcināts"
+  , e_number: "E480"
+  , group: Emulsifier
+  , source: [Synthetic]
+  , description: ""
+  , kosher: KosherNeedPassoverHashgoho
+}
+
+e481 :: ENumber
+e481 = {
+  name_english : "Sodium lactylates"
+  , name_russian : "Лактилаты натрия (Стеароиллактилат натрия, Олеиллактилат натрия)"
+  , name_german : "Natriumlactylate"
+  , name_hebrew : "לקטילטים של נתרן"
+  , name_french : "Lactylates de sodium"
+  , name_latvian : "Nātrija laktilāti"
+  , e_number : "E481"
+  , group : Emulsifier
+  , source : [Dairy]
+  , description : ""
+  , kosher : MostlyNotKosher
+}
+
+e482 :: ENumber
+e482 = {
+  name_english: "Calcium lactylates"
+  , name_russian: "Лактилаты кальция (Стеароиллактилат кальция, Олеиллактилат кальция)"
+  , name_german: "Calciumlactylate"
+  , name_hebrew: "לקטילטים של סידן"
+  , name_french: "Lactylates de calcium"
+  , name_latvian: "Kalcija laktilāti"
+  , e_number : "E482"
+  , group : Emulsifier
+  , source : [Dairy]
+  , description : ""
+  , kosher : MostlyNotKosher
+}
+
+e483 :: ENumber
+e483 = {
+  name_english: "Stearyl tartrate"
+  , name_russian: "Тартрат стеариловый"
+  , name_german: "Stearyltartrat"
+  , name_hebrew: "סטיאריל טרטרט"
+  , name_french: "Tartrate de stéaryle"
+  , name_latvian: "Steāra tartrāts"
+  , e_number: "E483"
+  , group: Emulsifier
+  , source: [Animal]
+  , description: ""
+  , kosher: MostlyNotKosher
+}
+
+e484 :: ENumber
+e484 = {
+  name_english: "Stearyl citrate"
+  , name_russian: "Цитрат стеариловый"
+  , name_german: "Stearylcitrat"
+  , name_hebrew: "סטיאריל ציטרט"
+  , name_french: "Citrate de stéaryle"
+  , name_latvian: "Steāra citrāts"
+  , e_number: "E484"
+  , group: Emulsifier
+  , source: []
+  , description: ""
+  , kosher: MostlyNotKosher
+}
+
+e485 :: ENumber
+e485 = {
+  name_english: "Sodium stearoyl fumarate"
+  , name_russian: "Натрий стеароилфумарат"
+  , name_german: "Natriumstearoylfumarat"
+  , name_hebrew: "נתרן סטיארויל פומרט"
+  , name_french: "Stéaroyl fumarate de sodium"
+  , name_latvian: "Nātrija stearoīl fumarāts"
+  , e_number: "E485"
+  , group: Emulsifier
+  , source: []
+  , description: ""
+  , kosher: MostlyNotKosher
+}
+
+e486 :: ENumber
+e486 = {
+  name_english: "Calcium stearoyl fumarate"
+  , name_russian: "Кальций стеароилфумарат"
+  , name_german: "Calciumstearoylfumarat"
+  , name_hebrew: "סטיארויל פומרט של סידן"
+  , name_french: "Stéaroyl fumarate de calcium"
+  , name_latvian: "Kalcija stearoīl fumarāts"
+  , e_number: "E486"
+  , group: Emulsifier
+  , source: []
+  , description: ""
+  , kosher: MostlyNotKosher
+}
+
+e487 :: ENumber
+e487 = {
+  name_english: "Sodium laurylsulfate"
+  , name_russian: "Лаурилсульфат натрия"
+  , name_german: "Natriumlaurylsulfat"
+  , name_hebrew: "לוריל סולפט נתריום"
+  , name_french: "Laurylsulfate de sodium"
+  , name_latvian: "Nātrija laurilsulfāts"
+  , e_number: "E487"
+  , group: Emulsifier
+  , source: []
+  , description: ""
+  , kosher: KosherNeedPassoverHashgoho
+}
+
+e488 :: ENumber
+e488 = {
+  name_english: "Ethoxylated mono- and diglycerides"
+  , name_russian: "Этоксилированные моно- и диглицериды"
+  , name_german: "Ethoxilierte Mono- und Diglyceride"
+  , name_hebrew: "מונו- ודי גליצרידים אתוקסילירות"
+  , name_french: "Mono- et diglycérides éthoxylés"
+  , name_latvian: "Etoxilēti mono- un diglicerīdi"
+  , e_number: "E488"
+  , group: Emulsifier
+  , source: []
+  , description: ""
+  , kosher: MostlyNotKosher
+}
+
+e489 :: ENumber
+e489 = {
+  name_english: "Methyl glucoside-coconut oil ester"
+  , name_russian: "Эфиры метилглюкозида и кокосового масла"
+  , name_german: "Methylglucosid-Kokosöl-Ester"
+  , name_hebrew: "מתיל גלוקוזיד- אסטר של שמן קוקוס"
+  , name_french: "Ester de méthylglucoside et d'huile de noix de coco"
+  , name_latvian: "Metilglukozīda un kokosriekstu eļļas esteri"
+  , e_number: "E489"
+  , group: Emulsifier
+  , source: []
+  , description: ""
+  , kosher: MostlyNotKosher
+}
+
+e490 :: ENumber
+e490 = {
+  name_english: "Propane-1,2-diol"
+  , name_russian: "Пропан-1,2-диол"
+  , name_german: "Propan-1,2-diol"
+  , name_hebrew: "פרופאן-1,2-דיול"
+  , name_french: "Propane-1,2-diol"
+  , name_latvian: "Propan-1,2-diols"
+  , e_number: "E490"
+  , group: Emulsifier
+  , source: []
+  , description: ""
+  , kosher: KosherNeedPassoverHashgoho
+}
+
+e491 :: ENumber
+e491 = {
+  name_english: "Sorbitan monostearate Span 60"
+  , name_russian: "Сорбитан моностеарат (СПЭН 60)"
+  , name_german: "Sorbitanmonostearat Span 60"
+  , name_hebrew: "סורביטן מונוסטיארט (ספאן 60)"
+  , name_french: "Monostéarate de sorbitan Span 60"
+  , name_latvian: "Sorbitāna monostearāts Span 60"
+  , e_number: "E491"
+  , group: Emulsifier
+  , source: [Animal]
+  , description: ""
+  , kosher: MostlyNotKosher  
+}
+
+e492 :: ENumber
+e492 = {
+  name_english: "Sorbitan tristearate, Span 65"
+  , name_russian: "Сорбитан тристеарат (СПЭН 65)"
+  , name_german: "Sorbitantristearat Span 65"
+  , name_hebrew: "סורביטן טריסטיארט (ספאן 65)"
+  , name_french: "Tristéarate de sorbitan Span 65"
+  , name_latvian: "Sorbitāna tristearāts Span 65"
+  , e_number: "E492"
+  , group: Emulsifier
+  , source: [Animal]
+  , description: ""
+  , kosher: MostlyNotKosher
+}
+
+e493 :: ENumber
+e493 = {
+  name_english: "Sorbitan monolaurate, Span 20"
+  , name_russian: "Сорбитан монолаурат (СПЭН 20)"
+  , name_german: "Sorbitanmonolaurat Span 20"
+  , name_hebrew: "סורביטן מונולאורט (ספאן 20)"
+  , name_french: "Monolaurate de sorbitan Span 20"
+  , name_latvian: "Sorbitāna monolaurāts Span 20"
+  , e_number: "E493"
+  , group: Emulsifier
+  , source: [Animal]
+  , description: ""
+  , kosher: MostlyNotKosher
+}
+
+e494 :: ENumber
+e494 = {
+  name_english: "Sorbitan monooleate, Span 80"
+  , name_russian: "Сорбитан моноолеат (СПЭН 80)"
+  , name_german: "Sorbitanmonooleat Span 80"
+  , name_hebrew: "סורביטן מונואוליאט (ספאן 80)"
+  , name_french: "Monooléate de sorbitan Span 80"
+  , name_latvian: "Sorbitāna monooleāts Span 80"
+  , e_number: "E494"
+  , group: Emulsifier
+  , source: [Animal]
+  , description: ""
+  , kosher: MostlyNotKosher
+}
+
+e495 :: ENumber
+e495 = {
+  name_english: "Sorbitan monopalmitate, Span 40"
+  , name_russian: "Сорбитан монопальмитат (СПЭН 40)"
+  , name_german: "Sorbitanmonopalmitat Span 40"
+  , name_hebrew: "סורביטן מונופלמיטט (ספאן 40)"
+  , name_french: "Monopalmitate de sorbitan Span 40"
+  , name_latvian: "Sorbitāna monopalmiāts Span 40"
+  , e_number: "E495"
+  , group: Emulsifier
+  , source: [Animal]
+  , description: ""
+  , kosher: MostlyNotKosher
+}
+
+e496 :: ENumber
+e496 = {
+  name_english: "Sorbitantrioleat, Span 85"
+  , name_russian: "Сорбитан триолеат (СПЭН 85)"
+  , name_german: "Sorbitantrioleat Span 85"
+  , name_hebrew: "סורביטן טריוליאט (ספאן 85)"
+  , name_french: "Trioxyde de sorbitan Span 85"
+  , name_latvian: "Sorbitāna trioīlāts Span 85"
+  , e_number: "E496"
+  , group: Emulsifier
+  , source: [Animal]
+  , description: ""
+  , kosher: MostlyNotKosher
+}
+
+e497 :: ENumber
+e497 = {
+  name_english: "Polyoxypropylene-polyoxyethylene polymers"
+  , name_russian: "Полиоксипропилен-полиоксиэтиленовые полимеры"
+  , name_german: "Polyoxypropylen-Polyoxyethylen-Polymere"
+  , name_hebrew: "פוליאוקסיפרופילן-פוליאוקסיאתילן פולימרים"
+  , name_french: "Polymères de polyoxypropylène-polyoxyéthylène"
+  , name_latvian: "Polioksipropilēna-polieoksietilēna polimēri"
+  , e_number: "E497"
+  , group: Emulsifier
+  , source: []
+  , description: ""
+  , kosher: MostlyNotKosher
+}
+
+e498 :: ENumber
+e498 = {
+  name_english: "Partial polyglycerol esters of polycondensed fatty acids of castor oil"
+  , name_russian: "Частичные полиглицериды эфиров поликонденсированных жирных кислот касторового масла"
+  , name_german: "Teilweise Polyglycerinester von polykondensierten Fettsäuren von Rizinusöl"
+  , name_hebrew: "אצטט אצטרים של פוליגליצרול חלקיים של חומצות שומן פוליקונדנסידות של שמן ריקינוס"
+  , name_french: "Esters de polyglycérol partiellement condensés d'acides gras de l'huile de ricin"
+  , name_latvian: "Daļēji poliglicerīnu esteri no polikondensētiem taukskābju rīcīna eļļas"
+  , e_number: "E498"
+  , group: Emulsifier
+  , source: []
+  , description: ""
+  , kosher: MostlyNotKosher
+}
+
+e499 :: ENumber
+e499 = {
+  name_english: "Cassia gum, Stigmasterol-rich plant sterols"
+  , name_russian: "Кассия камедь, стигмастерол-богатые растительные стерины"
+  , name_german: "Cassia-Gum, Stigmasterol-reiche Pflanzensterine"
+  , name_hebrew: "גאם קסיה, סטיגמסטרול עשיר בסטרולים צמחיים"
+  , name_french: "Gomme de cassia, stigmastérols riches en stérols végétaux"
+  , name_latvian: "Kasijas gumija, stigmastērolu bagāti augu steroli"
+  , e_number: "E499"
+  , group: Emulsifier
+  , source: [Vegan]
+  , description: ""
+  , kosher: KosherNeedPassoverHashgoho
+}
+
+
+
 
 
 

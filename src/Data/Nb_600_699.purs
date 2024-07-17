@@ -1,6 +1,10 @@
 -- Flavour Enhancers 600-699
 
-module Data.Nb600to699 (flavourENumberList) where
+module Data.Nb600to699
+  ( e620
+  , flavourENumberList
+  )
+  where
 
 
 import Data.ENumberTypes (AdditiveGroup(..), ENumber, ENumberList, Kashrut(..), Source(..), emptyENumberList, insertEntry)

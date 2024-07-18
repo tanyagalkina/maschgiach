@@ -24,7 +24,7 @@ import Data.Nb300to399 (antioxidantENumberList)
 import Data.Nb400to499 (stabilizerENumberList)
 import Data.Nb500to599 (regulatorENumberList)
 import Data.Nb600to699 (flavourENumberList)
-import Data.Nb1000to1199 (additionalChemicalsList)
+import Data.Nb1000to1525 (additionalChemicalsList)
 import Data.String.CodeUnits (contains)
 import Data.String.Common (toLower)
 import Data.String.Pattern (Pattern(..))
@@ -84,7 +84,7 @@ showKHebrew kashrut = case kashrut of
   UsuallyKosherRarelyNeedsHashgoho -> "צריך השגחה, כשר בדרך כלל"
   OftenKosherNeedHashgoho -> "צריך השגחה, כשר לעיתים קרובות"
   NeedHashgohoWholeYear -> "צריך השגחה כל השנה"
-  NeedHashgohoWholeYearSomeAllow -> "צריך השגחה כל השנה, יש שמתירים"
+  NeedHashgohoWholeYearSomeAllow -> "צריך השגחה כל השנה, יש מתירים"
   KosherForbidden -> "כשר,אסור"
   IssuficientData -> "מידע לא מספיק"    
 

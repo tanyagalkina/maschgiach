@@ -464,7 +464,7 @@ e235 = {
   , group: Preservative
   , source: [Mushroom]
   , description: ""
-  , kosher: KosherNeedPassoverHashgoho
+  , kosher: NeedHashgohoWholeYear
 }
 
 e236 :: ENumber

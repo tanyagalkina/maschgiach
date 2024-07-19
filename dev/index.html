@@ -23,6 +23,37 @@
         });
     }
 </script> -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+      const cardElement = document.querySelector('.fade-in');
+  
+      let startX;
+      let endX;
+  
+      cardElement.addEventListener('touchstart', function(event) {
+          startX = event.touches[0].clientX;
+      });
+  
+      cardElement.addEventListener('touchmove', function(event) {
+          endX = event.touches[0].clientX;
+      });
+  
+      cardElement.addEventListener('touchend', function() {
+          const diffX = startX - endX;
+          if (diffX > 50) { // Swipe left detection threshold
+              clearCard();
+          }
+      });
+  
+      function clearCard() {
+          const backButton = document.getElementById('back-button');
+          if (backButton) {
+              backButton.click(); // Simulate the back button click
+          }
+      }
+  });
+  </script>
+  
   <script>
     const sw = "service-worker.js"; // it is needed because parcel will not recognize this as a file and not precess in its manner
 

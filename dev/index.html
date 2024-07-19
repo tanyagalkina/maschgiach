@@ -42,52 +42,53 @@
           }
       }
   });
-  </script> -->
-  document.addEventListener("DOMContentLoaded", function() {
-    const cardElement = document.querySelector('.fade-in');
+</script> -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const cardElement = document.querySelector('.fade-in');
 
-    let startX;
-    let endX;
+  let startX;
+  let endX;
 
-    cardElement.addEventListener('touchstart', function(event) {
-        startX = event.touches[0].clientX;
-    });
+  cardElement.addEventListener('touchstart', function(event) {
+      startX = event.touches[0].clientX;
+  });
 
-    cardElement.addEventListener('touchmove', function(event) {
-        endX = event.touches[0].clientX;
-        const diffX = startX - endX;
-        if (diffX > 0) {
-            cardElement.style.transform = `translateX(-${diffX}px)`;
-            cardElement.style.opacity = `${1 - diffX / cardElement.offsetWidth}`;
-        }
-    });
+  cardElement.addEventListener('touchmove', function(event) {
+      endX = event.touches[0].clientX;
+      const diffX = startX - endX;
+      if (diffX > 0) {
+          cardElement.style.transform = `translateX(-${diffX}px)`;
+          cardElement.style.opacity = `${1 - diffX / cardElement.offsetWidth}`;
+      }
+  });
 
-    cardElement.addEventListener('touchend', function() {
-        const diffX = startX - endX;
-        cardElement.style.transition = 'transform 0.3s ease, opacity 0.3s ease'; // Re-enable transition after swipe
+  cardElement.addEventListener('touchend', function() {
+      const diffX = startX - endX;
+      cardElement.style.transition = 'transform 0.3s ease, opacity 0.3s ease'; // Re-enable transition after swipe
 
-        if (diffX > cardElement.offsetWidth / 2) {
-            cardElement.style.transform = `translateX(-${cardElement.offsetWidth}px)`;
-            cardElement.style.opacity = '0';
+      if (diffX > cardElement.offsetWidth / 2) {
+          cardElement.style.transform = `translateX(-${cardElement.offsetWidth}px)`;
+          cardElement.style.opacity = '0';
 
-            // Trigger clear card after the transition
-            setTimeout(() => {
-                clearCard();
-            }, 300); // Duration should match the CSS transition duration
-        } else {
-            cardElement.style.transform = `translateX(0)`;
-            cardElement.style.opacity = '1';
-        }
-    });
+          // Trigger clear card after the transition
+          setTimeout(() => {
+              clearCard();
+          }, 300); // Duration should match the CSS transition duration
+      } else {
+          cardElement.style.transform = `translateX(0)`;
+          cardElement.style.opacity = '1';
+      }
+  });
 
-    function clearCard() {
-        const backButton = document.getElementById('back-button');
-        if (backButton) {
-            backButton.click(); // Simulate the back button click
-        }
-    }
+  function clearCard() {
+      const backButton = document.getElementById('back-button');
+      if (backButton) {
+          backButton.click(); // Simulate the back button click
+      }
+  }
 });
-
+</script>
   
   <script>
     const sw = "service-worker.js"; // it is needed because parcel will not recognize this as a file and not precess in its manner

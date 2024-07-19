@@ -13,7 +13,7 @@
 <link rel="icon" type = "image/x-icon" href = "../src/assets/app_icon.svg">
 <body>
   <script src="./index.js" type="module"></script>
-  <script>
+  <!-- <script>
     document.addEventListener("DOMContentLoaded", function() {
   const cardElement = document.querySelector('.fade-in-card');
   if (!cardElement) {
@@ -52,6 +52,114 @@
       }
   }
 });
+  </script> -->
+  <script>
+    function init() {
+      const cardElement = document.getElementById('open-card');
+      const backButton = document.getElementById('back-button');
+      
+      if (!cardElement) {
+        console.error('Card element with ID "open-card" not found.');
+        return;
+      }
+      console.log("Found card element:", cardElement);
+
+      if (!backButton) {
+        console.error('Back button with ID "back-button" not found.');
+        return;
+      }
+      console.log("Found back button:", backButton);
+
+      let startX;
+      let endX;
+
+      // Touch events
+      cardElement.addEventListener('touchstart', handleTouchStart);
+      cardElement.addEventListener('touchmove', handleTouchMove);
+      cardElement.addEventListener('touchend', handleTouchEnd);
+
+      // Mouse events for desktop testing
+      cardElement.addEventListener('mousedown', handleMouseDown);
+      cardElement.addEventListener('mousemove', handleMouseMove);
+      cardElement.addEventListener('mouseup', handleMouseUp);
+
+      function handleTouchStart(event) {
+        startX = event.touches[0].clientX;
+        console.log("Touch start at X:", startX);
+      }
+
+      function handleTouchMove(event) {
+        endX = event.touches[0].clientX;
+        console.log("Touch move to X:", endX);
+      }
+
+      function handleTouchEnd() {
+        const diffX = startX - endX;
+        console.log("Touch end. Difference in X:", diffX);
+        if (diffX > 50) { // Swipe left detection threshold
+          console.log("Swipe detected. Clearing card.");
+          clearCard();
+        } else {
+          console.log("Swipe not detected. Threshold not met.");
+        }
+      }
+
+      function handleMouseDown(event) {
+        startX = event.clientX;
+        console.log("Mouse down at X:", startX);
+      }
+
+      function handleMouseMove(event) {
+        if (startX !== undefined) {
+          endX = event.clientX;
+          console.log("Mouse move to X:", endX);
+        }
+      }
+
+      function handleMouseUp() {
+        if (startX !== undefined && endX !== undefined) {
+          const diffX = startX - endX;
+          console.log("Mouse up. Difference in X:", diffX);
+          if (diffX > 50) { // Swipe left detection threshold
+            console.log("Swipe detected. Clearing card.");
+            clearCard();
+          } else {
+            console.log("Swipe not detected. Threshold not met.");
+          }
+          startX = undefined;
+          endX = undefined;
+        }
+      }
+
+      function clearCard() {
+        console.log("Attempting to clear card");
+        if (backButton) {
+          backButton.click(); // Simulate the back button click
+          console.log('Back button clicked.');
+        } else {
+          console.error('Back button not found at the time of clearing.');
+        }
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      const observer = new MutationObserver((mutationsList, observer) => {
+        for (let mutation of mutationsList) {
+          if (mutation.type === 'childList') {
+            const cardElement = document.getElementById('open-card');
+            if (cardElement) {
+              console.log("Card element detected by MutationObserver");
+              init(); // Initialize the event listeners
+              observer.disconnect(); // Stop observing once the element is found
+              return;
+            }
+          }
+        }
+      });
+
+      // Start observing the entire document for added nodes
+      observer.observe(document.body, { childList: true, subtree: true });
+    });
   </script>
   <script>
     const sw = "service-worker.js"; // it is needed because parcel will not recognize this as a file and not precess in its manner

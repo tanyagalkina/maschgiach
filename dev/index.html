@@ -23,10 +23,12 @@
 
   cardElement.addEventListener('touchstart', function(event) {
       startX = event.touches[0].clientX;
+      console.log("startX {startX}");
   });
 
   cardElement.addEventListener('touchmove', function(event) {
       endX = event.touches[0].clientX;
+      console.log("endX {endX}");
   });
 
   cardElement.addEventListener('touchend', function() {
@@ -39,6 +41,9 @@
   function clearCard() {
       const backButton = document.getElementById('back-button');
       console.log("found back button {backButton}");
+      if (!backButton) {
+              console.error('Back button with ID "back-button" not found.');
+          }
       if (backButton) {
           backButton.click(); // Simulate the back button click
       }

@@ -46,6 +46,11 @@ html, body {
   animation: fadeIn 0.4s ease-in-out;
   /* transition: transform 0.3s ease, opacity 0.3s ease; */
 }
+
+.swiping {
+  background-color: rgba(255, 0, 0, 0.2); /* Add a semi-transparent red background during swipe */
+
+}
   
 @keyframes fadeIn {
     from {

@@ -39,7 +39,7 @@ card :: forall w. Boolean -> ENumber -> CardDisplayLanguage -> HH.HTML w Action
 card open e_number lang =
   HH.div [
                     css "fade-in-card"
-                     , HP.id "card"
+                     , HP.id "open-card"
                      , CSS.style do
                        display flex
                        flexDirection column

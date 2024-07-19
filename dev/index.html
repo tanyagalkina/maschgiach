@@ -14,46 +14,6 @@
 <body>
   <script src="./index.js" type="module"></script>
   <!-- <script>
-    document.addEventListener("DOMContentLoaded", function() {
-  const cardElement = document.querySelector('.fade-in-card');
-  if (!cardElement) {
-      console.error('Card element with ID "open-card" not found.');
-  }
-  console.log("found card element {cardElement}");
-
-  let startX;
-  let endX;
-
-  cardElement.addEventListener('touchstart', function(event) {
-      startX = event.touches[0].clientX;
-      console.log("startX {startX}");
-  });
-
-  cardElement.addEventListener('touchmove', function(event) {
-      endX = event.touches[0].clientX;
-      console.log("endX {endX}");
-  });
-
-  cardElement.addEventListener('touchend', function() {
-      const diffX = startX - endX;
-      if (diffX > 50) { // Swipe left detection threshold
-          clearCard();
-      }
-  });
-
-  function clearCard() {
-      const backButton = document.getElementById('back-button');
-      console.log("found back button {backButton}");
-      if (!backButton) {
-              console.error('Back button with ID "back-button" not found.');
-          }
-      if (backButton) {
-          backButton.click(); // Simulate the back button click
-      }
-  }
-});
-  </script> -->
-  <script>
     function init() {
       const cardElement = document.getElementById('open-card');
       const backButton = document.getElementById('back-button');
@@ -125,6 +85,134 @@
             clearCard();
           } else {
             console.log("Swipe not detected. Threshold not met.");
+          }
+          startX = undefined;
+          endX = undefined;
+        }
+      }
+
+      function clearCard() {
+        console.log("Attempting to clear card");
+        if (backButton) {
+          backButton.click(); // Simulate the back button click
+          console.log('Back button clicked.');
+        } else {
+          console.error('Back button not found at the time of clearing.');
+        }
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      const observer = new MutationObserver((mutationsList, observer) => {
+        for (let mutation of mutationsList) {
+          if (mutation.type === 'childList') {
+            const cardElement = document.getElementById('open-card');
+            if (cardElement) {
+              console.log("Card element detected by MutationObserver");
+              init(); // Initialize the event listeners
+              observer.disconnect(); // Stop observing once the element is found
+              return;
+            }
+          }
+        }
+      });
+
+      // Start observing the entire document for added nodes
+      observer.observe(document.body, { childList: true, subtree: true });
+    });
+  </script> -->
+  <script>
+    function init() {
+      const cardElement = document.getElementById('open-card');
+      const backButton = document.getElementById('back-button');
+      
+      if (!cardElement) {
+        console.error('Card element with ID "open-card" not found.');
+        return;
+      }
+      console.log("Found card element:", cardElement);
+
+      if (!backButton) {
+        console.error('Back button with ID "back-button" not found.');
+        return;
+      }
+      console.log("Found back button:", backButton);
+
+      let startX;
+      let endX;
+
+      // Touch events
+      cardElement.addEventListener('touchstart', handleTouchStart);
+      cardElement.addEventListener('touchmove', handleTouchMove);
+      cardElement.addEventListener('touchend', handleTouchEnd);
+
+      // Mouse events for desktop testing
+      cardElement.addEventListener('mousedown', handleMouseDown);
+      cardElement.addEventListener('mousemove', handleMouseMove);
+      cardElement.addEventListener('mouseup', handleMouseUp);
+
+      function handleTouchStart(event) {
+        startX = event.touches[0].clientX;
+        cardElement.style.transition = 'none'; // Disable transition during swipe
+        console.log("Touch start at X:", startX);
+      }
+
+      function handleTouchMove(event) {
+        endX = event.touches[0].clientX;
+        const diffX = startX - endX;
+        if (diffX > 0) {
+          cardElement.style.transform = `translateX(-${diffX}px)`;
+          cardElement.style.opacity = `${1 - diffX / cardElement.offsetWidth}`;
+        }
+        console.log("Touch move to X:", endX);
+      }
+
+      function handleTouchEnd() {
+        const diffX = startX - endX;
+        cardElement.style.transition = 'transform 0.3s ease, opacity 0.3s ease'; // Re-enable transition after swipe
+        console.log("Touch end. Difference in X:", diffX);
+        if (diffX > 50) { // Swipe left detection threshold
+          console.log("Swipe detected. Clearing card.");
+          cardElement.style.transform = `translateX(-${cardElement.offsetWidth}px)`;
+          cardElement.style.opacity = '0';
+          setTimeout(clearCard, 300); // Match the transition duration
+        } else {
+          cardElement.style.transform = `translateX(0)`;
+          cardElement.style.opacity = '1';
+        }
+      }
+
+      function handleMouseDown(event) {
+        startX = event.clientX;
+        cardElement.style.transition = 'none'; // Disable transition during swipe
+        console.log("Mouse down at X:", startX);
+      }
+
+      function handleMouseMove(event) {
+        if (startX !== undefined) {
+          endX = event.clientX;
+          const diffX = startX - endX;
+          if (diffX > 0) {
+            cardElement.style.transform = `translateX(-${diffX}px)`;
+            cardElement.style.opacity = `${1 - diffX / cardElement.offsetWidth}`;
+          }
+          console.log("Mouse move to X:", endX);
+        }
+      }
+
+      function handleMouseUp() {
+        if (startX !== undefined && endX !== undefined) {
+          const diffX = startX - endX;
+          cardElement.style.transition = 'transform 0.3s ease, opacity 0.3s ease'; // Re-enable transition after swipe
+          console.log("Mouse up. Difference in X:", diffX);
+          if (diffX > 50) { // Swipe left detection threshold
+            console.log("Swipe detected. Clearing card.");
+            cardElement.style.transform = `translateX(-${cardElement.offsetWidth}px)`;
+            cardElement.style.opacity = '0';
+            setTimeout(clearCard, 300); // Match the transition duration
+          } else {
+            cardElement.style.transform = `translateX(0)`;
+            cardElement.style.opacity = '1';
           }
           startX = undefined;
           endX = undefined;

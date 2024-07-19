@@ -60,7 +60,8 @@ render state =
                     ,mainContainerFlexVariantStyle
             ]
             [
-                headerWithLangSwitches state.cardDisplayLanguage
+              HH.div [css "fade-in-card"][]
+               , headerWithLangSwitches state.cardDisplayLanguage
               , searchBar state.searchStr $ getPlaceholderTxt state.cardDisplayLanguage
                 -- FIXME: refactor for readability
               , case state.currentCard of Just(myCard) -> card state.cardAppear myCard state.cardDisplayLanguage 

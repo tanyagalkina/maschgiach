@@ -13,7 +13,7 @@
 <link rel="icon" type = "image/x-icon" href = "../src/assets/app_icon.svg">
 <body>
   <script src="./index.js" type="module"></script>
-<!-- <script>
+<script>
   document.addEventListener("DOMContentLoaded", function() {
       const cardElement = document.querySelector('.fade-in');
   
@@ -31,7 +31,7 @@
       cardElement.addEventListener('touchend', function() {
           const diffX = startX - endX;
           if (diffX > 50) { // Swipe left detection threshold
-              clearCard();
+              setTimeout(clearCard, 200);
           }
       });
   
@@ -42,7 +42,7 @@
           }
       }
   });
-</script> -->
+</script>
 <!-- <script>
 document.addEventListener("DOMContentLoaded", function() {
   const cardElement = document.querySelector('.fade-in');

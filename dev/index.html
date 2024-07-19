@@ -16,6 +16,9 @@
   <script>
     document.addEventListener("DOMContentLoaded", function() {
   const cardElement = document.getElementById('open-card');
+  if (!cardElement) {
+      console.error('Card element with ID "open-card" not found.');
+  }
   console.log("found card element {cardElement}");
 
   let startX;

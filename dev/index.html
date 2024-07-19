@@ -16,6 +16,7 @@
   <script>
     document.addEventListener("DOMContentLoaded", function() {
   const cardElement = document.getElementById('open-card');
+  console.log("found card element {cardElement}");
 
   let startX;
   let endX;
@@ -37,6 +38,7 @@
 
   function clearCard() {
       const backButton = document.getElementById('back-button');
+      console.log("found back button {backButton}");
       if (backButton) {
           backButton.click(); // Simulate the back button click
       }

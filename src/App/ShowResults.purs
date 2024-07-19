@@ -33,6 +33,7 @@ showResults :: forall w. ENumberList -> CardDisplayLanguage -> HH.HTML w Action
 showResults arr lang =
   HH.div 
    [ css "fade-in"
+    ,HP.id "results-list"
     ,CSS.style do
         overflowY $ overflowAuto
         flexGrow 1.0

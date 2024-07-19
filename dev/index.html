@@ -250,17 +250,38 @@
     });
   </script> -->
   <script>
-    function addSwipeListeners(cardElement, backButton) {
+    function init() {
+      const cardElement = document.getElementById('open-card');
+      const backButton = document.getElementById('back-button');
+      
+      if (!cardElement) {
+        console.error('Card element with ID "open-card" not found.');
+        return;
+      }
+      console.log("Found card element:", cardElement);
+
+      if (!backButton) {
+        console.error('Back button with ID "back-button" not found.');
+        return;
+      }
+      console.log("Found back button:", backButton);
+
       let startX;
       let endX;
 
+      function isCardOpen() {
+        return document.getElementById('results-list') === null;
+      }
+
       function handleTouchStart(event) {
+        if (!isCardOpen()) return;
         startX = event.touches[0].clientX;
         cardElement.style.transition = 'none'; // Disable transition during swipe
         console.log("Touch start at X:", startX);
       }
 
       function handleTouchMove(event) {
+        if (!isCardOpen()) return;
         endX = event.touches[0].clientX;
         const diffX = startX - endX;
         if (diffX > 0) {
@@ -271,6 +292,7 @@
       }
 
       function handleTouchEnd() {
+        if (!isCardOpen()) return;
         const diffX = startX - endX;
         cardElement.style.transition = 'transform 0.3s ease, opacity 0.3s ease'; // Re-enable transition after swipe
         console.log("Touch end. Difference in X:", diffX);
@@ -286,12 +308,14 @@
       }
 
       function handleMouseDown(event) {
+        if (!isCardOpen()) return;
         startX = event.clientX;
         cardElement.style.transition = 'none'; // Disable transition during swipe
         console.log("Mouse down at X:", startX);
       }
 
       function handleMouseMove(event) {
+        if (!isCardOpen()) return;
         if (startX !== undefined) {
           endX = event.clientX;
           const diffX = startX - endX;
@@ -304,6 +328,7 @@
       }
 
       function handleMouseUp() {
+        if (!isCardOpen()) return;
         if (startX !== undefined && endX !== undefined) {
           const diffX = startX - endX;
           cardElement.style.transition = 'transform 0.3s ease, opacity 0.3s ease'; // Re-enable transition after swipe
@@ -339,16 +364,6 @@
       cardElement.addEventListener('mousedown', handleMouseDown);
       cardElement.addEventListener('mousemove', handleMouseMove);
       cardElement.addEventListener('mouseup', handleMouseUp);
-
-      // Return a function to remove the event listeners
-      return () => {
-        cardElement.removeEventListener('touchstart', handleTouchStart);
-        cardElement.removeEventListener('touchmove', handleTouchMove);
-        cardElement.removeEventListener('touchend', handleTouchEnd);
-        cardElement.removeEventListener('mousedown', handleMouseDown);
-        cardElement.removeEventListener('mousemove', handleMouseMove);
-        cardElement.removeEventListener('mouseup', handleMouseUp);
-      };
     }
 
     document.addEventListener("DOMContentLoaded", function() {
@@ -359,21 +374,7 @@
             const backButton = document.getElementById('back-button');
             if (cardElement && backButton) {
               console.log("Card element detected by MutationObserver");
-              const removeListeners = addSwipeListeners(cardElement, backButton);
-
-              // Optionally observe for card removal to clean up listeners
-              const cardObserver = new MutationObserver((mutationsList, cardObserver) => {
-                for (let mutation of mutationsList) {
-                  if (mutation.type === 'childList' && !document.body.contains(cardElement)) {
-                    console.log("Card element removed");
-                    removeListeners(); // Clean up event listeners
-                    cardObserver.disconnect();
-                  }
-                }
-              });
-
-              cardObserver.observe(document.body, { childList: true, subtree: true });
-
+              init(); // Initialize the event listeners
               observer.disconnect(); // Stop observing once the element is found
               return;
             }

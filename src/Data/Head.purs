@@ -18,13 +18,14 @@ import App.Common (CardDisplayLanguage(..))
 import Data.ENumberTypes (AdditiveGroup(..), ENumber, ENumberList, Kashrut(..), Source(..))
 import Data.Foldable (foldl)
 import Data.List (fromFoldable, filter, concat)
+import Data.Nb1000to1525 (additionalChemicalsList)
 import Data.Nb100to199 (colorENumberList)
 import Data.Nb200to299 (preservatENumberList)
 import Data.Nb300to399 (antioxidantENumberList)
 import Data.Nb400to499 (stabilizerENumberList)
 import Data.Nb500to599 (regulatorENumberList)
 import Data.Nb600to699 (flavourENumberList)
-import Data.Nb1000to1525 (additionalChemicalsList)
+import Data.Nb900to999 (sweetenerAndGlazingList)
 import Data.String.CodeUnits (contains)
 import Data.String.Common (toLower)
 import Data.String.Pattern (Pattern(..))
@@ -157,6 +158,8 @@ showEnglishGroup group = case group of
   FlavourEnchancer -> "Flavour Enhancer"
   GellingAgent -> "Gelling Agent"
   Acid -> "Acid"
+  GlazingAgent -> "Glazing Agent"
+  PackagingGas -> "Packaging Gas"
   None -> ""
 
 showRussianGroup :: AdditiveGroup -> String
@@ -172,6 +175,8 @@ showRussianGroup group = case group of
   FlavourEnchancer -> "Усилитель вкуса"
   GellingAgent -> "Желирующий агент"
   Acid -> "Кислота"
+  GlazingAgent -> "Глазирователь"
+  PackagingGas -> "Упаковочный газ"
   None -> ""
 
 showGermanGroup :: AdditiveGroup -> String
@@ -187,6 +192,8 @@ showGermanGroup group = case group of
   FlavourEnchancer -> "Geschmacksverstärker"
   GellingAgent -> "Geliermittel"
   Acid -> "Säure"
+  GlazingAgent -> "Überzugsmittel"
+  PackagingGas -> "Verpackungsgas"
   None -> ""
 
 
@@ -203,6 +210,8 @@ showHebrewGroup group = case group of
   FlavourEnchancer -> "משפר טעם"
   GellingAgent -> "חומר מַקרִישׁ"
   Acid -> "חומצה"
+  GlazingAgent -> "חומר זיגוג"
+  PackagingGas -> "גז אריזה"
   None -> ""
 
 showFrenchGroup :: AdditiveGroup -> String
@@ -218,6 +227,8 @@ showFrenchGroup group = case group of
   FlavourEnchancer -> "Exhausteur de goût"
   GellingAgent -> "Agent gélifiant"
   Acid -> "Acide"
+  GlazingAgent -> "Agent de glaçage"
+  PackagingGas -> "Gaz d'emballage"
   None -> ""
 
 showLatvianGroup :: AdditiveGroup -> String
@@ -233,6 +244,8 @@ showLatvianGroup group = case group of
   FlavourEnchancer -> "Garšas pastiprinātājs"  
   GellingAgent -> "Želatīnviela"
   Acid -> "Skābe"
+  GlazingAgent -> " Glazūras līdzeklis"
+  PackagingGas -> "Iepakojuma gāze"
   None -> ""
 
       
@@ -261,4 +274,5 @@ seedENumberList = concat $ fromFoldable
   , regulatorENumberList
   , flavourENumberList
   , additionalChemicalsList
+  , sweetenerAndGlazingList
   ]

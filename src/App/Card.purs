@@ -85,6 +85,8 @@ card open e_number lang =
                                                            _ -> backArrowBlack
                           , CSS.style do
                             marginRight $ px 10.0
+                            -- width (px 20.0)
+                            -- height (px 20.0)
                           ]
                       ,
                         HH.text $ getBackText lang

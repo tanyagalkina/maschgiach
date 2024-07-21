@@ -205,7 +205,7 @@ showHebrewGroup group = case group of
   Stabilizer -> "מייצב"
   AcidityRegulator -> "מווסת חומציות"
   AntiCakingAgent -> "מונע קיבוע"
-  Emulsifier -> "מוליך"
+  Emulsifier -> "תַּחְלִיב"
   Sweetener -> "ממתיק"
   FlavourEnchancer -> "משפר טעם"
   GellingAgent -> "חומר מַקרִישׁ"

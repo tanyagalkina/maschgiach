@@ -67,7 +67,7 @@ headerWithLangSwitches lang = HH.div [
               -- Figma: width $ px 144.0 FIXME: current: clrearify absolute and relative sizes
               -- Figma: height $ px 25.0
               marginTop $ px 10.0
-              width $ px 200.0
+              width $ px 180.0
               height $ px 30.0
             ]
             [

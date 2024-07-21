@@ -89,7 +89,7 @@ renderENumber eNumber lang =
                                              MostlyNotKosher -> rightArrowWhite
                                              _  -> rightArrow ) -- Path to your local icon
             , CSS.style do
-            marginRight (px 40.0)
+            marginRight (px 20.0)
             width (px 25.0)
             height (px 25.0)
         ]

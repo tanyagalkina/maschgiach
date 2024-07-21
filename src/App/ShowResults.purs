@@ -78,9 +78,9 @@ renderENumber eNumber lang =
             css "simple-result-text"
             , CSS.style do
               flexGrow 1.0
-              minWidth (pct 80.0)
-              maxWidth (pct 80.0) -- FIXME: is this correct ?
-              marginLeft (px 25.0)
+              minWidth (pct 90.0)
+              maxWidth (pct 90.0) -- FIXME: is this correct ?
+              marginLeft (px 15.0)
               -- overflowX $ overflowInherit
            ]  
            [ HH.text (eNumber.e_number <> " " <> (getNameByLanguage eNumber lang))
@@ -94,8 +94,8 @@ renderENumber eNumber lang =
                                              _  -> rightArrow ) -- Path to your local icon
             , CSS.style do
             marginRight (px 10.0)
-            width (px 25.0)
-            height (px 25.0)
+            width (px 20.0)
+            height (px 20.0)
         ]
         ]
 

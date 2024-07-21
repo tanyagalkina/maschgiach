@@ -17,8 +17,7 @@ import Halogen.HTML as HH
 import Halogen.HTML.CSS as CSS
 import Halogen.HTML.Events as HE
 import Halogen.HTML.Properties as HP
-import Type.Data.Boolean (class Not)
-import Web.HTML.Event.EventTypes (offline)
+-- import Type.Data.Boolean (class Not)
 
 
 resultsAndCard :: forall w. ENumberList -> CardDisplayLanguage -> HH.HTML w Action

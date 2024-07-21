@@ -82,11 +82,11 @@ e102 = {
 e103 :: ENumber
 e103 = {
   name_english: "Chrysoine resorcinol"
-  , name_russian: "Chrysoine resorcinol"
-  , name_german: "Chrysoine resorcinol"
-  , name_hebrew: "Chrysoine resorcinol"
-  , name_french: "Chrysoine resorcinol"
-  , name_latvian: "Chrysoine resorcinol"
+  , name_russian: "Хризоин резорцинол"
+  , name_german: "Chrysoin-Resorcin"
+  , name_hebrew: "כריזואין רזוצינול"
+  , name_french: "Chrysoine résorcinol"
+  , name_latvian: "Hrizoīns rezorcīns"
   , e_number: "E103"
   , group: Colour
   , source: []
@@ -444,11 +444,11 @@ e142 = {
 e143 :: ENumber
 e143 = {
   name_english: "Fast Green FCF (FD and Green 31)"
-  , name_russian: "Fast Green FCF (FD and Green 31)"
-  , name_german: "Fast Green FCF (FD and Green 31)"
-  , name_hebrew: "Fast Green FCF (FD and Green 31)"
-  , name_french: "Fast Green FCF (FD and Green 31)"
-  , name_latvian: "Fast Green FCF (FD and Green 31)"
+  , name_russian: "Быстрый зеленый FCF (FD и Зеленый 31)"
+  , name_german: "Schnellgrün FCF (FD und Grün 31)"
+  , name_hebrew: "ירוק מהיר FCF (FD וירוק 31)"
+  , name_french: "Vert rapide FCF (FD et Vert 31)"
+  , name_latvian: "Ātrais zaļais FCF (FD un Zaļais 31)"
   , e_number: "E143"
   , group: Colour
   , source: [Synthetic]

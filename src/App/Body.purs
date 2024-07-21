@@ -108,9 +108,9 @@ searchNumber str = case str of
 
 getPlaceholderTxt :: CardDisplayLanguage -> String
 getPlaceholderTxt lang = case lang of
-  English -> "Name or Number"
-  Russian -> "Название или номер"
-  French -> "Nom ou numéro"
-  German -> "Name oder Nummer"
-  Hebrew -> "שם או מספר"
-  Latvian -> "Nosaukums vai numurs"
+  English -> "Name | Number"
+  Russian -> "Название | номер"
+  French -> "Nom | numéro"
+  German -> "Name | Nummer"
+  Hebrew -> "שם | מספר"
+  Latvian -> "Nosaukums | numurs"

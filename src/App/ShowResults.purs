@@ -78,9 +78,9 @@ renderENumber eNumber lang =
             css "simple-result-text"
             , CSS.style do
               flexGrow 1.0
-              minWidth (pct 85.0)
-              maxWidth (pct 85.0) -- FIXME: is this correct ?
-              marginLeft (px 30.0)
+              minWidth (pct 80.0)
+              maxWidth (pct 80.0) -- FIXME: is this correct ?
+              marginLeft (px 25.0)
               -- overflowX $ overflowInherit
            ]  
            [ HH.text (eNumber.e_number <> " " <> (getNameByLanguage eNumber lang))

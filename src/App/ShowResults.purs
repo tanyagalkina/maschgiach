@@ -3,7 +3,7 @@ module App.ShowResults (showResults, resultsAndCard, getBackgroundForKashrut) wh
 import Prelude
 
 import App.Assets (rightArrow, rightArrowWhite)
-import App.Colours (black, brightred, green, lightred, darkergreen, orangad, orange, skyblue, white, yellow, lightblue, grey, whitened, mediumgrey)
+import App.Colours (black, brightred, darkergreen, green, grey, lightblue, lightred, mediumgrey, orangad, orange, skyblue, white, whitened, yellow)
 import App.Common (Action(..), CardDisplayLanguage(English, Russian, German, Hebrew, French, Latvian), css)
 import CSS (Color, alignItems, backgroundColor, border, borderBottom, borderLeft, color, display, em, flex, flexGrow, fontSize, height, justifyContent, margin, marginLeft, marginRight, maxWidth, minWidth, pct, px, solid, space, spaceBetween, width)
 import CSS.Common (center, auto)
@@ -17,6 +17,7 @@ import Halogen.HTML as HH
 import Halogen.HTML.CSS as CSS
 import Halogen.HTML.Events as HE
 import Halogen.HTML.Properties as HP
+import Type.Data.Boolean (class Not)
 import Web.HTML.Event.EventTypes (offline)
 
 
@@ -53,8 +54,10 @@ renderENumber eNumber lang =
           ,CSS.style do
             height (px 56.0)
             color (case eNumber.kosher of
-              NotKosher -> white
-              MostlyNotKosher -> white
+              -- NotKosher -> white
+              -- MostlyNotKosher -> white
+              NotKosher -> grey
+              MostlyNotKosher -> grey
               _ -> black)
 
             display flex
@@ -75,9 +78,9 @@ renderENumber eNumber lang =
             css "simple-result-text"
             , CSS.style do
               flexGrow 1.0
-              -- minWidth (pct 90.0)
+              minWidth (pct 85.0)
               maxWidth (pct 85.0) -- FIXME: is this correct ?
-              marginLeft (px 40.0)
+              marginLeft (px 30.0)
               -- overflowX $ overflowInherit
            ]  
            [ HH.text (eNumber.e_number <> " " <> (getNameByLanguage eNumber lang))

@@ -1,7 +1,6 @@
 {
   "lang": "en",
   "name": "mashgiach",
-  "orientation": "landscape",
   "background_color": "green",
   "categories": ["food", "health", "shopping"], 
   "start_url": "https://tanyaberlin.netlify.app",
@@ -34,6 +33,6 @@
       "sizes": "1258x721",
       "label": "unreal homescreen"
     }
-  ]
-
+  ],
+  "orientation": "portrait"
 }

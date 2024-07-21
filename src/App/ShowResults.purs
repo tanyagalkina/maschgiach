@@ -3,7 +3,7 @@ module App.ShowResults (showResults, resultsAndCard, getBackgroundForKashrut) wh
 import Prelude
 
 import App.Assets (rightArrow, rightArrowWhite)
-import App.Colours (black, brightred, darkergreen, green, grey, lightblue, lightred, mediumgrey, orangad, orange, skyblue, white, whitened, yellow)
+import App.Colours (black, brightred, darkergreen, green, grey, lightblue, lightgrey, lightred, mediumgrey, orangad, orange, skyblue, white, whitened, yellow)
 import App.Common (Action(..), CardDisplayLanguage(English, Russian, German, Hebrew, French, Latvian), css)
 import CSS (Color, alignItems, backgroundColor, border, borderBottom, borderLeft, color, display, em, flex, flexGrow, fontSize, height, justifyContent, margin, marginLeft, marginRight, maxWidth, minWidth, pct, px, solid, space, spaceBetween, width)
 import CSS.Common (center, auto)
@@ -17,6 +17,7 @@ import Halogen.HTML as HH
 import Halogen.HTML.CSS as CSS
 import Halogen.HTML.Events as HE
 import Halogen.HTML.Properties as HP
+
 -- import Type.Data.Boolean (class Not)
 
 
@@ -55,8 +56,8 @@ renderENumber eNumber lang =
             color (case eNumber.kosher of
               -- NotKosher -> white
               -- MostlyNotKosher -> white
-              NotKosher -> grey
-              MostlyNotKosher -> grey
+              NotKosher -> lightgrey
+              MostlyNotKosher -> lightgrey
               _ -> black)
 
             display flex
@@ -79,7 +80,7 @@ renderENumber eNumber lang =
               flexGrow 1.0
               minWidth (pct 90.0)
               maxWidth (pct 90.0) -- FIXME: is this correct ?
-              marginLeft (px 15.0)
+              marginLeft (px 20.0)
               -- overflowX $ overflowInherit
            ]  
            [ HH.text (eNumber.e_number <> " " <> (getNameByLanguage eNumber lang))
@@ -92,7 +93,7 @@ renderENumber eNumber lang =
                                              MostlyNotKosher -> rightArrowWhite
                                              _  -> rightArrow ) -- Path to your local icon
             , CSS.style do
-            marginRight (px 10.0)
+            marginRight (px 15.0)
             width (px 20.0)
             height (px 20.0)
         ]

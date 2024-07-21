@@ -273,6 +273,6 @@ seedENumberList = concat $ fromFoldable
   , stabilizerENumberList
   , regulatorENumberList
   , flavourENumberList
-  , additionalChemicalsList
   , sweetenerAndGlazingList
+  , additionalChemicalsList
   ]

@@ -5,7 +5,7 @@ import Prelude
 import App.Assets (rightArrow, rightArrowWhite)
 import App.Colours (black, brightred, green, lightred, darkergreen, orangad, orange, skyblue, white, yellow, lightblue, grey, whitened, mediumgrey)
 import App.Common (Action(..), CardDisplayLanguage(English, Russian, German, Hebrew, French, Latvian), css)
-import CSS (Color, alignItems, backgroundColor, border, borderBottom, borderLeft, color, display, em, flex, flexGrow, fontSize, height, justifyContent, margin, marginLeft, marginRight, maxWidth, pct, px, solid, space, spaceBetween, width)
+import CSS (Color, alignItems, backgroundColor, border, borderBottom, borderLeft, color, display, em, flex, flexGrow, fontSize, height, justifyContent, margin, marginLeft, marginRight, maxWidth, minWidth, pct, px, solid, space, spaceBetween, width)
 import CSS.Common (center, auto)
 import CSS.Font (fontFamily, monospace)
 import CSS.Overflow (overflowY, overflowX, overflow, overflowAuto, overflowInherit)
@@ -75,7 +75,8 @@ renderENumber eNumber lang =
             css "simple-result-text"
             , CSS.style do
               flexGrow 1.0
-              maxWidth (pct 90.0) -- FIXME: is this correct ?
+              -- minWidth (pct 90.0)
+              maxWidth (pct 85.0) -- FIXME: is this correct ?
               marginLeft (px 40.0)
               -- overflowX $ overflowInherit
            ]  
@@ -89,7 +90,7 @@ renderENumber eNumber lang =
                                              MostlyNotKosher -> rightArrowWhite
                                              _  -> rightArrow ) -- Path to your local icon
             , CSS.style do
-            marginRight (px 20.0)
+            marginRight (px 10.0)
             width (px 25.0)
             height (px 25.0)
         ]

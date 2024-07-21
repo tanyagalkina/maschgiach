@@ -78,8 +78,8 @@ renderENumber eNumber lang =
             css "simple-result-text"
             , CSS.style do
               flexGrow 1.0
-              minWidth (pct 90.0)
-              maxWidth (pct 90.0) -- FIXME: is this correct ?
+              minWidth (pct 85.0)
+              maxWidth (pct 85.0) -- FIXME: is this correct ?
               marginLeft (px 20.0)
               -- overflowX $ overflowInherit
            ]  

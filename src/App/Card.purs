@@ -166,7 +166,7 @@ getBorderColor e_number = case e_number.kosher of
   OftenKosherNeedHashgoho -> green
   NeedHashgohoWholeYear -> white
   NeedHashgohoWholeYearSomeAllow -> grey
-  KosherForbidden -> skyblue
+  KosherForbidden -> orangad
   -- FIXME: this is placeholder Color
   IssuficientData -> yellow
 

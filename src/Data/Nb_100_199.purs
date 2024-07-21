@@ -36,7 +36,7 @@ e100 = {
 
 e101 ∷ ENumber
 e101 = {
-  name_english: "Riboflavin"
+  name_english: "Riboflavin (Vitamin B2), Lactoflavin (Vitamin G)"
   , name_russian: "Рибофлавин"
   , name_german: "Riboflavin"
   , name_hebrew: "ריבופלבין"
@@ -46,7 +46,7 @@ e101 = {
   , group: Colour
   , source: [Dairy, Animal, Chametz]
   , description: "Yellow colouring"
-  , kosher: KosherNeedPassoverHashgoho
+  , kosher: UsuallyKosherRarelyNeedsHashgoho
 }
 
 e101a :: ENumber
@@ -111,12 +111,12 @@ e104 = {
 
 e105 :: ENumber
 e105 = {
-  name_english: "Fast Yellow"
-  , name_russian: "Fast Yellow"
-  , name_german: "Fast Yellow"
-  , name_hebrew: "Fast Yellow"
-  , name_french: "Fast Yellow"
-  , name_latvian: "Fast Yellow"
+  name_english: "Fast Yellow AB"
+  , name_russian: "Быстрый жёлтый AB"
+  , name_german: "Schnellgelb AB"
+  , name_hebrew: "צהוב מהיר AB"
+  , name_french: "Jaune rapide AB"
+  , name_latvian: "Ātrais dzeltens AB"
   , e_number: "E105"
   , group: Colour
   , source: []
@@ -126,12 +126,12 @@ e105 = {
 
 e106 :: ENumber
 e106 = {
-  name_english: "Riboflavin 5 sodium phosphate"
-  , name_russian: "Riboflavin 5 sodium phosphate"
-  , name_german: "Riboflavin 5 sodium phosphate"
-  , name_hebrew: "Riboflavin 5 sodium phosphate"
-  , name_french: "Riboflavin 5 sodium phosphate"
-  , name_latvian: "Riboflavin 5 sodium phosphate"
+  name_english: "Riboflavin-5-Sodium Phosphate"
+  , name_russian: "Рибофлавин-5-фосфат натрия"
+  , name_german: "Riboflavin-5-Natriumphosphat"
+  , name_hebrew: "ריבופלאבין-5-פוספט נתרן"
+  , name_french: "Riboflavine-5-phosphate de sodium"
+  , name_latvian: "Riboflavīna-5-nātrija fosfāts"
   , e_number: "E106"
   , group: Colour
   , source: []
@@ -332,7 +332,7 @@ e129 = {
   , group: Colour
   , source: [Synthetic, Dangerous]
   , description: "Red colouring; C.I: 16035 FD and C Red 40: יש חוששים, מקובל ככשר"
-  , kosher: UsuallyKosherRarelyNeedsHashgoho
+  , kosher: NeedHashgohoWholeYearSomeAllow
 }
 
 e130 :: ENumber
@@ -466,7 +466,7 @@ e150a =  {
   , name_latvian: "Vienkāršs karamēlis"
   , e_number: "E150a"
   , group: Colour
-  , source: []
+  , source: [Dairy, Animal]
   , description: "Brown colouring"
   , kosher: KosherNeedPassoverHashgoho
 }
@@ -481,7 +481,7 @@ e150b = {
   , name_latvian: "Karamēlis"
   , e_number: "E150b"
   , group: Colour
-  , source: []
+  , source: [Dairy, Animal]
   , description: "Brown colouring"
   , kosher: KosherNeedPassoverHashgoho
 }
@@ -495,7 +495,7 @@ e150c = {
   , name_latvian: "Karamēlis"
   , e_number: "E150c"
   , group: Colour
-  , source: []
+  , source: [Dairy, Animal]
   , description: "Brown colouring"
   , kosher: KosherNeedPassoverHashgoho
 }
@@ -509,7 +509,7 @@ e150d = {
   , name_latvian: "Karamēlis"
   , e_number: "E150d"
   , group: Colour
-  , source: []
+  , source: [Dairy, Animal]
   , description: "Brown colouring"
   , kosher: KosherNeedPassoverHashgoho
 }
@@ -554,7 +554,7 @@ e153 = {
   , name_latvian: "Augu ogle"
   , e_number: "E153"
   , group: Colour
-  , source: [Vegan]
+  , source: [Animal]
   , description: "Black colouring"
   , kosher: NeedHashgohoWholeYear
 }

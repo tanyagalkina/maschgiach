@@ -18,7 +18,6 @@ colorENumberList = e100 ++ e101 ++ e101a ++ e102 ++ e103 ++ e104 ++ e105 ++ e106
  e170 ++ e171 ++ e172 ++ e173 ++ e174 ++ e175 ++ e180 ++ e181 ++ e182
   ++ emptyENumberList
 
--- seed data ---
 e100 ∷ ENumber
 e100 = {
   name_english: "Curcumin"
@@ -41,7 +40,7 @@ e101 = {
   , name_german: "Riboflavin"
   , name_hebrew: "ריבופלבין"
   , name_french: "Riboflavine"
-  , name_latvian: "Riboflavīns"
+  , name_latvian: "Riboflavīns, Vitamīns B2, Riboflavīna-5 fosfāts"
   , e_number: "E101"
   , group: Colour
   , source: [Dairy, Animal, Chametz]
@@ -56,7 +55,7 @@ e101a = {
   , name_german: "Riboflavin-5Phosphat"
   , name_hebrew: "ריבופלבין-5 פוספט"
   , name_french: "Riboflavine-5 phosphate"
-  , name_latvian: "Riboflavīns-5 fosfāts"
+  , name_latvian: "Riboflavīna-5 fosfāts"
   , e_number: "E101a"
   , group: Colour
   , source: [Dairy, Animal, Chametz]
@@ -86,7 +85,7 @@ e103 = {
   , name_german: "Chrysoin-Resorcin"
   , name_hebrew: "כריזואין רזוצינול"
   , name_french: "Chrysoine résorcinol"
-  , name_latvian: "Hrizoīns rezorcīns"
+  , name_latvian: "Kriozīna resorcinols"
   , e_number: "E103"
   , group: Colour
   , source: []
@@ -101,7 +100,7 @@ e104 = {
   , name_german: "Chinolingelb"
   , name_hebrew: "קוינולין צהוב"
   , name_french: "Jaune de quinoléine"
-  , name_latvian: "Kinolīna dzeltenais"
+  , name_latvian: "Hinolīna dzeltenais"
   , e_number: "E104"
   , group: Colour
   , source: []
@@ -131,7 +130,7 @@ e106 = {
   , name_german: "Riboflavin-5-Natriumphosphat"
   , name_hebrew: "ריבופלאבין-5-פוספט נתרן"
   , name_french: "Riboflavine-5-phosphate de sodium"
-  , name_latvian: "Riboflavīna-5-nātrija fosfāts"
+  , name_latvian: "Riboflavīna-5-nātrija fosfāts, Flavīna mononukleotīds"
   , e_number: "E106"
   , group: Colour
   , source: []
@@ -161,7 +160,7 @@ e110 = {
   , name_german: "Sonnenuntergang Gelb FCF, Orange Gelb S"
   , name_hebrew: "צהריים צהוב FCF, כתום צהוב S"
   , name_french: "Coucher de soleil jaune FCF, Orange jaune S"
-  , name_latvian: "Saules rieti dzeltenais FCF, Oranžais dzeltenais S"
+  , name_latvian: "Saulrieta dzeltenais FCF, oranždzeltenais S"
   , e_number: "E110"
   , group: Colour
   , source: [Synthetic] 
@@ -191,7 +190,7 @@ e120 = {
   , name_german: "Cochenille (Echtes Karmin)"
   , name_hebrew: "כרמין"
   , name_french: "Cochenille"
-  , name_latvian: "Kohīnēls"
+  , name_latvian: "Košenils, Karmīnskābe, Karmīns"
   , e_number: "E120"
   , group: Colour
   , source: [Animal]
@@ -221,7 +220,7 @@ e122 = {
   , name_german: "Azorubin, Carmoisin"
   , name_hebrew: "אזורובין, כרמואיזין"
   , name_french: "Azorubine, Carmoisine"
-  , name_latvian: "Azorubīns, Karmozīns"
+  , name_latvian: "Azorubīns, Karmoizīns"
   , e_number: "E122"
   , group: Colour
   , source: [Synthetic, Dangerous]
@@ -252,7 +251,7 @@ e124 = {
   , name_german: "Ponceau 4R, Cochenillerot A"
   , name_hebrew: "פונסו 4R, כרמין אדום A"
   , name_french: "Ponceau 4R, Rouge cochenille A"
-  , name_latvian: "Ponso 4R, Kohīnēls sarkans A"
+  , name_latvian: "Košenila sarkanais, Kumačs 4R"
   , e_number: "E124"
   , group: Colour
   , source: [Synthetic, Dangerous]
@@ -267,7 +266,7 @@ e125 = {
   , name_german: "Ponceau SX, Scarlet GN"
   , name_hebrew: "פונסו SX, סקרלט GN"
   , name_french: "Ponceau SX, Scarlet GN"
-  , name_latvian: "Ponso SX, Skarlets GN"
+  , name_latvian: "Magoņkrāsas SX"
   , e_number: "E125"
   , group: Colour
   , source: [Synthetic]
@@ -282,7 +281,7 @@ e126 = {
   , name_german: "Ponceau 6R"
   , name_hebrew: "פונסו 6R"
   , name_french: "Ponceau 6R"
-  , name_latvian: "Ponso 6R"
+  , name_latvian: "Magoņkrāsas 6R"
   , e_number: "E126"
   , group: Colour
   , source: [Synthetic]
@@ -312,7 +311,7 @@ e128 = {
   , name_german: "Rot 2G"
   , name_hebrew: "2G אדום"
   , name_french: "Rouge 2G"
-  , name_latvian: "Sarkans 2G"
+  , name_latvian: "Sarkanais 2G"
   , e_number: "E128"
   , group: Colour
   , source: [Synthetic]
@@ -327,7 +326,7 @@ e129 = {
   , name_german: "Allurarot AC"
   , name_hebrew: "אלורה אדום AC"
   , name_french: "Rouge Allura AC"
-  , name_latvian: "Allura sarkans AC"
+  , name_latvian: "Alūra sarkanais AC"
   , e_number: "E129"
   , group: Colour
   , source: [Synthetic, Dangerous]
@@ -342,7 +341,7 @@ e130 = {
   , name_german: "Indanthrenblau RS"
   , name_hebrew: "אינדנתרן כחול RS"
   , name_french: "Indanthrène bleu RS"
-  , name_latvian: "Indantrens zils RS"
+  , name_latvian: "Indantrens zilais RS"
   , e_number: "E130"
   , group: Colour
   , source: [Synthetic]
@@ -357,7 +356,7 @@ e131 = {
   , name_german: "Patentblau V"
   , name_hebrew: "פטנט כחול V"
   , name_french: "Bleu patenté V"
-  , name_latvian: "Patenta zils V"
+  , name_latvian: "Patentzilais V"
   , e_number: "E131"
   , group: Colour
   , source: [Synthetic, Dangerous]
@@ -372,7 +371,7 @@ e132 = {
   , name_german: "Indigotin"
   , name_hebrew: "אינדיגו כרמין, אינדיגוטין"
   , name_french: "Indigotine"
-  , name_latvian: "Indigo karmins, Indigotīns"
+  , name_latvian: "Indigotīns, indigokarmīns"
   , e_number: "E132"
   , group: Colour
   , source: [Synthetic, Dangerous]
@@ -387,7 +386,7 @@ e133 = {
   , name_german: "Brillantblau FCF, Blau 2"
   , name_hebrew: "כחול בריליאנט FCF, כחול 2"
   , name_french: "Bleu brillant FCF, Bleu 2"
-  , name_latvian: "Brilliant Blue FCF, Blue 2"
+  , name_latvian: "Briljantzilais FCF"
   , e_number: "E133"
   , group: Colour
   , source: [Synthetic, Dangerous]
@@ -402,7 +401,7 @@ e140 = {
   , name_german: "Chlorophylle und Chlorophylline"
   , name_hebrew: "כלורופיל"
   , name_french: "Chlorophylle"
-  , name_latvian: "Hlorofils"
+  , name_latvian: "Hlorofili un hlorofilīni"
   , e_number: "E140"
   , group: Colour
   , source: [Wine]
@@ -417,13 +416,12 @@ e141 = {
   , name_german: "Kupferkomplexe von Chlorophyll und Chlorophyllinen"
   , name_hebrew: "מורכבי נחושת של כלורופיל וכלורופילינים"
   , name_french: "Complexes de cuivre de chlorophylle et de chlorophyllines"
-  , name_latvian: "Varšu kompleksi ar hlorofillu un hlorofilīniem"
+  , name_latvian: "Hlorofilu un hlorofilīnu vara kompleksi"
   , e_number: "E141"
   , group: Colour
   , source: [Wine]
   , description: "Green colouring; C.I: 75810"
   , kosher: NeedHashgohoWholeYear
-  
 }
 
 e142 :: ENumber
@@ -448,7 +446,7 @@ e143 = {
   , name_german: "Schnellgrün FCF (FD und Grün 31)"
   , name_hebrew: "ירוק מהיר FCF (FD וירוק 31)"
   , name_french: "Vert rapide FCF (FD et Vert 31)"
-  , name_latvian: "Ātrais zaļais FCF (FD un Zaļais 31)"
+  , name_latvian: "Izturīgi zaļais FCF"
   , e_number: "E143"
   , group: Colour
   , source: [Synthetic]
@@ -463,7 +461,7 @@ e150a =  {
   , name_german: "Einfaches Zuckerkulör"
   , name_hebrew: "קרמל פשוט"
   , name_french: "Caramel simple"
-  , name_latvian: "Vienkāršs karamēlis"
+  , name_latvian: "Karamele"
   , e_number: "E150a"
   , group: Colour
   , source: [Dairy, Animal]
@@ -478,7 +476,7 @@ e150b = {
   , name_german: "Ammoniak- und Sulfitkulör"
   , name_hebrew: "קרמל סולפיט קוסטי"
   , name_french: "Caramel"
-  , name_latvian: "Karamēlis"
+  , name_latvian: "Sulfīta karamele"
   , e_number: "E150b"
   , group: Colour
   , source: [Dairy, Animal]
@@ -492,7 +490,7 @@ e150c = {
   , name_german: "Ammoniak- und Sulfitkulör"
   , name_hebrew: "קרמל סולפיט קוסטי"
   , name_french: "Caramel"
-  , name_latvian: "Karamēlis"
+  , name_latvian: "Amonija Karamele"
   , e_number: "E150c"
   , group: Colour
   , source: [Dairy, Animal]
@@ -506,7 +504,7 @@ e150d = {
   , name_german: "Ammoniak- und Sulfitkulör"
   , name_hebrew: "קרמל סולפיט קוסטי"
   , name_french: "Caramel"
-  , name_latvian: "Karamēlis"
+  , name_latvian: "Amonija sulfīta karamele"
   , e_number: "E150d"
   , group: Colour
   , source: [Dairy, Animal]
@@ -521,7 +519,7 @@ e151 = {
   , name_german: "Brillantschwarz BN, Schwarz PN"
   , name_hebrew: "שחור בריליאנט BN, שחור PN"
   , name_french: "Noir brillant BN, Noir PN"
-  , name_latvian: "Brilliant Black BN, Black PN"
+  , name_latvian: "Briljanta melnais BN, melnais PN"
   , e_number: "E151"
   , group: Colour
   , source: [Synthetic]
@@ -551,7 +549,7 @@ e153 = {
   , name_german: "Kohlen-Schwarz"
   , name_hebrew: "פחם צמחי"
   , name_french: "Charbon végétal"
-  , name_latvian: "Augu ogle"
+  , name_latvian: "Augogle"
   , e_number: "E153"
   , group: Colour
   , source: [Animal]
@@ -566,7 +564,7 @@ e154 = {
   , name_german: "Braun FK"
   , name_hebrew: "חום FK"
   , name_french: "Brun FK"
-  , name_latvian: "Brūns FK"
+  , name_latvian: "Brūnais FK"
   , e_number: "E154"
   , group: Colour
   , source: [Synthetic]
@@ -581,7 +579,7 @@ e155 = {
   , name_german: "Braun HT"
   , name_hebrew: "חום HT"
   , name_french: "Brun HT"
-  , name_latvian: "Brūns HT"
+  , name_latvian: "Brūnais HT"
   , e_number: "E155"
   , group: Colour
   , source: [Synthetic, Dangerous]
@@ -596,7 +594,7 @@ e160a = {
   , name_german: "Carotinmischung oder Beta carotin"
   , name_hebrew: "קרוטינים"
   , name_french: "Carotènes melanges beta carotènes"
-  , name_latvian: "Karotīni"
+  , name_latvian: "Karotīni - Jauktie karotīni, Beta karotīns"
   , e_number: "E160a"
   , group: Colour
   , source: [Animal]
@@ -611,7 +609,7 @@ e160b = {
   , name_german: "Annatto, Bixin, Norbixin"
   , name_hebrew: "אנטו, ביקסין, נורביקסין"
   , name_french: "Annatto, Bixin, Norbixin"
-  , name_latvian: "Annatto, Bixin, Norbixin"
+  , name_latvian: "Annato, Biksīns, Norbiksīns"
   , e_number: "E160b"
   , group: Colour
   , source: [Vegan]
@@ -656,7 +654,7 @@ e160e = {
   , name_german: "Beta-apo-8'-carotenal (C30)"
   , name_hebrew: "בטא-אפו-8'-קרוטנל (C30)"
   , name_french: "Bêta-apo-8'-caroténal (C30)"
-  , name_latvian: "Beta-apo-8'-karotenāls (C30)"
+  , name_latvian: "Beta-apo-8`karotināls (C30)"
   , e_number: "E160e"
   , group: Colour
   , source: [Synthetic]
@@ -671,7 +669,7 @@ e160f = {
   , name_german: "Ethylester von Beta-apo-8'-carotinsäure (C30)"
   , name_hebrew: "אתיל אסטר של חומצת בטא-אפו-8'-קרוטינית (C30)"
   , name_french: "Ester éthylique de l'acide bêta-apo-8'-caroténique (C30)"
-  , name_latvian: "Beta-apo-8'-karotēnskābes etilēsteris (C30)"
+  , name_latvian: "Beta-8`-karotīnskābes etilesteris (C30)"
   , e_number: "E160f"
   , group: Colour
   , source: [Synthetic]
@@ -746,7 +744,7 @@ e161e = {
   , name_german: "Violaxanthin"
   , name_hebrew: "ויולקסנטין"
   , name_french: "Violaxanthine"
-  , name_latvian: "Violaksantīns"
+  , name_latvian: "Violoksantīns"
   , e_number: "E161e"
   , group: Colour
   , source: []
@@ -836,7 +834,7 @@ e162 = {
   , name_german: "Rote Beete, Betanin"
   , name_hebrew: "אדום סלק, בטנין"
   , name_french: "Rouge de betterave, Betanine"
-  , name_latvian: "Biešu sarkans, Betanīns"
+  , name_latvian: "Biešu sarkanais, Betanīns"
   , e_number: "E162"
   , group: Colour
   , source: [Vegan, Wine]
@@ -851,7 +849,7 @@ e163 = {
   , name_german: "Anthocyane"
   , name_hebrew: "אנתוציאנינים"
   , name_french: "Anthocyanes"
-  , name_latvian: "Antociāni"
+  , name_latvian: "Antocianīni"
   , e_number: "E163"
   , group: Colour
   , source: [Vegan]
@@ -866,7 +864,7 @@ e170 = {
   , name_german: "Calciumcarbonat"
   , name_hebrew: "פחמן סידן"
   , name_french: "Carbonate de calcium"
-  , name_latvian: "Kalcija karbonāts"
+  , name_latvian: "Kalcija karbonāti kalcija karbonāts, kalcija hidrogēnkarbonāts"
   , e_number: "E170"
   , group: Colour
   , source: [Vegan]

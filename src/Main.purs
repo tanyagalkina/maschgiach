@@ -18,6 +18,8 @@ main = HA.runHalogenAff do
   
 ----- ===== EXAMPLES ===== -----
 
+-- 192.168.178.33:2345
+
 -- w stands for widget, i stands for input
 -- input represents the type used to handle DOM events
 

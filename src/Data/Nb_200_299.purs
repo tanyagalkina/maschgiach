@@ -83,7 +83,7 @@ e209 = {
   , name_german: "Heptylparaben"
   , name_hebrew: "הפטיל פרבן"
   , name_french: "Heptylparaben"
-  , name_latvian: "Heptilparabens"
+  , name_latvian: "Heptilparabēns"
   , e_number: "E209"
   , group: Preservative
   , source: []
@@ -98,7 +98,7 @@ e210 = {
   , name_german: "Benzosäure"
   , name_hebrew: "חומצה בנזואית"
   , name_french: "Acide benzoïque"
-  , name_latvian: "Benzojkskābe"
+  , name_latvian: "Benzoskābe"
   , e_number: "E210"
   , group: Preservative
   , source: []
@@ -158,7 +158,7 @@ e214 = {
   , name_german: "Ethyl-p-hydroxybenzoat"
   , name_hebrew: "אתיל פרבן"
   , name_french: "Ethyl p-hydroxybenzoate"
-  , name_latvian: "Etilp-hidroksibenzoāts"
+  , name_latvian: "Etil-p-hidroksibenzoāts"
   , e_number: "E214"
   , group: Preservative
   , source: []
@@ -173,7 +173,7 @@ e215 = {
   , name_german: "pHB-Ester-Natrium-Ethyl-Verbindung"
   , name_hebrew: "אתיל פרבן נתרן"
   , name_french: "Ethyl p-hydroxybenzoate de sodium"
-  , name_latvian: "Nātrija etilp-hidroksibenzoāts"
+  , name_latvian: "Nātrija etil-p-hidroksibenzoāts"
   , e_number: "E215"
   , group: Preservative
   , source: []
@@ -188,7 +188,7 @@ e216 = {
   , name_german: "Propyl-p-hydroxybenzoat"
   , name_hebrew: "פרופיל פרבן"
   , name_french: "Propyl p-hydroxybenzoate"
-  , name_latvian: "Propilp-hidroksibenzoāts"
+  , name_latvian: "Propil-p-hidroksibenzoāts"
   , e_number: "E216"
   , group: Preservative
   , source: []
@@ -203,7 +203,7 @@ e217 = {
   , name_german: "Propyl-p-hydroxybenzoat-Natrium-Verbindung"
   , name_hebrew: "פרופיל פרבן נתרן"
   , name_french: "Propyl p-hydroxybenzoate de sodium"
-  , name_latvian: "Nātrija propilp-hidroksibenzoāts"
+  , name_latvian: "Nātrija propil-p-hidroksibenzoāts"
   , e_number: "E217"
   , group: Preservative
   , source: []
@@ -218,7 +218,7 @@ e218 = {
   , name_german: "Methyl-p-hydroxybenzoat"
   , name_hebrew: "מתיל פרבן"
   , name_french: "Methyl p-hydroxybenzoate"
-  , name_latvian: "Metilp-hidroksibenzoāts"
+  , name_latvian: "Metil-p-hidroksibenzoāts"
   , e_number: "E218"
   , group: Preservative
   , source: []
@@ -233,7 +233,7 @@ e219 = {
   , name_german: "Methyl-p-hydroxybenzoat-Natrium-Verbindung"
   , name_hebrew: "מתיל פרבן נתרן"
   , name_french: "Methyl p-hydroxybenzoate de sodium"
-  , name_latvian: "Nātrija metilp-hidroksibenzoāts"
+  , name_latvian: "Nātrija metil-p-hidroksibenzoāts"
   , e_number: "E219"
   , group: Preservative
   , source: []
@@ -263,7 +263,7 @@ e221 = {
   , name_german: "Natriumsulfit"
   , name_hebrew: "סולפיט נתרן"
   , name_french: "Sulfite de sodium"
-  , name_latvian: "Nātrija sulfits"
+  , name_latvian: "Nātrija sulfīts"
   , e_number: "E221"
   , group: Preservative
   , source: []
@@ -278,7 +278,7 @@ e222 = {
   , name_german: "Natriumhydrogensulfit"
   , name_hebrew: "סולפיט הידרוגן נתרן"
   , name_french: "Hydrogénosulfite de sodium"
-  , name_latvian: "Nātrija hidrogēnsulfits"
+  , name_latvian: "Nātrija hidrogēnsulfīts"
   , e_number: "E222"
   , group: Preservative
   , source: []
@@ -323,7 +323,7 @@ e225 = {
   , name_german: "Kaliumsulfit"
   , name_hebrew: "סולפיט קליום"
   , name_french: "Sulfite de potassium"
-  , name_latvian: "Kālija sulfits"
+  , name_latvian: "Kālija sulfīts"
   , e_number: "E225"
   , group: Preservative
   , source: []
@@ -338,7 +338,7 @@ e226 = {
   , name_german: "Calciumsulfit"
   , name_hebrew: "סולפיט סידן"
   , name_french: "Sulfite de calcium"
-  , name_latvian: "Kalcija sulfits"
+  , name_latvian: "Kalcija sulfīts"
   , e_number: "E226"
   , group: Preservative
   , source: []
@@ -353,7 +353,7 @@ e227 = {
   , name_german: "Calciumhydrogensulfit"
   , name_hebrew: "סולפיט הידרוגן סידן"
   , name_french: "Hydrogénosulfite de calcium"
-  , name_latvian: "Kalcija hidrogēnsulfits"
+  , name_latvian: "Kalcija hidrogēnsulfīts"
   , e_number: "E227"
   , group: Preservative
   , source: []
@@ -368,7 +368,7 @@ e228 = {
   , name_german: "Kaliumhydrogensulfit"
   , name_hebrew: "סולפיט הידרוגן קליום"
   , name_french: "Hydrogénosulfite de potassium"
-  , name_latvian: "Kālija hidrogēnsulfits"
+  , name_latvian: "Kālija hidrogēnsulfīts"
   , e_number: "E228"
   , group: Preservative
   , source: []
@@ -383,7 +383,7 @@ e230 = {
   , name_german: "Biphenyl"
   , name_hebrew: "ביפניל"
   , name_french: "Biphényle"
-  , name_latvian: "Bifenils"
+  , name_latvian: "Difenils, Bifenils"
   , e_number: "E230"
   , group: Preservative
   , source: [Dangerous]
@@ -474,7 +474,7 @@ e236 = {
   , name_german: "Ameisensäure"
   , name_hebrew: "חומצה נמלית"
   , name_french: "Acide formique"
-  , name_latvian: "Formiķskābe"
+  , name_latvian: "Skudrskābe"
   , e_number: "E236"
   , group: Preservative
   , source: []
@@ -489,7 +489,7 @@ e237 = {
   , name_german: "Natriumformiat"
   , name_hebrew: "פורמט נתרן"
   , name_french: "Formiate de sodium"
-  , name_latvian: "Nātrija formiāts"
+  , name_latvian: "Nātrija formāts"
   , e_number: "E237"
   , group: Preservative
   , source: []
@@ -504,7 +504,7 @@ e238 = {
   , name_german: "Calciumformiat"
   , name_hebrew: "פורמט סידן"
   , name_french: "Formiate de calcium"
-  , name_latvian: "Kalcija formiāts"
+  , name_latvian: "Kalcija formāts"
   , e_number: "E238"
   , group: Preservative
   , source: []
@@ -519,7 +519,7 @@ e239 = {
   , name_german: "Hexamethylentetramin"
   , name_hebrew: "הקסמתילן טטרמין"
   , name_french: "Hexaméthylène tétramine"
-  , name_latvian: "Heksametilentetramīns"
+  , name_latvian: "Heksametilēntetramīns"
   , e_number: "E239"
   , group: Preservative
   , source: [Dangerous]
@@ -564,7 +564,7 @@ e249 = {
   , name_german: "Kaliumnitrit"
   , name_hebrew: "ניטריט קליום"
   , name_french: "Nitrite de potassium"
-  , name_latvian: "Kālija nitrits"
+  , name_latvian: "Kālija nitrīts"
   , e_number: "E249"
   , group: Preservative
   , source: []
@@ -579,7 +579,7 @@ e250 = {
   , name_german: "Natriumnitrit"
   , name_hebrew: "ניטריט נתרן"
   , name_french: "Nitrite de sodium"
-  , name_latvian: "Nātrija nitrits"
+  , name_latvian: "Nātrija nitrīts"
   , e_number: "E250"
   , group: Preservative
   , source: []
@@ -624,7 +624,7 @@ e260 = {
   , name_german: "Essigsäure"
   , name_hebrew: "חומצה חציבית"
   , name_french: "Acide acétique"
-  , name_latvian: "Etānskābe"
+  , name_latvian: "Etiķskābe"
   , e_number: "E260"
   , group: Preservative
   , source: [Wine]
@@ -654,7 +654,7 @@ e262 = {
   , name_german: "Natriumacetat"
   , name_hebrew: "אצטת נתרן"
   , name_french: "Acétate de sodium"
-  , name_latvian: "Nātrija acetāts"
+  , name_latvian: "Nātrija acetāti - nātrija acetāts, nātrija diacetāts"
   , e_number: "E262"
   , group: Preservative
   , source: [Wine]
@@ -700,7 +700,7 @@ e265 = {
   , name_german: "Dehydroessigsäure"
   , name_hebrew: "חומצה דהידרואצטית"
   , name_french: "Acide déhydroacétique"
-  , name_latvian: "Dehidroacetīnskābe"
+  , name_latvian: "Dihidroacetilskābe"
   , e_number: "E265"
   , group: Preservative
   , source: []
@@ -730,7 +730,7 @@ e270 = {
   , name_german: "Milchsäure"
   , name_hebrew: "חומצה לקטית"
   , name_french: "Acide lactique"
-  , name_latvian: "Piena skābe"
+  , name_latvian: "Pienskābe"
   , e_number: "E270"
   , group: Preservative
   , source: []
@@ -820,7 +820,7 @@ e285 = {
   , name_german: "Natriumtetraborat"
   , name_hebrew: "טטרבורט נתרן"
   , name_french: "Tétraborate de sodium"
-  , name_latvian: "Nātrija tetraborāts"
+  , name_latvian: "Nātrija tetraborāts (boraks)"
   , e_number: "E285"
   , group: Preservative
   , source: []
@@ -850,7 +850,7 @@ e296 = {
   , name_german: "Apfelsäure"
   , name_hebrew: "חומצה מלית"
   , name_french: "Acide malique"
-  , name_latvian: "Ābolu skābe"
+  , name_latvian: "Ābolskābe"
   , e_number: "E296"
   , group: Preservative
   , source: [Synthetic]
@@ -872,8 +872,3 @@ e297 = {
   , description: ""
   , kosher: KosherNeedPassoverHashgoho
 }
-
-
-
-
-

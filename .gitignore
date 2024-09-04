@@ -8,3 +8,4 @@ output/
 # check if need the lock files
 package-lock.json
 yarn.lock
+scanner_poc.txt

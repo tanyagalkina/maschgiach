@@ -23,7 +23,7 @@ import Data.NonEmpty ((:|))
 import Halogen.HTML as HH
 import Halogen.HTML.CSS as CSS
 import Halogen.HTML.Events as HE
-import Halogen.HTML.Properties (id)
+-- import Halogen.HTML.Properties (id)
 import Halogen.HTML.Properties as HP
 
 newCard :: forall w. Boolean -> Maybe ENumber -> CardDisplayLanguage -> HH.HTML w Action

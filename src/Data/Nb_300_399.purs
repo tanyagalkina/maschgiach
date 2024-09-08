@@ -1,17 +1,14 @@
-
 -- Antioxidants and Acidity Regulators (300-399)
 
 module Data.Nb300to399 (antioxidantENumberList) where
 
-import Data.ENumberTypes (AdditiveGroup(..), ENumberList, Kashrut(..), Source(..), ENumber, emptyENumberList, insertEntry)
-
--- import Data.ListEnglish (Kashrut(..))
+import Data.ENumberTypes (AdditiveGroup(..), ENumber, ENumberList, Kashrut(..), Source(..), emptyENumberList, insertEntry)
 
 infixr 5 insertEntry as ++
 
 antioxidantENumberList :: ENumberList
-antioxidantENumberList =  e300 ++ e301 ++ e302 ++ e304 ++ e305 ++ e306 ++ e307 ++ e308 ++ e309 ++
-  e310 ++ e311 ++ e312 ++ e313 ++ e315 ++ e316 ++ e317 ++ e318 ++ e319 ++
+antioxidantENumberList =  e300 ++ e301 ++ e302 ++ e303 ++ e304 ++ e305 ++ e306 ++ e307 ++ e308 ++ e309 ++
+  e310 ++ e311 ++ e312 ++ e313 ++ e314 ++ e315 ++ e316 ++ e317 ++ e318 ++ e319 ++
   e320 ++ e321 ++ e322 ++ e323 ++ e324 ++ e325 ++ e326 ++ e327 ++ e328 ++ e329 ++ 
   e330 ++ e331 ++ e332 ++ e333 ++ e334 ++ e335 ++ e336 ++ e337 ++
   e338 ++ e339 ++ e340 ++ e341 ++ e342 ++ e342a ++ e342b ++ e343 ++ e344 ++ e345 ++ e349 ++
@@ -67,6 +64,21 @@ e302 = {
   , kosher: KosherNeedPassoverHashgoho  
 }
 
+e303 :: ENumber
+e303 = {
+  name_english: "Potassium L-ascorbate"
+  , name_russian: "Аскорбат калия"
+  , name_german: "Kaliumascorbat"
+  , name_hebrew: "אסקורבט פוטסיום"
+  , name_french: "Ascorbate de potassium"
+  , name_latvian: "Kālija askorbāts"
+  , e_number: "E303"
+  , group: Antioxidant
+  , source: []
+  , description: ""
+  , kosher: IssuficientData  
+}
+
 e304 :: ENumber
 e304 = {
   name_english: "Fatty acid esters of ascorbic acid, Ascorbyl palmitate"
@@ -74,7 +86,7 @@ e304 = {
   , name_german: "Ascorbyl palmitat"
   , name_hebrew: "אסקורביל פלמיטאט"
   , name_french: "Palmitate d'ascorbyl"
-  , name_latvian: "Askorbilpalmitāts"
+  , name_latvian: "Askorbīnskābes taukskābju esteri - askorbilpalmitāts, askorbilstearāts"
   , e_number: "E304"
   , group: Antioxidant
   , source: [Synthetic]
@@ -134,7 +146,7 @@ e308 = {
   , name_german: "Gamma-Tocopherol"
   , name_hebrew: "גמא-טוקופרול"
   , name_french: "Gamma-tocophérol"
-  , name_latvian: "Gama-tokoferols"
+  , name_latvian: "Gammatokoferols"
   , e_number: "E308"
   , group: Antioxidant
   , source: [Synthetic]
@@ -179,7 +191,7 @@ e311 = {
   , name_german: "Octylgallat"
   , name_hebrew: "אוקטיל גלט"
   , name_french: "Octylgallate"
-  , name_latvian: "Oktīlgallāts"
+  , name_latvian: "Oktilgallāts"
   , e_number: "E311"
   , group: Antioxidant
   , source: [Synthetic, Dangerous]
@@ -209,7 +221,7 @@ e313 = {
   , name_german: "Ethylgallat"
   , name_hebrew: "אתיל גלט"
   , name_french: "Éthylgallate"
-  , name_latvian: "Etīlgallāts"
+  , name_latvian: "Etilgallāts"
   , e_number: "E313"
   , group: Antioxidant
   , source: [Synthetic, Dangerous]
@@ -217,14 +229,29 @@ e313 = {
   , kosher: NeedHashgohoWholeYear
 }
 
+e314 :: ENumber
+e314 = {
+  name_english: "Guaiac resin"
+  , name_russian: "Гуаяковая смола"
+  , name_german: "Guajakharz"
+  , name_hebrew: "גואיאק רזין"
+  , name_french: "Résine de guaïac"
+  , name_latvian: "Gvajaka sveķi"
+  , e_number: "E314"
+  , group: Antioxidant
+  , source: []
+  , description: ""
+  , kosher: IssuficientData
+}
+
 e315 :: ENumber
 e315 = {
-  name_english : "Isoascorbic acid"
+  name_english : "Isoascorbic acid, Erythorbic acid"
   , name_russian : "Изо-аскорбиновая (эриторбовая) кислота"
   , name_german : "Isoascorbinsäure"
   , name_hebrew : "חומצה איזו-אסקורבית"
   , name_french : "Acide isoascorbique"
-  , name_latvian : "Izoaskorbīnskābe"
+  , name_latvian : "Eritorbīnskābe"
   , e_number : "E315"
   , group : Antioxidant
   , source : [Synthetic, Chametz]
@@ -284,7 +311,7 @@ e319 =  {
   , name_german: "Tertiäres-Butylhydrochinon (TBHQ)"
   , name_hebrew: "טרציארי-בוטילהידרוקוינון"
   , name_french: "Tert-butylhydroquinone"
-  , name_latvian: "Terciārbutilhidrohinons"
+  , name_latvian: "Butilhidrohinons (TBHQ)"
   , e_number: "E319"
   , group: Antioxidant
   , source: [Synthetic]
@@ -299,7 +326,7 @@ e320 = {
   , name_german: "Butyliertes Hydroxyanisol (BHA)"
   , name_hebrew: "בוטילטד הידרוקסיאניזול"
   , name_french: "Hydroxyanisole butylé (BHA)"
-  , name_latvian: "Butilēta hidroksianizols"
+  , name_latvian: "Butilēts hidroksianizols (BHA)"
   , e_number: "E320"
   , group: Antioxidant
   , source: [Synthetic, Kitniyot]
@@ -314,7 +341,7 @@ e321 = {
   , name_german: "Butyliertes Hydroxytoluol (BHT)"
   , name_hebrew: "בוטילטד הידרוקסיטולואול"
   , name_french: "Hydroxytoluène butylé (BHT)"
-  , name_latvian: "Butilēta hidroksitoluols"
+  , name_latvian: "Butilēts hidroksitoluols (BHT)"
   , e_number: "E321"
   , group: Antioxidant
   , source: [Synthetic, Kitniyot]
@@ -466,7 +493,7 @@ e331 = {
   , name_german: "Natriumcitrate"
   , name_hebrew: "ציטרטים נתריים"
   , name_french: "Citrate de sodium"
-  , name_latvian: "Nātrija citrāti"
+  , name_latvian: "Nātrija citrāti - mononātrija citrāts, dinātrija citrāts, trinātrija citrāts"
   , e_number: "E331"
   , group: AcidityRegulator
   , source: [Chametz, Synthetic]
@@ -481,7 +508,7 @@ e332 = {
   , name_german: "Kaliumcitrate"
   , name_hebrew: "ציטרטים פוטסיומיים"
   , name_french: "Citrate de potassium"
-  , name_latvian: "Kālija citrāti"
+  , name_latvian: "Kālija citrāti - monokalcija citrāts, dikalcija citrāts, trikalcija citrāts"
   , e_number: "E332"
   , group: AcidityRegulator
   , source: [Chametz, Synthetic]
@@ -511,7 +538,7 @@ e334 = {
   , name_german: "Weinsäure"
   , name_hebrew: "חומצה טרטרית"
   , name_french: "Acide tartrique"
-  , name_latvian: "Vīnskābe"
+  , name_latvian: "Vīnskābe (L(+)-)"
   , e_number: "E334"
   , group: Acid
   , source: [Wine]
@@ -526,7 +553,7 @@ e335 = {
   , name_german: "Natriumtartrate"
   , name_hebrew: "טרטרטים נתריים"
   , name_french: "Tartrate de sodium"
-  , name_latvian: "Nātrija tartrāti"
+  , name_latvian: "Nātrija tartrāti - mononātrija tartrāts, dinātrija tartrāts"
   , e_number: "E335"
   , group: AcidityRegulator
   , source: [Wine, Synthetic]
@@ -541,7 +568,7 @@ e336 = {
   , name_german: "Kaliumtartrate"
   , name_hebrew: "טרטרטים פוטסיומיים"
   , name_french: "Tartrate de potassium"
-  , name_latvian: "Kālija tartrāti"
+  , name_latvian: "Kālija tartrāti -  monokālija tartrāts, dikālija tartrāts"
   , e_number: "E336"
   , group: AcidityRegulator
   , source: [Wine]
@@ -556,7 +583,7 @@ e337 = {
   , name_german: "Natriumkaliumtartrat"
   , name_hebrew: "טרטרט נתריום-פוטסיום"
   , name_french: "Tartrate de sodium-potassium"
-  , name_latvian: "Nātrija-kālija tartrāts"
+  , name_latvian: "Kālija nātrija tartrāts"
   , e_number: "E337"
   , group: AcidityRegulator
   , source: [Wine, Synthetic]
@@ -571,7 +598,7 @@ e338 = {
   , name_german: "Orthophosphorsäure"
   , name_hebrew: "חומצה זרחתית פוספורית"
   , name_french: "Acide orthophosphorique"
-  , name_latvian: "Ortofosforskābe"
+  , name_latvian: "Fosforskābe"
   , e_number: "E338"
   , group: Acid
   , source: [Synthetic]
@@ -586,7 +613,7 @@ e339 = {
   , name_german: "Natriumorthophosphate"
   , name_hebrew: "סודיום פוספאת"
   , name_french: "Orthophosphates de sodium"
-  , name_latvian: "Nātrija ortofosfāti"
+  , name_latvian: "Nātrija fosfāti - mononātrija fosfāts, dinātrija fosfāts, trinātrija fosfāts"
   , e_number: "E339"
   , group: Antioxidant
   , source: [Synthetic]
@@ -601,7 +628,7 @@ e340 = {
   , name_german: "Kaliumphosphate"
   , name_hebrew: "פוטאסיום אורטו-פוספאת"
   , name_french: "Phosphates de potassium"
-  , name_latvian: "Kālija fosfāti"
+  , name_latvian: "Kālija fosfāti - monokālija fosfāts, dikālija fosfāts, trikālija fosfāts"
   , e_number: "E340"
   , group: Antioxidant
   , source: [Synthetic]
@@ -616,7 +643,7 @@ e341 = {
   , name_german: "Calciumphosphate"
   , name_hebrew: "קאלציום אורטו-פוספאט"
   , name_french: "Phosphates de calcium"
-  , name_latvian: "Kalcija fosfāti"
+  , name_latvian: "Kalcija fosfāti - monokālija fosfāts, dikālija fosfāts, trikālija fosfāts"
   , e_number: "E341"
   , group: AntiCakingAgent
   , source: [Synthetic]
@@ -676,7 +703,7 @@ e343 = {
   , name_german: "Magnesiumphosphate"
   , name_hebrew: "מגנזיום אורטו-פוספאט"
   , name_french: "Phosphates de magnésium"
-  , name_latvian: "Magnija fosfāti"
+  , name_latvian: "Magnija fosfāti - monomgnija fosfāts, dimagnija fosfāts"
   , e_number: "E343"
   , group: AntiCakingAgent
   , source: [Synthetic]
@@ -737,7 +764,7 @@ e350 = {
   , name_german: "Natriummalat"
   , name_hebrew: "סודיום מאלאט"
   , name_french: "Malate de sodium"
-  , name_latvian: "Nātrija malāts"
+  , name_latvian: "Nātrija malāti - nātrija malāts, nātrija hidrogēnmalāts"
   , e_number: "E350"
   , group: AcidityRegulator
   , source: [Synthetic]
@@ -768,7 +795,7 @@ e352 = {
   , name_german: "Calciummalat"
   , name_hebrew: "קלציום מאלאט"
   , name_french: "Malate de calcium"
-  , name_latvian: "Kalcija malāts"
+  , name_latvian: "Kalcija malāti - kalcija malāts, kalcija hidrogēnmalāts"
   , e_number: "E352"
   , group: AcidityRegulator
   , source: [Synthetic]
@@ -783,7 +810,7 @@ e353 = {
   , name_german: "Metaweinsäure"
   , name_hebrew: "חומצה מטאטרטרית"
   , name_french: "Acide métatartrique"
-  , name_latvian: "Metatartārskābe"
+  , name_latvian: "Mezovīnskābe"
   , e_number: "E353"
   , group: Emulsifier
   , source: [Synthetic]
@@ -829,7 +856,7 @@ e356 = {
   , name_german: "Natriumadipat"
   , name_hebrew: "אדיפט נתרן"
   , name_french: "Adipate de sodium"
-  , name_latvian: "Nātrija adipāts"
+  , name_latvian: "Nātrija adipināts"
   , e_number: "E356"
   , group: AcidityRegulator
   , source: [Synthetic]
@@ -844,7 +871,7 @@ e357 = {
   , name_german: "Kaliumadipat"
   , name_hebrew: "אדיפט פוטסיום"
   , name_french: "Adipate de potassium"
-  , name_latvian: "Kālija adipāts"
+  , name_latvian: "Kālija adipināts"
   , e_number: "E357"
   , group: AcidityRegulator
   , source: [Synthetic]
@@ -860,7 +887,7 @@ e359 = {
   , name_german: "Ammoniumadipat"
   , name_hebrew: "אדיפט אמוניום"
   , name_french: "Adipate d'ammonium"
-  , name_latvian: "Amonija adipāts"
+  , name_latvian: "Amonija adipināts"
   , e_number: "E359"
   , group: AcidityRegulator
   , source: [Synthetic]
@@ -875,7 +902,7 @@ e363 = {
   , name_german: "Bernsteinsäure"
   , name_hebrew: "חומצה סוקינית"
   , name_french: "Acide succinique"
-  , name_latvian: "Sukcināts"
+  , name_latvian: "Dzintarskābe"
   , e_number: "E363"
   , group: AcidityRegulator
   , source: [Synthetic]
@@ -981,7 +1008,7 @@ e380 = {
   , name_german: "Triammoniumcitrat"
   , name_hebrew: "ציטרט תריאמוניום"
   , name_french: "Citrate de triammonium"
-  , name_latvian: "Triammonija citrāts"
+  , name_latvian: "Triamonija citrāts"
   , e_number: "E380"
   , group: AcidityRegulator
   , source: [Synthetic]
@@ -1026,7 +1053,7 @@ e384 = {
   , name_german: "Isopropylcitrat"
   , name_hebrew: "ציטרט איזופרופיל"
   , name_french: "Citrate d'isopropyle"
-  , name_latvian: "Izopropil citrāts"
+  , name_latvian: "Izopropilcitrāts"
   , e_number: "E384"
   , group: AcidityRegulator
   , source: [Synthetic]
@@ -1102,7 +1129,7 @@ e389 = {
   , name_german: "Dilaurylthiodipropionat"
   , name_hebrew: "דילאוריל תיודיפרופיונאט"
   , name_french: "Dilauryl thiodipropionate"
-  , name_latvian: "Dilauryl thiodipropionate"
+  , name_latvian: "Dilauriltiodipropionāts"
   , e_number: "E389"
   , group: None
   , source: [Synthetic, Dangerous]
@@ -1117,7 +1144,7 @@ e390 = {
   , name_german: "Distearylthiodipropionat"
   , name_hebrew: "דיסטיריל תיודיפרופיונאט"
   , name_french: "Distearyl thiodipropionate"
-  , name_latvian: "Distearyl thiodipropionate"
+  , name_latvian: "Disteariltiodipropionāts"
   , e_number: "E390"
   , group: None
   , source: [Synthetic, Dangerous]
@@ -1133,7 +1160,7 @@ e391 = {
   , name_german: "Phytinsäure"
   , name_hebrew: "חומצה פיטית"
   , name_french: "Acide phytique"
-  , name_latvian: "Fītīnskābe"
+  , name_latvian: "Fitīnskābe"
   , e_number: "E391"
   , group: None
   , source: [Synthetic]
@@ -1155,40 +1182,3 @@ e399 = {
   , description: ""
   , kosher: NeedHashgohoWholeYear
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

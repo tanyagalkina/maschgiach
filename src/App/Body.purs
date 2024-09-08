@@ -52,7 +52,7 @@ render state =
             , searchBar state.searchStr $ getPlaceholderTxt state.cardDisplayLanguage
             -- FIXME: refactor for readability
             , case state.currentCard of
-                Just(myCard) -> card state.cardAppear myCard state.cardDisplayLanguage 
+                Just(myCard) -> card myCard state.cardDisplayLanguage 
                 Nothing -> resultsAndCard state.results state.cardDisplayLanguage
             , newFooter
           ]  

@@ -2,8 +2,8 @@ module App.Body (component) where
 
 import Prelude
 
-import App.Common (Action(..), CardDisplayLanguage(..), State)
 import App.Card (card)
+import App.Common (Action(..), CardDisplayLanguage(..), State)
 import App.Footer (newFooter)
 import App.InputBar (searchBar)
 import App.LanguageIcon (headerWithLangSwitches)
@@ -61,6 +61,7 @@ render state =
 handleAction :: forall o m. MonadEffect m => Action → H.HalogenM State Action () o m Unit
 handleAction = case _ of
   DoSearch str -> do
+    log "searching ..."
     H.modify_ \st ->
       st { searchStr = str
          , moveCurtain = true
@@ -68,13 +69,11 @@ handleAction = case _ of
          , currentCard = Nothing
          , cardAppear = false
          }
-         
-  Search str ->  H.modify_ \st -> st { searchStr = str, results = searchNumber str, currentCard = Nothing, moveCurtain = true, cardAppear = false}
   OpenCard eNumber -> do
-                     log "Opening Card"
+                     log "opening card ..."
                      H.modify_ \st -> st {currentCard = Just eNumber, cardAppear = true }
   ClearCard -> do
-              log "Clearing card"
+              log "clearing card ..."
               H.modify_ \st -> st { currentCard = Nothing, moveCurtain = true, cardAppear = false } 
   SetCardDisplayLanguage lang -> H.modify_ \st -> st { cardDisplayLanguage = lang }
 

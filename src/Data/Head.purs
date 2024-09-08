@@ -27,7 +27,7 @@ import Data.Nb500to599 (regulatorENumberList)
 import Data.Nb600to699 (flavourENumberList)
 import Data.Nb900to999 (sweetenerAndGlazingList)
 import Data.String.CodeUnits (contains)
-import Data.String.Common (toLower)
+import Data.String.Common (toLower, trim)
 import Data.String.Pattern (Pattern(..))
 
 -- import Web.HTML.Event.EventTypes (offline)
@@ -248,13 +248,13 @@ showLatvianGroup group = case group of
   PackagingGas -> "Iepakojuma gāze"
   None -> ""
 
-      
+-- TODO: add special character handling, like in Latvian, so that we can make input without them      
 findENumbersInList :: String -> ENumberList
 findENumbersInList query = filter filterEntry seedENumberList
   where filterEntry::ENumber -> Boolean
         filterEntry entry = 
           let 
-            lowerQuery = toLower query
+            lowerQuery = toLower $ trim query
             containsIgnoreCase field = contains ( Pattern $ lowerQuery) (toLower field)
           in
               containsIgnoreCase entry.e_number
@@ -267,7 +267,7 @@ findENumbersInList query = filter filterEntry seedENumberList
 
 seedENumberList:: ENumberList
 seedENumberList = concat $ fromFoldable 
-  [colorENumberList
+  [ colorENumberList
   , preservatENumberList
   , antioxidantENumberList
   , stabilizerENumberList

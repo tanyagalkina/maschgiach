@@ -1,4 +1,4 @@
-module App.Common(Action (DoSearch, Search, OpenCard, ClearCard, SetCardDisplayLanguage) , State, css, CardDisplayLanguage(..)) where
+module App.Common(Action (DoSearch, OpenCard, ClearCard, SetCardDisplayLanguage) , State, css, CardDisplayLanguage(..)) where
 
 import Prelude
 
@@ -17,8 +17,11 @@ derive instance eqCardDisplayLanguage :: Eq CardDisplayLanguage
 type State
   = { moveCurtain :: Boolean, results:: ENumberList, currentCard:: Maybe ENumber, cardAppear ::Boolean, cardDisplayLanguage:: CardDisplayLanguage, searchStr:: String}
 
+-- data Action
+--   = DoSearch String | Search String | OpenCard ENumber | ClearCard | SetCardDisplayLanguage CardDisplayLanguage
+
 data Action
-  = DoSearch String | Search String | OpenCard ENumber | ClearCard | SetCardDisplayLanguage CardDisplayLanguage
+  = DoSearch String | OpenCard ENumber | ClearCard | SetCardDisplayLanguage CardDisplayLanguage  
 
 
 css :: forall r i. String -> HH.IProp (class :: String | r) i

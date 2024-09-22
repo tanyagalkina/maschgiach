@@ -2,8 +2,6 @@
 
 module Data.Nb500to599 (regulatorENumberList) where
 
-import Prelude
-
 import Data.ENumberTypes (AdditiveGroup(..), ENumberList, Kashrut(..), Source(..), ENumber, emptyENumberList, insertEntry)
 
 -- import Data.Number (e)
@@ -21,9 +19,7 @@ e500 = {
   , name_german: "Natriumcarbonat, Natriumhydrogencarbonat (Natron, Backsoda, Speisesoda)"
   , name_hebrew: "סודיום קרבונט, סודיום הידרוגנקרבונט (סודיום ביקרבונט, סודיום קרבונט, סודיום קרבונט)"
   , name_french: "Carbonate de sodium, Hydrogénocarbonate de sodium (Bicarbonate de soude)"
-  , name_latvian: "Nātrija karbonāts, Nātrija hidrogēnkarbonāts (Soda, Sālsoda)"
- <> "Sodium sesquicarbonate (Trona), "
- <> "Natriumcarbonat (Soda)" 
+  , name_latvian: "Nātrija karbonāts, Nātrija hidrogēnkarbonāts (Soda, Sālsoda), Nātrija seskvikarbonāts"
   , e_number: "E500"
   , group: AcidityRegulator 
   , source: [Vegan]
@@ -98,7 +94,7 @@ e507 = {
   , name_german: "Salzsäure"
   , name_hebrew: "חומצה מלחית"
   , name_french: "Acide chlorhydrique"
-  , name_latvian: "Hlorīdskābe"
+  , name_latvian: "Sālsskābe"
   , e_number: "E507"
   , group: Acid
   , source: [Synthetic]
@@ -175,7 +171,7 @@ e512 = {
   , name_german: "Zinn(II)-chlorid"
   , name_hebrew: "כלוריד עפרון"
   , name_french: "Chlorure d'étain"
-  , name_latvian: "Cinka hlorīds"
+  , name_latvian: "Alvas hlorīds"
   , e_number: "E512"
   , group: Antioxidant
   , source: []
@@ -273,6 +269,8 @@ e518 = {
   , kosher: KosherIncludingPassover
 }
 
+
+-- TODO: check lavtian
 e519 :: ENumber
 e519 = {
   name_english: "Copper(II) sulfate"
@@ -463,7 +461,7 @@ e535 = {
   , name_german: "Natriumhexacyanoferrat(II)"
   , name_hebrew: "פרוציאניד נתרן"
   , name_french: "Ferrocyanure de sodium"
-  , name_latvian: "Nātrija ferociānīds"
+  , name_latvian: "Nātrija ferocianīds"
   , e_number: "E535"
   , group: AntiCakingAgent
   , source: []
@@ -478,7 +476,7 @@ e536 = {
   , name_german: "Kaliumhexacyanoferrat(II)"
   , name_hebrew: "פרוציאניד פוטסיום"
   , name_french: "Ferrocyanure de potassium"
-  , name_latvian: "Kālija ferociānīds"
+  , name_latvian: "Kālija ferocianīds"
   , e_number: "E536"
   , group: AntiCakingAgent
   , source: []
@@ -486,6 +484,8 @@ e536 = {
   , kosher: KosherIncludingPassover
 }
 
+
+-- TODO: check latvian
 e537 :: ENumber
 e537 = {
   name_english: "Ferrous hexacyanomanganate"
@@ -508,7 +508,7 @@ e538 = {
   , name_german: "Calciumhexacyanoferrat(II)"
   , name_hebrew: "פרוציאניד סידן"
   , name_french: "Ferrocyanure de calcium"
-  , name_latvian: "Kalcija ferociānīds"
+  , name_latvian: "Kalcija ferocianīds"
   , e_number: "E538"
   , group: AntiCakingAgent
   , source: []
@@ -516,6 +516,7 @@ e538 = {
   , kosher: KosherIncludingPassover
 }
 
+-- TODO: check lavtian
 e539 :: ENumber
 e539 = {
   name_english: "Sodium thiosulfate"
@@ -553,7 +554,7 @@ e541 = {
   , name_german: "Natriumaluminiumphosphat"
   , name_hebrew: "פוספט אלומיניום נתרן"
   , name_french: "Phosphate d'aluminium et de sodium"
-  , name_latvian: "Nātrija alumīnija fosfāts"
+  , name_latvian: "Nātrija alumīnija skābais fosfāts"
   , e_number: "E541"
   , group: Emulsifier
   , source: []
@@ -561,6 +562,7 @@ e541 = {
   , kosher: KosherIncludingPassover
 }
 
+-- TODO: fix russian
 e542 :: ENumber
 e542 = {
   name_english: "Bone phosphate"
@@ -688,7 +690,7 @@ e553b = {
   , name_german: "Talk"
   , name_hebrew: "טלק"
   , name_french: "Talc"
-  , name_latvian: "Talcs"
+  , name_latvian: "Talks"
   , e_number: "E553b"
   , group: AntiCakingAgent
   , source: []
@@ -846,6 +848,7 @@ e563 = {
   , kosher: KosherIncludingPassover
 }
 
+-- TODO: check latvian
 e565 :: ENumber
 e565 = {
   name_english: "Lignosulfonates"
@@ -861,6 +864,7 @@ e565 = {
   , kosher: KosherIncludingPassover
 }
 
+-- TODO: check latvian
 e566 :: ENumber
 e566 = {
   name_english: "Natrolite-phonolite"
@@ -883,7 +887,7 @@ e570 = {
   , name_german: "Stearinsäure"
   , name_hebrew: "חומצה סטארית"
   , name_french: "Acide stéarique"
-  , name_latvian: "Stearīnskābe"
+  , name_latvian: "Taukskābes"
   , e_number: "E570"
   , group: AntiCakingAgent
   , source: [Animal]
@@ -891,6 +895,8 @@ e570 = {
   , kosher: NeedHashgohoWholeYear
 }
 
+
+-- TODO: check latvian 
 e572 :: ENumber
 e572 = {
   name_english: "Magnesium stearate, calcium stearate"
@@ -928,7 +934,7 @@ e575 = {
   , name_german: "Glucono-delta-lacton"
   , name_hebrew: "גלוקונו-דלטה-לקטון"
   , name_french: "Glucono-delta-lactone"
-  , name_latvian: "Glucono-delta-laktons"
+  , name_latvian: "Glukonskābes delta-laktons"
   , e_number: "E575"
   , group: AcidityRegulator
   , source: [Kitniyot, Chametz]
@@ -943,7 +949,7 @@ e576 = {
   , name_german: "Natriumgluconat"
   , name_hebrew: "גלוקונט נתרן"
   , name_french: "Gluconate de sodium"
-  , name_latvian: "Nātrija gluconāts"
+  , name_latvian: "Nātrija glukonāts"
   , e_number: "E576"
   -- TODO: check and add the group "sequestrant" https://en.wikipedia.org/wiki/Sequestrant 
   , group: None
@@ -959,7 +965,7 @@ e577 = {
   , name_german: "Kaliumgluconat"
   , name_hebrew: "גלוקונט פוטסיום"
   , name_french: "Gluconate de potassium"
-  , name_latvian: "Kālija gluconāts"
+  , name_latvian: "Kālija glukonāts"
   , e_number: "E577"
   -- TODO: check and add the group "sequestrant" https://en.wikipedia.org/wiki/Sequestrant 
   , group: None
@@ -975,7 +981,7 @@ e578 = {
   , name_german: "Calciumgluconat"
   , name_hebrew: "גלוקונט סידן"
   , name_french: "Gluconate de calcium"
-  , name_latvian: "Kalcija gluconāts"
+  , name_latvian: "Kalcija glukonāts"
   , e_number: "E578"
   -- TODO: add group firming agent https://en.wikipedia.org/wiki/Firming_agent
   , group: None
@@ -991,7 +997,7 @@ e579 = {
   , name_german: "Eisen(II)-gluconat"
   , name_hebrew: "גלוקונט ברזל"
   , name_french: "Gluconate de fer"
-  , name_latvian: "Dzelzs gluconāts"
+  , name_latvian: "Dzelzs glukonāts"
   , e_number: "E579"
   , group: Colour
   , source: [Synthetic]
@@ -1006,7 +1012,7 @@ e580 = {
   , name_german: "Magnesiumgluconat"
   , name_hebrew: "גלוקונט מגנזיום"
   , name_french: "Gluconate de magnésium"
-  , name_latvian: "Magnija gluconāts"
+  , name_latvian: "Magnija glukonāts"
   , e_number: "E580"
   , group: None
   , source: []
@@ -1051,7 +1057,7 @@ e598 = {
   , name_german: "Synthetische Calciumaluminate"
   , name_hebrew: "אלומינטים סינתטיים סידן"
   , name_french: "Aluminates de calcium synthétiques"
-  , name_latvian: "Sintētiskie kalcija alumīnāti"
+  , name_latvian: "Sintētiskie kalcija alumināti"
   , e_number: "E598"
   , group: None
   , source: []
@@ -1073,6 +1079,3 @@ e599 = {
   , description: ""
   , kosher: KosherNeedPassoverHashgoho
 }
-
-
-

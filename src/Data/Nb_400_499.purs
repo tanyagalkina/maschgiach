@@ -22,7 +22,6 @@ e400 = {
   , name_hebrew: "חומצה אלגינית"
   , name_french: "Acide alginique"
   , name_latvian: "Algīnskābe"
-  
   , e_number: "E400"
   , group: Emulsifier 
   , source: [Synthetic, Animal]
@@ -97,7 +96,7 @@ e405 = {
   , name_german: "Propylenglycolalginat"
   , name_hebrew: "פרופילן גליקול אלגינט"
   , name_french: "Alginate de propylène glycol"
-  , name_latvian: "Propilēnglikola algināts"
+  , name_latvian: "Propān-1,2-diola algināts"
   , e_number: "E405"
   , group: Emulsifier
   , source: [Synthetic]
@@ -112,7 +111,7 @@ e406 = {
   , name_german: "Agar"
   , name_hebrew: "אגר אגר"
   , name_french: "Agar"
-  , name_latvian: "Agar"
+  , name_latvian: "Agars"
   , e_number: "E406"
   , group: Stabilizer
   , source: [Vegan]
@@ -127,7 +126,7 @@ e407 = {
   , name_german: "Carrageen"
   , name_hebrew: "קרגינן"
   , name_french: "Carraghénane"
-  , name_latvian: "Karragināns"
+  , name_latvian: "Karagināns"
   , e_number: "E407"
   , group: Emulsifier
   , source: [Vegan]
@@ -142,7 +141,7 @@ e407a = {
   , name_german: "Verarbeitete Eucheuma-Alge"
   , name_hebrew: "סחול ים מעובד"
   , name_french: "Algues eucheuma traitées"
-  , name_latvian: "Apstrādāta eucheuma jūras zāle"
+  , name_latvian: "Apstrādātas Eucheuma jūraszāles"
   , e_number: "E407a"
   , group: Emulsifier
   , source: [Vegan]
@@ -157,7 +156,7 @@ e408 = {
   , name_german: "Bäckerhefe-Glykan"
   , name_hebrew: "תמצית שמרים לאפייה"
   , name_french: "Glycane de levure de boulanger"
-  , name_latvian: "Maizes rauga glikāns"
+  , name_latvian: "Maizesrauga glikāns"
   , e_number: "E408"
   , group: Stabilizer
   , source: [Vegan]
@@ -187,7 +186,7 @@ e410 = {
   , name_german: "Johannisbrotkernmehl, Johannisbrotgummi"
   , name_hebrew: "גומי חרוב (אבקת גרעיני חרוב)"
   , name_french: "Gomme de caroube"
-  , name_latvian: "Locust bean gum, carob gum"
+  , name_latvian: "Baltās akācijas sveķi"
   , e_number: "E410"
   , group: Emulsifier
   , source: [Vegan]
@@ -202,7 +201,7 @@ e411 = {
   , name_german: "Hafergummi"
   , name_hebrew: "חומר מגנון שיבולת שועל"
   , name_french: "Gomme d'avoine"
-  , name_latvian: "Auzu sveķi"
+  , name_latvian: "Auzas sveķi"
   , e_number: "E411"
   , group: Stabilizer
   , source: [Vegan, Chametz]
@@ -247,7 +246,7 @@ e414 = {
   , name_german: "Akaziengummi, Gummi arabicum"
   , name_hebrew: "גומי עץ שיטה"
   , name_french: "Gomme arabique"
-  , name_latvian: "Acacia gum, gum arabic"
+  , name_latvian: " Akācijas sveķi"
   , e_number: "E414"
   , group: Emulsifier
   , source: [Animal]
@@ -307,7 +306,7 @@ e418 = {
   , name_german: "Gellangummi"
   , name_hebrew: "ג`לאן"
   , name_french: "Gomme gellane"
-  , name_latvian: "Gelāna sveķi"
+  , name_latvian: "Želena sveķi"
   , e_number: "E418"
   , group: Emulsifier
   , source: [Synthetic]
@@ -337,7 +336,7 @@ e420 = {
   , name_german: "Sorbit"
   , name_hebrew: "סורביטול"
   , name_french: "Sorbitol"
-  , name_latvian: "Sorbitols"
+  , name_latvian: "Sorbīts, Sorbīta sīrups"
   , e_number: "E420"
   , group: Sweetener
   , source: [Chametz, Kitniyot]
@@ -397,7 +396,7 @@ e425 = {
   , name_german: "Konjak"
   , name_hebrew: "קונג'אק"
   , name_french: "Konjac"
-  , name_latvian: "Konjaks"
+  , name_latvian: "“Konjac”"
   , e_number: "E425"
   , group: Emulsifier
   , source: [Vegan, Dangerous]
@@ -412,7 +411,7 @@ e425a = {
   , name_german: "Konjakgummi"
   , name_hebrew:" גומי קונג'אק"
   , name_french: "Gomme Konjac"
-  , name_latvian: "Konjaka sveķi"
+  , name_latvian: "“Konjac” sveķi"
   , e_number: "E425a"
   , group: Emulsifier
   , source: [Vegan, Dangerous]
@@ -427,7 +426,7 @@ e425b = {
   , name_german: "Konjak-Glucomannan"
   , name_hebrew: "קונג'אק גלוקומנן"
   , name_french: "Konjac glucomannane"
-  , name_latvian: "Konjaka glucomannāns"
+  , name_latvian: "“Konjac” glukomannāns"
   , e_number: "E425a"
   , group: Emulsifier
   , source: [Vegan, Dangerous]
@@ -442,7 +441,7 @@ e426 = {
   , name_german: "Sojabohnenhemicellulose"
   , name_hebrew: "סויה המיצלולוזה"
   , name_french: "Hémicellulose de soja"
-  , name_latvian: "Sojas hemiceluloze"
+  , name_latvian: "Sojas pupu hemiceluloze"
   , e_number: "E426"
   , group: Emulsifier
   , source: [Vegan, Kitniyot]
@@ -517,7 +516,7 @@ e431 = {
   , name_german: "Polyoxyethylen (40) stearat"
   , name_hebrew: "פוליאוקסיאתילן (40) סטיארט"
   , name_french: "Polyoxyéthylène (40) stéarate"
-  , name_latvian: "Polieoksietilēns (40) stearāts"
+  , name_latvian: "Polioksietilēna (40) stearāts"
   , e_number: "E431"
   , group: Emulsifier
   , source: [Synthetic, Animal]
@@ -532,7 +531,7 @@ e432 = {
   , name_german: "Polysorbat 20"
   , name_hebrew: "פוליאוקסיאתילן סורביטן (20), פוליסורבט 20"
   , name_french: "Polysorbate 20"
-  , name_latvian: "Polieoksietilēns sorbitāns (20), Polisorbāts 20"
+  , name_latvian: "Polioksietilēna sorbitāna monolaurāts (polisorbāts 20)"
   , e_number: "E432"
   , group: Emulsifier
   , source: [Synthetic, Animal]
@@ -547,7 +546,7 @@ e433 = {
   , name_german: "Polysorbat 80"
   , name_hebrew: "פוליאוקסיאתילן סורביטן (20) מונואוליאט, פוליסורבט 80"
   , name_french: "Polysorbate 80"
-  , name_latvian: "Polieoksietilēns sorbitāns (20) monooleāts, Polisorbāts 80"
+  , name_latvian: "Polioksietilēna sorbitāna monooleāts (polisorbāts 80)"
   , e_number: "E433"
   , group: Emulsifier
   , source: [Synthetic, Animal]
@@ -562,7 +561,7 @@ e434 = {
   , name_german: "Polysorbat 40"
   , name_hebrew: "פוליאוקסיאתילן סורביטן (20) מונופלמיטט, פוליסורבט 40"
   , name_french: "Polysorbate 40"
-  , name_latvian: "Polieoksietilēns sorbitāns (20) monopalmiāts, Polisorbāts 40"
+  , name_latvian: "Polioksietilēna sorbitāna monopalmitāts (polisorbāts 40)"
   , e_number: "E434"
   , group: Emulsifier
   , source: [Synthetic, Animal]
@@ -577,7 +576,7 @@ e435 = {
   , name_german: "Polysorbat 60"
   , name_hebrew: "פוליאוקסיאתילן סורביטן (20) מונוסטיארט, פוליסורבט 60"
   , name_french: "Polysorbate 60"
-  , name_latvian: "Polieoksietilēns sorbitāns (20) monostearāts, Polisorbāts 60"
+  , name_latvian: "Polioksietilēna sorbitāna monostearāts (polisorbāts 60)"
   , e_number: "E435"
   , group: Emulsifier
   , source: [Synthetic, Animal]
@@ -592,7 +591,7 @@ e436 = {
   , name_german: "Polysorbat 65"
   , name_hebrew: "פוליאוקסיאתילן סורביטן (20) טריסטיארט, פוליסורבט 65"
   , name_french: "Polysorbate 65"
-  , name_latvian: "Polieoksietilēns sorbitāns (20) tristearāts, Polisorbāts 65"
+  , name_latvian: "Polioksietilēna sorbitāna tristearāts (polisorbāts 65)"
   , e_number: "E436"
   , group: Emulsifier
   , source: [Synthetic, Animal]
@@ -622,7 +621,7 @@ e440b = {
   , name_german: "Amidierter Pektin"
   , name_hebrew: "פקטין אמידי"
   , name_french: "Pectine amidée"
-  , name_latvian: "Pektīns amidēts"
+  , name_latvian: "Amidēts pektīns"
   , e_number: "E440b"
   , group: Emulsifier
   , source: [Vegan, Wine]
@@ -682,7 +681,7 @@ e444 = {
   , name_german: "Saccharoseacetatisobutyrat"
   , name_hebrew: "אצטט איזובוטיראט של סוכרוז"
   , name_french: "Acétate d'isobutyrate de saccharose"
-  , name_latvian: "Saharoze acetāta izobutirāts"
+  , name_latvian: "Saharozes acetāta izobutirāts"
   , e_number: "E444"
   , group: Emulsifier
   , source: [Vegan, Synthetic]
@@ -697,7 +696,7 @@ e445 = {
   , name_german: "Glycerinester von Holzharz"
   , name_hebrew: "אסטרים של גליצרול עץ רוזין"
   , name_french: "Esters de glycérol de résine de bois"
-  , name_latvian: "Glicerīna esteri no koka saknes"
+  , name_latvian: "Kolofonija glicerīna esteri"
   , e_number: "E445"
   , group: Emulsifier
   , source: [Vegan, Animal]
@@ -787,7 +786,7 @@ e450e = {
   , name_german: "Tetrapotassiumdiphosphat"
   , name_hebrew: "טטראפוטסיום דיפוספט"
   , name_french: "Diphosphate tétrapotassique"
-  , name_latvian: "Tetrapotāss difosfāts"
+  , name_latvian: "Tetrakālija difosfāts"
   , e_number: "E450e"
   , group: Emulsifier
   , source: [Synthetic]
@@ -832,7 +831,7 @@ e451a = {
   , name_german: "Natriumtriphosphat"
   , name_hebrew: "פנטאסודיום טריפוספט"
   , name_french: "Triphosphate de sodium"
-  , name_latvian: "Nātrija trifosfāts"
+  , name_latvian: "Pentanātrija trifosfāts"
   , e_number: "E451a"
   , group: Emulsifier
   , source: [Synthetic]
@@ -863,7 +862,7 @@ e452a = {
   , name_german: "Natriumpolyphosphate"
   , name_hebrew: "פוליפוספטים של נתרן"
   , name_french: "Polyphosphates de sodium"
-  , name_latvian: "Nātrija polifosfāti"
+  , name_latvian: "Nātrija polifosfāts"
   , e_number: "E452a"
   , group: Emulsifier
   , source: [Synthetic]
@@ -878,7 +877,7 @@ e452b = {
   , name_german: "Kaliumpolyphosphate"
   , name_hebrew: "פוליפוספטים של אשלגן"
   , name_french: "Polyphosphates de potassium"
-  , name_latvian: "Kālija polifosfāti"
+  , name_latvian: "Kālija polifosfāts"
   , e_number: "E452b"
   , group: Emulsifier
   , source: [Synthetic]
@@ -893,7 +892,7 @@ e452c = {
   , name_german: "Natriumcalcium-polyphosphat"
   , name_hebrew: "פוליפוספטים של נתרן וסידן"
   , name_french: "Polyphosphates de sodium-calcium"
-  , name_latvian: "Nātrija kalcija polifosfāti"
+  , name_latvian: "Nātrija kalcija polifosfāts"
   , e_number: "E452c"
   , group: Emulsifier
   , source: [Synthetic]
@@ -908,7 +907,7 @@ e452d = {
   , name_german: "Calcium-polyphosphate"
   , name_hebrew: "פוליפוספטים של סידן"
   , name_french: "Polyphosphates de calcium"
-  , name_latvian: "Kalcija polifosfāti"
+  , name_latvian: "Kalcija polifosfāts"
   , e_number: "E452d"
   , group: Emulsifier
   , source: [Synthetic]
@@ -953,7 +952,7 @@ e460 = {
   , name_german: "Cellulose (Mikrokristalline Cellulose, Pulverisierte Cellulose)"
   , name_hebrew: "סלולוזה (צלולוזה מיקרוקריסטלית, צלולוזה באבקה)"
   , name_french: "Cellulose (Cellulose microcristalline, Cellulose en poudre)"
-  , name_latvian: "Celuloze (Mikrokristāliska celuloze, Pulverizēta celuloze)"
+  , name_latvian: "Celuloze (Mikrokristāliska celuloze, Pulverizēta celuloze, Celulozes pulveris)"
   , e_number: "E460"
   , group: Emulsifier
   , source: [Vegan]
@@ -1028,7 +1027,7 @@ e465 = {
   , name_german: "Methylethylcellulose"
   , name_hebrew: "מתיל אתיל צלולוזה"
   , name_french: "Méthyléthylcellulose"
-  , name_latvian: "Metiletilceluloze"
+  , name_latvian: "Etilmetilceluloze"
   , e_number: "E465"
   , group: Emulsifier
   , source: [Vegan, Wine]
@@ -1043,7 +1042,7 @@ e466 = {
   , name_german: "Carboxymethylcellulose, Natriumcarboxymethylcellulose"
   , name_hebrew: "קרבוקסימתיל צלולוזה, נתרן קרבוקסימתיל צלולוזה"
   , name_french: "Carboxyméthylcellulose, Carboxyméthylcellulose de sodium"
-  , name_latvian: "Karboksimetilceluloze, Nātrija karboksimetilceluloze"
+  , name_latvian: "Karboksimetilceluloze, karboksimetilcelulozes nātrija sāls"
   , e_number: "E466"
   , group: Emulsifier
   , source: [Vegan, Wine]
@@ -1058,7 +1057,7 @@ e469 = {
   , name_german: "Enzymatisch hydrolysierte Carboxymethylcellulose"
   , name_hebrew: "קרבוקסימתיל צלולוזה הידרוליזה באמצעות אנזים"
   , name_french: "Carboxyméthylcellulose hydrolysée par voie enzymatique"
-  , name_latvian: "Enzīmiski hidrolizēta karboksimetilceluloze"
+  , name_latvian: "Fermentatīvi hidrolizēta karboksimetilceluloze"
   , e_number: "E469"
   , group: Emulsifier
   , source: []
@@ -1073,7 +1072,7 @@ e470a = {
   , name_german: "Natrium-, Kalium- und Calciumsalze von Fettsäuren"
   , name_hebrew: "מלחי חומצות שומן של נתרן, קליום וסידן"
   , name_french: "Sels de sodium, de potassium et de calcium d'acides gras"
-  , name_latvian: "Taukskābju nātrija, kālija un kalcija sāļi"
+  , name_latvian: "Taukskābju nātrija, kālija un kalcija sāli"
   , e_number: "E470a"
   , group: AntiCakingAgent
   , source: [Animal]
@@ -1088,7 +1087,7 @@ e470b = {
   , name_german: "Magnesiumsalze von Fettsäuren"
   , name_hebrew: "מלחי חומצות שומן של מגנזיום"
   , name_french: "Sels de magnésium d'acides gras"
-  , name_latvian: "Taukskābju magnija sāļi"
+  , name_latvian: "Taukskābju magnija sāli"
   , e_number: "E470b"
   , group: AntiCakingAgent
   , source: [Animal]
@@ -1118,7 +1117,7 @@ e472a = {
   , name_german: "Essigsäureester von Mono- und Diglyceriden von Speisefettsäuren"
   , name_hebrew: "אצטט אצטרים של מונו- ודי גליצרידים של חומצות שומן"
   , name_french: "Esters acétiques de mono- et diglycérides d'acides gras"
-  , name_latvian: "Taukskābju mono- un diglicerīdu acetāti"
+  , name_latvian: "Taukskābju mono- un diglicerīdu etiķskābes esteri"
   , e_number: "E472a"
   , group: Emulsifier
   , source: [Synthetic, Animal]
@@ -1133,7 +1132,7 @@ e472b = {
   , name_german: "Milchsäureester von Mono- und Diglyceriden von Speisefettsäuren"
   , name_hebrew: "אצטט אצטרים של מונו- ודי גליצרידים של חומצות שומן"
   , name_french: "Esters lactiques de mono- et diglycérides d'acides gras"
-  , name_latvian: "Taukskābju mono- un diglicerīdu acetāti"
+  , name_latvian: "Taukskābju mono- un diglicerīdu pienskābes esteri"
   , e_number: "E472b"
   , group: Emulsifier
   , source: [Animal]
@@ -1148,7 +1147,7 @@ e472c = {
   , name_german: "Zitronensäureester von Mono- und Diglyceriden von Speisefettsäuren"
   , name_hebrew: "אצטט אצטרים של מונו- ודי גליצרידים של חומצות שומן"
   , name_french: "Esters citriques de mono- et diglycérides d'acides gras"
-  , name_latvian: "Taukskābju mono- un diglicerīdu citrāti"
+  , name_latvian: "Taukskābju mono- un diglicerīdu citronskābes esteri"
   , e_number: "E472c"
   , group: Emulsifier
   , source: [Animal, Chametz]
@@ -1163,7 +1162,7 @@ e472d = {
   , name_german: "Weinsäureester von Mono- und Diglyceriden von Speisefettsäuren"
   , name_hebrew: "אצטט אצטרים של מונו- ודי גליצרידים של חומצות שומן"
   , name_french: "Esters tartriques de mono- et diglycérides d'acides gras"
-  , name_latvian: "Taukskābju mono- un diglicerīdu vīnāti"
+  , name_latvian: "Taukskābju mono- un diglicerīdu vīnskābes esteri"
   , e_number: "E472d"
   , group: Emulsifier
   , source: [Animal, Wine]
@@ -1178,7 +1177,7 @@ e472e = {
   , name_german: "Essigsäureester von Mono- und Diglyceriden von Speisefettsäuren"
   , name_hebrew: "אצטט אצטרים של מונו- ודי גליצרידים של חומצות שומן"
   , name_french: "Esters acétyltartriques de mono- et diglycérides d'acides gras"
-  , name_latvian: "Taukskābju mono- un diglicerīdu acetāti"
+  , name_latvian: "Taukskābju mono- un diglicerīdu mono- un diacetilvīnskābes esteri"
   , e_number: "E472e"
   , group: Emulsifier
   , source: [Animal]
@@ -1193,7 +1192,7 @@ e472f = {
   , name_german: "Gemischte Essig- und Weinsäureester von Mono- und Diglyceriden von Speisefettsäuren"
   , name_hebrew: "אצטט אצטרים של מונו- ודי גליצרידים של חומצות שומן"
   , name_french: "Esters acétiques et tartriques de mono- et diglycérides d'acides gras"
-  , name_latvian: "Taukskābju mono- un diglicerīdu acetāti"
+  , name_latvian: "Taukskābju mono- un diglicerīdu jauktie etiķskābes un vīnskābes esteri"
   , e_number: "E472f"
   , group: Emulsifier
   , source: [Animal, Wine]
@@ -1208,7 +1207,7 @@ e473 = {
   , name_german: "Zuckerester von Speisefettsäuren"
   , name_hebrew: "אצטט אצטרים של סוכרוז וחומצות שומן"
   , name_french: "Sucroesters d'acides gras alimentaires"
-  , name_latvian: "Taukskābju sāļi"
+  , name_latvian: "Taukskābju saharozes esteri"
   , e_number: "E473"
   , group: Emulsifier
   , source: [Animal]
@@ -1223,7 +1222,7 @@ e474 = {
   , name_german: "Sucroglyceride"
   , name_hebrew: "סוכרוגליצרידים"
   , name_french: "Sucroglycérides"
-  , name_latvian: "Sucroglicerīdi"
+  , name_latvian: "Saharozes glicerīdi"
   , e_number: "E474"
   , group: Emulsifier
   , source: [Animal]
@@ -1238,7 +1237,7 @@ e475 = {
   , name_german: "Polyglycerinester von Speisefettsäuren"
   , name_hebrew: "אצטט אצטרים של פוליגליצרול וחומצות שומן"
   , name_french: "Esters polyglycériques d'acides gras"
-  , name_latvian: "Taukskābju poliglicerīdi"
+  , name_latvian: "Taukskābju poliglicerīna esteri"
   , e_number: "E475"
   , group: Emulsifier
   , source: [Animal]
@@ -1253,7 +1252,7 @@ e476 = {
   , name_german: "Polyglycerinpolyricinoleat"
   , name_hebrew: "פוליגליצרול פוליריצינולאט"
   , name_french: "Polyricinoléate de polyglycérol"
-  , name_latvian: "Poliglicerīna poliricinoleāts"
+  , name_latvian: "Poliglicerīna poliricinolāts"
   , e_number: "E476"
   , group: Emulsifier
   , source: [Animal]
@@ -1268,7 +1267,7 @@ e477 = {
   , name_german: "Propylenglycolester von Speisefettsäuren"
   , name_hebrew: "אצטט אצטרים של פרופילן גליקול וחומצות שומן"
   , name_french: "Esters de propylèneglycol d'acides gras"
-  , name_latvian: "Taukskābju propilēnglikola esteri"
+  , name_latvian: "Taukskābju propān-1,2-diola esteri"
   , e_number: "E477"
   , group: Emulsifier
   , source: [Animal]
@@ -1298,7 +1297,7 @@ e479b = {
   , name_german: "Thermooxidiertes Sojaöl mit Mono- und Diglyceriden von Speisefettsäuren"
   , name_hebrew: "שמן סויה חמים מחומצן באמצעות מונו- ודי גליצרידים של חומצות שומן"
   , name_french: "Huile de soja thermiquement oxydée en interaction avec des mono- et diglycérides d'acides gras"
-  , name_latvian: "Termiski oksidēts sojas pupu eļļa mijiedarbojas ar taukskābju mono- un diglicerīdiem"
+  , name_latvian: "Termiski oksidētas sojas eļļas iedarbības produkts ar taukskābju mono- un diglicerīdiem"
   , e_number: "E479"
   , group: Emulsifier
   , source: [Animal]
@@ -1306,6 +1305,7 @@ e479b = {
   , kosher: MostlyNotKosher
 }
 
+-- TODO: check latvian
 e480 :: ENumber
 e480 = {
   name_english: "Dioctyl sodium sulfosuccinate"
@@ -1328,7 +1328,7 @@ e481 = {
   , name_german : "Natriumlactylate"
   , name_hebrew : "לקטילטים של נתרן"
   , name_french : "Lactylates de sodium"
-  , name_latvian : "Nātrija laktilāti"
+  , name_latvian : "Nātrija stearoil-2-laktāts"
   , e_number : "E481"
   , group : Emulsifier
   , source : [Dairy]
@@ -1343,7 +1343,7 @@ e482 = {
   , name_german: "Calciumlactylate"
   , name_hebrew: "לקטילטים של סידן"
   , name_french: "Lactylates de calcium"
-  , name_latvian: "Kalcija laktilāti"
+  , name_latvian: "Kalcija stearoil-2-laktāts"
   , e_number : "E482"
   , group : Emulsifier
   , source : [Dairy]
@@ -1358,7 +1358,7 @@ e483 = {
   , name_german: "Stearyltartrat"
   , name_hebrew: "סטיאריל טרטרט"
   , name_french: "Tartrate de stéaryle"
-  , name_latvian: "Steāra tartrāts"
+  , name_latvian: "Steariltartrāts"
   , e_number: "E483"
   , group: Emulsifier
   , source: [Animal]
@@ -1366,6 +1366,8 @@ e483 = {
   , kosher: MostlyNotKosher
 }
 
+
+-- TODO: check latvian
 e484 :: ENumber
 e484 = {
   name_english: "Stearyl citrate"
@@ -1381,6 +1383,8 @@ e484 = {
   , kosher: MostlyNotKosher
 }
 
+
+-- TODO: check latvian
 e485 :: ENumber
 e485 = {
   name_english: "Sodium stearoyl fumarate"
@@ -1396,6 +1400,7 @@ e485 = {
   , kosher: MostlyNotKosher
 }
 
+-- TODO: check latvian
 e486 :: ENumber
 e486 = {
   name_english: "Calcium stearoyl fumarate"
@@ -1411,6 +1416,7 @@ e486 = {
   , kosher: MostlyNotKosher
 }
 
+-- TODO: check latvian
 e487 :: ENumber
 e487 = {
   name_english: "Sodium laurylsulfate"
@@ -1426,6 +1432,8 @@ e487 = {
   , kosher: KosherNeedPassoverHashgoho
 }
 
+
+-- TODO: check latvian
 e488 :: ENumber
 e488 = {
   name_english: "Ethoxylated mono- and diglycerides"
@@ -1441,6 +1449,8 @@ e488 = {
   , kosher: MostlyNotKosher
 }
 
+
+-- TODO: check latvian
 e489 :: ENumber
 e489 = {
   name_english: "Methyl glucoside-coconut oil ester"
@@ -1456,6 +1466,8 @@ e489 = {
   , kosher: MostlyNotKosher
 }
 
+
+-- TODO: check latvian
 e490 :: ENumber
 e490 = {
   name_english: "Propane-1,2-diol"
@@ -1538,7 +1550,7 @@ e495 = {
   , name_german: "Sorbitanmonopalmitat Span 40"
   , name_hebrew: "סורביטן מונופלמיטט (ספאן 40)"
   , name_french: "Monopalmitate de sorbitan Span 40"
-  , name_latvian: "Sorbitāna monopalmiāts Span 40"
+  , name_latvian: "Sorbitāna monopalmitāts Span 40"
   , e_number: "E495"
   , group: Emulsifier
   , source: [Animal]
@@ -1546,6 +1558,8 @@ e495 = {
   , kosher: MostlyNotKosher
 }
 
+
+-- TODO: check latvian
 e496 :: ENumber
 e496 = {
   name_english: "Sorbitantrioleat, Span 85"
@@ -1561,6 +1575,7 @@ e496 = {
   , kosher: MostlyNotKosher
 }
 
+-- TODO: check latvian
 e497 :: ENumber
 e497 = {
   name_english: "Polyoxypropylene-polyoxyethylene polymers"
@@ -1576,6 +1591,7 @@ e497 = {
   , kosher: MostlyNotKosher
 }
 
+-- TODO: check latvian
 e498 :: ENumber
 e498 = {
   name_english: "Partial polyglycerol esters of polycondensed fatty acids of castor oil"
@@ -1591,6 +1607,7 @@ e498 = {
   , kosher: MostlyNotKosher
 }
 
+-- TODO: check latvian
 e499 :: ENumber
 e499 = {
   name_english: "Cassia gum, Stigmasterol-rich plant sterols"
@@ -1605,41 +1622,3 @@ e499 = {
   , description: ""
   , kosher: KosherNeedPassoverHashgoho
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

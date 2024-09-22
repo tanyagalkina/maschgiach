@@ -47,7 +47,7 @@ e902 = {
 , name_german: "Kerzenwachs, Candelillawachs"
 , name_hebrew: "שעוות נרות"
 , name_french: "Cire de bougie, cire de candelilla"
-, name_latvian: "Sveču vasks"
+, name_latvian: "Kandelilvasks"
 , e_number: "E902"
 , group: GlazingAgent
 , source: []
@@ -62,7 +62,7 @@ e903 = {
 , name_german: "Carnaubawachs"
 , name_hebrew: "שעוות קרנאובה"
 , name_french: "Cire de carnauba"
-, name_latvian: "Karnaubas vasks"
+, name_latvian: "Karnaubvasks"
 , e_number: "E903"
 , group: GlazingAgent
 , source: []
@@ -77,7 +77,7 @@ e904 = {
 , name_german: "Schellack"
 , name_hebrew: "שלק"
 , name_french: "Shellac"
-, name_latvian: "Šellaks"
+, name_latvian: "Šellaka"
 , e_number: "E904"
 , group: GlazingAgent
 , source: []
@@ -107,7 +107,7 @@ e905a = {
 , name_german: "Mineralöl, Lebensmittelqualität"
 , name_hebrew: "שמן מינרלי, דרגת מזון"
 , name_french: "Huile minérale, qualité alimentaire"
-, name_latvian: "Minerālo eļļa, pārtikas kvalitāte"
+, name_latvian: "Minerālu eļļa, pārtikas kvalitāte"
 , e_number: "E905a"
 -- add group Anti-Foaming agent
 , group: None
@@ -153,7 +153,7 @@ e906 = {
 , name_german: "Benzoeharz"
 , name_hebrew: "שרף בנזואין"
 , name_french: "Résine benzoïque"
-, name_latvian: "Benzoīna sveķi"
+, name_latvian: "Benzoika vasks"
 , e_number: "E906"
 , group: FlavourEnchancer
 , source: [Vegan]
@@ -161,6 +161,7 @@ e906 = {
 , kosher: KosherIncludingPassover
 }
 
+-- TODO: check latvian
 e907 :: ENumber
 e907 = {
   name_english: "Crystalline wax"
@@ -168,7 +169,7 @@ e907 = {
 , name_german: "Kristallwachs"
 , name_hebrew: "שעווה גבישית"
 , name_french: "Cire cristalline"
-, name_latvian: "Kristāliskais vasks"
+, name_latvian: "Kristāliskais vasks, Hidrogenēts poli-1-decēns"
 , e_number: "E907"
 , group: GlazingAgent
 , source: []
@@ -243,7 +244,7 @@ e912 = {
 , name_german: "Montansäureester"
 , name_hebrew: "אסטרי חומצה מונטן"
 , name_french: "Esters d'acide montanique"
-, name_latvian: "Montānas skābes esteri"
+, name_latvian: "Montānskābes esteri"
 , e_number: "E912"
 , group: GlazingAgent
 , source: [Dangerous]
@@ -274,7 +275,7 @@ e914 = {
 , name_german: "Oxidiertes Polyethylenwachs"
 , name_hebrew: "שעוות פוליאתילן מחמצן"
 , name_french: "Cire de polyéthylène oxydée"
-, name_latvian: "Oksidēts polietilēna vasks"
+, name_latvian: "Oksidēti polietilēna sveķi"
 , e_number: "E914"
 , group: GlazingAgent
 , source: []
@@ -289,7 +290,7 @@ e915 = {
 , name_german: "Ester von Kiefer"
 , name_hebrew: "אסטרים של עץ אורן"
 , name_french: "Esters de pin"
-, name_latvian: "Priežu esteri"
+, name_latvian: "Priežu esteri, kolofonija esteris"
 , e_number: "E915"
 , group: GlazingAgent
 , source: [Vegan]
@@ -364,7 +365,7 @@ e920 = {
 , name_german: "L-Cystein"
 , name_hebrew: "L-ציסטאין"
 , name_french: "L-cystéine"
-, name_latvian: "L-cisteīns"
+, name_latvian: "L-Cisteīns"
 , e_number: "E920"
 -- TODO: add group: Improving agent
 , group: None
@@ -380,7 +381,7 @@ e921 = {
 , name_german: "L-Cystin"
 , name_hebrew: "L-ציסטין"
 , name_french: "L-cystine"
-, name_latvian: "L-cistīns"
+, name_latvian: "L-Cistīns"
 , e_number: "E921"
 -- TODO: add group: Improving agent
 , group: None
@@ -692,7 +693,7 @@ e945 = {
 , name_german: "Chlorpentafluorethan"
 , name_hebrew: "כלורפנטפלורואתן"
 , name_french: "Chloropentafluoroéthane"
-, name_latvian: "Hlorpentafluorētāns"
+, name_latvian: "Hlorpentafluoretāns"
 , e_number: "E945"
 -- TODO:  add group propellant
 , group: None
@@ -708,7 +709,7 @@ e946 =  {
 , name_german: "Octafluorcyclobutan"
 , name_hebrew: "אוקטפלורוציקלובוטן"
 , name_french: "Octafluorocyclobutane"
-, name_latvian: "Oktāfluorciklobutāns"
+, name_latvian: "Oktafluorciklobutāns"
 , e_number: "E946"
 -- TODO:  add group propellant
 , group: None
@@ -769,7 +770,7 @@ e950 = {
 , name_german: "Acesulfam-Kalium"
 , name_hebrew: "אשלגן אצסולפאם"
 , name_french: "Acésulfame de potassium"
-, name_latvian: "Acesulfāms kālijs"
+, name_latvian: "Acesulfāms kālijs, Acesulfāms K"
 , e_number: "E950"
 , group: Sweetener
 , source: [Chametz]
@@ -799,7 +800,7 @@ e952 = {
 , name_german: "Cyclaminsäure und ihre Na-, K- und Ca-Salze, Cyclamate"
 , name_hebrew: "חומצת סיקלמית ומלחיה של נתרן, פוטסיום וסידן, סיקלמטים"
 , name_french: "Acide cyclamique et ses sels Na-, K- et Ca-, Cyclamates"
-, name_latvian: "Ciklamīnskābe un tās Na-, K- un Ca-sāļi, Ciklamāti"
+, name_latvian: "Ciklamīnskābe, Nātrija ciklamāts, Kalcija ciklamāts"
 , e_number: "E952"
 , group: Sweetener
 , source: []
@@ -829,7 +830,7 @@ e954 = {
 , name_german: "Saccharin und seine Na-, K- und Ca-Salze"
 , name_hebrew: "סכרין ומלחיו של נתרן, פוטסיום וסידן"
 , name_french: "Saccharine et ses sels Na-, K- et Ca-"
-, name_latvian: "Saharīns un tā Na-, K- un Ca-sāļi"
+, name_latvian: "Saharīns, Saharīna nātrija sāls, Saharīna kalcija sāls, Saharīna kālija sāls"
 , e_number: "E954"
 , group: Sweetener
 , source: []
@@ -844,7 +845,7 @@ e955 = {
 , name_german: "Sucralose (Trichlorogalactosucrose)"
 , name_hebrew: "סוקרלוז (טריכלורוגלקטוזוסוקרוז)"
 , name_french: "Sucralose (Trichlorogalactosucrose)"
-, name_latvian: "Sukraloze (Trichlorogalactosucrose)"
+, name_latvian: "Sukraloze"
 , e_number: "E955"
 , group: Sweetener
 , source: []
@@ -874,7 +875,7 @@ e957 = {
 , name_german: "Thaumatin"
 , name_hebrew: "תאומטין"
 , name_french: "Thaumatine"
-, name_latvian: "Tauamatīns"
+, name_latvian: "Taumatīns"
 , e_number: "E957"
 , group: FlavourEnchancer
 , source: []
@@ -904,7 +905,7 @@ e959 = {
 , name_german: "Neohesperidin dihydrochalcon"
 , name_hebrew: "נאוהספרידין דיהידרוחלקון"
 , name_french: "Néohespéridine dihydrochalcone"
-, name_latvian: "Neohesperidīna dihidrohalkons"
+, name_latvian: "Neohesperidīns DC"
 , e_number: "E959"
 , group: FlavourEnchancer
 , source: []
@@ -912,6 +913,8 @@ e959 = {
 , kosher: KosherNeedPassoverHashgoho
 }
 
+
+-- TODO: check latvian
 e960 :: ENumber
 e960 = {
   name_english: "Steviol glycosides"
@@ -934,7 +937,7 @@ e961 = {
 , name_german: "Neotam"
 , name_hebrew: "נאוטאם"
 , name_french: "Néotame"
-, name_latvian: "Neotāms"
+, name_latvian: "Neotams"
 , e_number: "E961"
 , group: Sweetener
 , source: []
@@ -1009,7 +1012,7 @@ e968 = {
 , name_german: "Erythrit"
 , name_hebrew: "אריתריטול"
 , name_french: "Érythritol"
-, name_latvian: "Eritrīts"
+, name_latvian: "Eritirols"
 , e_number: "E968"
 , group: Sweetener
 , source: []
@@ -1024,25 +1027,10 @@ e999 = {
 , name_german: "Quillajaextrakt"
 , name_hebrew: "תמצית קווילאיה"
 , name_french: "Extrait de quillaja"
-, name_latvian: "Kvilaia ekstrakts"
+, name_latvian: "Kvilaja ekstrakts"
 , e_number: "E999"
 , group: Sweetener
 , source: []
 , description: ""
 , kosher: KosherIncludingPassover
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

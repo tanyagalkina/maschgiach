@@ -18,7 +18,7 @@ e1000 = {
   , name_german: "Cholsäure"
   , name_hebrew: "חומצה כולית"
   , name_french: "Acide cholique"
-  , name_latvian: "Holīnskābe"
+  , name_latvian: "Holskābe"
   , e_number: "E1000"
   , group: Emulsifier
   , source: []
@@ -33,7 +33,7 @@ e1001 = {
   , name_german: "Cholin-Salze"
   , name_hebrew: "מלחי כולין"
   , name_french: "Sels de choline"
-  , name_latvian: "Holīna sāļi"
+  , name_latvian: "Holīna sāli"
   , e_number: "E1001"
   , group: Emulsifier
   , source: []
@@ -123,7 +123,7 @@ e1105 = {
   , name_german: "Lysozym"
   , name_hebrew: "ליזוזים"
   , name_french: "Lysozyme"
-  , name_latvian: "Lizozīms"
+  , name_latvian: "Lizocīms"
   , e_number: "E1105"
   , group: None
   , source: [Chametz]
@@ -153,7 +153,7 @@ e1201 = {
   , name_german: "Polyvinylpyrrolidon"
   , name_hebrew: "פוליבינילפירולידון"
   , name_french: "Polyvinylpyrrolidone"
-  , name_latvian: "Polivinilpirrolidons"
+  , name_latvian: "Polivinilpirolidons"
   , e_number: "E1201"
   , group: Stabilizer
   , source: []
@@ -168,7 +168,7 @@ e1202 = {
   , name_german: "Polyvinylpolypyrrolidon"
   , name_hebrew: "פוליבינילפוליפירולידון"
   , name_french: "Polyvinylpolypyrrolidone"
-  , name_latvian: "Polivinilpolipirrolidons"
+  , name_latvian: "Polivinilpolipirolidons"
   , e_number: "E1202"
   , group: Stabilizer
   , source: []
@@ -183,7 +183,7 @@ e1204 = {
   , name_german: "Pullulan"
   , name_hebrew: "פולולן"
   , name_french: "Pullulan"
-  , name_latvian: "Pululāns"
+  , name_latvian: "Pullulāns"
   , e_number: "E1204"
   , group: Stabilizer
   , source: []
@@ -213,7 +213,7 @@ e1401 = {
   , name_german: "Modifizierte Stärke (Säurebehandelter Stärke)"
   , name_hebrew: "עמילן מותאם (עמילן מעובד בחומצה)"
   , name_french: "Amidon modifié (Amidon traité à l'acide)"
-  , name_latvian: "Modificētas cietes (Skābju apstrādāts cietes)"
+  , name_latvian: "Modificēta ciete (Skābju apstrādāta ciete)"
   , e_number: "E1401"
   , group: Stabilizer
   , source: []
@@ -229,7 +229,7 @@ e1402 = {
   , name_german: "Alkalisch modifizierte Stärke"
   , name_hebrew: "עמילן מותאם אלקלית"
   , name_french: "Amidon modifié alcalin"
-  , name_latvian: "Alkāliski modificēts cietes"
+  , name_latvian: "Alkāliski modificēta ciete"
   , e_number: "E1402"
   , group: Stabilizer
   , source: []
@@ -244,7 +244,7 @@ e1403 = {
   , name_german: "Gebleichte Stärke"
   , name_hebrew: "עמילן מבהיק"
   , name_french: "Amidon blanchi"
-  , name_latvian: "Baltinātas cietes"
+  , name_latvian: "Baltināta ciete"
   , e_number: "E1403"
   , group: Stabilizer
   , source: []
@@ -259,7 +259,7 @@ e1404 = {
   , name_german: "Oxidierte Stärke"
   , name_hebrew: "עמילן מחמצן"
   , name_french: "Amidon oxydé"
-  , name_latvian: "Oksidētas cietes"
+  , name_latvian: "Oksidēta ciete"
   , e_number: "E1404"
   , group: Stabilizer
   , source: [Chametz]
@@ -274,7 +274,7 @@ e1405 = {
   , name_german: "Fermentativ behandelte Stärke"
   , name_hebrew: "עמילן מעובד באמצעות אנזימים"
   , name_french: "Amidon traité enzymatiquement"
-  , name_latvian: "Enzīmātiski apstrādātas cietes"
+  , name_latvian: "Enzīmātiski apstrādāta ciete"
   , e_number: "E1405"
   , group: None
   , source: []
@@ -289,7 +289,7 @@ e1410 = {
   , name_german: "Monostärkephosphat"
   , name_hebrew: "מונו-עמילן-פוספט"
   , name_french: "Phosphate de monostarch"
-  , name_latvian: "Monocietu-fosfāts"
+  , name_latvian: "Monocietes fosfāts"
   , e_number: "E1410"
   , group: Stabilizer
   , source: [Chametz]
@@ -304,7 +304,7 @@ e1411 = {
   , name_german: "Distärkeglycerol"
   , name_hebrew: "די-עמילן גליצרול"
   , name_french: "Glycérol de distarch"
-  , name_latvian: "Dicietu glicerīns"
+  , name_latvian: "Dicietes glicerīns"
   , e_number: "E1411"
   , group: Emulsifier
   , source: []
@@ -319,7 +319,7 @@ e1412 = {
   , name_german: "Distärkephosphat"
   , name_hebrew: "די-עמילן פוספט"
   , name_french: "Phosphate de distarch"
-  , name_latvian: "Dicietu fosfāts"
+  , name_latvian: "Dicietes fosfāts"
   , e_number: "E1412"
   , group: Stabilizer
   , source: []
@@ -334,7 +334,7 @@ e1413 = {
   , name_german: "Phosphatiertes Distärkephosphat"
   , name_hebrew: "פוספט די-עמילן פוספט"
   , name_french: "Phosphate de distarch phosphaté"
-  , name_latvian: "Fosfātēts dicietu fosfāts"
+  , name_latvian: "Fosfatētas dicietes fosfāts"
   , e_number: "E1413"
   , group: Stabilizer
   , source: []
@@ -349,7 +349,7 @@ e1414 = {
   , name_german: "Acetyliertes Distärkephosphat"
   , name_hebrew: "אצטילט די-עמילן פוספט"
   , name_french: "Phosphate de distarch acétylé"
-  , name_latvian: "Acetilēts dicietu fosfāts"
+  , name_latvian: "Acetilētas dicietes fosfāts"
   , e_number: "E1414"
   , group: Emulsifier
   , source: [Chametz]
@@ -364,7 +364,7 @@ e1420 = {
   , name_german: "Stärkeacetat, essigsaure verestert"
   , name_hebrew: "עמילן אצטט, מאואסטריפי עם חומצה חצוצרת"
   , name_french: "Acétate d'amidon estérifié à l'anhydride acétique"
-  , name_latvian: "Cietes acetāts, esterificēts ar etiķskābes anhidrīdu"
+  , name_latvian: "Acetilēta ciete"
   , e_number: "E1420"
   , group: Stabilizer
   , source: [Chametz]
@@ -394,7 +394,7 @@ e1422 = {
   , name_german: "Acetyliertes Distärkeadipat"
   , name_hebrew: "אצטיל־עמילן-אדיפאט"
   , name_french: "Adipate de distarch acétylé"
-  , name_latvian: "Acetilēts dicietu adipāts"
+  , name_latvian: "Acetilētas dicietes adipināts"
   , e_number: "E1422"
   , group: Stabilizer
   , source: [Chametz]
@@ -409,7 +409,7 @@ e1423 = {
   , name_german: "Acetyliertes Distärkeglycerol"
   , name_hebrew: "אצטיל־עמילן-גליצרול"
   , name_french: "Glycérol de distarch acétylé"
-  , name_latvian: "Acetilēts dicietu glicerīns"
+  , name_latvian: "Acetilēts dicietes glicerīns"
   , e_number: "E1423"
   , group: Stabilizer
   , source: []
@@ -424,7 +424,7 @@ e1430 = {
   , name_german: "Distärkeglycerin"
   , name_hebrew: "די-עמילן גליצרין"
   , name_french: "Glycérol de distarch"
-  , name_latvian: "Dicietu glicerīns"
+  , name_latvian: "Dicietes glicerīns"
   , e_number: "E1430"
   , group: Stabilizer
   , source: []
@@ -469,7 +469,7 @@ e1442 = {
   , name_german: "Hydroxypropyl distärkephosphat"
   , name_hebrew: "הידרוקסי פרופיל די-עמילן פוספט"
   , name_french: "Phosphate de distarch hydroxypropylé"
-  , name_latvian: "Hidroksipropilcietes fosfāts"
+  , name_latvian: "Hidroksipropildicietes fosfāts"
   , e_number: "E1442"
   , group: Stabilizer
   , source: [Chametz]
@@ -514,7 +514,7 @@ e1451 = {
   , name_german: "Acetylierte oxidierte Stärke"
   , name_hebrew: "אצטילט עמילן מחמצן"
   , name_french: "Amidon oxydé acétylé"
-  , name_latvian: "Acetilēts oksidēta ciete"
+  , name_latvian: "Acetilēta oksidēta ciete"
   , e_number: "E1451"
   , group: Emulsifier
   , source: []
@@ -649,7 +649,7 @@ e1517 = {
   , name_german: "Glyceryldiacetat (Diacetin)"
   , name_hebrew: "גליצריל די-אצטט או די-אצטין"
   , name_french: "Diacétate de glycéryle (diacétine)"
-  , name_latvian: "Glicerīla diacetāts (diacetīns)"
+  , name_latvian: "Glicerīldiacetāts (diacetīns)"
   , e_number: "E1517"
   , group: None
   , source: []
@@ -664,7 +664,7 @@ e1518 = {
   , name_german: "Glyceryltriacetat (Triacetin)"
   , name_hebrew: "גליצריל טריאצטט או טריאטין"
   , name_french: "Triacétate de glycéryle (triacétine)"
-  , name_latvian: "Glicerīla triacetāts (triacetīns)"
+  , name_latvian: "Glicerīltriacetāts (triacetīns)"
   , e_number: "E1518"
   , group: None
   , source: []
@@ -695,7 +695,7 @@ e1520 = {
   , name_german: "Propylenglykol"
   , name_hebrew: "פרופילן גליקול"
   , name_french: "Propylène glycol"
-  , name_latvian: "Propilēnglikols"
+  , name_latvian: "Propilēnglikols (Propān-1,2-diols)"
   , e_number: "E1520"
   , group: None
   , source: []
@@ -732,12 +732,3 @@ e1525 = {
   , description: ""
   , kosher: KosherNeedPassoverHashgoho
 }
-
-
-
-
-
-
-
-
-

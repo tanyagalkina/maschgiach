@@ -129,7 +129,7 @@ e627 = {
   , name_german: "Natriumguanylat"
   , name_hebrew: "גואנילט נתרן"
   , name_french: "Guanylate disodique"
-  , name_latvian: "Nātrija guanilāts"
+  , name_latvian: "Dinātrija guanilāts"
   , e_number: "E627"
   , group: FlavourEnchancer
   , source: [Animal, Chametz, Kitniyot]
@@ -189,7 +189,7 @@ e631 = {
   , name_german: "Natriuminosinat"
   , name_hebrew: "אינוזינט נתרן"
   , name_french: "Inosinate disodique"
-  , name_latvian: "Nātrija inozināts"
+  , name_latvian: "Dinātrija inozināts"
   , e_number: "E631"
   , group: FlavourEnchancer
   , source: [Animal]
@@ -234,7 +234,7 @@ e634 = {
   , name_german: "Calcium-5'-ribonucleotide"
   , name_hebrew: "סידן 5'-ריבונוקלאוטידים"
   , name_french: "Ribonucléotides de calcium 5'-"
-  , name_latvian: "Kalcija 5'-ribonukleotīdi"
+  , name_latvian: "Kalcija 5'-ribonukleotīds"
   , e_number: "E634"
   , group: FlavourEnchancer
   , source: []
@@ -249,7 +249,7 @@ e635 = {
   , name_german: "Natrium-5'-ribonucleotide"
   , name_hebrew: "5'-ריבונוקלאוטידים נתרן"
   , name_french: "Ribonucléotides de sodium 5'-"
-  , name_latvian: "Nātrija 5'-ribonukleotīdi"
+  , name_latvian: "Dinātrija 5'-ribonukleotīds"
   , e_number: "E635"
   , group: FlavourEnchancer
   , source: [Animal]
@@ -331,4 +331,3 @@ e650 = {
   , description: ""
   , kosher: NeedHashgohoWholeYear
 }
-

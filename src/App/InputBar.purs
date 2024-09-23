@@ -1,124 +1,73 @@
-module App.InputBar
-  ( 
-   simpleInputBar
-  , searchBar
-  )
-  where
+module App.InputBar (searchBar) where
 
-import Prelude
-
-import Affjax.Web (get)
-import App.Assets (ampelmann, magnifyingGlass, roshTov)
-import App.Assets (magnifyingGlass)
-import App.Colours (black, brown, violet, white)
+import App.Assets (magnifyingGlass, roshTov)
+import App.Colours (violet, white)
 import App.Common (Action(..), css)
-import CSS (alignItems, backgroundColor, border, borderBottom, borderRadius, color, display, flex, flexDirection, fontSize, height, justifyContent, margin, minHeight, outline, pct, position, px, relative, row, solid, spaceAround, spaceBetween, width)
-import CSS.Common (center, none)
-import CSS.Selector (with)
-import CSS.TextAlign (justify)
-import Data.Align (align)
+
 import Halogen.HTML as HH
 import Halogen.HTML.CSS as CSS
 import Halogen.HTML.Events as HE
 import Halogen.HTML.Properties as HP
 
+import Prelude
+import CSS (alignItems, backgroundColor, borderRadius, color, display, flex, flexDirection, fontSize, height, justifyContent, margin, pct, px, row, spaceAround, spaceBetween, width)
+import CSS.Common (center)
 
 -- FIXME: the str is probably not needed, use placeholder instead
+-- ... ??? what is this fixme about ? 
 searchBar:: forall w . String-> String -> HH.HTML w Action
-searchBar str placeholder = HH.div [
-          CSS.style do
-            -- border solid (px 2.0) brown
-            height $ px 80.0
-            display flex
-            flexDirection row -- FIXME: is row a default ?  
-            backgroundColor violet
-            justifyContent spaceBetween
-          ]
-        [
-         HH.img [
-          CSS.style do
-             width $ px 60.0
-             height $ px 50.0
-             margin (px 15.0 )   (px 15.0 )   (px 15.0 )  (px 15.0 )
-            ,HP.src roshTov
-            , HP.alt "roshTov"
-          ] 
-        , HH.div[
-          CSS.style do
+searchBar str placeholder =
+  HH.div
+    [ CSS.style do
+        height $ px 80.0
+        display flex
+        backgroundColor violet
+        justifyContent spaceBetween
+    ]
+    [ HH.img
+        [ CSS.style do
+            width $ px 60.0
+            height $ px 50.0
+            margin (px 15.0 )   (px 15.0 )   (px 15.0 )  (px 15.0 )
+          , HP.src roshTov
+          , HP.alt "roshTov"
+        ] 
+    , HH.div
+        [ CSS.style do
             display flex
             flexDirection row
             alignItems center
             backgroundColor white
-            -- FIXME: current: how to make elements proportional ?  pct or px ??
+            -- FIXME: how to make elements proportional ?  pct or px ??
             width $ pct 80.0
             height $ px 50.0
             margin (px 13.0) (px 15.0) (px 15.0) (px 0.0)
             borderRadius (px 50.0) (px 50.0) (px 50.0) (px 50.0)
             justifyContent spaceAround
           
-        ] [ 
-          HH.img
-          -- FIXME: current: can we style the pleaeholder ? 
+        ]
+        [ HH.img
+          -- FIXME: can we style the pleaceholder ? 
             [ HP.src magnifyingGlass
             , CSS.style do 
                   width $ px 25.0
                   height $ px 25.0
                   margin (px 10.0) (px 5.0) (px 10.0) (px 10.0)
              ]
-          , HH.input [
-          HP.placeholder placeholder
-          , css "new-input-bar"
-          , CSS.style do
-            color violet
-            width $ pct 85.0
-            height $ px 50.0
-            fontSize (case str of "" -> px 15.0
-                                  _  -> px 30.0)
-            -- FIXME: current: could not get it work i PS: border none, outline none 
-            -- FIXME: current: fix this hack, what is the right way ?
-            borderRadius (px 50.0) (px 50.0) (px 50.0) (px 50.0) , 
-            HE.onValueInput \string -> DoSearch string
-
-
-            
-          -- HP.placeholder (case str of "" -> "Name or Number" 
-          --                             _ -> str) 
-          -- , HP.type_ HP.InputText
-          -- , CSS.style do
-          --     color (case str of "" -> black
-          --                        _  -> violet)
-
-         ]
-      ]
+        , HH.input
+            -- FIXME: could not get it work with PS: border none, outline none
+            -- so used new-input-bar css 
+            [ HP.placeholder placeholder
+            , css "new-input-bar"
+            , CSS.style do
+                color violet
+                width $ pct 85.0
+                height $ px 50.0
+                fontSize (case str of "" -> px 15.0
+                                      _  -> px 30.0)
+                borderRadius (px 50.0) (px 50.0) (px 50.0) (px 50.0)
+            , HE.onValueInput \string -> DoSearch string
+            ]
         ]
-
-
-simpleInputBar :: forall w . HH.HTML w Action
-simpleInputBar  = HH.div [
-  CSS.style do
-      width $ pct 90.0
-      margin (pct 0.0) (pct 5.0) (pct 0.0) (pct 5.0)
-      minHeight $ px 95.0
-      borderBottom solid (px 3.0) brown
-      display flex
-      flexDirection row
-      -- borderRadius (px 10.0) (px 10.0) (px 10.0) (px 10.0)
-
-] [
-                HH.img [
-                CSS.style do
-                  position relative 
-                  width $ px 80.0
-                  height $ px 80.0
-                  margin (px 10.0 )   (px 10.0 )   (px 10.0 )  (px 10.0 )
-              --  ,  HP.src "../assets/AmpelmannLupe.svg"
-               , HP.src ampelmann
-               , HP.alt "lupe"
-              ]
-                 , HH.input
-                  [
-                    css "input-bar"
-                    , HP.type_ HP.InputText
-                    , HE.onValueInput \str -> DoSearch str
-                  ]
-               ]
+    ]
+    
